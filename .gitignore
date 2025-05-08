@@ -3,8 +3,14 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+/myenv
+
 # C extensions
 *.so
+
+*.qasm
+example.json
+example_metadata.json
 
 # Distribution / packaging
 .Python
