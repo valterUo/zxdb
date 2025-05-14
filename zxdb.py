@@ -77,7 +77,7 @@ class ZXdb:
             logging.info(f"Metadata saved to {metadata_file}")
             
         with GraphDatabase.driver(self.neo4j_uri, auth=(self.neo4j_user, self.neo4j_password)).session(database="memgraph") as session:
-            session.run("CREATE INDEX ON :Vertex(id);")
+            session.run("CREATE INDEX ON :Node(id);")
         
         driver = GraphDatabase.driver(self.neo4j_uri, auth=(self.neo4j_user, self.neo4j_password))
         
@@ -86,16 +86,8 @@ class ZXdb:
             if initialize_empty:
                 with driver.session() as session:
                     def clear_existing_graph(tx):
-                        # Delete all relationships (edges) for this graph
                         tx.run("""
-                            MATCH (source:Vertex {graph_id: $graph_id})-[r:LEG_TO]->(target:Vertex)
-                            WHERE r.graph_id = $graph_id
-                            DETACH DELETE r
-                        """, graph_id=graph_id)
-                        
-                        # Delete all vertices for this graph
-                        tx.run("""
-                            MATCH (v:Vertex {graph_id: $graph_id})
+                            MATCH (v)
                             DETACH DELETE v
                         """, graph_id=graph_id)
                         
@@ -153,7 +145,7 @@ class ZXdb:
                         if vertices_batch:
                             tx.run("""
                                 UNWIND $vertices AS vertex
-                                CREATE (v:Vertex)
+                                CREATE (v:Node)
                                 SET v = vertex
                             """, vertices=vertices_batch)
                             
@@ -162,11 +154,12 @@ class ZXdb:
                     # Batch mark input vertices with Input label in batches
                     if "inputs" in graph_data and graph_data["inputs"]:
                         inputs = graph_data["inputs"]
+                        print(f"Inputs: {inputs}")
                         for i in range(0, len(inputs), batch_size):
                             batch = inputs[i:i+batch_size]
                             tx.run("""
                                 UNWIND $input_ids AS input_id
-                                MATCH (v:Vertex {graph_id: $graph_id, id: input_id})
+                                MATCH (v:Node {graph_id: $graph_id, id: input_id})
                                 SET v:Input
                             """, graph_id=graph_id, input_ids=batch)
                     
@@ -177,7 +170,7 @@ class ZXdb:
                             batch = outputs[i:i+batch_size]
                             tx.run("""
                                 UNWIND $output_ids AS output_id
-                                MATCH (v:Vertex {graph_id: $graph_id, id: output_id})
+                                MATCH (v:Node {graph_id: $graph_id, id: output_id})
                                 SET v:Output
                             """, graph_id=graph_id, output_ids=batch)
                             
@@ -193,12 +186,12 @@ class ZXdb:
                         edges_batch = []
                         
                         for edge in batch:
-                            # Edge format is [source_id, target_id, weight]
+                            # Edge format is [source_id, target_id, type]
                             if len(edge) >= 3:
                                 edges_batch.append({
                                     "source_id": edge[0],
                                     "target_id": edge[1],
-                                    "weight": edge[2],
+                                    "t": edge[2],
                                     "graph_id": graph_id
                                 })
                         
@@ -206,10 +199,10 @@ class ZXdb:
                         if edges_batch:
                             tx.run("""
                                 UNWIND $edges AS edge
-                                MATCH (source:Vertex {graph_id: $graph_id, id: edge.source_id})
-                                MATCH (target:Vertex {graph_id: $graph_id, id: edge.target_id})
-                                CREATE (source)-[r:LEG_TO {
-                                    weight: edge.weight,
+                                MATCH (source:Node {graph_id: $graph_id, id: edge.source_id})
+                                MATCH (target:Node {graph_id: $graph_id, id: edge.target_id})
+                                CREATE (source)-[r:Wire {
+                                    t: edge.t,
                                     graph_id: edge.graph_id
                                 }]->(target)
                             """, edges=edges_batch, graph_id=graph_id)

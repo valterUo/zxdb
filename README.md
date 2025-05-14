@@ -1,5 +1,7 @@
 # ZXdb: scalable ZX-calculus on graph databases
 
+## Installation
+
 ## Styles
 
 Apply the following style definitions for MemGraph to match style with PyZX:
@@ -41,3 +43,24 @@ Experimental evaluation could have at least two dimensions: storing large circui
 
 ## Open questions
 * How to perform qubit mapping on a graph database?
+
+## TODO
+* Circuit extraction algorithm, Backens. There and back again.
+* Basic rewrite rules
+* 
+
+
+## Ideas on formalizing ZX-calculus rules with categorical spans (has this already been done?)
+
+[Sesqui-pushout rewriting](https://www.ti.inf.uni-due.de/publications/koenig/icgt06b.pdf) could be applied here (see Def. 1).
+
+* ZX rewrite rules. These are not formally proper graph rewriting rules because the three dots (...) necessarily make the diagrams shorthand notation which represents a larger set of rules.
+* Identify the key primitive rules in these ''derived'' basic rules:
+  * Primitive rules on nodes:
+    * Node removal
+    * Node creation
+  * Primitive rules on edges:
+    * Edge removal
+    * Edge creation
+    * Edge source/target update, i.e., redirecting
+
