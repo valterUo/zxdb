@@ -154,7 +154,6 @@ class ZXdb:
                     # Batch mark input vertices with Input label in batches
                     if "inputs" in graph_data and graph_data["inputs"]:
                         inputs = graph_data["inputs"]
-                        print(f"Inputs: {inputs}")
                         for i in range(0, len(inputs), batch_size):
                             batch = inputs[i:i+batch_size]
                             tx.run("""
