@@ -6,6 +6,8 @@ from pyzx.graph.multigraph import Multigraph
 from pyzx.graph.jsonparser import json_to_graph_old
 from pyzx import string_to_phase
 
+import networkx as nx
+
 
 def dict_to_graph(d, backend=None):
     """Converts a Python dict representation a graph produced by `graph_to_dict` into
