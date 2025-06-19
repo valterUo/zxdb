@@ -64,3 +64,5 @@ Experimental evaluation could have at least two dimensions: storing large circui
     * Edge creation
     * Edge source/target update, i.e., redirecting
 
+Rewrite rules can be found https://arxiv.org/pdf/2012.13966
+
