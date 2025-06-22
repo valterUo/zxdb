@@ -1,6 +1,8 @@
 import json
 from typing import TYPE_CHECKING, Any, Dict, Optional, Union
 
+from qiskit import QuantumCircuit
+
 from pyzx import Graph
 from pyzx.graph.multigraph import Multigraph
 from pyzx.graph.jsonparser import json_to_graph_old
