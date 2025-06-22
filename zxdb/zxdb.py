@@ -6,6 +6,7 @@ from typing import Optional
 import logging
 
 import numpy as np
+import pyzx as zx
 
 # Configure logging
 logging.basicConfig(
@@ -21,6 +22,108 @@ class ZXdb:
         self.neo4j_uri = neo4j_uri
         self.neo4j_user = neo4j_user
         self.neo4j_password = neo4j_password
+        self.basic_rewrite_rule_queries = {}
+
+        with open("zxdb/query_collections/memgraph-collection-zxdb.json", "r") as f:
+            query_collection = json.load(f)
+        
+        for e in query_collection["items"]:
+            self.basic_rewrite_rule_queries[e["title"]] = e
+
+
+
+    def empty_graphdb(self, graph_id: str) -> None:
+        """
+        Clear all data from the graph database for a specific graph_id.
+        
+        Args:
+            graph_id: Identifier for the graph to clear
+        """
+        driver = GraphDatabase.driver(self.neo4j_uri, auth=(self.neo4j_user, self.neo4j_password))
+        
+        try:
+            with driver.session() as session:
+                def clear_graph(tx):
+                    tx.run("""
+                        MATCH (v:Node {graph_id: $graph_id})
+                        DETACH DELETE v
+                    """, graph_id=graph_id)
+                    
+                    return True
+                
+                session.execute_write(clear_graph)
+                logging.info(f"Cleared graph with ID '{graph_id}'")
+        finally:
+            # Close the driver connection
+            driver.close()
+
+    
+    def export_graphdb_to_zx_graph(self,
+        graph_id: str,
+        json_file_path: str
+        ) -> None:
+        """        
+        Export a graph from Neo4j or Memgraph database to PyZX graph.
+        Args:
+            graph_id: Identifier for the graph to export
+            json_file_path: Path to save the exported JSON file
+        The function retrieves:
+        - Vertex nodes with properties
+        - Relationships between vertices based on edges
+        """
+        driver = GraphDatabase.driver(self.neo4j_uri, auth=(self.neo4j_user, self.neo4j_password))
+        g = zx.Graph()
+
+        try:
+            with driver.session() as session:
+
+                def fetch_graph_data(tx):
+                    # Fetch vertices and edges
+                    vertices_query = """
+                        MATCH (v:Node {graph_id: $graph_id})
+                        RETURN v.id AS id, v.t AS t, v.phase AS phase, v AS v
+                    """
+                    edges_query = """
+                        MATCH (source:Node {graph_id: $graph_id})-[r:Wire]->(target:Node {graph_id: $graph_id})
+                        RETURN source.id AS source_id, target.id AS target_id, r.t AS t
+                    """
+                    input_vertices_query = """
+                        MATCH (v:Node:Input {graph_id: $graph_id})
+                        RETURN v.id AS id
+                    """
+                    output_vertices_query = """
+                        MATCH (v:Node:Output {graph_id: $graph_id})
+                        RETURN v.id AS id
+                    """
+                    
+                    vertices = tx.run(vertices_query, graph_id=graph_id).data()
+                    edges = tx.run(edges_query, graph_id=graph_id).data()
+                    
+                    return vertices, edges
+                
+                vertices, edges = session.execute_read(fetch_graph_data)
+
+                # Add vertices to the graph
+                vertex_ids = {}
+                for vertex in vertices:
+                    vid = g.add_vertex(ty=vertex['t'], phase=vertex.get('phase', None))
+                    vertex_ids[vertex['id']] = vid
+                
+                # Add edges to the graph
+                for edge in edges:
+                    g.add_edge((vertex_ids[edge['source_id']], vertex_ids[edge['target_id']]), edgetype=edge['t'])
+
+                # Write the graph data to a JSON file
+                graph_data = g.to_json()
+                with open(json_file_path, 'w') as f:
+                    json.dump(graph_data, f, indent=2)
+                
+                logging.info(f"Graph data exported to {json_file_path}")
+        finally:
+            # Close the driver connection
+            driver.close()
+        
+        return g
 
 
     def import_zx_graph_json_to_graphdb(self,
@@ -209,7 +312,56 @@ class ZXdb:
                         logging.info(f"Edge batch {i} of {np.ceil(len(edges) / batch_size)} stored.")
                         
                 session.execute_write(create_edges)
-        
         finally:
-            # Close the driver connection
+            driver.close()
+
+
+    def hadamard_cancel(self, graph_id: str) -> None:
+        """
+        Cancel Hadamard gates in the graph by removing pairs of Hadamard gates on the same qubit.
+        
+        Args:
+            graph_id: Identifier for the graph to process
+        """
+        driver = GraphDatabase.driver(self.neo4j_uri, auth=(self.neo4j_user, self.neo4j_password))
+        
+        try:
+            with driver.session() as session:
+
+                def cancel_hadamards(tx):
+
+                    query = str(self.basic_rewrite_rule_queries["Cancel Hadamard gates"]["query"]["code"]["value"])
+                    tx.run(query, graph_id=graph_id)
+
+                    query = str(self.basic_rewrite_rule_queries["Cancel Hadamard patterns"]["query"]["code"]["value"])
+                    tx.run(query, graph_id=graph_id)
+
+                    logging.info(f"Hadamard cancellation completed for graph ID '{graph_id}'")
+                
+                session.execute_write(cancel_hadamards)
+        finally:
+            driver.close()
+
+
+    def remove_identities(self, graph_id: str) -> None:
+        """
+        Remove identity gates from the graph.
+        
+        Args:
+            graph_id: Identifier for the graph to process
+        """
+        driver = GraphDatabase.driver(self.neo4j_uri, auth=(self.neo4j_user, self.neo4j_password))
+        
+        try:
+            with driver.session() as session:
+
+                def removes_ids(tx):
+
+                    query = str(self.basic_rewrite_rule_queries["Remove identities"]["query"]["code"]["value"])
+                    tx.run(query, graph_id=graph_id)
+
+                    logging.info(f"Hadamard cancellation completed for graph ID '{graph_id}'")
+                
+                session.execute_write(removes_ids)
+        finally:
             driver.close()
