@@ -29,7 +29,7 @@ class TestIdentityCancel(unittest.TestCase):
             graph_id="example_graph",
             save_metadata=True,
             initialize_empty=True,  # Clear existing data for this graph_id
-            batch_size=100  # Process in batches of a million gates for better performance
+            batch_size=1000  # Process in batches of a million gates for better performance
             )
 
     def test_identity_cancel(self):

@@ -1,10 +1,10 @@
 from fractions import Fraction
-import math
 from neo4j import GraphDatabase
 import json
 import os
 from typing import Optional
 import logging
+import time
 
 import numpy as np
 import pyzx as zx
@@ -32,6 +32,18 @@ class ZXdb:
         
         for e in query_collection["items"]:
             self.basic_rewrite_rule_queries[e["title"]] = e
+
+        with open("zxdb/query_collections/collection-Rewrite-queries-ZXdb.json", "r") as f:
+            query_collection = json.load(f)
+        
+        for e in query_collection["items"]:
+            self.basic_rewrite_rule_queries[e["title"]] = e
+        
+        with open("zxdb/query_collections/collection-Labeling-queries-ZXdb.json", "r") as f:
+            query_collection = json.load(f)
+
+        for e in query_collection["items"]:
+            self.basic_rewrite_rule_queries[e["title"]] = e
     
     @property
     def driver(self):
@@ -51,7 +63,6 @@ class ZXdb:
     
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.close()
-
 
 
     def empty_graphdb(self, graph_id: str) -> None:
@@ -332,27 +343,42 @@ class ZXdb:
                 session.execute_write(create_edges)
 
 
-    def hadamard_cancel(self, graph_id: str) -> None:
+    def hadamard_cancel(self, graph_id: str) -> int:
         """
-        Cancel Hadamard gates in the graph by removing pairs of Hadamard gates on the same qubit.
+        Cancel Hadamard gates using iterative pattern marking approach.
+        """
         
-        Args:
-            graph_id: Identifier for the graph to process
-        """
-
         with self.driver.session() as session:
-
-            def cancel_hadamards(tx):
-
-                query = str(self.basic_rewrite_rule_queries["Cancel Hadamard gates"]["query"]["code"]["value"])
-                tx.run(query, graph_id=graph_id)
-
-                query = str(self.basic_rewrite_rule_queries["Cancel Hadamard patterns"]["query"]["code"]["value"])
-                tx.run(query, graph_id=graph_id)
-
-                logging.info(f"Hadamard cancellation completed for graph ID '{graph_id}'")
+            total_patterns = 0
+            start_time = time.time()
+            # Step 1: Iteratively mark patterns
+            while True:
+                def mark_pattern(tx):
+                    # Get the marking query from your JSON collection
+                    mark_query = str(self.basic_rewrite_rule_queries["Hadamard cancellation labeling query"]["query"]["code"]["value"])
+                    result = tx.run(mark_query)
+                    record = result.single()
+                    return record["pattern_id"] if record and record["pattern_id"] else None
+                
+                pattern_id = session.execute_write(mark_pattern)
+                if not pattern_id:
+                    break  # No more patterns found
+                total_patterns += 1
+                logging.info(f"Marked pattern {pattern_id} for Hadamard cancellation in graph ID '{graph_id}'")
             
-            session.execute_write(cancel_hadamards)
+            # Step 2: Process all marked patterns
+            if total_patterns > 0:
+                def cancel_patterns(tx):
+                    cancel_query = str(self.basic_rewrite_rule_queries["Hadamard edge cancellation"]["query"]["code"]["value"])
+                    result = tx.run(cancel_query, graph_id=graph_id)
+                    return result.single()["patterns_processed"]
+                
+                processed = session.execute_write(cancel_patterns)
+                end_time = time.time()
+                logging.info(f"Hadamard cancellation completed in {end_time - start_time:.2f} seconds for graph ID '{graph_id}'")
+                logging.info(f"Hadamard cancellation: {total_patterns} patterns found, {processed} processed")
+            
+            return total_patterns
 
 
     def remove_identities(self, graph_id: str) -> None:
