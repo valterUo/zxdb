@@ -345,13 +345,13 @@ class ZXdb:
 
     def hadamard_cancel(self, graph_id: str) -> int:
         """
-        Cancel Hadamard gates using iterative pattern marking approach.
+        Cancel Hadamard gates using iterative pattern labeling approach.
         """
         
         with self.driver.session() as session:
             total_patterns = 0
             start_time = time.time()
-            # Step 1: Iteratively mark patterns
+            # Step 1: Iteratively label patterns
             while True:
                 def mark_pattern(tx):
                     # Get the marking query from your JSON collection
@@ -375,7 +375,7 @@ class ZXdb:
                 
                 processed = session.execute_write(cancel_patterns)
                 end_time = time.time()
-                logging.info(f"Hadamard cancellation completed in {end_time - start_time:.2f} seconds for graph ID '{graph_id}'")
+                logging.info(f"Hadamard cancellation completed in {end_time - start_time} seconds for graph ID '{graph_id}'")
                 logging.info(f"Hadamard cancellation: {total_patterns} patterns found, {processed} processed")
             
             return total_patterns
@@ -391,6 +391,7 @@ class ZXdb:
 
         with self.driver.session() as session:
 
+            start_time = time.time()
             def turn_hadamard_edges_into_gates(tx):
 
                 query = str(self.basic_rewrite_rule_queries["Turn Hadamard edges into Hadamard boxes"]["query"]["code"]["value"])
@@ -409,3 +410,88 @@ class ZXdb:
                 logging.info(f"Identity cancellation completed for graph ID '{graph_id}' with {marked} marked, {created} created, and {deleted} deleted nodes.")
             
             session.execute_write(removes_ids)
+            end_time = time.time()
+            logging.info(f"Identity removal completed in {end_time - start_time} seconds for graph ID '{graph_id}'")
+    
+
+    def spider_fusion(self, graph_id: str) -> int:
+        """
+        Perform spider fusion on the graph.
+        
+        Args:
+            graph_id: Identifier for the graph to process
+        
+        Returns:
+            Number of spider fusion patterns processed
+        """
+        
+        with self.driver.session() as session:
+                start_time = time.time()
+            # Step 1: Iteratively label patterns
+            #while True:
+                total_patterns = 0
+                #processed = 0
+                while True:
+                    
+                    def mark_pattern_green(tx):
+                        mark_query = str(self.basic_rewrite_rule_queries["Spider labeling query green"]["query"]["code"]["value"])
+                        result = tx.run(mark_query)
+                        record = result.single()
+                        print(record)
+                        return record["pattern_id"] if record and record["pattern_id"] else None
+                    
+                    pattern_id = session.execute_write(mark_pattern_green)
+                    #logging.info(f"Marked green pattern {pattern_id} for spider fusion in graph ID '{graph_id}'")
+                    if pattern_id:
+                        total_patterns += 1
+
+                    def fuse_spiders(tx):
+                        cancel_query = str(self.basic_rewrite_rule_queries["Spider fusion rewrite"]["query"]["code"]["value"])
+                        result = tx.run(cancel_query, graph_id=graph_id)
+                        return result.single()["patterns_processed"]
+                    
+                    processed_green = session.execute_write(fuse_spiders)
+                    #end_time = time.time()
+                    #logging.info(f"Spider fusion completed in {end_time - start_time} seconds for graph ID '{graph_id}'")
+                    #logging.info(f"Spider fusion: {total_patterns} patterns found, {processed} processed")
+
+                    def mark_pattern_red(tx):
+                        mark_query = str(self.basic_rewrite_rule_queries["Spider labeling query red"]["query"]["code"]["value"])
+                        result = tx.run(mark_query)
+                        record = result.single()
+                        print(record)
+                        return record["pattern_id"] if record and record["pattern_id"] else None
+                    
+                    pattern_id = session.execute_write(mark_pattern_red)
+                    #logging.info(f"Marked red pattern {pattern_id} for spider fusion in graph ID '{graph_id}'")
+                    
+
+                    def fuse_spiders(tx):
+                        cancel_query = str(self.basic_rewrite_rule_queries["Spider fusion rewrite"]["query"]["code"]["value"])
+                        result = tx.run(cancel_query, graph_id=graph_id)
+                        return result.single()["patterns_processed"]
+                    
+                    processed_red = session.execute_write(fuse_spiders)
+                    #logging.info(f"Spider fusion: {total_patterns} patterns found, {processed} processed")
+                    
+                    if processed_green == 0 and processed_red == 0:
+                        break
+                
+                def apply_Hopf_rule(tx):
+                    hopf_query = str(self.basic_rewrite_rule_queries["Hopf rule"]["query"]["code"]["value"])
+                    result = tx.run(hopf_query, graph_id=graph_id)
+                    return result.single()["pairs_processed"]
+                
+                #hopf_processed = session.execute_write(apply_Hopf_rule)
+                #logging.info(f"Hopf rule applied for graph ID '{graph_id}' with {hopf_processed} node pairs processed")
+
+                def remove_extra_edges(tx):
+                    remove_query = str(self.basic_rewrite_rule_queries["Remove extra edges"]["query"]["code"]["value"])
+                    result = tx.run(remove_query, graph_id=graph_id)
+                    return result.single()["total_edges_removed"]
+                
+                #edges_removed = session.execute_write(remove_extra_edges)
+                #logging.info(f"Removed {edges_removed} bidirectional edges for graph ID '{graph_id}'")
+                end_time = time.time()
+                logging.info(f"Spider fusion completed in {end_time - start_time} seconds for graph ID '{graph_id}'")
+                return total_patterns
