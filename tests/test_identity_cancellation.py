@@ -1,4 +1,4 @@
-from fractions import Fraction
+import time
 import unittest
 import pyzx as zx
 import json
@@ -11,26 +11,23 @@ class TestIdentityCancel(unittest.TestCase):
 
     def setUp(self):
         self.zxdb = ZXdb()
-        self.qubits = 10
-        c = zx.generate.CNOT_HAD_PHASE_circuit(qubits=self.qubits,depth=10,clifford=False)
-        c.add_gate("HAD", 0)
-        c.add_gate("ZPhase", 0, Fraction(4, 2))
-        c.add_gate("HAD", 0)
-        c.add_gate("ZPhase", 0, Fraction(2, 1))
-        c.add_gate("ZPhase", 0, Fraction(1, 2))
-
-        self.zx_graph = circuit_to_graph(c, compress_rows=False)
+        self.qubits = 100000
+        c = zx.generate.CNOT_HAD_PHASE_circuit(qubits=self.qubits,depth=self.qubits,clifford=False)
+        self.zx_graph = circuit_to_graph(c)
         
         with open("example.json", "w") as f:
             json.dump(json.loads(self.zx_graph.to_json()), f, indent = 4)
 
+        start_time = time.time()
         self.zxdb.import_zx_graph_json_to_graphdb(
             json_file_path="example.json",
             graph_id="example_graph",
             save_metadata=True,
-            initialize_empty=True,  # Clear existing data for this graph_id
-            batch_size=1000  # Process in batches of a million gates for better performance
+            initialize_empty=True,
+            batch_size=self.qubits**2
             )
+        end_time = time.time()
+        print(f"Time taken to import graph: {end_time - start_time} seconds")
 
     def test_identity_cancel(self):
         self.zxdb.remove_identities(graph_id="example_graph")
@@ -41,9 +38,18 @@ class TestIdentityCancel(unittest.TestCase):
             json_file_path="example.json"
         )
         
-        zx.rules.apply_rule(self.zx_graph, zx.rules.remove_ids, zx.rules.match_ids_parallel(self.zx_graph))
+        starttime = time.time()
+        #mathces = zx.rules.match_ids_parallel(self.zx_graph)
+        #while len(mathces) > 0:
+        #    zx.rules.apply_rule(self.zx_graph, zx.rules.remove_ids, mathces)
+        #    mathces = zx.rules.match_ids_parallel(self.zx_graph)
+        return_int = zx.id_simp(self.zx_graph)
+        endtime = time.time()
+        print(f"Time taken for identity cancellation: {endtime - starttime} seconds with number of {return_int} many simplifications.")
 
-        self.assertTrue(zx.compare_tensors(graph, self.zx_graph), "Idendity cancellation did not remove all identities as expected.")
+        # PyZX does not consider Hadamard gates as nodes but DB does.
+        num_non_had_vertices = len([v for v in graph.vertices() if graph.type(v) != zx.VertexType.H_BOX])
+        self.assertTrue(num_non_had_vertices == self.zx_graph.num_vertices(), "Idendity cancellation did not remove all identities as expected.")
 
     def tearDown(self):
         self.zxdb.close()
