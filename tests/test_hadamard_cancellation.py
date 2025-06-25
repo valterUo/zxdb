@@ -1,3 +1,4 @@
+from random import random
 import unittest
 import pyzx as zx
 import json
@@ -5,10 +6,13 @@ from pyzx.circuit.graphparser import circuit_to_graph
 
 from zxdb.zxdb import ZXdb
 
+SEED = 1337
+
 # python -m unittest tests.test_hadamard_cancellation
 class TestHadamardCancellation(unittest.TestCase):
 
     def setUp(self):
+        random.seed(SEED)
         self.zxdb = ZXdb()
         self.qubits = 10
         c = zx.generate.CNOT_HAD_PHASE_circuit(qubits=self.qubits,depth=1000,clifford=False)

@@ -495,3 +495,28 @@ class ZXdb:
                 end_time = time.time()
                 logging.info(f"Spider fusion completed in {end_time - start_time} seconds for graph ID '{graph_id}'")
                 return total_patterns
+        
+    def pivot_rule(self, graph_id: str) -> int:
+        """
+        Apply the pivot rule to the graph.
+
+        Args:
+            graph_id: Identifier for the graph to process
+
+        Returns:
+            Number of pivot rule patterns processed
+        """
+
+        with self.driver.session() as session:
+            start_time = time.time()
+
+            def apply_pivot_rule(tx):
+                pivot_query = str(self.basic_rewrite_rule_queries["Pivot rule"]["query"]["code"]["value"])
+                result = tx.run(pivot_query, graph_id=graph_id)
+                return result.single()["patterns_processed"]
+
+            processed = session.execute_write(apply_pivot_rule)
+
+            end_time = time.time()
+            logging.info(f"Pivot rule applied for graph ID '{graph_id}' with {processed} patterns processed in {end_time - start_time} seconds")
+            return processed

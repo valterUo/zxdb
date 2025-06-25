@@ -1,3 +1,4 @@
+import random
 import time
 import unittest
 import pyzx as zx
@@ -6,10 +7,13 @@ from pyzx.circuit.graphparser import circuit_to_graph
 
 from zxdb.zxdb import ZXdb
 
+SEED = 1337
+
 # python -m unittest tests.test_identity_cancellation
 class TestIdentityCancel(unittest.TestCase):
 
     def setUp(self):
+        random.seed(SEED)
         self.zxdb = ZXdb()
         self.qubits = 100000
         c = zx.generate.CNOT_HAD_PHASE_circuit(qubits=self.qubits,depth=self.qubits,clifford=False)
