@@ -10,6 +10,8 @@ import numpy as np
 import pyzx as zx
 from pyzx.graph import VertexType
 
+from zxdb.pyzx_utils import pi_string_to_fraction
+
 # Configure logging
 logging.basicConfig(
     filename='app.log',            # Log file name
@@ -260,7 +262,7 @@ class ZXdb:
                             }
 
                             if "phase" in vertex:
-                                vertex_props["phase"] = float(Fraction(vertex["phase"].replace("\u03c0", "1"))) if isinstance(vertex["phase"], str) else vertex["phase"]
+                                vertex_props["phase"] = float(pi_string_to_fraction(vertex["phase"]))
                             else:
                                 if vertex.get("t") != 0:
                                     # Default to 0 if phase is not a valid number or string
@@ -496,6 +498,7 @@ class ZXdb:
                 logging.info(f"Spider fusion completed in {end_time - start_time} seconds for graph ID '{graph_id}'")
                 return total_patterns
         
+
     def pivot_rule(self, graph_id: str) -> int:
         """
         Apply the pivot rule to the graph.
@@ -510,12 +513,25 @@ class ZXdb:
         with self.driver.session() as session:
             start_time = time.time()
 
-            def apply_pivot_rule(tx):
-                pivot_query = str(self.basic_rewrite_rule_queries["Pivot rule"]["query"]["code"]["value"])
-                result = tx.run(pivot_query, graph_id=graph_id)
-                return result.single()["patterns_processed"]
+            while True:
+                processed = 0
+                
+                def apply_pivot_rule_single_interior_spider(tx):
+                    pivot_query = str(self.basic_rewrite_rule_queries["Pivot rule - single interior Pauli spider"]["query"]["code"]["value"])
+                    result = tx.run(pivot_query, graph_id=graph_id)
+                    return result.single()["interior_pauli_removed"]
 
-            processed = session.execute_write(apply_pivot_rule)
+                processed = session.execute_write(apply_pivot_rule_single_interior_spider)
+
+                def apply_pivot_rule_two_interior_spiders(tx):
+                    pivot_query = str(self.basic_rewrite_rule_queries["Pivot rule - two interior Pauli spiders"]["query"]["code"]["value"])
+                    result = tx.run(pivot_query, graph_id=graph_id)
+                    return result.single()["pivot_operations_performed"]
+                
+                processed += session.execute_write(apply_pivot_rule_two_interior_spiders)
+
+                if processed == 0:
+                    break
 
             end_time = time.time()
             logging.info(f"Pivot rule applied for graph ID '{graph_id}' with {processed} patterns processed in {end_time - start_time} seconds")

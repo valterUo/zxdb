@@ -10,6 +10,29 @@ from pyzx import string_to_phase
 
 import networkx as nx
 
+from fractions import Fraction
+
+def pi_string_to_fraction(s: str) -> Fraction:
+    s = s.replace(" ", "")  # Remove spaces
+    if 'π' not in s:
+        return Fraction(s)  # No pi, treat as regular number
+
+    if s == 'π':
+        return Fraction(1)
+
+    if s.startswith('π/'):
+        return Fraction(1, int(s.split('/')[1]))
+
+    if s.endswith('π'):
+        return Fraction(int(s[:-1]))
+
+    if 'π/' in s:
+        num = s.split('π/')[0]
+        denom = s.split('π/')[1]
+        return Fraction(int(num), int(denom))
+
+    raise ValueError(f"Unrecognized format: {s}")
+
 
 def dict_to_graph(d, backend=None):
     """Converts a Python dict representation a graph produced by `graph_to_dict` into
