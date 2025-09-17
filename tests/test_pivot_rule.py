@@ -16,21 +16,15 @@ from pyzx.circuit import Circuit
 SEED = 1337
 
 # python -m unittest tests.test_pivot_rule
-class TestSpiderFusion(unittest.TestCase):
+class TestPivotRule(unittest.TestCase):
 
     def setUp(self):
         random.seed(SEED)
         self.zxdb = ZXdb()
-        #c = cliffordT(3,10,0.1)
         filepath = "pivot_circuit.json"
-        #self.zx_graph = zx.Graph() #cliffordT(4, 13, 0.3)
         with open(filepath, "r") as f:
             circuit_json = json.load(f)
         self.zx_graph = zx.Graph().from_json(circuit_json)
-        # Prepare the ZX graph, follows the structure in PyZX
-        zx.spider_simp(self.zx_graph)
-        zx.to_gh(self.zx_graph)
-        zx.spider_simp(self.zx_graph)
         fig = zx.draw_matplotlib(self.zx_graph)
         fig.savefig("example1.png")
         
@@ -46,26 +40,16 @@ class TestSpiderFusion(unittest.TestCase):
             )
 
     def test_pivot_rule(self):
-        #self.zxdb.pivot_rule(graph_id="example_graph")
+        self.zxdb.pivot_rule(graph_id="example_graph")
 
         graph = self.zxdb.export_graphdb_to_zx_graph(
             graph_id="example_graph",
             json_file_path="example.json"
         )
 
-        starttime = time.time()
-        return_int = zx.pivot_simp(self.zx_graph)
-        return_int = zx.pivot_simp(self.zx_graph)
+        zx.pivot_simp(self.zx_graph)
         fig = zx.draw_matplotlib(self.zx_graph)
         fig.savefig("example2.png")
-        endtime = time.time()
-        print(f"Time taken for pivot simplification with PyZX: {endtime - starttime} seconds with number of {return_int} many simplifications.")
-        
-        # Check if the graph is empty after Hadamard cancellation
-        #if  True:
-            #t1 = tensorfy(graph)
-            #t2 = tensorfy(self.zx_graph)
-            #self.assertTrue(compare_tensors(graph, self.zx_graph), "Pivot rule did not reduce the number of vertices as expected.")
         
         print(graph.stats())
 
