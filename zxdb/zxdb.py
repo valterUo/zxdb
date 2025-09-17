@@ -11,6 +11,7 @@ import pyzx as zx
 from pyzx.graph import VertexType
 
 from zxdb.pyzx_utils import pi_string_to_fraction
+import networkx as nx
 
 # Configure logging
 logging.basicConfig(
@@ -92,25 +93,19 @@ class ZXdb:
     def export_graphdb_to_zx_graph(self,
         graph_id: str,
         json_file_path: str
-        ) -> None:
-        """        
-        Export a graph from Neo4j or Memgraph database to PyZX graph.
-        Args:
-            graph_id: Identifier for the graph to export
-            json_file_path: Path to save the exported JSON file
-        The function retrieves:
-        - Vertex nodes with properties
-        - Relationships between vertices based on edges
+        ) -> zx.Graph:
         """
-        g = zx.Graph()
+        Export a graph from Neo4j or Memgraph database to a PyZX graph and write JSON.
+        Positions are computed (spring layout) and stored so they appear as 'pos' in JSON.
+        """
+        g = zx.Graph(backend="multigraph")
 
         with self.driver.session() as session:
 
             def fetch_graph_data(tx):
-                # Fetch vertices and edges
                 vertices_query = """
                     MATCH (v:Node {graph_id: $graph_id})
-                    RETURN id(v) AS id, v.t AS t, v.phase AS phase, v AS v
+                    RETURN id(v) AS id, v.t AS t, v.phase AS phase
                 """
                 edges_query = """
                     MATCH (source:Node {graph_id: $graph_id})-[r:Wire]->(target:Node {graph_id: $graph_id})
@@ -124,53 +119,88 @@ class ZXdb:
                     MATCH (v:Node:Output {graph_id: $graph_id})
                     RETURN id(v) AS id
                 """
-                
+
                 vertices = tx.run(vertices_query, graph_id=graph_id).data()
                 edges = tx.run(edges_query, graph_id=graph_id).data()
                 inputs = tx.run(input_vertices_query, graph_id=graph_id).data()
                 outputs = tx.run(output_vertices_query, graph_id=graph_id).data()
                 return vertices, edges, inputs, outputs
-            
+
             vertices, edges, inputs, outputs = session.execute_read(fetch_graph_data)
 
-            # Add vertices to the graph
+            # Add vertices
             vertex_ids = {}
             for vertex in vertices:
-
-                if vertex['t'] == 0:
-                    vertex_type = VertexType.BOUNDARY
-                elif vertex['t'] == 1:
-                    vertex_type = VertexType.Z
-                elif vertex['t'] == 2:
-                    vertex_type = VertexType.X
-                elif vertex['t'] == 3:
-                    vertex_type = VertexType.H_BOX
-                elif vertex['t'] == 4:
-                    vertex_type = VertexType.W_INPUT
-                elif vertex['t'] == 5:
-                    vertex_type = VertexType.W_OUTPUT
-                elif vertex['t'] == 6:
-                    vertex_type = VertexType.Z_BOX
+                t = vertex['t']
+                if t == 0:
+                    vtype = VertexType.BOUNDARY
+                elif t == 1:
+                    vtype = VertexType.Z
+                elif t == 2:
+                    vtype = VertexType.X
+                elif t == 3:
+                    vtype = VertexType.H_BOX
+                elif t == 4:
+                    vtype = VertexType.W_INPUT
+                elif t == 5:
+                    vtype = VertexType.W_OUTPUT
+                elif t == 6:
+                    vtype = VertexType.Z_BOX
                 else:
-                    raise ValueError(f"Unknown vertex type: {vertex['t']}")
+                    raise ValueError(f"Unknown vertex type: {t}")
 
-                vid = g.add_vertex(ty=vertex_type, phase=vertex.get('phase', None))
+                phase_raw = vertex.get('phase', None)
+                phase_frac = None
+                if phase_raw is not None:
+                    if isinstance(phase_raw, (int, float)):
+                        phase_frac = Fraction(phase_raw).limit_denominator()  # interpreted as multiple of π
+                    elif isinstance(phase_raw, str):
+                        try:
+                            # If it’s a π-string like "3π/2" use your parser, else treat as decimal multiple of π
+                            phase_frac = pi_string_to_fraction(phase_raw)
+                        except Exception:
+                            phase_frac = Fraction(phase_raw).limit_denominator()
+                vid = g.add_vertex(ty=vtype, phase=phase_frac)
                 vertex_ids[vertex['id']] = vid
-            
-            # Add edges to the graph
+
+            # Add undirected edges, map type, avoid duplicates
+            seen = set()
             for edge in edges:
-                g.add_edge((vertex_ids[edge['source_id']], vertex_ids[edge['target_id']]), edgetype=edge['t'])
-            
+                u = vertex_ids[edge['source_id']]
+                v = vertex_ids[edge['target_id']]
+                if u == v:
+                    continue
+                key = (min(u, v), max(u, v))
+                if key in seen:
+                    continue
+                seen.add(key)
+                etype = zx.EdgeType.HADAMARD if edge.get('t', 1) == 2 else zx.EdgeType.SIMPLE
+                g.add_edge(key, edgetype=etype)
+
+            # IO sets
             g.set_inputs([vertex_ids[v['id']] for v in inputs])
             g.set_outputs([vertex_ids[v['id']] for v in outputs])
 
-            # Write the graph data to a JSON file
-            graph_data = g.to_json()
-            with open(json_file_path, 'w') as f:
-                json.dump(graph_data, f, indent=2)
-            
+            # Compute positions (spring layout) so JSON contains "pos"
+            nxg = nx.Graph()
+            for v in g.vertices():
+                nxg.add_node(v)
+            for u, v, t in g.edges():
+                nxg.add_edge(u, v)
+            pos = nx.spring_layout(
+                nxg,
+                seed=42,
+                k=100,  # larger k -> more spacing
+                )
+            for v, (x, y) in pos.items():
+                g.set_position(v, float(x), float(y))
+
+            # Write JSON (to_json returns a JSON string)
+            with open(json_file_path, 'w', encoding='utf-8') as f:
+                json.dump(json.loads(g.to_json()), f, indent = 4)
+
             logging.info(f"Graph data exported to {json_file_path}")
-        
+
         return g
 
 
@@ -536,3 +566,80 @@ class ZXdb:
             end_time = time.time()
             logging.info(f"Pivot rule applied for graph ID '{graph_id}' with {processed} patterns processed in {end_time - start_time} seconds")
             return processed
+        
+        
+    def local_complementation_rule(self, graph_id: str) -> int:
+        """
+        Apply the local complementation rule to the graph.
+
+        Args:
+            graph_id: Identifier for the graph to process
+
+        Returns:
+            Number of local complementation patterns processed
+        """
+
+        with self.driver.session() as session:
+            start_time = time.time()
+            
+            while True:
+                while True:
+
+                    def apply_local_complementation_labeling(tx):
+                        lc_query = str(self.basic_rewrite_rule_queries["Local complement labeling"]["query"]["code"]["value"])
+                        result = tx.run(lc_query, graph_id=graph_id)
+                        return result.single()["changed"]
+                    changed = session.execute_write(apply_local_complementation_labeling)
+                    if changed == 0:
+                        break  # No more patterns found
+                
+                def apply_local_complementation_rewrite(tx):
+                    lc_query = str(self.basic_rewrite_rule_queries["Local complement rewrite"]["query"]["code"]["value"])
+                    result = tx.run(lc_query, graph_id=graph_id)
+                    return result.single()["changed"]
+                
+                changed = session.execute_write(apply_local_complementation_rewrite)
+                if changed == 0:
+                    break  # No more patterns found
+
+            end_time = time.time()
+            logging.info(f"Local complementation applied for graph ID '{graph_id}' with {changed} patterns processed in {end_time - start_time} seconds")
+            return changed
+        
+    
+    def phase_gadget_fusion_rule(self, graph_id: str) -> int:
+        """
+        Apply the phase gadget fusion rule to the graph.
+
+        Args:
+            graph_id: Identifier for the graph to process
+
+        Returns:
+            Number of phase gadget fusion patterns processed
+        """
+
+        with self.driver.session() as session:
+            start_time = time.time()
+            
+            while True:
+                def apply_phase_gadget_fusion_labeling(tx):
+                    pgf_query = str(self.basic_rewrite_rule_queries["Gadget fusion red green"]["query"]["code"]["value"])
+                    result = tx.run(pgf_query, graph_id=graph_id)
+                    return result.single()["fusions_performed"]
+                changed = session.execute_write(apply_phase_gadget_fusion_labeling)
+                if changed == 0:
+                    break  # No more patterns found
+            
+            while True:
+                def apply_phase_gadget_fusion_rewrite(tx):
+                    pgf_query = str(self.basic_rewrite_rule_queries["Gadget fusion Hadamard"]["query"]["code"]["value"])
+                    result = tx.run(pgf_query, graph_id=graph_id)
+                    return result.single()["fusions_performed"]
+                
+                changed = session.execute_write(apply_phase_gadget_fusion_rewrite)
+                if changed == 0:
+                    break  # No more patterns found
+
+            end_time = time.time()
+            logging.info(f"Phase gadget fusion applied for graph ID '{graph_id}' with {changed} patterns processed in {end_time - start_time} seconds")
+            return changed

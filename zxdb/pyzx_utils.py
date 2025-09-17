@@ -7,6 +7,10 @@ from pyzx import Graph
 from pyzx.graph.multigraph import Multigraph
 from pyzx.graph.jsonparser import json_to_graph_old
 from pyzx import string_to_phase
+import pyzx as zx
+import pyzx as zx
+from pyzx.circuit import Circuit
+from fractions import Fraction
 
 import networkx as nx
 
@@ -156,3 +160,95 @@ def extract_circuit_from_zx_graph(G: nx.Graph):
 
     # 4. Final swaps/Hadamards for correct output mapping (optional, not implemented here)
     return qc
+
+
+def pyzx_to_networkx_manual(g: zx.Graph):
+    """Manually converts a pyzx.Graph to a networkx.Graph, preserving properties."""
+    nxg = nx.Graph()
+    for v in g.vertices():
+        nxg.add_node(
+            v, 
+            type=g.type(v), 
+            phase=g.phase(v)
+        )
+    for e in g.edges():
+        source, target = g.edge_s(e), g.edge_t(e)
+        nxg.add_edge(
+            source, 
+            target, 
+            type=g.edge_type(e)
+        )
+    return nxg
+
+def node_matcher(node1_data, node2_data):
+            """Returns True if nodes have the same type and phase."""
+            if node1_data.get('type') != node2_data.get('type'):
+                return False
+            phase1 = node1_data.get('phase', 0)
+            phase2 = node2_data.get('phase', 0)
+            # Use a tolerance for comparing floating point phases if necessary
+            return phase1 == phase2
+
+
+def edge_matcher(edge1_data, edge2_data):
+    """Returns True if edges have the same type."""
+    return edge1_data.get('type') == edge2_data.get('type')
+
+
+def phase_poly_term_to_graph(
+    coeff: float | Fraction,
+    interactions: list[int],
+    num_qubits: int,
+    prev_circuit: Circuit | None = None
+) -> zx.Graph:
+    """
+    Creates a ZX-diagram for a single term of a phase polynomial.
+
+    The term corresponds to the unitary exp(i * coeff * Z_i * Z_j * ...),
+    where i, j, ... are the qubits in the `interactions` list.
+
+    This is implemented by creating a CNOT ladder to compute the parity,
+    applying an Rz rotation, and then un-computing the CNOT ladder.
+
+    Args:
+        coeff: The phase coefficient of the term (alpha).
+        interactions: A list of qubit indices involved in the Pauli Z product.
+        num_qubits: The total number of qubits in the circuit.
+
+    Returns:
+        A pyzx.Graph representing the circuit for this term.
+    """
+    interactions = sorted(list(set(interactions)))
+
+    if prev_circuit is None:
+        c = Circuit(num_qubits)
+    else:
+        c = prev_circuit
+
+    if len(interactions) == 1:
+        qubit = interactions[0]
+        c.add_gate("ZPhase", qubit, phase=2 * coeff)
+
+    elif len(interactions) > 1:
+        target_qubit = interactions[-1]
+
+        for i in range(len(interactions) - 1):
+            control = interactions[i]
+            target = interactions[i+1]
+            c.add_gate("CNOT", control, target)
+
+        c.add_gate("ZPhase", target_qubit, phase=2 * coeff)
+
+        for i in range(len(interactions) - 2, -1, -1):
+            control = interactions[i]
+            target = interactions[i+1]
+            c.add_gate("CNOT", control, target)
+    else:
+        pass
+
+    #g = c.to_graph()
+    
+    #if not interactions:
+    #    g.scalar.add_phase(coeff)
+
+    return c
