@@ -643,3 +643,31 @@ class ZXdb:
             end_time = time.time()
             logging.info(f"Phase gadget fusion applied for graph ID '{graph_id}' with {changed} patterns processed in {end_time - start_time} seconds")
             return changed
+        
+    def pivot_gadget_rule(self, graph_id: str) -> int:
+        """
+        Apply the pivot gadget rule to the graph.
+
+        Args:
+            graph_id: Identifier for the graph to process
+
+        Returns:
+            Number of phase gadget fusion patterns processed
+        """
+
+        with self.driver.session() as session:
+            start_time = time.time()
+            
+            while True:
+                def apply_pivot_gadget_labeling(tx):
+                    pgf_query = str(self.basic_rewrite_rule_queries["Pivot gadget"]["query"]["code"]["value"])
+                    result = tx.run(pgf_query, graph_id=graph_id)
+                    return result.single()["pivot_operations_performed"]
+                changed = session.execute_write(apply_pivot_gadget_labeling)
+
+                if changed == 1:
+                    break  # No more patterns found
+            
+            end_time = time.time()
+            logging.info(f"Pivot gadget applied for graph ID '{graph_id}' with {changed} patterns processed in {end_time - start_time} seconds")
+            return changed

@@ -25,23 +25,17 @@ class TestPhaseGadgetFusion(unittest.TestCase):
         random.seed(SEED)
         self.circuits = []
 
-        with open("gadget_fusion_hadamard.json", "r") as f:
+        with open("circuits\\gadget_fusion_hadamard.json", "r") as f:
             circuit_json = json.load(f)
         self.circuits.append(zx.Graph().from_json(circuit_json))
 
-        with open("gadget_fusion_red_green.json", "r") as f:
+        with open("circuits\\gadget_fusion_red_green.json", "r") as f:
             circuit_json = json.load(f)
         self.circuits.append(zx.Graph().from_json(circuit_json))
 
         fig = zx.draw_matplotlib(self.circuits[0])
         fig.savefig("example1.png")
 
-        #self.zx_graph = cliffordT(3,20,0.3)
-        #filepath = "example2.json"
-        #with open(filepath, "r") as f:
-        #    circuit_json = json.load(f)
-        #self.zx_graph = zx.Graph().from_json(circuit_json)
-        #self.circuits.append(self.zx_graph)
         self.zx_graph = self.circuits[1]
         fig = zx.draw_matplotlib(self.zx_graph)
         fig.savefig("example1.png")
