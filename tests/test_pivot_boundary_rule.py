@@ -21,7 +21,7 @@ class TestPivotBoundaryRule(unittest.TestCase):
     def setUp(self):
         random.seed(SEED)
         self.circuits = []
-        with open("circuits\\pivot_boundary_circuit2.json", "r") as f:
+        with open("circuits\\pivot_boundary_circuit3.json", "r") as f:
             circuit_json = json.load(f)
 
         self.circuits.append(zx.Graph(backend = 'multigraph').from_json(circuit_json))
@@ -53,12 +53,12 @@ class TestPivotBoundaryRule(unittest.TestCase):
         fig.savefig("example2.png")
         
         
-        #self.zxdb.phase_gadget_fusion_rule(graph_id="example_graph")
+        self.zxdb.pivot_boundary_rule(graph_id="example_graph")
 
-        #self.zxdb.export_graphdb_to_zx_graph(
-        #    graph_id="example_graph",
-        #    json_file_path="result.json"
-        #)
+        self.zxdb.export_graphdb_to_zx_graph(
+            graph_id="example_graph",
+            json_file_path="result.json"
+        )
 
         filepath = "result.json"
         with open(filepath, "r") as f:
@@ -79,6 +79,16 @@ class TestPivotBoundaryRule(unittest.TestCase):
         # Manually convert both pyzx graphs to networkx graphs
         nxg1 = pyzx_to_networkx_manual(self.zx_graph)
         nxg2 = pyzx_to_networkx_manual(graph)
+
+        # Compare the node sets of the two graphs
+        for n1, n2 in zip(sorted(nxg1.nodes(data=True)), sorted(nxg2.nodes(data=True))):
+            print(n1)
+            print(n2)
+            print("-----")
+
+        # Set difference of the node sets
+        node_diff = set([str(n) for n in nxg1.nodes(data=True)]).intersection(set([str(n) for n in nxg2.nodes(data=True)]))
+        print("Node set difference:", node_diff)
 
         # Check for isomorphism using the custom property matchers
         are_isomorphic = nx.is_isomorphic(
