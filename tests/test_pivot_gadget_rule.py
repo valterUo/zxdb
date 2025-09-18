@@ -18,7 +18,7 @@ class TestPivotGadgetRule(unittest.TestCase):
     def setUp(self):
         random.seed(SEED)
         self.circuits = []
-        with open("circuits\\pivot_gadget_circuit.json", "r") as f:
+        with open("circuits\\pivot_gadget_circuit2.json", "r") as f:
             circuit_json = json.load(f)
 
         self.circuits.append(zx.Graph(backend = 'multigraph').from_json(circuit_json))

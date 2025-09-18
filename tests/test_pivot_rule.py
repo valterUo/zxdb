@@ -24,7 +24,7 @@ class TestPivotRule(unittest.TestCase):
     def setUp(self):
         random.seed(SEED)
         self.zxdb = ZXdb()
-        filepath = "circuits\\pivot_circuit2.json"
+        filepath = "circuits\\pivot_circuit.json"
         with open(filepath, "r") as f:
             circuit_json = json.load(f)
         self.zx_graph = zx.Graph().from_json(circuit_json)
