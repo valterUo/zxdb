@@ -1,6 +1,7 @@
 import json
 from typing import TYPE_CHECKING, Any, Dict, Optional, Union
 
+import numpy as np
 from qiskit import QuantumCircuit
 
 from pyzx import Graph
@@ -181,17 +182,30 @@ def pyzx_to_networkx_manual(g: zx.Graph):
     return nxg
 
 def node_matcher(node1_data, node2_data):
-            """Returns True if nodes have the same type and phase."""
-            if node1_data.get('type') != node2_data.get('type'):
-                return False
-            phase1 = node1_data.get('phase', 0)
-            phase2 = node2_data.get('phase', 0)
-            # Use a tolerance for comparing floating point phases if necessary
-            return phase1 == phase2
+    """Returns True if nodes have the same type and phase."""
+    if node1_data.get('type') != node2_data.get('type'):
+        return False
+    phase1 = node1_data.get('phase', 0)
+    phase2 = node2_data.get('phase', 0)
+    # Use a tolerance for comparing floating point phases if necessary
+    #print(f"Comparing phases: {phase1} and {phase2} with types {type(phase1)} and {type(phase2)}")
+    if type(phase1) == Fraction and type(phase2) == Fraction:
+        return phase1 == phase2
+    elif type(phase1) == float and type(phase2) == float:
+        return np.isclose(phase1, phase2, atol=1e-9)
+    elif type(phase1) == int and type(phase2) == Fraction:
+        return np.isclose(float(phase1), float(phase2), atol=1e-9)
+    elif type(phase1) == Fraction and type(phase2) == int:
+        return np.isclose(float(phase1), float(phase2), atol=1e-9)
+    are_close = np.isclose(phase1, phase2, atol=1e-9)
+    #if not are_close:
+    #    print(f"Phase mismatch: {phase1} vs {phase2}")
+    return are_close
 
 
 def edge_matcher(edge1_data, edge2_data):
     """Returns True if edges have the same type."""
+    #print(f"Comparing edge types: {edge1_data.get('type')} and {edge2_data.get('type')}")
     return edge1_data.get('type') == edge2_data.get('type')
 
 
