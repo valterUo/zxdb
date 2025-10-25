@@ -1,0 +1,9 @@
+{
+    "qubits": 1,
+    "initial_stats": "Graph(5 vertices, 4 edges)\ndegree distribution: \n1: 2\n2: 3\n",
+    "db_identity_cancellation_time": 0.026134729385375977,
+    "db_identity_cancellation_result": null,
+    "pyzx_identity_cancellation_time": 0.0,
+    "pyzx_identity_cancellation_result": 2,
+    "final_stats": "Graph(2 vertices, 1 edges)\ndegree distribution: \n1: 2\n"
+}

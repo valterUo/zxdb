@@ -23,5 +23,11 @@ Apply the following style definitions for MemGraph to match the style with PyZX:
   color-hover: #f0908a
   color-selected: #f0908a
 }
+
+@NodeStyle Equals(Property(node, "t"), 3) {
+  color: #ffd700
+  color-hover: #ffd700
+  color-selected: #ffd700
+}
 ```
 
