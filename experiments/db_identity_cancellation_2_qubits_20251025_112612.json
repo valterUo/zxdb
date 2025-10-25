@@ -1,0 +1,9 @@
+{
+    "qubits": 2,
+    "initial_stats": "Graph(23 vertices, 27 edges)\ndegree distribution: \n1: 4\n2: 7\n3: 12\n",
+    "db_identity_cancellation_time": 0.009200334548950195,
+    "db_identity_cancellation_result": null,
+    "pyzx_identity_cancellation_time": 0.0,
+    "pyzx_identity_cancellation_result": 2,
+    "final_stats": "Graph(20 vertices, 24 edges)\ndegree distribution: \n1: 4\n2: 4\n3: 12\n"
+}

@@ -5,10 +5,14 @@ from datetime import datetime
 import time
 import networkx as nx
 from pyzx.circuit.graphparser import circuit_to_graph
+import pyzx as zx
+import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('Agg')  # Use a non-interactive backend
 
 from zxdb.pyzx_utils import edge_matcher, node_matcher, pyzx_to_networkx_manual
 
-def zx_graph_to_db(zxdb, circuit, graph_id="example_graph", json_file="example.json", batch_size=10**6):
+def zx_graph_to_db(zxdb, circuit, graph_id="example_graph", json_file="example.json", batch_size=10**6, hadamard_edges = False):
     """
     Converts a circuit to a ZX graph, saves it as JSON, and imports it into the database.
     """
@@ -24,9 +28,11 @@ def zx_graph_to_db(zxdb, circuit, graph_id="example_graph", json_file="example.j
         graph_id=graph_id,
         save_metadata=True,
         initialize_empty=True,
-        batch_size=batch_size
+        batch_size=batch_size,
+        hadamard_edges=hadamard_edges
     )
     print(f"ZX graph imported to database as '{graph_id}'.")
+
     return zx_graph
 
 def store_experiment_results(experiment_name: str, data: dict):
@@ -46,9 +52,12 @@ def store_experiment_results(experiment_name: str, data: dict):
     print(f"Experiment results saved to {filepath}")
 
 def get_degree_dist(graph):
+    ty = graph.types()
     degrees = {}
     for v in graph.vertices():
         d = graph.vertex_degree(v)
+        if int(d) == 1 and ty[v] != zx.VertexType.BOUNDARY:
+            print(f"Vertex {v} has type {ty[v]}")
         if d in degrees: degrees[d] += 1
         else: degrees[d] = 1
     return degrees
@@ -73,6 +82,7 @@ def postprocess(zx_graph, zxdb, qubits):
     if qubits <= 100:
         nxg1 = pyzx_to_networkx_manual(zx_graph)
         nxg2 = pyzx_to_networkx_manual(db_graph)
+
         are_isomorphic = nx.is_isomorphic(
             nxg1, 
             nxg2, 
@@ -87,7 +97,7 @@ def postprocess(zx_graph, zxdb, qubits):
         print(f"Degree {degree}: {count} vertices")
     return degree_distribution, db_graph, are_isomorphic
 
-def benchmark_rule(rule_functions, rule_names, zx_graph, zxdb, qubits):
+def benchmark_rule(rule_functions, rule_names, zx_graph, zxdb, qubits, visualize=False):
     """
     Generic benchmarking for ZX rules.
     - rule_functions: list of callables to apply (e.g. [zxdb.spider_fusion, zx.spider_simp])
@@ -117,11 +127,20 @@ def benchmark_rule(rule_functions, rule_names, zx_graph, zxdb, qubits):
     degree_distribution, db_graph, are_isomorphic = postprocess(zx_graph, zxdb, qubits)
     experiment_data['final_stats'] = zx_graph.stats()
 
+    if visualize:
+        fig = zx.draw(zx_graph)
+        fig.savefig(f'graph_after_{rule_names[0]}.png')
+        plt.close(fig)
+
+    if db_graph is not None and visualize:
+        fig_db = zx.draw(db_graph)
+        fig_db.savefig(f'graph_db_after_{rule_names[0]}.png')
+        plt.close(fig_db)
+    
     if are_isomorphic is not None:
         print("Isomorphic:", are_isomorphic)
         assert are_isomorphic, "Graphs are not structurally equivalent (isomorphic) after rule application."
 
-    print(zx_graph.stats())
     degree_dist = get_degree_dist(zx_graph)
 
     if db_graph is not None:

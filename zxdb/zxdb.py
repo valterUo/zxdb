@@ -213,7 +213,8 @@ class ZXdb:
         graph_id: Optional[str] = None,
         save_metadata: bool = True,
         initialize_empty: bool = False,
-        batch_size: int = 5000
+        batch_size: int = 5000,
+        hadamard_edges: bool = False
         ) -> None:
         """
         Import a graph JSON file into Neo4j or Memgraph database, storing only vertices and edges.
@@ -377,7 +378,34 @@ class ZXdb:
                         logging.info(f"Edge batch {i} of {np.ceil(len(edges) / batch_size)} stored.")
                         
                 session.execute_write(create_edges)
+        
+        if hadamard_edges:
+            self.turn_hadamard_gates_into_edges(graph_id=graph_id)
+            logging.info(f"Hadamard edges turned into gates for graph ID '{graph_id}'")
 
+    def hadamard_cancel_fn(self, graph_id: str, session) -> int:
+        total_patterns = 0
+        while True:
+            def mark_pattern(tx):
+                # Get the marking query from your JSON collection
+                mark_query = str(self.basic_rewrite_rule_queries["Hadamard cancellation labeling query"]["query"]["code"]["value"])
+                result = tx.run(mark_query)
+                record = result.single()
+                return record["pattern_id"] if record and record["pattern_id"] else None
+            
+            pattern_id = session.execute_write(mark_pattern)
+            if not pattern_id:
+                break  # No more patterns found
+            total_patterns += 1
+        
+        # Step 2: Process all marked patterns
+        if total_patterns > 0:
+            def cancel_patterns(tx):
+                cancel_query = str(self.basic_rewrite_rule_queries["Hadamard edge cancellation"]["query"]["code"]["value"])
+                result = tx.run(cancel_query, graph_id=graph_id)
+                return result.single()["patterns_processed"]
+            processed = session.execute_write(cancel_patterns)
+        return total_patterns
 
     def hadamard_cancel(self, graph_id: str) -> int:
         """
@@ -424,30 +452,30 @@ class ZXdb:
         Args:
             graph_id: Identifier for the graph to process
         """
+        with self.driver.session() as analyze_session:
+            analyze_session.run("ANALYZE GRAPH;")
 
         with self.driver.session() as session:
 
-            start_time = time.time()
-            def turn_hadamard_edges_into_gates(tx):
+            def process_identity_removal(tx):
+                # Turn Hadamard edges into gates
+                query_edges_to_gates = str(self.basic_rewrite_rule_queries["Turn Hadamard edges into Hadamard boxes"]["query"]["code"]["value"])
+                tx.run(query_edges_to_gates, graph_id=graph_id)
 
-                query = str(self.basic_rewrite_rule_queries["Turn Hadamard edges into Hadamard boxes"]["query"]["code"]["value"])
-                tx.run(query, graph_id=graph_id)
-
-                logging.info(f"Hadamard edges turned into gates for graph ID '{graph_id}'")
-            
-            session.execute_write(turn_hadamard_edges_into_gates)
-
-            def removes_ids(tx):
-
-                query = str(self.basic_rewrite_rule_queries["Remove identities"]["query"]["code"]["value"])
-                result = tx.run(query, graph_id=graph_id)
+                # Remove identities
+                query_remove_identities = str(self.basic_rewrite_rule_queries["Remove identities"]["query"]["code"]["value"])
+                result = tx.run(query_remove_identities, graph_id=graph_id)
                 marked, created, deleted = result.single()
-
                 logging.info(f"Identity cancellation completed for graph ID '{graph_id}' with {marked} marked, {created} created, and {deleted} deleted nodes.")
-            
-            session.execute_write(removes_ids)
-            end_time = time.time()
-            logging.info(f"Identity removal completed in {end_time - start_time} seconds for graph ID '{graph_id}'")
+
+                # Turn Hadamard gates into edges
+                query_gates_to_edges = str(self.basic_rewrite_rule_queries["Turn Hadamard gates into Hadamard edges"]["query"]["code"]["value"])
+                tx.run(query_gates_to_edges, graph_id=graph_id)
+
+            session.execute_write(process_identity_removal)
+
+            # Hadamard cancellation can be done outside the transaction for better performance
+            self.hadamard_cancel_fn(graph_id, session)
     
 
     def spider_fusion(self, graph_id: str) -> int:
@@ -685,7 +713,8 @@ class ZXdb:
             end_time = time.time()
             logging.info(f"Pivot boundary applied for graph ID '{graph_id}' with {changed} patterns processed in {end_time - start_time} seconds")
             return changed
-        
+
+
     def bialgebra_rule(self, graph_id: str) -> int:
         """
         Apply the bialgebra rule to the graph.
@@ -714,6 +743,7 @@ class ZXdb:
             logging.info(f"Pivot boundary applied for graph ID '{graph_id}' with {changed} patterns processed in {end_time - start_time} seconds")
             return changed
         
+
     def get_degree_distribution(self, graph_id: str) -> dict:
         """
         Get the degree distribution of the graph.
@@ -736,3 +766,19 @@ class ZXdb:
             degree_distribution = session.execute_read(fetch_degree_distribution)
 
         return degree_distribution
+    
+
+    def turn_hadamard_gates_into_edges(self, graph_id: str) -> None:
+        """
+        Turn Hadamard gates into edges in the graph.
+
+        Args:
+            graph_id: Identifier for the graph to process
+        """
+
+        with self.driver.session() as session:
+            def apply_hadamard_to_edge_conversion(tx):
+                query = str(self.basic_rewrite_rule_queries["Turn Hadamard gates into edges"]["query"]["code"]["value"])
+                tx.run(query, graph_id=graph_id)
+
+            session.execute_write(apply_hadamard_to_edge_conversion)
