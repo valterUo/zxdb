@@ -15,7 +15,7 @@ class TestIdentityCancel(unittest.TestCase):
     def setUp(self):
         random.seed(SEED)
         self.zxdb = ZXdb()
-        self.qubits = 100000
+        self.qubits = 100
         c = zx.generate.CNOT_HAD_PHASE_circuit(qubits=self.qubits,depth=self.qubits,clifford=False)
         self.zx_graph = circuit_to_graph(c)
         
@@ -43,10 +43,6 @@ class TestIdentityCancel(unittest.TestCase):
         )
         
         starttime = time.time()
-        #mathces = zx.rules.match_ids_parallel(self.zx_graph)
-        #while len(mathces) > 0:
-        #    zx.rules.apply_rule(self.zx_graph, zx.rules.remove_ids, mathces)
-        #    mathces = zx.rules.match_ids_parallel(self.zx_graph)
         return_int = zx.id_simp(self.zx_graph)
         endtime = time.time()
         print(f"Time taken for identity cancellation: {endtime - starttime} seconds with number of {return_int} many simplifications.")

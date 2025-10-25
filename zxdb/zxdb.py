@@ -47,6 +47,10 @@ class ZXdb:
 
         for e in query_collection["items"]:
             self.basic_rewrite_rule_queries[e["title"]] = e
+
+        # Execute the following query first: STORAGE MODE IN_MEMORY_ANALYTICAL;
+        with self.driver.session() as analyze_session:
+            analyze_session.run("STORAGE MODE IN_MEMORY_ANALYTICAL;")
     
     @property
     def driver(self):
@@ -456,77 +460,57 @@ class ZXdb:
         Returns:
             Number of spider fusion patterns processed
         """
-        
+        with self.driver.session() as analyze_session:
+            analyze_session.run("ANALYZE GRAPH;")
+        # Use a single session and transaction for all operations to reduce connection overhead
         with self.driver.session() as session:
-                start_time = time.time()
-            # Step 1: Iteratively label patterns
-            #while True:
-                total_patterns = 0
-                #processed = 0
-                while True:
-                    
-                    def mark_pattern_green(tx):
-                        mark_query = str(self.basic_rewrite_rule_queries["Spider labeling query green"]["query"]["code"]["value"])
-                        result = tx.run(mark_query)
-                        record = result.single()
-                        print(record)
-                        return record["pattern_id"] if record and record["pattern_id"] else None
-                    
-                    pattern_id = session.execute_write(mark_pattern_green)
-                    #logging.info(f"Marked green pattern {pattern_id} for spider fusion in graph ID '{graph_id}'")
-                    if pattern_id:
-                        total_patterns += 1
+            total_patterns = 0
+            while True:
+                # Use explicit transaction for all queries in one batch
+                def spider_fusion_batch(tx):
+                    # Label green spiders
+                    mark_query_green = str(self.basic_rewrite_rule_queries["Spider labeling query green"]["query"]["code"]["value"])
+                    result_green = tx.run(mark_query_green)
+                    record_green = result_green.single()
+                    patterns_labeled_green = record_green["patterns_labeled"] if record_green and record_green["patterns_labeled"] else 0
 
-                    def fuse_spiders(tx):
-                        cancel_query = str(self.basic_rewrite_rule_queries["Spider fusion rewrite"]["query"]["code"]["value"])
-                        result = tx.run(cancel_query, graph_id=graph_id)
-                        return result.single()["patterns_processed"]
-                    
-                    processed_green = session.execute_write(fuse_spiders)
-                    #end_time = time.time()
-                    #logging.info(f"Spider fusion completed in {end_time - start_time} seconds for graph ID '{graph_id}'")
-                    #logging.info(f"Spider fusion: {total_patterns} patterns found, {processed} processed")
+                    # Fuse green spiders
+                    cancel_query = str(self.basic_rewrite_rule_queries["Spider fusion rewrite"]["query"]["code"]["value"])
+                    result_fuse_green = tx.run(cancel_query, graph_id=graph_id)
+                    processed_green = result_fuse_green.single()["patterns_processed"]
 
-                    def mark_pattern_red(tx):
-                        mark_query = str(self.basic_rewrite_rule_queries["Spider labeling query red"]["query"]["code"]["value"])
-                        result = tx.run(mark_query)
-                        record = result.single()
-                        print(record)
-                        return record["pattern_id"] if record and record["pattern_id"] else None
-                    
-                    pattern_id = session.execute_write(mark_pattern_red)
-                    #logging.info(f"Marked red pattern {pattern_id} for spider fusion in graph ID '{graph_id}'")
-                    
+                    # Label red spiders
+                    mark_query_red = str(self.basic_rewrite_rule_queries["Spider labeling query red"]["query"]["code"]["value"])
+                    result_red = tx.run(mark_query_red)
+                    record_red = result_red.single()
+                    patterns_labeled_red = record_red["patterns_labeled"] if record_red and record_red["patterns_labeled"] else 0
 
-                    def fuse_spiders(tx):
-                        cancel_query = str(self.basic_rewrite_rule_queries["Spider fusion rewrite"]["query"]["code"]["value"])
-                        result = tx.run(cancel_query, graph_id=graph_id)
-                        return result.single()["patterns_processed"]
-                    
-                    processed_red = session.execute_write(fuse_spiders)
-                    #logging.info(f"Spider fusion: {total_patterns} patterns found, {processed} processed")
-                    
-                    if processed_green == 0 and processed_red == 0:
-                        break
-                
-                def apply_Hopf_rule(tx):
-                    hopf_query = str(self.basic_rewrite_rule_queries["Hopf rule"]["query"]["code"]["value"])
-                    result = tx.run(hopf_query, graph_id=graph_id)
-                    return result.single()["pairs_processed"]
-                
-                #hopf_processed = session.execute_write(apply_Hopf_rule)
-                #logging.info(f"Hopf rule applied for graph ID '{graph_id}' with {hopf_processed} node pairs processed")
+                    # Fuse red spiders
+                    result_fuse_red = tx.run(cancel_query, graph_id=graph_id)
+                    processed_red = result_fuse_red.single()["patterns_processed"]
 
-                def remove_extra_edges(tx):
-                    remove_query = str(self.basic_rewrite_rule_queries["Remove extra edges"]["query"]["code"]["value"])
-                    result = tx.run(remove_query, graph_id=graph_id)
-                    return result.single()["total_edges_removed"]
-                
-                #edges_removed = session.execute_write(remove_extra_edges)
-                #logging.info(f"Removed {edges_removed} bidirectional edges for graph ID '{graph_id}'")
-                end_time = time.time()
-                logging.info(f"Spider fusion completed in {end_time - start_time} seconds for graph ID '{graph_id}'")
-                return total_patterns
+                    # It is also possible to label green spiders connected to red spiders with Hadamard edge
+                    # but this is not in PyZX spider fusion by default and we omit it here as well
+                    # although the queries support it.
+
+                    # Hopf rule
+                    hopf_query = str(self.basic_rewrite_rule_queries["Hopf"]["query"]["code"]["value"])
+                    result_hopf = tx.run(hopf_query, graph_id=graph_id)
+                    processed_hopf = result_hopf.single()
+
+                    # You can add both-color spider fusion here if needed
+
+                    return processed_green, processed_red, processed_hopf
+
+                processed_green, processed_red, processed_hopf = session.execute_write(spider_fusion_batch)
+                total_patterns += processed_green + processed_red
+
+                print(f"Spider fusion: Processed {processed_green} green, {processed_red} red, {processed_hopf} Hopf patterns.")
+
+                if processed_green + processed_red == 0:
+                    break
+
+            return total_patterns
         
 
     def pivot_rule(self, graph_id: str) -> int:
@@ -729,3 +713,26 @@ class ZXdb:
             end_time = time.time()
             logging.info(f"Pivot boundary applied for graph ID '{graph_id}' with {changed} patterns processed in {end_time - start_time} seconds")
             return changed
+        
+    def get_degree_distribution(self, graph_id: str) -> dict:
+        """
+        Get the degree distribution of the graph.
+
+        Args:
+            graph_id: Identifier for the graph to process
+
+        Returns:
+            Dictionary mapping degree to count of vertices with that degree
+        """
+
+        degree_distribution = {}
+
+        with self.driver.session() as session:
+            def fetch_degree_distribution(tx):
+                query = str(self.basic_rewrite_rule_queries["Get degree distribution"]["query"]["code"]["value"])
+                result = tx.run(query, graph_id=graph_id)
+                return {record["degree"]: record["frequency"] for record in result}
+
+            degree_distribution = session.execute_read(fetch_degree_distribution)
+
+        return degree_distribution

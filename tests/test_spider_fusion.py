@@ -1,78 +1,25 @@
-from fractions import Fraction
-from random import random
-import time
+import random
 import unittest
 import pyzx as zx
-import json
-from pyzx.circuit.graphparser import circuit_to_graph
-import matplotlib
-matplotlib.use('Agg')
-
+from utils import benchmark_rule, zx_graph_to_db
 from zxdb.zxdb import ZXdb
-
-SEED = 1337
+SEED = 10
+random.seed(SEED)
 
 # python -m unittest tests.test_spider_fusion
 class TestSpiderFusion(unittest.TestCase):
 
     def setUp(self):
-        random.seed(SEED)
         self.zxdb = ZXdb()
-        self.qubits = 1000
-        c = zx.generate.CNOT_HAD_PHASE_circuit(qubits=self.qubits,depth=self.qubits**2,clifford=False)
-        
-        #c = zx.Circuit(self.qubits)
-        #c.add_gate("H", 0)
-        #c.add_gate("CNOT", 0, 1) # -> 1
-        #c.add_gate("CNOT", 1, 0) # 5 -> 0
-        #c.add_gate("H", 2)
-        #c.add_gate("CNOT", 2, 1) # 5 -> 1
-        #c.add_gate("CNOT", 0, 2)
-        #c.add_gate("CNOT", 2, 1)
-        #c.add_gate("CNOT", 0, 2) # 6 -> 0
-        #c.add_gate("CNOT", 0, 1) # 6 -> 1
-        #c.add_gate("XPhase", 0, phase=Fraction(1, 2)) # 6 -> 0
-        #c.add_gate("CNOT", 0, 1) # 7 -> 0
-        #c.add_gate("CNOT", 0, 1)
-
-        self.zx_graph = circuit_to_graph(c, compress_rows=False)
-        fig = zx.draw_matplotlib(self.zx_graph)
-        fig.savefig("example1.png")
-        
-
-        with open("example.json", "w") as f:
-            json.dump(json.loads(self.zx_graph.to_json()), f, indent = 4)
-
-        self.zxdb.import_zx_graph_json_to_graphdb(
-            json_file_path="example.json",
-            graph_id="example_graph",
-            save_metadata=True,
-            initialize_empty=True,
-            batch_size=self.qubits**2
-            )
+        self.qubits = 100
+        circuit = zx.generate.CNOT_HAD_PHASE_circuit(qubits=self.qubits,depth=10*self.qubits,clifford=False)
+        print("Generated circuit with", self.qubits, "qubits.")
+        self.zx_graph = zx_graph_to_db(self.zxdb, circuit)
 
     def test_spider_fusion(self):
-        self.zxdb.spider_fusion(graph_id="example_graph")
-
-        graph = self.zxdb.export_graphdb_to_zx_graph(
-            graph_id="example_graph",
-            json_file_path="example.json"
-        )
-
-        starttime = time.time()
-        return_int = zx.spider_simp(self.zx_graph)
-        fig = zx.draw_matplotlib(self.zx_graph)
-        fig.savefig("example2.png")
-        endtime = time.time()
-        print(f"Time taken for spider fusion with PyZX: {endtime - starttime} seconds with number of {return_int} many simplifications.")
-        
-        # Check if the graph is empty after Hadamard cancellation
-        if self.qubits < 12:
-            self.assertTrue(zx.compare_tensors(graph, self.zx_graph), "Spider fusion did not reduce the number of vertices as expected.")
-        
-        print(graph.stats())
-
-        self.assertEqual(graph.stats(), self.zx_graph.stats(), "Spider fusion did not reduce the number of vertices as expected.")
+        rule_functions = [self.zxdb.spider_fusion, zx.spider_simp]
+        rule_names = ["db_spider_fusion", "pyzx_spider_fusion"]
+        benchmark_rule(rule_functions, rule_names, self.zx_graph, self.zxdb, self.qubits)
 
     def tearDown(self):
         self.zxdb.close()
