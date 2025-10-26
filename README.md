@@ -1,6 +1,5 @@
 # ZXdb: ZX-calculus on graph databases
 
-
 ## Note on styles in MemGraph
 
 Apply the following style definitions for MemGraph to match the style with PyZX:
@@ -31,3 +30,8 @@ Apply the following style definitions for MemGraph to match the style with PyZX:
 }
 ```
 
+## Notes on differences compared to PyZX:
+* There is possibility to perform spider fusion when red and green spider are connected with a Hadamard edge. As far as I know, ``spider_simp`` in PyZX does not detect these cases.
+* ``Bialg_simp`` is not clearly explained in the PyZX. I understand that it is the ''inverse'' of the bialgebra rule applied to all non-interacting instances. If this is the case, the matching function ``match_bialg_parallel`` does not seem to find all instances. For example, the following instance does not get optimized:
+
+ ![alt text](examples/bialgebra_simp_example_1.png)

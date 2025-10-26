@@ -715,7 +715,7 @@ class ZXdb:
             return changed
 
 
-    def bialgebra_rule(self, graph_id: str) -> int:
+    def bialgebra_simp(self, graph_id: str) -> int:
         """
         Apply the bialgebra rule to the graph.
 
@@ -727,20 +727,22 @@ class ZXdb:
         """
 
         with self.driver.session() as session:
-            start_time = time.time()
-            
-            while True:
-                def apply_bialgebra_labeling(tx):
-                    pgf_query = str(self.basic_rewrite_rule_queries["Bialgebra"]["query"]["code"]["value"])
-                    result = tx.run(pgf_query, graph_id=graph_id)
-                    return result.single()["pivot_operations_performed"]
-                changed = session.execute_write(apply_bialgebra_labeling)
 
-                if changed == 1:
-                    break  # No more patterns found
+            def apply_bialgebra_labeling(tx):
+                pgf_query = str(self.basic_rewrite_rule_queries["Bialgebra labeling"]["query"]["code"]["value"])
+                result = tx.run(pgf_query, graph_id=graph_id)
+                return len(result.single())
             
-            end_time = time.time()
-            logging.info(f"Pivot boundary applied for graph ID '{graph_id}' with {changed} patterns processed in {end_time - start_time} seconds")
+            changed = session.execute_write(apply_bialgebra_labeling)
+
+            def apply_bialgebra_rewrite(tx):
+                pgf_query = str(self.basic_rewrite_rule_queries["Bialgebra simplification"]["query"]["code"]["value"])
+                result = tx.run(pgf_query, graph_id=graph_id)
+                return result.single()["pid"]
+            
+            changed = session.execute_write(apply_bialgebra_rewrite)
+
+            logging.info(f"Bialgebra simplification applied for graph ID '{graph_id}' with {changed} patterns processed")
             return changed
         
 
