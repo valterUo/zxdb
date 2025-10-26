@@ -1,0 +1,7 @@
+{
+    "qubits": 2,
+    "initial_stats": "Graph(8 vertices, 8 edges)\ndegree distribution: \n1: 4\n3: 4\n",
+    "pyzx_bialgebra_simp_time": 0.0,
+    "pyzx_bialgebra_simp_result": 0,
+    "final_stats": "Graph(8 vertices, 8 edges)\ndegree distribution: \n1: 4\n3: 4\n"
+}
