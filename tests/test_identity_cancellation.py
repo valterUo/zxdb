@@ -7,6 +7,7 @@ from zxdb.zxdb import ZXdb
 
 SEED = 0
 
+# OK
 # python -m unittest tests.test_identity_cancellation
 class TestIdentityCancel(unittest.TestCase):
 
