@@ -48,9 +48,9 @@ class ZXdb:
         for e in query_collection["items"]:
             self.basic_rewrite_rule_queries[e["title"]] = e
 
-        # Execute the following query first: STORAGE MODE IN_MEMORY_ANALYTICAL;
+        # Execute the following query first: STORAGE MODE IN_MEMORY_ANALYTICAL or STORAGE MODE IN_MEMORY_TRANSACTIONAL;
         with self.driver.session() as analyze_session:
-            analyze_session.run("STORAGE MODE IN_MEMORY_ANALYTICAL;")
+            analyze_session.run("STORAGE MODE IN_MEMORY_TRANSACTIONAL;")
     
     @property
     def driver(self):
@@ -59,15 +59,18 @@ class ZXdb:
             self._driver = GraphDatabase.driver(self.uri, auth=(self.user, self.password))
         return self._driver
     
+    
     def close(self):
         """Explicitly close the driver"""
         if self._driver is not None:
             self._driver.close()
             self._driver = None
     
+
     def __enter__(self):
         return self
     
+
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.close()
 
@@ -102,7 +105,7 @@ class ZXdb:
         Export a graph from Neo4j or Memgraph database to a PyZX graph and write JSON.
         Positions are computed (spring layout) and stored so they appear as 'pos' in JSON.
         """
-        g = zx.Graph(backend="multigraph")
+        g = zx.Graph()
 
         with self.driver.session() as session:
 
@@ -160,7 +163,7 @@ class ZXdb:
                         phase_frac = Fraction(phase_raw).limit_denominator()  # interpreted as multiple of π
                     elif isinstance(phase_raw, str):
                         try:
-                            # If it’s a π-string like "3π/2" use your parser, else treat as decimal multiple of π
+                            # If it's a π-string like "3π/2" use your parser, else treat as decimal multiple of π
                             phase_frac = pi_string_to_fraction(phase_raw)
                         except Exception:
                             phase_frac = Fraction(phase_raw).limit_denominator()
@@ -182,14 +185,19 @@ class ZXdb:
                 g.add_edge(key, edgetype=etype)
 
             # IO sets
-            g.set_inputs([vertex_ids[v['id']] for v in inputs])
-            g.set_outputs([vertex_ids[v['id']] for v in outputs])
+            # Filter and sort inputs/outputs as in correct usage
+            input_vertices = [v for v in g.vertices() if v in [vertex_ids[input_v['id']] for input_v in inputs]]
+            output_vertices = [v for v in g.vertices() if v in [vertex_ids[output_v['id']] for output_v in outputs]]
+            input_vertices = sorted(input_vertices, key=g.qubit)
+            output_vertices = sorted(output_vertices, key=g.qubit)
+            g.set_inputs(tuple(input_vertices))
+            g.set_outputs(tuple(output_vertices))
 
             # Compute positions (spring layout) so JSON contains "pos"
             nxg = nx.Graph()
             for v in g.vertices():
                 nxg.add_node(v)
-            for u, v, t in g.edges():
+            for u, v in g.edges():
                 nxg.add_edge(u, v)
             pos = nx.spring_layout(
                 nxg,
@@ -199,12 +207,14 @@ class ZXdb:
             for v, (x, y) in pos.items():
                 g.set_position(v, float(x), float(y))
 
+            #g.normalize()
+
             # Write JSON (to_json returns a JSON string)
             with open(json_file_path, 'w', encoding='utf-8') as f:
                 json.dump(json.loads(g.to_json()), f, indent = 4)
 
             logging.info(f"Graph data exported to {json_file_path}")
-
+        
         return g
 
 
@@ -264,6 +274,9 @@ class ZXdb:
             
         with self.driver.session() as session:
             session.run("CREATE INDEX ON :Node(id);")
+            session.run("CREATE INDEX ON :Node(t);")
+            session.run("CREATE EDGE INDEX ON :Wire(id);")
+            session.run("CREATE EDGE INDEX ON :Wire(t);")
         
         # Clear existing graph data if requested
         if initialize_empty:
@@ -383,6 +396,7 @@ class ZXdb:
             self.turn_hadamard_gates_into_edges(graph_id=graph_id)
             logging.info(f"Hadamard edges turned into gates for graph ID '{graph_id}'")
 
+
     def hadamard_cancel_fn(self, graph_id: str, session) -> int:
         total_patterns = 0
         while True:
@@ -406,6 +420,7 @@ class ZXdb:
                 return result.single()["patterns_processed"]
             processed = session.execute_write(cancel_patterns)
         return total_patterns
+
 
     def hadamard_cancel(self, graph_id: str) -> int:
         """
@@ -497,10 +512,13 @@ class ZXdb:
                 # Use explicit transaction for all queries in one batch
                 def spider_fusion_batch(tx):
                     # Label green spiders
-                    mark_query_green = str(self.basic_rewrite_rule_queries["Spider labeling query green"]["query"]["code"]["value"])
+                    mark_query_green = str(self.basic_rewrite_rule_queries["Spider labeling query"]["query"]["code"]["value"])
                     result_green = tx.run(mark_query_green)
-                    record_green = result_green.single()
-                    patterns_labeled_green = record_green["patterns_labeled"] if record_green and record_green["patterns_labeled"] else 0
+                    #record_green = result_green.single()
+                    #if record_green is None:
+                    #    patterns_labeled_green = 0
+                    #else:
+                    #    patterns_labeled_green = len(set([record_green["pid"]]))
 
                     # Fuse green spiders
                     cancel_query = str(self.basic_rewrite_rule_queries["Spider fusion rewrite"]["query"]["code"]["value"])
@@ -508,14 +526,14 @@ class ZXdb:
                     processed_green = result_fuse_green.single()["patterns_processed"]
 
                     # Label red spiders
-                    mark_query_red = str(self.basic_rewrite_rule_queries["Spider labeling query red"]["query"]["code"]["value"])
-                    result_red = tx.run(mark_query_red)
-                    record_red = result_red.single()
-                    patterns_labeled_red = record_red["patterns_labeled"] if record_red and record_red["patterns_labeled"] else 0
+                    #mark_query_red = str(self.basic_rewrite_rule_queries["Spider labeling query red"]["query"]["code"]["value"])
+                    #result_red = tx.run(mark_query_red)
+                    #record_red = result_red.single()
+                    #patterns_labeled_red = record_red["patterns_labeled"] if record_red and record_red["patterns_labeled"] else 0
 
                     # Fuse red spiders
-                    result_fuse_red = tx.run(cancel_query, graph_id=graph_id)
-                    processed_red = result_fuse_red.single()["patterns_processed"]
+                    #result_fuse_red = tx.run(cancel_query, graph_id=graph_id)
+                    #processed_red = result_fuse_red.single()["patterns_processed"]
 
                     # It is also possible to label green spiders connected to red spiders with Hadamard edge
                     # but this is not in PyZX spider fusion by default and we omit it here as well
@@ -528,14 +546,14 @@ class ZXdb:
 
                     # You can add both-color spider fusion here if needed
 
-                    return processed_green, processed_red, processed_hopf
+                    return processed_green
 
-                processed_green, processed_red, processed_hopf = session.execute_write(spider_fusion_batch)
-                total_patterns += processed_green + processed_red
+                processed_green = session.execute_write(spider_fusion_batch)
+                total_patterns += processed_green
 
-                print(f"Spider fusion: Processed {processed_green} green, {processed_red} red, {processed_hopf} Hopf patterns.")
+                print(f"Spider fusion: Processed {processed_green} patterns.")
 
-                if processed_green + processed_red == 0:
+                if processed_green == 0:
                     break
 
             return total_patterns
@@ -553,30 +571,30 @@ class ZXdb:
         """
 
         with self.driver.session() as session:
-            start_time = time.time()
+            #start_time = time.time()
 
-            while True:
-                processed = 0
+            #while True:
+            #    processed = 0
                 
-                def apply_pivot_rule_single_interior_spider(tx):
-                    pivot_query = str(self.basic_rewrite_rule_queries["Pivot rule - single interior Pauli spider"]["query"]["code"]["value"])
-                    result = tx.run(pivot_query, graph_id=graph_id)
-                    return result.single()["interior_pauli_removed"]
+            def apply_pivot_rule_single_interior_spider(tx):
+                pivot_query = str(self.basic_rewrite_rule_queries["Pivot rule - single interior Pauli spider"]["query"]["code"]["value"])
+                result = tx.run(pivot_query, graph_id=graph_id)
+                return result.single()["interior_pauli_removed"]
 
-                processed = session.execute_write(apply_pivot_rule_single_interior_spider)
+            processed = session.execute_write(apply_pivot_rule_single_interior_spider)
 
-                def apply_pivot_rule_two_interior_spiders(tx):
-                    pivot_query = str(self.basic_rewrite_rule_queries["Pivot rule - two interior Pauli spiders"]["query"]["code"]["value"])
-                    result = tx.run(pivot_query, graph_id=graph_id)
-                    return result.single()["pivot_operations_performed"]
-                
-                processed += session.execute_write(apply_pivot_rule_two_interior_spiders)
+            def apply_pivot_rule_two_interior_spiders(tx):
+                pivot_query = str(self.basic_rewrite_rule_queries["Pivot rule - two interior Pauli spiders"]["query"]["code"]["value"])
+                result = tx.run(pivot_query, graph_id=graph_id)
+                return result.single()["pivot_operations_performed"]
+            
+            processed += session.execute_write(apply_pivot_rule_two_interior_spiders)
 
-                if processed == 0:
-                    break
+            #if processed == 0:
+            #        break
 
-            end_time = time.time()
-            logging.info(f"Pivot rule applied for graph ID '{graph_id}' with {processed} patterns processed in {end_time - start_time} seconds")
+            #end_time = time.time()
+            #logging.info(f"Pivot rule applied for graph ID '{graph_id}' with {processed} patterns processed in {end_time - start_time} seconds")
             return processed
         
         
@@ -669,20 +687,20 @@ class ZXdb:
         """
 
         with self.driver.session() as session:
-            start_time = time.time()
+            #start_time = time.time()
             
-            while True:
-                def apply_pivot_gadget_labeling(tx):
-                    pgf_query = str(self.basic_rewrite_rule_queries["Pivot gadget"]["query"]["code"]["value"])
-                    result = tx.run(pgf_query, graph_id=graph_id)
-                    return result.single()["pivot_operations_performed"]
-                changed = session.execute_write(apply_pivot_gadget_labeling)
+            #while True:
+            def apply_pivot_gadget_labeling(tx):
+                pgf_query = str(self.basic_rewrite_rule_queries["Pivot gadget"]["query"]["code"]["value"])
+                result = tx.run(pgf_query, graph_id=graph_id)
+                return result.single()["pivot_operations_performed"]
+            changed = session.execute_write(apply_pivot_gadget_labeling)
 
-                if changed == 1:
-                    break  # No more patterns found
+                #if changed == 1:
+                #    break  # No more patterns found
             
-            end_time = time.time()
-            logging.info(f"Pivot gadget applied for graph ID '{graph_id}' with {changed} patterns processed in {end_time - start_time} seconds")
+            #end_time = time.time()
+            #logging.info(f"Pivot gadget applied for graph ID '{graph_id}' with {changed} patterns processed in {end_time - start_time} seconds")
             return changed
         
 
@@ -728,21 +746,30 @@ class ZXdb:
 
         with self.driver.session() as session:
 
-            def apply_bialgebra_labeling(tx):
-                pgf_query = str(self.basic_rewrite_rule_queries["Bialgebra labeling"]["query"]["code"]["value"])
-                result = tx.run(pgf_query, graph_id=graph_id)
-                return len(result.single())
-            
-            changed = session.execute_write(apply_bialgebra_labeling)
+            while True:
 
-            def apply_bialgebra_rewrite(tx):
-                pgf_query = str(self.basic_rewrite_rule_queries["Bialgebra simplification"]["query"]["code"]["value"])
-                result = tx.run(pgf_query, graph_id=graph_id)
-                return result.single()["pid"]
-            
-            changed = session.execute_write(apply_bialgebra_rewrite)
+                def apply_bialgebra_labeling(tx):
+                    pgf_query = str(self.basic_rewrite_rule_queries["Bialgebra labeling"]["query"]["code"]["value"])
+                    result = tx.run(pgf_query, graph_id=graph_id)
+                    record = result.single()
+                    return record if record is not None else 0
+                
+                changed = session.execute_write(apply_bialgebra_labeling)
 
-            logging.info(f"Bialgebra simplification applied for graph ID '{graph_id}' with {changed} patterns processed")
+                def apply_bialgebra_rewrite(tx):
+                    pgf_query = str(self.basic_rewrite_rule_queries["Bialgebra simplification"]["query"]["code"]["value"])
+                    result = tx.run(pgf_query, graph_id=graph_id)
+                    record = result.single()
+                    print( record )
+                    return record["pid"] if record is not None else 0
+                
+                changed = session.execute_write(apply_bialgebra_rewrite)
+
+                logging.info(f"Bialgebra simplification applied for graph ID '{graph_id}' with {changed} patterns processed")
+                
+                if changed == 0:
+                    break  # No more patterns found
+            
             return changed
         
 

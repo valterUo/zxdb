@@ -8,6 +8,7 @@ from zxdb.zxdb import ZXdb
 SEED = 0
 random.seed(SEED)
 
+# OK
 # python -m unittest tests.test_hadamard_cancellation
 class TestHadamardCancellation(unittest.TestCase):
 
@@ -19,7 +20,7 @@ class TestHadamardCancellation(unittest.TestCase):
 
     def test_Hadamard_cancel(self):
         rule_functions = [self.zxdb.hadamard_cancel]
-        rule_names = ["db_identity_cancellation"]
+        rule_names = ["db_hadamard_cancel"]
         benchmark_rule(rule_functions, rule_names, self.zx_graph, self.zxdb, self.qubits, visualize=False)
 
     def tearDown(self):

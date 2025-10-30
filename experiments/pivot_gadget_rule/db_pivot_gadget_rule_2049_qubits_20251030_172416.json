@@ -1,0 +1,9 @@
+{
+    "qubits": 2049,
+    "initial_stats": "Graph(24578 vertices, 28673 edges)\ndegree distribution: \n1: 4098\n2: 8192\n3: 12288\n",
+    "db_pivot_gadget_rule_time": 0.7143020629882812,
+    "db_pivot_gadget_rule_result": 4096,
+    "pyzx_pivot_gadget_rule_time": 11.861563682556152,
+    "pyzx_pivot_gadget_rule_result": 1,
+    "final_stats": "Graph(24578 vertices, 32769 edges)\ndegree distribution: \n1: 8194\n2: 1\n3: 8190\n4: 8193\n"
+}

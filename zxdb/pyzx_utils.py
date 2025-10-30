@@ -1,5 +1,7 @@
+import functools
 import json
-from typing import TYPE_CHECKING, Any, Dict, Optional, Union
+import random
+from typing import TYPE_CHECKING
 
 import numpy as np
 from qiskit import QuantumCircuit
@@ -16,6 +18,8 @@ from fractions import Fraction
 import networkx as nx
 
 from fractions import Fraction
+
+import quimb.tensor as qtn
 
 def pi_string_to_fraction(s: str) -> Fraction:
     s = s.replace(" ", "")  # Remove spaces
@@ -266,3 +270,191 @@ def phase_poly_term_to_graph(
     #    g.scalar.add_phase(coeff)
 
     return c
+
+
+H = (1/np.sqrt(2)) * np.array([[1,1],[1,-1]], dtype=complex)
+
+def z_spider_tensor(num_legs, phase_radians=0.0):
+    shape = (2,) * num_legs
+    T = np.zeros(shape, dtype=complex)
+    T[(0,)*num_legs] = 1.0
+    T[(1,)*num_legs] = np.exp(1j * phase_radians)
+    return T
+
+
+def spider_tensor(num_legs, phase=0.0, basis='Z'):
+    """
+    phase: the same 'phase' as PyZX's internal: p where PyZX uses phase = pi*p.
+           If you pass g.phase(v) (which is p), then multiply by pi below.
+    """
+    phase_radians = np.pi * phase
+
+    if basis == 'Z':
+        return z_spider_tensor(num_legs, phase_radians)
+    
+    T = z_spider_tensor(num_legs, phase_radians)
+    for leg in range(num_legs):
+        T = np.tensordot(H, T, axes=([1], [leg]))
+        # result has H axis 0 inserted at front; move it to the original leg position
+        T = np.moveaxis(T, 0, leg)
+    return T
+
+
+def hadamard_tensor():
+    """Hadamard edge node."""
+    return (1 / np.sqrt(2)) * np.array([[1, 1], [1, -1]])
+
+
+def pyzx_to_networkx_tensor_graph(g: zx.Graph):
+    """
+    Converts a pyzx.Graph to a NetworkX tensor graph, replacing Hadamard edges
+    with explicit H-BOX nodes, computing node tensors, and marking boundaries.
+    """
+    nxg = nx.Graph()
+    # Step 1: Add original vertices
+    for v in g.vertices():
+        vtype = g.type(v)
+        phase = float(g.phase(v)) if g.phase(v) is not None else 0.0
+        if vtype == zx.VertexType.BOUNDARY:
+            tensor = np.eye(2)  # boundary acts like identity wire
+            nxg.add_node(v, tensor=tensor, boundary=True, type=vtype, phase=phase)
+        elif vtype == zx.VertexType.Z:
+            deg = len(list(g.neighbors(v)))
+            tensor = spider_tensor(deg, phase, basis='Z')
+            nxg.add_node(v, tensor=tensor, boundary=False, type=vtype, phase=phase)
+        elif vtype == zx.VertexType.X:
+            deg = len(list(g.neighbors(v)))
+            tensor = spider_tensor(deg, phase, basis='X')
+            nxg.add_node(v, tensor=tensor, boundary=False, type=vtype, phase=phase)
+        elif vtype == zx.VertexType.H_BOX:
+            tensor = hadamard_tensor()
+            nxg.add_node(v, tensor=tensor, boundary=False, type=vtype, phase=phase)
+        else:
+            raise ValueError(f"Unknown vertex type {vtype}")
+
+    # Step 2: Process edges — replace Hadamard edges with explicit nodes
+    next_id = max(g.vertices()) + 1 if g.num_vertices() > 0 else 0
+    for e in g.edges():
+        s, t = g.edge_s(e), g.edge_t(e)
+        etype = g.edge_type(e)
+        if etype == 2:
+            # Create intermediate H-BOX node
+            h_node = next_id
+            next_id += 1
+            tensor = hadamard_tensor()
+            nxg.add_node(h_node, tensor=tensor, type=zx.VertexType.H_BOX, boundary=False)
+            nxg.add_edges_from([(s, h_node), (h_node, t)])
+        else:
+            nxg.add_edge(s, t, type=etype)
+
+    return nxg
+
+def graph_to_quimb_tn(graph : nx.Graph) -> qtn.TensorNetwork:
+    """
+    Convert a NetworkX graph with tensor-valued nodes into a Quimb TensorNetwork.
+
+    Each node should have:
+        - 'tensor': a NumPy or Quimb tensor array
+        - optional 'boundary': bool indicating whether this node is a boundary node
+
+    Each edge will be assigned a unique index label shared by its endpoint tensors.
+
+    Args:
+        graph (nx.Graph): Graph whose nodes have 'tensor' attributes (and optional 'boundary').
+
+    Returns:
+        qtn.TensorNetwork: The resulting Quimb tensor network.
+    """
+
+    # deterministic edge list (tuples sorted by endpoint ordering)
+    tensors = []
+    edge_list = sorted(tuple(sorted(e)) for e in graph.edges())
+    for i, (u, v) in enumerate(edge_list):
+        graph[u][v]['index'] = f"e{i}"
+
+    # When building per-node indices:
+    def sorted_neighbors_for_node(graph, node):
+        # choose a stable sort: by degree, then node id (or by a provided ordering)
+        return sorted(graph.neighbors(node))
+
+    for node, data in graph.nodes(data=True):
+        neighbors = sorted_neighbors_for_node(graph, node)
+        inds = [graph[node][nbr]['index'] for nbr in neighbors]
+        if data.get("boundary", False):
+            inds.append(f"b_{node}")
+        qtensor = qtn.Tensor(data["tensor"], inds=inds, tags=[f"n{node}"])
+        tensors.append(qtensor)
+
+    # Step 4: Combine into a tensor network
+    tn = qtn.TensorNetwork(tensors)
+    return tn
+
+
+import pyzx as zx
+
+def compose_zx_graphs(g1: zx.Graph, g2: zx.Graph, connected_ratio: float) -> zx.Graph:
+    """
+    Compose two ZX graphs: connect outputs of g1 to inputs of g2.
+    Returns a new ZX graph representing g2 ∘ g1.
+    """
+    connected_ratio = connected_ratio / 2
+    # Make copies to avoid modifying originals
+    g2 = g2.copy()
+    g_2_index_map = {}
+    for v in g2.vertices():
+        new_index = g1.add_vertex(ty=g2.type(v), phase=g2.phase(v))
+        # Use a reasonable offset for row and qubit to avoid overlap with existing g1 vertices
+        row_offset = max([g1.row(v) for v in g1.vertices()]) + 1 if g1.num_vertices() > 0 else 0
+        qubit_offset = max([g1.qubit(v) for v in g1.vertices()]) + 1 if g1.num_vertices() > 0 else 0
+        g1.set_position(new_index, round(g2.qubit(v) + qubit_offset//2, 3), round(g2.row(v) + row_offset//2, 3))
+        g_2_index_map[v] = new_index
+
+    for e in g2.edges():
+        s, t = g2.edge_s(e), g2.edge_t(e)
+        new_s = g_2_index_map[s]
+        new_t = g_2_index_map[t]
+        g1.add_edge((new_s, new_t), g2.edge_type(e))
+
+    types = g1.types()
+    boundaries = 0
+    for v in g1.vertices():
+        if types[v] == zx.VertexType.BOUNDARY or types[v] == 0:
+            boundaries += 1
+
+    print(f"Total boundaries in composed graph: {boundaries}")
+    # Take half of boundaries as outputs
+    outs = []
+    ins = []
+    for v in g1.vertices():
+        if (types[v] == zx.VertexType.BOUNDARY or types[v] == 0) and len(outs) < boundaries // 2:
+            outs.append(v)
+        elif (types[v] == zx.VertexType.BOUNDARY or types[v] == 0) and len(outs) >= boundaries // 2:
+            ins.append(v)
+
+    if len(outs) != len(ins):
+        raise ValueError("Number of outputs of g1 must match number of inputs of g2 for composition.")
+
+    # Suffle ins and outs
+    random.shuffle(outs)
+    random.shuffle(ins)
+
+    to_be_connected_ins = ins[:int(boundaries * connected_ratio)]
+    to_be_connected_outs = outs[:int(boundaries * connected_ratio)]
+    new_outs = outs[int(boundaries * connected_ratio):]
+    new_ins = ins[int(boundaries * connected_ratio):]
+
+    # Compose: connect each output of g1 to corresponding input of g2
+    for v1, v2 in zip(to_be_connected_ins, to_be_connected_outs):
+        # Remove boundary status from g1 output and g2 input
+        g1.set_type(v1, zx.VertexType.Z)
+        g1.set_phase(v1, 0)
+        g1.set_type(v2, zx.VertexType.Z)
+        g1.set_phase(v2, 0)
+        # Add edge between them
+        g1.add_edge(g1.edge(v1, v2), zx.EdgeType.SIMPLE)
+
+    # Set inputs/outputs of the composed graph
+    g1.set_inputs(tuple(new_outs))
+    g1.set_outputs(tuple(new_ins))
+
+    return g1, len(new_ins)

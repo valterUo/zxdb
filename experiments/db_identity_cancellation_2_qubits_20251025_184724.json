@@ -1,7 +1,0 @@
-{
-    "qubits": 2,
-    "initial_stats": "Graph(39 vertices, 52 edges)\ndegree distribution: \n1: 4\n2: 5\n3: 30\n",
-    "db_identity_cancellation_time": 0.008422374725341797,
-    "db_identity_cancellation_result": 0,
-    "final_stats": "Graph(39 vertices, 52 edges)\ndegree distribution: \n1: 4\n2: 5\n3: 30\n"
-}
