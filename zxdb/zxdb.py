@@ -471,7 +471,8 @@ class ZXdb:
             analyze_session.run("ANALYZE GRAPH;")
 
         with self.driver.session() as session:
-
+            
+            #for _ in range(2):
             def process_identity_removal(tx):
                 # Turn Hadamard edges into gates
                 query_edges_to_gates = str(self.basic_rewrite_rule_queries["Turn Hadamard edges into Hadamard boxes"]["query"]["code"]["value"])
@@ -480,14 +481,17 @@ class ZXdb:
                 # Remove identities
                 query_remove_identities = str(self.basic_rewrite_rule_queries["Remove identities"]["query"]["code"]["value"])
                 result = tx.run(query_remove_identities, graph_id=graph_id)
-                marked, created, deleted = result.single()
-                logging.info(f"Identity cancellation completed for graph ID '{graph_id}' with {marked} marked, {created} created, and {deleted} deleted nodes.")
+                deleted = result.single()["deleted"]
+                logging.info(f"Identity cancellation completed for graph ID '{graph_id}' with {deleted} deleted nodes.")
 
                 # Turn Hadamard gates into edges
                 query_gates_to_edges = str(self.basic_rewrite_rule_queries["Turn Hadamard gates into Hadamard edges"]["query"]["code"]["value"])
                 tx.run(query_gates_to_edges, graph_id=graph_id)
+                return deleted
 
-            session.execute_write(process_identity_removal)
+            deleted = session.execute_write(process_identity_removal)
+                #if deleted == 0:
+                #    break
 
             # Hadamard cancellation can be done outside the transaction for better performance
             self.hadamard_cancel_fn(graph_id, session)
@@ -760,12 +764,11 @@ class ZXdb:
                     pgf_query = str(self.basic_rewrite_rule_queries["Bialgebra simplification"]["query"]["code"]["value"])
                     result = tx.run(pgf_query, graph_id=graph_id)
                     record = result.single()
-                    print( record )
                     return record["pid"] if record is not None else 0
                 
                 changed = session.execute_write(apply_bialgebra_rewrite)
 
-                logging.info(f"Bialgebra simplification applied for graph ID '{graph_id}' with {changed} patterns processed")
+                #logging.info(f"Bialgebra simplification applied for graph ID '{graph_id}' with {changed} patterns processed")
                 
                 if changed == 0:
                     break  # No more patterns found

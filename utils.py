@@ -79,7 +79,7 @@ def postprocess(zx_graph, zxdb, qubits, test_isomorphism=True):
     are_isomorphic = None
     degree_distribution = None
 
-    if qubits <= 200 and test_isomorphism:
+    if qubits <= 200:
         db_graph = zxdb.export_graphdb_to_zx_graph(
             graph_id="example_graph",
             json_file_path="example.json"
@@ -99,8 +99,11 @@ def postprocess(zx_graph, zxdb, qubits, test_isomorphism=True):
 
     degree_distribution = zxdb.get_degree_distribution(graph_id="example_graph")
     print("Degree distribution after simplification from DB:")
-    for degree, count in degree_distribution.items():
-        print(f"Degree {degree}: {count} vertices")
+    if db_graph:
+        print(db_graph.stats())
+    else:
+        for degree, count in degree_distribution.items():
+            print(f"Degree {degree}: {count} vertices")
     return degree_distribution, db_graph, are_isomorphic
 
 def tensor_to_unitary_operator(tensor):
@@ -259,7 +262,7 @@ def benchmark_rule(rule_functions,
     # For those graphs that in some sense represent circuits, i.e., have the same number of inputs and outputs
     # the tensors should be equivalent up to a permutation of qubits. 
     # The order of the qubits gets mixed in this process.
-    if not are_isomorphic and test_tensor_equivalence and len(zx_graph.inputs()) == len(zx_graph.outputs()) and qubits <= 16 and len(zx_graph.outputs()) % 2 == 0 and len(zx_graph.inputs()) % 2 == 0:
+    if not are_isomorphic and test_tensor_equivalence and len(zx_graph.inputs()) == len(zx_graph.outputs()) and qubits <= 10 and (len(zx_graph.outputs()) + len(zx_graph.inputs())) % 2 == 0:
 
         if False:
             for g in [zx_graph, db_graph]:

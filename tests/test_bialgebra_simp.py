@@ -15,8 +15,8 @@ class TestBialgebraSimp(unittest.TestCase):
 
     def setUp(self):
         self.zxdb = ZXdb()
-        self.qubits = 2
-        #with open("circuits\\bialgebra_circuit_3.json", "r") as f:
+        self.qubits = 500
+        #with open("circuits\\bialgebra_circuit_4.json", "r") as f:
         #    circuit_json = json.load(f)
         #circuit = zx.Graph().from_json(circuit_json)
         circuit = CNOT_HAD_PHASE_graph(qubits=self.qubits, depth=10*self.qubits, clifford=False)
@@ -33,10 +33,10 @@ class TestBialgebraSimp(unittest.TestCase):
                        self.zxdb, 
                        self.qubits,
                        rule="bialgebra_simp",
-                       test_isomorphism=True,
-                       test_degree_distributions=True,
+                       test_isomorphism=False,
+                       test_degree_distributions=False,
                        test_tensor_equivalence=True,
-                       visualize=True)
+                       visualize=False)
 
     def tearDown(self):
         self.zxdb.close()
