@@ -1,0 +1,9 @@
+{
+    "qubits": 1,
+    "initial_stats": "Graph(9 vertices, 9 edges)\ndegree distribution: \n1: 4\n2: 2\n3: 2\n4: 1\n",
+    "db_phase_gadget_fusion_time": 0.0056859999895095825,
+    "db_phase_gadget_fusion_result": 0,
+    "pyzx_phase_gadget_fusion_time": 3.429999924264848e-05,
+    "pyzx_phase_gadget_fusion_result": 0,
+    "final_stats": "Graph(9 vertices, 9 edges)\ndegree distribution: \n1: 4\n2: 2\n3: 2\n4: 1\n"
+}

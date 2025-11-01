@@ -1,4 +1,3 @@
-import functools
 import json
 import random
 from typing import TYPE_CHECKING
@@ -11,15 +10,14 @@ from pyzx.graph.multigraph import Multigraph
 from pyzx.graph.jsonparser import json_to_graph_old
 from pyzx import string_to_phase
 import pyzx as zx
-import pyzx as zx
 from pyzx.circuit import Circuit
 from fractions import Fraction
 
 import networkx as nx
 
-from fractions import Fraction
-
 import quimb.tensor as qtn
+
+H = (1/np.sqrt(2)) * np.array([[1,1],[1,-1]], dtype=complex)
 
 def pi_string_to_fraction(s: str) -> Fraction:
     s = s.replace(" ", "")  # Remove spaces
@@ -89,6 +87,7 @@ def dict_to_graph(d, backend=None):
 
     return g
 
+
 def json_to_graph(js, backend=None):
 
     """Converts the json representation of a pyzx graph (as a string or dict) into
@@ -98,6 +97,7 @@ def json_to_graph(js, backend=None):
     else:
         d = js
     return dict_to_graph(d, backend)
+
 
 def extract_circuit_from_zx_graph(G: nx.Graph):
     """
@@ -184,6 +184,7 @@ def pyzx_to_networkx_manual(g: zx.Graph):
             type=g.edge_type(e)
         )
     return nxg
+
 
 def node_matcher(node1_data, node2_data):
     """Returns True if nodes have the same type and phase."""
@@ -272,8 +273,6 @@ def phase_poly_term_to_graph(
     return c
 
 
-H = (1/np.sqrt(2)) * np.array([[1,1],[1,-1]], dtype=complex)
-
 def z_spider_tensor(num_legs, phase_radians=0.0):
     shape = (2,) * num_legs
     T = np.zeros(shape, dtype=complex)
@@ -349,6 +348,7 @@ def pyzx_to_networkx_tensor_graph(g: zx.Graph):
 
     return nxg
 
+
 def graph_to_quimb_tn(graph : nx.Graph) -> qtn.TensorNetwork:
     """
     Convert a NetworkX graph with tensor-valued nodes into a Quimb TensorNetwork.
@@ -389,8 +389,6 @@ def graph_to_quimb_tn(graph : nx.Graph) -> qtn.TensorNetwork:
     tn = qtn.TensorNetwork(tensors)
     return tn
 
-
-import pyzx as zx
 
 def compose_zx_graphs(g1: zx.Graph, g2: zx.Graph, connected_ratio: float) -> zx.Graph:
     """
@@ -458,3 +456,13 @@ def compose_zx_graphs(g1: zx.Graph, g2: zx.Graph, connected_ratio: float) -> zx.
     g1.set_outputs(tuple(new_ins))
 
     return g1, len(new_ins)
+
+def qubit_count(circuit) -> int:
+    """Returns the number of qubits in the ZX graph based on boundary vertices."""
+    count = 0
+    for v in circuit.vertices():
+        if circuit.type(v) == zx.VertexType.BOUNDARY:
+            count += 1
+    if count % 2 != 0:
+        print("Warning: Odd number of boundary vertices detected. This is not a valid circuit.")
+    return count//2

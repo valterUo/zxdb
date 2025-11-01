@@ -76,3 +76,48 @@ def CNOT_HAD_PHASE_graph(
     g.set_inputs(tuple(inputs))
     g.set_outputs(tuple(outputs))
     return g
+
+def PHASE_GADGET_GRAPH(
+        gadget_sizes: list[int],
+        ) -> zx.Graph:
+    """
+    Construct a ZX-Graph consisting of phase gadgets.
+
+    Args:
+        gadget_sizes: list of integers representing the sizes of each phase gadget
+        depth: number of phase gadgets in the circuit
+        max_gadget_size: maximum size of each phase gadget
+    Returns:
+        A ZX-Graph representing the random circuit.
+
+    """
+    g = zx.Graph()
+    # Create input boundary vertices
+    boundary_index = g.add_vertex(zx.VertexType.BOUNDARY)
+    green_in_index = g.add_vertex(zx.VertexType.Z, phase = Fraction(0))
+    g.add_edge(g.edge(boundary_index, green_in_index), zx.EdgeType.SIMPLE)
+    for size in gadget_sizes:
+        green_out_index = g.add_vertex(zx.VertexType.Z, phase = Fraction(0))
+        # Create size many X spider vertices
+        red_spiders = []
+        for i in range(size):
+            red_spider_index = g.add_vertex(zx.VertexType.X, phase = Fraction(0))
+            # Create green spider with random phase
+            green_spider_index = g.add_vertex(zx.VertexType.Z, phase = Fraction(random.randint(0, 3), 4))
+            red_spiders.append(red_spider_index)
+            # Connect red spider to green spider
+            g.add_edge((red_spider_index, green_spider_index), zx.EdgeType.SIMPLE)
+        # Create all to all connectivity between green spiders and green_in and green_out spiders
+        for red_spider in red_spiders:
+            g.add_edge((green_in_index, red_spider), zx.EdgeType.SIMPLE)
+            g.add_edge((red_spider, green_out_index), zx.EdgeType.SIMPLE)
+        # Update green_in and green_out for next gadget
+        green_in_index = green_out_index
+        
+        #green_in_index = g.add_vertex(zx.VertexType.Z, phase = Fraction(0))
+    # Connect last green_out to boundary
+    boundary_out_index = g.add_vertex(zx.VertexType.BOUNDARY)
+    g.add_edge((green_out_index, boundary_out_index), zx.EdgeType.SIMPLE)
+    g.set_inputs((boundary_index,))
+    g.set_outputs((boundary_out_index,))
+    return g

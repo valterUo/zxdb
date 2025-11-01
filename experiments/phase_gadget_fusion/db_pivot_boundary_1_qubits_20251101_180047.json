@@ -1,0 +1,9 @@
+{
+    "qubits": 1,
+    "initial_stats": "Graph(6 vertices, 5 edges)\ndegree distribution: \n1: 3\n2: 2\n3: 1\n",
+    "db_pivot_boundary_time": 0.31294529998558573,
+    "db_pivot_boundary_result": 1,
+    "pyzx_pivot_boundary_time": 0.00022029998945072293,
+    "pyzx_pivot_boundary_result": 1,
+    "final_stats": "Graph(7 vertices, 6 edges)\ndegree distribution: \n1: 4\n2: 2\n4: 1\n"
+}

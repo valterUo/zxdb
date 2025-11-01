@@ -1,0 +1,11 @@
+{
+    "qubits": 3,
+    "initial_stats": "Graph(57350 vertices, 98307 edges)\ndegree distribution: \n1: 6\n2: 16384\n3: 16384\n4: 16384\n6: 8192\n",
+    "db_local_complementation_time": 0.5739059999759775,
+    "db_local_complementation_result": [
+        1
+    ],
+    "pyzx_local_complementation_time": 1.1306818000157364,
+    "pyzx_local_complementation_result": 1,
+    "final_stats": "Graph(49158 vertices, 122883 edges)\ndegree distribution: \n1: 6\n4: 16384\n5: 16384\n6: 16384\n"
+}

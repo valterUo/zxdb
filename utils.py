@@ -79,7 +79,7 @@ def postprocess(zx_graph, zxdb, qubits, test_isomorphism=True):
     are_isomorphic = None
     degree_distribution = None
 
-    if qubits <= 200:
+    if qubits <= 200 and len(zx_graph.vertices()) <= 3000:
         db_graph = zxdb.export_graphdb_to_zx_graph(
             graph_id="example_graph",
             json_file_path="example.json"
@@ -199,6 +199,8 @@ def benchmark_rule(rule_functions,
     print("Initial stats:", zx_graph.stats())
 
     if visualize:
+        with open("circuits\\graph_before_rule.json", "w") as f:
+            json.dump(json.loads(zx_graph.to_json()), f, indent=4)
         fig = zx.draw(zx_graph)
         rule_name = [name for name in rule_names if "db" not in name][0]
         fig.savefig(f'graph_before_{rule_name}.png')
@@ -208,12 +210,12 @@ def benchmark_rule(rule_functions,
     # Run each rule and collect timing/statistics
     for rule_name, rule_fn in zip(rule_names, rule_functions):
         print(f"Running {rule_name}...")
-        start_time = time.time()
+        start_time = time.perf_counter()
         if "db" in rule_name:
             result = rule_fn(graph_id="example_graph")
         else:
             result = rule_fn(zx_graph)
-        end_time = time.time()
+        end_time = time.perf_counter()
         elapsed = end_time - start_time
         print(f"{rule_name} took:", elapsed, "seconds")
         experiment_data[f'{rule_name}_time'] = elapsed
