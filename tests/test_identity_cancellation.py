@@ -6,20 +6,20 @@ from utils import benchmark_rule, zx_graph_to_db
 from zxdb.zxdb import ZXdb
 
 SEED = 42
+random.seed(SEED)
 
 # OK
 # python -m unittest tests.test_identity_cancellation
 class TestIdentityCancel(unittest.TestCase):
 
     def setUp(self):
-        random.seed(SEED)
         self.zxdb = ZXdb()
-        self.qubits = 1
-        #circuit = zx.generate.CNOT_HAD_PHASE_circuit(qubits=self.qubits,depth=3*self.qubits,clifford=False)
+        self.qubits = 2
+        circuit = zx.generate.CNOT_HAD_PHASE_circuit(qubits=self.qubits,depth=10*self.qubits,clifford=False)
 
-        circuit = zx.circuit.Circuit(self.qubits)
-        for _ in range(1000):
-            circuit.add_gate("ZPhase", 0, phase = 0)
+        #circuit = zx.circuit.Circuit(self.qubits)
+        #for _ in range(100000):
+        #    circuit.add_gate("ZPhase", 0, phase = 0)
 
         self.zx_graph = zx_graph_to_db(self.zxdb, circuit)
 

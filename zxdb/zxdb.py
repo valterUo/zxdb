@@ -50,7 +50,7 @@ class ZXdb:
 
         # Execute the following query first: STORAGE MODE IN_MEMORY_ANALYTICAL or STORAGE MODE IN_MEMORY_TRANSACTIONAL;
         with self.driver.session() as analyze_session:
-            analyze_session.run("STORAGE MODE IN_MEMORY_TRANSACTIONAL;")
+            analyze_session.run("STORAGE MODE IN_MEMORY_ANALYTICAL;")
     
     @property
     def driver(self):
@@ -467,34 +467,34 @@ class ZXdb:
         Args:
             graph_id: Identifier for the graph to process
         """
+        def process_identity_removal(tx):
+            # Turn Hadamard edges into gates
+            #query_edges_to_gates = str(self.basic_rewrite_rule_queries["Turn Hadamard edges into Hadamard boxes"]["query"]["code"]["value"])
+            #tx.run(query_edges_to_gates, graph_id=graph_id)
+
+            # Remove identities
+            query_remove_identities = str(self.basic_rewrite_rule_queries["Remove identities 2"]["query"]["code"]["value"])
+            result = tx.run(query_remove_identities, graph_id=graph_id)
+            record = result.single()
+            #print(record)
+            #deleted = record["marked"]
+            logging.info(f"Identity cancellation completed for graph ID '{graph_id}' with {deleted} deleted nodes.")
+
+            # Turn Hadamard gates into edges
+            #query_gates_to_edges = str(self.basic_rewrite_rule_queries["Turn Hadamard gates into Hadamard edges"]["query"]["code"]["value"])
+            #tx.run(query_gates_to_edges, graph_id=graph_id)
+            return record
+        
         with self.driver.session() as analyze_session:
             analyze_session.run("ANALYZE GRAPH;")
 
         with self.driver.session() as session:
-            
-            #for _ in range(2):
-            def process_identity_removal(tx):
-                # Turn Hadamard edges into gates
-                query_edges_to_gates = str(self.basic_rewrite_rule_queries["Turn Hadamard edges into Hadamard boxes"]["query"]["code"]["value"])
-                tx.run(query_edges_to_gates, graph_id=graph_id)
-
-                # Remove identities
-                query_remove_identities = str(self.basic_rewrite_rule_queries["Remove identities"]["query"]["code"]["value"])
-                result = tx.run(query_remove_identities, graph_id=graph_id)
-                deleted = result.single()["deleted"]
-                logging.info(f"Identity cancellation completed for graph ID '{graph_id}' with {deleted} deleted nodes.")
-
-                # Turn Hadamard gates into edges
-                query_gates_to_edges = str(self.basic_rewrite_rule_queries["Turn Hadamard gates into Hadamard edges"]["query"]["code"]["value"])
-                tx.run(query_gates_to_edges, graph_id=graph_id)
-                return deleted
-
-            deleted = session.execute_write(process_identity_removal)
-                #if deleted == 0:
-                #    break
+            deleted = 1
+            while deleted:
+                deleted = session.execute_write(process_identity_removal)
 
             # Hadamard cancellation can be done outside the transaction for better performance
-            self.hadamard_cancel_fn(graph_id, session)
+            #self.hadamard_cancel_fn(graph_id, session)
     
 
     def spider_fusion(self, graph_id: str) -> int:
@@ -614,30 +614,32 @@ class ZXdb:
         """
 
         with self.driver.session() as session:
-            start_time = time.time()
+            #start_time = time.time()
             
             while True:
-                while True:
 
-                    def apply_local_complementation_labeling(tx):
-                        lc_query = str(self.basic_rewrite_rule_queries["Local complement labeling"]["query"]["code"]["value"])
-                        result = tx.run(lc_query, graph_id=graph_id)
-                        return result.single()["changed"]
-                    changed = session.execute_write(apply_local_complementation_labeling)
-                    if changed == 0:
-                        break  # No more patterns found
+                #def apply_local_complementation_labeling(tx):
+                #    lc_query = str(self.basic_rewrite_rule_queries["Local complement labeling"]["query"]["code"]["value"])
+                #    result = tx.run(lc_query, graph_id=graph_id)
+                #    return result.single()["num_processed"]
+                #changed = session.execute_write(apply_local_complementation_labeling)
+
+                #if changed == 0:
+                #    break  # No more patterns found
                 
                 def apply_local_complementation_rewrite(tx):
-                    lc_query = str(self.basic_rewrite_rule_queries["Local complement rewrite"]["query"]["code"]["value"])
+                    lc_query = str(self.basic_rewrite_rule_queries["Local complement full"]["query"]["code"]["value"])
                     result = tx.run(lc_query, graph_id=graph_id)
-                    return result.single()["changed"]
+                    #print(result)
+                    return result.single()
                 
                 changed = session.execute_write(apply_local_complementation_rewrite)
-                if changed == 0:
+                if changed:
                     break  # No more patterns found
+                
 
-            end_time = time.time()
-            logging.info(f"Local complementation applied for graph ID '{graph_id}' with {changed} patterns processed in {end_time - start_time} seconds")
+            #end_time = time.time()
+            #logging.info(f"Local complementation applied for graph ID '{graph_id}' with {changed} patterns processed in {end_time - start_time} seconds")
             return changed
         
     
@@ -653,29 +655,29 @@ class ZXdb:
         """
 
         with self.driver.session() as session:
-            start_time = time.time()
+            #start_time = time.time()
             
-            while True:
-                def apply_phase_gadget_fusion_labeling(tx):
-                    pgf_query = str(self.basic_rewrite_rule_queries["Gadget fusion red green"]["query"]["code"]["value"])
-                    result = tx.run(pgf_query, graph_id=graph_id)
-                    return result.single()["fusions_performed"]
-                changed = session.execute_write(apply_phase_gadget_fusion_labeling)
-                if changed == 0:
-                    break  # No more patterns found
+            #while True:
+            #    def apply_phase_gadget_fusion_labeling(tx):
+            #        pgf_query = str(self.basic_rewrite_rule_queries["Gadget fusion red green"]["query"]["code"]["value"])
+            #        result = tx.run(pgf_query, graph_id=graph_id)
+            #        return result.single()["fusions_performed"]
+            #    changed = session.execute_write(apply_phase_gadget_fusion_labeling)
+            #    if changed == 0:
+            #        break  # No more patterns found
             
-            while True:
-                def apply_phase_gadget_fusion_rewrite(tx):
-                    pgf_query = str(self.basic_rewrite_rule_queries["Gadget fusion Hadamard"]["query"]["code"]["value"])
-                    result = tx.run(pgf_query, graph_id=graph_id)
-                    return result.single()["fusions_performed"]
-                
-                changed = session.execute_write(apply_phase_gadget_fusion_rewrite)
-                if changed == 0:
-                    break  # No more patterns found
+            #while True:
+            def apply_phase_gadget_fusion_rewrite(tx):
+                pgf_query = str(self.basic_rewrite_rule_queries["Gadget fusion both"]["query"]["code"]["value"])
+                result = tx.run(pgf_query, graph_id=graph_id)
+                return result.single()["fusions_performed"]
+            
+            changed = session.execute_write(apply_phase_gadget_fusion_rewrite)
+                #if changed == 0:
+                #    break  # No more patterns found
 
-            end_time = time.time()
-            logging.info(f"Phase gadget fusion applied for graph ID '{graph_id}' with {changed} patterns processed in {end_time - start_time} seconds")
+            #end_time = time.time()
+            #logging.info(f"Phase gadget fusion applied for graph ID '{graph_id}' with {changed} patterns processed in {end_time - start_time} seconds")
             return changed
         
 
@@ -720,7 +722,7 @@ class ZXdb:
         """
 
         with self.driver.session() as session:
-            start_time = time.time()
+            #start_time = time.time()
             
             while True:
                 def apply_pivot_boundary_labeling(tx):
@@ -729,11 +731,11 @@ class ZXdb:
                     return result.single()["pivot_operations_performed"]
                 changed = session.execute_write(apply_pivot_boundary_labeling)
 
-                if changed == 1:
+                if changed == 0:
                     break  # No more patterns found
             
-            end_time = time.time()
-            logging.info(f"Pivot boundary applied for graph ID '{graph_id}' with {changed} patterns processed in {end_time - start_time} seconds")
+            #end_time = time.time()
+            #logging.info(f"Pivot boundary applied for graph ID '{graph_id}' with {changed} patterns processed in {end_time - start_time} seconds")
             return changed
 
 

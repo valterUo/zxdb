@@ -1,0 +1,9 @@
+{
+    "qubits": 64,
+    "initial_stats": "Graph(512 vertices, 512 edges)\ndegree distribution: \n1: 256\n3: 256\n",
+    "db_phase_gadget_fusion_time": 0.006853999977465719,
+    "db_phase_gadget_fusion_result": 64,
+    "pyzx_phase_gadget_fusion_time": 0.001382599992211908,
+    "pyzx_phase_gadget_fusion_result": 1,
+    "final_stats": "Graph(384 vertices, 320 edges)\ndegree distribution: \n1: 192\n2: 128\n3: 64\n"
+}
