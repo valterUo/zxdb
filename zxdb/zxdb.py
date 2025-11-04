@@ -473,25 +473,26 @@ class ZXdb:
             #tx.run(query_edges_to_gates, graph_id=graph_id)
 
             # Remove identities
-            query_remove_identities = str(self.basic_rewrite_rule_queries["Remove identities 2"]["query"]["code"]["value"])
+            query_remove_identities = str(self.basic_rewrite_rule_queries["Remove identities with refactor"]["query"]["code"]["value"])
             result = tx.run(query_remove_identities, graph_id=graph_id)
             record = result.single()
             #print(record)
             #deleted = record["marked"]
-            logging.info(f"Identity cancellation completed for graph ID '{graph_id}' with {deleted} deleted nodes.")
+            #logging.info(f"Identity cancellation completed for graph ID '{graph_id}' with {deleted} deleted nodes.")
 
             # Turn Hadamard gates into edges
             #query_gates_to_edges = str(self.basic_rewrite_rule_queries["Turn Hadamard gates into Hadamard edges"]["query"]["code"]["value"])
             #tx.run(query_gates_to_edges, graph_id=graph_id)
             return record
         
-        with self.driver.session() as analyze_session:
-            analyze_session.run("ANALYZE GRAPH;")
+        #with self.driver.session() as analyze_session:
+        #    analyze_session.run("ANALYZE GRAPH;")
 
         with self.driver.session() as session:
-            deleted = 1
-            while deleted:
-                deleted = session.execute_write(process_identity_removal)
+            #deleted = 1
+            #while deleted:
+            deleted = session.execute_write(process_identity_removal)
+            #logging.info(f"Identity cancellation completed for graph ID '{graph_id}' with {deleted} deleted nodes.")
 
             # Hadamard cancellation can be done outside the transaction for better performance
             #self.hadamard_cancel_fn(graph_id, session)

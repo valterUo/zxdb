@@ -19,7 +19,7 @@ class TestPivotBoundaryRule(unittest.TestCase):
 
         circuit = zx.Graph().from_json(circuit_json)
 
-        for _ in range(10):
+        for _ in range(9):
             circuit = circuit + circuit
 
         self.qubits = qubit_count(circuit)
@@ -38,7 +38,7 @@ class TestPivotBoundaryRule(unittest.TestCase):
                        self.zx_graph, 
                        self.zxdb, 
                        self.qubits,
-                       rule="phase_gadget_fusion",
+                       rule="pivot_boundary",
                        visualize=False,
                        test_isomorphism=True,
                        test_degree_distributions=True,

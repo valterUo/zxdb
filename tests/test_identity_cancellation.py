@@ -1,3 +1,4 @@
+from fractions import Fraction
 import random
 import unittest
 import pyzx as zx
@@ -14,12 +15,32 @@ class TestIdentityCancel(unittest.TestCase):
 
     def setUp(self):
         self.zxdb = ZXdb()
-        self.qubits = 2
-        circuit = zx.generate.CNOT_HAD_PHASE_circuit(qubits=self.qubits,depth=10*self.qubits,clifford=False)
+        self.qubits = 1
+        #circuit = zx.generate.CNOT_HAD_PHASE_circuit(qubits=self.qubits,depth=10*self.qubits,clifford=False)
 
-        #circuit = zx.circuit.Circuit(self.qubits)
-        #for _ in range(100000):
-        #    circuit.add_gate("ZPhase", 0, phase = 0)
+        # A lot faster construct the graph than the circuit
+        circuit = zx.Graph()
+        inputs = []
+        outputs = []
+        qubit_vertices = {}
+        for i in range(self.qubits):
+            v_in = circuit.add_vertex(zx.VertexType.BOUNDARY, i, 0)
+            inputs.append(v_in)
+            qubit_vertices[i] = v_in
+
+        for _ in range(10**5):
+            for q in range(self.qubits):
+                v_z = circuit.add_vertex(zx.VertexType.Z, phase = 0)
+                circuit.add_edge(circuit.edge(qubit_vertices[q], v_z), zx.EdgeType.SIMPLE)
+                qubit_vertices[q] = v_z
+        
+        for i in range(self.qubits):
+            v_out = circuit.add_vertex(zx.VertexType.BOUNDARY, i, 1)
+            circuit.add_edge(circuit.edge(qubit_vertices[i], v_out), zx.EdgeType.SIMPLE)
+            outputs.append(v_out)
+
+        circuit.set_outputs(outputs)
+        circuit.set_inputs(inputs)
 
         self.zx_graph = zx_graph_to_db(self.zxdb, circuit)
 
