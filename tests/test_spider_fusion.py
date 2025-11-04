@@ -13,7 +13,7 @@ class TestSpiderFusion(unittest.TestCase):
 
     def setUp(self):
         self.zxdb = ZXdb()
-        self.qubits = 100
+        self.qubits = 1000
         circuit = CNOT_HAD_PHASE_graph(qubits=self.qubits, depth=10*self.qubits, clifford=False)
         print("Generated circuit with", self.qubits, "qubits.")
         self.zx_graph = zx_graph_to_db(self.zxdb, circuit)
