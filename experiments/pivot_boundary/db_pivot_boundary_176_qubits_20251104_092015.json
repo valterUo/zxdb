@@ -1,0 +1,9 @@
+{
+    "qubits": 176,
+    "initial_stats": "Graph(640 vertices, 736 edges)\ndegree distribution: \n1: 352\n2: 96\n3: 32\n4: 64\n5: 32\n6: 32\n7: 32\n",
+    "db_pivot_boundary_time": 0.547537500038743,
+    "db_pivot_boundary_result": 0,
+    "pyzx_pivot_boundary_time": 0.0070235999883152544,
+    "pyzx_pivot_boundary_result": 2,
+    "final_stats": "Graph(672 vertices, 1248 edges)\ndegree distribution: \n1: 384\n6: 128\n8: 96\n9: 64\n"
+}
