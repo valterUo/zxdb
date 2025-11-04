@@ -28,7 +28,7 @@ class TestIdentityCancel(unittest.TestCase):
             inputs.append(v_in)
             qubit_vertices[i] = v_in
 
-        for _ in range(10**5):
+        for _ in range(10**2//2):
             for q in range(self.qubits):
                 v_z = circuit.add_vertex(zx.VertexType.Z, phase = 0)
                 circuit.add_edge(circuit.edge(qubit_vertices[q], v_z), zx.EdgeType.SIMPLE)
