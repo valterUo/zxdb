@@ -508,8 +508,8 @@ class ZXdb:
         Returns:
             Number of spider fusion patterns processed
         """
-        with self.driver.session() as analyze_session:
-            analyze_session.run("ANALYZE GRAPH;")
+        #with self.driver.session() as analyze_session:
+        #    analyze_session.run("ANALYZE GRAPH;")
         # Use a single session and transaction for all operations to reduce connection overhead
         with self.driver.session() as session:
             total_patterns = 0
@@ -517,8 +517,8 @@ class ZXdb:
                 # Use explicit transaction for all queries in one batch
                 def spider_fusion_batch(tx):
                     # Label green spiders
-                    mark_query_green = str(self.basic_rewrite_rule_queries["Spider labeling query"]["query"]["code"]["value"])
-                    result_green = tx.run(mark_query_green)
+                    #mark_query_green = str(self.basic_rewrite_rule_queries["Spider labeling query"]["query"]["code"]["value"])
+                    #result_green = tx.run(mark_query_green)
                     #record_green = result_green.single()
                     #if record_green is None:
                     #    patterns_labeled_green = 0
@@ -526,9 +526,9 @@ class ZXdb:
                     #    patterns_labeled_green = len(set([record_green["pid"]]))
 
                     # Fuse green spiders
-                    cancel_query = str(self.basic_rewrite_rule_queries["Spider fusion rewrite"]["query"]["code"]["value"])
+                    cancel_query = str(self.basic_rewrite_rule_queries["Spider fusion rewrite 2"]["query"]["code"]["value"])
                     result_fuse_green = tx.run(cancel_query, graph_id=graph_id)
-                    processed_green = result_fuse_green.single()["patterns_processed"]
+                    merged = result_fuse_green.single()["merged"]
 
                     # Label red spiders
                     #mark_query_red = str(self.basic_rewrite_rule_queries["Spider labeling query red"]["query"]["code"]["value"])
@@ -551,14 +551,14 @@ class ZXdb:
 
                     # You can add both-color spider fusion here if needed
 
-                    return processed_green
+                    return merged
 
-                processed_green = session.execute_write(spider_fusion_batch)
-                total_patterns += processed_green
+                merged = session.execute_write(spider_fusion_batch)
+                total_patterns += merged
 
-                print(f"Spider fusion: Processed {processed_green} patterns.")
+                print(f"Spider fusion: Processed {merged} patterns.")
 
-                if processed_green == 0:
+                if merged == 0:
                     break
 
             return total_patterns
