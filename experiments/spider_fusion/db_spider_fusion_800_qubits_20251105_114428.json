@@ -1,9 +1,9 @@
 {
     "qubits": 800,
     "initial_stats": "Graph(14457 vertices, 18514 edges)\ndegree distribution: \n1: 1600\n2: 3143\n3: 9714\n",
-    "db_spider_fusion_time": 59.34451860003173,
-    "db_spider_fusion_result": 3192,
-    "pyzx_spider_fusion_time": 0.1833906999672763,
+    "db_spider_fusion_time": 4.203019100008532,
+    "db_spider_fusion_result": 12051,
+    "pyzx_spider_fusion_time": 0.23037800000747666,
     "pyzx_spider_fusion_result": 7,
     "final_stats": "Graph(9746 vertices, 13797 edges)\ndegree distribution: \n1: 1600\n2: 2082\n3: 3727\n4: 1494\n5: 544\n6: 200\n7: 60\n8: 24\n9: 11\n10: 2\n11: 2\n"
 }
