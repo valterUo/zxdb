@@ -514,7 +514,7 @@ class ZXdb:
                     #    patterns_labeled_green = len(set([record_green["pid"]]))
 
                     # Fuse green spiders
-                    cancel_query = str(self.basic_rewrite_rule_queries["Spider fusion rewrite 2"]["query"]["code"]["value"])
+                    cancel_query = str(self.basic_rewrite_rule_queries["Spider fusion"]["query"]["code"]["value"])
                     result_fuse_green = tx.run(cancel_query, graph_id=graph_id)
                     merged = result_fuse_green.single()["merged"]
 
@@ -617,7 +617,7 @@ class ZXdb:
                 #    break  # No more patterns found
                 
                 def apply_local_complementation_rewrite(tx):
-                    lc_query = str(self.basic_rewrite_rule_queries["Local complement full"]["query"]["code"]["value"])
+                    lc_query = str(self.basic_rewrite_rule_queries["Local complement"]["query"]["code"]["value"])
                     result = tx.run(lc_query, graph_id=graph_id)
                     #print(result)
                     return result.single()
@@ -657,7 +657,7 @@ class ZXdb:
             
             #while True:
             def apply_phase_gadget_fusion_rewrite(tx):
-                pgf_query = str(self.basic_rewrite_rule_queries["Gadget fusion both"]["query"]["code"]["value"])
+                pgf_query = str(self.basic_rewrite_rule_queries["Gadget fusion"]["query"]["code"]["value"])
                 result = tx.run(pgf_query, graph_id=graph_id)
                 return result.single()["fusions_performed"]
             

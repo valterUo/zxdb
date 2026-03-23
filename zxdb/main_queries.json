@@ -4,7 +4,7 @@
   "title": "Main rewrite rules",
   "items": [
     {
-      "title": "Spider fusion rewrite 2",
+      "title": "Spider fusion",
       "description": "",
       "query": {
         "code": {
@@ -116,7 +116,7 @@
       }
     },
     {
-      "title": "Local complement full",
+      "title": "Local complement",
       "description": "",
       "query": {
         "code": {
@@ -132,7 +132,7 @@
       }
     },
     {
-      "title": "Gadget fusion both",
+      "title": "Gadget fusion",
       "description": "",
       "query": {
         "code": {
