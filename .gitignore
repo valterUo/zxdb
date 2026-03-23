@@ -8,6 +8,8 @@ __pycache__/
 # C extensions
 *.so
 
+rules.ipynb
+
 *.qasm
 example.json
 example_metadata.json

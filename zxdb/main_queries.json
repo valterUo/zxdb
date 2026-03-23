@@ -104,7 +104,7 @@
       "description": "",
       "query": {
         "code": {
-          "value": "MATCH (b:Node)\r\nWHERE b.phase % 2 = 0 AND degree(b) = 2 AND b.t = 1\r\nCALL refactor.collapse_node(b, \"Wire\")\r\nYIELD True;"
+          "value": "MATCH (b:Node)\r\nWHERE b.phase % 2 = 0 AND degree(b) = 2\r\nCALL refactor.collapse_node(b, \"Wire\")\r\nYIELD True;"
         },
         "params": {}
       },
