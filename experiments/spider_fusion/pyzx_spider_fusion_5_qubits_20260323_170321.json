@@ -1,0 +1,7 @@
+{
+    "qubits": 5,
+    "initial_stats": "Graph(6 vertices, 5 edges)\ndegree distribution: \n1: 2\n2: 4\n",
+    "pyzx_spider_fusion_time": 0.00025510007981210947,
+    "pyzx_spider_fusion_result": true,
+    "final_stats": "Graph(4 vertices, 3 edges)\ndegree distribution: \n1: 2\n2: 2\n"
+}

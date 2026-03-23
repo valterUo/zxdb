@@ -1,3 +1,4 @@
+import json
 import random
 import unittest
 import pyzx as zx
@@ -13,17 +14,17 @@ class TestSpiderFusion(unittest.TestCase):
 
     def setUp(self):
         self.zxdb = ZXdb()
-        self.qubits = 2
-        circuit = CNOT_HAD_PHASE_graph(qubits=self.qubits, depth=10*self.qubits, clifford=False)
+        self.qubits = 5
+        circuit = zx.generate.CNOT_HAD_PHASE_circuit(qubits=self.qubits, depth=10*self.qubits, clifford=False, seed=50)
         self.zx_graph = zx_graph_to_db(self.zxdb, circuit)
 
     def test_spider_fusion(self):
-        rule_functions = [self.zxdb.spider_fusion, zx.spider_simp]
-        rule_names = ["db_spider_fusion", "pyzx_spider_fusion"]
+         
+        rule_functions = [zx.spider_simp, self.zxdb.spider_fusion]
+        rule_names = ["pyzx_spider_fusion", "db_spider_fusion"]
 
         #rule_functions = [zx.spider_simp]
         #rule_names = ["pyzx_spider_fusion"]
-
 
         benchmark_rule(rule_functions, 
                        rule_names, 
@@ -31,7 +32,7 @@ class TestSpiderFusion(unittest.TestCase):
                        self.zxdb, 
                        self.qubits,
                        rule = "spider_fusion",
-                       visualize=False, 
+                       visualize=True, 
                        test_tensor_equivalence=True,
                        test_isomorphism=True,
                        test_degree_distributions=True)

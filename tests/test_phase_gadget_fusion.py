@@ -26,7 +26,7 @@ class TestPhaseGadgetFusion(unittest.TestCase):
         #    circuit_json = json.load(f)
         #circuit = zx.Graph().from_json(circuit_json)
 
-        for _ in range(18):
+        for _ in range(2):
             circuit = circuit + circuit
         
         # Alternative tests

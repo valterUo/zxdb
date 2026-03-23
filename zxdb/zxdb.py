@@ -30,21 +30,9 @@ class ZXdb:
         self.basic_rewrite_rule_queries = {}
         self._driver = None
 
-        with open("zxdb/query_collections/memgraph-collection-zxdb.json", "r") as f:
+        with open("zxdb/main_queries.json", "r") as f:
             query_collection = json.load(f)
         
-        for e in query_collection["items"]:
-            self.basic_rewrite_rule_queries[e["title"]] = e
-
-        with open("zxdb/query_collections/collection-Rewrite-queries-ZXdb.json", "r") as f:
-            query_collection = json.load(f)
-        
-        for e in query_collection["items"]:
-            self.basic_rewrite_rule_queries[e["title"]] = e
-        
-        with open("zxdb/query_collections/collection-Labeling-queries-ZXdb.json", "r") as f:
-            query_collection = json.load(f)
-
         for e in query_collection["items"]:
             self.basic_rewrite_rule_queries[e["title"]] = e
 

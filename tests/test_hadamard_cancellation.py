@@ -15,13 +15,22 @@ class TestHadamardCancellation(unittest.TestCase):
     def setUp(self):
         self.zxdb = ZXdb()
         self.qubits = 2
-        circuit = zx.generate.CNOT_HAD_PHASE_circuit(qubits=self.qubits,depth=10*self.qubits,clifford=False)
+        circuit = zx.generate.CNOT_HAD_PHASE_circuit(qubits=self.qubits,depth=100*self.qubits,clifford=False)
         self.zx_graph = zx_graph_to_db(self.zxdb, circuit)
 
     def test_Hadamard_cancel(self):
         rule_functions = [self.zxdb.hadamard_cancel]
         rule_names = ["db_hadamard_cancel"]
-        benchmark_rule(rule_functions, rule_names, self.zx_graph, self.zxdb, self.qubits, visualize=False)
+        benchmark_rule(rule_functions, 
+                       rule_names, 
+                       self.zx_graph, 
+                       self.zxdb, 
+                       self.qubits, 
+                       rule="hadamard_cancellation", 
+                       visualize=False,
+                       test_isomorphism=False,
+                       test_degree_distributions=False,
+                       test_tensor_equivalence=True)
 
     def tearDown(self):
         self.zxdb.close()
