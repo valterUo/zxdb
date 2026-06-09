@@ -767,6 +767,42 @@ class ZXdb:
             return changed
         
 
+    def supplementarity_simp(self, graph_id: str) -> int:
+        """
+        Apply the supplementarity rule to the graph.
+
+        Finds pairs of non-Clifford Z-spiders whose phases sum to pi (mod 2pi)
+        and that share exactly the same neighborhood. Both spiders are removed
+        and pi is added to each shared neighbor's phase.
+
+        Args:
+            graph_id: Identifier for the graph to process
+
+        Returns:
+            Total number of supplementarity applications performed
+        """
+        with self.driver.session() as session:
+            total = 0
+            while True:
+                def apply_supplementarity_type1(tx):
+                    query = str(self.basic_rewrite_rule_queries["Supplementarity type 1"]["query"]["code"]["value"])
+                    result = tx.run(query, graph_id=graph_id)
+                    record = result.single()
+                    return record["supplementarity_applied"] if record else 0
+
+                def apply_supplementarity_type2(tx):
+                    query = str(self.basic_rewrite_rule_queries["Supplementarity type 2"]["query"]["code"]["value"])
+                    result = tx.run(query, graph_id=graph_id)
+                    record = result.single()
+                    return record["supplementarity_applied"] if record else 0
+
+                applied = session.execute_write(apply_supplementarity_type1)
+                applied += session.execute_write(apply_supplementarity_type2)
+                total += applied
+                if applied == 0:
+                    break
+            return total
+
     def get_degree_distribution(self, graph_id: str) -> dict:
         """
         Get the degree distribution of the graph.
