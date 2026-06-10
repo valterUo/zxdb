@@ -9,6 +9,7 @@ __pycache__/
 *.so
 
 rules.ipynb
+.claude
 
 *.qasm
 example.json

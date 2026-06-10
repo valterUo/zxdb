@@ -448,42 +448,62 @@ class ZXdb:
             return total_patterns
 
 
-    def remove_identities(self, graph_id: str) -> None:
+    def remove_identities(self, graph_id: str) -> int:
         """
-        Remove identity gates from the graph.
-        
+        Remove identity spiders (phase 0 mod 2, degree 2) from the graph.
+
+        Each removal connects the identity's two neighbors with an edge of the
+        combined type (s*s = s, s*h = h, h*h = s). Parallel edges created by a
+        removal are normalized the way pyzx's add_edge_table does it: pairs of
+        Hadamard edges between same-colored spiders cancel, and a parallel
+        simple + Hadamard pair reduces to the simple edge with pi added to one
+        endpoint.
+
         Args:
             graph_id: Identifier for the graph to process
+
+        Returns:
+            Number of identity spiders removed
         """
-        def process_identity_removal(tx):
-            # Turn Hadamard edges into gates
-            #query_edges_to_gates = str(self.basic_rewrite_rule_queries["Turn Hadamard edges into Hadamard boxes"]["query"]["code"]["value"])
-            #tx.run(query_edges_to_gates, graph_id=graph_id)
-
-            # Remove identities
-            query_remove_identities = str(self.basic_rewrite_rule_queries["Remove identities with refactor"]["query"]["code"]["value"])
-            result = tx.run(query_remove_identities, graph_id=graph_id)
-            record = result.single()
-            #print(record)
-            #deleted = record["marked"]
-            #logging.info(f"Identity cancellation completed for graph ID '{graph_id}' with {deleted} deleted nodes.")
-
-            # Turn Hadamard gates into edges
-            #query_gates_to_edges = str(self.basic_rewrite_rule_queries["Turn Hadamard gates into Hadamard edges"]["query"]["code"]["value"])
-            #tx.run(query_gates_to_edges, graph_id=graph_id)
-            return record
-        
-        #with self.driver.session() as analyze_session:
-        #    analyze_session.run("ANALYZE GRAPH;")
+        def apply_identity_removal(tx):
+            query = str(self.basic_rewrite_rule_queries["Remove identities with refactor"]["query"]["code"]["value"])
+            record = tx.run(query, graph_id=graph_id).single()
+            return record["identities_removed"] if record else 0
 
         with self.driver.session() as session:
-            #deleted = 1
-            #while deleted:
-            deleted = session.execute_write(process_identity_removal)
-            #logging.info(f"Identity cancellation completed for graph ID '{graph_id}' with {deleted} deleted nodes.")
+            total = 0
+            while True:
+                removed = session.execute_write(apply_identity_removal)
+                self._normalize_parallel_edges(session, graph_id)
+                total += removed
+                if removed == 0:
+                    break
+            return total
 
-            # Hadamard cancellation can be done outside the transaction for better performance
-            #self.hadamard_cancel_fn(graph_id, session)
+    def _normalize_parallel_edges(self, session, graph_id: str) -> int:
+        """
+        Normalize parallel edges between same-colored spiders the way pyzx's
+        add_edge_table does during every rewrite: pairs of Hadamard edges
+        cancel, a simple + Hadamard pair becomes the simple edge with pi added
+        to one endpoint, and parallel simple edges collapse to one.
+        """
+        def normalize(title):
+            def fn(tx):
+                query = str(self.basic_rewrite_rule_queries[title]["query"]["code"]["value"])
+                record = tx.run(query, graph_id=graph_id).single()
+                return record["removed"] if record else 0
+            return fn
+
+        total = 0
+        for title in ("Normalize parallel Hadamard pairs",
+                      "Normalize parallel mixed pair",
+                      "Normalize parallel simple pairs"):
+            while True:
+                removed = session.execute_write(normalize(title))
+                total += removed
+                if removed == 0:
+                    break
+        return total
     
 
     def spider_fusion(self, graph_id: str) -> int:
@@ -541,10 +561,15 @@ class ZXdb:
 
                     return merged
 
+                # Parallel edges between same-colored spiders must be
+                # normalized BEFORE fusing: a fusable pair connected by both a
+                # simple and a Hadamard edge fuses to a spider with an extra
+                # pi (Hadamard self-loop); the fusion query would silently
+                # drop the second edge otherwise.
+                self._normalize_parallel_edges(session, graph_id)
+
                 merged = session.execute_write(spider_fusion_batch)
                 total_patterns += merged
-
-                print(f"Spider fusion: Processed {merged} patterns.")
 
                 if merged == 0:
                     break
@@ -564,31 +589,24 @@ class ZXdb:
         """
 
         with self.driver.session() as session:
-            #start_time = time.time()
-
-            #while True:
-            #    processed = 0
-                
             def apply_pivot_rule_single_interior_spider(tx):
                 pivot_query = str(self.basic_rewrite_rule_queries["Pivot rule - single interior Pauli spider"]["query"]["code"]["value"])
-                result = tx.run(pivot_query, graph_id=graph_id)
-                return result.single()["interior_pauli_removed"]
-
-            processed = session.execute_write(apply_pivot_rule_single_interior_spider)
+                record = tx.run(pivot_query, graph_id=graph_id).single()
+                return record["interior_pauli_removed"] if record else 0
 
             def apply_pivot_rule_two_interior_spiders(tx):
                 pivot_query = str(self.basic_rewrite_rule_queries["Pivot rule - two interior Pauli spiders"]["query"]["code"]["value"])
-                result = tx.run(pivot_query, graph_id=graph_id)
-                return result.single()["pivot_operations_performed"]
-            
-            processed += session.execute_write(apply_pivot_rule_two_interior_spiders)
+                record = tx.run(pivot_query, graph_id=graph_id).single()
+                return record["pivot_operations_performed"] if record else 0
 
-            #if processed == 0:
-            #        break
-
-            #end_time = time.time()
-            #logging.info(f"Pivot rule applied for graph ID '{graph_id}' with {processed} patterns processed in {end_time - start_time} seconds")
-            return processed
+            total = 0
+            while True:
+                processed = session.execute_write(apply_pivot_rule_two_interior_spiders)
+                processed += session.execute_write(apply_pivot_rule_single_interior_spider)
+                total += processed
+                if processed == 0:
+                    break
+            return total
         
         
     def local_complementation_rule(self, graph_id: str) -> int:
@@ -603,33 +621,18 @@ class ZXdb:
         """
 
         with self.driver.session() as session:
-            #start_time = time.time()
-            
+            def apply_local_complementation_rewrite(tx):
+                lc_query = str(self.basic_rewrite_rule_queries["Local complement"]["query"]["code"]["value"])
+                record = tx.run(lc_query, graph_id=graph_id).single()
+                return record["patterns_processed"] if record else 0
+
+            total = 0
             while True:
-
-                #def apply_local_complementation_labeling(tx):
-                #    lc_query = str(self.basic_rewrite_rule_queries["Local complement labeling"]["query"]["code"]["value"])
-                #    result = tx.run(lc_query, graph_id=graph_id)
-                #    return result.single()["num_processed"]
-                #changed = session.execute_write(apply_local_complementation_labeling)
-
-                #if changed == 0:
-                #    break  # No more patterns found
-                
-                def apply_local_complementation_rewrite(tx):
-                    lc_query = str(self.basic_rewrite_rule_queries["Local complement"]["query"]["code"]["value"])
-                    result = tx.run(lc_query, graph_id=graph_id)
-                    #print(result)
-                    return result.single()
-                
                 changed = session.execute_write(apply_local_complementation_rewrite)
-                if changed:
-                    break  # No more patterns found
-                
-
-            #end_time = time.time()
-            #logging.info(f"Local complementation applied for graph ID '{graph_id}' with {changed} patterns processed in {end_time - start_time} seconds")
-            return changed
+                total += changed
+                if changed == 0:
+                    break
+            return total
         
     
     def phase_gadget_fusion_rule(self, graph_id: str) -> int:
@@ -644,30 +647,24 @@ class ZXdb:
         """
 
         with self.driver.session() as session:
-            #start_time = time.time()
-            
-            #while True:
-            #    def apply_phase_gadget_fusion_labeling(tx):
-            #        pgf_query = str(self.basic_rewrite_rule_queries["Gadget fusion red green"]["query"]["code"]["value"])
-            #        result = tx.run(pgf_query, graph_id=graph_id)
-            #        return result.single()["fusions_performed"]
-            #    changed = session.execute_write(apply_phase_gadget_fusion_labeling)
-            #    if changed == 0:
-            #        break  # No more patterns found
-            
-            #while True:
+            def apply_axel_normalization(tx):
+                query = str(self.basic_rewrite_rule_queries["Gadget axel normalization"]["query"]["code"]["value"])
+                record = tx.run(query, graph_id=graph_id).single()
+                return record["normalized"] if record else 0
+
             def apply_phase_gadget_fusion_rewrite(tx):
                 pgf_query = str(self.basic_rewrite_rule_queries["Gadget fusion"]["query"]["code"]["value"])
-                result = tx.run(pgf_query, graph_id=graph_id)
-                return result.single()["fusions_performed"]
-            
-            changed = session.execute_write(apply_phase_gadget_fusion_rewrite)
-                #if changed == 0:
-                #    break  # No more patterns found
+                record = tx.run(pgf_query, graph_id=graph_id).single()
+                return record["fusions_performed"] if record else 0
 
-            #end_time = time.time()
-            #logging.info(f"Phase gadget fusion applied for graph ID '{graph_id}' with {changed} patterns processed in {end_time - start_time} seconds")
-            return changed
+            total = 0
+            while True:
+                session.execute_write(apply_axel_normalization)
+                changed = session.execute_write(apply_phase_gadget_fusion_rewrite)
+                total += changed
+                if changed == 0:
+                    break
+            return total
         
 
     def pivot_gadget_rule(self, graph_id: str) -> int:
@@ -682,21 +679,18 @@ class ZXdb:
         """
 
         with self.driver.session() as session:
-            #start_time = time.time()
-            
-            #while True:
-            def apply_pivot_gadget_labeling(tx):
+            def apply_pivot_gadget(tx):
                 pgf_query = str(self.basic_rewrite_rule_queries["Pivot gadget"]["query"]["code"]["value"])
-                result = tx.run(pgf_query, graph_id=graph_id)
-                return result.single()["pivot_operations_performed"]
-            changed = session.execute_write(apply_pivot_gadget_labeling)
+                record = tx.run(pgf_query, graph_id=graph_id).single()
+                return record["pivot_operations_performed"] if record else 0
 
-                #if changed == 1:
-                #    break  # No more patterns found
-            
-            #end_time = time.time()
-            #logging.info(f"Pivot gadget applied for graph ID '{graph_id}' with {changed} patterns processed in {end_time - start_time} seconds")
-            return changed
+            total = 0
+            while True:
+                changed = session.execute_write(apply_pivot_gadget)
+                total += changed
+                if changed == 0:
+                    break
+            return total
         
 
     def pivot_boundary_rule(self, graph_id: str) -> int:
@@ -711,21 +705,18 @@ class ZXdb:
         """
 
         with self.driver.session() as session:
-            #start_time = time.time()
-            
-            while True:
-                def apply_pivot_boundary_labeling(tx):
-                    pgf_query = str(self.basic_rewrite_rule_queries["Pivot boundary"]["query"]["code"]["value"])
-                    result = tx.run(pgf_query, graph_id=graph_id)
-                    return result.single()["pivot_operations_performed"]
-                changed = session.execute_write(apply_pivot_boundary_labeling)
+            def apply_pivot_boundary(tx):
+                pgf_query = str(self.basic_rewrite_rule_queries["Pivot boundary"]["query"]["code"]["value"])
+                record = tx.run(pgf_query, graph_id=graph_id).single()
+                return record["pivot_operations_performed"] if record else 0
 
+            total = 0
+            while True:
+                changed = session.execute_write(apply_pivot_boundary)
+                total += changed
                 if changed == 0:
-                    break  # No more patterns found
-            
-            #end_time = time.time()
-            #logging.info(f"Pivot boundary applied for graph ID '{graph_id}' with {changed} patterns processed in {end_time - start_time} seconds")
-            return changed
+                    break
+            return total
 
 
     def bialgebra_simp(self, graph_id: str) -> int:
@@ -740,31 +731,18 @@ class ZXdb:
         """
 
         with self.driver.session() as session:
+            def apply_bialgebra_rewrite(tx):
+                query = str(self.basic_rewrite_rule_queries["Bialgebra rule"]["query"]["code"]["value"])
+                record = tx.run(query, graph_id=graph_id).single()
+                return record["bialg_applied"] if record else 0
 
+            total = 0
             while True:
-
-                def apply_bialgebra_labeling(tx):
-                    pgf_query = str(self.basic_rewrite_rule_queries["Bialgebra labeling"]["query"]["code"]["value"])
-                    result = tx.run(pgf_query, graph_id=graph_id)
-                    record = result.single()
-                    return record if record is not None else 0
-                
-                changed = session.execute_write(apply_bialgebra_labeling)
-
-                def apply_bialgebra_rewrite(tx):
-                    pgf_query = str(self.basic_rewrite_rule_queries["Bialgebra simplification"]["query"]["code"]["value"])
-                    result = tx.run(pgf_query, graph_id=graph_id)
-                    record = result.single()
-                    return record["pid"] if record is not None else 0
-                
                 changed = session.execute_write(apply_bialgebra_rewrite)
-
-                #logging.info(f"Bialgebra simplification applied for graph ID '{graph_id}' with {changed} patterns processed")
-                
+                total += changed
                 if changed == 0:
-                    break  # No more patterns found
-            
-            return changed
+                    break
+            return total
         
 
     def supplementarity_simp(self, graph_id: str) -> int:
@@ -802,6 +780,140 @@ class ZXdb:
                 if applied == 0:
                     break
             return total
+
+    def copy_simp(self, graph_id: str) -> int:
+        """
+        Apply the copy rule to the graph.
+
+        Finds a degree-1 Z-spider v with phase 0 or pi connected to another Z-spider w.
+        Updates interior neighbors' phases by a = v.phase mod 2. For each boundary neighbor
+        of w, creates a new Z(a) leaf with the toggled edge type. Deletes v, w, and any
+        resulting isolated vertices.
+
+        Args:
+            graph_id: Identifier for the graph to process
+
+        Returns:
+            Total number of copy rule applications performed
+        """
+        with self.driver.session() as session:
+            total = 0
+            while True:
+                def apply_copy(tx):
+                    query = str(self.basic_rewrite_rule_queries["Copy rule"]["query"]["code"]["value"])
+                    result = tx.run(query, graph_id=graph_id)
+                    record = result.single()
+                    if record is None:
+                        return None
+                    return {"a": record["a"], "bnd_data": list(record["bnd_data"])}
+
+                match_result = session.execute_write(apply_copy)
+
+                if match_result is None:
+                    break
+
+                total += 1
+                a = match_result["a"]
+                bnd_data = match_result["bnd_data"]
+
+                for bd in bnd_data:
+                    if bd is not None:
+                        toggled_edge_t = 2 if bd["edge_t"] == 1 else 1
+                        def create_bnd_node(tx, _bnd_id=bd["bnd_id"], _a=a, _et=toggled_edge_t):
+                            tx.run(
+                                """MATCH (bnd:Node) WHERE id(bnd) = $bnd_id
+                                   WITH bnd
+                                   CREATE (:Node {t: 1, phase: $a, graph_id: bnd.graph_id})-[:Wire {t: $edge_t, graph_id: bnd.graph_id}]->(bnd)""",
+                                bnd_id=_bnd_id, a=_a, edge_t=_et
+                            )
+                        session.execute_write(create_bnd_node)
+
+                def remove_isolated(tx):
+                    tx.run(
+                        "MATCH (n:Node) WHERE degree(n) = 0 "
+                        "WITH collect(n) AS iso "
+                        "FOREACH (n IN iso | DETACH DELETE n)"
+                    )
+                session.execute_write(remove_isolated)
+
+            return total
+
+    def to_gh(self, graph_id: str) -> int:
+        """
+        Color change (pyzx to_gh): turn every X-spider into a Z-spider by
+        toggling the types of its incident wires. A wire between two X-spiders
+        toggles twice and therefore keeps its type.
+
+        Returns:
+            Number of recolored spiders
+        """
+        with self.driver.session() as session:
+            def apply_to_gh(tx):
+                toggle_query = str(self.basic_rewrite_rule_queries["Color change edge toggle"]["query"]["code"]["value"])
+                tx.run(toggle_query, graph_id=graph_id).consume()
+                recolor_query = str(self.basic_rewrite_rule_queries["Color change spiders"]["query"]["code"]["value"])
+                record = tx.run(recolor_query, graph_id=graph_id).single()
+                return record["recolored"] if record else 0
+
+            return session.execute_write(apply_to_gh)
+
+    def interior_clifford_simp(self, graph_id: str) -> int:
+        """
+        pyzx interior_clifford_simp: spider fusion, color change to a
+        graph-like diagram, then rounds of identity removal, spider fusion,
+        pivot and local complementation until none of them applies.
+
+        Returns:
+            Number of full rounds in which at least one rule fired
+        """
+        self.spider_fusion(graph_id)
+        self.to_gh(graph_id)
+        rounds = 0
+        while True:
+            applied = self.remove_identities(graph_id)
+            applied += self.spider_fusion(graph_id)
+            applied += self.pivot_rule(graph_id)
+            applied += self.local_complementation_rule(graph_id)
+            if applied == 0:
+                break
+            rounds += 1
+        return rounds
+
+    def clifford_simp(self, graph_id: str) -> int:
+        """
+        pyzx clifford_simp: rounds of interior_clifford_simp and
+        pivot_boundary_simp until neither applies.
+        """
+        total = 0
+        while True:
+            total += self.interior_clifford_simp(graph_id)
+            if self.pivot_boundary_rule(graph_id) == 0:
+                break
+        return total
+
+    def full_reduce(self, graph_id: str, max_rounds: int = 1000) -> None:
+        """
+        pyzx full_reduce: interior_clifford_simp and pivot_gadget_simp once,
+        then rounds of clifford_simp, gadget_simp, interior_clifford_simp and
+        pivot_gadget_simp until the gadget rules stop firing.
+
+        Args:
+            graph_id: Identifier for the graph to process
+            max_rounds: Safety cap on the outer loop (pyzx has none; this
+                turns a potential non-termination bug into a visible error)
+        """
+        self.interior_clifford_simp(graph_id)
+        self.pivot_gadget_rule(graph_id)
+        for _ in range(max_rounds):
+            self.clifford_simp(graph_id)
+            i = self.phase_gadget_fusion_rule(graph_id)
+            self.interior_clifford_simp(graph_id)
+            j = self.pivot_gadget_rule(graph_id)
+            if i + j == 0:
+                return
+        raise RuntimeError(
+            f"full_reduce did not converge within {max_rounds} rounds "
+            f"for graph ID '{graph_id}'")
 
     def get_degree_distribution(self, graph_id: str) -> dict:
         """
