@@ -2,7 +2,7 @@ import random
 import unittest
 import pyzx as zx
 import json
-from utils import benchmark_rule, zx_graph_to_db, pyzx_fixpoint
+from utils import benchmark_rule, zx_graph_to_db, pyzx_fixpoint_normalized
 from zxdb.pyzx_utils import qubit_count
 from zxdb.zxdb import ZXdb
 
@@ -21,7 +21,9 @@ class TestLCompRule(unittest.TestCase):
         circuit = zx.Graph().from_json(circuit_json)
         self.qubits = qubit_count(circuit)
 
-        for _ in range(17):
+        # Kept small so the isomorphism and tensor comparisons finish in
+        # reasonable time
+        for _ in range(2):
             circuit = circuit + circuit
 
         with open("circuits\\temp_circuit.json", "w") as f:
@@ -31,7 +33,9 @@ class TestLCompRule(unittest.TestCase):
         self.zx_graph = zx_graph_to_db(self.zxdb, circuit)
 
     def test_lcomp_rule(self):
-        rule_functions = [self.zxdb.local_complementation_rule, pyzx_fixpoint(zx.lcomp_simp)]
+        # The DB lcomp cancels parallel Hadamard pairs eagerly (Hopf); pyzx >= 0.10
+        # keeps them on its multigraph backend, so the reference is normalized.
+        rule_functions = [self.zxdb.local_complementation_rule, pyzx_fixpoint_normalized(zx.lcomp_simp)]
         rule_names = ["db_local_complementation", "pyzx_local_complementation"]
         
         #rule_functions = [zx.lcomp_simp]

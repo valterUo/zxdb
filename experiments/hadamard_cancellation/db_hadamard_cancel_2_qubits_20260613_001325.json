@@ -1,0 +1,7 @@
+{
+    "qubits": 2,
+    "initial_stats": "Graph(323 vertices, 440 edges)\ndegree distribution: \n1: 4\n2: 81\n3: 238\n",
+    "db_hadamard_cancel_time": 0.3301123999990523,
+    "db_hadamard_cancel_result": 4,
+    "final_stats": "Graph(323 vertices, 440 edges)\ndegree distribution: \n1: 4\n2: 81\n3: 238\n"
+}

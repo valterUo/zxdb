@@ -1,0 +1,9 @@
+{
+    "qubits": 500,
+    "initial_stats": "Graph(9012 vertices, 11524 edges)\ndegree distribution: \n1: 1000\n2: 1988\n3: 6024\n",
+    "db_bialgebra_simp_time": 8.006137400021544,
+    "db_bialgebra_simp_result": 180,
+    "pyzx_bialgebra_simp_time": 0.2999427999893669,
+    "pyzx_bialgebra_simp_result": 1,
+    "final_stats": "Graph(9366 vertices, 12055 edges)\ndegree distribution: \n1: 1000\n2: 1988\n3: 6378\n"
+}

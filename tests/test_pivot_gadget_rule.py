@@ -18,8 +18,9 @@ class TestPivotGadgetRule(unittest.TestCase):
             circuit_json = json.load(f)
         circuit = zx.Graph().from_json(circuit_json)
 
-        # Expand the circuit exponentially to increase qubit count
-        for _ in range(14):
+        # Expand the circuit to increase qubit count (kept small so the
+        # isomorphism and tensor comparisons finish in reasonable time)
+        for _ in range(2):
             circuit += circuit
 
         with open("circuits\\pivot_gadget_circuit_temp.json", "w") as f:

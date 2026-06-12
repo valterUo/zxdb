@@ -46,7 +46,25 @@ semantics are version-sensitive:
 **Zero diagrams:** randomly generated phase-gadget graphs can be the zero
 map (all-zero tensor). Rewrites are then only correct "up to a zero scalar",
 which the DB does not track, so the tensor check is indeterminate; the
-harness detects this and falls back to the structural comparison.
+harness detects this and falls back to the structural comparison. (The check
+also guards against the `compare_tensors` false positive where an all-zero
+tensor "equals" anything.)
+
+**Multigraph backend (pyzx >= 0.10):** rewrites such as lcomp can leave
+PARALLEL Hadamard wires in place; the DB rules cancel them eagerly (Hopf).
+Both forms are semantically equal. Where a legacy test compares structure
+directly, the pyzx reference is wrapped in `pyzx_fixpoint_normalized`
+(`utils.py`), which additionally runs pyzx's own `hopf_simp` and
+`remove_self_loop_simp`.
+
+**Legacy test sizes:** `test_pivot_gadget_rule` and `test_lcomp_rule` used
+to expand their circuits 2^14 / 2^17-fold, which made the comparison
+machinery run for half an hour or get OOM-killed; both now use the same
+2^2 expansion as the other tests.
+
+**0.9 idiom fixed:** `g.add_edge(g.edge(u, v), t)` raises `KeyError` on the
+0.10 multigraph backend (`edge()` looks up an existing edge); call sites in
+`zxdb/generate.py` and `zxdb/pyzx_utils.py` now pass the `(u, v)` tuple.
 
 ## full_reduce
 

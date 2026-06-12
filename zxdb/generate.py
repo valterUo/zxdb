@@ -42,14 +42,14 @@ def CNOT_HAD_PHASE_graph(
             # Hadamard gate
             q = random.randrange(qubits)
             v_h = g.add_vertex(zx.VertexType.H_BOX, q, current_row)
-            g.add_edge(g.edge(qubit_vertices[q], v_h), zx.EdgeType.SIMPLE)
+            g.add_edge((qubit_vertices[q], v_h), zx.EdgeType.SIMPLE)
             qubit_vertices[q] = v_h
         elif r > 1 - p_had - p_t:
             # Phase gate
             q = random.randrange(qubits)
             v_z = g.add_vertex(zx.VertexType.Z, q, current_row,
                                Fraction(1, 4) if not clifford else Fraction(1, 2))
-            g.add_edge(g.edge(qubit_vertices[q], v_z), zx.EdgeType.SIMPLE)
+            g.add_edge((qubit_vertices[q], v_z), zx.EdgeType.SIMPLE)
             qubit_vertices[q] = v_z
         else:
             # CNOT gate
@@ -60,9 +60,9 @@ def CNOT_HAD_PHASE_graph(
                     break
             v_ctrl = g.add_vertex(zx.VertexType.Z, ctrl, current_row)
             v_tgt = g.add_vertex(zx.VertexType.X, tgt, current_row)
-            g.add_edge(g.edge(qubit_vertices[ctrl], v_ctrl), zx.EdgeType.SIMPLE)
-            g.add_edge(g.edge(qubit_vertices[tgt], v_tgt), zx.EdgeType.SIMPLE)
-            g.add_edge(g.edge(v_ctrl, v_tgt), zx.EdgeType.SIMPLE)
+            g.add_edge((qubit_vertices[ctrl], v_ctrl), zx.EdgeType.SIMPLE)
+            g.add_edge((qubit_vertices[tgt], v_tgt), zx.EdgeType.SIMPLE)
+            g.add_edge((v_ctrl, v_tgt), zx.EdgeType.SIMPLE)
             qubit_vertices[ctrl] = v_ctrl
             qubit_vertices[tgt] = v_tgt
         current_row += 1
@@ -70,7 +70,7 @@ def CNOT_HAD_PHASE_graph(
     # Add output boundary vertices
     for i in range(qubits):
         v_out = g.add_vertex(zx.VertexType.BOUNDARY, i, current_row)
-        g.add_edge(g.edge(qubit_vertices[i], v_out), zx.EdgeType.SIMPLE)
+        g.add_edge((qubit_vertices[i], v_out), zx.EdgeType.SIMPLE)
         outputs.append(v_out)
 
     g.set_inputs(tuple(inputs))
@@ -95,7 +95,7 @@ def PHASE_GADGET_GRAPH(
     # Create input boundary vertices
     boundary_index = g.add_vertex(zx.VertexType.BOUNDARY)
     green_in_index = g.add_vertex(zx.VertexType.Z, phase = Fraction(0))
-    g.add_edge(g.edge(boundary_index, green_in_index), zx.EdgeType.SIMPLE)
+    g.add_edge((boundary_index, green_in_index), zx.EdgeType.SIMPLE)
     for size in gadget_sizes:
         green_out_index = g.add_vertex(zx.VertexType.Z, phase = Fraction(0))
         # Create size many X spider vertices

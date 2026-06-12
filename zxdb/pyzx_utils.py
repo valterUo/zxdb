@@ -449,7 +449,7 @@ def compose_zx_graphs(g1: zx.Graph, g2: zx.Graph, connected_ratio: float) -> zx.
         g1.set_type(v2, zx.VertexType.Z)
         g1.set_phase(v2, 0)
         # Add edge between them
-        g1.add_edge(g1.edge(v1, v2), zx.EdgeType.SIMPLE)
+        g1.add_edge((v1, v2), zx.EdgeType.SIMPLE)
 
     # Set inputs/outputs of the composed graph
     g1.set_inputs(tuple(new_outs))

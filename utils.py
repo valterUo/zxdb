@@ -42,6 +42,27 @@ def pyzx_fixpoint(rule):
                 return calls - 1
     return apply
 
+
+def pyzx_fixpoint_normalized(rule):
+    """Like :func:`pyzx_fixpoint`, but afterwards runs pyzx's own hopf and
+    self-loop cleanup rules (pyzx >= 0.10 uses a multigraph backend whose
+    rewrites can leave parallel wires and self-loops in place; the DB rules
+    cancel those eagerly, so the reference must be normalized the same way
+    before comparing)."""
+    base = pyzx_fixpoint(rule)
+    try:
+        from pyzx.simplify import hopf_simp, remove_self_loop_simp
+        cleaners = [pyzx_fixpoint(hopf_simp), pyzx_fixpoint(remove_self_loop_simp)]
+    except ImportError:
+        cleaners = []
+
+    def apply(g):
+        n = base(g)
+        for clean in cleaners:
+            clean(g)
+        return n
+    return apply
+
 def zx_graph_to_db(zxdb, circuit, graph_id="example_graph", json_file="example.json", batch_size=10**6, hadamard_edges = False):
     """
     Converts a circuit to a ZX graph, saves it as JSON, and imports it into the database.
