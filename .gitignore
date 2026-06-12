@@ -10,6 +10,7 @@ __pycache__/
 
 rules.ipynb
 .claude
+temp_circuit.json
 
 *.qasm
 example.json

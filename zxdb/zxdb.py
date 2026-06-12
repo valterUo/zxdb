@@ -734,7 +734,11 @@ class ZXdb:
             def apply_bialgebra_rewrite(tx):
                 query = str(self.basic_rewrite_rule_queries["Bialgebra rule"]["query"]["code"]["value"])
                 record = tx.run(query, graph_id=graph_id).single()
-                return record["bialg_applied"] if record else 0
+                applied = record["bialg_applied"] if record else 0
+                if applied:
+                    connect_query = str(self.basic_rewrite_rule_queries["Bialgebra connect"]["query"]["code"]["value"])
+                    tx.run(connect_query, graph_id=graph_id).consume()
+                return applied
 
             total = 0
             while True:
@@ -783,12 +787,12 @@ class ZXdb:
 
     def copy_simp(self, graph_id: str) -> int:
         """
-        Apply the copy rule to the graph.
+        Apply the copy rule (pyzx >= 0.10 semantics).
 
-        Finds a degree-1 Z-spider v with phase 0 or pi connected to another Z-spider w.
-        Updates interior neighbors' phases by a = v.phase mod 2. For each boundary neighbor
-        of w, creates a new Z(a) leaf with the toggled edge type. Deletes v, w, and any
-        resulting isolated vertices.
+        An arity-1 spider with phase 0 or pi is copied through its neighbor:
+        every other wire of the neighbor receives a new spider carrying the
+        leaf's phase (toggled color across a Hadamard wire, same color across
+        a simple wire); the leaf and the neighbor are deleted.
 
         Args:
             graph_id: Identifier for the graph to process
@@ -797,45 +801,17 @@ class ZXdb:
             Total number of copy rule applications performed
         """
         with self.driver.session() as session:
+            def apply_copy(tx):
+                query = str(self.basic_rewrite_rule_queries["Copy rule"]["query"]["code"]["value"])
+                record = tx.run(query, graph_id=graph_id).single()
+                return record["copy_applied"] if record else 0
+
             total = 0
             while True:
-                def apply_copy(tx):
-                    query = str(self.basic_rewrite_rule_queries["Copy rule"]["query"]["code"]["value"])
-                    result = tx.run(query, graph_id=graph_id)
-                    record = result.single()
-                    if record is None:
-                        return None
-                    return {"a": record["a"], "bnd_data": list(record["bnd_data"])}
-
-                match_result = session.execute_write(apply_copy)
-
-                if match_result is None:
+                applied = session.execute_write(apply_copy)
+                total += applied
+                if applied == 0:
                     break
-
-                total += 1
-                a = match_result["a"]
-                bnd_data = match_result["bnd_data"]
-
-                for bd in bnd_data:
-                    if bd is not None:
-                        toggled_edge_t = 2 if bd["edge_t"] == 1 else 1
-                        def create_bnd_node(tx, _bnd_id=bd["bnd_id"], _a=a, _et=toggled_edge_t):
-                            tx.run(
-                                """MATCH (bnd:Node) WHERE id(bnd) = $bnd_id
-                                   WITH bnd
-                                   CREATE (:Node {t: 1, phase: $a, graph_id: bnd.graph_id})-[:Wire {t: $edge_t, graph_id: bnd.graph_id}]->(bnd)""",
-                                bnd_id=_bnd_id, a=_a, edge_t=_et
-                            )
-                        session.execute_write(create_bnd_node)
-
-                def remove_isolated(tx):
-                    tx.run(
-                        "MATCH (n:Node) WHERE degree(n) = 0 "
-                        "WITH collect(n) AS iso "
-                        "FOREACH (n IN iso | DETACH DELETE n)"
-                    )
-                session.execute_write(remove_isolated)
-
             return total
 
     def to_gh(self, graph_id: str) -> int:
@@ -891,11 +867,22 @@ class ZXdb:
                 break
         return total
 
+    def remove_isolated_vertices(self, graph_id: str) -> int:
+        """Remove degree-0 nodes (pyzx remove_isolated_vertices)."""
+        with self.driver.session() as session:
+            def apply_removal(tx):
+                query = str(self.basic_rewrite_rule_queries["Remove isolated vertices"]["query"]["code"]["value"])
+                record = tx.run(query, graph_id=graph_id).single()
+                return record["removed"] if record else 0
+            return session.execute_write(apply_removal)
+
     def full_reduce(self, graph_id: str, max_rounds: int = 1000) -> None:
         """
-        pyzx full_reduce: interior_clifford_simp and pivot_gadget_simp once,
-        then rounds of clifford_simp, gadget_simp, interior_clifford_simp and
-        pivot_gadget_simp until the gadget rules stop firing.
+        pyzx full_reduce (pyzx >= 0.10): interior_clifford_simp and
+        pivot_gadget_simp once, then rounds of clifford_simp, gadget_simp,
+        interior_clifford_simp, copy_simp, supplementarity_simp and
+        pivot_gadget_simp until none of the gadget/copy/supplementarity rules
+        fires; finally removes isolated vertices.
 
         Args:
             graph_id: Identifier for the graph to process
@@ -908,8 +895,11 @@ class ZXdb:
             self.clifford_simp(graph_id)
             i = self.phase_gadget_fusion_rule(graph_id)
             self.interior_clifford_simp(graph_id)
+            k = self.copy_simp(graph_id)
+            l = self.supplementarity_simp(graph_id)
             j = self.pivot_gadget_rule(graph_id)
-            if i + j == 0:
+            if i + j + k + l == 0:
+                self.remove_isolated_vertices(graph_id)
                 return
         raise RuntimeError(
             f"full_reduce did not converge within {max_rounds} rounds "

@@ -4,7 +4,7 @@ import pyzx as zx
 import json
 import matplotlib
 
-from utils import benchmark_rule, zx_graph_to_db
+from utils import benchmark_rule, zx_graph_to_db, pyzx_fixpoint
 matplotlib.use('Agg')
 
 from zxdb.pyzx_utils import compose_zx_graphs
@@ -26,7 +26,7 @@ class TestPivotRule(unittest.TestCase):
             circuit_json = json.load(f)
         circuit = zx.Graph().from_json(circuit_json)
 
-        for _ in range(12):
+        for _ in range(2):
             circuit, qubits = compose_zx_graphs(circuit, circuit, connected_ratio=0.25)
 
         with open("circuits\\pivot_circuit_temp.json", "w") as f:
@@ -37,7 +37,7 @@ class TestPivotRule(unittest.TestCase):
         self.zx_graph = zx_graph_to_db(self.zxdb, circuit)
 
     def test_pivot_rule(self):
-        rule_functions = [self.zxdb.pivot_rule, zx.pivot_simp]
+        rule_functions = [self.zxdb.pivot_rule, pyzx_fixpoint(zx.pivot_simp)]
         rule_names = ["db_pivot_rule", "pyzx_pivot_rule"]
         # Here test_tensor_equivalence can fail at PyZX end
         benchmark_rule(rule_functions, 

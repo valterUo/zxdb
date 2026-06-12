@@ -1,7 +1,7 @@
 import unittest
 from fractions import Fraction
 import pyzx as zx
-from utils import benchmark_rule, zx_graph_to_db
+from utils import benchmark_rule, zx_graph_to_db, pyzx_fixpoint
 from zxdb.zxdb import ZXdb
 
 # python -m unittest tests.test_supplementarity
@@ -47,7 +47,7 @@ class TestSupplementaritySimp(unittest.TestCase):
         self.zx_graph = zx_graph_to_db(self.zxdb, g)
 
     def test_supplementarity_simp(self):
-        rule_functions = [self.zxdb.supplementarity_simp, zx.supplementarity_simp]
+        rule_functions = [self.zxdb.supplementarity_simp, pyzx_fixpoint(zx.supplementarity_simp)]
         rule_names = ["db_supplementarity_simp", "pyzx_supplementarity_simp"]
         benchmark_rule(
             rule_functions,

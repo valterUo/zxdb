@@ -4,8 +4,10 @@ import unittest
 import pyzx as zx
 
 from zxdb.zxdb import ZXdb
-from evaluation.harness import run_case
+from evaluation.harness import run_case, pyzx_fixpoint
 from evaluation import cases as C
+
+_pyzx_full_reduce = pyzx_fixpoint(lambda g: zx.full_reduce(g, quiet=True))
 
 
 def _random_circuit_graph(seed, qubits, depth, p_had=0.25, p_t=0.3,
@@ -32,7 +34,7 @@ class TestFullReduce(unittest.TestCase):
         res = run_case(
             self.zxdb, "full_reduce", name, g,
             db_rule=self.zxdb.full_reduce,
-            pyzx_rule=lambda h: zx.full_reduce(h, quiet=True),
+            pyzx_rule=_pyzx_full_reduce,
             require_iso=False)
         self.assertIsNone(res["error"], msg=f"{name}: {res['error']}")
         self.assertTrue(

@@ -17,6 +17,31 @@ from qiskit.quantum_info import Operator
 from zxdb.pyzx_utils import edge_matcher, graph_to_quimb_tn, node_matcher, pyzx_to_networkx_manual, pyzx_to_networkx_tensor_graph
 
 
+
+def pyzx_fixpoint(rule):
+    """Wrap a pyzx rule so it is applied until the graph stops changing.
+
+    pyzx >= 0.10 rewrites (Rewrite objects) match incrementally: a single
+    call can stop before the global fixpoint (e.g. pivot_boundary_simp on a
+    circuit with several disjoint pattern copies). The DB rules iterate to a
+    fixpoint, so the pyzx reference must too. On pyzx 0.9 the *_simp
+    functions already loop internally and the extra calls are no-ops.
+    """
+    def fingerprint(g):
+        return (g.num_vertices(), g.num_edges(),
+                sorted((g.type(v), str(g.phase(v))) for v in g.vertices()),
+                sorted(g.edge_type(e) for e in g.edges()))
+
+    def apply(g):
+        calls = 0
+        while True:
+            before = fingerprint(g)
+            rule(g)
+            calls += 1
+            if fingerprint(g) == before:
+                return calls - 1
+    return apply
+
 def zx_graph_to_db(zxdb, circuit, graph_id="example_graph", json_file="example.json", batch_size=10**6, hadamard_edges = False):
     """
     Converts a circuit to a ZX graph, saves it as JSON, and imports it into the database.

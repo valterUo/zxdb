@@ -2,7 +2,7 @@ import random
 import unittest
 import pyzx as zx
 import json
-from utils import benchmark_rule, zx_graph_to_db
+from utils import benchmark_rule, zx_graph_to_db, pyzx_fixpoint
 from zxdb.generate import PHASE_GADGET_GRAPH
 from zxdb.pyzx_utils import qubit_count
 from zxdb.zxdb import ZXdb
@@ -39,7 +39,7 @@ class TestPhaseGadgetFusion(unittest.TestCase):
 
     def test_lcomp_rule(self):
 
-        rule_functions = [self.zxdb.phase_gadget_fusion_rule, zx.gadget_simp]
+        rule_functions = [self.zxdb.phase_gadget_fusion_rule, pyzx_fixpoint(zx.gadget_simp)]
         rule_names = ["db_phase_gadget_fusion", "pyzx_phase_gadget_fusion"]
 
         #rule_functions = [zx.gadget_simp]

@@ -24,8 +24,12 @@ import pyzx as zx
 
 from zxdb.zxdb import ZXdb
 from zxdb.generate import PHASE_GADGET_GRAPH
-from evaluation.harness import run_case
+from evaluation.harness import run_case, pyzx_fixpoint
 from evaluation import cases as C
+
+# pyzx >= 0.10 rewrites match incrementally; iterate full_reduce to a true
+# fixpoint so the reference is deterministic across versions.
+pyzx_full_reduce = pyzx_fixpoint(lambda g: zx.full_reduce(g, quiet=True))
 
 
 def random_circuit_graph(seed, qubits, depth, p_had=0.25, p_t=0.3,
@@ -122,7 +126,7 @@ def main(quick=False):
             t = time.time()
             res = run_case(zxdb, "full_reduce", name, builder(),
                            db_rule=zxdb.full_reduce,
-                           pyzx_rule=lambda g: zx.full_reduce(g, quiet=True),
+                           pyzx_rule=pyzx_full_reduce,
                            require_iso=False)
             res["seconds"] = time.time() - t
             results.append(res)

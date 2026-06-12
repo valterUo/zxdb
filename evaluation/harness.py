@@ -22,7 +22,7 @@ import networkx as nx
 import numpy as np
 import pyzx as zx
 
-from utils import zx_graph_to_db
+from utils import zx_graph_to_db, pyzx_fixpoint  # noqa: F401  (re-exported)
 
 GRAPH_ID = "example_graph"
 MAX_PERM_QUBITS = 4  # try boundary permutations up to this many in/outputs
@@ -88,15 +88,33 @@ def _clean_copy(g):
 
 def _tensors_equal(g1, g2):
     try:
-        return zx.compare_tensors(_clean_copy(g1), _clean_copy(g2),
-                                  preserve_scalar=False)
+        t1 = _clean_copy(g1).to_tensor()
+        t2 = _clean_copy(g2).to_tensor()
+        # compare_tensors scales by the first nonzero entry; an all-zero
+        # tensor (e.g. an isolated Z(pi) scalar factor) silently "equals"
+        # anything. Treat zero tensors explicitly.
+        z1 = np.allclose(t1, 0)
+        z2 = np.allclose(t2, 0)
+        if z1 or z2:
+            return z1 == z2
+        return zx.compare_tensors(t1, t2, preserve_scalar=False)
     except Exception:
         return None
 
 
 def _semantic_equal(db_g, original):
     """Tensor comparison; falls back to boundary permutations because the
-    DB round-trip does not always preserve input/output ordering."""
+    DB round-trip does not always preserve input/output ordering.
+
+    Returns None when the ORIGINAL diagram is the zero map: rewrites are
+    then only correct "up to a zero scalar", which the DB does not track,
+    so any reduced graph is acceptable and the check is indeterminate.
+    """
+    try:
+        if np.allclose(_clean_copy(original).to_tensor(), 0):
+            return None
+    except Exception:
+        pass
     if _tensors_equal(db_g, original):
         return True
     ins, outs = db_g.inputs(), db_g.outputs()
@@ -183,8 +201,11 @@ def run_case(zxdb, rule_name, case_name, g, db_rule, pyzx_rule,
         # as reference parity.
         semantic_ok = (res["db_semantic"] is not False
                        or (res["pyzx_semantic"] is False and res["isomorphic"]))
+        # db_semantic None = indeterminate (zero diagram or tensor error):
+        # fall back to the structural comparison against pyzx.
         structural_ok = res["isomorphic"] if require_iso \
-            else (res["db_semantic"] is True)
+            else (res["db_semantic"] is True
+                  or (res["db_semantic"] is None and res["stats_match"]))
         res["ok"] = bool(
             structural_ok
             and res["parallel_edges"] == 0

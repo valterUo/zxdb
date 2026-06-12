@@ -2,7 +2,7 @@ import random
 import unittest
 import pyzx as zx
 import json
-from utils import benchmark_rule, zx_graph_to_db
+from utils import benchmark_rule, zx_graph_to_db, pyzx_fixpoint
 from zxdb.generate import CNOT_HAD_PHASE_graph
 from zxdb.zxdb import ZXdb
 
@@ -25,7 +25,7 @@ class TestBialgebraSimp(unittest.TestCase):
     def test_bialgebra_simp(self):
         # self.zxdb.bialgebra_simp
         # "db_bialgebra_simp"
-        rule_functions = [self.zxdb.bialgebra_simp, zx.bialg_simp]
+        rule_functions = [self.zxdb.bialgebra_simp, pyzx_fixpoint(zx.bialg_simp)]
         rule_names = ["db_bialgebra_simp", "pyzx_bialgebra_simp"]
         benchmark_rule(rule_functions, 
                        rule_names, 

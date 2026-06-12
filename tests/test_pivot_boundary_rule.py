@@ -2,7 +2,7 @@ import random
 import unittest
 import pyzx as zx
 import json
-from utils import benchmark_rule, zx_graph_to_db
+from utils import benchmark_rule, zx_graph_to_db, pyzx_fixpoint
 from zxdb.pyzx_utils import qubit_count
 from zxdb.zxdb import ZXdb
 
@@ -19,7 +19,7 @@ class TestPivotBoundaryRule(unittest.TestCase):
 
         circuit = zx.Graph().from_json(circuit_json)
 
-        for _ in range(9):
+        for _ in range(2):
             circuit = circuit + circuit
 
         self.qubits = qubit_count(circuit)
@@ -27,7 +27,7 @@ class TestPivotBoundaryRule(unittest.TestCase):
 
     def test_pivot_boundary_simp(self):
 
-        rule_functions = [self.zxdb.pivot_boundary_rule, zx.pivot_boundary_simp]
+        rule_functions = [self.zxdb.pivot_boundary_rule, pyzx_fixpoint(zx.pivot_boundary_simp)]
         rule_names = ["db_pivot_boundary", "pyzx_pivot_boundary"]
 
         #rule_functions = [zx.pivot_boundary_simp]

@@ -19,6 +19,7 @@ import pyzx as zx
 from pyzx.simplify import copy_simp as pyzx_copy_simp
 
 from zxdb.generate import CNOT_HAD_PHASE_graph
+from evaluation.harness import pyzx_fixpoint
 
 B = zx.VertexType.BOUNDARY
 Z = zx.VertexType.Z
@@ -474,8 +475,8 @@ def copy_two_leaves():
 
 
 def copy_simple_edge_leaf():
-    """Leaf attached by a SIMPLE edge (not graph-like): check pyzx behavior
-    and make sure DB matches it."""
+    """Z-leaf attached to a Z-spider by a SIMPLE edge: same colors across a
+    simple wire, pyzx >= 0.10 does NOT fire (that is spider-fusion territory)."""
     g = _g()
     bi = g.add_vertex(B, 0, 0)
     bo = g.add_vertex(B, 0, 3)
@@ -484,6 +485,34 @@ def copy_simple_edge_leaf():
     g.add_edge((bi, w), S)
     g.add_edge((w, bo), S)
     g.add_edge((w, v), S)
+    return _io(g, [bi], [bo])
+
+
+def copy_x_leaf_simple():
+    """X-leaf with phase pi attached to a Z-spider by a SIMPLE wire: classic
+    state copy, fires with copies keeping the X color."""
+    g = _g()
+    bi = g.add_vertex(B, 0, 0)
+    bo = g.add_vertex(B, 0, 3)
+    w = g.add_vertex(Z, 0, 1, Fraction(1, 4))
+    v = g.add_vertex(X, 0, 2, Fraction(1))
+    g.add_edge((bi, w), S)
+    g.add_edge((w, bo), S)
+    g.add_edge((w, v), S)
+    return _io(g, [bi], [bo])
+
+
+def copy_no_fire_h_diff_colors():
+    """X-leaf H-connected to a Z-spider: colors differ across a Hadamard
+    wire, must NOT fire."""
+    g = _g()
+    bi = g.add_vertex(B, 0, 0)
+    bo = g.add_vertex(B, 0, 3)
+    w = g.add_vertex(Z, 0, 1, Fraction(1, 4))
+    v = g.add_vertex(X, 0, 2, Fraction(1))
+    g.add_edge((bi, w), S)
+    g.add_edge((w, bo), S)
+    g.add_edge((w, v), H)
     return _io(g, [bi], [bo])
 
 
@@ -976,17 +1005,24 @@ def ba_k22():
     return g
 
 
-def ba_existing_edge_hopf():
-    """A neighbor pair is already connected: the new parallel simple wire
-    cancels with it (Hopf), so the toggle must REMOVE the edge."""
+def ba_existing_edge():
+    """A neighbor pair is already directly connected: pyzx >= 0.10 leaves
+    that wire untouched (new spiders are inserted on the center wires)."""
     g, v0, v1, lefts, rights = _bialg_base(2, 1)
     g.add_edge((lefts[0], rights[0]), S)
     return g
 
 
-def ba_no_fire_phase():
-    """v0 carries pi: must NOT fire."""
+def ba_pi_center():
+    """v0 carries pi: pyzx >= 0.10 fires on PAULI centers and copies the
+    pi onto the new spiders of the opposite side."""
     g, *_ = _bialg_base(1, 1, v0_phase=Fraction(1))
+    return g
+
+
+def ba_no_fire_nonpauli():
+    """v0 carries 1/4: not Pauli, must NOT fire."""
+    g, *_ = _bialg_base(1, 1, v0_phase=Fraction(1, 4))
     return g
 
 
@@ -1080,10 +1116,10 @@ def random_graphlike(seed, qubits=3, depth=8, clifford=False):
     """Random circuit brought to graph-like form (all Z, interior Hadamard
     edges) — the state interior rules operate on inside full_reduce."""
     g = random_circuit(seed, qubits, depth, clifford)
-    zx.spider_simp(g, quiet=True)
+    pyzx_fixpoint(zx.spider_simp)(g)
     zx.to_gh(g)
-    zx.spider_simp(g, quiet=True)
-    zx.id_simp(g, quiet=True)
+    pyzx_fixpoint(zx.spider_simp)(g)
+    pyzx_fixpoint(zx.id_simp)(g)
     return g
 
 
@@ -1099,7 +1135,7 @@ def _random_cases(builder, seeds, **kwargs):
 RULES = {
     "spider_fusion": {
         "db_method": "spider_fusion",
-        "pyzx": lambda g: zx.spider_simp(g, quiet=True),
+        "pyzx": pyzx_fixpoint(zx.spider_simp),
         "cases": [
             ("chain3", sf_chain3),
             ("phase_wrap", sf_phase_wrap),
@@ -1113,7 +1149,7 @@ RULES = {
     },
     "identity": {
         "db_method": "remove_identities",
-        "pyzx": lambda g: zx.id_simp(g, quiet=True),
+        "pyzx": pyzx_fixpoint(zx.id_simp),
         "cases": [
             ("simple_simple", id_simple_simple),
             ("chain", id_chain),
@@ -1128,7 +1164,7 @@ RULES = {
     },
     "supplementarity": {
         "db_method": "supplementarity_simp",
-        "pyzx": lambda g: zx.supplementarity_simp(g, quiet=True),
+        "pyzx": pyzx_fixpoint(zx.supplementarity_simp),
         "cases": [
             ("basic_type1", supp_basic_type1),
             ("type2_adjacent", supp_type2_adjacent),
@@ -1142,7 +1178,7 @@ RULES = {
     },
     "lcomp": {
         "db_method": "local_complementation_rule",
-        "pyzx": lambda g: zx.lcomp_simp(g, quiet=True),
+        "pyzx": pyzx_fixpoint(zx.lcomp_simp),
         "cases": [
             ("basic", lc_basic),
             ("toggle_off", lc_toggle_off),
@@ -1158,7 +1194,7 @@ RULES = {
     },
     "pivot": {
         "db_method": "pivot_rule",
-        "pyzx": lambda g: zx.pivot_simp(g, quiet=True),
+        "pyzx": pyzx_fixpoint(zx.pivot_simp),
         "cases": [
             ("basic_00", pv_basic_00),
             ("mixed_01", pv_mixed_01),
@@ -1174,7 +1210,7 @@ RULES = {
     },
     "pivot_gadget": {
         "db_method": "pivot_gadget_rule",
-        "pyzx": lambda g: zx.pivot_gadget_simp(g, quiet=True),
+        "pyzx": pyzx_fixpoint(zx.pivot_gadget_simp),
         "cases": [
             ("basic", pg_basic),
             ("j_zero", pg_j_zero),
@@ -1187,7 +1223,7 @@ RULES = {
     },
     "pivot_boundary": {
         "db_method": "pivot_boundary_rule",
-        "pyzx": lambda g: zx.pivot_boundary_simp(g, quiet=True),
+        "pyzx": pyzx_fixpoint(zx.pivot_boundary_simp),
         "cases": [
             ("basic", pb_basic),
             ("j_zero", pb_j_zero),
@@ -1198,7 +1234,7 @@ RULES = {
     },
     "gadget_fusion": {
         "db_method": "phase_gadget_fusion_rule",
-        "pyzx": lambda g: zx.gadget_simp(g, quiet=True),
+        "pyzx": pyzx_fixpoint(zx.gadget_simp),
         "cases": [
             ("two_same_targets", gf_two_same_targets),
             ("axel_pi", gf_axel_pi),
@@ -1211,12 +1247,13 @@ RULES = {
     },
     "bialgebra": {
         "db_method": "bialgebra_simp",
-        "pyzx": lambda g: zx.bialg_simp(g, quiet=True),
+        "pyzx": pyzx_fixpoint(zx.bialg_simp),
         "cases": [
             ("basic_k11", ba_basic_k11),
             ("k22", ba_k22),
-            ("existing_edge_hopf", ba_existing_edge_hopf),
-            ("no_fire_phase", ba_no_fire_phase),
+            ("existing_edge", ba_existing_edge),
+            ("pi_center", ba_pi_center),
+            ("no_fire_nonpauli", ba_no_fire_nonpauli),
             ("no_fire_neighbor_phase", ba_no_fire_neighbor_phase),
             ("no_fire_wrong_color", ba_no_fire_wrong_color),
             ("no_fire_boundary_neighbor", ba_no_fire_boundary_neighbor),
@@ -1224,7 +1261,7 @@ RULES = {
     },
     "hadamard_cancel": {
         "db_method": "hadamard_cancel",
-        "pyzx": lambda g: zx.id_simp(g, quiet=True),
+        "pyzx": pyzx_fixpoint(zx.id_simp),
         "cases": [
             ("single_pair", hc_single_pair),
             ("chain4", hc_chain4),
@@ -1235,7 +1272,7 @@ RULES = {
     },
     "copy": {
         "db_method": "copy_simp",
-        "pyzx": lambda g: pyzx_copy_simp(g, quiet=True),
+        "pyzx": pyzx_fixpoint(pyzx_copy_simp),
         "cases": [
             ("a0_mixed", copy_a0_mixed),
             ("a1_interior", copy_a1_interior),
@@ -1243,6 +1280,8 @@ RULES = {
             ("cascade", copy_cascade),
             ("two_leaves", copy_two_leaves),
             ("simple_edge_leaf", copy_simple_edge_leaf),
+            ("x_leaf_simple", copy_x_leaf_simple),
+            ("no_fire_h_diff_colors", copy_no_fire_h_diff_colors),
         ] + _random_cases(random_graphlike, [111, 112]),
     },
 }

@@ -2,7 +2,7 @@ import unittest
 from fractions import Fraction
 from pyzx.simplify import copy_simp
 import pyzx as zx
-from utils import benchmark_rule, zx_graph_to_db
+from utils import benchmark_rule, zx_graph_to_db, pyzx_fixpoint
 from zxdb.zxdb import ZXdb
 
 
@@ -40,7 +40,7 @@ class TestCopySimp(unittest.TestCase):
         self.zx_graph = zx_graph_to_db(self.zxdb, g)
 
     def test_copy_simp(self):
-        rule_functions = [self.zxdb.copy_simp, copy_simp]
+        rule_functions = [self.zxdb.copy_simp, pyzx_fixpoint(copy_simp)]
         rule_names = ["db_copy_simp", "pyzx_copy_simp"]
         benchmark_rule(
             rule_functions,

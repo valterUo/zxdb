@@ -16,6 +16,38 @@ python -m unittest tests.test_full_reduce      # fast unittest subset
 
 Requires the Memgraph instance on `bolt://localhost:7687`.
 
+**Run with the repo's `myenv` environment (pyzx 0.10.3).** The reference
+semantics are version-sensitive:
+
+- pyzx 0.10 `*_simp` rewrites are `Rewrite` objects with INCREMENTAL
+  matching: a single call can stop before the global fixpoint (observed:
+  `pivot_boundary_simp` on a circuit with several disjoint pattern copies
+  stops after one). The DB rules iterate to a fixpoint, so every pyzx
+  reference here is wrapped in `pyzx_fixpoint` (in `utils.py`), which calls
+  the rule until the graph stops changing. The legacy `tests/test_*` files
+  use the same wrapper.
+- pyzx 0.10 changed the SEMANTICS of two rules relative to 0.9, and the DB
+  queries follow 0.10:
+  - **copy_simp**: the arity-1 Pauli leaf is copied through its neighbor as
+    one new toggled-color spider per remaining wire (same wire type); no
+    phase merging into neighbors, no isolated-vertex cleanup. Across a
+    Hadamard wire the colors must match; across a simple wire they must
+    differ.
+  - **bialg_simp**: fires on PAULI (not just phase-0) Z-X centers joined by
+    one simple wire whose other neighbors are phase-0 spiders of the swapped
+    color; every other wire of each center receives a NEW spider of the
+    opposite color carrying the opposite center's phase, and the two new
+    groups are connected completely bipartitely ("Bialgebra rule" +
+    "Bialgebra connect" queries).
+- pyzx 0.10 `full_reduce` also calls `copy_simp` and `supplementarity_simp`
+  in its main loop and ends with `remove_isolated_vertices()`;
+  `ZXdb.full_reduce` mirrors that.
+
+**Zero diagrams:** randomly generated phase-gadget graphs can be the zero
+map (all-zero tensor). Rewrites are then only correct "up to a zero scalar",
+which the DB does not track, so the tensor check is indeterminate; the
+harness detects this and falls back to the structural comparison.
+
 ## full_reduce
 
 `ZXdb.full_reduce(graph_id)` mirrors pyzx exactly

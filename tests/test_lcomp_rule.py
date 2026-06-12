@@ -2,7 +2,7 @@ import random
 import unittest
 import pyzx as zx
 import json
-from utils import benchmark_rule, zx_graph_to_db
+from utils import benchmark_rule, zx_graph_to_db, pyzx_fixpoint
 from zxdb.pyzx_utils import qubit_count
 from zxdb.zxdb import ZXdb
 
@@ -31,7 +31,7 @@ class TestLCompRule(unittest.TestCase):
         self.zx_graph = zx_graph_to_db(self.zxdb, circuit)
 
     def test_lcomp_rule(self):
-        rule_functions = [self.zxdb.local_complementation_rule, zx.lcomp_simp]
+        rule_functions = [self.zxdb.local_complementation_rule, pyzx_fixpoint(zx.lcomp_simp)]
         rule_names = ["db_local_complementation", "pyzx_local_complementation"]
         
         #rule_functions = [zx.lcomp_simp]

@@ -3,7 +3,7 @@ import random
 import unittest
 import pyzx as zx
 
-from utils import benchmark_rule, zx_graph_to_db
+from utils import benchmark_rule, zx_graph_to_db, pyzx_fixpoint
 from zxdb.zxdb import ZXdb
 
 SEED = 42
@@ -45,7 +45,7 @@ class TestIdentityCancel(unittest.TestCase):
         self.zx_graph = zx_graph_to_db(self.zxdb, circuit)
 
     def test_identity_cancel(self):
-        rule_functions = [self.zxdb.remove_identities, zx.id_simp]
+        rule_functions = [self.zxdb.remove_identities, pyzx_fixpoint(zx.id_simp)]
         rule_names = ["db_identity_cancellation", "pyzx_identity_cancellation"]
         
         #rule_functions = [zx.id_simp]
