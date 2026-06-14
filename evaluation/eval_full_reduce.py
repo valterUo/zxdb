@@ -77,12 +77,49 @@ def build_suite(quick=False):
                       partial(random_circuit_graph, seed, 3, 12,
                               p_had=0.5, p_t=0.2)))
 
-    # 5. Phase-gadget graphs from the repo generator.
+    # 4b. WIDE but SHALLOW circuits (6-12 qubits, low depth): the low treewidth
+    #     keeps tensor contraction feasible, so these extend SOUND tensor-level
+    #     correctness verification well past the ~4-qubit ceiling of dense
+    #     contraction. (Deep wide circuits remain tensor-infeasible — that is a
+    #     verification-cost limit, not a correctness gap; see benchmark_perf.)
+    for q, d in ([(6, 24), (8, 28), (10, 32), (12, 36)] if not quick
+                 else [(6, 24)]):
+        seed += 1
+        suite.append((f"wide_q{q}_d{d}_s{seed}",
+                      partial(random_circuit_graph, seed, q, d,
+                              p_had=0.2, p_t=0.3)))
+
+    # 5. Phase-gadget graphs from the repo generator (seeded for determinism;
+    #    the generator draws random phases and can otherwise yield a different
+    #    diagram — occasionally the zero map — on every run).
     if not quick:
         for sizes in ([2, 2], [2, 3], [3, 3], [2, 2, 2]):
             label = "x".join(map(str, sizes))
-            suite.append((f"gadgets_{label}",
-                          partial(PHASE_GADGET_GRAPH, gadget_sizes=sizes)))
+
+            def _gadget(sizes=sizes):
+                random.seed(4242 + sum(sizes) * 7 + len(sizes))
+                return PHASE_GADGET_GRAPH(gadget_sizes=sizes)
+
+            suite.append((f"gadgets_{label}", _gadget))
+
+    # 5b. STRUCTURED circuits (not random): exercise the regular entanglement
+    #     patterns that random circuits miss. QFT, structured Clifford+T, and
+    #     algebraic circuit identities (which should reduce to ~identity).
+    if not quick:
+        suite.append(("qft_2", lambda: zx.generate.qft(2).to_graph()))
+        suite.append(("qft_3", lambda: zx.generate.qft(3).to_graph()))
+        suite.append(("qft_4", lambda: zx.generate.qft(4).to_graph()))
+        suite.append(("cliffordT_q3", lambda: zx.generate.cliffordT(
+            3, 40, p_t=0.2, seed=1)))
+        suite.append(("cliffordT_q4", lambda: zx.generate.cliffordT(
+            4, 60, p_t=0.2, seed=2)))
+        suite.append(("circ_identity_2q1",
+                      lambda: zx.generate.circuit_identity_two_qubit1().to_graph()))
+        suite.append(("circ_identity_2q2",
+                      lambda: zx.generate.circuit_identity_two_qubit2().to_graph()))
+        suite.append(("circ_identity_commuting", lambda:
+                      zx.generate.circuit_identity_commuting_controls(
+                          C.Fraction(1, 4), C.Fraction(1, 2)).to_graph()))
 
     # 6. Corner cases reused from the per-rule evaluation: configurations that
     #    historically broke individual rules, now pushed through the whole
@@ -136,31 +173,29 @@ def main(quick=False):
                 extra = " ERROR: " + res["error"].splitlines()[-1]
             else:
                 extra = (f" db={res['db_stats']} pyzx={res['pyzx_stats']}"
-                         f" sem={res['db_semantic']} iso={res['isomorphic']}"
-                         f" degseq={res['degree_seq_match']}")
+                         f" [{res.get('level')}]")
             print(f"[{flag}] {i + 1:3}/{len(suite)} {name}"
-                  f" ({res['seconds']:.1f}s){extra}")
+                  f" ({res['seconds']:.1f}s){extra}", flush=True)
     finally:
         zxdb.close()
 
+    from collections import Counter
     total = time.time() - t0
-    done = [r for r in results if not r["error"]]
     n_ok = sum(1 for r in results if r["ok"])
-    n_sem = sum(1 for r in done if r["db_semantic"])
-    n_iso = sum(1 for r in done if r["isomorphic"])
-    n_deg = sum(1 for r in done if r["degree_seq_match"])
     n_err = sum(1 for r in results if r["error"])
+    levels = Counter(r.get("level") for r in results if not r["error"])
     print("\n" + "=" * 70)
     print(f"full_reduce: {n_ok}/{len(results)} passed "
           f"({total:.0f}s total, {total / max(len(results), 1):.1f}s/graph)")
-    print(f"  tensor equivalent : {n_sem}/{len(done)}")
-    print(f"  isomorphic to pyzx: {n_iso}/{len(done)} (not required)")
-    print(f"  degree seq match  : {n_deg}/{len(done)} (not required)")
+    print("  verification level: "
+          + ", ".join(f"{k}={v}" for k, v in sorted(levels.items(),
+                                                     key=lambda kv: str(kv[0]))))
     if n_err:
         print(f"  errors            : {n_err}")
     for r in results:
         if not r["ok"]:
-            print(f"  FAILED: {r['case']}")
+            print(f"  FAILED: {r['case']} [{r.get('level')}]"
+                  + (f" {r['error'].splitlines()[-1]}" if r["error"] else ""))
     return n_ok == len(results)
 
 

@@ -37,11 +37,18 @@ class TestFullReduce(unittest.TestCase):
             pyzx_rule=_pyzx_full_reduce,
             require_iso=False)
         self.assertIsNone(res["error"], msg=f"{name}: {res['error']}")
+        # The harness verdict is tiered (tensor -> sampled tensor -> structural)
+        # and `level` records which check decided it; for these small graphs it
+        # is always tensor-level. ok must hold and the level must not be a
+        # tensor-level mismatch.
         self.assertTrue(
-            res["db_semantic"],
-            msg=f"{name}: DB full_reduce result is not tensor-equivalent "
-                f"to the original (db={res['db_stats']}, "
+            res["ok"],
+            msg=f"{name}: DB full_reduce result not verified equivalent to "
+                f"pyzx (level={res.get('level')}, db={res['db_stats']}, "
                 f"pyzx={res['pyzx_stats']})")
+        self.assertIn("tensor", str(res.get("level")),
+                      msg=f"{name}: expected tensor-level verification, got "
+                          f"{res.get('level')}")
         self.assertEqual(res["parallel_edges"], 0, msg=name)
         self.assertEqual(res["self_loops"], 0, msg=name)
 

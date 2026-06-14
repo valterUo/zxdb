@@ -1,0 +1,9 @@
+{
+    "qubits": 1,
+    "initial_stats": "Graph(6 vertices, 5 edges)\ndegree distribution: \n1: 5\n5: 1\n",
+    "db_copy_simp_time": 0.004519999958574772,
+    "db_copy_simp_result": 1,
+    "pyzx_copy_simp_time": 0.00017749995458871126,
+    "pyzx_copy_simp_result": 1,
+    "final_stats": "Graph(8 vertices, 4 edges)\ndegree distribution: \n1: 8\n"
+}
