@@ -1136,17 +1136,20 @@ class ZXdb:
                 pass
             n = session.run(
                 "CALL mg.procedures() YIELD name "
-                "WITH name WHERE name = 'zxqm.pivot_gadget_fixpoint' "
+                "WITH name WHERE name = 'zxqmcpp.pivot_gadget_fixpoint' "
                 "RETURN count(*) AS c").single()["c"]
             return n > 0
 
     def pivot_gadget_rule_qm(self, graph_id: str) -> int:
-        """pivot_gadget to a fixpoint via the in-process query module (one CALL,
-        no per-application round-trips). Same fixpoint as pivot_gadget_rule."""
+        """pivot_gadget to a fixpoint via the in-process C++ query module zxqmcpp
+        (one CALL, no per-application round-trips; pyzx-style greedy maximal
+        disjoint matching done natively). Same fixpoint as pivot_gadget_rule. (A
+        Python port zxqm.pivot_gadget_fixpoint($graph_id) also exists but is
+        slower — the mgp Python per-op overhead exceeds the round-trip savings.)"""
         def loop(tx):
             rec = tx.run(
-                "CALL zxqm.pivot_gadget_fixpoint($graph_id) "
-                "YIELD applied RETURN applied", graph_id=graph_id).single()
+                "CALL zxqmcpp.pivot_gadget_fixpoint() "
+                "YIELD applied RETURN applied").single()
             return rec["applied"] if rec else 0
         return self._execute(loop)
 

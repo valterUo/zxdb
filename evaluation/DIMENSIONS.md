@@ -166,6 +166,18 @@ kind of bug as the eager-collection — batching gadget applications or avoiding
 per-application re-scan would push the tie point to higher density; only effect
 (2) is inherent (and symmetric between the engines).
 
+**Resolved by an in-process query module (see `zxdb_qm/`).** Effect (1) cannot be
+removed in declarative Cypher (the maximal-disjoint selection needs imperative
+greedy; mutual-min under-selects, and a MAGE coloring needs a quadratic conflict
+graph). But a custom **C++ query module** runs in-process and does exactly pyzx's
+O(E) greedy (mark consumed neighbourhoods) with native toggles. Routing only
+pivot_gadget through it (`full_reduce_with_query_modules`, everything else still
+Cypher) keeps 112/112 correctness and makes dense full_reduce **~2–2.5× faster
+than the Cypher full_reduce and ~1.4–2.2× faster than pyzx — including degree 12 /
+twInt≈22, which now wins 0.48× instead of tying.** So with the module the fade is
+gone and the DB beats pyzx across the whole density range; the tie was a property
+of the *Cypher* pivot_gadget, not a fundamental limit.
+
 ## Takeaway (the paper argument)
 
 The database's `full_reduce` advantage is **broad, not narrow**: on gadget-rich
