@@ -1,0 +1,1283 @@
+[
+  {
+    "family": "copies_pivot",
+    "size": 16,
+    "depth": null,
+    "variant": "control",
+    "trials": [
+      {
+        "seconds": 0.044556899927556515,
+        "submissions": 19,
+        "output": {
+          "vertices": 128,
+          "edges": 128,
+          "inputs": 0,
+          "outputs": 64,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 64
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.04227330000139773,
+        "submissions": 19,
+        "output": {
+          "vertices": 128,
+          "edges": 128,
+          "inputs": 0,
+          "outputs": 64,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 64
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.0437301000347361,
+        "submissions": 19,
+        "output": {
+          "vertices": 128,
+          "edges": 128,
+          "inputs": 0,
+          "outputs": 64,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 64
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.0437301000347361,
+    "submissions": 19
+  },
+  {
+    "family": "copies_pivot",
+    "size": 16,
+    "depth": null,
+    "variant": "optimized",
+    "trials": [
+      {
+        "seconds": 0.0101948999799788,
+        "submissions": 4,
+        "output": {
+          "vertices": 128,
+          "edges": 128,
+          "inputs": 0,
+          "outputs": 64,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 64
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.010712099960073829,
+        "submissions": 4,
+        "output": {
+          "vertices": 128,
+          "edges": 128,
+          "inputs": 0,
+          "outputs": 64,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 64
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.010721300030127168,
+        "submissions": 4,
+        "output": {
+          "vertices": 128,
+          "edges": 128,
+          "inputs": 0,
+          "outputs": 64,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 64
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.010712099960073829,
+    "submissions": 4
+  },
+  {
+    "family": "copies_pivot",
+    "size": 16,
+    "depth": null,
+    "variant": "worklist",
+    "trials": [
+      {
+        "seconds": 0.014159500016830862,
+        "submissions": 7,
+        "output": {
+          "vertices": 128,
+          "edges": 128,
+          "inputs": 0,
+          "outputs": 64,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 64
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.01628610002808273,
+        "submissions": 7,
+        "output": {
+          "vertices": 128,
+          "edges": 128,
+          "inputs": 0,
+          "outputs": 64,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 64
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.014580900082364678,
+        "submissions": 7,
+        "output": {
+          "vertices": 128,
+          "edges": 128,
+          "inputs": 0,
+          "outputs": 64,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 64
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.014580900082364678,
+    "submissions": 7
+  },
+  {
+    "family": "copies_pivot",
+    "size": 64,
+    "depth": null,
+    "variant": "control",
+    "trials": [
+      {
+        "seconds": 0.24516910000238568,
+        "submissions": 67,
+        "output": {
+          "vertices": 512,
+          "edges": 512,
+          "inputs": 0,
+          "outputs": 256,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 256
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.24645580002106726,
+        "submissions": 67,
+        "output": {
+          "vertices": 512,
+          "edges": 512,
+          "inputs": 0,
+          "outputs": 256,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 256
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.25481980002950877,
+        "submissions": 67,
+        "output": {
+          "vertices": 512,
+          "edges": 512,
+          "inputs": 0,
+          "outputs": 256,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 256
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.24645580002106726,
+    "submissions": 67
+  },
+  {
+    "family": "copies_pivot",
+    "size": 64,
+    "depth": null,
+    "variant": "optimized",
+    "trials": [
+      {
+        "seconds": 0.017056700075045228,
+        "submissions": 4,
+        "output": {
+          "vertices": 512,
+          "edges": 512,
+          "inputs": 0,
+          "outputs": 256,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 256
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.016154799959622324,
+        "submissions": 4,
+        "output": {
+          "vertices": 512,
+          "edges": 512,
+          "inputs": 0,
+          "outputs": 256,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 256
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.017895600060001016,
+        "submissions": 4,
+        "output": {
+          "vertices": 512,
+          "edges": 512,
+          "inputs": 0,
+          "outputs": 256,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 256
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.017056700075045228,
+    "submissions": 4
+  },
+  {
+    "family": "copies_pivot",
+    "size": 64,
+    "depth": null,
+    "variant": "worklist",
+    "trials": [
+      {
+        "seconds": 0.023177600000053644,
+        "submissions": 7,
+        "output": {
+          "vertices": 512,
+          "edges": 512,
+          "inputs": 0,
+          "outputs": 256,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 256
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.024334999965503812,
+        "submissions": 7,
+        "output": {
+          "vertices": 512,
+          "edges": 512,
+          "inputs": 0,
+          "outputs": 256,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 256
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.022562899976037443,
+        "submissions": 7,
+        "output": {
+          "vertices": 512,
+          "edges": 512,
+          "inputs": 0,
+          "outputs": 256,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 256
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.023177600000053644,
+    "submissions": 7
+  },
+  {
+    "family": "copies_pivot",
+    "size": 128,
+    "depth": null,
+    "variant": "control",
+    "trials": [
+      {
+        "seconds": 0.6847278999630362,
+        "submissions": 131,
+        "output": {
+          "vertices": 1024,
+          "edges": 1024,
+          "inputs": 0,
+          "outputs": 512,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 512
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.6009672000072896,
+        "submissions": 131,
+        "output": {
+          "vertices": 1024,
+          "edges": 1024,
+          "inputs": 0,
+          "outputs": 512,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 512
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.6780949000967667,
+        "submissions": 131,
+        "output": {
+          "vertices": 1024,
+          "edges": 1024,
+          "inputs": 0,
+          "outputs": 512,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 512
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.6780949000967667,
+    "submissions": 131
+  },
+  {
+    "family": "copies_pivot",
+    "size": 128,
+    "depth": null,
+    "variant": "optimized",
+    "trials": [
+      {
+        "seconds": 0.029862200026400387,
+        "submissions": 4,
+        "output": {
+          "vertices": 1024,
+          "edges": 1024,
+          "inputs": 0,
+          "outputs": 512,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 512
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.026635500020347536,
+        "submissions": 4,
+        "output": {
+          "vertices": 1024,
+          "edges": 1024,
+          "inputs": 0,
+          "outputs": 512,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 512
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.02245059993583709,
+        "submissions": 4,
+        "output": {
+          "vertices": 1024,
+          "edges": 1024,
+          "inputs": 0,
+          "outputs": 512,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 512
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.026635500020347536,
+    "submissions": 4
+  },
+  {
+    "family": "copies_pivot",
+    "size": 128,
+    "depth": null,
+    "variant": "worklist",
+    "trials": [
+      {
+        "seconds": 0.043485599919222295,
+        "submissions": 7,
+        "output": {
+          "vertices": 1024,
+          "edges": 1024,
+          "inputs": 0,
+          "outputs": 512,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 512
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.03561929997522384,
+        "submissions": 7,
+        "output": {
+          "vertices": 1024,
+          "edges": 1024,
+          "inputs": 0,
+          "outputs": 512,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 512
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.02847220003604889,
+        "submissions": 7,
+        "output": {
+          "vertices": 1024,
+          "edges": 1024,
+          "inputs": 0,
+          "outputs": 512,
+          "max_degree": 3,
+          "mean_degree": 2.0,
+          "non_clifford": 512
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.03561929997522384,
+    "submissions": 7
+  },
+  {
+    "family": "copies_lcomp",
+    "size": 16,
+    "depth": null,
+    "variant": "control",
+    "trials": [
+      {
+        "seconds": 0.048958800034597516,
+        "submissions": 18,
+        "output": {
+          "vertices": 64,
+          "edges": 48,
+          "inputs": 0,
+          "outputs": 32,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 32
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.05133129993919283,
+        "submissions": 18,
+        "output": {
+          "vertices": 64,
+          "edges": 48,
+          "inputs": 0,
+          "outputs": 32,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 32
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.05382560007274151,
+        "submissions": 18,
+        "output": {
+          "vertices": 64,
+          "edges": 48,
+          "inputs": 0,
+          "outputs": 32,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 32
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.05133129993919283,
+    "submissions": 18
+  },
+  {
+    "family": "copies_lcomp",
+    "size": 16,
+    "depth": null,
+    "variant": "optimized",
+    "trials": [
+      {
+        "seconds": 0.007874300004914403,
+        "submissions": 3,
+        "output": {
+          "vertices": 64,
+          "edges": 48,
+          "inputs": 0,
+          "outputs": 32,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 32
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.009108099970035255,
+        "submissions": 3,
+        "output": {
+          "vertices": 64,
+          "edges": 48,
+          "inputs": 0,
+          "outputs": 32,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 32
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.009048799984157085,
+        "submissions": 3,
+        "output": {
+          "vertices": 64,
+          "edges": 48,
+          "inputs": 0,
+          "outputs": 32,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 32
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.009048799984157085,
+    "submissions": 3
+  },
+  {
+    "family": "copies_lcomp",
+    "size": 16,
+    "depth": null,
+    "variant": "worklist",
+    "trials": [
+      {
+        "seconds": 0.010819699964486063,
+        "submissions": 6,
+        "output": {
+          "vertices": 64,
+          "edges": 48,
+          "inputs": 0,
+          "outputs": 32,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 32
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.010831299936398864,
+        "submissions": 6,
+        "output": {
+          "vertices": 64,
+          "edges": 48,
+          "inputs": 0,
+          "outputs": 32,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 32
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.01172830001451075,
+        "submissions": 6,
+        "output": {
+          "vertices": 64,
+          "edges": 48,
+          "inputs": 0,
+          "outputs": 32,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 32
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.010831299936398864,
+    "submissions": 6
+  },
+  {
+    "family": "copies_lcomp",
+    "size": 64,
+    "depth": null,
+    "variant": "control",
+    "trials": [
+      {
+        "seconds": 0.21522939996793866,
+        "submissions": 66,
+        "output": {
+          "vertices": 256,
+          "edges": 192,
+          "inputs": 0,
+          "outputs": 128,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 128
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.23317659995518625,
+        "submissions": 66,
+        "output": {
+          "vertices": 256,
+          "edges": 192,
+          "inputs": 0,
+          "outputs": 128,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 128
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.23593159997835755,
+        "submissions": 66,
+        "output": {
+          "vertices": 256,
+          "edges": 192,
+          "inputs": 0,
+          "outputs": 128,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 128
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.23317659995518625,
+    "submissions": 66
+  },
+  {
+    "family": "copies_lcomp",
+    "size": 64,
+    "depth": null,
+    "variant": "optimized",
+    "trials": [
+      {
+        "seconds": 0.009958199923858047,
+        "submissions": 3,
+        "output": {
+          "vertices": 256,
+          "edges": 192,
+          "inputs": 0,
+          "outputs": 128,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 128
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.01054439996369183,
+        "submissions": 3,
+        "output": {
+          "vertices": 256,
+          "edges": 192,
+          "inputs": 0,
+          "outputs": 128,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 128
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.010830899933353066,
+        "submissions": 3,
+        "output": {
+          "vertices": 256,
+          "edges": 192,
+          "inputs": 0,
+          "outputs": 128,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 128
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.01054439996369183,
+    "submissions": 3
+  },
+  {
+    "family": "copies_lcomp",
+    "size": 64,
+    "depth": null,
+    "variant": "worklist",
+    "trials": [
+      {
+        "seconds": 0.013024599989876151,
+        "submissions": 6,
+        "output": {
+          "vertices": 256,
+          "edges": 192,
+          "inputs": 0,
+          "outputs": 128,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 128
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.013928000000305474,
+        "submissions": 6,
+        "output": {
+          "vertices": 256,
+          "edges": 192,
+          "inputs": 0,
+          "outputs": 128,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 128
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.014196200063452125,
+        "submissions": 6,
+        "output": {
+          "vertices": 256,
+          "edges": 192,
+          "inputs": 0,
+          "outputs": 128,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 128
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.013928000000305474,
+    "submissions": 6
+  },
+  {
+    "family": "copies_lcomp",
+    "size": 128,
+    "depth": null,
+    "variant": "control",
+    "trials": [
+      {
+        "seconds": 0.5748482999624684,
+        "submissions": 130,
+        "output": {
+          "vertices": 512,
+          "edges": 384,
+          "inputs": 0,
+          "outputs": 256,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 256
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.6250403000740334,
+        "submissions": 130,
+        "output": {
+          "vertices": 512,
+          "edges": 384,
+          "inputs": 0,
+          "outputs": 256,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 256
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.6351073000114411,
+        "submissions": 130,
+        "output": {
+          "vertices": 512,
+          "edges": 384,
+          "inputs": 0,
+          "outputs": 256,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 256
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.6250403000740334,
+    "submissions": 130
+  },
+  {
+    "family": "copies_lcomp",
+    "size": 128,
+    "depth": null,
+    "variant": "optimized",
+    "trials": [
+      {
+        "seconds": 0.014750900096260011,
+        "submissions": 3,
+        "output": {
+          "vertices": 512,
+          "edges": 384,
+          "inputs": 0,
+          "outputs": 256,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 256
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.015636299969628453,
+        "submissions": 3,
+        "output": {
+          "vertices": 512,
+          "edges": 384,
+          "inputs": 0,
+          "outputs": 256,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 256
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.017138399998657405,
+        "submissions": 3,
+        "output": {
+          "vertices": 512,
+          "edges": 384,
+          "inputs": 0,
+          "outputs": 256,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 256
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.015636299969628453,
+    "submissions": 3
+  },
+  {
+    "family": "copies_lcomp",
+    "size": 128,
+    "depth": null,
+    "variant": "worklist",
+    "trials": [
+      {
+        "seconds": 0.01852480007801205,
+        "submissions": 6,
+        "output": {
+          "vertices": 512,
+          "edges": 384,
+          "inputs": 0,
+          "outputs": 256,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 256
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.01871289999689907,
+        "submissions": 6,
+        "output": {
+          "vertices": 512,
+          "edges": 384,
+          "inputs": 0,
+          "outputs": 256,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 256
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.019509100005961955,
+        "submissions": 6,
+        "output": {
+          "vertices": 512,
+          "edges": 384,
+          "inputs": 0,
+          "outputs": 256,
+          "max_degree": 2,
+          "mean_degree": 1.5,
+          "non_clifford": 256
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.01871289999689907,
+    "submissions": 6
+  },
+  {
+    "family": "random_clifford_t",
+    "size": 4,
+    "depth": 40,
+    "variant": "control",
+    "trials": [
+      {
+        "seconds": 0.41960430005565286,
+        "submissions": 115,
+        "output": {
+          "vertices": 18,
+          "edges": 27,
+          "inputs": 4,
+          "outputs": 4,
+          "max_degree": 8,
+          "mean_degree": 3.0,
+          "non_clifford": 6
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.4127898000879213,
+        "submissions": 115,
+        "output": {
+          "vertices": 18,
+          "edges": 27,
+          "inputs": 4,
+          "outputs": 4,
+          "max_degree": 8,
+          "mean_degree": 3.0,
+          "non_clifford": 6
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.4182400000281632,
+        "submissions": 115,
+        "output": {
+          "vertices": 18,
+          "edges": 27,
+          "inputs": 4,
+          "outputs": 4,
+          "max_degree": 8,
+          "mean_degree": 3.0,
+          "non_clifford": 6
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.4182400000281632,
+    "submissions": 115
+  },
+  {
+    "family": "random_clifford_t",
+    "size": 4,
+    "depth": 40,
+    "variant": "optimized",
+    "trials": [
+      {
+        "seconds": 0.31944629992358387,
+        "submissions": 78,
+        "output": {
+          "vertices": 18,
+          "edges": 27,
+          "inputs": 4,
+          "outputs": 4,
+          "max_degree": 8,
+          "mean_degree": 3.0,
+          "non_clifford": 6
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.3207678999751806,
+        "submissions": 77,
+        "output": {
+          "vertices": 18,
+          "edges": 27,
+          "inputs": 4,
+          "outputs": 4,
+          "max_degree": 8,
+          "mean_degree": 3.0,
+          "non_clifford": 6
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.3208757999818772,
+        "submissions": 78,
+        "output": {
+          "vertices": 18,
+          "edges": 27,
+          "inputs": 4,
+          "outputs": 4,
+          "max_degree": 8,
+          "mean_degree": 3.0,
+          "non_clifford": 6
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.3207678999751806,
+    "submissions": 78
+  },
+  {
+    "family": "random_clifford_t",
+    "size": 4,
+    "depth": 40,
+    "variant": "worklist",
+    "trials": [
+      {
+        "seconds": 0.3635323999915272,
+        "submissions": 105,
+        "output": {
+          "vertices": 18,
+          "edges": 27,
+          "inputs": 4,
+          "outputs": 4,
+          "max_degree": 8,
+          "mean_degree": 3.0,
+          "non_clifford": 6
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.3437550999224186,
+        "submissions": 104,
+        "output": {
+          "vertices": 18,
+          "edges": 27,
+          "inputs": 4,
+          "outputs": 4,
+          "max_degree": 8,
+          "mean_degree": 3.0,
+          "non_clifford": 6
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      },
+      {
+        "seconds": 0.3474819000111893,
+        "submissions": 104,
+        "output": {
+          "vertices": 18,
+          "edges": 27,
+          "inputs": 4,
+          "outputs": 4,
+          "max_degree": 8,
+          "mean_degree": 3.0,
+          "non_clifford": 6
+        },
+        "verification": {
+          "status": "inconclusive",
+          "reason": "Dense oracle resource bound exceeded"
+        }
+      }
+    ],
+    "median_s": 0.3474819000111893,
+    "submissions": 104
+  }
+]

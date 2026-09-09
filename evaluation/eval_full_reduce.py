@@ -147,6 +147,7 @@ def build_suite(quick=False):
         ("corner_supp_basic_type1", C.supp_basic_type1),
         ("corner_copy_a0_mixed", C.copy_a0_mixed),
         ("corner_copy_cascade", C.copy_cascade),
+        ("corner_hadamard_parallel_via_fusion", C.sf_hadamard_parallel_via_fusion),
     ]
     suite += corner if not quick else corner[:4]
     return suite

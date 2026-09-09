@@ -1,0 +1,188 @@
+{
+  "block_timeout_s": 180,
+  "cases": [
+    {
+      "depth": null,
+      "family": "spider_fusion",
+      "id": "3ceab5429024b57a",
+      "scale": "patterns",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": null,
+      "family": "identity",
+      "id": "f68a4cde2901d1a2",
+      "scale": "patterns",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": null,
+      "family": "lcomp",
+      "id": "84d223f6902d7c14",
+      "scale": "fan_size",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": null,
+      "family": "pivot",
+      "id": "287e9408bc03f12b",
+      "scale": "fan_size",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": null,
+      "family": "pivot_gadget",
+      "id": "76d0294a99898218",
+      "scale": "fan_size",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": null,
+      "family": "pivot_boundary",
+      "id": "db64ac506d305da5",
+      "scale": "fan_size",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": null,
+      "family": "gadget_fusion",
+      "id": "fdda063d45cd0514",
+      "scale": "gadgets",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": null,
+      "family": "bialgebra",
+      "id": "bfa65e306da1fb20",
+      "scale": "fan_size",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": null,
+      "family": "identity_chain",
+      "id": "b405903f1e31e5ab",
+      "scale": "patterns",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": 8,
+      "family": "random_clifford",
+      "id": "b3a2795c68c61cf7",
+      "scale": "qubits",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": 8,
+      "family": "random_clifford_t",
+      "id": "0fb2c53d94b8fa54",
+      "scale": "qubits",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": 8,
+      "family": "random_t_heavy",
+      "id": "242a02a1197baf1c",
+      "scale": "qubits",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": 2,
+      "family": "layered_local",
+      "id": "e1e7a4ebf34bbb6c",
+      "scale": "qubits",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": 2,
+      "family": "layered_global",
+      "id": "3e5b0b5e9cd980d7",
+      "scale": "qubits",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": null,
+      "family": "copies_spider_fusion",
+      "id": "bfd4539e5c27daf7",
+      "scale": "patterns",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": null,
+      "family": "copies_identity",
+      "id": "47bf45590a4a6875",
+      "scale": "patterns",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": null,
+      "family": "copies_lcomp",
+      "id": "64184f1911dd1475",
+      "scale": "patterns",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": null,
+      "family": "copies_pivot",
+      "id": "f52fc8a794b1224b",
+      "scale": "patterns",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": null,
+      "family": "copies_pivot_gadget",
+      "id": "d604553ce385efb7",
+      "scale": "patterns",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": null,
+      "family": "copies_pivot_boundary",
+      "id": "9e1f8cdfe40d73eb",
+      "scale": "patterns",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": null,
+      "family": "copies_gadget_fusion",
+      "id": "34056a3ea91b0c2a",
+      "scale": "patterns",
+      "seed": 0,
+      "size": 2
+    },
+    {
+      "depth": null,
+      "family": "copies_bialgebra",
+      "id": "a432195e38008361",
+      "scale": "patterns",
+      "seed": 0,
+      "size": 2
+    }
+  ],
+  "max_vertices": 100000,
+  "order_seed": 20260908,
+  "profile": "smoke",
+  "query_timeout_s": 30,
+  "repetitions": 2,
+  "schema": 1,
+  "warmups": 1
+}

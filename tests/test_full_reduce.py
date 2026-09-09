@@ -75,6 +75,7 @@ class TestFullReduce(unittest.TestCase):
             ("pivot_gadget_basic", C.pg_basic),
             ("gadget_fusion_axel_pi", C.gf_axel_pi),
             ("pivot_boundary_general", C.pv_boundary_general),
+            ("hadamard_parallel_via_fusion", C.sf_hadamard_parallel_via_fusion),
         ]:
             with self.subTest(case=name):
                 self._check(name, builder())

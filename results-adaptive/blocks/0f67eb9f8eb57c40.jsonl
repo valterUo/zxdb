@@ -1,0 +1,1 @@
+{"case": {"depth": null, "family": "copies_lcomp", "id": "0f67eb9f8eb57c40", "scale": "patterns", "seed": 0, "size": 131072}, "evidence": ["57f99ec7920748b4", "e7badfe0b108bfb9", "0a7f78ec3a2b1367"], "kind": "adaptive_skip", "reason": "consecutive_both_engine_timeouts", "source_version": "6012ac4c280b828b4c47a604b2425b0b8e4936b5ef0b108dabd899ad37f8e3f1"}

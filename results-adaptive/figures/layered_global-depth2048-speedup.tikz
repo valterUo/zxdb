@@ -1,0 +1,3 @@
+\begin{tikzpicture}\begin{axis}[width=7cm,height=5cm,xmode=log,ymode=log,log basis x=2,unbounded coords=jump,xlabel={qubits},ylabel={PyZX / ZXdb},title={layered\_global-depth2048}]
+\addplot+[mark=*,error bars/.cd,y dir=both,y explicit] table[x=size,y=speedup,y error minus expr=\thisrow{speedup}-\thisrow{lower},y error plus expr=\thisrow{upper}-\thisrow{speedup}] {layered_global-depth2048.dat};
+\addplot[black,dashed,domain=2:32] {1};\end{axis}\end{tikzpicture}

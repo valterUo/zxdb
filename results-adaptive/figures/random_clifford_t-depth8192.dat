@@ -1,0 +1,4 @@
+size vertices db pyzx speedup lower upper db_completed pyzx_completed
+2 12696 nan nan nan nan nan 9.370721000013873 9.44116764998762
+8 12750 nan nan nan nan nan nan nan
+32 nan nan nan nan nan nan nan nan

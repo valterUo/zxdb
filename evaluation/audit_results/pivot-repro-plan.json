@@ -1,0 +1,1 @@
+{"block_timeout_s": 180, "cases": [{"depth": 80, "family": "random_t_heavy", "id": "49324f2631b8374c", "scale": "qubits", "seed": 4, "size": 16}], "max_vertices": 100000, "order_seed": 20260908, "profile": "study", "query_timeout_s": 30, "repetitions": 30, "schema": 1, "warmups": 1}

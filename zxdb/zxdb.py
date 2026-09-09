@@ -1,4 +1,6 @@
 from fractions import Fraction
+from contextvars import ContextVar
+from contextlib import contextmanager
 from neo4j import GraphDatabase
 import json
 import os
@@ -46,11 +48,10 @@ class ZXdb:
                              or "IN_MEMORY_ANALYTICAL")
         self.basic_rewrite_rule_queries = {}
         self._driver = None
-        # When set (by full_reduce / interior_clifford_simp), all rule methods
-        # run their fixpoint loop on this shared transaction instead of opening
-        # their own. This collapses the dozens of managed transactions a full
-        # reduction would otherwise begin/commit into a single one.
+        # Legacy experimental hook. Neither full-reduction path sets a shared
+        # transaction; each mutating statement remains a short autocommit.
         self._active_tx = None
+        self._reduction_options = ContextVar('zxdb_reduction_options', default=None)
 
         with open("zxdb/main_queries.json", "r") as f:
             query_collection = json.load(f)
@@ -71,7 +72,10 @@ class ZXdb:
             # pivot/pivot_gadget interiorness predicates, which must walk a
             # specific spider's neighbours. Idempotent; ignore "already exists".
             for stmt in ("CREATE INDEX ON :Node(t)",
+                         "CREATE INDEX ON :Node(id)",
                          "CREATE INDEX ON :Node(graph_id)",
+                         "CREATE INDEX ON :_ZXdbPivotWork",
+                         "CREATE INDEX ON :_ZXdbLcompWork",
                          "CREATE EDGE INDEX ON :Wire(t)"):
                 try:
                     analyze_session.run(stmt).consume()
@@ -82,7 +86,53 @@ class ZXdb:
         """Cypher text of a rule by its title in main_queries.json."""
         return str(self.basic_rewrite_rule_queries[title]["query"]["code"]["value"])
 
-    def _execute(self, loop):
+    @contextmanager
+    def _optimized_scope(self, graph_id, exclusive_access=False, incremental=False):
+        """Invocation-local options; never cache state across reductions."""
+        if incremental and not exclusive_access:
+            raise ValueError('Incremental worklists require exclusive_access=True')
+        options = dict(graph_id=graph_id, exclusive_access=exclusive_access,
+                       isolation_validated=False, parallel_normalized=False, incremental=incremental)
+        token = self._reduction_options.set(options)
+        try:
+            if exclusive_access:
+                with self.driver.session() as session:
+                    self._assert_graph_isolated(session, graph_id)
+                options['isolation_validated'] = True
+            yield
+        finally:
+            self._reduction_options.reset(token)
+
+    def _assert_graph_isolated(self, session, graph_id: str) -> None:
+        """Reject cross-graph relationships before a rewrite can DETACH DELETE.
+
+        Node.graph_id defines ownership. Relationship graph_id is metadata:
+        older diagrams may have wires without it. Edges between two nodes of
+        the requested graph are allowed; edges to foreign/unowned nodes are not.
+        """
+        options = self._reduction_options.get()
+        if (options is not None and options['graph_id'] == graph_id
+                and options.get('isolation_validated')):
+            return
+        invalid = session.run(
+            "MATCH (n:Node {graph_id: $graph_id})--(other) "
+            "WHERE other.graph_id IS NULL OR other.graph_id <> $graph_id "
+            "RETURN id(n) AS id LIMIT 1", graph_id=graph_id).single()
+        if invalid is not None:
+            raise ValueError(f"Graph '{graph_id}' has a relationship to a node "
+                             "outside that graph")
+
+    def _parallel_state(self, graph_id):
+        options = self._reduction_options.get()
+        return (options if options is not None and options['graph_id'] == graph_id
+                and options['exclusive_access'] else None)
+
+    def _invalidate_parallel(self, graph_id):
+        state = self._parallel_state(graph_id)
+        if state is not None:
+            state['parallel_normalized'] = False
+
+    def _execute(self, loop, graph_id: str, *, manages_parallel=False):
         """Run a rule's fixpoint `loop(tx)`.
 
         The loop is handed a SESSION, so every `tx.run(...)` inside it is an
@@ -94,7 +144,9 @@ class ZXdb:
         later statement can dereference a node an earlier statement already
         deleted — surfacing as a "deleted node" error or a non-deterministic
         SIGSEGV. Autocommit keeps each statement's effects finalized and
-        independent, which removes that hazard, and it is behaviour-identical for
+        independent, which reduces the lifetime of these references. It does not
+        guarantee crash safety inside an individual query (see the materialized
+        relationship matches in the interior pivot). It is behaviour-identical for
         the fixpoint logic (each query still reads the current graph and the loop
         still iterates to a fixpoint). It also avoids managed-transaction retries
         re-running a partially-applied loop over the (un-rolled-back) graph.
@@ -102,10 +154,22 @@ class ZXdb:
         If a shared transaction is active, run on it directly (the caller owns
         the transaction); this path is currently unused by full_reduce.
         """
-        if self._active_tx is not None:
-            return loop(self._active_tx)
-        with self.driver.session() as session:
-            return loop(session)
+        result = None
+        try:
+            if self._active_tx is not None:
+                self._assert_graph_isolated(self._active_tx, graph_id)
+                result = loop(self._active_tx)
+            else:
+                with self.driver.session() as session:
+                    self._assert_graph_isolated(session, graph_id)
+                    result = loop(session)
+            return result
+        finally:
+            # Identity/fusion manage this around each mutation themselves.
+            # Other successful rewrites conservatively invalidate the invariant;
+            # proven no-op calls preserve it. Errors never establish an invariant.
+            if result is None or (not manages_parallel and result != 0):
+                self._invalidate_parallel(graph_id)
 
     @staticmethod
     def _run_count(tx, query: str, key: str, graph_id: str) -> int:
@@ -505,12 +569,13 @@ class ZXdb:
 
 
     def hadamard_cancel_fn(self, graph_id: str, session) -> int:
+        self._assert_graph_isolated(session, graph_id)
         total_patterns = 0
         while True:
             def mark_pattern(tx):
                 # Get the marking query from your JSON collection
                 mark_query = str(self.basic_rewrite_rule_queries["Hadamard cancellation labeling query"]["query"]["code"]["value"])
-                result = tx.run(mark_query)
+                result = tx.run(mark_query, graph_id=graph_id)
                 record = result.single()
                 return record["pattern_id"] if record and record["pattern_id"] else None
             
@@ -535,6 +600,7 @@ class ZXdb:
         """
         
         with self.driver.session() as session:
+            self._assert_graph_isolated(session, graph_id)
             total_patterns = 0
             start_time = time.time()
             # Step 1: Iteratively label patterns
@@ -542,7 +608,7 @@ class ZXdb:
                 def mark_pattern(tx):
                     # Get the marking query from your JSON collection
                     mark_query = str(self.basic_rewrite_rule_queries["Hadamard cancellation labeling query"]["query"]["code"]["value"])
-                    result = tx.run(mark_query)
+                    result = tx.run(mark_query, graph_id=graph_id)
                     record = result.single()
                     return record["pattern_id"] if record and record["pattern_id"] else None
                 
@@ -591,26 +657,33 @@ class ZXdb:
             while True:
                 removed = self._run_count(tx, remove_query,
                                           "identities_removed", graph_id)
+                if removed:
+                    self._invalidate_parallel(graph_id)
                 self._normalize_parallel_edges_tx(tx, graph_id)
                 total += removed
                 if removed == 0:
                     return total
 
-        return self._execute(loop)
+        return self._execute(loop, graph_id, manages_parallel=True)
 
     def _normalize_parallel_edges_tx(self, tx, graph_id: str) -> int:
         """
-        Normalize parallel edges between same-colored spiders the way pyzx's
-        add_edge_table does during every rewrite: pairs of Hadamard edges
-        cancel, a simple + Hadamard pair becomes the simple edge with pi added
-        to one endpoint, and parallel simple edges collapse to one.
+        Normalize parallel edges between Z/X spiders. For equal colors,
+        Hadamard pairs cancel, simple duplicates collapse, and a mixed pair
+        keeps the simple wire with pi added to one endpoint. For opposite
+        colors, swap simple and Hadamard in these laws (color duality).
 
         A single cheap guard query short-circuits the common case (no parallel
         edges), which is most calls in the full_reduce pipeline: that turns a
         fixed 6-round-trip cost into 1.
         """
+        state = self._parallel_state(graph_id)
+        if state is not None and state['parallel_normalized']:
+            return 0
         guard_query = self._query("Parallel edge guard")
         if self._run_count(tx, guard_query, "k", graph_id) == 0:
+            if state is not None:
+                state['parallel_normalized'] = True
             return 0
 
         hadamard_query = self._query("Normalize parallel Hadamard pairs")
@@ -625,6 +698,8 @@ class ZXdb:
             removed += self._run_count(tx, simple_query, "removed", graph_id)
             total += removed
             if removed == 0:
+                if state is not None:
+                    state['parallel_normalized'] = True
                 return total
     
 
@@ -648,12 +723,16 @@ class ZXdb:
         # a graph-like diagram (post to_gh, all interior wires Hadamard) it is
         # the common case, since pivot/lcomp create only Hadamard wires.
         fusable_guard = (
-            "MATCH (a:Node)-[r:Wire {t: 1}]-(b:Node) "
+            "MATCH (a:Node {graph_id: $graph_id})-[r:Wire {t: 1}]-"
+            "(b:Node {graph_id: $graph_id}) "
             "WHERE a.t = b.t AND a.t IN [1, 2] "
             "RETURN count(r) AS k")
+        options = self._reduction_options.get()
+        if options is not None and options['graph_id'] == graph_id:
+            fusable_guard = fusable_guard.replace('RETURN count(r)', 'WITH r LIMIT 1 RETURN count(r)')
 
         def loop(tx):
-            # Parallel edges between same-colored spiders must be normalized
+            # Parallel edges between spiders must be normalized
             # BEFORE fusing: a fusable pair connected by both a simple and a
             # Hadamard edge fuses to a spider with an extra pi (Hadamard
             # self-loop); the fusion query would silently drop the second edge
@@ -668,16 +747,16 @@ class ZXdb:
                 merged = self._run_count(tx, fusion_query, "merged", graph_id)
                 if merged == 0:
                     return total_patterns
+                self._invalidate_parallel(graph_id)
                 total_patterns += merged
-                # A merge can create parallel Z-X simple wires (Hopf) and
-                # same-colour parallel wires (normalize); clean both up before
-                # the next fuse.
+                # A merge can create parallel wires of either type and color
+                # combination; normalize them before the next fuse.
                 tx.run(hopf_query, graph_id=graph_id).consume()
                 self._normalize_parallel_edges_tx(tx, graph_id)
 
-        return self._execute(loop)
+        return self._execute(loop, graph_id, manages_parallel=True)
         
-
+        
     def pivot_rule(self, graph_id: str) -> int:
         """
         Apply the pivot rule to the graph.
@@ -689,7 +768,10 @@ class ZXdb:
             Number of pivot rule patterns processed
         """
 
-        two_query = self._query("Pivot rule - two interior Pauli spiders")
+        options = self._reduction_options.get()
+        batched = options is not None and options['graph_id'] == graph_id
+        two_query = self._query("Pivot rule - batched interior Pauli spiders" if batched else
+                                "Pivot rule - two interior Pauli spiders")
         single_query = self._query("Pivot rule - single interior Pauli spider")
 
         def loop(tx):
@@ -697,23 +779,27 @@ class ZXdb:
             # boundary pivot. The boundary-pivot query is a relatively expensive
             # full scan that rarely matches, so running it once per
             # interior-fixpoint instead of after every single interior pivot
-            # avoids dozens of no-op scans. Pivots are confluent, so the order
-            # does not change the final graph.
+            # avoids dozens of no-op scans. Valid pivot orders preserve semantics,
+            # but need not produce identical final graph structures.
             total = 0
             while True:
-                while True:
-                    n = self._run_count(
-                        tx, two_query, "pivot_operations_performed", graph_id)
-                    total += n
-                    if n == 0:
-                        break
+                if batched and options['incremental']:
+                    from zxdb.worklists import fixpoint
+                    total += fixpoint(tx, two_query, 'pivot', 'pivot_operations_performed', graph_id)
+                else:
+                    while True:
+                        n = self._run_count(
+                            tx, two_query, "pivot_operations_performed", graph_id)
+                        total += n
+                        if n == 0:
+                            break
                 b = self._run_count(
                     tx, single_query, "interior_pauli_removed", graph_id)
                 total += b
                 if b == 0:
                     return total
 
-        return self._execute(loop)
+        return self._execute(loop, graph_id)
         
         
     def local_complementation_rule(self, graph_id: str) -> int:
@@ -727,9 +813,14 @@ class ZXdb:
             Number of local complementation patterns processed
         """
 
-        lc_query = self._query("Local complement")
+        options = self._reduction_options.get()
+        batched = options is not None and options['graph_id'] == graph_id
+        lc_query = self._query("Local complement - batched" if batched else "Local complement")
 
         def loop(tx):
+            if batched and options['incremental']:
+                from zxdb.worklists import fixpoint
+                return fixpoint(tx, lc_query, 'lcomp', 'patterns_processed', graph_id)
             total = 0
             while True:
                 changed = self._run_count(tx, lc_query,
@@ -738,7 +829,7 @@ class ZXdb:
                 if changed == 0:
                     return total
 
-        return self._execute(loop)
+        return self._execute(loop, graph_id)
         
     
     def phase_gadget_fusion_rule(self, graph_id: str) -> int:
@@ -765,7 +856,7 @@ class ZXdb:
                 if changed == 0:
                     return total
 
-        return self._execute(loop)
+        return self._execute(loop, graph_id)
         
 
     def pivot_gadget_rule(self, graph_id: str) -> int:
@@ -790,7 +881,7 @@ class ZXdb:
                 if changed == 0:
                     return total
 
-        return self._execute(loop)
+        return self._execute(loop, graph_id)
         
 
     def pivot_boundary_rule(self, graph_id: str) -> int:
@@ -815,7 +906,7 @@ class ZXdb:
                 if changed == 0:
                     return total
 
-        return self._execute(loop)
+        return self._execute(loop, graph_id)
 
 
     def bialgebra_simp(self, graph_id: str) -> int:
@@ -843,7 +934,7 @@ class ZXdb:
                 if applied == 0:
                     return total
 
-        return self._execute(loop)
+        return self._execute(loop, graph_id)
         
 
     def supplementarity_simp(self, graph_id: str) -> int:
@@ -865,9 +956,12 @@ class ZXdb:
         # The pair-matching queries are quadratic in the number of
         # non-Clifford spiders; skip them when fewer than two exist.
         guard_query = (
-            "MATCH (v:Node {t: 1}) "
+            "MATCH (v:Node {t: 1, graph_id: $graph_id}) "
             "WHERE v.phase IS NOT NULL AND v.phase * 2 <> round(v.phase * 2) "
             "RETURN count(v) AS k")
+        options = self._reduction_options.get()
+        if options is not None and options['graph_id'] == graph_id:
+            guard_query = guard_query.replace('RETURN count(v)', 'WITH v LIMIT 2 RETURN count(v)')
 
         def loop(tx):
             total = 0
@@ -882,7 +976,7 @@ class ZXdb:
                 if applied == 0:
                     return total
 
-        return self._execute(loop)
+        return self._execute(loop, graph_id)
 
     def copy_simp(self, graph_id: str) -> int:
         """
@@ -910,7 +1004,7 @@ class ZXdb:
                 if applied == 0:
                     return total
 
-        return self._execute(loop)
+        return self._execute(loop, graph_id)
 
     def to_gh(self, graph_id: str) -> int:
         """
@@ -924,15 +1018,17 @@ class ZXdb:
         # Autocommit (see _execute): each statement is its own committed
         # transaction, avoiding the analytical-mode deleted-node hazard.
         with self.driver.session() as session:
+            self._assert_graph_isolated(session, graph_id)
             # Cheap guard: to_gh only acts on X-spiders. After the first color
             # change the diagram is all Z, so every later call is a no-op — gate
             # the toggle+recolor on a single existence check (behaviour-identical;
             # both queries return 0 when no X-spider exists).
-            if session.run("MATCH (n:Node {t: 2}) WITH n LIMIT 1 "
-                           "RETURN count(n) AS has").single()["has"] == 0:
+            if session.run("MATCH (n:Node {t: 2, graph_id: $graph_id}) WITH n LIMIT 1 "
+                           "RETURN count(n) AS has", graph_id=graph_id).single()["has"] == 0:
                 return 0
             toggle_query = str(self.basic_rewrite_rule_queries["Color change edge toggle"]["query"]["code"]["value"])
             session.run(toggle_query, graph_id=graph_id).consume()
+            self._invalidate_parallel(graph_id)
             recolor_query = str(self.basic_rewrite_rule_queries["Color change spiders"]["query"]["code"]["value"])
             record = session.run(recolor_query, graph_id=graph_id).single()
             return record["recolored"] if record else 0
@@ -978,7 +1074,38 @@ class ZXdb:
         def loop(tx):
             return self._run_count(tx, remove_query, "removed", graph_id)
 
-        return self._execute(loop)
+        return self._execute(loop, graph_id)
+
+    def local_complementation_rule_batched(self, graph_id: str, *,
+                                          exclusive_access=False, incremental=False) -> int:
+        """Apply independent local-complementation batches to a fixed point."""
+        with self._optimized_scope(graph_id, exclusive_access, incremental):
+            return self.local_complementation_rule(graph_id)
+
+    def apply_rule_optimized(self, method: str, graph_id: str, *,
+                             exclusive_access=False, incremental=False) -> int:
+        """Apply a supported standalone rule using the optimized execution mode."""
+        allowed = {'spider_fusion', 'remove_identities', 'pivot_rule',
+                   'local_complementation_rule', 'phase_gadget_fusion_rule',
+                   'pivot_gadget_rule', 'pivot_boundary_rule', 'bialgebra_simp',
+                   'supplementarity_simp', 'copy_simp'}
+        if method not in allowed:
+            raise ValueError(f'Unsupported optimized rule: {method}')
+        with self._optimized_scope(graph_id, exclusive_access, incremental):
+            return getattr(self, method)(graph_id)
+
+    def full_reduce_optimized(self, graph_id: str, max_rounds: int = 1000,
+                              *, exclusive_access: bool = False, incremental: bool = False) -> None:
+        """Same reduction schedule, with independent pivot/lcomp batches.
+
+        The original full_reduce remains the control implementation. Different
+        valid matching orders can produce different equivalent reduced graphs.
+        With exclusive_access=True the caller guarantees no concurrent writers
+        for the duration of this call. Graph ownership is then checked once.
+        This is a caller contract, not a database lock or a long transaction.
+        """
+        with self._optimized_scope(graph_id, exclusive_access, incremental):
+            self._full_reduce_body(graph_id, max_rounds)
 
     def _full_reduce_body(self, graph_id: str, max_rounds: int) -> None:
         self.interior_clifford_simp(graph_id)
@@ -1022,14 +1149,17 @@ class ZXdb:
     # Batched-pivot variant (isolated; research). full_reduce_batched_pivot
     # mirrors full_reduce exactly but swaps the interior pivot for the batched
     # query "Pivot rule - batched interior Pauli spiders", which applies a
-    # maximal set of disjoint pivots per round-trip instead of one (LIMIT 1).
+    # nonempty independent set of pivots per round-trip instead of one (LIMIT 1).
     # Everything else (boundary pivot, gadget/copy/supplementarity, the whole
     # composition) is unchanged, and the original full_reduce path is untouched.
     # ------------------------------------------------------------------
 
-    def pivot_rule_batched(self, graph_id: str) -> int:
+    def pivot_rule_batched(self, graph_id: str, *, exclusive_access=False, incremental=False) -> int:
         """Interior pivots applied in disjoint batches (see the batched query),
         then the boundary pivot — same fixpoint as pivot_rule, fewer round-trips."""
+        if incremental:
+            with self._optimized_scope(graph_id, exclusive_access, incremental):
+                return self.pivot_rule(graph_id)
         two_query = self._query("Pivot rule - batched interior Pauli spiders")
         single_query = self._query("Pivot rule - single interior Pauli spider")
 
@@ -1048,7 +1178,7 @@ class ZXdb:
                 if b == 0:
                     return total
 
-        return self._execute(loop)
+        return self._execute(loop, graph_id)
 
     def interior_clifford_simp_batched(self, graph_id: str) -> int:
         """interior_clifford_simp using the batched interior pivot."""
@@ -1147,17 +1277,43 @@ class ZXdb:
         Python port zxqm.pivot_gadget_fixpoint($graph_id) also exists but is
         slower — the mgp Python per-op overhead exceeds the round-trip savings.)"""
         def loop(tx):
+            if not self._query_module_graph_available(tx, graph_id):
+                return 0
             rec = tx.run(
                 "CALL zxqmcpp.pivot_gadget_fixpoint() "
                 "YIELD applied RETURN applied").single()
             return rec["applied"] if rec else 0
-        return self._execute(loop)
+        return self._execute(loop, graph_id)
+
+    @staticmethod
+    def _query_module_graph_available(session, graph_id: str) -> bool:
+        """The current native module is database-wide, not graph-scoped.
+
+        Preserve its single-diagram use, but never dispatch it when another
+        graph or unowned data could be modified. A missing graph is a no-op.
+        """
+        present = session.run(
+            "MATCH (n:Node {graph_id: $graph_id}) RETURN id(n) AS id LIMIT 1",
+            graph_id=graph_id).single()
+        if present is None:
+            return False
+        foreign = session.run(
+            "MATCH (n) WHERE n.graph_id IS NULL OR n.graph_id <> $graph_id "
+            "RETURN id(n) AS id LIMIT 1", graph_id=graph_id).single()
+        if foreign is not None:
+            raise ValueError("The native query module requires a database "
+                             "containing only the requested graph")
+        return True
 
     def full_reduce_with_query_modules(self, graph_id: str,
                                        max_rounds: int = 1000) -> None:
         """full_reduce with pivot_gadget run by the zxqm query module (isolated
         research variant). Identical composition to full_reduce; only the
         pivot_gadget rule is the in-process module."""
+        # Check before even the first Cypher rewrite, so rejection is a no-op.
+        with self.driver.session() as session:
+            if not self._query_module_graph_available(session, graph_id):
+                return
         self.interior_clifford_simp(graph_id)
         self.pivot_gadget_rule_qm(graph_id)
         for _ in range(max_rounds):

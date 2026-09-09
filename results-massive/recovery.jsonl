@@ -1,0 +1,6 @@
+{"container": "memgraph", "event": "restart_requested", "reason": "a998bcee3c3cbc3a: error", "time": 1788888129.8844905}
+{"event": "restart_ready", "time": 1788888139.280459}
+{"container": "memgraph", "event": "restart_requested", "reason": "a998bcee3c3cbc3a: error", "time": 1788889548.1435926}
+{"event": "restart_ready", "time": 1788889555.0160918}
+{"container": "memgraph", "event": "restart_requested", "reason": "f11a5ad0700d9c69: error", "time": 1788889586.689152}
+{"event": "restart_ready", "time": 1788889593.5396407}

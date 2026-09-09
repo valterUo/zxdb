@@ -1,0 +1,34 @@
+{
+  "scope": "Typed Hopf cancellation and color-dual parallel-edge normalization",
+  "rule_cases": {
+    "passed": 108,
+    "total": 108
+  },
+  "full_reduce_cases": {
+    "passed": 113,
+    "total": 113
+  },
+  "unittest_discovery": {
+    "passed": 28,
+    "total": 28
+  },
+  "targeted_hopf_tests": {
+    "passed": 4,
+    "total": 4,
+    "color_multiplicity_subcases": 60,
+    "fusion_composition_subcases": 16,
+    "direct_hopf_subcases": 4,
+    "foreign_graph_preservation_cases": 1
+  },
+  "pre_fix_query_check": {
+    "failing_subcases": 43,
+    "errors": 0
+  },
+  "logs": [
+    "rules_hopf.log",
+    "full_reduce_hopf.log",
+    "unittest_hopf.log",
+    "hopf_after.log",
+    "hopf_before.log"
+  ]
+}

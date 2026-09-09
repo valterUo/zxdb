@@ -1,0 +1,751 @@
+{
+  "pivot": [
+    {
+      "QUERY PLAN": " * Produce {pivot_operations_performed}"
+    },
+    {
+      "QUERY PLAN": " * Aggregate {COUNT-1} {}"
+    },
+    {
+      "QUERY PLAN": " * Accumulate"
+    },
+    {
+      "QUERY PLAN": " * Delete"
+    },
+    {
+      "QUERY PLAN": " * Foreach"
+    },
+    {
+      "QUERY PLAN": " |\\ "
+    },
+    {
+      "QUERY PLAN": " | * SetLabels"
+    },
+    {
+      "QUERY PLAN": " | * Once"
+    },
+    {
+      "QUERY PLAN": " * Foreach"
+    },
+    {
+      "QUERY PLAN": " |\\ "
+    },
+    {
+      "QUERY PLAN": " | * SetProperty"
+    },
+    {
+      "QUERY PLAN": " | * Once"
+    },
+    {
+      "QUERY PLAN": " * Foreach"
+    },
+    {
+      "QUERY PLAN": " |\\ "
+    },
+    {
+      "QUERY PLAN": " | * SetProperty"
+    },
+    {
+      "QUERY PLAN": " | * Once"
+    },
+    {
+      "QUERY PLAN": " * Foreach"
+    },
+    {
+      "QUERY PLAN": " |\\ "
+    },
+    {
+      "QUERY PLAN": " | * SetProperty"
+    },
+    {
+      "QUERY PLAN": " | * Once"
+    },
+    {
+      "QUERY PLAN": " * Accumulate"
+    },
+    {
+      "QUERY PLAN": " * Apply"
+    },
+    {
+      "QUERY PLAN": " |\\ "
+    },
+    {
+      "QUERY PLAN": " | * EmptyResult"
+    },
+    {
+      "QUERY PLAN": " | * Foreach"
+    },
+    {
+      "QUERY PLAN": " | |\\ "
+    },
+    {
+      "QUERY PLAN": " | | * CreateExpand (u)-[anon20:Wire]->(v)"
+    },
+    {
+      "QUERY PLAN": " | | * Once"
+    },
+    {
+      "QUERY PLAN": " | * Foreach"
+    },
+    {
+      "QUERY PLAN": " | |\\ "
+    },
+    {
+      "QUERY PLAN": " | | * Delete"
+    },
+    {
+      "QUERY PLAN": " | | * Once"
+    },
+    {
+      "QUERY PLAN": " | * Produce {u, v, existing_edges}"
+    },
+    {
+      "QUERY PLAN": " | * Aggregate {COLLECT-1} {v, u}"
+    },
+    {
+      "QUERY PLAN": " | * Optional"
+    },
+    {
+      "QUERY PLAN": " | |\\ "
+    },
+    {
+      "QUERY PLAN": " | | * Expand (u)-[existing:Wire]-(v)"
+    },
+    {
+      "QUERY PLAN": " | | * Once"
+    },
+    {
+      "QUERY PLAN": " | * Unwind"
+    },
+    {
+      "QUERY PLAN": " | * Unwind"
+    },
+    {
+      "QUERY PLAN": " | * Produce {only_b, shared}"
+    },
+    {
+      "QUERY PLAN": " | * Once"
+    },
+    {
+      "QUERY PLAN": " * Accumulate"
+    },
+    {
+      "QUERY PLAN": " * Apply"
+    },
+    {
+      "QUERY PLAN": " |\\ "
+    },
+    {
+      "QUERY PLAN": " | * EmptyResult"
+    },
+    {
+      "QUERY PLAN": " | * Foreach"
+    },
+    {
+      "QUERY PLAN": " | |\\ "
+    },
+    {
+      "QUERY PLAN": " | | * CreateExpand (u)-[anon17:Wire]->(v)"
+    },
+    {
+      "QUERY PLAN": " | | * Once"
+    },
+    {
+      "QUERY PLAN": " | * Foreach"
+    },
+    {
+      "QUERY PLAN": " | |\\ "
+    },
+    {
+      "QUERY PLAN": " | | * Delete"
+    },
+    {
+      "QUERY PLAN": " | | * Once"
+    },
+    {
+      "QUERY PLAN": " | * Produce {u, v, existing_edges}"
+    },
+    {
+      "QUERY PLAN": " | * Aggregate {COLLECT-1} {v, u}"
+    },
+    {
+      "QUERY PLAN": " | * Optional"
+    },
+    {
+      "QUERY PLAN": " | |\\ "
+    },
+    {
+      "QUERY PLAN": " | | * Expand (u)-[existing:Wire]-(v)"
+    },
+    {
+      "QUERY PLAN": " | | * Once"
+    },
+    {
+      "QUERY PLAN": " | * Unwind"
+    },
+    {
+      "QUERY PLAN": " | * Unwind"
+    },
+    {
+      "QUERY PLAN": " | * Produce {only_a, shared}"
+    },
+    {
+      "QUERY PLAN": " | * Once"
+    },
+    {
+      "QUERY PLAN": " * Accumulate"
+    },
+    {
+      "QUERY PLAN": " * Apply"
+    },
+    {
+      "QUERY PLAN": " |\\ "
+    },
+    {
+      "QUERY PLAN": " | * EmptyResult"
+    },
+    {
+      "QUERY PLAN": " | * Foreach"
+    },
+    {
+      "QUERY PLAN": " | |\\ "
+    },
+    {
+      "QUERY PLAN": " | | * CreateExpand (u)-[anon14:Wire]->(v)"
+    },
+    {
+      "QUERY PLAN": " | | * Once"
+    },
+    {
+      "QUERY PLAN": " | * Foreach"
+    },
+    {
+      "QUERY PLAN": " | |\\ "
+    },
+    {
+      "QUERY PLAN": " | | * Delete"
+    },
+    {
+      "QUERY PLAN": " | | * Once"
+    },
+    {
+      "QUERY PLAN": " | * Produce {u, v, existing_edges}"
+    },
+    {
+      "QUERY PLAN": " | * Aggregate {COLLECT-1} {v, u}"
+    },
+    {
+      "QUERY PLAN": " | * Optional"
+    },
+    {
+      "QUERY PLAN": " | |\\ "
+    },
+    {
+      "QUERY PLAN": " | | * Expand (u)-[existing:Wire]-(v)"
+    },
+    {
+      "QUERY PLAN": " | | * Once"
+    },
+    {
+      "QUERY PLAN": " | * Unwind"
+    },
+    {
+      "QUERY PLAN": " | * Unwind"
+    },
+    {
+      "QUERY PLAN": " | * Produce {only_a, only_b}"
+    },
+    {
+      "QUERY PLAN": " | * Once"
+    },
+    {
+      "QUERY PLAN": " * Produce {a, b, only_a, only_b, shared}"
+    },
+    {
+      "QUERY PLAN": " * Produce {a, b, a_nbrs, b_nbrs}"
+    },
+    {
+      "QUERY PLAN": " * Aggregate {COLLECT-1} {a_nbrs, b, a}"
+    },
+    {
+      "QUERY PLAN": " * Optional"
+    },
+    {
+      "QUERY PLAN": " |\\ "
+    },
+    {
+      "QUERY PLAN": " | * Filter (nb :Node), Generic {a, nb}, {anon11.t}"
+    },
+    {
+      "QUERY PLAN": " | * Expand (b)-[anon11:Wire]-(nb)"
+    },
+    {
+      "QUERY PLAN": " | * Once"
+    },
+    {
+      "QUERY PLAN": " * Produce {a, b, a_nbrs}"
+    },
+    {
+      "QUERY PLAN": " * Aggregate {COLLECT-1} {b, a}"
+    },
+    {
+      "QUERY PLAN": " * Optional"
+    },
+    {
+      "QUERY PLAN": " |\\ "
+    },
+    {
+      "QUERY PLAN": " | * Filter (na :Node), Generic {b, na}, {anon9.t}"
+    },
+    {
+      "QUERY PLAN": " | * Expand (a)-[anon9:Wire]-(na)"
+    },
+    {
+      "QUERY PLAN": " | * Once"
+    },
+    {
+      "QUERY PLAN": " * Produce {a, b}"
+    },
+    {
+      "QUERY PLAN": " * Unwind"
+    },
+    {
+      "QUERY PLAN": " * Produce {survivors}"
+    },
+    {
+      "QUERY PLAN": " * Aggregate {COLLECT-1} {}"
+    },
+    {
+      "QUERY PLAN": " * Filter Generic {conflicts}"
+    },
+    {
+      "QUERY PLAN": " * Produce {a, b, rank, conflicts}"
+    },
+    {
+      "QUERY PLAN": " * Aggregate {SUM-1} {p}"
+    },
+    {
+      "QUERY PLAN": " * Unwind"
+    },
+    {
+      "QUERY PLAN": " * Produce {v, claimants, owner}"
+    },
+    {
+      "QUERY PLAN": " * Aggregate {COLLECT-1, MIN-1} {v}"
+    },
+    {
+      "QUERY PLAN": " * Unwind"
+    },
+    {
+      "QUERY PLAN": " * Unwind"
+    },
+    {
+      "QUERY PLAN": " * Produce {P}"
+    },
+    {
+      "QUERY PLAN": " * Aggregate {COLLECT-1} {}"
+    },
+    {
+      "QUERY PLAN": " * Produce {a, b, rank, Na, Nb}"
+    },
+    {
+      "QUERY PLAN": " * Aggregate {COLLECT-1} {Na, rank, b, a}"
+    },
+    {
+      "QUERY PLAN": " * Optional"
+    },
+    {
+      "QUERY PLAN": " |\\ "
+    },
+    {
+      "QUERY PLAN": " | * Filter (nb :Node), {anon7.t}"
+    },
+    {
+      "QUERY PLAN": " | * Expand (b)-[anon7:Wire]-(nb)"
+    },
+    {
+      "QUERY PLAN": " | * Once"
+    },
+    {
+      "QUERY PLAN": " * Produce {a, b, rank, Na}"
+    },
+    {
+      "QUERY PLAN": " * Aggregate {COLLECT-1} {rank, b, a}"
+    },
+    {
+      "QUERY PLAN": " * Optional"
+    },
+    {
+      "QUERY PLAN": " |\\ "
+    },
+    {
+      "QUERY PLAN": " | * Filter (na :Node), {anon5.t}"
+    },
+    {
+      "QUERY PLAN": " | * Expand (a)-[anon5:Wire]-(na)"
+    },
+    {
+      "QUERY PLAN": " | * Once"
+    },
+    {
+      "QUERY PLAN": " * Produce {a, b, rank}"
+    },
+    {
+      "QUERY PLAN": " * Accumulate"
+    },
+    {
+      "QUERY PLAN": " * SetLabels"
+    },
+    {
+      "QUERY PLAN": " * SetLabels"
+    },
+    {
+      "QUERY PLAN": " * Distinct"
+    },
+    {
+      "QUERY PLAN": " * Produce {a, b, pe}"
+    },
+    {
+      "QUERY PLAN": " * Filter (b :Node), Generic {a, b}, Generic {b}, {b.phase}, {b.t}, {pe.t}"
+    },
+    {
+      "QUERY PLAN": " |\\ "
+    },
+    {
+      "QUERY PLAN": " | * EvaluatePatternFilter"
+    },
+    {
+      "QUERY PLAN": " | * Limit"
+    },
+    {
+      "QUERY PLAN": " | * Filter (x :Node), Generic {w, x}"
+    },
+    {
+      "QUERY PLAN": " | * Expand (b)-[w:Wire]-(x)"
+    },
+    {
+      "QUERY PLAN": " | * Once"
+    },
+    {
+      "QUERY PLAN": " * Expand (a)-[pe:Wire]-(b)"
+    },
+    {
+      "QUERY PLAN": " * Filter (a :Node), Generic {a}, {a.graph_id}, {a.phase}, {a.t}"
+    },
+    {
+      "QUERY PLAN": " |\\ "
+    },
+    {
+      "QUERY PLAN": " | * EvaluatePatternFilter"
+    },
+    {
+      "QUERY PLAN": " | * Limit"
+    },
+    {
+      "QUERY PLAN": " | * Filter (x :Node), Generic {w, x}"
+    },
+    {
+      "QUERY PLAN": " | * Expand (a)-[w:Wire]-(x)"
+    },
+    {
+      "QUERY PLAN": " | * Once"
+    },
+    {
+      "QUERY PLAN": " * Produce {a}"
+    },
+    {
+      "QUERY PLAN": " * Accumulate"
+    },
+    {
+      "QUERY PLAN": " * RemoveLabels"
+    },
+    {
+      "QUERY PLAN": " * Unwind"
+    },
+    {
+      "QUERY PLAN": " * Produce {frontier}"
+    },
+    {
+      "QUERY PLAN": " * Aggregate {COLLECT-1} {}"
+    },
+    {
+      "QUERY PLAN": " * Filter {pending.graph_id}"
+    },
+    {
+      "QUERY PLAN": " * ScanAllByLabel (pending :_ZXdbPivotWork)"
+    },
+    {
+      "QUERY PLAN": " * Once"
+    }
+  ],
+  "lcomp": [
+    {
+      "QUERY PLAN": " * Produce {patterns_processed}"
+    },
+    {
+      "QUERY PLAN": " * Aggregate {COUNT-1} {}"
+    },
+    {
+      "QUERY PLAN": " * Accumulate"
+    },
+    {
+      "QUERY PLAN": " * Delete"
+    },
+    {
+      "QUERY PLAN": " * Foreach"
+    },
+    {
+      "QUERY PLAN": " |\\ "
+    },
+    {
+      "QUERY PLAN": " | * SetLabels"
+    },
+    {
+      "QUERY PLAN": " | * Once"
+    },
+    {
+      "QUERY PLAN": " * Foreach"
+    },
+    {
+      "QUERY PLAN": " |\\ "
+    },
+    {
+      "QUERY PLAN": " | * SetProperty"
+    },
+    {
+      "QUERY PLAN": " | * Once"
+    },
+    {
+      "QUERY PLAN": " * Foreach"
+    },
+    {
+      "QUERY PLAN": " |\\ "
+    },
+    {
+      "QUERY PLAN": " | * Delete"
+    },
+    {
+      "QUERY PLAN": " | * Once"
+    },
+    {
+      "QUERY PLAN": " * Produce {center, neighbors, toggled_off}"
+    },
+    {
+      "QUERY PLAN": " * Aggregate {COLLECT-1} {neighbors, center}"
+    },
+    {
+      "QUERY PLAN": " * Accumulate"
+    },
+    {
+      "QUERY PLAN": " * Foreach"
+    },
+    {
+      "QUERY PLAN": " |\\ "
+    },
+    {
+      "QUERY PLAN": " | * CreateExpand (n1)-[anon4:Wire]->(n2)"
+    },
+    {
+      "QUERY PLAN": " | * Once"
+    },
+    {
+      "QUERY PLAN": " * Optional"
+    },
+    {
+      "QUERY PLAN": " |\\ "
+    },
+    {
+      "QUERY PLAN": " | * Filter {e.t}"
+    },
+    {
+      "QUERY PLAN": " | * Expand (n1)-[e:Wire]-(n2)"
+    },
+    {
+      "QUERY PLAN": " | * Once"
+    },
+    {
+      "QUERY PLAN": " * Produce {center, neighbors, n1, n2}"
+    },
+    {
+      "QUERY PLAN": " * Unwind"
+    },
+    {
+      "QUERY PLAN": " * Unwind"
+    },
+    {
+      "QUERY PLAN": " * Produce {center, neighbors}"
+    },
+    {
+      "QUERY PLAN": " * Filter Generic {conflicts}"
+    },
+    {
+      "QUERY PLAN": " * Produce {center, neighbors, conflicts}"
+    },
+    {
+      "QUERY PLAN": " * Aggregate {SUM-1} {candidate}"
+    },
+    {
+      "QUERY PLAN": " * Unwind"
+    },
+    {
+      "QUERY PLAN": " * Produce {v, claimants, owner}"
+    },
+    {
+      "QUERY PLAN": " * Aggregate {COLLECT-1, MIN-1} {v}"
+    },
+    {
+      "QUERY PLAN": " * Unwind"
+    },
+    {
+      "QUERY PLAN": " * Unwind"
+    },
+    {
+      "QUERY PLAN": " * Produce {candidates}"
+    },
+    {
+      "QUERY PLAN": " * Aggregate {COLLECT-1} {}"
+    },
+    {
+      "QUERY PLAN": " * Accumulate"
+    },
+    {
+      "QUERY PLAN": " * SetLabels"
+    },
+    {
+      "QUERY PLAN": " * Filter Generic {neighbors}, Generic {wires}"
+    },
+    {
+      "QUERY PLAN": " * Produce {center, neighbors, wires}"
+    },
+    {
+      "QUERY PLAN": " * Aggregate {COLLECT-1, COLLECT-1} {center}"
+    },
+    {
+      "QUERY PLAN": " * Optional"
+    },
+    {
+      "QUERY PLAN": " |\\ "
+    },
+    {
+      "QUERY PLAN": " | * Filter (nbr :Node)"
+    },
+    {
+      "QUERY PLAN": " | * Expand (center)-[w:Wire]-(nbr)"
+    },
+    {
+      "QUERY PLAN": " | * Once"
+    },
+    {
+      "QUERY PLAN": " * Filter Generic {center}"
+    },
+    {
+      "QUERY PLAN": " * Produce {center}"
+    },
+    {
+      "QUERY PLAN": " * Accumulate"
+    },
+    {
+      "QUERY PLAN": " * RemoveLabels"
+    },
+    {
+      "QUERY PLAN": " * Unwind"
+    },
+    {
+      "QUERY PLAN": " * Produce {frontier}"
+    },
+    {
+      "QUERY PLAN": " * Aggregate {COLLECT-1} {}"
+    },
+    {
+      "QUERY PLAN": " * Filter {pending.graph_id}"
+    },
+    {
+      "QUERY PLAN": " * ScanAllByLabel (pending :_ZXdbLcompWork)"
+    },
+    {
+      "QUERY PLAN": " * Once"
+    }
+  ],
+  "indexes": [
+    {
+      "index type": "edge-type+property",
+      "label": "Wire",
+      "property": "t",
+      "count": 0
+    },
+    {
+      "index type": "label",
+      "label": "_ZXdbLcompWork",
+      "property": null,
+      "count": 0
+    },
+    {
+      "index type": "label",
+      "label": "_ZXdbPivotWork",
+      "property": null,
+      "count": 0
+    },
+    {
+      "index type": "label+property",
+      "label": "Node",
+      "property": [
+        "graph_id"
+      ],
+      "count": 0
+    },
+    {
+      "index type": "label+property",
+      "label": "Node",
+      "property": [
+        "id"
+      ],
+      "count": 0
+    },
+    {
+      "index type": "label+property",
+      "label": "Node",
+      "property": [
+        "t"
+      ],
+      "count": 0
+    }
+  ],
+  "loader_before_hint": [
+    {
+      "QUERY PLAN": " * EmptyResult"
+    },
+    {
+      "QUERY PLAN": " * CreateExpand (a)-[anon3:Wire]->(b)"
+    },
+    {
+      "QUERY PLAN": " * HashJoin {e, a : b}"
+    },
+    {
+      "QUERY PLAN": " |\\ "
+    },
+    {
+      "QUERY PLAN": " | * ScanAllByLabelProperties (b :Node {graph_id})"
+    },
+    {
+      "QUERY PLAN": " | * Once"
+    },
+    {
+      "QUERY PLAN": " * Filter {a.id}, {e.a}"
+    },
+    {
+      "QUERY PLAN": " * ScanAllByLabelProperties (a :Node {graph_id})"
+    },
+    {
+      "QUERY PLAN": " * Unwind"
+    },
+    {
+      "QUERY PLAN": " * Once"
+    }
+  ],
+  "hinted_loader_verification": {
+    "test": "test_loader_plan_uses_vertex_id_index",
+    "result": "passed",
+    "log": "optimization-index-tests.log",
+    "condition": "Both endpoint scan operators use :Node {id}"
+  }
+}

@@ -1,0 +1,63 @@
+diff --git a/src/query/plan/rule_based_planner.cpp b/src/query/plan/rule_based_planner.cpp
+index 6d3857001c3..f2fd428f879 100644
+--- a/src/query/plan/rule_based_planner.cpp
++++ b/src/query/plan/rule_based_planner.cpp
+@@ -221,7 +221,9 @@ class ReturnBodyContext : public HierarchicalTreeVisitor {
+     MG_ASSERT(has_aggregation_.size() >= 2U,
+               "Expected at least 2 has_aggregation_ flags for list comprehension arguments!");
+     bool has_aggr = false;
+-    size_t const limit = has_aggregation_.size();
++    const auto limit =
++        2 + (list_comprehension.where_ ? 1 : 0) +
++        (list_comprehension.expression_ ? 1 : 0);  // 2 is hardcoded for identifier and list which are always present
+     for (int i = 0; i < limit; ++i) {
+       has_aggr = has_aggr || has_aggregation_.back();
+       has_aggregation_.pop_back();
+diff --git a/tests/gql_behave/tests/memgraph_V1/features/list_comprehension.feature b/tests/gql_behave/tests/memgraph_V1/features/list_comprehension.feature
+index 899757f0592..61c53371cac 100644
+--- a/tests/gql_behave/tests/memgraph_V1/features/list_comprehension.feature
++++ b/tests/gql_behave/tests/memgraph_V1/features/list_comprehension.feature
+@@ -162,3 +162,43 @@ Feature: ListComprehension
+         Then the result should be:
+             | id |
+             | 1  |
++
++    Scenario: List comprehension aggregation correctness test with only a list and an identifier
++        Given an empty graph
++        When executing query:
++            """
++            RETURN collect({a: 2, label: [x in [0]]}) as result;
++            """
++        Then the result should be:
++            | result                |
++            | [{a: 2, label: [0]}]  |
++
++    Scenario: List comprehension aggregation correctness test with a where clause
++        Given an empty graph
++        When executing query:
++            """
++            WITH 1 as y RETURN collect({a: 2, label: [x in [0] where x = 0 and y = 1]}) as result;
++            """
++        Then the result should be:
++            | result                |
++            | [{a: 2, label: [0]}]  |
++
++    Scenario: List comprehension aggregation correctness test with an expression
++        Given an empty graph
++        When executing query:
++            """
++            WITH 1 as y RETURN collect({a: 2, label: [x in [0] | x*x]}) as result;
++            """
++        Then the result should be:
++            | result                |
++            | [{a: 2, label: [0]}]  |
++
++    Scenario: List comprehension aggregation correctness test with a where clause and an expression
++        Given an empty graph
++        When executing query:
++            """
++            WITH 1 as y RETURN collect({a: 2, label: [x in [0] where x = 0 and y = 1 | x*x]}) as result;
++            """
++        Then the result should be:
++            | result                |
++            | [{a: 2, label: [0]}]  |

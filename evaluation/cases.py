@@ -123,6 +123,19 @@ def sf_hopf_via_fusion():
     return _io(g, [bi], [bo])
 
 
+def sf_hadamard_parallel_via_fusion():
+    """Audit probe: Z-Z fusion creates two Z-X H wires, which must merge."""
+    g = _g()
+    bi = g.add_vertex(B, 0, 0)
+    a = g.add_vertex(Z, 0, 1, Fraction(1, 4))
+    b = g.add_vertex(Z, 0, 2, Fraction(1, 4))
+    x = g.add_vertex(X, 0, 3, Fraction(1, 4))
+    bo = g.add_vertex(B, 0, 4)
+    for u, v, t in [(bi, a, S), (a, b, S), (a, x, H), (b, x, H), (x, bo, S)]:
+        g.add_edge((u, v), t)
+    return _io(g, [bi], [bo])
+
+
 def sf_triangle():
     """Z triangle, all simple: collapses to a single spider; parallel edges
     become self-loops along the way."""
@@ -1143,6 +1156,7 @@ RULES = {
             ("no_fuse_zx", sf_no_fuse_zx),
             ("no_fuse_hadamard", sf_no_fuse_hadamard),
             ("hopf_via_fusion", sf_hopf_via_fusion),
+            ("hadamard_parallel_via_fusion", sf_hadamard_parallel_via_fusion),
             ("triangle", sf_triangle),
             ("keep_hadamard_neighbor", sf_keep_hadamard_neighbor),
         ] + _random_cases(random_circuit, [11, 12]) + _random_cases(random_circuit, [13], clifford=True),

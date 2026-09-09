@@ -1,0 +1,28 @@
+{
+  "scope": "Cypher graph_id isolation; remaining audit findings unchanged",
+  "memgraph": "5.9.0",
+  "pyzx": "0.10.3",
+  "rule_cases": {
+    "passed": 107,
+    "total": 107
+  },
+  "full_reduce_cases": {
+    "passed": 112,
+    "total": 112
+  },
+  "full_unittest_discovery": {
+    "passed": 23,
+    "total": 23
+  },
+  "final_isolation_suite": {
+    "passed": 9,
+    "total": 9
+  },
+  "note": "8 of the isolation tests also ran in full discovery; the final added test was run separately with the isolation suite.",
+  "logs": [
+    "rules_graph_id.log",
+    "full_reduce_graph_id.log",
+    "unittest_graph_id.log",
+    "graph_isolation.log"
+  ]
+}
