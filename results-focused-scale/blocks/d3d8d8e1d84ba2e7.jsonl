@@ -1,0 +1,1 @@
+{"case": {"depth": 512, "family": "random_clifford_t", "id": "d3d8d8e1d84ba2e7", "scale": "qubits", "seed": 101, "size": 8}, "evidence": ["ac5fa9f7edcde1c8"], "kind": "adaptive_skip", "reason": "predecessor_case_budget", "source_version": "4f1031582e3c54efa1e692bfc928b234d8800818122c00aa5fbbbb2e0f05314f"}

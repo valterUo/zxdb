@@ -127,6 +127,15 @@ def worker(plan_path, index, directory):
             reference(probe, target_rule, deadline)
             applicable = payload(probe) != before_probe
             del probe
+            # Mixtures must certify every active motif, not just size two.
+            for motif_size, count in spec.get('motif_counts', {}).items():
+                if not count or int(motif_size) == 2:
+                    continue
+                probe = build(dict(spec, family=spec['family'].removeprefix('copies_'), size=int(motif_size)))
+                before_probe = payload(probe)
+                reference(probe, target_rule, deadline)
+                applicable = applicable and payload(probe) != before_probe
+                del probe
         emit(dict(kind='input', sha256=digest(original_payload), metrics=metrics(original),
                   generation_s=generation_s, constructed_witnesses=planted,
                   target_rule=target_rule, reference_probe_changed=applicable,
@@ -307,11 +316,19 @@ def _run_campaign(args):
             saved_environment = sessions[-1]['environment']
             if plan.get('adaptive') and sessions[-1].get('case_timeout_s', case_cap) != case_cap:
                 raise ValueError('Use a new output directory when changing adaptive time limits')
-        if (saved_environment['source_hashes'] != current_environment['source_hashes'] or
-            saved_environment.get('packages', {}) != current_environment.get('packages', {})) and (
-                plan.get('adaptive') or not getattr(args, 'allow_code_change', False)):
+        from evaluation.research_extend import compatible_sources
+        packages_match = saved_environment.get('packages', {}) == current_environment.get('packages', {})
+        compatible = packages_match and compatible_sources(saved_environment['source_hashes'], current_environment['source_hashes'])
+        if not compatible and (plan.get('adaptive') or not getattr(args, 'allow_code_change', False)):
             raise ValueError('Source code changed. ' + ('Adaptive campaigns require a new output directory.'
                              if plan.get('adaptive') else 'Use --allow-code-change to record a new version; mixed-version cells will not be aggregated.'))
+        if compatible:
+            # Keep the measurement version for report-only/audited resume changes;
+            # sessions still store all actual current source hashes for provenance.
+            version = (sessions[-1]['source_version'] if sessions else hashlib.sha256(json.dumps(
+                dict(source=saved_environment['source_hashes'], packages=saved_environment.get('packages', {})),
+                sort_keys=True).encode()).hexdigest())
+
     else:
         directory.mkdir(parents=True, exist_ok=True)
         (directory / 'blocks').mkdir(); (directory / 'inputs').mkdir()
@@ -476,7 +493,7 @@ def _run_campaign(args):
 def main():
     parser = argparse.ArgumentParser(__doc__)
     sub = parser.add_subparsers(dest='command', required=True)
-    p = sub.add_parser('plan'); p.add_argument('--profile', choices=['smoke', 'study', 'massive', 'adaptive'], default='smoke')
+    p = sub.add_parser('plan'); p.add_argument('--profile', choices=['smoke', 'study', 'massive', 'adaptive', 'focused'], default='smoke')
     p.add_argument('--db-variant', choices=['control', 'optimized', 'worklist'], default='control')
     p.add_argument('--output', required=True)
     p.add_argument('--families', nargs='+', help='Optional subset of workload families')
@@ -504,6 +521,8 @@ def main():
             if set(args.families) - set(FAMILIES):
                 raise ValueError(f'Unknown families; choose from {FAMILIES}')
             plan['cases'] = [s for s in plan['cases'] if s['family'] in args.families]
+        if args.sizes and args.profile == 'focused':
+            raise ValueError('Focused motif mixtures are tied to their size; use its predeclared grid')
         if args.sizes:
             if not args.families or min(args.sizes) < 2:
                 raise ValueError('--sizes requires --families and sizes >= 2')

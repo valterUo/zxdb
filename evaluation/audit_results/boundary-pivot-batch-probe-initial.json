@@ -1,0 +1,5161 @@
+{
+  "python": "3.12.10",
+  "pyzx": "0.10.3",
+  "sizes": [
+    32,
+    64,
+    128,
+    256,
+    512,
+    1024,
+    2048
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "rule": "pivot_boundary",
+  "warmups": 1,
+  "repetitions": 2,
+  "control_max_size": 32,
+  "cases": [
+    {
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 32,
+        "seed": 0,
+        "motif_counts": {
+          "2": 24,
+          "3": 8
+        }
+      },
+      "input_hash": "57a83a0d8f06f421558066dc5a8ccc317e429731c7c145a7f68a3a7c85aad9f8",
+      "input": {
+        "vertices": 384,
+        "edges": 352,
+        "inputs": 32,
+        "outputs": 144,
+        "max_degree": 5,
+        "mean_degree": 1.8333333333333333,
+        "non_clifford": 176
+      },
+      "trials": [
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "optimized",
+          "seconds": 0.013325300009455532,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  208
+                ],
+                [
+                  3,
+                  96
+                ],
+                [
+                  4,
+                  40
+                ],
+                [
+                  5,
+                  48
+                ],
+                [
+                  6,
+                  24
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  208
+                ],
+                [
+                  3,
+                  96
+                ],
+                [
+                  4,
+                  40
+                ],
+                [
+                  5,
+                  48
+                ],
+                [
+                  6,
+                  24
+                ]
+              ]
+            },
+            "comparison_s": 0.00165350001771003
+          }
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "pyzx",
+          "seconds": 0.002697099989745766,
+          "submissions": 0
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "control",
+          "seconds": 0.32254120003199205,
+          "submissions": 34,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  208
+                ],
+                [
+                  3,
+                  96
+                ],
+                [
+                  4,
+                  40
+                ],
+                [
+                  5,
+                  48
+                ],
+                [
+                  6,
+                  24
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  208
+                ],
+                [
+                  3,
+                  96
+                ],
+                [
+                  4,
+                  40
+                ],
+                [
+                  5,
+                  48
+                ],
+                [
+                  6,
+                  24
+                ]
+              ]
+            },
+            "comparison_s": 0.001338500005658716
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.014328799967188388,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  208
+                ],
+                [
+                  3,
+                  96
+                ],
+                [
+                  4,
+                  40
+                ],
+                [
+                  5,
+                  48
+                ],
+                [
+                  6,
+                  24
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  208
+                ],
+                [
+                  3,
+                  96
+                ],
+                [
+                  4,
+                  40
+                ],
+                [
+                  5,
+                  48
+                ],
+                [
+                  6,
+                  24
+                ]
+              ]
+            },
+            "comparison_s": 0.001373699982650578
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "control",
+          "seconds": 0.1578402000013739,
+          "submissions": 34,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  208
+                ],
+                [
+                  3,
+                  96
+                ],
+                [
+                  4,
+                  40
+                ],
+                [
+                  5,
+                  48
+                ],
+                [
+                  6,
+                  24
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  208
+                ],
+                [
+                  3,
+                  96
+                ],
+                [
+                  4,
+                  40
+                ],
+                [
+                  5,
+                  48
+                ],
+                [
+                  6,
+                  24
+                ]
+              ]
+            },
+            "comparison_s": 0.0013180000241845846
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.0025080000050365925,
+          "submissions": 0
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "control",
+          "seconds": 0.09925620001740754,
+          "submissions": 34,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  208
+                ],
+                [
+                  3,
+                  96
+                ],
+                [
+                  4,
+                  40
+                ],
+                [
+                  5,
+                  48
+                ],
+                [
+                  6,
+                  24
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  208
+                ],
+                [
+                  3,
+                  96
+                ],
+                [
+                  4,
+                  40
+                ],
+                [
+                  5,
+                  48
+                ],
+                [
+                  6,
+                  24
+                ]
+              ]
+            },
+            "comparison_s": 0.0013735000393353403
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.002351700037252158,
+          "submissions": 0
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.011123000003863126,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  208
+                ],
+                [
+                  3,
+                  96
+                ],
+                [
+                  4,
+                  40
+                ],
+                [
+                  5,
+                  48
+                ],
+                [
+                  6,
+                  24
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  208
+                ],
+                [
+                  3,
+                  96
+                ],
+                [
+                  4,
+                  40
+                ],
+                [
+                  5,
+                  48
+                ],
+                [
+                  6,
+                  24
+                ]
+              ]
+            },
+            "comparison_s": 0.0014191999798640609
+          }
+        }
+      ]
+    },
+    {
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 32,
+        "seed": 1,
+        "motif_counts": {
+          "2": 16,
+          "3": 16
+        }
+      },
+      "input_hash": "8c52eefa9805a2bf9a473ad2e35163340f715f5a9d16e256b93239a59a84151c",
+      "input": {
+        "vertices": 416,
+        "edges": 384,
+        "inputs": 32,
+        "outputs": 160,
+        "max_degree": 5,
+        "mean_degree": 1.8461538461538463,
+        "non_clifford": 192
+      },
+      "trials": [
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "control",
+          "seconds": 0.13397120003355667,
+          "submissions": 34,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  224
+                ],
+                [
+                  3,
+                  64
+                ],
+                [
+                  4,
+                  80
+                ],
+                [
+                  5,
+                  32
+                ],
+                [
+                  6,
+                  48
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  224
+                ],
+                [
+                  3,
+                  64
+                ],
+                [
+                  4,
+                  80
+                ],
+                [
+                  5,
+                  32
+                ],
+                [
+                  6,
+                  48
+                ]
+              ]
+            },
+            "comparison_s": 0.0014912000042386353
+          }
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "pyzx",
+          "seconds": 0.0029004000243730843,
+          "submissions": 0
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "optimized",
+          "seconds": 0.010555099986959249,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  224
+                ],
+                [
+                  3,
+                  64
+                ],
+                [
+                  4,
+                  80
+                ],
+                [
+                  5,
+                  32
+                ],
+                [
+                  6,
+                  48
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  224
+                ],
+                [
+                  3,
+                  64
+                ],
+                [
+                  4,
+                  80
+                ],
+                [
+                  5,
+                  32
+                ],
+                [
+                  6,
+                  48
+                ]
+              ]
+            },
+            "comparison_s": 0.001728600007481873
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "control",
+          "seconds": 0.0997767000226304,
+          "submissions": 34,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  224
+                ],
+                [
+                  3,
+                  64
+                ],
+                [
+                  4,
+                  80
+                ],
+                [
+                  5,
+                  32
+                ],
+                [
+                  6,
+                  48
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  224
+                ],
+                [
+                  3,
+                  64
+                ],
+                [
+                  4,
+                  80
+                ],
+                [
+                  5,
+                  32
+                ],
+                [
+                  6,
+                  48
+                ]
+              ]
+            },
+            "comparison_s": 0.0014716999721713364
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.010844799980986863,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  224
+                ],
+                [
+                  3,
+                  64
+                ],
+                [
+                  4,
+                  80
+                ],
+                [
+                  5,
+                  32
+                ],
+                [
+                  6,
+                  48
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  224
+                ],
+                [
+                  3,
+                  64
+                ],
+                [
+                  4,
+                  80
+                ],
+                [
+                  5,
+                  32
+                ],
+                [
+                  6,
+                  48
+                ]
+              ]
+            },
+            "comparison_s": 0.0014604000025428832
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.0030162999755702913,
+          "submissions": 0
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.01102620002347976,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  224
+                ],
+                [
+                  3,
+                  64
+                ],
+                [
+                  4,
+                  80
+                ],
+                [
+                  5,
+                  32
+                ],
+                [
+                  6,
+                  48
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  224
+                ],
+                [
+                  3,
+                  64
+                ],
+                [
+                  4,
+                  80
+                ],
+                [
+                  5,
+                  32
+                ],
+                [
+                  6,
+                  48
+                ]
+              ]
+            },
+            "comparison_s": 0.0016010000254027545
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "control",
+          "seconds": 0.10954860004130751,
+          "submissions": 34,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  224
+                ],
+                [
+                  3,
+                  64
+                ],
+                [
+                  4,
+                  80
+                ],
+                [
+                  5,
+                  32
+                ],
+                [
+                  6,
+                  48
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  224
+                ],
+                [
+                  3,
+                  64
+                ],
+                [
+                  4,
+                  80
+                ],
+                [
+                  5,
+                  32
+                ],
+                [
+                  6,
+                  48
+                ]
+              ]
+            },
+            "comparison_s": 0.0014352999860420823
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.0027042999863624573,
+          "submissions": 0
+        }
+      ]
+    },
+    {
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 32,
+        "seed": 2,
+        "motif_counts": {
+          "2": 8,
+          "3": 24
+        }
+      },
+      "input_hash": "3722308cfb54df98043b60b499ae6d528aaf10e3e20101eba4d3ec013f6c67fa",
+      "input": {
+        "vertices": 448,
+        "edges": 416,
+        "inputs": 32,
+        "outputs": 176,
+        "max_degree": 5,
+        "mean_degree": 1.8571428571428572,
+        "non_clifford": 208
+      },
+      "trials": [
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "optimized",
+          "seconds": 0.011468300013802946,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  240
+                ],
+                [
+                  3,
+                  32
+                ],
+                [
+                  4,
+                  120
+                ],
+                [
+                  5,
+                  16
+                ],
+                [
+                  6,
+                  72
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  240
+                ],
+                [
+                  3,
+                  32
+                ],
+                [
+                  4,
+                  120
+                ],
+                [
+                  5,
+                  16
+                ],
+                [
+                  6,
+                  72
+                ]
+              ]
+            },
+            "comparison_s": 0.0018774999771267176
+          }
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "pyzx",
+          "seconds": 0.002956799988169223,
+          "submissions": 0
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "control",
+          "seconds": 0.10075129999313504,
+          "submissions": 34,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  240
+                ],
+                [
+                  3,
+                  32
+                ],
+                [
+                  4,
+                  120
+                ],
+                [
+                  5,
+                  16
+                ],
+                [
+                  6,
+                  72
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  240
+                ],
+                [
+                  3,
+                  32
+                ],
+                [
+                  4,
+                  120
+                ],
+                [
+                  5,
+                  16
+                ],
+                [
+                  6,
+                  72
+                ]
+              ]
+            },
+            "comparison_s": 0.0016122999950312078
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "control",
+          "seconds": 0.11173580004833639,
+          "submissions": 34,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  240
+                ],
+                [
+                  3,
+                  32
+                ],
+                [
+                  4,
+                  120
+                ],
+                [
+                  5,
+                  16
+                ],
+                [
+                  6,
+                  72
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  240
+                ],
+                [
+                  3,
+                  32
+                ],
+                [
+                  4,
+                  120
+                ],
+                [
+                  5,
+                  16
+                ],
+                [
+                  6,
+                  72
+                ]
+              ]
+            },
+            "comparison_s": 0.0016362000023946166
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.011944400030188262,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  240
+                ],
+                [
+                  3,
+                  32
+                ],
+                [
+                  4,
+                  120
+                ],
+                [
+                  5,
+                  16
+                ],
+                [
+                  6,
+                  72
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  240
+                ],
+                [
+                  3,
+                  32
+                ],
+                [
+                  4,
+                  120
+                ],
+                [
+                  5,
+                  16
+                ],
+                [
+                  6,
+                  72
+                ]
+              ]
+            },
+            "comparison_s": 0.001604399993084371
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.002813099999912083,
+          "submissions": 0
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.0026762999477796257,
+          "submissions": 0
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.013267399976029992,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  240
+                ],
+                [
+                  3,
+                  32
+                ],
+                [
+                  4,
+                  120
+                ],
+                [
+                  5,
+                  16
+                ],
+                [
+                  6,
+                  72
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  240
+                ],
+                [
+                  3,
+                  32
+                ],
+                [
+                  4,
+                  120
+                ],
+                [
+                  5,
+                  16
+                ],
+                [
+                  6,
+                  72
+                ]
+              ]
+            },
+            "comparison_s": 0.0017033999902196229
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "control",
+          "seconds": 0.11246760003268719,
+          "submissions": 34,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  240
+                ],
+                [
+                  3,
+                  32
+                ],
+                [
+                  4,
+                  120
+                ],
+                [
+                  5,
+                  16
+                ],
+                [
+                  6,
+                  72
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  240
+                ],
+                [
+                  3,
+                  32
+                ],
+                [
+                  4,
+                  120
+                ],
+                [
+                  5,
+                  16
+                ],
+                [
+                  6,
+                  72
+                ]
+              ]
+            },
+            "comparison_s": 0.002352600044105202
+          }
+        }
+      ]
+    },
+    {
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 64,
+        "seed": 0,
+        "motif_counts": {
+          "2": 48,
+          "3": 16
+        }
+      },
+      "input_hash": "4e3a1ee2c6332e29540736ffd51d6bb8ba0c532db26542064a388bf2eda89fd4",
+      "input": {
+        "vertices": 768,
+        "edges": 704,
+        "inputs": 64,
+        "outputs": 288,
+        "max_degree": 5,
+        "mean_degree": 1.8333333333333333,
+        "non_clifford": 352
+      },
+      "trials": [
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "pyzx",
+          "seconds": 0.004953600000590086,
+          "submissions": 0
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "optimized",
+          "seconds": 0.01721489999908954,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  416
+                ],
+                [
+                  3,
+                  192
+                ],
+                [
+                  4,
+                  80
+                ],
+                [
+                  5,
+                  96
+                ],
+                [
+                  6,
+                  48
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  416
+                ],
+                [
+                  3,
+                  192
+                ],
+                [
+                  4,
+                  80
+                ],
+                [
+                  5,
+                  96
+                ],
+                [
+                  6,
+                  48
+                ]
+              ]
+            },
+            "comparison_s": 0.0029357000021263957
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.019424600002821535,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  416
+                ],
+                [
+                  3,
+                  192
+                ],
+                [
+                  4,
+                  80
+                ],
+                [
+                  5,
+                  96
+                ],
+                [
+                  6,
+                  48
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  416
+                ],
+                [
+                  3,
+                  192
+                ],
+                [
+                  4,
+                  80
+                ],
+                [
+                  5,
+                  96
+                ],
+                [
+                  6,
+                  48
+                ]
+              ]
+            },
+            "comparison_s": 0.005024000012781471
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.00671609997516498,
+          "submissions": 0
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.015345199964940548,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  416
+                ],
+                [
+                  3,
+                  192
+                ],
+                [
+                  4,
+                  80
+                ],
+                [
+                  5,
+                  96
+                ],
+                [
+                  6,
+                  48
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  416
+                ],
+                [
+                  3,
+                  192
+                ],
+                [
+                  4,
+                  80
+                ],
+                [
+                  5,
+                  96
+                ],
+                [
+                  6,
+                  48
+                ]
+              ]
+            },
+            "comparison_s": 0.004364899999927729
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.008151000016368926,
+          "submissions": 0
+        }
+      ]
+    },
+    {
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 64,
+        "seed": 1,
+        "motif_counts": {
+          "2": 32,
+          "3": 32
+        }
+      },
+      "input_hash": "424bb93981691bf6f5eec15fd4cb81ad8018036bf04c2c0d178908f60429e4fd",
+      "input": {
+        "vertices": 832,
+        "edges": 768,
+        "inputs": 64,
+        "outputs": 320,
+        "max_degree": 5,
+        "mean_degree": 1.8461538461538463,
+        "non_clifford": 384
+      },
+      "trials": [
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "pyzx",
+          "seconds": 0.005524099979083985,
+          "submissions": 0
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "optimized",
+          "seconds": 0.01975410000886768,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  448
+                ],
+                [
+                  3,
+                  128
+                ],
+                [
+                  4,
+                  160
+                ],
+                [
+                  5,
+                  64
+                ],
+                [
+                  6,
+                  96
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  448
+                ],
+                [
+                  3,
+                  128
+                ],
+                [
+                  4,
+                  160
+                ],
+                [
+                  5,
+                  64
+                ],
+                [
+                  6,
+                  96
+                ]
+              ]
+            },
+            "comparison_s": 0.00345059996470809
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.005263499973807484,
+          "submissions": 0
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.01938099996186793,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  448
+                ],
+                [
+                  3,
+                  128
+                ],
+                [
+                  4,
+                  160
+                ],
+                [
+                  5,
+                  64
+                ],
+                [
+                  6,
+                  96
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  448
+                ],
+                [
+                  3,
+                  128
+                ],
+                [
+                  4,
+                  160
+                ],
+                [
+                  5,
+                  64
+                ],
+                [
+                  6,
+                  96
+                ]
+              ]
+            },
+            "comparison_s": 0.0030038999975658953
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.016971300006844103,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  448
+                ],
+                [
+                  3,
+                  128
+                ],
+                [
+                  4,
+                  160
+                ],
+                [
+                  5,
+                  64
+                ],
+                [
+                  6,
+                  96
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  448
+                ],
+                [
+                  3,
+                  128
+                ],
+                [
+                  4,
+                  160
+                ],
+                [
+                  5,
+                  64
+                ],
+                [
+                  6,
+                  96
+                ]
+              ]
+            },
+            "comparison_s": 0.002928700007032603
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.005386899982113391,
+          "submissions": 0
+        }
+      ]
+    },
+    {
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 64,
+        "seed": 2,
+        "motif_counts": {
+          "2": 16,
+          "3": 48
+        }
+      },
+      "input_hash": "c3933ac7f1e5b264bd0d8690f08f5675f2c31eb041a645a352d2e1ccc60411a1",
+      "input": {
+        "vertices": 896,
+        "edges": 832,
+        "inputs": 64,
+        "outputs": 352,
+        "max_degree": 5,
+        "mean_degree": 1.8571428571428572,
+        "non_clifford": 416
+      },
+      "trials": [
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "pyzx",
+          "seconds": 0.005703900009393692,
+          "submissions": 0
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "optimized",
+          "seconds": 0.02068179997149855,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  480
+                ],
+                [
+                  3,
+                  64
+                ],
+                [
+                  4,
+                  240
+                ],
+                [
+                  5,
+                  32
+                ],
+                [
+                  6,
+                  144
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  480
+                ],
+                [
+                  3,
+                  64
+                ],
+                [
+                  4,
+                  240
+                ],
+                [
+                  5,
+                  32
+                ],
+                [
+                  6,
+                  144
+                ]
+              ]
+            },
+            "comparison_s": 0.003957000037189573
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.006132699956651777,
+          "submissions": 0
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.019301899999845773,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  480
+                ],
+                [
+                  3,
+                  64
+                ],
+                [
+                  4,
+                  240
+                ],
+                [
+                  5,
+                  32
+                ],
+                [
+                  6,
+                  144
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  480
+                ],
+                [
+                  3,
+                  64
+                ],
+                [
+                  4,
+                  240
+                ],
+                [
+                  5,
+                  32
+                ],
+                [
+                  6,
+                  144
+                ]
+              ]
+            },
+            "comparison_s": 0.0032970000174827874
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.020859799988102168,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  480
+                ],
+                [
+                  3,
+                  64
+                ],
+                [
+                  4,
+                  240
+                ],
+                [
+                  5,
+                  32
+                ],
+                [
+                  6,
+                  144
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  480
+                ],
+                [
+                  3,
+                  64
+                ],
+                [
+                  4,
+                  240
+                ],
+                [
+                  5,
+                  32
+                ],
+                [
+                  6,
+                  144
+                ]
+              ]
+            },
+            "comparison_s": 0.003408099990338087
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.005577500036451966,
+          "submissions": 0
+        }
+      ]
+    },
+    {
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 128,
+        "seed": 0,
+        "motif_counts": {
+          "2": 96,
+          "3": 32
+        }
+      },
+      "input_hash": "785c1a5bf759efc399f90f589c0acf8c0e56cca8317b76c186c66bf323b6ac2c",
+      "input": {
+        "vertices": 1536,
+        "edges": 1408,
+        "inputs": 128,
+        "outputs": 576,
+        "max_degree": 5,
+        "mean_degree": 1.8333333333333333,
+        "non_clifford": 704
+      },
+      "trials": [
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "optimized",
+          "seconds": 0.03339529997901991,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  832
+                ],
+                [
+                  3,
+                  384
+                ],
+                [
+                  4,
+                  160
+                ],
+                [
+                  5,
+                  192
+                ],
+                [
+                  6,
+                  96
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  832
+                ],
+                [
+                  3,
+                  384
+                ],
+                [
+                  4,
+                  160
+                ],
+                [
+                  5,
+                  192
+                ],
+                [
+                  6,
+                  96
+                ]
+              ]
+            },
+            "comparison_s": 0.00549980002688244
+          }
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "pyzx",
+          "seconds": 0.015957599971443415,
+          "submissions": 0
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.010380699997767806,
+          "submissions": 0
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.0303058999706991,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  832
+                ],
+                [
+                  3,
+                  384
+                ],
+                [
+                  4,
+                  160
+                ],
+                [
+                  5,
+                  192
+                ],
+                [
+                  6,
+                  96
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  832
+                ],
+                [
+                  3,
+                  384
+                ],
+                [
+                  4,
+                  160
+                ],
+                [
+                  5,
+                  192
+                ],
+                [
+                  6,
+                  96
+                ]
+              ]
+            },
+            "comparison_s": 0.005456899991258979
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.03289410000434145,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  832
+                ],
+                [
+                  3,
+                  384
+                ],
+                [
+                  4,
+                  160
+                ],
+                [
+                  5,
+                  192
+                ],
+                [
+                  6,
+                  96
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  832
+                ],
+                [
+                  3,
+                  384
+                ],
+                [
+                  4,
+                  160
+                ],
+                [
+                  5,
+                  192
+                ],
+                [
+                  6,
+                  96
+                ]
+              ]
+            },
+            "comparison_s": 0.005384000018239021
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.010077200015075505,
+          "submissions": 0
+        }
+      ]
+    },
+    {
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 128,
+        "seed": 1,
+        "motif_counts": {
+          "2": 64,
+          "3": 64
+        }
+      },
+      "input_hash": "f7f88fdc87ee45d126fc986691028e95efab3897c885e8275b3769748d22b195",
+      "input": {
+        "vertices": 1664,
+        "edges": 1536,
+        "inputs": 128,
+        "outputs": 640,
+        "max_degree": 5,
+        "mean_degree": 1.8461538461538463,
+        "non_clifford": 768
+      },
+      "trials": [
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "optimized",
+          "seconds": 0.030823600012809038,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  896
+                ],
+                [
+                  3,
+                  256
+                ],
+                [
+                  4,
+                  320
+                ],
+                [
+                  5,
+                  128
+                ],
+                [
+                  6,
+                  192
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  896
+                ],
+                [
+                  3,
+                  256
+                ],
+                [
+                  4,
+                  320
+                ],
+                [
+                  5,
+                  128
+                ],
+                [
+                  6,
+                  192
+                ]
+              ]
+            },
+            "comparison_s": 0.006010800017975271
+          }
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "pyzx",
+          "seconds": 0.010911499965004623,
+          "submissions": 0
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.010757599957287312,
+          "submissions": 0
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.03390229999786243,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  896
+                ],
+                [
+                  3,
+                  256
+                ],
+                [
+                  4,
+                  320
+                ],
+                [
+                  5,
+                  128
+                ],
+                [
+                  6,
+                  192
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  896
+                ],
+                [
+                  3,
+                  256
+                ],
+                [
+                  4,
+                  320
+                ],
+                [
+                  5,
+                  128
+                ],
+                [
+                  6,
+                  192
+                ]
+              ]
+            },
+            "comparison_s": 0.005883499979972839
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.010795200010761619,
+          "submissions": 0
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.034325000015087426,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  896
+                ],
+                [
+                  3,
+                  256
+                ],
+                [
+                  4,
+                  320
+                ],
+                [
+                  5,
+                  128
+                ],
+                [
+                  6,
+                  192
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  896
+                ],
+                [
+                  3,
+                  256
+                ],
+                [
+                  4,
+                  320
+                ],
+                [
+                  5,
+                  128
+                ],
+                [
+                  6,
+                  192
+                ]
+              ]
+            },
+            "comparison_s": 0.006116500007919967
+          }
+        }
+      ]
+    },
+    {
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 128,
+        "seed": 2,
+        "motif_counts": {
+          "2": 32,
+          "3": 96
+        }
+      },
+      "input_hash": "1490fab30109976296c2f98b2f31e7ad96a087444cf508d49baccc4ad9a3375b",
+      "input": {
+        "vertices": 1792,
+        "edges": 1664,
+        "inputs": 128,
+        "outputs": 704,
+        "max_degree": 5,
+        "mean_degree": 1.8571428571428572,
+        "non_clifford": 832
+      },
+      "trials": [
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "optimized",
+          "seconds": 0.03728280001087114,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  960
+                ],
+                [
+                  3,
+                  128
+                ],
+                [
+                  4,
+                  480
+                ],
+                [
+                  5,
+                  64
+                ],
+                [
+                  6,
+                  288
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  960
+                ],
+                [
+                  3,
+                  128
+                ],
+                [
+                  4,
+                  480
+                ],
+                [
+                  5,
+                  64
+                ],
+                [
+                  6,
+                  288
+                ]
+              ]
+            },
+            "comparison_s": 0.006868499971460551
+          }
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "pyzx",
+          "seconds": 0.01200980000430718,
+          "submissions": 0
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.011373699991963804,
+          "submissions": 0
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.03545790002681315,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  960
+                ],
+                [
+                  3,
+                  128
+                ],
+                [
+                  4,
+                  480
+                ],
+                [
+                  5,
+                  64
+                ],
+                [
+                  6,
+                  288
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  960
+                ],
+                [
+                  3,
+                  128
+                ],
+                [
+                  4,
+                  480
+                ],
+                [
+                  5,
+                  64
+                ],
+                [
+                  6,
+                  288
+                ]
+              ]
+            },
+            "comparison_s": 0.006852899969089776
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.024004400009289384,
+          "submissions": 0
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.041592199995648116,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  960
+                ],
+                [
+                  3,
+                  128
+                ],
+                [
+                  4,
+                  480
+                ],
+                [
+                  5,
+                  64
+                ],
+                [
+                  6,
+                  288
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  960
+                ],
+                [
+                  3,
+                  128
+                ],
+                [
+                  4,
+                  480
+                ],
+                [
+                  5,
+                  64
+                ],
+                [
+                  6,
+                  288
+                ]
+              ]
+            },
+            "comparison_s": 0.008858699991833419
+          }
+        }
+      ]
+    },
+    {
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 256,
+        "seed": 0,
+        "motif_counts": {
+          "2": 192,
+          "3": 64
+        }
+      },
+      "input_hash": "7bd8d6e9100f04260e4a9eeeaf7f06751636708ce0215a65ffff42efb0832cc9",
+      "input": {
+        "vertices": 3072,
+        "edges": 2816,
+        "inputs": 256,
+        "outputs": 1152,
+        "max_degree": 5,
+        "mean_degree": 1.8333333333333333,
+        "non_clifford": 1408
+      },
+      "trials": [
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "optimized",
+          "seconds": 0.058269299974199384,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  1664
+                ],
+                [
+                  3,
+                  768
+                ],
+                [
+                  4,
+                  320
+                ],
+                [
+                  5,
+                  384
+                ],
+                [
+                  6,
+                  192
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  1664
+                ],
+                [
+                  3,
+                  768
+                ],
+                [
+                  4,
+                  320
+                ],
+                [
+                  5,
+                  384
+                ],
+                [
+                  6,
+                  192
+                ]
+              ]
+            },
+            "comparison_s": 0.010886600008234382
+          }
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "pyzx",
+          "seconds": 0.021830399986356497,
+          "submissions": 0
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.021296899998560548,
+          "submissions": 0
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.05426550004631281,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  1664
+                ],
+                [
+                  3,
+                  768
+                ],
+                [
+                  4,
+                  320
+                ],
+                [
+                  5,
+                  384
+                ],
+                [
+                  6,
+                  192
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  1664
+                ],
+                [
+                  3,
+                  768
+                ],
+                [
+                  4,
+                  320
+                ],
+                [
+                  5,
+                  384
+                ],
+                [
+                  6,
+                  192
+                ]
+              ]
+            },
+            "comparison_s": 0.01567400002386421
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.021971200010739267,
+          "submissions": 0
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.057100399979390204,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  1664
+                ],
+                [
+                  3,
+                  768
+                ],
+                [
+                  4,
+                  320
+                ],
+                [
+                  5,
+                  384
+                ],
+                [
+                  6,
+                  192
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  1664
+                ],
+                [
+                  3,
+                  768
+                ],
+                [
+                  4,
+                  320
+                ],
+                [
+                  5,
+                  384
+                ],
+                [
+                  6,
+                  192
+                ]
+              ]
+            },
+            "comparison_s": 0.011665300000458956
+          }
+        }
+      ]
+    },
+    {
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 256,
+        "seed": 1,
+        "motif_counts": {
+          "2": 128,
+          "3": 128
+        }
+      },
+      "input_hash": "f2c26c8a8829a1792c806b0074502f66792f16b006af8ad34741dcef0898ed46",
+      "input": {
+        "vertices": 3328,
+        "edges": 3072,
+        "inputs": 256,
+        "outputs": 1280,
+        "max_degree": 5,
+        "mean_degree": 1.8461538461538463,
+        "non_clifford": 1536
+      },
+      "trials": [
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "optimized",
+          "seconds": 0.06931849999818951,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  1792
+                ],
+                [
+                  3,
+                  512
+                ],
+                [
+                  4,
+                  640
+                ],
+                [
+                  5,
+                  256
+                ],
+                [
+                  6,
+                  384
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  1792
+                ],
+                [
+                  3,
+                  512
+                ],
+                [
+                  4,
+                  640
+                ],
+                [
+                  5,
+                  256
+                ],
+                [
+                  6,
+                  384
+                ]
+              ]
+            },
+            "comparison_s": 0.012279400019906461
+          }
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "pyzx",
+          "seconds": 0.023832199978642166,
+          "submissions": 0
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.06044940004358068,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  1792
+                ],
+                [
+                  3,
+                  512
+                ],
+                [
+                  4,
+                  640
+                ],
+                [
+                  5,
+                  256
+                ],
+                [
+                  6,
+                  384
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  1792
+                ],
+                [
+                  3,
+                  512
+                ],
+                [
+                  4,
+                  640
+                ],
+                [
+                  5,
+                  256
+                ],
+                [
+                  6,
+                  384
+                ]
+              ]
+            },
+            "comparison_s": 0.012341300025582314
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.022775900026317686,
+          "submissions": 0
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.06400650000432506,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  1792
+                ],
+                [
+                  3,
+                  512
+                ],
+                [
+                  4,
+                  640
+                ],
+                [
+                  5,
+                  256
+                ],
+                [
+                  6,
+                  384
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  1792
+                ],
+                [
+                  3,
+                  512
+                ],
+                [
+                  4,
+                  640
+                ],
+                [
+                  5,
+                  256
+                ],
+                [
+                  6,
+                  384
+                ]
+              ]
+            },
+            "comparison_s": 0.011886099993716925
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.02248939999844879,
+          "submissions": 0
+        }
+      ]
+    },
+    {
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 256,
+        "seed": 2,
+        "motif_counts": {
+          "2": 64,
+          "3": 192
+        }
+      },
+      "input_hash": "64e0ce98f045ca968bd54aa7d1ec894737f509ab93c89d8da4a93f1ee125c137",
+      "input": {
+        "vertices": 3584,
+        "edges": 3328,
+        "inputs": 256,
+        "outputs": 1408,
+        "max_degree": 5,
+        "mean_degree": 1.8571428571428572,
+        "non_clifford": 1664
+      },
+      "trials": [
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "optimized",
+          "seconds": 0.060244299995247275,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  1920
+                ],
+                [
+                  3,
+                  256
+                ],
+                [
+                  4,
+                  960
+                ],
+                [
+                  5,
+                  128
+                ],
+                [
+                  6,
+                  576
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  1920
+                ],
+                [
+                  3,
+                  256
+                ],
+                [
+                  4,
+                  960
+                ],
+                [
+                  5,
+                  128
+                ],
+                [
+                  6,
+                  576
+                ]
+              ]
+            },
+            "comparison_s": 0.025483100034762174
+          }
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "pyzx",
+          "seconds": 0.042104799998924136,
+          "submissions": 0
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.0686742999823764,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  1920
+                ],
+                [
+                  3,
+                  256
+                ],
+                [
+                  4,
+                  960
+                ],
+                [
+                  5,
+                  128
+                ],
+                [
+                  6,
+                  576
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  1920
+                ],
+                [
+                  3,
+                  256
+                ],
+                [
+                  4,
+                  960
+                ],
+                [
+                  5,
+                  128
+                ],
+                [
+                  6,
+                  576
+                ]
+              ]
+            },
+            "comparison_s": 0.013797899999190122
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.024528299982193857,
+          "submissions": 0
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.0253917999798432,
+          "submissions": 0
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.05858090001856908,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  1920
+                ],
+                [
+                  3,
+                  256
+                ],
+                [
+                  4,
+                  960
+                ],
+                [
+                  5,
+                  128
+                ],
+                [
+                  6,
+                  576
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  1920
+                ],
+                [
+                  3,
+                  256
+                ],
+                [
+                  4,
+                  960
+                ],
+                [
+                  5,
+                  128
+                ],
+                [
+                  6,
+                  576
+                ]
+              ]
+            },
+            "comparison_s": 0.014222399971913546
+          }
+        }
+      ]
+    },
+    {
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 512,
+        "seed": 0,
+        "motif_counts": {
+          "2": 384,
+          "3": 128
+        }
+      },
+      "input_hash": "590720d2c2be0376ff3b17e4c558396fefc0cd7175706ef45f7a84f1f62d8eb3",
+      "input": {
+        "vertices": 6144,
+        "edges": 5632,
+        "inputs": 512,
+        "outputs": 2304,
+        "max_degree": 5,
+        "mean_degree": 1.8333333333333333,
+        "non_clifford": 2816
+      },
+      "trials": [
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "optimized",
+          "seconds": 0.10734809999121353,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  3328
+                ],
+                [
+                  3,
+                  1536
+                ],
+                [
+                  4,
+                  640
+                ],
+                [
+                  5,
+                  768
+                ],
+                [
+                  6,
+                  384
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  3328
+                ],
+                [
+                  3,
+                  1536
+                ],
+                [
+                  4,
+                  640
+                ],
+                [
+                  5,
+                  768
+                ],
+                [
+                  6,
+                  384
+                ]
+              ]
+            },
+            "comparison_s": 0.021542900009080768
+          }
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "pyzx",
+          "seconds": 0.047370699991006404,
+          "submissions": 0
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.12015139998402447,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  3328
+                ],
+                [
+                  3,
+                  1536
+                ],
+                [
+                  4,
+                  640
+                ],
+                [
+                  5,
+                  768
+                ],
+                [
+                  6,
+                  384
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  3328
+                ],
+                [
+                  3,
+                  1536
+                ],
+                [
+                  4,
+                  640
+                ],
+                [
+                  5,
+                  768
+                ],
+                [
+                  6,
+                  384
+                ]
+              ]
+            },
+            "comparison_s": 0.02272770000854507
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.05008700001053512,
+          "submissions": 0
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.04919799999333918,
+          "submissions": 0
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.11403820000123233,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  3328
+                ],
+                [
+                  3,
+                  1536
+                ],
+                [
+                  4,
+                  640
+                ],
+                [
+                  5,
+                  768
+                ],
+                [
+                  6,
+                  384
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  3328
+                ],
+                [
+                  3,
+                  1536
+                ],
+                [
+                  4,
+                  640
+                ],
+                [
+                  5,
+                  768
+                ],
+                [
+                  6,
+                  384
+                ]
+              ]
+            },
+            "comparison_s": 0.10139250004431233
+          }
+        }
+      ]
+    },
+    {
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 512,
+        "seed": 1,
+        "motif_counts": {
+          "2": 256,
+          "3": 256
+        }
+      },
+      "input_hash": "9b4808dfbb881a68d4d75357d1ba0c03fa153306de0008ee54c4243865bc59ee",
+      "input": {
+        "vertices": 6656,
+        "edges": 6144,
+        "inputs": 512,
+        "outputs": 2560,
+        "max_degree": 5,
+        "mean_degree": 1.8461538461538463,
+        "non_clifford": 3072
+      },
+      "trials": [
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "pyzx",
+          "seconds": 0.05705370003124699,
+          "submissions": 0
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "optimized",
+          "seconds": 0.12348190002376214,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  3584
+                ],
+                [
+                  3,
+                  1024
+                ],
+                [
+                  4,
+                  1280
+                ],
+                [
+                  5,
+                  512
+                ],
+                [
+                  6,
+                  768
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  3584
+                ],
+                [
+                  3,
+                  1024
+                ],
+                [
+                  4,
+                  1280
+                ],
+                [
+                  5,
+                  512
+                ],
+                [
+                  6,
+                  768
+                ]
+              ]
+            },
+            "comparison_s": 0.02616649999981746
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.13909530005184934,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  3584
+                ],
+                [
+                  3,
+                  1024
+                ],
+                [
+                  4,
+                  1280
+                ],
+                [
+                  5,
+                  512
+                ],
+                [
+                  6,
+                  768
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  3584
+                ],
+                [
+                  3,
+                  1024
+                ],
+                [
+                  4,
+                  1280
+                ],
+                [
+                  5,
+                  512
+                ],
+                [
+                  6,
+                  768
+                ]
+              ]
+            },
+            "comparison_s": 0.041968699952121824
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.0738186999806203,
+          "submissions": 0
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.12439970002742484,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  3584
+                ],
+                [
+                  3,
+                  1024
+                ],
+                [
+                  4,
+                  1280
+                ],
+                [
+                  5,
+                  512
+                ],
+                [
+                  6,
+                  768
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  3584
+                ],
+                [
+                  3,
+                  1024
+                ],
+                [
+                  4,
+                  1280
+                ],
+                [
+                  5,
+                  512
+                ],
+                [
+                  6,
+                  768
+                ]
+              ]
+            },
+            "comparison_s": 0.02871220000088215
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.06061709998175502,
+          "submissions": 0
+        }
+      ]
+    },
+    {
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 512,
+        "seed": 2,
+        "motif_counts": {
+          "2": 128,
+          "3": 384
+        }
+      },
+      "input_hash": "446380d97672c3a4b1935aeffaab9965f6081a931122ea19ea3642a83ba032ef",
+      "input": {
+        "vertices": 7168,
+        "edges": 6656,
+        "inputs": 512,
+        "outputs": 2816,
+        "max_degree": 5,
+        "mean_degree": 1.8571428571428572,
+        "non_clifford": 3328
+      },
+      "trials": [
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "pyzx",
+          "seconds": 0.08334700000705197,
+          "submissions": 0
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "optimized",
+          "seconds": 0.11363589996472001,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  3840
+                ],
+                [
+                  3,
+                  512
+                ],
+                [
+                  4,
+                  1920
+                ],
+                [
+                  5,
+                  256
+                ],
+                [
+                  6,
+                  1152
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  3840
+                ],
+                [
+                  3,
+                  512
+                ],
+                [
+                  4,
+                  1920
+                ],
+                [
+                  5,
+                  256
+                ],
+                [
+                  6,
+                  1152
+                ]
+              ]
+            },
+            "comparison_s": 0.1355172999901697
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.13686969998525456,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  3840
+                ],
+                [
+                  3,
+                  512
+                ],
+                [
+                  4,
+                  1920
+                ],
+                [
+                  5,
+                  256
+                ],
+                [
+                  6,
+                  1152
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  3840
+                ],
+                [
+                  3,
+                  512
+                ],
+                [
+                  4,
+                  1920
+                ],
+                [
+                  5,
+                  256
+                ],
+                [
+                  6,
+                  1152
+                ]
+              ]
+            },
+            "comparison_s": 0.04248980002012104
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.09075279999524355,
+          "submissions": 0
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.11538900004234165,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  3840
+                ],
+                [
+                  3,
+                  512
+                ],
+                [
+                  4,
+                  1920
+                ],
+                [
+                  5,
+                  256
+                ],
+                [
+                  6,
+                  1152
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  3840
+                ],
+                [
+                  3,
+                  512
+                ],
+                [
+                  4,
+                  1920
+                ],
+                [
+                  5,
+                  256
+                ],
+                [
+                  6,
+                  1152
+                ]
+              ]
+            },
+            "comparison_s": 0.04778579995036125
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.05862730002263561,
+          "submissions": 0
+        }
+      ]
+    },
+    {
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 1024,
+        "seed": 0,
+        "motif_counts": {
+          "2": 768,
+          "3": 256
+        }
+      },
+      "input_hash": "e662bb825b1b4f5cd2f8f182b66b0746778309dccdb5d6c211003f02ab9c29fe",
+      "input": {
+        "vertices": 12288,
+        "edges": 11264,
+        "inputs": 1024,
+        "outputs": 4608,
+        "max_degree": 5,
+        "mean_degree": 1.8333333333333333,
+        "non_clifford": 5632
+      },
+      "trials": [
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "optimized",
+          "seconds": 0.2359083000337705,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  6656
+                ],
+                [
+                  3,
+                  3072
+                ],
+                [
+                  4,
+                  1280
+                ],
+                [
+                  5,
+                  1536
+                ],
+                [
+                  6,
+                  768
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  6656
+                ],
+                [
+                  3,
+                  3072
+                ],
+                [
+                  4,
+                  1280
+                ],
+                [
+                  5,
+                  1536
+                ],
+                [
+                  6,
+                  768
+                ]
+              ]
+            },
+            "comparison_s": 0.05036389996530488
+          }
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "pyzx",
+          "seconds": 0.17333620000863448,
+          "submissions": 0
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.17106660001445562,
+          "submissions": 0
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.24803369998699054,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  6656
+                ],
+                [
+                  3,
+                  3072
+                ],
+                [
+                  4,
+                  1280
+                ],
+                [
+                  5,
+                  1536
+                ],
+                [
+                  6,
+                  768
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  6656
+                ],
+                [
+                  3,
+                  3072
+                ],
+                [
+                  4,
+                  1280
+                ],
+                [
+                  5,
+                  1536
+                ],
+                [
+                  6,
+                  768
+                ]
+              ]
+            },
+            "comparison_s": 0.05223279999336228
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.22732899995753542,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  6656
+                ],
+                [
+                  3,
+                  3072
+                ],
+                [
+                  4,
+                  1280
+                ],
+                [
+                  5,
+                  1536
+                ],
+                [
+                  6,
+                  768
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  6656
+                ],
+                [
+                  3,
+                  3072
+                ],
+                [
+                  4,
+                  1280
+                ],
+                [
+                  5,
+                  1536
+                ],
+                [
+                  6,
+                  768
+                ]
+              ]
+            },
+            "comparison_s": 0.0790007000323385
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.20583250001072884,
+          "submissions": 0
+        }
+      ]
+    },
+    {
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 1024,
+        "seed": 1,
+        "motif_counts": {
+          "2": 512,
+          "3": 512
+        }
+      },
+      "input_hash": "d36450b806f77342ca7fb4b37b42e3d2972b03ab4a93f057e664236879f115e2",
+      "input": {
+        "vertices": 13312,
+        "edges": 12288,
+        "inputs": 1024,
+        "outputs": 5120,
+        "max_degree": 5,
+        "mean_degree": 1.8461538461538463,
+        "non_clifford": 6144
+      },
+      "trials": [
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "optimized",
+          "seconds": 0.22437900002114475,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  7168
+                ],
+                [
+                  3,
+                  2048
+                ],
+                [
+                  4,
+                  2560
+                ],
+                [
+                  5,
+                  1024
+                ],
+                [
+                  6,
+                  1536
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  7168
+                ],
+                [
+                  3,
+                  2048
+                ],
+                [
+                  4,
+                  2560
+                ],
+                [
+                  5,
+                  1024
+                ],
+                [
+                  6,
+                  1536
+                ]
+              ]
+            },
+            "comparison_s": 0.08213809999870136
+          }
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "pyzx",
+          "seconds": 0.2146917000063695,
+          "submissions": 0
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.3170045999577269,
+          "submissions": 0
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.2585349000291899,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  7168
+                ],
+                [
+                  3,
+                  2048
+                ],
+                [
+                  4,
+                  2560
+                ],
+                [
+                  5,
+                  1024
+                ],
+                [
+                  6,
+                  1536
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  7168
+                ],
+                [
+                  3,
+                  2048
+                ],
+                [
+                  4,
+                  2560
+                ],
+                [
+                  5,
+                  1024
+                ],
+                [
+                  6,
+                  1536
+                ]
+              ]
+            },
+            "comparison_s": 0.10142810002434999
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.34976440004538745,
+          "submissions": 0
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.22407359996577725,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  7168
+                ],
+                [
+                  3,
+                  2048
+                ],
+                [
+                  4,
+                  2560
+                ],
+                [
+                  5,
+                  1024
+                ],
+                [
+                  6,
+                  1536
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  7168
+                ],
+                [
+                  3,
+                  2048
+                ],
+                [
+                  4,
+                  2560
+                ],
+                [
+                  5,
+                  1024
+                ],
+                [
+                  6,
+                  1536
+                ]
+              ]
+            },
+            "comparison_s": 0.20987669995520264
+          }
+        }
+      ]
+    },
+    {
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 1024,
+        "seed": 2,
+        "motif_counts": {
+          "2": 256,
+          "3": 768
+        }
+      },
+      "input_hash": "85adcbb7b2974f2a7f4e7279790e76e6a94f5e8ad8fe2f88b6ef5fe8888f775e",
+      "input": {
+        "vertices": 14336,
+        "edges": 13312,
+        "inputs": 1024,
+        "outputs": 5632,
+        "max_degree": 5,
+        "mean_degree": 1.8571428571428572,
+        "non_clifford": 6656
+      },
+      "trials": [
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "optimized",
+          "seconds": 0.2777654000092298,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  7680
+                ],
+                [
+                  3,
+                  1024
+                ],
+                [
+                  4,
+                  3840
+                ],
+                [
+                  5,
+                  512
+                ],
+                [
+                  6,
+                  2304
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  7680
+                ],
+                [
+                  3,
+                  1024
+                ],
+                [
+                  4,
+                  3840
+                ],
+                [
+                  5,
+                  512
+                ],
+                [
+                  6,
+                  2304
+                ]
+              ]
+            },
+            "comparison_s": 0.0698702999507077
+          }
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "pyzx",
+          "seconds": 0.20408339996356517,
+          "submissions": 0
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.2783952999743633,
+          "submissions": 0
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.288453999964986,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  7680
+                ],
+                [
+                  3,
+                  1024
+                ],
+                [
+                  4,
+                  3840
+                ],
+                [
+                  5,
+                  512
+                ],
+                [
+                  6,
+                  2304
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  7680
+                ],
+                [
+                  3,
+                  1024
+                ],
+                [
+                  4,
+                  3840
+                ],
+                [
+                  5,
+                  512
+                ],
+                [
+                  6,
+                  2304
+                ]
+              ]
+            },
+            "comparison_s": 0.07566560001578182
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.2643913000356406,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  7680
+                ],
+                [
+                  3,
+                  1024
+                ],
+                [
+                  4,
+                  3840
+                ],
+                [
+                  5,
+                  512
+                ],
+                [
+                  6,
+                  2304
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  7680
+                ],
+                [
+                  3,
+                  1024
+                ],
+                [
+                  4,
+                  3840
+                ],
+                [
+                  5,
+                  512
+                ],
+                [
+                  6,
+                  2304
+                ]
+              ]
+            },
+            "comparison_s": 0.07933219999540597
+          }
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.28747300000395626,
+          "submissions": 0
+        }
+      ]
+    },
+    {
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 2048,
+        "seed": 0,
+        "motif_counts": {
+          "2": 1536,
+          "3": 512
+        }
+      },
+      "input_hash": "ee92d12f1dc0a43b72e10b3ad4cbf169b43a0dd016cbbf660c350b80c98af122",
+      "input": {
+        "vertices": 24576,
+        "edges": 22528,
+        "inputs": 2048,
+        "outputs": 9216,
+        "max_degree": 5,
+        "mean_degree": 1.8333333333333333,
+        "non_clifford": 11264
+      },
+      "trials": [
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "optimized",
+          "seconds": 0.47745039995061234,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  13312
+                ],
+                [
+                  3,
+                  6144
+                ],
+                [
+                  4,
+                  2560
+                ],
+                [
+                  5,
+                  3072
+                ],
+                [
+                  6,
+                  1536
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  13312
+                ],
+                [
+                  3,
+                  6144
+                ],
+                [
+                  4,
+                  2560
+                ],
+                [
+                  5,
+                  3072
+                ],
+                [
+                  6,
+                  1536
+                ]
+              ]
+            },
+            "comparison_s": 0.11424399999668822
+          }
+        },
+        {
+          "trial": -1,
+          "warmup": true,
+          "variant": "pyzx",
+          "seconds": 0.4524575999821536,
+          "submissions": 0
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.4360914999851957,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  13312
+                ],
+                [
+                  3,
+                  6144
+                ],
+                [
+                  4,
+                  2560
+                ],
+                [
+                  5,
+                  3072
+                ],
+                [
+                  6,
+                  1536
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  13312
+                ],
+                [
+                  3,
+                  6144
+                ],
+                [
+                  4,
+                  2560
+                ],
+                [
+                  5,
+                  3072
+                ],
+                [
+                  6,
+                  1536
+                ]
+              ]
+            },
+            "comparison_s": 0.11481699999421835
+          }
+        },
+        {
+          "trial": 0,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.4470308999880217,
+          "submissions": 0
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "pyzx",
+          "seconds": 0.5551080000004731,
+          "submissions": 0
+        },
+        {
+          "trial": 1,
+          "warmup": false,
+          "variant": "optimized",
+          "seconds": 0.5088812000467442,
+          "submissions": 3,
+          "validation": {
+            "tensor": {
+              "status": "inconclusive",
+              "reason": "Dense oracle resource bound exceeded"
+            },
+            "graph": {
+              "status": "inconclusive",
+              "reason": "Exact isomorphism size bound exceeded"
+            },
+            "degree_sequence": {
+              "status": "equal",
+              "db_histogram": [
+                [
+                  1,
+                  13312
+                ],
+                [
+                  3,
+                  6144
+                ],
+                [
+                  4,
+                  2560
+                ],
+                [
+                  5,
+                  3072
+                ],
+                [
+                  6,
+                  1536
+                ]
+              ],
+              "pyzx_histogram": [
+                [
+                  1,
+                  13312
+                ],
+                [
+                  3,
+                  6144
+                ],
+                [
+                  4,
+                  2560
+                ],
+                [
+                  5,
+                  3072
+                ],
+                [
+                  6,
+                  1536
+                ]
+              ]
+            },
+            "comparison_s": 0.11632630001986399
+          }
+        }
+      ]
+    }
+  ],
+  "source_hashes": {
+    "zxdb/main_queries.json": "b76c1a06d468eed431947b00ca3f9b5ef4edceac012d512df305d71410be8c4c",
+    "zxdb/zxdb.py": "fa827bc1b4f62048772a04c79d235651ed57ad076fce72ddddf6533da8c4e5fb",
+    "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb\\evaluation\\gadget_pivot_probe.py": "88c809e2c2f326caeb520274ab27e5d27f9b6bf2720b02904fcc2978ed40b1a5"
+  },
+  "status": "budget_exhausted",
+  "unfinished_case": {
+    "size": 2048,
+    "seed": 1
+  },
+  "error": "ServiceUnavailable: Couldn't connect to localhost:7688 (resolved to ('[::1]:7688', '127.0.0.1:7688')):\nFailed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)\nFailed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7688)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)"
+}

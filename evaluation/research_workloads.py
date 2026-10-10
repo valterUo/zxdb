@@ -44,11 +44,18 @@ def digest(value):
 def build(spec):
     family, n, seed = spec['family'], spec['size'], spec['seed']
     if family.startswith('copies_'):
-        motif = build(dict(spec, family=family[7:], size=2))
+        counts = spec.get('motif_counts', {'2': n})
+        if sum(counts.values()) != n or any(int(k) not in (2, 3) or not isinstance(v, int) or v < 0 for k, v in counts.items()):
+            raise ValueError('Invalid motif mixture')
+        motifs = {int(k): build(dict(spec, family=family[7:], size=int(k))) for k, count in counts.items() if count}
+        sizes = [int(k) for k, count in sorted(counts.items()) for _ in range(count)]
+        if 'motif_counts' in spec:
+            random.Random(seed).shuffle(sizes)
         # Linear disjoint union: tensor() repeatedly copies the whole prefix.
         g = zx.Graph()
         inputs, outputs = [], []
-        for _ in range(n):
+        for motif_size in sizes:
+            motif = motifs[motif_size]
             ids = {v: g.add_vertex(motif.type(v), phase=motif.phase(v)) for v in motif.vertices()}
             for e in motif.edges():
                 g.add_edge(tuple(ids[v] for v in motif.edge_st(e)), motif.edge_type(e))
@@ -124,7 +131,8 @@ def opportunities(spec):
     if family.startswith(('random_', 'layered_')):
         return None
     if family.startswith('copies_'):
-        return n * opportunities(dict(spec, family=family[7:], size=2))
+        return sum(count * opportunities(dict(spec, family=family[7:], size=int(size)))
+                   for size, count in spec.get('motif_counts', {'2': n}).items())
     return n if family in ('identity', 'identity_chain', 'spider_fusion') else n-1 if family == 'gadget_fusion' else 1
 
 
@@ -140,6 +148,8 @@ def metrics(g):
 
 def make_plan(profile='smoke'):
     """Predeclared grids, optionally traversed with a timeout stopping rule."""
+    if profile == 'focused':
+        return focused_plan()
     if profile in ('adaptive', 'massive'):
         return adaptive_plan(profile)
     if profile not in ('smoke', 'study'):
@@ -190,3 +200,30 @@ def adaptive_plan(profile='adaptive'):
                 pyzx_max_rss_mb=4096, query_timeout_s=10,
                 max_vertices=2000000, max_edges=4000000, applicability_probe='motif',
                 adaptive=dict(consecutive_timeouts=3, stop_on='both'), cases=cases)
+
+
+def focused_plan():
+    """Pilot-informed, predeclared multi-instance confirmation grid."""
+    plan = adaptive_plan('focused')
+    cases = []
+    for family in [f for f in FAMILIES if f.startswith('copies_')]:
+        for size in (32, 64, 128, 256, 512, 1024, 2048):
+            # Sample distinct mixture counts before any timings are observed.
+            rng = random.Random(f'focused-v1:{family}:{size}')
+            larger_counts = rng.sample(range(max(9, size//4) + 1), 10)
+            for seed, larger in enumerate(larger_counts):
+                spec = dict(family=family, size=size, depth=None, seed=seed,
+                            scale='patterns', generator_version='mixture-v1',
+                            motif_counts={'2': size-larger, '3': larger})
+                spec['id'] = digest(spec)[:16]; cases.append(spec)
+    for depth in (32, 64, 128, 256, 512):
+        for seed in range(10):
+            spec = dict(family='random_clifford_t', size=8, depth=depth,
+                        seed=seed+100, scale='qubits')
+            spec['id'] = digest(spec)[:16]; cases.append(spec)
+    plan.update(cases=cases, design='focused-multi-instance-v2',
+                large_scale_summary=dict(sizes=[512, 1024, 2048],
+                    families=['copies_identity', 'copies_lcomp', 'copies_spider_fusion',
+                              'copies_pivot', 'copies_gadget_fusion']),
+                instances_per_cell=10)
+    return plan

@@ -69,7 +69,11 @@ def summarize(plan, rows):
                     failed_warmups=bad_warmups,
                     failed_attempts=failed_attempts, mixed_source_versions=mixed_versions,
                     verified_trials=verified, inconclusive_trials=len(good)-verified,
-                    planned_seeds=len(specs), distinct_inputs=len(by_input), complete=complete,
+                    planned_seeds=len(specs),
+                    generated_instances=sum(s['id'] in inputs for s in specs),
+                    measured_instances=sum(bool(trials[s['id']]) for s in specs),
+                    distinct_inputs=len({inputs[s['id']]['sha256'] for s in specs if s['id'] in inputs}),
+                    complete=complete,
                     vertices=statistics.median(inputs[s['id']]['metrics']['vertices'] for s in specs
                                                if s['id'] in inputs) if any(s['id'] in inputs for s in specs) else None,
                     db_s=None, pyzx_s=None, speedup=None, ci_low=None, ci_high=None)
@@ -134,10 +138,13 @@ def report(directory):
     figures = directory / 'figures'; figures.mkdir(exist_ok=True)
     groups = defaultdict(list)
     for row in summary:
-        groups[(row['family'], row['depth'])].append(row)
+        if plan.get('profile') == 'focused' and row['family'].startswith(('random_', 'layered_')):
+            groups[(row['family'], f"qubits{row['size']}")].append(dict(row, size=row['depth'], scale='depth'))
+        else:
+            groups[(row['family'], row['depth'])].append(row)
     panels = []
     for (family, depth), values in sorted(groups.items()):
-        name = family + (f'-depth{depth}' if depth is not None else '')
+        name = family + (('-'+depth if isinstance(depth, str) else f'-depth{depth}') if depth is not None else '')
         values.sort(key=lambda r: r['size'])
         # Missing/failed cells stay nan, breaking curves rather than joining across them.
         lines = ['size vertices db pyzx speedup lower upper db_completed pyzx_completed']
@@ -167,6 +174,15 @@ def report(directory):
                  r'] {1};\end{axis}\end{tikzpicture}'+'\n')
         (figures / f'{name}-speedup.tikz').write_text(speed, encoding='utf-8')
         panels.append(r'\input{'+name+r'.tikz}\quad'+'\n'+r'\input{'+name+r'-speedup.tikz}\par\medskip')
+        panels.append(r'\noindent '+title+': '+str(sum(r['recorded_trials'] for r in values))+'/'+
+                      str(sum(r['expected_trials'] for r in values))+' measured pairs; '+
+                      str(sum(r['failed_trials'] for r in values))+' non-ok measured pairs; '+
+                      str(sum(r['failed_attempts'] for r in values))+' failed attempts; '+
+                      str(sum(r['adaptive_skip_cases'] for r in values))+' adaptive skips.'+r'\par')
+        if any(not r['complete'] for r in values):
+            panels.append(r'\noindent Incomplete cells have no paired speedup. Available engine timings follow (completed attempts only).\par'+
+                          r'\input{'+name+r'-capacity.tikz}\par\medskip')
+
     # Compilable article; fragments can also be copied into a paper's figure environment.
     document = (r'\documentclass{article}'+'\n'+r'\usepackage[margin=1cm]{geometry}'+'\n'+
                 r'\usepackage{pgfplots}\pgfplotsset{compat=1.18}'+'\n'+r'\begin{document}'+'\n'+
@@ -181,6 +197,8 @@ def report(directory):
                    'spider_fusion', 'identity', 'bialgebra', 'pivot_boundary']
     panels8 = []
     for family in paper_order:
+        if (family, None) not in groups and ('copies_'+family, None) in groups:
+            family = 'copies_'+family
         values = groups.get((family, None))
         if not values:
             panels8.append(r'\nextgroupplot[group/empty plot]')
@@ -208,4 +226,6 @@ def report(directory):
         'Compile from figures/: `pdflatex figures.tex`. Each .tikz fragment has a matching .dat file. '
         'Keep both together when including in a paper. These figures are current-implementation '
         'controlled studies, not an exact reproduction of historical Figure 16.\n', encoding='utf-8')
+    from evaluation.research_scale import write_scale_artifacts
+    write_scale_artifacts(directory, plan, summary, rows)
     print(f'Report and PGFPlots sources: {directory}')

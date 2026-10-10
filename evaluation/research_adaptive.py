@@ -14,6 +14,10 @@ def scale_value(spec):
 
 
 def ordered_cases(plan):
+    if 'case_order' in plan:
+        if sorted(plan['case_order']) != list(range(len(plan['cases']))):
+            raise ValueError('Invalid saved case order')
+        return list(plan['case_order'])
     if not plan.get('adaptive'):
         order = list(range(len(plan['cases'])))
         random.Random(plan['order_seed']).shuffle(order)

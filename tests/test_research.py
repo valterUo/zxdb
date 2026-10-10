@@ -316,7 +316,9 @@ class ResearchLiveTests(unittest.TestCase):
             self.assertEqual(summary['pyzx_timeout_trials'], 2)
             self.assertIsNone(summary['speedup'])
             rows = [json.loads(line) for line in next((output / 'blocks').glob('*.jsonl')).read_text().splitlines()]
-            self.assertEqual(rows[-1]['kind'], 'complete')
+            # The parent appends attempt accounting after the worker's marker.
+            worker_rows = [r for r in rows if r['kind'] != 'attempt']
+            self.assertEqual(worker_rows[-1]['kind'], 'complete')
             self.assertTrue(next((output / 'figures').glob('*-capacity.tikz')).exists())
 
 

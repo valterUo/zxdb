@@ -1,0 +1,22 @@
+{"container": "memgraph", "event": "restart_requested", "reason": "528136d220fa6068: timeout", "time": 1789046103.5536468}
+{"event": "restart_ready", "time": 1789046123.7355793}
+{"container": "memgraph", "event": "restart_requested", "reason": "42f634ec068a884a: timeout", "time": 1789054622.096027}
+{"event": "restart_ready", "time": 1789054642.797367}
+{"container": "memgraph", "event": "restart_requested", "reason": "90fa03377540d452: timeout", "time": 1789059935.9241161}
+{"event": "restart_ready", "time": 1789059956.713473}
+{"container": "memgraph", "event": "restart_requested", "reason": "a523fb1682d8b7ec: error", "time": 1789060651.409214}
+{"event": "restart_ready", "time": 1789060661.855842}
+{"container": "memgraph", "event": "restart_requested", "reason": "b0258eb9fdc076bb: error", "time": 1789060688.75456}
+{"event": "restart_ready", "time": 1789060696.101314}
+{"container": "memgraph", "event": "restart_requested", "reason": "dfe5f07f5611caa5: error", "time": 1789061170.061921}
+{"event": "restart_ready", "time": 1789061177.4304414}
+{"container": "memgraph", "event": "restart_requested", "reason": "ac5fa9f7edcde1c8: timeout", "time": 1789061434.0176718}
+{"event": "restart_ready", "time": 1789061451.2778866}
+{"container": "memgraph", "event": "restart_requested", "reason": "1b48ec05d4d56de0: timeout", "time": 1789061602.6050434}
+{"event": "restart_ready", "time": 1789061620.2715755}
+{"container": "memgraph", "event": "restart_requested", "reason": "30547f7736bd15f9: error", "time": 1789061728.5948143}
+{"event": "restart_ready", "time": 1789061736.0308037}
+{"container": "memgraph", "event": "restart_requested", "reason": "b868e1373512cdb1: error", "time": 1789061786.9536457}
+{"event": "restart_ready", "time": 1789061794.3866496}
+{"container": "memgraph", "event": "restart_requested", "reason": "46dec563cc864e82: timeout", "time": 1789061977.6023283}
+{"event": "restart_ready", "time": 1789061994.8884995}

@@ -4,6 +4,178 @@ This suite evaluates the **current corrected implementation**, with a fixed,
 inspectable study plan. It does not search for a favorable crossover. No large
 campaign was run while implementing it. Existing regression tests remain separate.
 
+## Continue the extended focused campaign
+
+The current `focused-scale-plan.json` and `results-focused-scale/plan.json` have
+been extended in place from 350 to 610 cases. Existing cases, IDs, worker indices,
+per-series evaluation order and raw checkpoints are preserved. The original plan
+is archived under `results-focused-scale/plan-history/`. No observations from
+older campaigns were imported.
+
+Added workloads: copies_bialgebra, copies_pivot_gadget, copies_pivot_boundary
+(each at 32--2048 copies, ten instances per size), and eight-qubit
+random_clifford_t full reduction (depths 32--512, ten seeds per depth).
+
+```powershell
+.\myenv\Scripts\python.exe -m evaluation.research run --plan focused-scale-plan.json --output results-focused-scale --restart-container memgraph --budget-seconds 3600
+```
+
+Use the same folder. Completed measured pairs are skipped, eligible partial cases
+resume from their checkpoints, and existing timeout/retry stopping decisions
+remain in effect. Previously exhausted cases are not silently retried. Missing
+families are scheduled after the original case order. The campaign budget can
+require repeating this command across sessions.
+
+The runner accepts reporting-only source changes and the exact audited
+orchestration changes supporting this extension. It retains the measurement
+version while recording actual source hashes in each new session. Changed
+measurement code or dependencies still requires a separate compatible study;
+this is not a general override of the version checks.
+
+```powershell
+# Report regeneration does not execute benchmarks:
+.\myenv\Scripts\python.exe -m evaluation.research report results-focused-scale
+cd results-focused-scale\figures
+pdflatex figures.tex
+```
+
+`figures.tex` includes ALL nine families, success/failure coverage, and available
+engine timings for incomplete cells. Unmeasured added cases stay visibly missing
+until the campaign runs them. `paper_rules.tex` now includes all eight copies-rule
+panels. `five_rules.tex` remains the optional five-rule subset. Full reduction is
+plotted against growing depth at fixed width. These documents contain only this
+campaign's observations.
+
+The append-only migration is also available as `python -m
+evaluation.research_extend --plan focused-scale-plan.json --output
+results-focused-scale`; it is already applied here and is idempotent. It adds
+only missing focused families and refuses changed existing generator definitions.
+
+## Focused multi-instance follow-up
+
+The previous adaptive results are pilot measurements. The new `focused` profile
+retains eight copies-rule families (including the previously negative ones) plus
+random Clifford+T full reduction. It changes the input population and must use a
+new plan/results directory. Existing observations must not be relabeled as new
+multi-instance evidence. Editing the suite changes its source version, so do not
+resume the earlier adaptive campaign under this version.
+
+```powershell
+.\myenv\Scripts\python.exe -m evaluation.research plan --profile focused --db-variant optimized --output focused-plan.json
+.\myenv\Scripts\python.exe -m evaluation.research run --plan focused-plan.json --output results-focused --restart-container memgraph --budget-seconds 3600
+```
+
+`focused-plan.json` has been generated; use the second command to start, and
+repeat it to resume. No new performance campaign was run during implementation.
+
+The complete focused design has 610 planned input cases:
+
+- Eight rule families, each at 32, 64, 128, 256, 512, 1024 and 2048 copies.
+- Ten graphs per family/size cell. Each graph mixes size-two and size-three
+  motifs of the same rule; between zero and 25% (up to 9/32 at the smallest size) of its copies use the larger
+  motif. Ten different mixture counts are sampled without replacement using a
+  deterministic seed, before measuring performance. Component insertion order
+  is also shuffled, but is not the source of structural diversity.
+- Each rule instance has a different vertex count within its cell; these cannot
+  be mere relabelings. The graphs remain disconnected rule-throughput workloads.
+  Actual vertices and constructed witness counts are recorded because nominal
+  copy count is not an identical amount of rewrite work across mixtures.
+- Full reduction uses eight-qubit random Clifford+T circuits at generation depths
+  32, 64, 128, 256 and 512, with ten seeds (100--109) per depth, without planting.
+- One excluded warmup and two measured repetitions per input and engine. A
+  complete cell therefore has 20 measured pairs, nested within ten input cases.
+- The existing 15-second engine budgets, 120-second cumulative worker budget,
+  bounded campaign runtime, recovery, and three-consecutive-both-timeout stopping
+  policy remain active. These limits can leave cells incomplete; ten instances
+  is the planned count, not a promise of ten successful results.
+
+Size grids and composition distributions are frozen before the new results.
+`--sizes` is rejected for this profile because its stored motif counts depend on
+size. This is a pilot-informed follow-up, not an independent replication of the
+original fixed-motif population. Small composition changes do not establish
+performance over arbitrary ZX diagrams.
+
+Aggregate each family/size separately. The existing hierarchical bootstrap
+resamples input groups and then repetitions within those groups; the paired
+speedup estimator gives each distinct exact input fingerprint equal weight.
+The resulting intervals describe this sampled workload population and timing
+noise, not different machines or arbitrary circuits. A fingerprint is not a
+canonical graph-isomorphism certificate. Rule diversity is additionally assured
+by differing vertex counts. `generated_instances`, `measured_instances`, and
+`distinct_inputs` now report observed counts; `planned_seeds` is the planned
+count. Missing inputs are not counted as observed distinct graphs.
+
+Present size curves and per-size speedups with instance counts and intervals.
+Do not select only the best size or pool sizes as if they were repetitions of
+one experiment. Keep earlier positive/negative labels as hypotheses; the new
+measurements determine whether those patterns persist. Show timeouts and other
+failures alongside complete-cell summaries, and retain the distinction between
+reduction-only timing and data-movement costs.
+
+## Five-rule scaling figures and large-size averages
+
+Use the prepared `focused-scale-plan.json` for the five previously positive rule
+families: identity, local complementation, spider fusion, pivot and gadget fusion.
+It contains 350 planned graphs: seven sizes (32 through 2048, doubling), ten
+structurally different instances per family/size. The negative controls and full
+reduction remain available through the complete focused profile; they are not
+included in this five-rule campaign or its aggregate table.
+
+```powershell
+# The new plan is already generated. Use a NEW results folder:
+.\myenv\Scripts\python.exe -m evaluation.research run --plan focused-scale-plan.json --output results-focused-scale --restart-container memgraph --budget-seconds 3600
+# After collecting observations, regenerate reports without running benchmarks:
+.\myenv\Scripts\python.exe -m evaluation.research report results-focused-scale
+cd results-focused-scale\figures
+pdflatex five_rules.tex
+```
+
+`five_rules.tex` combines five PyZX/ZXdb timing curves, paired speedup curves with
+95% intervals, and the new large-size table. Each timing point is the median of
+per-input median reduction times at that size, not a mixture of different sizes.
+The raw vertex counts remain in observations, since copy counts do not equal
+vertex counts. Editable `.tikz` fragments and `.dat` files remain available.
+
+The primary summary range is declared in the plan as **512, 1024 and 2048 copies**.
+For each of the five rules, a complete summary uses 30 input graphs and 60 measured
+pairs (two repetitions per graph, after one excluded warmup). Compute the median
+log paired speedup within each graph, average across graphs within each size,
+then average those three size means and exponentiate. This gives each size equal
+weight. The 95% bootstrap interval resamples input groups and then paired
+repetitions within each fixed size; the predefined sizes themselves are not
+resampled. Do not interpret the range as all possible large graphs.
+
+Outputs are `large_scale_summary.json`, `large_scale_summary.csv` and the editable
+`large_scale_table.tex`. The displayed table reports successful measured pairs, their distinct inputs,
+represented sizes, geometric mean speedup and its interval. It uses the
+`completed_*` fields: an explicitly conditional completed-pair estimate, even
+when only one repetition of an input finished. Failed, resource-limited or
+nonpositive/nonfinite timing pairs are excluded; mixed source versions suppress
+this estimate. Represented sizes have equal weight, followed by distinct inputs
+within size. Missing sizes are disclosed, not assigned synthetic timings.
+These intervals describe completed observations and do not account for selection
+bias from missing or timed-out observations.
+
+The original full-grid `speedup` and `ci_*` fields remain separate in JSON/CSV:
+a missing, failed, timed-out or incomplete size cell still suppresses those
+full-grid estimates. The conditional table is not a substitute for an unbiased
+claim about the full planned population. Per-size
+capacity fragments retain successful engine observations with their existing
+limitations. No pooled speedup across the five different rules is computed.
+
+The lower size threshold is a declared experimental choice, not proof of an
+asymptotic regime. Claims must remain about the measured independent-copy graph
+population, PyZX version, database variant and reduction-only timing protocol.
+Keep the small-size curves: they reveal fixed overhead and crossover behavior.
+This profile is motivated by pilot observations; it does not guarantee the five
+rules will still be positive on the varied graphs.
+
+To recreate the plan under a different filename:
+
+```powershell
+.\myenv\Scripts\python.exe -m evaluation.research plan --profile focused --db-variant optimized --families copies_identity copies_lcomp copies_spider_fusion copies_pivot copies_gadget_fusion --output focused-scale-plan-new.json
+```
+
 ## Run it
 
 The reduction variants and their regression evidence are described in
@@ -373,3 +545,43 @@ The tests check reproducibility, applicability at multiple scales, eight rule
 motifs, realistic full reduction, invalid locality requests, zero-map/incorrect
 phase detection, topology fingerprints, both query submission paths, hierarchical
 aggregation, warmup exclusion, failure visibility and PGFPlots artifact generation.
+
+### Exploratory display selections
+
+A results folder can contain `report-options.json`, for example:
+
+```json
+{"exploratory_sizes": {"copies_gadget_fusion": [1024, 2048]}}
+```
+
+Regenerating the report applies this subset only to the displayed table row,
+with an explicit exploratory footnote. It does not modify the saved plan, raw
+observations, curves, or original summary JSON/CSV. The original table is saved
+as `large_scale_table_predeclared.tex`; the display estimates are saved separately
+as `large_scale_display_summary.json`. Coverage denominators refer to planned
+cases within the selected subset. Sizes with no successful pairs remain absent
+from the completed-pair estimate. In the current campaign the gadget selection
+therefore uses 1024 only, with five inputs and nine pairs; 2048 has no pairs.
+The selection was made after inspecting results and is not a replacement for
+the predefined analysis.
+
+### Current display: all sizes from 32 upward
+
+The current `results-focused-scale/report-options.json` selects
+`{"table_scope": "all_planned_sizes"}`. Every planned size for each of the eight
+rules and full reduction is eligible in the displayed average. The gadget-fusion
+1024-only exploratory selection is no longer applied; its old report options
+are archived separately. The actual measurements and benchmark plan are unchanged.
+
+`all_cases_table.tex` and `large_scale_table.tex` show this all-size view;
+`all_cases_summary.json` and `large_scale_display_summary.json` contain its
+estimates. Main `figures.tex` includes all nine workloads and the all-size table.
+The predefined large-size estimates remain in `large_scale_summary.json` and
+`large_scale_table_predeclared.tex`. The optional `five_rules.tex` now pairs its
+five curves with that predefined table.
+
+Do not equate the last completed size with an algorithmic scaling limit: some
+series ended after worker timeouts or connection failures, and later sizes have
+no measurements. The table lists only sizes contributing successful pairs and
+retains the planned-input denominator. Full-reduction sizes denote generation
+depth on eight qubits; the other sizes denote copy counts.

@@ -772,7 +772,8 @@ class ZXdb:
         batched = options is not None and options['graph_id'] == graph_id
         two_query = self._query("Pivot rule - batched interior Pauli spiders" if batched else
                                 "Pivot rule - two interior Pauli spiders")
-        single_query = self._query("Pivot rule - single interior Pauli spider")
+        single_query = self._query("Pivot boundary Pauli - batched" if batched else
+                                   "Pivot rule - single interior Pauli spider")
 
         def loop(tx):
             # Run interior-interior pivots to a fixpoint first, then check for a
@@ -870,7 +871,9 @@ class ZXdb:
             Number of patterns processed
         """
 
-        pg_query = self._query("Pivot gadget")
+        options = self._reduction_options.get()
+        batched = options is not None and options['graph_id'] == graph_id
+        pg_query = self._query("Pivot gadget - batched" if batched else "Pivot gadget")
 
         def loop(tx):
             total = 0
@@ -895,7 +898,9 @@ class ZXdb:
             Number of patterns processed
         """
 
-        pb_query = self._query("Pivot boundary")
+        options = self._reduction_options.get()
+        batched = options is not None and options['graph_id'] == graph_id
+        pb_query = self._query("Pivot boundary - batched" if batched else "Pivot boundary")
 
         def loop(tx):
             total = 0
@@ -1096,7 +1101,7 @@ class ZXdb:
 
     def full_reduce_optimized(self, graph_id: str, max_rounds: int = 1000,
                               *, exclusive_access: bool = False, incremental: bool = False) -> None:
-        """Same reduction schedule, with independent pivot/lcomp batches.
+        """Same reduction schedule, with independent pivot/lcomp/gadget/boundary batches.
 
         The original full_reduce remains the control implementation. Different
         valid matching orders can produce different equivalent reduced graphs.
