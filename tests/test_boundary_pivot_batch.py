@@ -7,11 +7,11 @@ from itertools import product
 
 import pyzx as zx
 from evaluation.cases import RULES, pb_basic
-from evaluation.harness import _tensors_equal
-from evaluation.research_core import load, read, verify, reference, compare_outputs, CountingDriver
-from evaluation.research_workloads import build, payload
+from evaluation.oracle import _tensors_equal
+from evaluation.core import load, read, verify, reference, compare_outputs, CountingDriver
+from evaluation.workloads import build, payload
 from tests.test_pivot_materialization import pivot_neighborhood
-import tests.test_research as research_tests
+import tests.live_support as research_tests
 
 
 def boundary_neighborhood(groups=(True,True,True), existing=False, j_phase=1, a_phase=Fraction(1,4)):
@@ -41,7 +41,7 @@ def overlapping_boundaries(shared_alpha=False):
     return g
 
 
-@unittest.skipUnless(os.environ.get('ZXDB_RESEARCH_LIVE')=='1','Opt-in Memgraph checks')
+@unittest.skipUnless(os.environ.get('ZXDB_LIVE')=='1','Opt-in Memgraph checks')
 class BoundaryPivotBatchTests(unittest.TestCase):
     setUp=research_tests.ResearchLiveTests.setUp
     tearDown=research_tests.ResearchLiveTests.tearDown

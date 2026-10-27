@@ -1,0 +1,75 @@
+[
+  {
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 64,
+      "seed": 0,
+      "depth": 1280
+    },
+    "db_rewrite_s": 0.38639990000046964,
+    "pyzx_rewrite_s": 0.4577837999986514,
+    "speedup": 1.1847409898348704,
+    "output": {
+      "vertices": 436,
+      "edges": 2081,
+      "inputs": 64,
+      "outputs": 64,
+      "max_degree": 92,
+      "mean_degree": 9.545871559633028,
+      "non_clifford": 193
+    }
+  },
+  {
+    "spec": {
+      "family": "layered_local",
+      "size": 64,
+      "seed": 0,
+      "depth": 2
+    },
+    "db_rewrite_s": 0.8551668000000063,
+    "pyzx_rewrite_s": 0.8043560999994952,
+    "speedup": 0.9405838720580467,
+    "output": {
+      "vertices": 382,
+      "edges": 10335,
+      "inputs": 64,
+      "outputs": 64,
+      "max_degree": 128,
+      "mean_degree": 54.109947643979055,
+      "non_clifford": 126
+    }
+  },
+  {
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 64,
+      "seed": 0,
+      "depth": 1280
+    },
+    "db_rewrite_s": 1.4016265999998723,
+    "pyzx_rewrite_s": 8.237062600001082,
+    "speedup": 5.8767881545640135,
+    "output": {
+      "vertices": 427,
+      "edges": 10423,
+      "inputs": 64,
+      "outputs": 64,
+      "max_degree": 126,
+      "mean_degree": 48.81967213114754,
+      "non_clifford": 185
+    }
+  },
+  {
+    "spec": {
+      "family": "layered_local",
+      "size": 128,
+      "seed": 0,
+      "depth": 2
+    },
+    "db_rewrite_s": 5.213578700000653,
+    "pyzx_rewrite_s": 7.855418799999825,
+    "speedup": 1.5067229732235252,
+    "certificate_status": "inconclusive",
+    "certificate_reason": "Exploratory reduced-output proof process stopped after more than ten minutes of proof computation; timing completed beforehand."
+  }
+]

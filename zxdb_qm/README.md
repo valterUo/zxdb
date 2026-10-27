@@ -1,57 +1,47 @@
-# zxdb query modules — in-process pivot_gadget
+# Native database rewrites
 
-`full_reduce_with_query_modules` (in `zxdb/zxdb.py`) is an isolated variant of
-`full_reduce` that runs the **pivot_gadget** rule inside Memgraph as a custom
-query module instead of via per-application Cypher. Everything else stays Cypher.
+`ZXdb.full_reduce_native(graph_id)` uses C++ query procedures for interior pivot,
+local complementation, both boundary-pivot variants, gadget pivot and supplementarity.
+Other rules and the reduction schedule
+remain in Python/Cypher. All graph mutations execute inside Memgraph; Python
+imports and exports the graph outside the rewrite timer.
 
-## Why
+The scoped procedures are `pivot`, `lcomp`, `gadget`, `pauli_boundary`,
+`boundary` and `supplementarity` in the `zxqmcpp` module. Each takes `graph_id`
+and runs its rule to a fixed point. They reject cross-graph edges, self-loops and
+parallel edges before mutation. The full-reduction wrapper normalizes parallel
+edges. Use exclusive access to the selected graph.
 
-pivot_gadget is the one rule where the Cypher implementation lags pyzx: pyzx's
-matcher finds a **maximal set of vertex-disjoint gadget matches in one O(E)
-pass** (greedy: mark each match's neighbourhood consumed, skip overlapping
-candidates) and applies them all, whereas the Cypher rule applies one per query
-(`LIMIT 1`) and re-scans every time. That greedy is *imperative in-process* — not
-expressible cheaply in declarative Cypher (mutual-min under-selects) nor via MAGE
-coloring (the conflict graph is quadratic on dense inputs). A custom query module
-runs in-process, so it can do exactly pyzx's greedy, with the heavy O(deg^2)
-edge toggles done natively.
+## Build and activate
 
-## Files
-
-- `zxqmcpp.cpp` — **C++** module (`zxqmcpp.pivot_gadget_fixpoint()`), the
-  performant one. Ports pyzx `match_pivot_gadget` + `pivot`; runs the whole
-  pivot_gadget fixpoint in one CALL.
-- `zxqm.py` — **Python** mgp port (`zxqm.pivot_gadget_fixpoint(graph_id)`), a
-  reference. Correct but slower (mgp per-op overhead exceeds the round-trip
-  savings); kept for comparison.
-
-## Result (Memgraph 3.6.2, this machine)
-
-Correct: 112/112 full_reduce eval + 8/8 small tensor-vs-pyzx. On dense
-gadget-heavy circuits (q28, span None) full_reduce_with_query_modules is
-**~2–2.5x faster than the Cypher full_reduce and ~1.4–2.2x faster than pyzx**,
-including degree 12 / twInt~22 where the Cypher full_reduce previously *tied/lost*
-to pyzx — the C++ module wins there too (0.48x). So it removes the one regime
-where the DB lagged pyzx.
-
-## Deploy (one-time per container)
-
-The module must live in Memgraph's `--query-modules-directory`
-(`/usr/lib/memgraph/query_modules`). The `memgraph-mage` image ships the headers
-(`/usr/include/memgraph/mgp.hpp`) but no compiler, so install g++ once.
+Build against the headers from the running Memgraph version. The commands below
+assume a dedicated container named `memgraph` with g++ installed. Install g++ in
+that container if needed. Compile to a temporary file before replacing the module.
 
 ```sh
-# from repo root, with the 'memgraph' container running:
-docker exec -u root memgraph apt-get update -qq
-docker exec -u root memgraph apt-get install -y -qq g++
 docker cp zxdb_qm/zxqmcpp.cpp memgraph:/tmp/zxqmcpp.cpp
-docker exec -u root memgraph g++ -std=c++20 -fPIC -shared \
-    -I/usr/include/memgraph /tmp/zxqmcpp.cpp \
-    -o /usr/lib/memgraph/query_modules/zxqmcpp.so
-docker cp zxdb_qm/zxqm.py memgraph:/usr/lib/memgraph/query_modules/zxqm.py   # optional (Python port)
-docker exec -u root memgraph chmod 644 /usr/lib/memgraph/query_modules/zxqm.py
+docker exec -u root memgraph g++ -O3 -std=c++20 -fPIC -shared -I/usr/include/memgraph /tmp/zxqmcpp.cpp -o /tmp/zxqmcpp-new.so
+docker exec -u root memgraph mv /tmp/zxqmcpp-new.so /usr/lib/memgraph/query_modules/zxqmcpp.so
+docker restart memgraph
 ```
 
-Then `ZXdb.ensure_query_module()` runs `CALL mg.load_all()` and verifies
-`zxqmcpp.pivot_gadget_fixpoint` is available. The `.so` persists in the container
-across restarts (re-run the compile only if the container is recreated).
+A restart unloads cached libraries; `mg.load_all()` alone did not replace the old
+library in the tested container. Check `CALL mg.procedures()` for all six scoped
+procedures before running the evaluation.
+
+## Evaluate
+
+From the repository root, against an empty dedicated database:
+
+```sh
+python evaluate.py --variants native --full-reduce-only --qubits 32 64 128 --depth-factor 20 --seeds 3 --output results/native
+```
+
+This retains every correctness input and adds native regression tests. Timings,
+checks and source hashes use the same report format as the Cypher comparison.
+Large circuit tensors can remain inconclusive; raw timing alone is not evidence
+of correctness. Database scalar tracking remains an explicit limitation.
+
+`zxqm.py` and the zero-argument C++ gadget procedure are older comparison paths;
+their Python wrapper requires that no other graph is present. Historical timing
+claims are in the backup, not evidence for the current implementation.

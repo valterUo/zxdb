@@ -1,0 +1,12 @@
+test_direct_call_rejects_cross_graph_edges_before_mutation (tests.test_native_reduction.NativeReductionTests.test_direct_call_rejects_cross_graph_edges_before_mutation) ... ok
+test_full_reduce_fixtures (tests.test_native_reduction.NativeReductionTests.test_full_reduce_fixtures) ... ok
+test_individual_rule_fixtures (tests.test_native_reduction.NativeReductionTests.test_individual_rule_fixtures) ... ok
+test_pauli_boundary_neighbor_groups_phases_and_wire_types (tests.test_native_reduction.NativeReductionTests.test_pauli_boundary_neighbor_groups_phases_and_wire_types) ... ok
+test_pauli_boundary_overlaps_and_invalid_candidates (tests.test_native_reduction.NativeReductionTests.test_pauli_boundary_overlaps_and_invalid_candidates) ... ok
+test_simple_neighbor_edge_is_preserved_by_hadamard_toggle (tests.test_native_reduction.NativeReductionTests.test_simple_neighbor_edge_is_preserved_by_hadamard_toggle) ... ok
+test_supplementarity_batches_and_rejects_simple_incident_edges (tests.test_native_reduction.NativeReductionTests.test_supplementarity_batches_and_rejects_simple_incident_edges) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 31.443s
+
+OK

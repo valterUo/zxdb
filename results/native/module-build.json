@@ -1,0 +1,7 @@
+{
+  "module_sha256": "8c8e6d50dbc9336946424f3756cf21a7990792124c079a00eeb78ccd32eb04a8",
+  "compiled_source_sha256": "a32bde87b224877bc60b14fa9168db191270279833e8636e5f2241a3ab5a762f",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "flags": "-O3 -std=c++20 -fPIC -shared -I/usr/include/memgraph",
+  "note": "Compiled source is snapshotted here. Current repository source differs only in comments and an explicit standard header include."
+}

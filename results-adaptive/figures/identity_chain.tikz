@@ -1,6 +1,0 @@
-\begin{tikzpicture}
-\begin{axis}[width=7cm,height=5cm,xmode=log,ymode=log,log basis x=2,unbounded coords=jump,xlabel={patterns},ylabel={Reduction time (s)},title={identity\_chain},legend pos=north west]
-\addplot+[mark=square*] table[x=size,y=db] {identity_chain.dat};\addlegendentry{ZXdb}
-\addplot+[mark=*] table[x=size,y=pyzx] {identity_chain.dat};\addlegendentry{PyZX}
-\end{axis}
-\end{tikzpicture}

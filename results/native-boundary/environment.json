@@ -1,0 +1,31 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "pyzx": "0.10.3",
+  "source_hashes": {
+    "zxdb/zxdb.py": "42f71bb27d1f2d37cd65f07dca4a77ec2d02bf8d9d215dc1f56fe0fd0040cd99",
+    "zxdb/main_queries.json": "b19152a77d52c024392776224bf76c836c2173a74d6e9be6d6b193632f4a8be5",
+    "zxdb_qm/zxqmcpp.cpp": "6eb88464799b5ef0dcb1c2e4a7106081ce3e86ee3ff1dc77193c6966f39344f8",
+    "evaluation/core.py": "9e18bc5eefec7263061cf8b73b8627d1f6f38bbc8b4ae146a62ce234461a9fb7",
+    "tests/test_native_reduction.py": "12b06cecf37a4ff94276b2b48ecda73af27cdb30bc391b2a5f99cae679509a0c"
+  },
+  "profile": "Exploratory single-run rewrite timings; imports/exports and certificate verification excluded. No warmup. Native Pauli and general boundary pivots plus grouped supplementarity.",
+  "original_certificate": {
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 64,
+      "seed": 0,
+      "depth": 1280
+    },
+    "seconds": 49.89742380000098,
+    "vertices": 128,
+    "edges": 64,
+    "ordered": true,
+    "simple": true,
+    "scalar": {
+      "power2": -10096,
+      "phase": "7/4"
+    },
+    "method": "Original unitary circuit adjoint composed with database output, reduced by PyZX to ordered identity with nonzero scalar."
+  }
+}

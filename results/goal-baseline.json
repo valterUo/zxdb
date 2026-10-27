@@ -1,0 +1,80 @@
+[
+  {
+    "qubits": 32,
+    "input": {
+      "vertices": 1048,
+      "edges": 1360,
+      "inputs": 32,
+      "outputs": 32,
+      "max_degree": 3,
+      "mean_degree": 2.595419847328244,
+      "non_clifford": 163
+    },
+    "pyzx_s": 0.6137213000001793,
+    "db_s": 3.6649803999998767,
+    "profile": {
+      "spider_fusion": {
+        "calls": 8,
+        "s": 0.20827200000167068
+      },
+      "to_gh": {
+        "calls": 3,
+        "s": 0.013684999999895808
+      },
+      "remove_identities": {
+        "calls": 5,
+        "s": 0.028289100000620238
+      },
+      "pivot_rule": {
+        "calls": 5,
+        "s": 2.856140300000334
+      },
+      "local_complementation_rule": {
+        "calls": 5,
+        "s": 0.1999706000005972
+      },
+      "pivot_gadget_rule": {
+        "calls": 2,
+        "s": 0.17788240000027145
+      },
+      "pivot_boundary_rule": {
+        "calls": 1,
+        "s": 0.0063057999996090075
+      },
+      "phase_gadget_fusion_rule": {
+        "calls": 1,
+        "s": 0.003812300000390678
+      },
+      "copy_simp": {
+        "calls": 1,
+        "s": 0.0022535999996762257
+      },
+      "supplementarity_simp": {
+        "calls": 1,
+        "s": 0.16279819999999745
+      },
+      "remove_isolated_vertices": {
+        "calls": 1,
+        "s": 0.0018558000001576147
+      }
+    },
+    "db_output": {
+      "vertices": 212,
+      "edges": 2095,
+      "inputs": 32,
+      "outputs": 32,
+      "max_degree": 63,
+      "mean_degree": 19.764150943396228,
+      "non_clifford": 97
+    },
+    "pyzx_output": {
+      "vertices": 216,
+      "edges": 2068,
+      "inputs": 32,
+      "outputs": 32,
+      "max_degree": 63,
+      "mean_degree": 19.14814814814815,
+      "non_clifford": 97
+    }
+  }
+]

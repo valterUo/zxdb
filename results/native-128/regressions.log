@@ -1,0 +1,703 @@
+test_certificate_cache_and_watchdog_exclude_verification (tests.test_evaluation.EvaluationTests.test_certificate_cache_and_watchdog_exclude_verification) ... ok
+test_circuit_grid_uses_requested_sizes_and_seeds (tests.test_evaluation.EvaluationTests.test_circuit_grid_uses_requested_sizes_and_seeds) ... ok
+test_errors_missing_trials_and_noops_never_become_speedups (tests.test_evaluation.EvaluationTests.test_errors_missing_trials_and_noops_never_become_speedups) ... ok
+test_native_full_reduce_dispatch_does_not_use_cypher_control (tests.test_evaluation.EvaluationTests.test_native_full_reduce_dispatch_does_not_use_cypher_control) ... ok
+test_native_reference_does_not_time_fingerprinting_or_extra_full_reduce (tests.test_evaluation.EvaluationTests.test_native_reference_does_not_time_fingerprinting_or_extra_full_reduce) ... ok
+test_nonfinite_contraction_is_inconclusive (tests.test_evaluation.EvaluationTests.test_nonfinite_contraction_is_inconclusive) ... ok
+test_tensor_engine_agrees_with_pyzx_on_both_colors_and_zero_arity (tests.test_evaluation.EvaluationTests.test_tensor_engine_agrees_with_pyzx_on_both_colors_and_zero_arity) ... ok
+test_tiny_nonzero_diagram_is_not_reported_as_a_zero_map_failure (tests.test_evaluation.EvaluationTests.test_tiny_nonzero_diagram_is_not_reported_as_a_zero_map_failure) ... ok
+test_unitary_identity_certificate_and_counterexamples (tests.test_evaluation.EvaluationTests.test_unitary_identity_certificate_and_counterexamples) ... ok
+test_zero_maps_and_wrong_phases_cannot_pass (tests.test_evaluation.EvaluationTests.test_zero_maps_and_wrong_phases_cannot_pass) ... ok
+test_bialgebra_connect_keeps_foreign_markers (tests.test_graph_isolation.TestGraphIsolation.test_bialgebra_connect_keeps_foreign_markers) ... ok
+test_boundary_pivot_composition_preserves_tensor_with_scoped_matches (tests.test_graph_isolation.TestGraphIsolation.test_boundary_pivot_composition_preserves_tensor_with_scoped_matches) ... ok
+test_composed_and_auxiliary_rules (tests.test_graph_isolation.TestGraphIsolation.test_composed_and_auxiliary_rules) ... ok
+test_cross_graph_relationship_is_rejected_before_mutation (tests.test_graph_isolation.TestGraphIsolation.test_cross_graph_relationship_is_rejected_before_mutation) ... ok
+test_every_rule_preserves_second_diagram (tests.test_graph_isolation.TestGraphIsolation.test_every_rule_preserves_second_diagram) ... ok
+test_hadamard_session_helper_and_wire_ownership (tests.test_graph_isolation.TestGraphIsolation.test_hadamard_session_helper_and_wire_ownership) ... ok
+test_isolated_cleanup_is_scoped (tests.test_graph_isolation.TestGraphIsolation.test_isolated_cleanup_is_scoped) ... ok
+test_missing_graph_is_noop_for_all_query_entries (tests.test_graph_isolation.TestGraphIsolation.test_missing_graph_is_noop_for_all_query_entries) ... ok
+test_native_wrapper_refuses_mixed_graphs_before_any_mutation (tests.test_graph_isolation.TestGraphIsolation.test_native_wrapper_refuses_mixed_graphs_before_any_mutation) ... ok
+test_all_color_and_edge_multiplicities (tests.test_hopf_normalization.TestHopfNormalization.test_all_color_and_edge_multiplicities) ... ok
+test_audit_probe_spider_fusion_and_full_reduce (tests.test_hopf_normalization.TestHopfNormalization.test_audit_probe_spider_fusion_and_full_reduce) ... ok
+test_hopf_query_only_cancels_simple_edges_between_opposite_colors (tests.test_hopf_normalization.TestHopfNormalization.test_hopf_query_only_cancels_simple_edges_between_opposite_colors) ... ok
+test_normalization_preserves_foreign_parallel_edges_and_phases (tests.test_hopf_normalization.TestHopfNormalization.test_normalization_preserves_foreign_parallel_edges_and_phases) ... ok
+test_all_neighbor_groups_with_existing_and_absent_edges (tests.test_pivot_materialization.PivotMaterializationTests.test_all_neighbor_groups_with_existing_and_absent_edges) ... ok
+test_reported_circuit_repeated_full_reduce_liveness (tests.test_pivot_materialization.PivotMaterializationTests.test_reported_circuit_repeated_full_reduce_liveness) ... ok
+test_all_neighbor_groups_edge_toggles_and_phases (tests.test_gadget_pivot_batch.GadgetPivotBatchTests.test_all_neighbor_groups_edge_toggles_and_phases) ... ok
+test_both_benchmark_motifs_and_mixed_components (tests.test_gadget_pivot_batch.GadgetPivotBatchTests.test_both_benchmark_motifs_and_mixed_components) ... ok
+test_boundary_candidate_keeps_its_own_boundary_and_phases (tests.test_gadget_pivot_batch.GadgetPivotBatchTests.test_boundary_candidate_keeps_its_own_boundary_and_phases) ... ok
+test_disjoint_instances_batch_and_preserve_foreign_graph (tests.test_gadget_pivot_batch.GadgetPivotBatchTests.test_disjoint_instances_batch_and_preserve_foreign_graph) ... ok
+test_existing_adversarial_cases (tests.test_gadget_pivot_batch.GadgetPivotBatchTests.test_existing_adversarial_cases) ... ok
+test_neighbor_plan_expands_bound_centers (tests.test_gadget_pivot_batch.GadgetPivotBatchTests.test_neighbor_plan_expands_bound_centers) ... ok
+test_optimized_full_reduce_small_circuits (tests.test_gadget_pivot_batch.GadgetPivotBatchTests.test_optimized_full_reduce_small_circuits) ... ok
+test_overlapping_matches_are_not_selected_together (tests.test_gadget_pivot_batch.GadgetPivotBatchTests.test_overlapping_matches_are_not_selected_together) ... ok
+test_benchmark_motifs_tensor_and_neighbor_plan (tests.test_boundary_pivot_batch.BoundaryPivotBatchTests.test_benchmark_motifs_tensor_and_neighbor_plan) ... ok
+test_existing_adversarial_cases (tests.test_boundary_pivot_batch.BoundaryPivotBatchTests.test_existing_adversarial_cases) ... ok
+test_invalid_candidates_unchanged (tests.test_boundary_pivot_batch.BoundaryPivotBatchTests.test_invalid_candidates_unchanged) ... ok
+test_mixed_copies_three_submissions_and_foreign_graph_unchanged (tests.test_boundary_pivot_batch.BoundaryPivotBatchTests.test_mixed_copies_three_submissions_and_foreign_graph_unchanged) ... ok
+test_neighbor_groups_edge_toggles_and_phases (tests.test_boundary_pivot_batch.BoundaryPivotBatchTests.test_neighbor_groups_edge_toggles_and_phases) ... ok
+test_optimized_full_reduce_small_circuits (tests.test_boundary_pivot_batch.BoundaryPivotBatchTests.test_optimized_full_reduce_small_circuits) ... ok
+test_pauli_batches_conflict_and_disjoint_selection (tests.test_boundary_pivot_batch.BoundaryPivotBatchTests.test_pauli_batches_conflict_and_disjoint_selection) ... ok
+test_pauli_boundary_neighbor_groups_phases_and_both_wire_types (tests.test_boundary_pivot_batch.BoundaryPivotBatchTests.test_pauli_boundary_neighbor_groups_phases_and_both_wire_types) ... ok
+test_shared_neighbor_or_boundary_owner_conflicts (tests.test_boundary_pivot_batch.BoundaryPivotBatchTests.test_shared_neighbor_or_boundary_owner_conflicts) ... ok
+test_batched_full_reduce_overlapping_circuits (tests.test_reduction_optimizations.ReductionOptimizationTests.test_batched_full_reduce_overlapping_circuits) ... ok
+test_batched_lcomp_disjoint_and_overlapping (tests.test_reduction_optimizations.ReductionOptimizationTests.test_batched_lcomp_disjoint_and_overlapping) ... ok
+test_batched_pivot_disjoint_calls_and_reference (tests.test_reduction_optimizations.ReductionOptimizationTests.test_batched_pivot_disjoint_calls_and_reference) ... ok
+test_batched_pivot_neighbor_groups (tests.test_reduction_optimizations.ReductionOptimizationTests.test_batched_pivot_neighbor_groups) ... ok
+test_exclusive_full_reduce_rejects_cross_graph_edge_before_mutation (tests.test_reduction_optimizations.ReductionOptimizationTests.test_exclusive_full_reduce_rejects_cross_graph_edge_before_mutation) ... ok
+test_exclusive_scope_checks_ownership_once_and_resets_after_error (tests.test_reduction_optimizations.ReductionOptimizationTests.test_exclusive_scope_checks_ownership_once_and_resets_after_error) ... ok
+test_limited_guards_keep_zero_one_and_multiple_match_behavior (tests.test_reduction_optimizations.ReductionOptimizationTests.test_limited_guards_keep_zero_one_and_multiple_match_behavior) ... ok
+test_loader_plan_uses_vertex_id_index (tests.test_reduction_optimizations.ReductionOptimizationTests.test_loader_plan_uses_vertex_id_index) ... ok
+test_parallel_invariant_skips_noops_but_invalidates_on_mutation (tests.test_reduction_optimizations.ReductionOptimizationTests.test_parallel_invariant_skips_noops_but_invalidates_on_mutation) ... ok
+test_repeated_boundary_load_preserves_graph_and_order (tests.test_reduction_optimizations.ReductionOptimizationTests.test_repeated_boundary_load_preserves_graph_and_order) ... ok
+test_worklist_cleanup_after_injected_failure_and_stale_marker (tests.test_reduction_optimizations.ReductionOptimizationTests.test_worklist_cleanup_after_injected_failure_and_stale_marker) ... ok
+test_worklist_preserves_foreign_graph_and_foreign_markers (tests.test_reduction_optimizations.ReductionOptimizationTests.test_worklist_preserves_foreign_graph_and_foreign_markers) ... ok
+test_worklists_find_candidates_created_by_prior_rewrite (tests.test_reduction_optimizations.ReductionOptimizationTests.test_worklists_find_candidates_created_by_prior_rewrite) ... ok
+test_worklists_find_new_pivot_edge (tests.test_reduction_optimizations.ReductionOptimizationTests.test_worklists_find_new_pivot_edge) ... ok
+test_worklists_revisit_changed_neighbors_and_clean_markers (tests.test_reduction_optimizations.ReductionOptimizationTests.test_worklists_revisit_changed_neighbors_and_clean_markers) ... ERROR:neo4j.io:[#D834]  _: <CONNECTION> error: Failed to read from defunct connection IPv4Address(('localhost', 7688)) (ResolvedIPv4Address(('127.0.0.1', 7688))): OSError('No data')
+ERROR
+WARNING:neo4j.pool:Transaction failed and will be retried in 0.9788085105091779s (Couldn't connect to localhost:7688 (resolved to ('[::1]:7688', '127.0.0.1:7688')):
+Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7688)) (reason [WinError 10061] No connection could be made because the target machine actively refused it))
+WARNING:neo4j.pool:Transaction failed and will be retried in 2.2179212230168224s (Couldn't connect to localhost:7688 (resolved to ('[::1]:7688', '127.0.0.1:7688')):
+Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7688)) (reason [WinError 10061] No connection could be made because the target machine actively refused it))
+WARNING:neo4j.pool:Transaction failed and will be retried in 3.345715969868962s (Couldn't connect to localhost:7688 (resolved to ('[::1]:7688', '127.0.0.1:7688')):
+Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7688)) (reason [WinError 10061] No connection could be made because the target machine actively refused it))
+WARNING:neo4j.pool:Transaction failed and will be retried in 7.416315501357875s (Couldn't connect to localhost:7688 (resolved to ('[::1]:7688', '127.0.0.1:7688')):
+Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7688)) (reason [WinError 10061] No connection could be made because the target machine actively refused it))
+test_worklists_revisit_changed_neighbors_and_clean_markers (tests.test_reduction_optimizations.ReductionOptimizationTests.test_worklists_revisit_changed_neighbors_and_clean_markers) ... ERROR
+test_cleanup_failure_does_not_hide_primary_error (tests.test_reduction_optimizations.WorklistUnitTests.test_cleanup_failure_does_not_hide_primary_error) ... ok
+test_direct_call_rejects_cross_graph_edges_before_mutation (tests.test_native_reduction.NativeReductionTests.test_direct_call_rejects_cross_graph_edges_before_mutation) ... ERROR
+test_full_reduce_fixtures (tests.test_native_reduction.NativeReductionTests.test_full_reduce_fixtures) ... C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\driver.py:542: ResourceWarning: unclosed  BoltDriver: <neo4j._sync.driver.BoltDriver object at 0x000002A6FCCC3020>.
+  _unclosed_resource_warn(self)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\driver.py:547: DeprecationWarning: Relying on Driver's destructor to close the session is deprecated. Please make sure to close the session. Use it as a context (`with` statement) or make sure to call `.close()` explicitly. Future versions of the driver will not close drivers automatically.
+  _deprecation_warn(
+ERROR
+test_full_reduce_preserves_zero_factors (tests.test_native_reduction.NativeReductionTests.test_full_reduce_preserves_zero_factors) ... ERROR
+test_gadget_boundary_neighbor_groups_and_phases (tests.test_native_reduction.NativeReductionTests.test_gadget_boundary_neighbor_groups_and_phases) ... ERROR
+test_individual_rule_fixtures (tests.test_native_reduction.NativeReductionTests.test_individual_rule_fixtures) ... C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\driver.py:542: ResourceWarning: unclosed  BoltDriver: <neo4j._sync.driver.BoltDriver object at 0x000002A6FEFD9820>.
+  _unclosed_resource_warn(self)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\driver.py:542: ResourceWarning: unclosed  BoltDriver: <neo4j._sync.driver.BoltDriver object at 0x000002A6FCCC2FC0>.
+  _unclosed_resource_warn(self)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ERROR
+test_pauli_boundary_neighbor_groups_phases_and_wire_types (tests.test_native_reduction.NativeReductionTests.test_pauli_boundary_neighbor_groups_phases_and_wire_types) ... ERROR
+test_pauli_boundary_overlaps_and_invalid_candidates (tests.test_native_reduction.NativeReductionTests.test_pauli_boundary_overlaps_and_invalid_candidates) ... ERROR
+test_simple_neighbor_edge_is_preserved_by_hadamard_toggle (tests.test_native_reduction.NativeReductionTests.test_simple_neighbor_edge_is_preserved_by_hadamard_toggle) ... C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\driver.py:542: ResourceWarning: unclosed  BoltDriver: <neo4j._sync.driver.BoltDriver object at 0x000002A6FCCC0E60>.
+  _unclosed_resource_warn(self)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\driver.py:542: ResourceWarning: unclosed  BoltDriver: <neo4j._sync.driver.BoltDriver object at 0x000002A6FCCD5820>.
+  _unclosed_resource_warn(self)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ERROR
+test_supplementarity_batches_and_rejects_simple_incident_edges (tests.test_native_reduction.NativeReductionTests.test_supplementarity_batches_and_rejects_simple_incident_edges) ... ERROR
+
+======================================================================
+ERROR: test_worklists_revisit_changed_neighbors_and_clean_markers (tests.test_reduction_optimizations.ReductionOptimizationTests.test_worklists_revisit_changed_neighbors_and_clean_markers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_common.py", line 54, in _buffer_one_chunk
+    receive_into_buffer(self._socket, self._buffer, 2)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_common.py", line 349, in receive_into_buffer
+    raise OSError("No data")
+OSError: No data
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_reduction_optimizations.py", line 115, in test_worklists_revisit_changed_neighbors_and_clean_markers
+    self.assertEqual(method(self.gid), 0)
+                     ^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 1212, in pivot_rule_batched
+    return self._execute(loop, graph_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 159, in _execute
+    result = loop(session)
+             ^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 1206, in loop
+    b = self._run_count(
+        ^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 170, in _run_count
+    record = tx.run(query, graph_id=graph_id).single()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\result.py", line 610, in single
+    self._buffer(2)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\result.py", line 448, in _buffer
+    for record in self:
+                  ^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\result.py", line 398, in __iter__
+    self._connection.fetch_message()
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_common.py", line 184, in inner
+    func(*args, **kwargs)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 861, in fetch_message
+    tag, fields = self.inbox.pop(
+                  ^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_common.py", line 77, in pop
+    self._buffer_one_chunk()
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_common.py", line 73, in _buffer_one_chunk
+    Util.callback(self.on_error, error)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\util.py", line 117, in callback
+    return cb(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 889, in _set_defunct_read
+    self._set_defunct(message, error=error, silent=silent)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 949, in _set_defunct
+    raise ServiceUnavailable(message) from error
+neo4j.exceptions.ServiceUnavailable: Failed to read from defunct connection IPv4Address(('localhost', 7688)) (ResolvedIPv4Address(('127.0.0.1', 7688)))
+
+======================================================================
+ERROR: test_worklists_revisit_changed_neighbors_and_clean_markers (tests.test_reduction_optimizations.ReductionOptimizationTests.test_worklists_revisit_changed_neighbors_and_clean_markers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 409, in _connect_secure
+    s.connect(resolved_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 328, in connect
+    s = cls._connect_secure(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 426, in _connect_secure
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\live_support.py", line 20, in tearDown
+    self.db.empty_graphdb(self.gid); self.db.close()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 214, in empty_graphdb
+    session.execute_write(clear_graph)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 803, in execute_write
+    return self._run_transaction(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 622, in _run_transaction
+    raise errors[-1]
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 572, in _run_transaction
+    self._open_transaction(
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 441, in _open_transaction
+    self._connect(access_mode=access_mode)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 136, in _connect
+    super()._connect(
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\workspace.py", line 199, in _connect
+    self._connection = self._pool.acquire(**acquire_kwargs_)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 662, in acquire
+    return self._acquire(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 408, in _acquire
+    return connection_creator()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 230, in connection_creator
+    connection = self.opener(
+                 ^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 624, in opener
+    return Bolt.open(
+           ^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 369, in open
+    s, protocol_version, handshake, data = BoltSocket.connect(
+                                           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 376, in connect
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Couldn't connect to localhost:7688 (resolved to ('[::1]:7688', '127.0.0.1:7688')):
+Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7688)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+======================================================================
+ERROR: test_direct_call_rejects_cross_graph_edges_before_mutation (tests.test_native_reduction.NativeReductionTests.test_direct_call_rejects_cross_graph_edges_before_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 409, in _connect_secure
+    s.connect(resolved_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 328, in connect
+    s = cls._connect_secure(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 426, in _connect_secure
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_native_reduction.py", line 20, in setUp
+    self.db = ZXdb(uri=os.environ.get('ZXDB_URI', 'bolt://localhost:7687'),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 59, in __init__
+    analyze_session.run(f"STORAGE MODE {self.storage_mode};")
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 313, in run
+    self._connect(self._config.default_access_mode)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 136, in _connect
+    super()._connect(
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\workspace.py", line 199, in _connect
+    self._connection = self._pool.acquire(**acquire_kwargs_)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 662, in acquire
+    return self._acquire(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 408, in _acquire
+    return connection_creator()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 230, in connection_creator
+    connection = self.opener(
+                 ^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 624, in opener
+    return Bolt.open(
+           ^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 369, in open
+    s, protocol_version, handshake, data = BoltSocket.connect(
+                                           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 376, in connect
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Couldn't connect to localhost:7688 (resolved to ('[::1]:7688', '127.0.0.1:7688')):
+Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7688)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+======================================================================
+ERROR: test_full_reduce_fixtures (tests.test_native_reduction.NativeReductionTests.test_full_reduce_fixtures)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 409, in _connect_secure
+    s.connect(resolved_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 328, in connect
+    s = cls._connect_secure(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 426, in _connect_secure
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_native_reduction.py", line 20, in setUp
+    self.db = ZXdb(uri=os.environ.get('ZXDB_URI', 'bolt://localhost:7687'),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 59, in __init__
+    analyze_session.run(f"STORAGE MODE {self.storage_mode};")
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 313, in run
+    self._connect(self._config.default_access_mode)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 136, in _connect
+    super()._connect(
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\workspace.py", line 199, in _connect
+    self._connection = self._pool.acquire(**acquire_kwargs_)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 662, in acquire
+    return self._acquire(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 408, in _acquire
+    return connection_creator()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 230, in connection_creator
+    connection = self.opener(
+                 ^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 624, in opener
+    return Bolt.open(
+           ^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 369, in open
+    s, protocol_version, handshake, data = BoltSocket.connect(
+                                           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 376, in connect
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Couldn't connect to localhost:7688 (resolved to ('[::1]:7688', '127.0.0.1:7688')):
+Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7688)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+======================================================================
+ERROR: test_full_reduce_preserves_zero_factors (tests.test_native_reduction.NativeReductionTests.test_full_reduce_preserves_zero_factors)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 409, in _connect_secure
+    s.connect(resolved_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 328, in connect
+    s = cls._connect_secure(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 426, in _connect_secure
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_native_reduction.py", line 20, in setUp
+    self.db = ZXdb(uri=os.environ.get('ZXDB_URI', 'bolt://localhost:7687'),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 59, in __init__
+    analyze_session.run(f"STORAGE MODE {self.storage_mode};")
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 313, in run
+    self._connect(self._config.default_access_mode)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 136, in _connect
+    super()._connect(
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\workspace.py", line 199, in _connect
+    self._connection = self._pool.acquire(**acquire_kwargs_)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 662, in acquire
+    return self._acquire(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 408, in _acquire
+    return connection_creator()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 230, in connection_creator
+    connection = self.opener(
+                 ^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 624, in opener
+    return Bolt.open(
+           ^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 369, in open
+    s, protocol_version, handshake, data = BoltSocket.connect(
+                                           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 376, in connect
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Couldn't connect to localhost:7688 (resolved to ('[::1]:7688', '127.0.0.1:7688')):
+Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7688)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+======================================================================
+ERROR: test_gadget_boundary_neighbor_groups_and_phases (tests.test_native_reduction.NativeReductionTests.test_gadget_boundary_neighbor_groups_and_phases)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 409, in _connect_secure
+    s.connect(resolved_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 328, in connect
+    s = cls._connect_secure(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 426, in _connect_secure
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_native_reduction.py", line 20, in setUp
+    self.db = ZXdb(uri=os.environ.get('ZXDB_URI', 'bolt://localhost:7687'),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 59, in __init__
+    analyze_session.run(f"STORAGE MODE {self.storage_mode};")
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 313, in run
+    self._connect(self._config.default_access_mode)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 136, in _connect
+    super()._connect(
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\workspace.py", line 199, in _connect
+    self._connection = self._pool.acquire(**acquire_kwargs_)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 662, in acquire
+    return self._acquire(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 408, in _acquire
+    return connection_creator()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 230, in connection_creator
+    connection = self.opener(
+                 ^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 624, in opener
+    return Bolt.open(
+           ^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 369, in open
+    s, protocol_version, handshake, data = BoltSocket.connect(
+                                           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 376, in connect
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Couldn't connect to localhost:7688 (resolved to ('[::1]:7688', '127.0.0.1:7688')):
+Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7688)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+======================================================================
+ERROR: test_individual_rule_fixtures (tests.test_native_reduction.NativeReductionTests.test_individual_rule_fixtures)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 409, in _connect_secure
+    s.connect(resolved_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 328, in connect
+    s = cls._connect_secure(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 426, in _connect_secure
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_native_reduction.py", line 20, in setUp
+    self.db = ZXdb(uri=os.environ.get('ZXDB_URI', 'bolt://localhost:7687'),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 59, in __init__
+    analyze_session.run(f"STORAGE MODE {self.storage_mode};")
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 313, in run
+    self._connect(self._config.default_access_mode)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 136, in _connect
+    super()._connect(
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\workspace.py", line 199, in _connect
+    self._connection = self._pool.acquire(**acquire_kwargs_)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 662, in acquire
+    return self._acquire(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 408, in _acquire
+    return connection_creator()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 230, in connection_creator
+    connection = self.opener(
+                 ^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 624, in opener
+    return Bolt.open(
+           ^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 369, in open
+    s, protocol_version, handshake, data = BoltSocket.connect(
+                                           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 376, in connect
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Couldn't connect to localhost:7688 (resolved to ('[::1]:7688', '127.0.0.1:7688')):
+Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7688)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+======================================================================
+ERROR: test_pauli_boundary_neighbor_groups_phases_and_wire_types (tests.test_native_reduction.NativeReductionTests.test_pauli_boundary_neighbor_groups_phases_and_wire_types)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 409, in _connect_secure
+    s.connect(resolved_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 328, in connect
+    s = cls._connect_secure(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 426, in _connect_secure
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_native_reduction.py", line 20, in setUp
+    self.db = ZXdb(uri=os.environ.get('ZXDB_URI', 'bolt://localhost:7687'),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 59, in __init__
+    analyze_session.run(f"STORAGE MODE {self.storage_mode};")
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 313, in run
+    self._connect(self._config.default_access_mode)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 136, in _connect
+    super()._connect(
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\workspace.py", line 199, in _connect
+    self._connection = self._pool.acquire(**acquire_kwargs_)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 662, in acquire
+    return self._acquire(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 408, in _acquire
+    return connection_creator()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 230, in connection_creator
+    connection = self.opener(
+                 ^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 624, in opener
+    return Bolt.open(
+           ^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 369, in open
+    s, protocol_version, handshake, data = BoltSocket.connect(
+                                           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 376, in connect
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Couldn't connect to localhost:7688 (resolved to ('[::1]:7688', '127.0.0.1:7688')):
+Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7688)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+======================================================================
+ERROR: test_pauli_boundary_overlaps_and_invalid_candidates (tests.test_native_reduction.NativeReductionTests.test_pauli_boundary_overlaps_and_invalid_candidates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 409, in _connect_secure
+    s.connect(resolved_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 328, in connect
+    s = cls._connect_secure(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 426, in _connect_secure
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_native_reduction.py", line 20, in setUp
+    self.db = ZXdb(uri=os.environ.get('ZXDB_URI', 'bolt://localhost:7687'),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 59, in __init__
+    analyze_session.run(f"STORAGE MODE {self.storage_mode};")
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 313, in run
+    self._connect(self._config.default_access_mode)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 136, in _connect
+    super()._connect(
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\workspace.py", line 199, in _connect
+    self._connection = self._pool.acquire(**acquire_kwargs_)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 662, in acquire
+    return self._acquire(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 408, in _acquire
+    return connection_creator()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 230, in connection_creator
+    connection = self.opener(
+                 ^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 624, in opener
+    return Bolt.open(
+           ^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 369, in open
+    s, protocol_version, handshake, data = BoltSocket.connect(
+                                           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 376, in connect
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Couldn't connect to localhost:7688 (resolved to ('[::1]:7688', '127.0.0.1:7688')):
+Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7688)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+======================================================================
+ERROR: test_simple_neighbor_edge_is_preserved_by_hadamard_toggle (tests.test_native_reduction.NativeReductionTests.test_simple_neighbor_edge_is_preserved_by_hadamard_toggle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 409, in _connect_secure
+    s.connect(resolved_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 328, in connect
+    s = cls._connect_secure(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 426, in _connect_secure
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_native_reduction.py", line 20, in setUp
+    self.db = ZXdb(uri=os.environ.get('ZXDB_URI', 'bolt://localhost:7687'),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 59, in __init__
+    analyze_session.run(f"STORAGE MODE {self.storage_mode};")
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 313, in run
+    self._connect(self._config.default_access_mode)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 136, in _connect
+    super()._connect(
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\workspace.py", line 199, in _connect
+    self._connection = self._pool.acquire(**acquire_kwargs_)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 662, in acquire
+    return self._acquire(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 408, in _acquire
+    return connection_creator()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 230, in connection_creator
+    connection = self.opener(
+                 ^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 624, in opener
+    return Bolt.open(
+           ^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 369, in open
+    s, protocol_version, handshake, data = BoltSocket.connect(
+                                           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 376, in connect
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Couldn't connect to localhost:7688 (resolved to ('[::1]:7688', '127.0.0.1:7688')):
+Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7688)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+======================================================================
+ERROR: test_supplementarity_batches_and_rejects_simple_incident_edges (tests.test_native_reduction.NativeReductionTests.test_supplementarity_batches_and_rejects_simple_incident_edges)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 409, in _connect_secure
+    s.connect(resolved_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 328, in connect
+    s = cls._connect_secure(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 426, in _connect_secure
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_native_reduction.py", line 20, in setUp
+    self.db = ZXdb(uri=os.environ.get('ZXDB_URI', 'bolt://localhost:7687'),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 59, in __init__
+    analyze_session.run(f"STORAGE MODE {self.storage_mode};")
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 313, in run
+    self._connect(self._config.default_access_mode)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\session.py", line 136, in _connect
+    super()._connect(
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\work\workspace.py", line 199, in _connect
+    self._connection = self._pool.acquire(**acquire_kwargs_)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 662, in acquire
+    return self._acquire(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 408, in _acquire
+    return connection_creator()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 230, in connection_creator
+    connection = self.opener(
+                 ^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_pool.py", line 624, in opener
+    return Bolt.open(
+           ^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 369, in open
+    s, protocol_version, handshake, data = BoltSocket.connect(
+                                           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 376, in connect
+    raise ServiceUnavailable(
+neo4j.exceptions.ServiceUnavailable: Couldn't connect to localhost:7688 (resolved to ('[::1]:7688', '127.0.0.1:7688')):
+Failed to establish connection to ResolvedIPv6Address(('::1', 7688, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7688)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)
+
+----------------------------------------------------------------------
+Ran 67 tests in 274.602s
+
+FAILED (errors=11)

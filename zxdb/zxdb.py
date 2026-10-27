@@ -15,13 +15,7 @@ from pyzx.graph import VertexType
 from zxdb.pyzx_utils import pi_string_to_fraction
 import networkx as nx
 
-# Configure logging
-logging.basicConfig(
-    filename='app.log',            # Log file name
-    filemode='w',                  # Append mode ('w' for overwrite)
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    level=logging.INFO             # Minimum logging level
-)
+# Applications configure logging; importing the library creates no output files.
 
 class ZXdb:
     
@@ -74,8 +68,6 @@ class ZXdb:
             for stmt in ("CREATE INDEX ON :Node(t)",
                          "CREATE INDEX ON :Node(id)",
                          "CREATE INDEX ON :Node(graph_id)",
-                         "CREATE INDEX ON :_ZXdbPivotWork",
-                         "CREATE INDEX ON :_ZXdbLcompWork",
                          "CREATE EDGE INDEX ON :Wire(t)"):
                 try:
                     analyze_session.run(stmt).consume()
@@ -87,12 +79,10 @@ class ZXdb:
         return str(self.basic_rewrite_rule_queries[title]["query"]["code"]["value"])
 
     @contextmanager
-    def _optimized_scope(self, graph_id, exclusive_access=False, incremental=False):
+    def _optimized_scope(self, graph_id, exclusive_access=False):
         """Invocation-local options; never cache state across reductions."""
-        if incremental and not exclusive_access:
-            raise ValueError('Incremental worklists require exclusive_access=True')
         options = dict(graph_id=graph_id, exclusive_access=exclusive_access,
-                       isolation_validated=False, parallel_normalized=False, incremental=incremental)
+                       isolation_validated=False, parallel_normalized=False)
         token = self._reduction_options.set(options)
         try:
             if exclusive_access:
@@ -784,9 +774,9 @@ class ZXdb:
             # but need not produce identical final graph structures.
             total = 0
             while True:
-                if batched and options['incremental']:
-                    from zxdb.worklists import fixpoint
-                    total += fixpoint(tx, two_query, 'pivot', 'pivot_operations_performed', graph_id)
+                if batched and options.get('native'):
+                    total += self._run_count(tx, 'CALL zxqmcpp.pivot($graph_id) YIELD applied RETURN applied',
+                                             'applied', graph_id)
                 else:
                     while True:
                         n = self._run_count(
@@ -794,8 +784,13 @@ class ZXdb:
                         total += n
                         if n == 0:
                             break
-                b = self._run_count(
-                    tx, single_query, "interior_pauli_removed", graph_id)
+                if batched and options.get('native'):
+                    b = self._run_count(tx,
+                        'CALL zxqmcpp.pauli_boundary($graph_id) YIELD applied RETURN applied',
+                        'applied', graph_id)
+                else:
+                    b = self._run_count(
+                        tx, single_query, "interior_pauli_removed", graph_id)
                 total += b
                 if b == 0:
                     return total
@@ -819,9 +814,9 @@ class ZXdb:
         lc_query = self._query("Local complement - batched" if batched else "Local complement")
 
         def loop(tx):
-            if batched and options['incremental']:
-                from zxdb.worklists import fixpoint
-                return fixpoint(tx, lc_query, 'lcomp', 'patterns_processed', graph_id)
+            if batched and options.get('native'):
+                return self._run_count(tx, 'CALL zxqmcpp.lcomp($graph_id) YIELD applied RETURN applied',
+                                       'applied', graph_id)
             total = 0
             while True:
                 changed = self._run_count(tx, lc_query,
@@ -876,6 +871,9 @@ class ZXdb:
         pg_query = self._query("Pivot gadget - batched" if batched else "Pivot gadget")
 
         def loop(tx):
+            if batched and options.get('native'):
+                return self._run_count(tx, 'CALL zxqmcpp.gadget($graph_id) YIELD applied RETURN applied',
+                                       'applied', graph_id)
             total = 0
             while True:
                 changed = self._run_count(
@@ -903,6 +901,10 @@ class ZXdb:
         pb_query = self._query("Pivot boundary - batched" if batched else "Pivot boundary")
 
         def loop(tx):
+            if batched and options.get('native'):
+                return self._run_count(tx,
+                    'CALL zxqmcpp.boundary($graph_id) YIELD applied RETURN applied',
+                    'applied', graph_id)
             total = 0
             while True:
                 changed = self._run_count(
@@ -969,6 +971,10 @@ class ZXdb:
             guard_query = guard_query.replace('RETURN count(v)', 'WITH v LIMIT 2 RETURN count(v)')
 
         def loop(tx):
+            if options is not None and options.get('native'):
+                return self._run_count(tx,
+                    'CALL zxqmcpp.supplementarity($graph_id) YIELD applied RETURN applied',
+                    'applied', graph_id)
             total = 0
             while True:
                 if self._run_count(tx, guard_query, "k", graph_id) < 2:
@@ -1082,13 +1088,13 @@ class ZXdb:
         return self._execute(loop, graph_id)
 
     def local_complementation_rule_batched(self, graph_id: str, *,
-                                          exclusive_access=False, incremental=False) -> int:
+                                          exclusive_access=False) -> int:
         """Apply independent local-complementation batches to a fixed point."""
-        with self._optimized_scope(graph_id, exclusive_access, incremental):
+        with self._optimized_scope(graph_id, exclusive_access):
             return self.local_complementation_rule(graph_id)
 
     def apply_rule_optimized(self, method: str, graph_id: str, *,
-                             exclusive_access=False, incremental=False) -> int:
+                             exclusive_access=False) -> int:
         """Apply a supported standalone rule using the optimized execution mode."""
         allowed = {'spider_fusion', 'remove_identities', 'pivot_rule',
                    'local_complementation_rule', 'phase_gadget_fusion_rule',
@@ -1096,11 +1102,11 @@ class ZXdb:
                    'supplementarity_simp', 'copy_simp'}
         if method not in allowed:
             raise ValueError(f'Unsupported optimized rule: {method}')
-        with self._optimized_scope(graph_id, exclusive_access, incremental):
+        with self._optimized_scope(graph_id, exclusive_access):
             return getattr(self, method)(graph_id)
 
     def full_reduce_optimized(self, graph_id: str, max_rounds: int = 1000,
-                              *, exclusive_access: bool = False, incremental: bool = False) -> None:
+                              *, exclusive_access: bool = False) -> None:
         """Same reduction schedule, with independent pivot/lcomp/gadget/boundary batches.
 
         The original full_reduce remains the control implementation. Different
@@ -1109,7 +1115,7 @@ class ZXdb:
         for the duration of this call. Graph ownership is then checked once.
         This is a caller contract, not a database lock or a long transaction.
         """
-        with self._optimized_scope(graph_id, exclusive_access, incremental):
+        with self._optimized_scope(graph_id, exclusive_access):
             self._full_reduce_body(graph_id, max_rounds)
 
     def _full_reduce_body(self, graph_id: str, max_rounds: int) -> None:
@@ -1128,6 +1134,16 @@ class ZXdb:
         raise RuntimeError(
             f"full_reduce did not converge within {max_rounds} rounds "
             f"for graph ID '{graph_id}'")
+
+    def full_reduce_native(self, graph_id: str, max_rounds: int = 1000) -> None:
+        """Same full_reduce schedule with scoped in-database native pivot loops.
+
+        Requires the compiled zxqmcpp module and exclusive access to this graph.
+        Import, export, and Python-side graph rewriting are not part of this path.
+        """
+        with self._optimized_scope(graph_id, exclusive_access=True):
+            self._reduction_options.get()['native'] = True
+            self._full_reduce_body(graph_id, max_rounds)
 
     def full_reduce(self, graph_id: str, max_rounds: int = 1000) -> None:
         """
@@ -1159,12 +1175,9 @@ class ZXdb:
     # composition) is unchanged, and the original full_reduce path is untouched.
     # ------------------------------------------------------------------
 
-    def pivot_rule_batched(self, graph_id: str, *, exclusive_access=False, incremental=False) -> int:
+    def pivot_rule_batched(self, graph_id: str, *, exclusive_access=False) -> int:
         """Interior pivots applied in disjoint batches (see the batched query),
         then the boundary pivot — same fixpoint as pivot_rule, fewer round-trips."""
-        if incremental:
-            with self._optimized_scope(graph_id, exclusive_access, incremental):
-                return self.pivot_rule(graph_id)
         two_query = self._query("Pivot rule - batched interior Pauli spiders")
         single_query = self._query("Pivot rule - single interior Pauli spider")
 

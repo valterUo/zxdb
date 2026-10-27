@@ -1,1 +1,0 @@
-{"case": {"depth": null, "family": "copies_pivot", "id": "d0c957b9f7a2f930", "scale": "patterns", "seed": 0, "size": 131072}, "evidence": ["c1a2570aeb4989c9", "8e1253b2ba9c3eb9", "47ae92d43f1dfbc0"], "kind": "adaptive_skip", "reason": "consecutive_both_engine_timeouts", "source_version": "6012ac4c280b828b4c47a604b2425b0b8e4936b5ef0b108dabd899ad37f8e3f1"}

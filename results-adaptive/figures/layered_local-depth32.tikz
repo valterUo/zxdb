@@ -1,6 +1,0 @@
-\begin{tikzpicture}
-\begin{axis}[width=7cm,height=5cm,xmode=log,ymode=log,log basis x=2,unbounded coords=jump,xlabel={qubits},ylabel={Reduction time (s)},title={layered\_local-depth32},legend pos=north west]
-\addplot+[mark=square*] table[x=size,y=db] {layered_local-depth32.dat};\addlegendentry{ZXdb}
-\addplot+[mark=*] table[x=size,y=pyzx] {layered_local-depth32.dat};\addlegendentry{PyZX}
-\end{axis}
-\end{tikzpicture}

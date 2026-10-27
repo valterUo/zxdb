@@ -1,0 +1,7 @@
+test_color_change_repeated_loads_and_exact_wire_parity (tests.test_reduction_optimizations.ReductionOptimizationTests.test_color_change_repeated_loads_and_exact_wire_parity) ... ok
+test_composed_and_auxiliary_rules (tests.test_graph_isolation.TestGraphIsolation.test_composed_and_auxiliary_rules) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 14.941s
+
+OK

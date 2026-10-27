@@ -1,3 +1,0 @@
-\begin{tikzpicture}\begin{axis}[width=7cm,height=5cm,xmode=log,ymode=log,log basis x=2,unbounded coords=jump,xlabel={fan\_size},ylabel={PyZX / ZXdb},title={pivot}]
-\addplot+[mark=*,error bars/.cd,y dir=both,y explicit] table[x=size,y=speedup,y error minus expr=\thisrow{speedup}-\thisrow{lower},y error plus expr=\thisrow{upper}-\thisrow{speedup}] {pivot.dat};
-\addplot[black,dashed,domain=2:512] {1};\end{axis}\end{tikzpicture}

@@ -1,0 +1,97 @@
+{
+  "started": "2026-10-26T18:45:33.341752+00:00",
+  "profile": "full",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cpu": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+  "versions": {
+    "pyzx": "0.10.3",
+    "neo4j": "5.28.1",
+    "numpy": "2.2.5",
+    "quimb": "1.11.2"
+  },
+  "repetitions": 3,
+  "warmups": 1,
+  "variants": [
+    "control",
+    "optimized"
+  ],
+  "restart_container": "memgraph",
+  "trial_timeout_s": 60.0,
+  "source_hashes": {
+    "evaluate.py": "2a0f77d21105fc70391c269e3d64a04027a088f12eab088e8e750923f152561b",
+    "evaluation\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation\\cases.py": "6d4c14bf3aef5466f28029ef1bb082472f334c484867312db006c4329e4da71e",
+    "evaluation\\circuits.py": "f93cfa2b7247a9d56cbb8705e7df20f10a78a09191b18ad4a561778a0d7a71fe",
+    "evaluation\\core.py": "53dd14c30eaa96605d6624fdf719d05d6380f9417ded075b821f2bf4232a8031",
+    "evaluation\\oracle.py": "0aab698e8255e804ba99f7ea16b5cfcec3f332252b844437b7eef42f3516ca5a",
+    "evaluation\\patterns.py": "04b35a5c844f5c1e096f856dabff6c3ecf008102acd7b78115705a5d1ca93730",
+    "evaluation\\workloads.py": "f08d398aa3bed2e75417a6c0444c99ead2a9af71f18a4873cac3bf4314088878",
+    "zxdb\\generate.py": "b763ad6a3d2824d8b3c2530ff282b207764b5b0c2f8dee27b51479207fa067a0",
+    "zxdb\\pyzx_utils.py": "f7a8bded516ced36ad37dc3388099717066ee68b19ac13ec06b37d14c9c00cac",
+    "zxdb\\worklists.py": "a97f47726da79f02a681fab1eb2141da61ea1d756ecabf29efec58fd9cba6bb1",
+    "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+    "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+  },
+  "attempts": [
+    {
+      "started": "2026-10-26T18:28:52.000804+00:00",
+      "source_hashes": {
+        "evaluate.py": "3a0f5ce2ddabab01fbbbfb978189de1010a8872ad9cf8a14ff2a4c95a1f992b9",
+        "evaluation\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evaluation\\cases.py": "6d4c14bf3aef5466f28029ef1bb082472f334c484867312db006c4329e4da71e",
+        "evaluation\\circuits.py": "f93cfa2b7247a9d56cbb8705e7df20f10a78a09191b18ad4a561778a0d7a71fe",
+        "evaluation\\core.py": "53dd14c30eaa96605d6624fdf719d05d6380f9417ded075b821f2bf4232a8031",
+        "evaluation\\oracle.py": "0aab698e8255e804ba99f7ea16b5cfcec3f332252b844437b7eef42f3516ca5a",
+        "evaluation\\patterns.py": "04b35a5c844f5c1e096f856dabff6c3ecf008102acd7b78115705a5d1ca93730",
+        "evaluation\\workloads.py": "f08d398aa3bed2e75417a6c0444c99ead2a9af71f18a4873cac3bf4314088878",
+        "zxdb\\generate.py": "b763ad6a3d2824d8b3c2530ff282b207764b5b0c2f8dee27b51479207fa067a0",
+        "zxdb\\pyzx_utils.py": "f7a8bded516ced36ad37dc3388099717066ee68b19ac13ec06b37d14c9c00cac",
+        "zxdb\\worklists.py": "a97f47726da79f02a681fab1eb2141da61ea1d756ecabf29efec58fd9cba6bb1",
+        "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+        "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+      }
+    },
+    {
+      "started": "2026-10-26T18:45:33.341752+00:00",
+      "source_hashes": {
+        "evaluate.py": "2a0f77d21105fc70391c269e3d64a04027a088f12eab088e8e750923f152561b",
+        "evaluation\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evaluation\\cases.py": "6d4c14bf3aef5466f28029ef1bb082472f334c484867312db006c4329e4da71e",
+        "evaluation\\circuits.py": "f93cfa2b7247a9d56cbb8705e7df20f10a78a09191b18ad4a561778a0d7a71fe",
+        "evaluation\\core.py": "53dd14c30eaa96605d6624fdf719d05d6380f9417ded075b821f2bf4232a8031",
+        "evaluation\\oracle.py": "0aab698e8255e804ba99f7ea16b5cfcec3f332252b844437b7eef42f3516ca5a",
+        "evaluation\\patterns.py": "04b35a5c844f5c1e096f856dabff6c3ecf008102acd7b78115705a5d1ca93730",
+        "evaluation\\workloads.py": "f08d398aa3bed2e75417a6c0444c99ead2a9af71f18a4873cac3bf4314088878",
+        "zxdb\\generate.py": "b763ad6a3d2824d8b3c2530ff282b207764b5b0c2f8dee27b51479207fa067a0",
+        "zxdb\\pyzx_utils.py": "f7a8bded516ced36ad37dc3388099717066ee68b19ac13ec06b37d14c9c00cac",
+        "zxdb\\worklists.py": "a97f47726da79f02a681fab1eb2141da61ea1d756ecabf29efec58fd9cba6bb1",
+        "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+        "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+      }
+    }
+  ],
+  "server": "Neo4j/v5.11.0 compatible graph database server - Memgraph",
+  "database_version": [
+    {
+      "version": "3.6.2"
+    }
+  ],
+  "verification_review": {
+    "description": "48 observations received a conservative evidence review after the absolute-zero threshold was found to misclassify tiny nonzero tensors (the 128-gadget input has maximum amplitude 5.42e-20). Their previous checks are retained in verification_before_review; ambiguous zero/nonfinite conclusions are now inconclusive, not failures or passes. No timing was changed or rerun. The two explicit zero-map counterexamples remain failures. The corrected checker requires exact zero factors, treats ambiguous near-zero/nonfinite tensors as inconclusive, and scales before taking norms. Six oracle/measurement unit tests pass. The regression subprocess in this measurement run was manually stopped after the database crashed; an earlier complete 52-test run passed, preserved in the backup. These outcomes do not establish general correctness or stability. The corrected checker also evaluated all 223 PyZX reference outputs: 220 verified, three inconclusive, none failed (reference-checks.json). Five targeted live checks confirmed the four explicit zero-map failures and one near-zero inconclusive result (verification-checks.json).",
+    "observations_reviewed": 48,
+    "checker_sha256": "38d9cf5a461c22cb6a181c975675a43e24ae414afd60d9d48002723239eff8a5",
+    "report_generator_sha256": "f9dbbd9b7e9df6f6dc9cf0eff9ecfb18536192becad3a9d2979dddce8e4c7ea7",
+    "original_measurement_backup": "../zxdb-backup-20261026/evaluation-development/measured-full",
+    "oracle_unit_tests_passed": 6,
+    "reference_checks": {
+      "verified": 220,
+      "inconclusive": 3,
+      "failed": 0
+    },
+    "targeted_database_checks": {
+      "confirmed_zero_failures": 4,
+      "near_zero_inconclusive": 1
+    }
+  }
+}

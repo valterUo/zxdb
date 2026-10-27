@@ -1,6 +1,0 @@
-\begin{tikzpicture}
-\begin{axis}[width=7cm,height=5cm,xmode=log,ymode=log,log basis x=2,unbounded coords=jump,xlabel={qubits},ylabel={Completed attempts only (s)},title={layered\_local-depth1024},legend pos=north west]
-\addplot+[mark=square*] table[x=size,y=db_completed] {layered_local-depth1024.dat};\addlegendentry{ZXdb}
-\addplot+[mark=*] table[x=size,y=pyzx_completed] {layered_local-depth1024.dat};\addlegendentry{PyZX}
-\end{axis}
-\end{tikzpicture}

@@ -1,0 +1,41 @@
+[
+  {
+    "iteration": 0,
+    "vertices": 4853,
+    "edges": 6762,
+    "status": "passed"
+  },
+  {
+    "iteration": 1,
+    "vertices": 4853,
+    "edges": 6762,
+    "status": "passed"
+  },
+  {
+    "iteration": 2,
+    "vertices": 4853,
+    "edges": 6762,
+    "full_reduce_s": 19.922836899999993,
+    "status": "passed"
+  },
+  {
+    "iteration": 3,
+    "vertices": 4853,
+    "edges": 6762,
+    "status": "passed"
+  },
+  {
+    "iteration": 4,
+    "vertices": 4853,
+    "edges": 6762,
+    "status": "passed"
+  },
+  {
+    "iteration": 5,
+    "vertices": 4853,
+    "edges": 6762,
+    "status": "error",
+    "error": "Failed to read from defunct connection IPv4Address(('localhost', 7688)) (ResolvedIPv4Address(('127.0.0.1', 7688)))",
+    "last_query": "// to_gh step 2: every X-spider becomes a Z-spider.\n\nMATCH (v:Node {graph_id: $graph_id, t: 2})\n// Materialize before mutating the indexed vertex type.\nWITH collect(v) AS spiders\nUNWIND spiders AS v\nSET v.t = 1\nRETURN count(*) AS recolored"
+  }
+]

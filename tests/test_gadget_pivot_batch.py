@@ -12,47 +12,11 @@ from unittest.mock import patch
 
 import pyzx as zx
 from evaluation.cases import RULES, pg_basic
-from evaluation.research_core import load, read, verify, reference, compare_outputs, CountingDriver
-from evaluation.research_workloads import build, payload
+from evaluation.core import load, read, verify, reference, compare_outputs, CountingDriver
+from evaluation.workloads import build, payload
 from tests.test_pivot_materialization import pivot_neighborhood
-import tests.test_research as research_tests
-from evaluation.harness import _tensors_equal
-
-
-class GadgetPivotProbeTests(unittest.TestCase):
-    def test_timeout_with_dead_database_keeps_worker_diagnostics(self):
-        from evaluation.gadget_pivot_probe import main
-        with tempfile.TemporaryDirectory() as directory:
-            path=Path(directory)/'probe.json'
-            with patch('sys.argv',['probe','--output',str(path),'--budget-seconds','30',
-                                   '--rule','pivot_boundary']), \
-                 patch.dict(os.environ,{'ZXDB_URI':'bolt://unused:7688'}), \
-                 patch('evaluation.gadget_pivot_probe.subprocess.run',
-                       side_effect=subprocess.TimeoutExpired('worker',30,stderr=b'disconnected in worker')), \
-                 patch('evaluation.gadget_pivot_probe.ZXdb',side_effect=ConnectionError('server down')):
-                main()
-            report=json.loads(path.read_text())
-            self.assertEqual(report['rule'],'pivot_boundary')
-            self.assertEqual(report['status'],'timeout_and_cleanup_failed')
-            self.assertEqual(report['worker_stderr'],'disconnected in worker')
-            self.assertIn('server down',report['cleanup_error'])
-
-    def test_hard_timeout_preserves_report_and_cleans_only_worker_graph(self):
-        from evaluation.gadget_pivot_probe import main
-        with tempfile.TemporaryDirectory() as directory:
-            path=Path(directory)/'probe.json'
-            with patch('sys.argv',['probe','--output',str(path),'--budget-seconds','30']), \
-                 patch.dict(os.environ,{'ZXDB_URI':'bolt://unused:7688'}), \
-                 patch('evaluation.gadget_pivot_probe.subprocess.run',
-                       side_effect=subprocess.TimeoutExpired('worker',30)) as run, \
-                 patch('evaluation.gadget_pivot_probe.ZXdb') as database:
-                main()
-            report=json.loads(path.read_text())
-            self.assertEqual(report['status'],'budget_exhausted')
-            self.assertEqual(report['cases'],[])
-            gid=run.call_args.args[0][-1]
-            self.assertTrue(gid.startswith('gadget_probe_'))
-            database.return_value.__enter__.return_value.empty_graphdb.assert_called_once_with(gid)
+import tests.live_support as research_tests
+from evaluation.oracle import _tensors_equal
 
 
 def overlapping_pivots(shared=False):
@@ -71,7 +35,7 @@ def overlapping_pivots(shared=False):
     return g
 
 
-@unittest.skipUnless(os.environ.get('ZXDB_RESEARCH_LIVE')=='1','Opt-in Memgraph checks')
+@unittest.skipUnless(os.environ.get('ZXDB_LIVE')=='1','Opt-in Memgraph checks')
 class GadgetPivotBatchTests(unittest.TestCase):
     setUp=research_tests.ResearchLiveTests.setUp
     tearDown=research_tests.ResearchLiveTests.tearDown

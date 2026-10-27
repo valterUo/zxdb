@@ -1,1 +1,0 @@
-{"case": {"depth": null, "family": "copies_bialgebra", "id": "8d96e0a9a43fcefd", "scale": "patterns", "seed": 0, "size": 131072}, "evidence": ["f9112b09a8e3d407", "047f56f46d2f2d9a", "1d0f784cc9c32b3c"], "kind": "adaptive_skip", "reason": "consecutive_both_engine_timeouts", "source_version": "6012ac4c280b828b4c47a604b2425b0b8e4936b5ef0b108dabd899ad37f8e3f1"}

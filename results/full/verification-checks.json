@@ -1,0 +1,32 @@
+[
+  {
+    "case": "isolated_zero_spider",
+    "variant": "control",
+    "status": "failed",
+    "reason": "Proven zero map versus nonzero tensor"
+  },
+  {
+    "case": "isolated_zero_spider",
+    "variant": "optimized",
+    "status": "failed",
+    "reason": "Proven zero map versus nonzero tensor"
+  },
+  {
+    "case": "explicit_zero_scalar",
+    "variant": "control",
+    "status": "failed",
+    "reason": "Proven zero map versus nonzero tensor"
+  },
+  {
+    "case": "explicit_zero_scalar",
+    "variant": "optimized",
+    "status": "failed",
+    "reason": "Proven zero map versus nonzero tensor"
+  },
+  {
+    "case": "tiny_nonzero_gadget_tensor",
+    "variant": "control",
+    "status": "inconclusive",
+    "reason": "Near-zero tensor without a matching exact zero proof"
+  }
+]

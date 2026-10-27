@@ -1,0 +1,916 @@
+[
+  {
+    "case": "85f509b637912009",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "random_clifford",
+      "size": 32,
+      "seed": 0,
+      "depth": 640
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 2.4544397203573003,
+    "rewrite_range": [
+      2.3226140839881833,
+      2.7959308846453514
+    ],
+    "total_speedup": 2.042899210287016,
+    "total_range": [
+      1.9903821418847343,
+      2.3691194527810637
+    ],
+    "verified": false,
+    "db_rewrite_s": 0.6829304000002594,
+    "pyzx_rewrite_s": 1.724141700000473,
+    "db_total_s": 0.8225909000002503,
+    "pyzx_total_s": 1.7285207000004448
+  },
+  {
+    "case": "ef90c7b382903b2b",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "random_clifford",
+      "size": 32,
+      "seed": 1,
+      "depth": 640
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 2.272214804292094,
+    "rewrite_range": [
+      2.1641994770455684,
+      2.4955128294186957
+    ],
+    "total_speedup": 1.970938401771728,
+    "total_range": [
+      1.8940837680307232,
+      2.150677186191132
+    ],
+    "verified": false,
+    "db_rewrite_s": 0.8452494000002844,
+    "pyzx_rewrite_s": 1.9205881999996564,
+    "db_total_s": 0.9766531000004761,
+    "pyzx_total_s": 1.924923100000342
+  },
+  {
+    "case": "86a0d14331134fa4",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "random_clifford",
+      "size": 32,
+      "seed": 2,
+      "depth": 640
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 2.44928197048538,
+    "rewrite_range": [
+      2.4273077334342514,
+      3.010340538676888
+    ],
+    "total_speedup": 2.0394129895358706,
+    "total_range": [
+      2.0378749396948037,
+      2.549498657959327
+    ],
+    "verified": false,
+    "db_rewrite_s": 0.6636496000000989,
+    "pyzx_rewrite_s": 1.6254650000000765,
+    "db_total_s": 0.7996685999996771,
+    "pyzx_total_s": 1.6296246000001702
+  },
+  {
+    "case": "454d351cdafefff8",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "random_clifford",
+      "size": 64,
+      "seed": 0,
+      "depth": 1280
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 6.4836896410586675,
+    "rewrite_range": [
+      6.072719035650517,
+      8.685484353702803
+    ],
+    "total_speedup": 5.821186240112373,
+    "total_range": [
+      5.34369774559103,
+      7.83302227522122
+    ],
+    "verified": false,
+    "db_rewrite_s": 2.669608999999582,
+    "pyzx_rewrite_s": 16.99410160000025,
+    "db_total_s": 2.9612902000008035,
+    "pyzx_total_s": 17.001879600000393
+  },
+  {
+    "case": "3172bf9db795b5ff",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "random_clifford",
+      "size": 64,
+      "seed": 1,
+      "depth": 1280
+    },
+    "complete": false,
+    "active": false,
+    "statuses": {
+      "error": 1
+    },
+    "rewrite_speedup": null,
+    "rewrite_range": null,
+    "total_speedup": null,
+    "total_range": null,
+    "verified": false,
+    "db_rewrite_s": null,
+    "pyzx_rewrite_s": null,
+    "db_total_s": null,
+    "pyzx_total_s": null
+  },
+  {
+    "case": "994ed5215fb379a8",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "random_clifford",
+      "size": 64,
+      "seed": 2,
+      "depth": 1280
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 4.916481131144364,
+    "rewrite_range": [
+      4.860146635745231,
+      5.043169014781376
+    ],
+    "total_speedup": 4.355773611249271,
+    "total_range": [
+      4.354882309154699,
+      4.592034734922557
+    ],
+    "verified": false,
+    "db_rewrite_s": 3.023397699999805,
+    "pyzx_rewrite_s": 14.93590519999998,
+    "db_total_s": 3.3807004999998753,
+    "pyzx_total_s": 14.94407819999924
+  },
+  {
+    "case": "dfc4c5f4f324fe54",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 32,
+      "seed": 0,
+      "depth": 640
+    },
+    "complete": false,
+    "active": false,
+    "statuses": {
+      "inconclusive": 3,
+      "error": 1
+    },
+    "rewrite_speedup": null,
+    "rewrite_range": null,
+    "total_speedup": null,
+    "total_range": null,
+    "verified": false,
+    "db_rewrite_s": null,
+    "pyzx_rewrite_s": null,
+    "db_total_s": null,
+    "pyzx_total_s": null
+  },
+  {
+    "case": "e1910379e758795d",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 32,
+      "seed": 1,
+      "depth": 640
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 0.5218423592264295,
+    "rewrite_range": [
+      0.4585085190738981,
+      0.6239580812074587
+    ],
+    "total_speedup": 0.46723614129597063,
+    "total_range": [
+      0.40981420530427604,
+      0.5379988138087567
+    ],
+    "verified": false,
+    "db_rewrite_s": 1.465297300000202,
+    "pyzx_rewrite_s": 0.7360964999998032,
+    "db_total_s": 1.6467809999994643,
+    "pyzx_total_s": 0.7415202000001955
+  },
+  {
+    "case": "e241df5d40862cc8",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 32,
+      "seed": 2,
+      "depth": 640
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 0.5180152454155134,
+    "rewrite_range": [
+      0.39407043639072936,
+      0.5200793714542041
+    ],
+    "total_speedup": 0.4636990436302148,
+    "total_range": [
+      0.35841944857005165,
+      0.465598705023674
+    ],
+    "verified": false,
+    "db_rewrite_s": 1.5133599000000686,
+    "pyzx_rewrite_s": 0.725227800000539,
+    "db_total_s": 1.6980072999995173,
+    "pyzx_total_s": 0.7296124999993481
+  },
+  {
+    "case": "fbb96f939ce3547c",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 64,
+      "seed": 0,
+      "depth": 1280
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 1.3523585978517965,
+    "rewrite_range": [
+      1.0292644252091026,
+      1.4132169426644021
+    ],
+    "total_speedup": 1.2432331384775475,
+    "total_range": [
+      0.9792578430351513,
+      1.331069941113935
+    ],
+    "verified": false,
+    "db_rewrite_s": 8.290023100000326,
+    "pyzx_rewrite_s": 11.082059599999411,
+    "db_total_s": 8.80879879999975,
+    "pyzx_total_s": 11.090660300000309
+  },
+  {
+    "case": "990dba85fd0c378a",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 64,
+      "seed": 1,
+      "depth": 1280
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 0.957173333101993,
+    "rewrite_range": [
+      0.7863462435080695,
+      0.9886494302953582
+    ],
+    "total_speedup": 0.8927465857687547,
+    "total_range": [
+      0.7512242876650531,
+      0.9275938236346599
+    ],
+    "verified": false,
+    "db_rewrite_s": 8.319926000000123,
+    "pyzx_rewrite_s": 8.080149499999607,
+    "db_total_s": 8.877453999999489,
+    "pyzx_total_s": 8.088750799999616
+  },
+  {
+    "case": "625dd8d30cd8f36d",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 64,
+      "seed": 2,
+      "depth": 1280
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 0.9807355198394625,
+    "rewrite_range": [
+      0.750546752937612,
+      0.993470347300938
+    ],
+    "total_speedup": 0.9288848371498709,
+    "total_range": [
+      0.7101705185512782,
+      0.9321521563926743
+    ],
+    "verified": false,
+    "db_rewrite_s": 9.797152000000096,
+    "pyzx_rewrite_s": 9.713402399999723,
+    "db_total_s": 10.455797300000086,
+    "pyzx_total_s": 9.728456699999697
+  },
+  {
+    "case": "5b4012afb4f8ad47",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 32,
+      "seed": 0,
+      "depth": 640
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 0.17377460439306755,
+    "rewrite_range": [
+      0.1541004999999473,
+      0.18741271356151123
+    ],
+    "total_speedup": 0.15952065958182668,
+    "total_range": [
+      0.14149216219597432,
+      0.1700359533833654
+    ],
+    "verified": false,
+    "db_rewrite_s": 1.2659004999995886,
+    "pyzx_rewrite_s": 0.19507590000011987,
+    "db_total_s": 1.4272939000002225,
+    "pyzx_total_s": 0.20195090000015625
+  },
+  {
+    "case": "1b6bbbecd1926fd8",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 32,
+      "seed": 1,
+      "depth": 640
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 0.24943978873968645,
+    "rewrite_range": [
+      0.14972522044231798,
+      0.28331354663494435
+    ],
+    "total_speedup": 0.21930275610428165,
+    "total_range": [
+      0.13874463663942335,
+      0.24078339820031214
+    ],
+    "verified": false,
+    "db_rewrite_s": 0.7914407999996911,
+    "pyzx_rewrite_s": 0.22422589999951015,
+    "db_total_s": 0.965052000000469,
+    "pyzx_total_s": 0.23236850000012055
+  },
+  {
+    "case": "4d32d64e9808f862",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 32,
+      "seed": 2,
+      "depth": 640
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 0.33516087468920186,
+    "rewrite_range": [
+      0.33046840234467145,
+      0.3972463177048948
+    ],
+    "total_speedup": 0.29855702590987954,
+    "total_range": [
+      0.2932233740207265,
+      0.3449002661752941
+    ],
+    "verified": false,
+    "db_rewrite_s": 0.8822078000002875,
+    "pyzx_rewrite_s": 0.3504538000006505,
+    "db_total_s": 1.0291693999997733,
+    "pyzx_total_s": 0.35496079999938956
+  },
+  {
+    "case": "dbaacaeaa663f39c",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 64,
+      "seed": 0,
+      "depth": 1280
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 0.2813312761451314,
+    "rewrite_range": [
+      0.26662969001461867,
+      0.3084267858207251
+    ],
+    "total_speedup": 0.2533361896131167,
+    "total_range": [
+      0.2416467553297269,
+      0.278147211423162
+    ],
+    "verified": false,
+    "db_rewrite_s": 2.14731219999976,
+    "pyzx_rewrite_s": 0.5935896000000866,
+    "db_total_s": 2.4217549999993935,
+    "pyzx_total_s": 0.6036819000000833
+  },
+  {
+    "case": "b5eaaa1cff0c33ed",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 64,
+      "seed": 1,
+      "depth": 1280
+    },
+    "complete": false,
+    "active": false,
+    "statuses": {
+      "inconclusive": 3,
+      "error": 1
+    },
+    "rewrite_speedup": null,
+    "rewrite_range": null,
+    "total_speedup": null,
+    "total_range": null,
+    "verified": false,
+    "db_rewrite_s": null,
+    "pyzx_rewrite_s": null,
+    "db_total_s": null,
+    "pyzx_total_s": null
+  },
+  {
+    "case": "9f8f9f0bdb65babc",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 64,
+      "seed": 2,
+      "depth": 1280
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 0.30248102676121774,
+    "rewrite_range": [
+      0.24245250021058037,
+      0.32752852462498305
+    ],
+    "total_speedup": 0.27751744010445684,
+    "total_range": [
+      0.2264560610675244,
+      0.29865873884035404
+    ],
+    "verified": false,
+    "db_rewrite_s": 1.7699929999998858,
+    "pyzx_rewrite_s": 0.5273336000000199,
+    "db_total_s": 1.9623019000000568,
+    "pyzx_total_s": 0.5356084000004557
+  },
+  {
+    "case": "d29cedbdc89d901c",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "layered_local",
+      "size": 32,
+      "seed": 0,
+      "depth": 2
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 0.2130888358421988,
+    "rewrite_range": [
+      0.20689431187739385,
+      0.23635337693197905
+    ],
+    "total_speedup": 0.18740140151295187,
+    "total_range": [
+      0.18225746173635227,
+      0.2063386570313807
+    ],
+    "verified": false,
+    "db_rewrite_s": 0.8502773000000161,
+    "pyzx_rewrite_s": 0.18118460000005143,
+    "db_total_s": 0.9778293999997913,
+    "pyzx_total_s": 0.18324660000052972
+  },
+  {
+    "case": "edc659d46d3ef29e",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "layered_local",
+      "size": 32,
+      "seed": 1,
+      "depth": 2
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 0.1992991281561513,
+    "rewrite_range": [
+      0.19689332760977693,
+      0.20203464478058222
+    ],
+    "total_speedup": 0.17577616940579743,
+    "total_range": [
+      0.1736403720317578,
+      0.1769530032723393
+    ],
+    "verified": false,
+    "db_rewrite_s": 0.9152686999996149,
+    "pyzx_rewrite_s": 0.18096030000015162,
+    "db_total_s": 1.0538563000000067,
+    "pyzx_total_s": 0.18350220000047557
+  },
+  {
+    "case": "0cf42dbce63d4ea6",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "layered_local",
+      "size": 32,
+      "seed": 2,
+      "depth": 2
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 0.24539926583931268,
+    "rewrite_range": [
+      0.23865675436613182,
+      0.2485340189723773
+    ],
+    "total_speedup": 0.20791394075279632,
+    "total_range": [
+      0.19422740061308438,
+      0.21585808378173654
+    ],
+    "verified": false,
+    "db_rewrite_s": 0.7330586000007315,
+    "pyzx_rewrite_s": 0.17656859999988228,
+    "db_total_s": 0.8582133999998405,
+    "pyzx_total_s": 0.17863969999962137
+  },
+  {
+    "case": "497fbcd326c6b756",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "layered_local",
+      "size": 64,
+      "seed": 0,
+      "depth": 2
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 0.1629481297272264,
+    "rewrite_range": [
+      0.16028806486549552,
+      0.16690382646714044
+    ],
+    "total_speedup": 0.15250208141811747,
+    "total_range": [
+      0.1501054061172895,
+      0.1555763123827393
+    ],
+    "verified": false,
+    "db_rewrite_s": 5.272544100000232,
+    "pyzx_rewrite_s": 0.8692738999998255,
+    "db_total_s": 5.661164699999972,
+    "pyzx_total_s": 0.8736223999994763
+  },
+  {
+    "case": "888f0f38b45d645c",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "layered_local",
+      "size": 64,
+      "seed": 1,
+      "depth": 2
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 0.1764112430628355,
+    "rewrite_range": [
+      0.17311928830056786,
+      0.1848046390657493
+    ],
+    "total_speedup": 0.1643510456982578,
+    "total_range": [
+      0.1612323397887485,
+      0.16959153839746116
+    ],
+    "verified": false,
+    "db_rewrite_s": 4.978157499999725,
+    "pyzx_rewrite_s": 0.8707358000001477,
+    "db_total_s": 5.374787100000503,
+    "pyzx_total_s": 0.8749920000000202
+  },
+  {
+    "case": "4cbf8faab1c1172a",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "layered_local",
+      "size": 64,
+      "seed": 2,
+      "depth": 2
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 0.1782480901619549,
+    "rewrite_range": [
+      0.14917693663945117,
+      0.18125011598139915
+    ],
+    "total_speedup": 0.1662865262231245,
+    "total_range": [
+      0.13868694570603857,
+      0.16863466668050603
+    ],
+    "verified": false,
+    "db_rewrite_s": 5.330792599999768,
+    "pyzx_rewrite_s": 0.9405814000001556,
+    "db_total_s": 5.7398522999992565,
+    "pyzx_total_s": 0.9444898000001558
+  },
+  {
+    "case": "4b56a9e37d7187c8",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "layered_global",
+      "size": 32,
+      "seed": 0,
+      "depth": 2
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 1.296196533886038,
+    "rewrite_range": [
+      1.2751668837689576,
+      1.4091431527286562
+    ],
+    "total_speedup": 1.0965492291266625,
+    "total_range": [
+      1.0896224729581419,
+      1.1938185083767456
+    ],
+    "verified": false,
+    "db_rewrite_s": 0.7677129000003333,
+    "pyzx_rewrite_s": 0.9954090000001088,
+    "db_total_s": 0.9151265000000421,
+    "pyzx_total_s": 0.9974245000003066
+  },
+  {
+    "case": "41b2ce91ea784625",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "layered_global",
+      "size": 32,
+      "seed": 1,
+      "depth": 2
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 0.2189821801795779,
+    "rewrite_range": [
+      0.1988704108377773,
+      0.22900586052981678
+    ],
+    "total_speedup": 0.19151526870969124,
+    "total_range": [
+      0.17148550480227553,
+      0.19682748842721381
+    ],
+    "verified": false,
+    "db_rewrite_s": 0.8917374000002383,
+    "pyzx_rewrite_s": 0.19527459999972052,
+    "db_total_s": 1.0311840999993365,
+    "pyzx_total_s": 0.19748750000053406
+  },
+  {
+    "case": "3b7a5a2e6de7ad38",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "layered_global",
+      "size": 32,
+      "seed": 2,
+      "depth": 2
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 1.7653862874820792,
+    "rewrite_range": [
+      1.090560447568372,
+      1.9185580700482172
+    ],
+    "total_speedup": 1.5121988309810144,
+    "total_range": [
+      0.9600774013788351,
+      1.6087563410125174
+    ],
+    "verified": false,
+    "db_rewrite_s": 0.7119114999995872,
+    "pyzx_rewrite_s": 1.2257256000002599,
+    "db_total_s": 0.8325101000000359,
+    "pyzx_total_s": 1.2286291000000347
+  },
+  {
+    "case": "e0858f9f85a01b99",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "layered_global",
+      "size": 64,
+      "seed": 0,
+      "depth": 2
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 0.5185941824923157,
+    "rewrite_range": [
+      0.47406176756095647,
+      0.6722320761961076
+    ],
+    "total_speedup": 0.460081943306325,
+    "total_range": [
+      0.4214803577792994,
+      0.585400455745302
+    ],
+    "verified": false,
+    "db_rewrite_s": 1.4869839000002685,
+    "pyzx_rewrite_s": 0.7711411999998745,
+    "db_total_s": 1.6865563000001202,
+    "pyzx_total_s": 0.7759540999995806
+  },
+  {
+    "case": "65d639cacb393e5c",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "layered_global",
+      "size": 64,
+      "seed": 1,
+      "depth": 2
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 4.575342712830289,
+    "rewrite_range": [
+      3.870278130768352,
+      4.6881756430326655
+    ],
+    "total_speedup": 4.0362812453449415,
+    "total_range": [
+      3.3948873493930627,
+      4.116500807750198
+    ],
+    "verified": false,
+    "db_rewrite_s": 2.966178700000455,
+    "pyzx_rewrite_s": 13.571284099999502,
+    "db_total_s": 3.3633410000002186,
+    "pyzx_total_s": 13.575390200000584
+  },
+  {
+    "case": "2e17d57223bb3413",
+    "rule": "full_reduce",
+    "variant": "native",
+    "spec": {
+      "family": "layered_global",
+      "size": 64,
+      "seed": 2,
+      "depth": 2
+    },
+    "complete": true,
+    "active": true,
+    "statuses": {
+      "inconclusive": 4
+    },
+    "rewrite_speedup": 3.055514271405697,
+    "rewrite_range": [
+      2.8592960684986863,
+      3.648033046445099
+    ],
+    "total_speedup": 2.7388892531279816,
+    "total_range": [
+      2.542757805141244,
+      3.2671451181975346
+    ],
+    "verified": false,
+    "db_rewrite_s": 3.0884869000001345,
+    "pyzx_rewrite_s": 9.424677599999995,
+    "db_total_s": 3.44706799999949,
+    "pyzx_total_s": 9.441137499999968
+  }
+]

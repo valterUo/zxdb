@@ -1,0 +1,6 @@
+test_full_reduce_fixtures (tests.test_native_reduction.NativeReductionTests.test_full_reduce_fixtures) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 21.631s
+
+OK

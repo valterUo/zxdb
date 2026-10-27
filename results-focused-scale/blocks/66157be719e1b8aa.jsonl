@@ -1,1 +1,0 @@
-{"case": {"depth": null, "family": "copies_lcomp", "generator_version": "mixture-v1", "id": "66157be719e1b8aa", "motif_counts": {"2": 818, "3": 206}, "scale": "patterns", "seed": 3, "size": 1024}, "evidence": ["528136d220fa6068"], "kind": "adaptive_skip", "reason": "predecessor_case_budget", "source_version": "4f1031582e3c54efa1e692bfc928b234d8800818122c00aa5fbbbb2e0f05314f"}

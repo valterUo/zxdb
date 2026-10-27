@@ -1,0 +1,78 @@
+[
+  {
+    "iteration": 0,
+    "vertices": 4853,
+    "edges": 6762,
+    "status": "passed"
+  },
+  {
+    "iteration": 1,
+    "vertices": 4853,
+    "edges": 6762,
+    "status": "passed"
+  },
+  {
+    "iteration": 2,
+    "vertices": 4853,
+    "edges": 6762,
+    "full_reduce_s": 17.963536100000056,
+    "status": "passed"
+  },
+  {
+    "iteration": 3,
+    "vertices": 4853,
+    "edges": 6762,
+    "status": "passed"
+  },
+  {
+    "iteration": 4,
+    "vertices": 4853,
+    "edges": 6762,
+    "status": "passed"
+  },
+  {
+    "iteration": 5,
+    "vertices": 4853,
+    "edges": 6762,
+    "full_reduce_s": 19.832885199999964,
+    "status": "passed"
+  },
+  {
+    "iteration": 6,
+    "vertices": 4853,
+    "edges": 6762,
+    "status": "passed"
+  },
+  {
+    "iteration": 7,
+    "vertices": 4853,
+    "edges": 6762,
+    "status": "passed"
+  },
+  {
+    "iteration": 8,
+    "vertices": 4853,
+    "edges": 6762,
+    "full_reduce_s": 17.75574259999985,
+    "status": "passed"
+  },
+  {
+    "iteration": 9,
+    "vertices": 4853,
+    "edges": 6762,
+    "status": "passed"
+  },
+  {
+    "iteration": 10,
+    "vertices": 4853,
+    "edges": 6762,
+    "status": "passed"
+  },
+  {
+    "iteration": 11,
+    "vertices": 4853,
+    "edges": 6762,
+    "full_reduce_s": 17.93491270000004,
+    "status": "passed"
+  }
+]

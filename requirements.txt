@@ -1,12 +1,5 @@
-matplotlib
-matplotlib-inline
-neo4j
-neo4j-driver
-neobolt
-networkx
-numpy
-pyzx
-sympy
-scienceplots
-qiskit
-quimb
+pyzx==0.10.3
+neo4j==5.28.1
+numpy==2.2.5
+networkx==3.4.2
+quimb==1.11.2

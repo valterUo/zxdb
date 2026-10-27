@@ -7,8 +7,8 @@ from itertools import product
 
 import pyzx as zx
 from neo4j import GraphDatabase
-from evaluation.research_core import load, read, verify, validate_graph
-from evaluation.research_workloads import build
+from evaluation.core import load, read, verify, validate_graph
+from evaluation.workloads import build
 from zxdb.zxdb import ZXdb
 
 
@@ -37,7 +37,7 @@ def pivot_neighborhood(groups, existing):
     return g
 
 
-@unittest.skipUnless(os.environ.get('ZXDB_RESEARCH_LIVE') == '1', 'Opt-in Memgraph checks')
+@unittest.skipUnless(os.environ.get('ZXDB_LIVE') == '1', 'Opt-in Memgraph checks')
 class PivotMaterializationTests(unittest.TestCase):
     def setUp(self):
         uri = os.environ.get('ZXDB_URI', 'bolt://localhost:7687')

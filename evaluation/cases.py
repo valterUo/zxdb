@@ -19,7 +19,7 @@ import pyzx as zx
 from pyzx.simplify import copy_simp as pyzx_copy_simp
 
 from zxdb.generate import CNOT_HAD_PHASE_graph
-from evaluation.harness import pyzx_fixpoint
+from evaluation.oracle import pyzx_fixpoint
 
 B = zx.VertexType.BOUNDARY
 Z = zx.VertexType.Z

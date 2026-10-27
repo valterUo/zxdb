@@ -1,18 +1,21 @@
 """Live Memgraph regressions for diagram ownership (no whole-DB clearing)."""
+import os
 import unittest
 import uuid
 
 from evaluation.cases import RULES, sf_chain3, sf_xx, pg_basic
-from evaluation.eval_full_reduce import random_circuit_graph
-from evaluation.harness import _quimb_equal
+from evaluation.circuits import random_circuit_graph
+from evaluation.oracle import _quimb_equal
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from zxdb.zxdb import ZXdb
 
 
+@unittest.skipUnless(os.environ.get('ZXDB_LIVE') == '1', 'Opt-in Memgraph checks')
 class TestGraphIsolation(unittest.TestCase):
     def setUp(self):
-        self.db = ZXdb()
+        self.db = ZXdb(uri=os.environ.get('ZXDB_URI', 'bolt://localhost:7687'),
+                       user=os.environ.get('ZXDB_USER', ''), password=os.environ.get('ZXDB_PASSWORD', ''))
         prefix = 'isolation_' + uuid.uuid4().hex
         self.target, self.other, self.missing = [prefix + s for s in ('_a', '_b', '_missing')]
 
