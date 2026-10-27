@@ -1,0 +1,314 @@
+{
+  "as_of": "2026-10-27T21:32:16.861733+00:00",
+  "contract": "Ordered equivalence up to a nonzero global scalar. Reference-based certificates trust the recorded PyZX reduction of the same hash-checked unitary input. Audit-only matcher changes and witness proof chains are documented per report.",
+  "distinct_pairs": 37,
+  "verified_pairs": 37,
+  "measured_trials": 45,
+  "verified_trials": 45,
+  "families": [
+    {
+      "family": "layered_global",
+      "distinct_pairs": 9,
+      "verified_pairs": 9,
+      "measured_trials": 9,
+      "verified_trials": 9
+    },
+    {
+      "family": "layered_local",
+      "distinct_pairs": 1,
+      "verified_pairs": 1,
+      "measured_trials": 9,
+      "verified_trials": 9
+    },
+    {
+      "family": "random_clifford",
+      "distinct_pairs": 9,
+      "verified_pairs": 9,
+      "measured_trials": 9,
+      "verified_trials": 9
+    },
+    {
+      "family": "random_clifford_t",
+      "distinct_pairs": 9,
+      "verified_pairs": 9,
+      "measured_trials": 9,
+      "verified_trials": 9
+    },
+    {
+      "family": "random_t_heavy",
+      "distinct_pairs": 9,
+      "verified_pairs": 9,
+      "measured_trials": 9,
+      "verified_trials": 9
+    }
+  ],
+  "verified_evidence": [
+    {
+      "original": "14ecb9f8be1e71be60cf4aeaf9bd59724c3c6db4d06fca3a750568a1c90e9858",
+      "database": "7ef0a460fe786736a9369ed8e5716e59f03827c764f9d6f799d989d768320e38",
+      "reports": [
+        "reference-certificates.json"
+      ]
+    },
+    {
+      "original": "14ecb9f8be1e71be60cf4aeaf9bd59724c3c6db4d06fca3a750568a1c90e9858",
+      "database": "96f6a27a9b07e9ed3650f1bd99cf13c5da21b495233e79f1c6bae7c6a2545732",
+      "reports": [
+        "reference-certificates.json"
+      ]
+    },
+    {
+      "original": "14ecb9f8be1e71be60cf4aeaf9bd59724c3c6db4d06fca3a750568a1c90e9858",
+      "database": "f8bceea8729a69b7e7c7ed3bb9e59762d655163867ee561ea022e94ba89fc51d",
+      "reports": [
+        "reference-certificates.json"
+      ]
+    },
+    {
+      "original": "35d0813eb37b1034ddc2318674ea21f2110186fe3c5b0bab34825b273e6f7a5b",
+      "database": "376f1176edc4d13cd8f57ab07e1ef4f417e165d4e5be663b3d554953a49c5e85",
+      "reports": [
+        "reference-certificates.json"
+      ]
+    },
+    {
+      "original": "35d0813eb37b1034ddc2318674ea21f2110186fe3c5b0bab34825b273e6f7a5b",
+      "database": "566dd9ab6f04ccd8a9366e848e3b132f2f98fa2663c452c18dc90a9d3ac7dc77",
+      "reports": [
+        "reference-certificates.json"
+      ]
+    },
+    {
+      "original": "35d0813eb37b1034ddc2318674ea21f2110186fe3c5b0bab34825b273e6f7a5b",
+      "database": "717ccd3e6fac447a512f969c5f7cbfa9c458655f7a44d933c4f2514ddc08e19a",
+      "reports": [
+        "reference-certificates.json"
+      ]
+    },
+    {
+      "original": "3b4019c3a88f6cdaf36f2d172eaf609777fae4f5b41adac5072d7746681cbf89",
+      "database": "2463181719c35e69c279ec9c066e679fb5bc8706aa9d107dca65eafc15c68949",
+      "reports": [
+        "reference-certificates.json"
+      ]
+    },
+    {
+      "original": "3b4019c3a88f6cdaf36f2d172eaf609777fae4f5b41adac5072d7746681cbf89",
+      "database": "8b1d92949badc026f1ff294858212bb570a40f257c93e21b75f716cc7c60be40",
+      "reports": [
+        "reference-certificates.json"
+      ]
+    },
+    {
+      "original": "3b4019c3a88f6cdaf36f2d172eaf609777fae4f5b41adac5072d7746681cbf89",
+      "database": "8bbc57ffddfd5b9347cf51da820f421beadac1952e92f5262c0549d9a8e1e01d",
+      "reports": [
+        "reference-certificates.json"
+      ]
+    },
+    {
+      "original": "5454db4df5f58b0d0de19e2979394e528cec6fd3efc75cb416c295f2585d3777",
+      "database": "5f8fbbab5af02181a8e570dabe3e5aea2caa87c4fc6b1bf8279483283c7c87db",
+      "reports": [
+        "direct-layered_global-seed1-600s-certificates.json"
+      ]
+    },
+    {
+      "original": "5454db4df5f58b0d0de19e2979394e528cec6fd3efc75cb416c295f2585d3777",
+      "database": "7a30f0639a6495d09ed9b0c08675dfae0e6ebe62d942f00e0e142046c0bd2ab6",
+      "reports": [
+        "direct-layered_global-seed1-600s-certificates.json"
+      ]
+    },
+    {
+      "original": "5454db4df5f58b0d0de19e2979394e528cec6fd3efc75cb416c295f2585d3777",
+      "database": "94744b2aaa0949850adc23665b7447cd5d78738d31498fe6bd336b351cc52589",
+      "reports": [
+        "direct-layered_global-seed1-600s-certificates.json"
+      ]
+    },
+    {
+      "original": "60a5f361e481b3a497be200c06b83d37660b3dd14af40a746590cdfa010273da",
+      "database": "4def6af1bbdf0542844765cc545a16521f3b17bb2346729f6a6105ff9f04d500",
+      "reports": [
+        "canonical-layered_global-seed2-1800s-certificates.json",
+        "witness-layered_global-seed2-certificates.json"
+      ]
+    },
+    {
+      "original": "60a5f361e481b3a497be200c06b83d37660b3dd14af40a746590cdfa010273da",
+      "database": "852b1970f1ecc7df98aee872b2a4d6864d9d2d02362edf6b88712fa47fdc25d9",
+      "reports": [
+        "cached-layered_global-seed2-certificates.json",
+        "direct-layered_global-seed2-600s-certificates.json"
+      ]
+    },
+    {
+      "original": "60a5f361e481b3a497be200c06b83d37660b3dd14af40a746590cdfa010273da",
+      "database": "c23ec8542c2df734fa94de5a1913978f1858df9758fccfb67a88e85a920886f2",
+      "reports": [
+        "cached-layered_global-seed2-certificates.json",
+        "direct-layered_global-seed2-600s-certificates.json"
+      ]
+    },
+    {
+      "original": "7926f03a1998e793bdb1d6e29aa5af71b53535c612218f996896fa315b87bf77",
+      "database": "0607c8d48d5a24467b94429ea51867fec0e49a625d02da7bb5232879308a252a",
+      "reports": [
+        "reference-certificates.json"
+      ]
+    },
+    {
+      "original": "7926f03a1998e793bdb1d6e29aa5af71b53535c612218f996896fa315b87bf77",
+      "database": "691e6bc8224eb49f95fc88b56a062b30437be2ff2d39d03629fb658d9cb4e7d6",
+      "reports": [
+        "reference-certificates.json"
+      ]
+    },
+    {
+      "original": "7926f03a1998e793bdb1d6e29aa5af71b53535c612218f996896fa315b87bf77",
+      "database": "cdacf844bd25be05e78882d0823e0a8ac7e30e7608e2d4eb60cc135c795419fb",
+      "reports": [
+        "reference-certificates.json"
+      ]
+    },
+    {
+      "original": "91bd680a65a588c048fdfef11f46386d20a103cccce13e38fdd26a99631f4f17",
+      "database": "67d760d56452ce5b19f4fee6c7a435173e6c22d0ed3954c379d2fd9abd68c94f",
+      "reports": [
+        "reference-certificates.json"
+      ]
+    },
+    {
+      "original": "91bd680a65a588c048fdfef11f46386d20a103cccce13e38fdd26a99631f4f17",
+      "database": "699f0584f0262f0d63a3dcacb164264e3057eed524c46aacfb4247ec5afd5f90",
+      "reports": [
+        "reference-certificates.json"
+      ]
+    },
+    {
+      "original": "91bd680a65a588c048fdfef11f46386d20a103cccce13e38fdd26a99631f4f17",
+      "database": "db768d642fe2ced841a4e5c10444c2047e1f683f6cbd990e9f87cf03e36ca53f",
+      "reports": [
+        "reference-certificates.json"
+      ]
+    },
+    {
+      "original": "93bab8139303692a7f7834c648de97bfde3eae4937745aa686e8fac9adbae47f",
+      "database": "56316970d1ed1d4559541ff5510e9f9f2af291116c1ebc41ca309ba182db81e9",
+      "reports": [
+        "reference-certificates.json"
+      ]
+    },
+    {
+      "original": "98928d8635bd915c64b95fca88809657f22d74b70d3efe72193f5f812c2d8cb5",
+      "database": "7daa4966baace7cac341b6832db4ee045bc676d25dfcbbd12f8a392da99e8fe5",
+      "reports": [
+        "cached-random_clifford_t-seed1-certificates.json"
+      ]
+    },
+    {
+      "original": "98928d8635bd915c64b95fca88809657f22d74b70d3efe72193f5f812c2d8cb5",
+      "database": "b478b2f4fe66c5afabf1fc0707e5c1b54cdfce9ee0df5482c4bb214646f3aa6f",
+      "reports": [
+        "cached-random_clifford_t-seed1-certificates.json"
+      ]
+    },
+    {
+      "original": "98928d8635bd915c64b95fca88809657f22d74b70d3efe72193f5f812c2d8cb5",
+      "database": "c504fa5e3559c8076ccb5616ac5782d84d5d8e9ef540ab02da7a10235ae20838",
+      "reports": [
+        "cached-random_clifford_t-seed1-certificates.json"
+      ]
+    },
+    {
+      "original": "a368e251412787106b031fa952d526af4743ed948591bc23e42dba5d0c42557d",
+      "database": "0515255963589f2494921553304d710a9ca88c5849ad76251361a7254d674c1b",
+      "reports": [
+        "reference-certificates.json"
+      ]
+    },
+    {
+      "original": "a368e251412787106b031fa952d526af4743ed948591bc23e42dba5d0c42557d",
+      "database": "15275c51bea640d55cf76a1620f732c5f2e2c191f070dd71d022715dcb64d7d1",
+      "reports": [
+        "reference-certificates.json"
+      ]
+    },
+    {
+      "original": "a368e251412787106b031fa952d526af4743ed948591bc23e42dba5d0c42557d",
+      "database": "4fb93cc38bb2e38b0f25888cfe65a7fa18fb2dc69e0af5d9a2d1b2b3069d60ba",
+      "reports": [
+        "reference-certificates.json"
+      ]
+    },
+    {
+      "original": "b24f5a0aac3700ce81926a13ef5ed1eb507dfacfe1eec5f167dcacae11e7eb4e",
+      "database": "170b9bb9ac93ce751015c8496c4636a6528ba18ba98e26b47f17b3b2ee35a0fc",
+      "reports": [
+        "cached-random_clifford_t-seed0-certificates.json",
+        "cached-random_clifford_t-seed0-original-first-certificates.json",
+        "fast-proof-eligibility-600s.json"
+      ]
+    },
+    {
+      "original": "b24f5a0aac3700ce81926a13ef5ed1eb507dfacfe1eec5f167dcacae11e7eb4e",
+      "database": "73db8514409b09095a0d34fd59fe50b1417f1e4c4178a0da362a1a6546e36933",
+      "reports": [
+        "cached-random_clifford_t-seed0-certificates.json"
+      ]
+    },
+    {
+      "original": "b24f5a0aac3700ce81926a13ef5ed1eb507dfacfe1eec5f167dcacae11e7eb4e",
+      "database": "77357dd5daeb255ec654552e2a32a8528d869bccae425df781deadfe3d4bc915",
+      "reports": [
+        "cached-random_clifford_t-seed0-certificates.json"
+      ]
+    },
+    {
+      "original": "cff6c5f6cd1158a28b5b2c7fea587815edab7067dfde473f00afedadb973b3ee",
+      "database": "872471771f9f18158ac51aa3b876bcf5cb5a1372dde82b3cc2c1d95de141b6f2",
+      "reports": [
+        "cached-layered_global-seed0-certificates.json",
+        "direct-layered_global-certificates.json",
+        "direct-layered_global-first-600s-certificates.json"
+      ]
+    },
+    {
+      "original": "cff6c5f6cd1158a28b5b2c7fea587815edab7067dfde473f00afedadb973b3ee",
+      "database": "ca03387d545d5b4e0d7c01589698980078eaafde290b0163033964fe3b7649a9",
+      "reports": [
+        "canonical-layered_global-seed0-1800s-certificates.json"
+      ]
+    },
+    {
+      "original": "cff6c5f6cd1158a28b5b2c7fea587815edab7067dfde473f00afedadb973b3ee",
+      "database": "d17ad7d6aa81c92487d641faa4479875b7fd0339794c4385972ce2b6c5219b8d",
+      "reports": [
+        "cached-layered_global-seed0-certificates.json",
+        "direct-layered_global-certificates.json"
+      ]
+    },
+    {
+      "original": "ddf454a33e7ff79fa37732ce321cc7e8d9c340714f79076c70b3acce87a98ef3",
+      "database": "6b29d52b8b105a3cd602a3151f6e91c2ca53b11f1f99516d9f93e23194a5abe6",
+      "reports": [
+        "cached-random_clifford_t-seed2-certificates.json"
+      ]
+    },
+    {
+      "original": "ddf454a33e7ff79fa37732ce321cc7e8d9c340714f79076c70b3acce87a98ef3",
+      "database": "b625bb8023cb37714252ddc1776f922ce7e04911ce81e6570931d2b9ecf34856",
+      "reports": [
+        "cached-random_clifford_t-seed2-certificates.json"
+      ]
+    },
+    {
+      "original": "ddf454a33e7ff79fa37732ce321cc7e8d9c340714f79076c70b3acce87a98ef3",
+      "database": "e189150e22c88084297a823d2318f261212e66ca3fda5c40ac245129b9ea357a",
+      "reports": [
+        "cached-random_clifford_t-seed2-certificates.json"
+      ]
+    }
+  ]
+}

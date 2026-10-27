@@ -4,6 +4,8 @@ import time
 import unittest
 from unittest.mock import patch
 from itertools import product
+from itertools import combinations
+from fractions import Fraction
 
 import pyzx as zx
 
@@ -137,6 +139,109 @@ class ReductionOptimizationTests(unittest.TestCase):
                 self.assertEqual(self.db.pivot_rule_batched(self.gid), 1)
                 self.assertEqual(verify(g, read(self.db, self.gid))['status'], 'verified')
                 self.assertEqual(self.db.pivot_rule_batched(self.gid), 0)
+
+    def test_pivot_eligibility_markers_are_scoped_and_cleared(self):
+        foreign = self.gid + '_foreign'
+        other = build(dict(family='identity', size=1, seed=0))
+        try:
+            load(self.db, other, foreign)
+            for active in (False, True):
+                graph = pivot_neighborhood((True, True, True), True) if active else other
+                load(self.db, graph, self.gid)
+                # Simulate stale markers from an interrupted query, including
+                # invalid candidates and an unrelated graph using the label.
+                with self.db.driver.session() as s:
+                    s.run('MATCH(n:Node) WHERE n.graph_id IN $gids '
+                          'SET n:_ZXdbPivotEligible', gids=[self.gid, foreign]).consume()
+                count = self.db.apply_rule_optimized('pivot_rule', self.gid, exclusive_access=True)
+                self.assertEqual(count, int(active))
+                self.assertEqual(verify(graph, read(self.db, self.gid))['status'], 'verified')
+                self.assertEqual(payload(read(self.db, foreign)), payload(other))
+                with self.db.driver.session() as s:
+                    self.assertEqual(s.run('MATCH(n:_ZXdbPivotEligible {graph_id:$gid}) '
+                                           'RETURN count(n) AS n', gid=self.gid).single()['n'], 0)
+                    self.assertEqual(s.run('MATCH(n:_ZXdbPivotEligible {graph_id:$gid}) '
+                                           'RETURN count(n) AS n', gid=foreign).single()['n'], other.num_vertices())
+        finally:
+            self.db.empty_graphdb(foreign)
+
+    def test_pauli_boundary_eligibility_markers_are_scoped_and_cleared(self):
+        from tests.test_boundary_pivot_batch import boundary_neighborhood
+        foreign = self.gid + '_foreign'
+        other = build(dict(family='identity', size=1, seed=0))
+        try:
+            load(self.db, other, foreign)
+            for active in (False, True):
+                graph = boundary_neighborhood((True, True, True), True, a_phase=1) if active else other
+                load(self.db, graph, self.gid)
+                # Simulate stale markers from an interrupted query, including
+                # invalid candidates and an unrelated graph using the label.
+                with self.db.driver.session() as s:
+                    s.run('MATCH(n:Node) WHERE n.graph_id IN $gids '
+                          'SET n:_ZXdbPivotEligible', gids=[self.gid, foreign]).consume()
+                with self.db.driver.session() as session:
+                    count = self.db._run_count(session, self.db._query('Pivot boundary Pauli - batched'),
+                                               'interior_pauli_removed', self.gid)
+                self.assertEqual(count, int(active))
+                self.assertEqual(verify(graph, read(self.db, self.gid))['status'], 'verified')
+                self.assertEqual(payload(read(self.db, foreign)), payload(other))
+                with self.db.driver.session() as s:
+                    self.assertEqual(s.run('MATCH(n:_ZXdbPivotEligible {graph_id:$gid}) '
+                                           'RETURN count(n) AS n', gid=self.gid).single()['n'], 0)
+                    self.assertEqual(s.run('MATCH(n:_ZXdbPivotEligible {graph_id:$gid}) '
+                                           'RETURN count(n) AS n', gid=foreign).single()['n'], other.num_vertices())
+        finally:
+            self.db.empty_graphdb(foreign)
+
+    def test_grouped_supplementarity_matches_control_counts_and_semantics(self):
+        from evaluation.cases import RULES
+        cases = [(name, builder()) for name, builder, *_ in RULES['supplementarity']['cases']]
+        cases += [(f'copies_{n}', build(dict(family='copies_supplementarity', size=n, seed=0)))
+                  for n in (2, 3)]
+        for name, graph in cases:
+            with self.subTest(case=name):
+                load(self.db, graph, self.gid)
+                expected = self.db.supplementarity_simp(self.gid)
+                load(self.db, graph, self.gid)
+                actual = self.db.apply_rule_optimized('supplementarity_simp', self.gid,
+                                                      exclusive_access=True)
+                self.assertEqual(actual, expected)
+                self.assertEqual(verify(graph, read(self.db, self.gid))['status'], 'verified')
+
+    def test_batched_toggles_preserve_simple_neighbor_edges(self):
+        # All absent/simple/H combinations between three neighbors. A simple
+        # edge must survive adding H; deleting it changes the represented map.
+        for method in ('pivot_rule', 'pivot_gadget_rule', 'local_complementation_rule',
+                       'pivot_boundary_rule', 'pauli_boundary'):
+            for kinds in product((0, 1, 2), repeat=3):
+                with self.subTest(method=method, kinds=kinds):
+                    if method == 'local_complementation_rule':
+                        g = zx.Graph()
+                        center = g.add_vertex(zx.VertexType.Z, phase=Fraction(1, 2))
+                        neighbors, outputs = [], []
+                        for _ in range(3):
+                            n = g.add_vertex(zx.VertexType.Z, phase=Fraction(1, 4))
+                            b = g.add_vertex(zx.VertexType.BOUNDARY)
+                            g.add_edge((center, n), zx.EdgeType.HADAMARD)
+                            g.add_edge((n, b))
+                            neighbors.append(n); outputs.append(b)
+                        g.set_outputs(tuple(outputs))
+                    else:
+                        g = pivot_neighborhood((True, True, True), False)
+                        neighbors = [v for v in g.vertices() if v > 1 and g.type(v) == zx.VertexType.Z]
+                        if method in ('pivot_gadget_rule', 'pivot_boundary_rule'):
+                            g.set_phase(1, Fraction(3, 4))
+                        if method in ('pivot_boundary_rule', 'pauli_boundary'):
+                            b = g.add_vertex(zx.VertexType.BOUNDARY)
+                            g.add_edge((1, b))
+                            g.set_outputs(g.outputs() + (b,))
+                    for pair, kind in zip(combinations(neighbors, 2), kinds):
+                        if kind:
+                            g.add_edge(pair, zx.EdgeType(kind))
+                    load(self.db, g, self.gid)
+                    rule = 'pivot_rule' if method == 'pauli_boundary' else method
+                    self.assertGreater(self.db.apply_rule_optimized(rule, self.gid, exclusive_access=True), 0)
+                    self.assertEqual(verify(g, read(self.db, self.gid))['status'], 'verified')
 
     def test_batched_pivot_disjoint_calls_and_reference(self):
         g = build(dict(family='copies_pivot', size=32, seed=0))

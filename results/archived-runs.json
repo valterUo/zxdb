@@ -1,0 +1,6 @@
+{
+  "backup": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027",
+  "verified_files": 2048,
+  "manifest_sha256": "88DA931B13803EACDD4D44A88DC54258C7E02DF966A81A4CB53E5B71DEAEB387",
+  "retained": "historical-summary.json, goal-baseline.json, memgraph-3.14/build.json and current Cypher campaign"
+}

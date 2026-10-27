@@ -1,0 +1,37 @@
+{
+  "reason": "Post-timing report-link formatting and certificate-only matcher integration; timed query and reduction paths unchanged.",
+  "changed_timed_sources": [
+    {
+      "file": "evaluate.py",
+      "old_sha256": "9fa83e222af8b2feab3e5ec06256529332d81b89934a7bafd1119ebb4b1728d9",
+      "new_sha256": "bf18281329a713f9a6c32282a15c37b1d3f2ecfb5ce5c69f18b9c211f09a1a2d",
+      "changed_definitions": [
+        "save_report"
+      ]
+    },
+    {
+      "file": "evaluation\\core.py",
+      "old_sha256": "1242b3bbc90be7321b1a40ff0694470d5eb69674cd02ba7c3611d6a9ee741001",
+      "new_sha256": "476ce96e000d58f4f5e11ed891052d066e62720a6a5f9df48e35e137848c58ac",
+      "changed_definitions": [
+        "_identity_certificate_worker"
+      ]
+    },
+    {
+      "file": "tests\\test_evaluation.py",
+      "old_sha256": "dca8c3fd72513bf87d42b2869fc5817e8d2db141665cc1a9649c1ba50363528d",
+      "new_sha256": "cdf92c9c3201178a70e79d6cc1a304c2c9c4355e6655eefafb3d6bbac37e9f82",
+      "changed_definitions": [
+        "EvaluationTests"
+      ]
+    }
+  ],
+  "new_source": "evaluation/proof_matching.py",
+  "new_source_sha256": "ee41b7d6b86c27aaceb86f9684f72722bd1088123e98ee042667facfe9d7e86c",
+  "differential_cases": 120,
+  "offline_tests_passed": 18,
+  "live_regression_log": "post-integration-regressions.log",
+  "live_regression_state": "passed",
+  "live_regressions_passed": 66,
+  "live_regression_seconds": 212.646
+}

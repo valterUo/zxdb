@@ -1,0 +1,127 @@
+{
+  "backup": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\cypher-development-20261027\\metadata",
+  "count": 24,
+  "files": [
+    {
+      "name": "audit-backend-investigation.json",
+      "sha256": "7F20D128484C35DDAFF62A3EEC730854B537B1C09BE25C1E5D6D2C62B8859947",
+      "bytes": 764
+    },
+    {
+      "name": "audit-order-investigation.json",
+      "sha256": "2553B466519FE3980387BC84B0DF2E915789512E137B2E0A175417FC6D4E40BE",
+      "bytes": 674
+    },
+    {
+      "name": "baseline-128-cancelled.json",
+      "sha256": "9881ED5E14F5ACE7EBB94919B49F771B4D1249CF9BF73CD2DABA0A4D8DFBECF6",
+      "bytes": 366
+    },
+    {
+      "name": "baseline.json",
+      "sha256": "F7FA24243E53BC65C2D5627C168DA10B3779CC23AA5CC9B794BB7A9F045B3A4C",
+      "bytes": 2793
+    },
+    {
+      "name": "boundary-eligibility-validation.json",
+      "sha256": "AEACB7A3FCBFD05EC5E60210CB18C3736452F0D47A675C4C6C0F82FEDB40E92D",
+      "bytes": 1204
+    },
+    {
+      "name": "boundary-first-audits.json",
+      "sha256": "D1E68E834F184C105CE73099F14BB662557303F3984E4D1D10719B8139315610",
+      "bytes": 4469
+    },
+    {
+      "name": "boundary-operator-profile.json",
+      "sha256": "3A65DF332ACEEE421E77C8ECBA5B50E5CC1C9E1AC99047DBEA2E464E1A1CE7E8",
+      "bytes": 27699
+    },
+    {
+      "name": "boundary-pipeline-operators.json",
+      "sha256": "134119F3702CDB3852691B6557D46A739BF505C4D6E616B547498EE1F36133FB",
+      "bytes": 112764
+    },
+    {
+      "name": "correlated-candidate-plan.json",
+      "sha256": "E7EE7206C89D7E47017218B9DF1079560686001CC75D57BB188ACEE9B5D56462",
+      "bytes": 9914
+    },
+    {
+      "name": "correlated-candidate.json",
+      "sha256": "B72A444E9B4330EB94DC965BC1A217FB23416A412757F4C27F896B602163E8CA",
+      "bytes": 634
+    },
+    {
+      "name": "fixed-point-rule-trace.json",
+      "sha256": "C1188A2B5DAE3CC7B505C62B35493EABF70248EEA094FF9F9A88C17318927668",
+      "bytes": 442
+    },
+    {
+      "name": "grouped-targeted.json",
+      "sha256": "D315D704678867F6426C7DA7D82627F733AE34C7C6D336DD4F53747FEB271D49",
+      "bytes": 2200
+    },
+    {
+      "name": "lcomp-correlated-candidate.json",
+      "sha256": "5A45B9BD17D48F997A614B593623557EA4754D5A0A741D4E214463942C7F7353",
+      "bytes": 485
+    },
+    {
+      "name": "neighborhood-cost-candidate.json",
+      "sha256": "44C3D701D7DC2968CC92A978A89DB6EA9C0E8153340FAC1A44BE0A548DFE9D66",
+      "bytes": 624
+    },
+    {
+      "name": "queries-before.json",
+      "sha256": "2CC3B39BD326D8A692F4582B0DC7EE9E450B887C6855F2DD7EF7281E787B79D1",
+      "bytes": 70602
+    },
+    {
+      "name": "queries-boundary-pruned.json",
+      "sha256": "01A2FC8ABFD8AE1384B69C6BB3B1D9D0C00EBBF8BC931AC89929267674FBA74C",
+      "bytes": 77311
+    },
+    {
+      "name": "queries-correlated-candidate.json",
+      "sha256": "5B9F24168610D864A862A13FA789DA862777F3FE5CC92C0F78819DAB15FE4618",
+      "bytes": 76497
+    },
+    {
+      "name": "queries-greedy.json",
+      "sha256": "0D57EA3663A783816BC88C76FFA7502F272BF85C72B074AECE524BAC8E0304D7",
+      "bytes": 75778
+    },
+    {
+      "name": "queries-grouped.json",
+      "sha256": "C9586100219A56D95268BEF49F2565404A4C26B920ADF043C9E0877587DE306F",
+      "bytes": 76320
+    },
+    {
+      "name": "queries-lcomp-correlated-candidate.json",
+      "sha256": "04200F2EAC12B0968E0DD7A40F130E295CB311C95D7CC6AA611B41B95DA3D712",
+      "bytes": 77336
+    },
+    {
+      "name": "queries-neighborhood-cost.json",
+      "sha256": "FA96ED2329063C09033289BF4BF5A8DE510E383257E7A627C67BA0101FA1578D",
+      "bytes": 77549
+    },
+    {
+      "name": "queries-pruned.json",
+      "sha256": "9190EAC49E6ED334177C2268F99F2A4C3712FD7B9153A5B335568C279EC5046B",
+      "bytes": 71294
+    },
+    {
+      "name": "simple-backend-audit.json",
+      "sha256": "AFDD993E5C48228DFEEAC22DE593A14AE832DADCEF0FD49850513B19FA814131",
+      "bytes": 411
+    },
+    {
+      "name": "simple-edge-audit.json",
+      "sha256": "2D36CAD759741A0B3D27074B67A20471D04FC00C7C69405E11DAFC8303A6E4E6",
+      "bytes": 296
+    }
+  ],
+  "verified": true
+}

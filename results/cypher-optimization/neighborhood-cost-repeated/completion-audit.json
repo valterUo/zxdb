@@ -1,0 +1,57 @@
+{
+  "as_of": "2026-10-27T21:33:22.232752+00:00",
+  "goal_complete": true,
+  "performance": {
+    "configurations": 15,
+    "measured_trials": 45,
+    "rewrite_median_wins": 15,
+    "total_median_wins": 15,
+    "backend": "stock Memgraph 3.14.0",
+    "custom_rewrite_procedures": []
+  },
+  "correctness": {
+    "fixture_statuses": {
+      "verified": 220,
+      "inconclusive": 3
+    },
+    "fixtures_by_rule": {
+      "spider_fusion": 12,
+      "identity": 11,
+      "supplementarity": 10,
+      "lcomp": 11,
+      "pivot": 12,
+      "pivot_gadget": 9,
+      "pivot_boundary": 7,
+      "gadget_fusion": 9,
+      "bialgebra": 10,
+      "hadamard_cancel": 7,
+      "copy": 10,
+      "full_reduce": 115
+    },
+    "unchanged_fixed_points": 45,
+    "supplemental_report": "supplemental-correctness.json",
+    "coverage_report": "semantic-coverage.json",
+    "supplemental_graph_hashes_matched": true,
+    "combined_verified_fixtures": 223,
+    "verified_distinct_pairs": 37,
+    "verified_measured_trials": 45,
+    "proof_state": "complete for all measured outputs"
+  },
+  "query_source_hashes_matched": [
+    "zxdb\\generate.py",
+    "zxdb\\pyzx_utils.py",
+    "zxdb\\zxdb.py",
+    "zxdb\\main_queries.json"
+  ],
+  "documentation_links_checked": 26,
+  "pending": [],
+  "post_integration_regressions": {
+    "passed": 66,
+    "skipped": 0,
+    "log": "post-integration-regressions.log"
+  },
+  "cleanup": {
+    "temporary_evaluation_runners_remaining": 0,
+    "backup_manifest": "../final-proof-scripts-backup.json"
+  }
+}

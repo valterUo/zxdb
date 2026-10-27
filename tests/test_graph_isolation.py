@@ -107,6 +107,19 @@ class TestGraphIsolation(unittest.TestCase):
         self.db.full_reduce(self.missing)
         self.assertEqual(self.snapshot(self.other), before)
 
+    def test_bialgebra_repeated_k22_preserves_semantics_and_foreign_graph(self):
+        from evaluation.core import load, read, verify
+        builder = next(case[1] for case in RULES['bialgebra']['cases'] if case[0] == 'k22')
+        original = builder()
+        load(self.db, original, self.other)
+        before = self.snapshot(self.other)
+        for iteration in range(100):
+            with self.subTest(iteration=iteration):
+                load(self.db, original, self.target)
+                self.assertGreater(self.db.bialgebra_simp(self.target), 0)
+                self.assertEqual(verify(original, read(self.db, self.target))['status'], 'verified')
+                self.assertEqual(self.snapshot(self.other), before)
+
     def test_bialgebra_connect_keeps_foreign_markers(self):
         with self.db.driver.session() as s:
             for gid in (self.target, self.other):

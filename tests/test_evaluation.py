@@ -1,18 +1,37 @@
 """Independent oracle and benchmark-contract checks; no database needed."""
 import time
+from contextlib import contextmanager
 import unittest
 from unittest.mock import Mock, patch
 
 import numpy as np
 import pyzx as zx
 
-from evaluate import benchmark_cases, reduce_database, summarize, zero_cases, trial
+from evaluate import benchmark_cases, reduce_database, summarize, zero_cases, trial, database_watchdog
 from evaluation.core import reference, verify, certify_unitary_rewrite
 from evaluation.oracle import _quimb_tensor
 from evaluation.workloads import RULES, build
 
 
 class EvaluationTests(unittest.TestCase):
+    def test_certificate_matcher_preserves_pyzx_matches_and_mutations(self):
+        from pyzx.rewrite_rules import pivot_rule
+        from evaluation.proof_matching import cached_gadget_match
+        from evaluation.workloads import payload
+        stock = pivot_rule.match_pivot_gadget
+        for family in ('random_clifford', 'random_clifford_t', 'random_t_heavy',
+                       'layered_local', 'layered_global'):
+            for seed in range(8):
+                g = build(dict(family=family, size=6, seed=seed,
+                               depth=2 if family.startswith('layered') else 70))
+                zx.simplify.interior_clifford_simp(g)
+                for limit in (-1, 1, 2):
+                    with self.subTest(family=family, seed=seed, limit=limit):
+                        a, b = g.copy(), g.copy()
+                        self.assertEqual(stock(a, num=limit), cached_gadget_match(b, num=limit))
+                        self.assertEqual(payload(a), payload(b))
+        self.assertIs(pivot_rule.match_pivot_gadget, stock)
+
     def test_circuit_grid_uses_requested_sizes_and_seeds(self):
         cases = list(benchmark_cases(True, full_reduce_only=True, qubits=[2, 3],
                                     seeds=2, depth_factor=7))
@@ -31,6 +50,8 @@ class EvaluationTests(unittest.TestCase):
         db.full_reduce_optimized.assert_not_called()
 
     def test_unitary_identity_certificate_and_counterexamples(self):
+        from pyzx.rewrite_rules import pivot_rule
+        stock_matcher = pivot_rule.match_pivot_gadget
         g = build(dict(family='random_clifford_t', size=2, seed=0, depth=12))
         reduced = g.copy(); reference(reduced, 'full_reduce', time.monotonic()+10)
         self.assertEqual(certify_unitary_rewrite(g, reduced, 20)['status'], 'verified')
@@ -43,11 +64,19 @@ class EvaluationTests(unittest.TestCase):
         zero = g.copy(); zero.scalar.is_zero = True
         self.assertEqual(certify_unitary_rewrite(g, zero, 20)['status'], 'failed')
         self.assertEqual(certify_unitary_rewrite(g, g, .001)['status'], 'inconclusive')
+        self.assertIs(pivot_rule.match_pivot_gadget, stock_matcher)
 
     def test_certificate_cache_and_watchdog_exclude_verification(self):
         g = build(dict(family='identity', size=1, seed=0))
         events = []
         db = Mock(); db.driver.submissions = 0
+        @contextmanager
+        def guard():
+            events.append('start_watchdog')
+            try:
+                yield
+            finally:
+                events.append('stop_watchdog')
         def certificate(*args):
             events.append('proof')
             return dict(status='verified', reason='test')
@@ -57,10 +86,74 @@ class EvaluationTests(unittest.TestCase):
              patch('evaluate.certify_unitary_rewrite', side_effect=certificate) as proof:
             row = trial(db, g, 'full_reduce', 'test', 'native', ('db', 'pyzx'),
                         unitary_input=True, certificate_timeout=20, certificate_cache={},
-                        after_rewrite=lambda: events.append('stop_watchdog'))
-        self.assertEqual(events, ['stop_watchdog', 'proof'])
+                        database_guard=guard)
+        self.assertEqual(events, ['start_watchdog', 'stop_watchdog', 'proof'])
         self.assertEqual(proof.call_count, 1)
         self.assertEqual(row['status'], 'verified')
+
+    def test_database_guard_excludes_reference_snapshots_and_verification(self):
+        g = build(dict(family='identity', size=1, seed=0))
+        for order in (('db', 'pyzx'), ('pyzx', 'db')):
+            active = [False]
+            @contextmanager
+            def guard():
+                active[0] = True
+                try:
+                    yield
+                finally:
+                    active[0] = False
+            def db_step(*args):
+                self.assertTrue(active[0])
+            def reference_step(*args):
+                # Even a reference taking longer than the database budget must
+                # execute with no database timer armed, in either engine order.
+                self.assertFalse(active[0])
+            def snapshot(*args):
+                self.assertFalse(active[0])
+                return 'saved-key'
+            def fixed_point(*args):
+                self.assertFalse(active[0])
+                return dict(status='completed', structure_changed=False)
+            def check(*args):
+                self.assertFalse(active[0])
+                return dict(status='verified')
+            db = Mock(); db.driver.submissions = 0
+            with patch('evaluate.load', side_effect=db_step), \
+                 patch('evaluate.reduce_database', side_effect=db_step), \
+                 patch('evaluate.read', side_effect=lambda *a: (db_step(), g.copy())[1]), \
+                 patch('evaluate.reference', side_effect=reference_step), \
+                 patch('evaluate.verify', side_effect=check), \
+                 patch('evaluate.save_graph', side_effect=snapshot) as save, \
+                 patch('evaluate.check_reduction_fixed_point', side_effect=fixed_point) as fixed:
+                row = trial(db, g, 'full_reduce', 'test', 'native', order,
+                            database_guard=guard, evidence_directory='unused',
+                            unitary_input=True, fixed_point_timeout=10)
+            self.assertFalse(active[0])
+            self.assertEqual(save.call_count, 3)
+            self.assertEqual(fixed.call_count, 1)
+            self.assertFalse(row['db_fixed_point']['structure_changed'])
+            self.assertEqual(set(row['graph_evidence']), {'original', 'db', 'pyzx'})
+
+    def test_database_watchdog_cancels_on_error_and_reports_expiry(self):
+        timer = Mock()
+        interrupt = Mock()
+        with patch('evaluate.threading.Timer', return_value=timer):
+            with self.assertRaisesRegex(ValueError, 'database failure'):
+                with database_watchdog(1, interrupt):
+                    raise ValueError('database failure')
+        timer.start.assert_called_once()
+        timer.cancel.assert_called_once()
+        timer.join.assert_called_once()
+        interrupt.assert_not_called()
+        def expired_timer(seconds, callback):
+            timer = Mock()
+            timer.start.side_effect = callback
+            return timer
+        with patch('evaluate.threading.Timer', side_effect=expired_timer):
+            with self.assertRaises(TimeoutError):
+                with database_watchdog(1, interrupt):
+                    pass
+        interrupt.assert_called_once()
 
     def test_tensor_engine_agrees_with_pyzx_on_both_colors_and_zero_arity(self):
         for color in (zx.VertexType.Z, zx.VertexType.X):

@@ -205,6 +205,10 @@ def _identity_certificate_worker(original, result, connection):
             return
         composed = original.adjoint()
         composed.compose(result)
+        # This subprocess is outside benchmark timers. Preserve stock PyZX in
+        # the parent while avoiding repeated candidate scans during proofs.
+        from evaluation.proof_matching import install_in_certificate_worker
+        install_in_certificate_worker()
         zx.full_reduce(composed)
         validate_graph(composed)
         scalar = composed.scalar

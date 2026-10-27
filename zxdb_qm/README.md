@@ -18,6 +18,12 @@ Build against the headers from the running Memgraph version. The commands below
 assume a dedicated container named `memgraph` with g++ installed. Install g++ in
 that container if needed. Compile to a temporary file before replacing the module.
 
+The latest validation uses `memgraph/memgraph:3.14.0`. That image's SDK omitted
+`text_search_config.hpp`, included by `mgp.hpp`. If compilation reports that
+missing header, copy the matching [v3.14.0 header](https://raw.githubusercontent.com/memgraph/memgraph/v3.14.0/include/text_search_config.hpp)
+to `/usr/include/memgraph/` before compiling. The exact validation header and
+compiler/image hashes are recorded in `results/memgraph-3.14/build.json`.
+
 ```sh
 docker cp zxdb_qm/zxqmcpp.cpp memgraph:/tmp/zxqmcpp.cpp
 docker exec -u root memgraph g++ -O3 -std=c++20 -fPIC -shared -I/usr/include/memgraph /tmp/zxqmcpp.cpp -o /tmp/zxqmcpp-new.so

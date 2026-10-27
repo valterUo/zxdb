@@ -1,0 +1,115 @@
+{
+  "selection": "Every distinct measured (original, database output) pair across all configurations and repetitions; deduplicated only by exact graph hashes",
+  "contract": "Known unitary circuit input; ordered equivalence up to a nonzero global scalar",
+  "source_hashes": {
+    "evaluate.py": "9fa83e222af8b2feab3e5ec06256529332d81b89934a7bafd1119ebb4b1728d9",
+    "evaluation\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation\\cases.py": "6d4c14bf3aef5466f28029ef1bb082472f334c484867312db006c4329e4da71e",
+    "evaluation\\circuits.py": "f93cfa2b7247a9d56cbb8705e7df20f10a78a09191b18ad4a561778a0d7a71fe",
+    "evaluation\\core.py": "1242b3bbc90be7321b1a40ff0694470d5eb69674cd02ba7c3611d6a9ee741001",
+    "evaluation\\evidence.py": "5e4c504bddfd882ebceeb0126d9464d33bba913c39df8e53b0cf7c5242db6ba0",
+    "evaluation\\oracle.py": "0aab698e8255e804ba99f7ea16b5cfcec3f332252b844437b7eef42f3516ca5a",
+    "evaluation\\patterns.py": "04b35a5c844f5c1e096f856dabff6c3ecf008102acd7b78115705a5d1ca93730",
+    "evaluation\\workloads.py": "f08d398aa3bed2e75417a6c0444c99ead2a9af71f18a4873cac3bf4314088878",
+    "zxdb\\generate.py": "b763ad6a3d2824d8b3c2530ff282b207764b5b0c2f8dee27b51479207fa067a0",
+    "zxdb\\pyzx_utils.py": "f7a8bded516ced36ad37dc3388099717066ee68b19ac13ec06b37d14c9c00cac",
+    "zxdb\\zxdb.py": "1b2a62d9c9fe70d8263a999e11275674865d30d593533a7836d5673ea4e16734",
+    "tests\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests\\live_support.py": "648727a61472f6bb212e50371cddafd72f3fa1bd73fcde79e5e53abb39a9fa6e",
+    "tests\\test_boundary_pivot_batch.py": "0b68f2fa026231c42c8fc33806eebb1eb172710ec53a940fae1d851fa9a1038c",
+    "tests\\test_evaluation.py": "dca8c3fd72513bf87d42b2869fc5817e8d2db141665cc1a9649c1ba50363528d",
+    "tests\\test_evidence.py": "dc26c4e9ab4f8d2d23a797b76f583d97567560a0f31b52058fc4dbfb139d843f",
+    "tests\\test_gadget_pivot_batch.py": "a5cc814701b428e5063d4aea2e3d0806009e0f5b72fb1214a65a1fa429216b89",
+    "tests\\test_graph_isolation.py": "d44574f33514ed2dd7696dc5944a01369b027547d755b49d559e5e277822725a",
+    "tests\\test_hopf_normalization.py": "e9796f8631973994f69cc8b5ce9faf33de64ade3d1bfe2f41adafaa6e2376e77",
+    "tests\\test_native_reduction.py": "13b03ef4620b9b16591db7fd5e114876b5ab85805d375b04295e5ac08e074c5a",
+    "tests\\test_pivot_materialization.py": "1656aadc2e7d5fb2aa0adad4add0b86db02290ff1f7ef84fd82882834bd085a1",
+    "tests\\test_reduction_optimizations.py": "c22ebaea2945e8b8f3111f9dd3e55ec0018cdb0659f2c045fc4cc08759292c97",
+    "zxdb\\main_queries.json": "fa96ed2329063c09033289bf4bf5a8de510e383257e7a627c67ba0101fa1578d",
+    "zxdb_qm\\zxqmcpp.cpp": "6eb88464799b5ef0dcb1c2e4a7106081ce3e86ee3ff1dc77193c6966f39344f8"
+  },
+  "audit_source": "\"\"\"One-off post-run audit; the reusable evaluation entry point is evaluate.py.\"\"\"\nimport hashlib\nimport json\nfrom pathlib import Path\nimport sys\nimport time\n\nsys.path.insert(0, str(Path.cwd()))\nfrom evaluation.core import certify_unitary_rewrite\nfrom evaluation.evidence import read_graph, save_graph, _ordered_audit_graph\nfrom evaluation.workloads import build\n\n\ndef main():\n    root = Path(sys.argv[1])\n    timeout = float(sys.argv[2]) if len(sys.argv) > 2 else 120\n    assert 'Run state: finished.' in (root / 'REPORT.md').read_text()\n    cells = json.loads((root / 'summary.json').read_text())\n    assert len(cells) == 15 and all(c['complete'] for c in cells)\n    environment = json.loads((root / 'environment.json').read_text())\n    for name, expected in environment['source_hashes'].items():\n        assert hashlib.sha256(Path(name.replace('\\\\', '/')).read_bytes()).hexdigest() == expected, name\n\n    selected = {}\n    observed_cases = set()\n    for line in (root / 'observations.jsonl').read_text().splitlines():\n        row = json.loads(line)\n        if row['stage'] == 'benchmark' and not row['warmup']:\n            observed_cases.add(row['case'])\n            evidence = row['graph_evidence']\n            selected.setdefault((evidence['original'], evidence['db']), row)\n    assert observed_cases == {c['case'] for c in cells}\n    allowed = {'random_clifford', 'random_clifford_t', 'random_t_heavy',\n               'layered_local', 'layered_global'}\n    destination = root / 'semantic-certificates.json'\n    report = json.loads(destination.read_text()) if destination.exists() else {\n        'selection': 'Every distinct measured (original, database output) pair across all configurations and repetitions; deduplicated only by exact graph hashes',\n        'contract': 'Known unitary circuit input; ordered equivalence up to a nonzero global scalar',\n        'source_hashes': environment['source_hashes'],\n        'audit_source': Path(__file__).read_text(),\n        'attempts': [],\n    }\n    assert report['source_hashes'] == environment['source_hashes']\n    report['selected_pairs'] = len(selected)\n    report['covered_configurations'] = len(observed_cases)\n    for row in selected.values():\n        assert row['variant'] == 'optimized' and row['rule'] == 'full_reduce'\n        assert row['spec']['family'] in allowed\n        original_key = row['graph_evidence']['original']\n        output_key = row['graph_evidence']['db']\n        if any(a['original_key'] == original_key and a['output_key'] == output_key\n               and a['certificate']['status'] == 'verified' for a in report['attempts']):\n            continue\n        original = build(row['spec'])\n        assert save_graph(root / 'graphs', original) == original_key\n        result = _ordered_audit_graph(read_graph(root / 'graphs', output_key))\n        assert save_graph(root / 'graphs', result) == output_key\n        start = time.perf_counter()\n        certificate = certify_unitary_rewrite(original, result, timeout)\n        report['attempts'].append(dict(case=row['case'], spec=row['spec'],\n                                      original_key=original_key, output_key=output_key,\n                                      payload_hash_preserved=True, timeout_s=timeout,\n                                      elapsed_s=time.perf_counter() - start,\n                                      certificate=certificate))\n        destination.write_text(json.dumps(report, indent=2))\n        print(row['spec']['family'], row['spec']['seed'], certificate['status'], flush=True)\n    destination.write_text(json.dumps(report, indent=2))\n\n\nif __name__ == '__main__':\n    main()\n",
+  "attempts": [
+    {
+      "case": "9f0326852fc2e119",
+      "spec": {
+        "family": "random_clifford",
+        "size": 128,
+        "seed": 0,
+        "depth": 2560
+      },
+      "original_key": "7926f03a1998e793bdb1d6e29aa5af71b53535c612218f996896fa315b87bf77",
+      "output_key": "cdacf844bd25be05e78882d0823e0a8ac7e30e7608e2d4eb60cc135c795419fb",
+      "payload_hash_preserved": true,
+      "timeout_s": 120,
+      "elapsed_s": 121.8737495000023,
+      "certificate": {
+        "status": "inconclusive",
+        "reason": "Identity certificate exceeded 120s"
+      }
+    },
+    {
+      "case": "9f0326852fc2e119",
+      "spec": {
+        "family": "random_clifford",
+        "size": 128,
+        "seed": 0,
+        "depth": 2560
+      },
+      "original_key": "7926f03a1998e793bdb1d6e29aa5af71b53535c612218f996896fa315b87bf77",
+      "output_key": "691e6bc8224eb49f95fc88b56a062b30437be2ff2d39d03629fb658d9cb4e7d6",
+      "payload_hash_preserved": true,
+      "timeout_s": 120,
+      "elapsed_s": 121.89407909999863,
+      "certificate": {
+        "status": "inconclusive",
+        "reason": "Identity certificate exceeded 120s"
+      }
+    },
+    {
+      "case": "9f0326852fc2e119",
+      "spec": {
+        "family": "random_clifford",
+        "size": 128,
+        "seed": 0,
+        "depth": 2560
+      },
+      "original_key": "7926f03a1998e793bdb1d6e29aa5af71b53535c612218f996896fa315b87bf77",
+      "output_key": "0607c8d48d5a24467b94429ea51867fec0e49a625d02da7bb5232879308a252a",
+      "payload_hash_preserved": true,
+      "timeout_s": 120,
+      "elapsed_s": 121.88018939999893,
+      "certificate": {
+        "status": "inconclusive",
+        "reason": "Identity certificate exceeded 120s"
+      }
+    },
+    {
+      "case": "6a10d57f0d599043",
+      "spec": {
+        "family": "random_clifford",
+        "size": 128,
+        "seed": 1,
+        "depth": 2560
+      },
+      "original_key": "14ecb9f8be1e71be60cf4aeaf9bd59724c3c6db4d06fca3a750568a1c90e9858",
+      "output_key": "f8bceea8729a69b7e7c7ed3bb9e59762d655163867ee561ea022e94ba89fc51d",
+      "payload_hash_preserved": true,
+      "timeout_s": 120,
+      "elapsed_s": 121.96553819999826,
+      "certificate": {
+        "status": "inconclusive",
+        "reason": "Identity certificate exceeded 120s"
+      }
+    }
+  ],
+  "selected_pairs": 37,
+  "covered_configurations": 15,
+  "run_state": "stopped",
+  "stop_record": {
+    "time": "2026-10-27T19:29:22.811301+00:00",
+    "reason": "Repeated direct original-adjoint proofs timed out; all nine Clifford outputs verified by the recorded reference route. Stopped only the identified direct-proof process tree; reference audit continues.",
+    "terminal_exit_code": 1,
+    "completed_attempts_preserved": 4
+  }
+}

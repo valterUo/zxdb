@@ -1,7 +1,7 @@
 """Run the complete audit and paired PyZX benchmark: python evaluate.py."""
 import argparse
 from collections import Counter
-from contextlib import redirect_stdout
+from contextlib import redirect_stdout, contextmanager, nullcontext
 import csv
 from datetime import datetime, timezone
 import hashlib
@@ -19,6 +19,7 @@ import threading
 import time
 import traceback
 import uuid
+import zipfile
 
 import pyzx as zx
 from neo4j import GraphDatabase
@@ -28,6 +29,7 @@ from evaluation.cases import RULES as CASES
 from evaluation.circuits import build_suite
 from evaluation.core import CountingDriver, load, read, reference, verify, certify_unitary_rewrite
 from evaluation.workloads import RULES, build, digest, metrics, payload
+from evaluation.evidence import save_graph, check_reduction_fixed_point
 from zxdb.zxdb import ZXdb
 
 ROOT = Path(__file__).resolve().parent
@@ -89,33 +91,55 @@ def benchmark_cases(quick, full_reduce_only=False, qubits=None, seeds=None, dept
                 yield 'full_reduce', spec, build(spec)
 
 
+@contextmanager
+def database_watchdog(seconds, interrupt):
+    """Bound only database I/O and rewriting, never the reference or proofs."""
+    expired = threading.Event()
+    def expire():
+        expired.set()
+        interrupt()
+    timer = threading.Timer(seconds, expire)
+    timer.start()
+    try:
+        yield
+    finally:
+        timer.cancel()
+        timer.join()
+        if expired.is_set():
+            raise TimeoutError(f'Database rewrite/I/O exceeded {seconds:g}s; interruption requested')
+
+
 def trial(db, g, rule, gid, variant, order, *, unitary_input=False, certificate_timeout=0,
-          certificate_cache=None, after_rewrite=None):
+          certificate_cache=None, database_guard=None, evidence_directory=None,
+          fixed_point_timeout=0, fixed_point_cache=None):
     """Same immutable input, fresh state, alternating engine order."""
     row = {}
     db.driver.last_query = None
     outputs = {}
     for engine in order:
-        start = time.perf_counter()
         if engine == 'db':
-            load(db, g, gid)
-            loaded = time.perf_counter()
-            db.driver.submissions = 0
-            reduce_database(db, rule, gid, variant)
-            reduced = time.perf_counter()
-            row['queries'] = db.driver.submissions
-            outputs[engine] = read(db, gid)
-            row.update(db_import_s=loaded-start, db_rewrite_s=reduced-loaded,
-                       db_export_s=time.perf_counter()-reduced)
-            row['db_total_s'] = sum(row[k] for k in ('db_import_s', 'db_rewrite_s', 'db_export_s'))
+            with database_guard() if database_guard else nullcontext():
+                start = time.perf_counter()
+                load(db, g, gid)
+                loaded = time.perf_counter()
+                db.driver.submissions = 0
+                reduce_database(db, rule, gid, variant)
+                reduced = time.perf_counter()
+                row['queries'] = db.driver.submissions
+                outputs[engine] = read(db, gid)
+                row.update(db_import_s=loaded-start, db_rewrite_s=reduced-loaded,
+                           db_export_s=time.perf_counter()-reduced)
+                row['db_total_s'] = sum(row[k] for k in ('db_import_s', 'db_rewrite_s', 'db_export_s'))
         else:
+            start = time.perf_counter()
             outputs[engine] = g.copy()
             copied = time.perf_counter()
             reference(outputs[engine], rule, time.monotonic()+120)
             row.update(pyzx_rewrite_s=time.perf_counter()-copied,
                        pyzx_total_s=time.perf_counter()-start)
-    if after_rewrite is not None:
-        after_rewrite()
+    if evidence_directory is not None:
+        row['graph_evidence'] = {name: save_graph(evidence_directory, graph)
+                                 for name, graph in dict(original=g, **outputs).items()}
     # Verification is outside every timed region, against the original input.
     row['db_check'] = verify(g, outputs['db'])
     row['pyzx_check'] = verify(g, outputs['pyzx'])
@@ -129,6 +153,14 @@ def trial(db, g, rule, gid, variant, order, *, unitary_input=False, certificate_
             if key not in cache:
                 cache[key] = certify_unitary_rewrite(g, outputs[engine], certificate_timeout)
             row[engine + '_check'] = dict(cache[key], tensor_check=check)
+    if unitary_input and rule == 'full_reduce' and fixed_point_timeout > 0:
+        cache = fixed_point_cache if fixed_point_cache is not None else {}
+        for engine in ('db', 'pyzx'):
+            key = digest(payload(outputs[engine]))
+            if key not in cache:
+                cache[key] = check_reduction_fixed_point(outputs[engine], fixed_point_timeout,
+                                                        evidence_directory)
+            row[engine + '_fixed_point'] = cache[key]
     row['db_output'] = metrics(outputs['db'])
     row['pyzx_output'] = metrics(outputs['pyzx'])
     row['db_changed'] = payload(g) != payload(outputs['db'])
@@ -199,6 +231,29 @@ def save_report(output, rows, environment, finished=False):
     for r in summary:
         fmt = lambda v: '—' if v is None else f'{v:.3f}x'
         text.append(f"| {r['spec']['family']} n={r['spec']['size']} seed={r['spec']['seed']} | {r['variant']} | {fmt(r['rewrite_speedup'])} | {fmt(r['total_speedup'])} | {r['verified']} |")
+    input_seeds = {}
+    for row in rows:
+        if row['stage'] == 'benchmark':
+            key = (row['spec']['family'], row['spec']['size'], row['input_hash'])
+            input_seeds.setdefault(key, set()).add(row['spec']['seed'])
+    duplicates = [(family, size, sorted(seeds)) for (family, size, _), seeds in input_seeds.items()
+                  if len(seeds) > 1]
+    if duplicates:
+        text += ['', '## Duplicate seed inputs', '',
+                 'These seed settings generate identical input graphs; they are repeated measurements, not independent workloads.', '']
+        text += [f'- {family} n={size}: seeds {seeds}' for family, size, seeds in duplicates]
+    audits = {}
+    for engine in ('db', 'pyzx'):
+        checks = {r['graph_evidence'][engine]: r[engine + '_fixed_point'] for r in rows
+                  if engine + '_fixed_point' in r and 'graph_evidence' in r}
+        if checks:
+            audits[engine] = dict(Counter(('changed' if c['structure_changed'] else 'unchanged')
+                                          if c['status'] == 'completed' else 'inconclusive'
+                                          for c in checks.values()))
+    if audits:
+        text += ['', '## Follow-up reference reduction', '',
+                 'Counts below deduplicate exact saved outputs. This untimed structural check is separate from semantic equivalence.', '']
+        text += [f'- {engine}: {counts}' for engine, counts in audits.items()]
     text += ['', '## Failures and unresolved evidence', '']
     for r in rows:
         if r['status'] in ('failed', 'error'):
@@ -222,7 +277,8 @@ def save_report(output, rows, environment, finished=False):
              'follows from a timeout or an inconclusive check. Raw observations, input hashes, versions and source hashes '
              'are saved beside this report. Historical summaries are separate and are not evidence for this revision.', '',
              'Known limitations: database scalar tracking, legacy JSON import/export, and standalone '
-             'supplementarity preconditions remain audit concerns. See ../../evaluation/audit-history.md.']
+             'supplementarity preconditions remain audit concerns. See '
+             f'[audit history]({Path(os.path.relpath(ROOT / "evaluation" / "audit-history.md", output)).as_posix()}).']
     (output/'REPORT.md').write_text('\n'.join(text)+'\n', encoding='utf-8')
 
 
@@ -241,6 +297,8 @@ def main():
                         help='Random circuit depth per qubit (layered circuits use two layers)')
     parser.add_argument('--certificate-timeout', type=float, default=0,
                         help='Optional seconds per cached algebraic proof for circuit benchmark outputs; 0 disables')
+    parser.add_argument('--fixed-point-timeout', type=float, default=0,
+                        help='Optional seconds per cached follow-up PyZX reduction on circuit outputs; 0 disables')
     parser.add_argument('--resume', action='store_true', help='Continue an existing run; retain failures and skip finished cells')
     parser.add_argument('--restart-container', help='Dedicated Docker container to restart after database loss; failures remain recorded')
     parser.add_argument('--trial-timeout', type=float, default=120,
@@ -249,6 +307,8 @@ def main():
     repetitions = args.repetitions if args.repetitions is not None else (1 if args.quick else 3)
     if repetitions < 1:
         parser.error('--repetitions must be positive')
+    if args.fixed_point_timeout < 0:
+        parser.error('--fixed-point-timeout must be nonnegative')
     if args.certificate_timeout < 0:
         parser.error('--certificate-timeout must be nonnegative')
     if args.trial_timeout <= 0:
@@ -275,6 +335,7 @@ def main():
                                    seeds=args.seeds, depth_factor=args.depth_factor),
                restart_container=args.restart_container,
                trial_timeout_s=args.trial_timeout, certificate_timeout_s=args.certificate_timeout,
+               fixed_point_timeout_s=args.fixed_point_timeout,
                source_hashes={str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
                               for p in [ROOT/'evaluate.py', *sorted((ROOT/'evaluation').glob('*.py')),
                                         *sorted((ROOT/'zxdb').glob('*.py')), *sorted((ROOT/'tests').glob('*.py')),
@@ -292,6 +353,8 @@ def main():
             parser.error('Resume configuration differs: benchmark_grid')
         if previous.get('certificate_timeout_s', 0) != env['certificate_timeout_s']:
             parser.error('Resume configuration differs: certificate_timeout_s')
+        if previous.get('fixed_point_timeout_s', 0) != env['fixed_point_timeout_s']:
+            parser.error('Resume configuration differs: fixed_point_timeout_s')
         for name, digest_value in previous['source_hashes'].items():
             if name != 'evaluate.py' and env['source_hashes'].get(name) != digest_value:
                 parser.error(f'Rewrite, oracle or workload source changed: {name}')
@@ -300,6 +363,12 @@ def main():
         attempt = len(history)
         env['attempts'] = history + [dict(started=env['started'], source_hashes=env['source_hashes'])]
     (output/f'runner-attempt-{attempt}.py').write_bytes(Path(__file__).read_bytes())
+    with zipfile.ZipFile(output/f'sources-attempt-{attempt}.zip', 'x', compression=zipfile.ZIP_STORED) as archive:
+        for name, expected in env['source_hashes'].items():
+            data = (ROOT/name).read_bytes()
+            if hashlib.sha256(data).hexdigest() != expected:
+                raise RuntimeError(f'Source changed during startup: {name}')
+            archive.writestr(Path(name).as_posix(), data)
     def record(row):
         row['attempt'] = attempt
         rows.append(row)
@@ -335,29 +404,18 @@ def main():
         raise RuntimeError('Database did not recover within 30 connection attempts')
 
     certificate_cache = {}
+    fixed_point_cache = {}
 
     def measured_trial(g, rule, variant, order, unitary_input=False):
-        expired = threading.Event()
         def interrupt_database():
-            expired.set()
-            # The driver timeout is not sufficient for some analytical queries.
+            # Some analytical queries do not honor the driver's query timeout.
             subprocess.run(['docker', 'restart', args.restart_container], timeout=30,
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        timer = threading.Timer(args.trial_timeout, interrupt_database) if args.restart_container else None
-        if timer:
-            timer.start()
-        def stop_watchdog():
-            if timer:
-                timer.cancel()
-                timer.join()
-            if expired.is_set():
-                raise TimeoutError(f'Rewrite/I/O exceeded {args.trial_timeout:g}s; database interrupted')
-        try:
-            return trial(db, g, rule, gid, variant, order, unitary_input=unitary_input,
-                         certificate_timeout=args.certificate_timeout, certificate_cache=certificate_cache,
-                         after_rewrite=stop_watchdog)
-        finally:
-            stop_watchdog()
+        guard = (lambda: database_watchdog(args.trial_timeout, interrupt_database)) if args.restart_container else None
+        return trial(db, g, rule, gid, variant, order, unitary_input=unitary_input,
+                     certificate_timeout=args.certificate_timeout, certificate_cache=certificate_cache,
+                     database_guard=guard, evidence_directory=output/'graphs',
+                     fixed_point_timeout=args.fixed_point_timeout, fixed_point_cache=fixed_point_cache)
     try:
         uri = os.environ.get('ZXDB_URI', 'bolt://localhost:7687')
         auth = (os.environ.get('ZXDB_USER', ''), os.environ.get('ZXDB_PASSWORD', ''))
@@ -369,6 +427,14 @@ def main():
                     raise RuntimeError('Database version changed since the previous attempt')
                 if session.run('MATCH(n) RETURN count(n) AS n').single()['n']:
                     raise RuntimeError('Use an empty dedicated Memgraph instance; no existing data is deleted')
+                # This evaluator requires a dedicated empty instance. Remove
+                # obsolete mutable-type indexes before regressions create graphs.
+                for statement in ('DROP INDEX ON :Node(t)',
+                                  'DROP EDGE INDEX ON :Wire(t)',
+                                  'DROP INDEX ON :_ZXdbPivotWork',
+                                  'DROP INDEX ON :_ZXdbLcompWork'):
+                    session.run(statement).consume()
+                env['indexes_before_run'] = session.run('SHOW INDEX INFO').data()
                 if 'native' in env['variants']:
                     procedures = {r['name'] for r in session.run('CALL mg.procedures() YIELD name RETURN name')}
                     required = {'zxqmcpp.pivot', 'zxqmcpp.lcomp', 'zxqmcpp.gadget',
@@ -378,7 +444,7 @@ def main():
         # Run implementation regressions as part of the same pipeline, saving their output.
         if not any(r['stage'] == 'regressions' for r in rows):
             with (output/'regressions.log').open('w', encoding='utf-8') as log:
-                modules = ['test_evaluation', 'test_graph_isolation', 'test_hopf_normalization',
+                modules = ['test_evaluation', 'test_evidence', 'test_graph_isolation', 'test_hopf_normalization',
                            'test_pivot_materialization', 'test_gadget_pivot_batch',
                            'test_boundary_pivot_batch', 'test_reduction_optimizations']
                 if 'native' in env['variants']:

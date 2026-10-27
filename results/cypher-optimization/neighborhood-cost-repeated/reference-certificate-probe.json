@@ -1,0 +1,17 @@
+{
+  "method": "Trusted PyZX full_reduce maps the hash-checked known-unitary original to the recorded reference; certify reference-adjoint composed with database output as nonzero ordered identity",
+  "case": "9f0326852fc2e119",
+  "graph_evidence": {
+    "original": "7926f03a1998e793bdb1d6e29aa5af71b53535c612218f996896fa315b87bf77",
+    "db": "cdacf844bd25be05e78882d0823e0a8ac7e30e7608e2d4eb60cc135c795419fb",
+    "pyzx": "b4f3fc9df1b782721afdf20838ba74dc3ad8f1510c3ef2cb3fed74d34041e4a2"
+  },
+  "certificate": {
+    "status": "verified",
+    "reason": "PyZX identity certificate for a known unitary circuit",
+    "evidence": "algebraic_identity",
+    "scalar": "{\"power2\": -16180, \"phase\": \"1\"}"
+  },
+  "elapsed_s": 17.38578800000687,
+  "audit_source": "\"\"\"Untimed transitive certificate using the recorded trusted PyZX reduction.\"\"\"\nimport json\nfrom pathlib import Path\nimport sys\nimport time\nsys.path.insert(0, str(Path.cwd()))\nfrom evaluation.core import certify_unitary_rewrite\nfrom evaluation.evidence import read_graph, save_graph, _ordered_audit_graph\nfrom evaluation.workloads import build\n\n\ndef main():\n    root = Path(sys.argv[1])\n    rows = [json.loads(x) for x in (root/'observations.jsonl').read_text().splitlines()]\n    row = next(r for r in rows if r['stage'] == 'benchmark' and not r['warmup'])\n    assert row['spec']['family'] == 'random_clifford'\n    keys = row['graph_evidence']\n    original = build(row['spec'])\n    assert save_graph(root/'graphs', original) == keys['original']\n    reference = _ordered_audit_graph(read_graph(root/'graphs', keys['pyzx']))\n    result = _ordered_audit_graph(read_graph(root/'graphs', keys['db']))\n    assert save_graph(root/'graphs', reference) == keys['pyzx']\n    assert save_graph(root/'graphs', result) == keys['db']\n    start = time.perf_counter()\n    certificate = certify_unitary_rewrite(reference, result, 120)\n    report = {'method': 'Trusted PyZX full_reduce maps the hash-checked known-unitary original to the recorded reference; certify reference-adjoint composed with database output as nonzero ordered identity',\n              'case': row['case'], 'graph_evidence': keys,\n              'certificate': certificate, 'elapsed_s': time.perf_counter()-start,\n              'audit_source': Path(__file__).read_text()}\n    (root/'reference-certificate-probe.json').write_text(json.dumps(report, indent=2))\n    print(json.dumps(report['certificate']), flush=True)\n\n\nif __name__ == '__main__':\n    main()\n"
+}

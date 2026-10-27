@@ -3,6 +3,7 @@ from fractions import Fraction
 from itertools import product
 from pathlib import Path
 from tempfile import TemporaryDirectory
+import os
 import unittest
 import uuid
 
@@ -42,9 +43,11 @@ def parallel_pair(colors, simple, hadamard):
     return g
 
 
+@unittest.skipUnless(os.environ.get('ZXDB_LIVE') == '1', 'Opt-in Memgraph checks')
 class TestHopfNormalization(unittest.TestCase):
     def setUp(self):
-        self.db = ZXdb()
+        self.db = ZXdb(uri=os.environ.get('ZXDB_URI', 'bolt://localhost:7687'),
+                       user=os.environ.get('ZXDB_USER', ''), password=os.environ.get('ZXDB_PASSWORD', ''))
         self.gid = 'hopf_' + uuid.uuid4().hex
         self.foreign = self.gid + '_foreign'
         self.directory = TemporaryDirectory()

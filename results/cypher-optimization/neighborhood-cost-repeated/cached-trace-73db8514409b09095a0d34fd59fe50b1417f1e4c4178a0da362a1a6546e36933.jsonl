@@ -1,0 +1,1960 @@
+{"pass_name": "spider_simp", "event": "start", "vertices": 1395, "edges": 87359}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1282, "edges": 85598, "seconds": 0.5847713999974076}
+{"pass_name": "id_simp", "event": "start", "vertices": 1282, "edges": 85598}
+{"pass_name": "id_simp", "event": "end", "vertices": 1270, "edges": 85586, "seconds": 0.02403269999922486}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1270, "edges": 85586}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1258, "edges": 85028, "seconds": 0.5272669000041788}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1258, "edges": 85028}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1229, "edges": 119306, "seconds": 6.5972241000054055}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1229, "edges": 119306}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1226, "edges": 108241, "seconds": 0.42184939999424387}
+{"pass_name": "id_simp", "event": "start", "vertices": 1226, "edges": 108241}
+{"pass_name": "id_simp", "event": "end", "vertices": 1219, "edges": 108230, "seconds": 0.03137730000162264}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1219, "edges": 108230}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1212, "edges": 104409, "seconds": 0.6054124000002048}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1212, "edges": 104409}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1207, "edges": 102718, "seconds": 1.1242717999994056}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1207, "edges": 102718}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1207, "edges": 102718, "seconds": 0.030438100002356805}
+{"pass_name": "id_simp", "event": "start", "vertices": 1207, "edges": 102718}
+{"pass_name": "id_simp", "event": "end", "vertices": 1199, "edges": 102707, "seconds": 0.02888630000234116}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1199, "edges": 102707}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1191, "edges": 99243, "seconds": 0.5771641000028467}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1191, "edges": 99243}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1189, "edges": 99186, "seconds": 0.7603280999974231}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1189, "edges": 99186}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1189, "edges": 99186, "seconds": 0.028172399994218722}
+{"pass_name": "id_simp", "event": "start", "vertices": 1189, "edges": 99186}
+{"pass_name": "id_simp", "event": "end", "vertices": 1184, "edges": 99180, "seconds": 0.027934400000958703}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1184, "edges": 99180}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1179, "edges": 97745, "seconds": 0.537015000001702}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1179, "edges": 97745}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1179, "edges": 97745, "seconds": 0.40177309999853605}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1179, "edges": 97745}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1179, "edges": 97745, "seconds": 0.029211800007033162}
+{"pass_name": "id_simp", "event": "start", "vertices": 1179, "edges": 97745}
+{"pass_name": "id_simp", "event": "end", "vertices": 1178, "edges": 97744, "seconds": 0.026320700002543163}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1178, "edges": 97744}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1177, "edges": 97743, "seconds": 0.5443978000039351}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1177, "edges": 97743}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1177, "edges": 97743, "seconds": 0.42546299999958137}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1177, "edges": 97743}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1177, "edges": 97743, "seconds": 0.029692500000237487}
+{"pass_name": "id_simp", "event": "start", "vertices": 1177, "edges": 97743}
+{"pass_name": "id_simp", "event": "end", "vertices": 1177, "edges": 97743, "seconds": 0.03213109999342123}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1177, "edges": 97743}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1177, "edges": 97743, "seconds": 0.28244180000183405}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1177, "edges": 97743}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1177, "edges": 97743, "seconds": 0.35387599999376107}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1177, "edges": 97743}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1177, "edges": 97743, "seconds": 0.02844030000414932}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1177, "edges": 97743}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1177, "edges": 94026, "seconds": 0.8262857000008808}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1177, "edges": 94026}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1177, "edges": 94026, "seconds": 0.2933234000010998}
+{"pass_name": "id_simp", "event": "start", "vertices": 1177, "edges": 94026}
+{"pass_name": "id_simp", "event": "end", "vertices": 1176, "edges": 94025, "seconds": 0.03180570000404259}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1176, "edges": 94025}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1175, "edges": 93680, "seconds": 0.5274834000010742}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1175, "edges": 93680}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1175, "edges": 93680, "seconds": 0.35215400000015507}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1175, "edges": 93680}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1173, "edges": 93200, "seconds": 0.30787409999902593}
+{"pass_name": "id_simp", "event": "start", "vertices": 1173, "edges": 93200}
+{"pass_name": "id_simp", "event": "end", "vertices": 1173, "edges": 93200, "seconds": 0.03133900000102585}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1173, "edges": 93200}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1173, "edges": 93200, "seconds": 0.2871090000044205}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1173, "edges": 93200}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1173, "edges": 93200, "seconds": 0.36436569999932544}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1173, "edges": 93200}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1173, "edges": 93200, "seconds": 0.03340649999881862}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1173, "edges": 93200}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1174, "edges": 93741, "seconds": 0.12764330000209156}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1174, "edges": 93741}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1174, "edges": 93741, "seconds": 0.2755825999993249}
+{"pass_name": "id_simp", "event": "start", "vertices": 1174, "edges": 93741}
+{"pass_name": "id_simp", "event": "end", "vertices": 1174, "edges": 93741, "seconds": 0.030452500002866145}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1174, "edges": 93741}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1174, "edges": 93741, "seconds": 0.2840388000040548}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1174, "edges": 93741}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1174, "edges": 93741, "seconds": 0.3598416000022553}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1174, "edges": 93741}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1174, "edges": 93741, "seconds": 0.03254459999880055}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1174, "edges": 93741}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1175, "edges": 94609, "seconds": 0.1471968999976525}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1175, "edges": 94609}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1175, "edges": 94609, "seconds": 0.27454710000165505}
+{"pass_name": "id_simp", "event": "start", "vertices": 1175, "edges": 94609}
+{"pass_name": "id_simp", "event": "end", "vertices": 1175, "edges": 94609, "seconds": 0.029632600002514664}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1175, "edges": 94609}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1175, "edges": 94609, "seconds": 0.2904374999998254}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1175, "edges": 94609}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1175, "edges": 94609, "seconds": 0.3644955000054324}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1175, "edges": 94609}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1175, "edges": 94609, "seconds": 0.03108119999524206}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1175, "edges": 94609}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1176, "edges": 95005, "seconds": 0.10289959999499843}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1176, "edges": 95005}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1176, "edges": 95005, "seconds": 0.28322060000209603}
+{"pass_name": "id_simp", "event": "start", "vertices": 1176, "edges": 95005}
+{"pass_name": "id_simp", "event": "end", "vertices": 1176, "edges": 95005, "seconds": 0.030377400005818345}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1176, "edges": 95005}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1176, "edges": 95005, "seconds": 0.2846452000012505}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1176, "edges": 95005}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1176, "edges": 95005, "seconds": 0.3737221999981557}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1176, "edges": 95005}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1176, "edges": 95005, "seconds": 0.03482179999991786}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1176, "edges": 95005}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1177, "edges": 94743, "seconds": 0.18892339999729302}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1177, "edges": 94743}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1177, "edges": 94743, "seconds": 0.2784317000041483}
+{"pass_name": "id_simp", "event": "start", "vertices": 1177, "edges": 94743}
+{"pass_name": "id_simp", "event": "end", "vertices": 1177, "edges": 94743, "seconds": 0.030320099998789374}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1177, "edges": 94743}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1177, "edges": 94743, "seconds": 0.2897899999952642}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1177, "edges": 94743}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1177, "edges": 94743, "seconds": 0.35178260000247974}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1177, "edges": 94743}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1177, "edges": 94743, "seconds": 0.032456599998113234}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1177, "edges": 94743}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1178, "edges": 94705, "seconds": 0.35495580000133486}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1178, "edges": 94705}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1178, "edges": 94705, "seconds": 0.3071486000044388}
+{"pass_name": "id_simp", "event": "start", "vertices": 1178, "edges": 94705}
+{"pass_name": "id_simp", "event": "end", "vertices": 1178, "edges": 94705, "seconds": 0.02916410000034375}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1178, "edges": 94705}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1178, "edges": 94705, "seconds": 0.27067779999924824}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1178, "edges": 94705}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1178, "edges": 94705, "seconds": 0.36753350000071805}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1178, "edges": 94705}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1178, "edges": 94705, "seconds": 0.04738309999811463}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1178, "edges": 94705}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1179, "edges": 94609, "seconds": 0.38901809999515535}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1179, "edges": 94609}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1179, "edges": 94609, "seconds": 0.2846685000040452}
+{"pass_name": "id_simp", "event": "start", "vertices": 1179, "edges": 94609}
+{"pass_name": "id_simp", "event": "end", "vertices": 1179, "edges": 94609, "seconds": 0.02937670000392245}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1179, "edges": 94609}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1179, "edges": 94609, "seconds": 0.27874570000130916}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1179, "edges": 94609}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1179, "edges": 94609, "seconds": 0.3534312999981921}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1179, "edges": 94609}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1179, "edges": 94609, "seconds": 0.03826249999838183}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1179, "edges": 94609}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1179, "edges": 94609, "seconds": 0.37803490000078455}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1179, "edges": 94609}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1179, "edges": 94609, "seconds": 0.03225310000561876}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1179, "edges": 94609}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1179, "edges": 94609, "seconds": 0.29439999999885913}
+{"pass_name": "id_simp", "event": "start", "vertices": 1179, "edges": 94609}
+{"pass_name": "id_simp", "event": "end", "vertices": 1179, "edges": 94609, "seconds": 0.030748699995456263}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1179, "edges": 94609}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1179, "edges": 94609, "seconds": 0.28179979999549687}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1179, "edges": 94609}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1179, "edges": 94609, "seconds": 0.3539110999990953}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1179, "edges": 94609}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1179, "edges": 94609, "seconds": 0.03150179999647662}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1179, "edges": 94609}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1179, "edges": 94609, "seconds": 0.030337299998791423}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1179, "edges": 94609}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1179, "edges": 94609, "seconds": 2.588365600000543}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1179, "edges": 94609}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1179, "edges": 94122, "seconds": 0.6459762000013143}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1179, "edges": 94122}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1179, "edges": 94122, "seconds": 0.2900794000015594}
+{"pass_name": "id_simp", "event": "start", "vertices": 1179, "edges": 94122}
+{"pass_name": "id_simp", "event": "end", "vertices": 1179, "edges": 94122, "seconds": 0.03305890000046929}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1179, "edges": 94122}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1179, "edges": 94122, "seconds": 0.2874472999974387}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1179, "edges": 94122}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1179, "edges": 94122, "seconds": 0.3603573000000324}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1179, "edges": 94122}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1179, "edges": 94122, "seconds": 0.037684899994928855}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1179, "edges": 94122}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1179, "edges": 94122, "seconds": 0.4020770999995875}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1179, "edges": 94122}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1179, "edges": 94122, "seconds": 0.03665550000005169}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1179, "edges": 94122}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1179, "edges": 94122, "seconds": 0.2961059999943245}
+{"pass_name": "id_simp", "event": "start", "vertices": 1179, "edges": 94122}
+{"pass_name": "id_simp", "event": "end", "vertices": 1179, "edges": 94122, "seconds": 0.03336919999856036}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1179, "edges": 94122}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1179, "edges": 94122, "seconds": 0.2836167000059504}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1179, "edges": 94122}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1179, "edges": 94122, "seconds": 0.3664630999992369}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1179, "edges": 94122}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1179, "edges": 94122, "seconds": 0.03610659999685595}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1179, "edges": 94122}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1179, "edges": 94122, "seconds": 0.03401940000185277}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1179, "edges": 94122}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1179, "edges": 94122, "seconds": 2.5616944000066724}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1179, "edges": 94122}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1179, "edges": 91301, "seconds": 0.8091744999983348}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1179, "edges": 91301}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1179, "edges": 91301, "seconds": 0.2688563999981852}
+{"pass_name": "id_simp", "event": "start", "vertices": 1179, "edges": 91301}
+{"pass_name": "id_simp", "event": "end", "vertices": 1178, "edges": 91299, "seconds": 0.03456490000098711}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1178, "edges": 91299}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1177, "edges": 90612, "seconds": 0.521561000001384}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1177, "edges": 90612}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1177, "edges": 90612, "seconds": 0.3546972999974969}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1177, "edges": 90612}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1177, "edges": 90612, "seconds": 0.034394000002066605}
+{"pass_name": "id_simp", "event": "start", "vertices": 1177, "edges": 90612}
+{"pass_name": "id_simp", "event": "end", "vertices": 1177, "edges": 90612, "seconds": 0.03203170000051614}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1177, "edges": 90612}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1177, "edges": 90612, "seconds": 0.2641243999969447}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1177, "edges": 90612}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1177, "edges": 90612, "seconds": 0.3442764000064926}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1177, "edges": 90612}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1177, "edges": 90612, "seconds": 0.03358420000586193}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1177, "edges": 90612}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1177, "edges": 90612, "seconds": 0.3229734999986249}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1177, "edges": 90612}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1177, "edges": 90612, "seconds": 0.035414999998465646}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1177, "edges": 90612}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1177, "edges": 90612, "seconds": 0.263600199999928}
+{"pass_name": "id_simp", "event": "start", "vertices": 1177, "edges": 90612}
+{"pass_name": "id_simp", "event": "end", "vertices": 1177, "edges": 90612, "seconds": 0.03105399999913061}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1177, "edges": 90612}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1177, "edges": 90612, "seconds": 0.2803095999988727}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1177, "edges": 90612}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1177, "edges": 90612, "seconds": 0.3389429000017117}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1177, "edges": 90612}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1177, "edges": 90612, "seconds": 0.035332700004801154}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1177, "edges": 90612}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1177, "edges": 90612, "seconds": 0.03662520000216318}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1177, "edges": 90612}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1177, "edges": 90612, "seconds": 2.3765480000001844}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1177, "edges": 90612}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1177, "edges": 87918, "seconds": 0.6314517999999225}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1177, "edges": 87918}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1177, "edges": 87918, "seconds": 0.25686190000124043}
+{"pass_name": "id_simp", "event": "start", "vertices": 1177, "edges": 87918}
+{"pass_name": "id_simp", "event": "end", "vertices": 1175, "edges": 87915, "seconds": 0.03167199999734294}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1175, "edges": 87915}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1173, "edges": 86783, "seconds": 0.48710879999998724}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1173, "edges": 86783}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1173, "edges": 86783, "seconds": 0.351363499998115}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1173, "edges": 86783}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1173, "edges": 86783, "seconds": 0.034824700000172015}
+{"pass_name": "id_simp", "event": "start", "vertices": 1173, "edges": 86783}
+{"pass_name": "id_simp", "event": "end", "vertices": 1173, "edges": 86783, "seconds": 0.03254909999668598}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1173, "edges": 86783}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1173, "edges": 86783, "seconds": 0.2723236999954679}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1173, "edges": 86783}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1173, "edges": 86783, "seconds": 0.3414956000051461}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1173, "edges": 86783}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1173, "edges": 86783, "seconds": 0.046745599996938836}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1173, "edges": 86783}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1173, "edges": 86783, "seconds": 0.32035959999484476}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1173, "edges": 86783}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1173, "edges": 86783, "seconds": 0.03394280000065919}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1173, "edges": 86783}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1173, "edges": 86783, "seconds": 0.2669395999982953}
+{"pass_name": "id_simp", "event": "start", "vertices": 1173, "edges": 86783}
+{"pass_name": "id_simp", "event": "end", "vertices": 1173, "edges": 86783, "seconds": 0.030278999998699874}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1173, "edges": 86783}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1173, "edges": 86783, "seconds": 0.2779408999995212}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1173, "edges": 86783}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1173, "edges": 86783, "seconds": 0.3299976999987848}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1173, "edges": 86783}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1173, "edges": 86783, "seconds": 0.03424240000458667}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1173, "edges": 86783}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1173, "edges": 86783, "seconds": 0.03230790000088746}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1173, "edges": 86783}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1173, "edges": 86783, "seconds": 2.237805999997363}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1173, "edges": 86783}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1173, "edges": 87148, "seconds": 0.6259216999969794}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1173, "edges": 87148}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1173, "edges": 87148, "seconds": 0.26050349999422906}
+{"pass_name": "id_simp", "event": "start", "vertices": 1173, "edges": 87148}
+{"pass_name": "id_simp", "event": "end", "vertices": 1171, "edges": 87146, "seconds": 0.0328148999979021}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1171, "edges": 87146}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1169, "edges": 86088, "seconds": 0.5048514000009163}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1169, "edges": 86088}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1169, "edges": 86088, "seconds": 0.338812499998312}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1169, "edges": 86088}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1167, "edges": 86445, "seconds": 0.2611590000014985}
+{"pass_name": "id_simp", "event": "start", "vertices": 1167, "edges": 86445}
+{"pass_name": "id_simp", "event": "end", "vertices": 1166, "edges": 86443, "seconds": 0.031104499998036772}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1166, "edges": 86443}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1165, "edges": 85876, "seconds": 0.48942189999797847}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1165, "edges": 85876}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1165, "edges": 85876, "seconds": 0.36804750000010245}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1165, "edges": 85876}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1165, "edges": 85876, "seconds": 0.032272000004013535}
+{"pass_name": "id_simp", "event": "start", "vertices": 1165, "edges": 85876}
+{"pass_name": "id_simp", "event": "end", "vertices": 1165, "edges": 85876, "seconds": 0.03658179999911226}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1165, "edges": 85876}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1165, "edges": 85876, "seconds": 0.2774665000033565}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1165, "edges": 85876}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1165, "edges": 85876, "seconds": 0.33285470000555506}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1165, "edges": 85876}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1165, "edges": 85876, "seconds": 0.03201629999966826}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1165, "edges": 85876}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1165, "edges": 85876, "seconds": 0.2998742000054335}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1165, "edges": 85876}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1165, "edges": 85876, "seconds": 0.03397499999846332}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1165, "edges": 85876}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1165, "edges": 85876, "seconds": 0.25966459999472136}
+{"pass_name": "id_simp", "event": "start", "vertices": 1165, "edges": 85876}
+{"pass_name": "id_simp", "event": "end", "vertices": 1165, "edges": 85876, "seconds": 0.028294600000663195}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1165, "edges": 85876}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1165, "edges": 85876, "seconds": 0.25687589999870397}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1165, "edges": 85876}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1165, "edges": 85876, "seconds": 0.31184729999949923}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1165, "edges": 85876}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1165, "edges": 85876, "seconds": 0.030600700003560632}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1165, "edges": 85876}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1165, "edges": 85876, "seconds": 0.028705600001558196}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1165, "edges": 85876}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1165, "edges": 85876, "seconds": 2.1035867999962647}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1165, "edges": 85876}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1165, "edges": 82398, "seconds": 0.5914923999953317}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1165, "edges": 82398}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1165, "edges": 82398, "seconds": 0.2547409999970114}
+{"pass_name": "id_simp", "event": "start", "vertices": 1165, "edges": 82398}
+{"pass_name": "id_simp", "event": "end", "vertices": 1165, "edges": 82398, "seconds": 0.030191699996066745}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1165, "edges": 82398}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1165, "edges": 82398, "seconds": 0.241672699994524}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1165, "edges": 82398}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1165, "edges": 82398, "seconds": 0.3298328000018955}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1165, "edges": 82398}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1165, "edges": 82398, "seconds": 0.03154180000274209}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1165, "edges": 82398}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1165, "edges": 82398, "seconds": 0.24795399999857182}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1165, "edges": 82398}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1165, "edges": 82398, "seconds": 0.03268979999847943}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1165, "edges": 82398}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1165, "edges": 82398, "seconds": 0.2472535000051721}
+{"pass_name": "id_simp", "event": "start", "vertices": 1165, "edges": 82398}
+{"pass_name": "id_simp", "event": "end", "vertices": 1165, "edges": 82398, "seconds": 0.02830280000489438}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1165, "edges": 82398}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1165, "edges": 82398, "seconds": 0.2444245000006049}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1165, "edges": 82398}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1165, "edges": 82398, "seconds": 0.32415429999673506}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1165, "edges": 82398}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1165, "edges": 82398, "seconds": 0.03210169999510981}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1165, "edges": 82398}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1165, "edges": 82398, "seconds": 0.03000150000298163}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1165, "edges": 82398}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1165, "edges": 82398, "seconds": 1.9935547999994014}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1165, "edges": 82398}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1165, "edges": 76881, "seconds": 0.4919718000019202}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1165, "edges": 76881}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1165, "edges": 76881, "seconds": 0.2291927000042051}
+{"pass_name": "id_simp", "event": "start", "vertices": 1165, "edges": 76881}
+{"pass_name": "id_simp", "event": "end", "vertices": 1165, "edges": 76881, "seconds": 0.03114350000396371}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1165, "edges": 76881}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1165, "edges": 76881, "seconds": 0.2225377000067965}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1165, "edges": 76881}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1165, "edges": 76881, "seconds": 0.3033740000028047}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1165, "edges": 76881}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1165, "edges": 76881, "seconds": 0.029882000002544373}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1165, "edges": 76881}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1165, "edges": 76881, "seconds": 0.16606099999626167}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1165, "edges": 76881}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1165, "edges": 76881, "seconds": 0.03102010000293376}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1165, "edges": 76881}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1165, "edges": 76881, "seconds": 0.22920199999498436}
+{"pass_name": "id_simp", "event": "start", "vertices": 1165, "edges": 76881}
+{"pass_name": "id_simp", "event": "end", "vertices": 1165, "edges": 76881, "seconds": 0.0383564999938244}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1165, "edges": 76881}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1165, "edges": 76881, "seconds": 0.23535760000231676}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1165, "edges": 76881}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1165, "edges": 76881, "seconds": 0.3100903999948059}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1165, "edges": 76881}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1165, "edges": 76881, "seconds": 0.03531020000082208}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1165, "edges": 76881}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1165, "edges": 76881, "seconds": 0.03210199999739416}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1165, "edges": 76881}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1165, "edges": 76881, "seconds": 1.8959016000007978}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1165, "edges": 76881}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1165, "edges": 73918, "seconds": 0.4631535000007716}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1165, "edges": 73918}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1165, "edges": 73918, "seconds": 0.24951159999909578}
+{"pass_name": "id_simp", "event": "start", "vertices": 1165, "edges": 73918}
+{"pass_name": "id_simp", "event": "end", "vertices": 1163, "edges": 73916, "seconds": 0.028777700004866347}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1163, "edges": 73916}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.4365062999931979}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.2873357999997097}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.03401710000616731}
+{"pass_name": "id_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "id_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.029738800003542565}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.25772480000159703}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.2997469000038109}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.029671600001165643}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.18051810000179103}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.03228129999479279}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.25973589999921387}
+{"pass_name": "id_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "id_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.030062600002565887}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.24060459999600425}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.29552029999467777}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.03554559999611229}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.028324300001258962}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 1.7314320000004955}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.5172174000035739}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.2114302999980282}
+{"pass_name": "id_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "id_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.025717599994095508}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.22077469999931054}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.2841662000064389}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.02989009999873815}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.1666553000031854}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.02920560000347905}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.22195459999784362}
+{"pass_name": "id_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "id_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.025874999999359716}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.21979650000139372}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.30450240000209305}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.029702699997869786}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 0.026888100001087878}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1161, "edges": 72632, "seconds": 1.6547250999938115}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1161, "edges": 72632}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1161, "edges": 69673, "seconds": 0.3491347000017413}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1161, "edges": 69673}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1161, "edges": 69673, "seconds": 0.2090632999970694}
+{"pass_name": "id_simp", "event": "start", "vertices": 1161, "edges": 69673}
+{"pass_name": "id_simp", "event": "end", "vertices": 1159, "edges": 69670, "seconds": 0.03079009999783011}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1159, "edges": 69670}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1157, "edges": 69128, "seconds": 0.41821340000024065}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1157, "edges": 69128}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1157, "edges": 69128, "seconds": 0.2788217999986955}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1157, "edges": 69128}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1155, "edges": 68144, "seconds": 0.36259419999987585}
+{"pass_name": "id_simp", "event": "start", "vertices": 1155, "edges": 68144}
+{"pass_name": "id_simp", "event": "end", "vertices": 1155, "edges": 68144, "seconds": 0.023249700003361795}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1155, "edges": 68144}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1155, "edges": 68144, "seconds": 0.2321580999996513}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1155, "edges": 68144}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1155, "edges": 68144, "seconds": 0.28247770000598393}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1155, "edges": 68144}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1155, "edges": 68144, "seconds": 0.026148299999476876}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1155, "edges": 68144}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1156, "edges": 68055, "seconds": 0.09534180000628112}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1156, "edges": 68055}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1156, "edges": 68055, "seconds": 0.2097423000013805}
+{"pass_name": "id_simp", "event": "start", "vertices": 1156, "edges": 68055}
+{"pass_name": "id_simp", "event": "end", "vertices": 1156, "edges": 68055, "seconds": 0.027052900004491676}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1156, "edges": 68055}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1156, "edges": 68055, "seconds": 0.2046794000052614}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1156, "edges": 68055}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1156, "edges": 68055, "seconds": 0.3020771000010427}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1156, "edges": 68055}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1156, "edges": 68055, "seconds": 0.0301225999937742}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1156, "edges": 68055}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1156, "edges": 68055, "seconds": 0.11151480000262382}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1156, "edges": 68055}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1156, "edges": 68055, "seconds": 0.025480399999651127}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1156, "edges": 68055}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1156, "edges": 68055, "seconds": 0.24336520000360906}
+{"pass_name": "id_simp", "event": "start", "vertices": 1156, "edges": 68055}
+{"pass_name": "id_simp", "event": "end", "vertices": 1156, "edges": 68055, "seconds": 0.022933799999009352}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1156, "edges": 68055}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1156, "edges": 68055, "seconds": 0.20964870000170777}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1156, "edges": 68055}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1156, "edges": 68055, "seconds": 0.27914819999568863}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1156, "edges": 68055}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1156, "edges": 68055, "seconds": 0.026363999997556675}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1156, "edges": 68055}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1156, "edges": 68055, "seconds": 0.023447799998393748}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1156, "edges": 68055}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1156, "edges": 68055, "seconds": 1.5395411999998032}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1156, "edges": 68055}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1156, "edges": 67356, "seconds": 0.3493674999990617}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1156, "edges": 67356}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1156, "edges": 67356, "seconds": 0.2295494999998482}
+{"pass_name": "id_simp", "event": "start", "vertices": 1156, "edges": 67356}
+{"pass_name": "id_simp", "event": "end", "vertices": 1155, "edges": 67355, "seconds": 0.02671120000013616}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1155, "edges": 67355}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1154, "edges": 67354, "seconds": 0.38011469999764813}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1154, "edges": 67354}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1154, "edges": 67354, "seconds": 0.28072870000323746}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1154, "edges": 67354}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1152, "edges": 70657, "seconds": 0.3145599999988917}
+{"pass_name": "id_simp", "event": "start", "vertices": 1152, "edges": 70657}
+{"pass_name": "id_simp", "event": "end", "vertices": 1151, "edges": 70656, "seconds": 0.02444620000460418}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1151, "edges": 70656}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1151, "edges": 70656, "seconds": 0.2063175000002957}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1151, "edges": 70656}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1151, "edges": 70656, "seconds": 0.2689918999967631}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1151, "edges": 70656}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1151, "edges": 70656, "seconds": 0.02644979999604402}
+{"pass_name": "id_simp", "event": "start", "vertices": 1151, "edges": 70656}
+{"pass_name": "id_simp", "event": "end", "vertices": 1151, "edges": 70656, "seconds": 0.023721300000033807}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1151, "edges": 70656}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1151, "edges": 70656, "seconds": 0.20491250000486616}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1151, "edges": 70656}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1151, "edges": 70656, "seconds": 0.27079930000036256}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1151, "edges": 70656}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1151, "edges": 70656, "seconds": 0.026838400000997353}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1151, "edges": 70656}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1152, "edges": 66716, "seconds": 0.12325140000029933}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1152, "edges": 66716}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1152, "edges": 66716, "seconds": 0.19357039999886183}
+{"pass_name": "id_simp", "event": "start", "vertices": 1152, "edges": 66716}
+{"pass_name": "id_simp", "event": "end", "vertices": 1152, "edges": 66716, "seconds": 0.02590069999860134}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1152, "edges": 66716}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1152, "edges": 66716, "seconds": 0.193480299996736}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1152, "edges": 66716}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1152, "edges": 66716, "seconds": 0.2647196000034455}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1152, "edges": 66716}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1152, "edges": 66716, "seconds": 0.033815300004789606}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1152, "edges": 66716}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1152, "edges": 66716, "seconds": 0.09558710000419524}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1152, "edges": 66716}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1152, "edges": 66716, "seconds": 0.02547929999855114}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1152, "edges": 66716}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1152, "edges": 66716, "seconds": 0.195572099997662}
+{"pass_name": "id_simp", "event": "start", "vertices": 1152, "edges": 66716}
+{"pass_name": "id_simp", "event": "end", "vertices": 1152, "edges": 66716, "seconds": 0.023020199994789436}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1152, "edges": 66716}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1152, "edges": 66716, "seconds": 0.20941339999990305}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1152, "edges": 66716}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1152, "edges": 66716, "seconds": 0.25826409999717725}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1152, "edges": 66716}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1152, "edges": 66716, "seconds": 0.02441779999935534}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1152, "edges": 66716}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1152, "edges": 66716, "seconds": 0.02220089999900665}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1152, "edges": 66716}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1152, "edges": 66716, "seconds": 1.5328957000019727}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1152, "edges": 66716}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1152, "edges": 63778, "seconds": 0.2798652000055881}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1152, "edges": 63778}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1152, "edges": 63778, "seconds": 0.2253971999962232}
+{"pass_name": "id_simp", "event": "start", "vertices": 1152, "edges": 63778}
+{"pass_name": "id_simp", "event": "end", "vertices": 1152, "edges": 63778, "seconds": 0.025652900003478862}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1152, "edges": 63778}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1152, "edges": 63778, "seconds": 0.20165730000007898}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1152, "edges": 63778}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1152, "edges": 63778, "seconds": 0.26501890000508865}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1152, "edges": 63778}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1152, "edges": 63778, "seconds": 0.025498199996945914}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1152, "edges": 63778}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1152, "edges": 63778, "seconds": 0.08119759999681264}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1152, "edges": 63778}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1152, "edges": 63778, "seconds": 0.026452500002051238}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1152, "edges": 63778}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1152, "edges": 63778, "seconds": 0.19468770000094082}
+{"pass_name": "id_simp", "event": "start", "vertices": 1152, "edges": 63778}
+{"pass_name": "id_simp", "event": "end", "vertices": 1152, "edges": 63778, "seconds": 0.023641699997824617}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1152, "edges": 63778}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1152, "edges": 63778, "seconds": 0.19345619999512564}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1152, "edges": 63778}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1152, "edges": 63778, "seconds": 0.24764200000208803}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1152, "edges": 63778}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1152, "edges": 63778, "seconds": 0.025189899999531917}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1152, "edges": 63778}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1152, "edges": 63778, "seconds": 0.029061900000669993}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1152, "edges": 63778}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1152, "edges": 63778, "seconds": 1.438815400004387}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1152, "edges": 63778}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1152, "edges": 60396, "seconds": 0.36211719999846537}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1152, "edges": 60396}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1152, "edges": 60396, "seconds": 0.211514000002353}
+{"pass_name": "id_simp", "event": "start", "vertices": 1152, "edges": 60396}
+{"pass_name": "id_simp", "event": "end", "vertices": 1149, "edges": 60392, "seconds": 0.02519189999293303}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1149, "edges": 60392}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1146, "edges": 58657, "seconds": 0.3840571999971871}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1146, "edges": 58657}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1146, "edges": 58657, "seconds": 0.24368600000161678}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1146, "edges": 58657}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1146, "edges": 58657, "seconds": 0.029410600000119302}
+{"pass_name": "id_simp", "event": "start", "vertices": 1146, "edges": 58657}
+{"pass_name": "id_simp", "event": "end", "vertices": 1141, "edges": 58650, "seconds": 0.02629519999754848}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1141, "edges": 58650}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1136, "edges": 57549, "seconds": 0.36507200000050943}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1136, "edges": 57549}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1134, "edges": 57567, "seconds": 0.46107820000179345}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1134, "edges": 57567}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1134, "edges": 57567, "seconds": 0.023702699996647425}
+{"pass_name": "id_simp", "event": "start", "vertices": 1134, "edges": 57567}
+{"pass_name": "id_simp", "event": "end", "vertices": 1133, "edges": 57565, "seconds": 0.022013499998138286}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1133, "edges": 57565}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1132, "edges": 56946, "seconds": 0.32475179999892134}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1132, "edges": 56946}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1132, "edges": 56946, "seconds": 0.2349642000044696}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1132, "edges": 56946}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1132, "edges": 56946, "seconds": 0.0250852000026498}
+{"pass_name": "id_simp", "event": "start", "vertices": 1132, "edges": 56946}
+{"pass_name": "id_simp", "event": "end", "vertices": 1132, "edges": 56946, "seconds": 0.02212790000339737}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1132, "edges": 56946}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1132, "edges": 56946, "seconds": 0.18116829999780748}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1132, "edges": 56946}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1132, "edges": 56946, "seconds": 0.22736479999730363}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1132, "edges": 56946}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1132, "edges": 56946, "seconds": 0.025465799997618888}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1132, "edges": 56946}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1132, "edges": 56946, "seconds": 0.0757889000014984}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1132, "edges": 56946}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1132, "edges": 56946, "seconds": 0.022542999999132007}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1132, "edges": 56946}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1132, "edges": 56946, "seconds": 0.170262300001923}
+{"pass_name": "id_simp", "event": "start", "vertices": 1132, "edges": 56946}
+{"pass_name": "id_simp", "event": "end", "vertices": 1132, "edges": 56946, "seconds": 0.020107600001210812}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1132, "edges": 56946}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1132, "edges": 56946, "seconds": 0.16958100000192644}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1132, "edges": 56946}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1132, "edges": 56946, "seconds": 0.23990749999938998}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1132, "edges": 56946}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1132, "edges": 56946, "seconds": 0.023992900001758244}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1132, "edges": 56946}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1132, "edges": 56946, "seconds": 0.02172910000081174}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1132, "edges": 56946}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1132, "edges": 56946, "seconds": 1.181349800004682}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1132, "edges": 56946}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1132, "edges": 58059, "seconds": 0.2613693000021158}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1132, "edges": 58059}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1132, "edges": 58059, "seconds": 0.17705969999951776}
+{"pass_name": "id_simp", "event": "start", "vertices": 1132, "edges": 58059}
+{"pass_name": "id_simp", "event": "end", "vertices": 1132, "edges": 58059, "seconds": 0.02287909999722615}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1132, "edges": 58059}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1132, "edges": 58059, "seconds": 0.17180050000024494}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1132, "edges": 58059}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1132, "edges": 58059, "seconds": 0.28699620000406867}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1132, "edges": 58059}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1132, "edges": 58059, "seconds": 0.024324199999682605}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1132, "edges": 58059}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1132, "edges": 58059, "seconds": 0.08665710000059335}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1132, "edges": 58059}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1132, "edges": 58059, "seconds": 0.022861599994939752}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1132, "edges": 58059}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1132, "edges": 58059, "seconds": 0.16528500000276836}
+{"pass_name": "id_simp", "event": "start", "vertices": 1132, "edges": 58059}
+{"pass_name": "id_simp", "event": "end", "vertices": 1132, "edges": 58059, "seconds": 0.02224009999918053}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1132, "edges": 58059}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1132, "edges": 58059, "seconds": 0.17396130000270205}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1132, "edges": 58059}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1132, "edges": 58059, "seconds": 0.24418270000023767}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1132, "edges": 58059}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1132, "edges": 58059, "seconds": 0.027742800004489254}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1132, "edges": 58059}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1132, "edges": 58059, "seconds": 0.02867849999893224}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1132, "edges": 58059}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1132, "edges": 58059, "seconds": 1.2709694000004674}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1132, "edges": 58059}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1132, "edges": 53536, "seconds": 0.5075718000007328}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1132, "edges": 53536}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1132, "edges": 53536, "seconds": 0.24502019999636104}
+{"pass_name": "id_simp", "event": "start", "vertices": 1132, "edges": 53536}
+{"pass_name": "id_simp", "event": "end", "vertices": 1130, "edges": 53534, "seconds": 0.025652299998910166}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1130, "edges": 53534}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1128, "edges": 53532, "seconds": 0.3871817000035662}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1128, "edges": 53532}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1128, "edges": 53532, "seconds": 0.2509944999983418}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1128, "edges": 53532}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1128, "edges": 53532, "seconds": 0.029684900000575}
+{"pass_name": "id_simp", "event": "start", "vertices": 1128, "edges": 53532}
+{"pass_name": "id_simp", "event": "end", "vertices": 1128, "edges": 53532, "seconds": 0.02517470000020694}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1128, "edges": 53532}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1128, "edges": 53532, "seconds": 0.20312239999475423}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1128, "edges": 53532}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1128, "edges": 53532, "seconds": 0.3110113000002457}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1128, "edges": 53532}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1128, "edges": 53532, "seconds": 0.03032320000056643}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1128, "edges": 53532}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1128, "edges": 53532, "seconds": 0.06309419999888632}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1128, "edges": 53532}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1128, "edges": 53532, "seconds": 0.02345880000211764}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1128, "edges": 53532}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1128, "edges": 53532, "seconds": 0.16342900000017835}
+{"pass_name": "id_simp", "event": "start", "vertices": 1128, "edges": 53532}
+{"pass_name": "id_simp", "event": "end", "vertices": 1128, "edges": 53532, "seconds": 0.024709199999051634}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1128, "edges": 53532}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1128, "edges": 53532, "seconds": 0.19521499999973457}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1128, "edges": 53532}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1128, "edges": 53532, "seconds": 0.27371909999783384}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1128, "edges": 53532}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1128, "edges": 53532, "seconds": 0.025072099997487385}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1128, "edges": 53532}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1128, "edges": 53532, "seconds": 0.023606000002473593}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1128, "edges": 53532}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1128, "edges": 53532, "seconds": 1.0708371000000625}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1128, "edges": 53532}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1128, "edges": 53892, "seconds": 0.3485050999952364}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1128, "edges": 53892}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1128, "edges": 53892, "seconds": 0.18788840000343043}
+{"pass_name": "id_simp", "event": "start", "vertices": 1128, "edges": 53892}
+{"pass_name": "id_simp", "event": "end", "vertices": 1128, "edges": 53892, "seconds": 0.021864100002858322}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1128, "edges": 53892}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1128, "edges": 53892, "seconds": 0.17242289999558125}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1128, "edges": 53892}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1128, "edges": 53892, "seconds": 0.24755089999962365}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1128, "edges": 53892}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1128, "edges": 53892, "seconds": 0.02265829999669222}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1128, "edges": 53892}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1128, "edges": 53892, "seconds": 0.08345830000325805}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1128, "edges": 53892}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1128, "edges": 53892, "seconds": 0.023249300000315998}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1128, "edges": 53892}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1128, "edges": 53892, "seconds": 0.16410089999408228}
+{"pass_name": "id_simp", "event": "start", "vertices": 1128, "edges": 53892}
+{"pass_name": "id_simp", "event": "end", "vertices": 1128, "edges": 53892, "seconds": 0.019707999999809545}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1128, "edges": 53892}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1128, "edges": 53892, "seconds": 0.1621309000038309}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1128, "edges": 53892}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1128, "edges": 53892, "seconds": 0.2164425000009942}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1128, "edges": 53892}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1128, "edges": 53892, "seconds": 0.02337180000176886}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1128, "edges": 53892}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1128, "edges": 53892, "seconds": 0.020815100004256237}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1128, "edges": 53892}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1128, "edges": 53892, "seconds": 1.0415669000067282}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1128, "edges": 53892}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1128, "edges": 50099, "seconds": 0.29123270000127377}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1128, "edges": 50099}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1128, "edges": 50099, "seconds": 0.15392659999633906}
+{"pass_name": "id_simp", "event": "start", "vertices": 1128, "edges": 50099}
+{"pass_name": "id_simp", "event": "end", "vertices": 1128, "edges": 50099, "seconds": 0.017878399994515348}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1128, "edges": 50099}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1128, "edges": 50099, "seconds": 0.1466433999958099}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1128, "edges": 50099}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1128, "edges": 50099, "seconds": 0.20253320000483654}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1128, "edges": 50099}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1128, "edges": 50099, "seconds": 0.020479699996940326}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1128, "edges": 50099}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1128, "edges": 50099, "seconds": 0.045983500000147615}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1128, "edges": 50099}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1128, "edges": 50099, "seconds": 0.020249200002581347}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1128, "edges": 50099}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1128, "edges": 50099, "seconds": 0.1537492999996175}
+{"pass_name": "id_simp", "event": "start", "vertices": 1128, "edges": 50099}
+{"pass_name": "id_simp", "event": "end", "vertices": 1128, "edges": 50099, "seconds": 0.018630999999004416}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1128, "edges": 50099}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1128, "edges": 50099, "seconds": 0.18779470000299625}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1128, "edges": 50099}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1128, "edges": 50099, "seconds": 0.20974800000112737}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1128, "edges": 50099}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1128, "edges": 50099, "seconds": 0.021500800001376774}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1128, "edges": 50099}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1128, "edges": 50099, "seconds": 0.02178460000141058}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1128, "edges": 50099}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1128, "edges": 50099, "seconds": 0.9722331000011764}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1128, "edges": 50099}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1128, "edges": 47866, "seconds": 0.19178859999374254}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1128, "edges": 47866}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1128, "edges": 47866, "seconds": 0.14352329999383073}
+{"pass_name": "id_simp", "event": "start", "vertices": 1128, "edges": 47866}
+{"pass_name": "id_simp", "event": "end", "vertices": 1123, "edges": 47861, "seconds": 0.020627999998396263}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1123, "edges": 47861}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1118, "edges": 47378, "seconds": 0.2817455000040354}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1118, "edges": 47378}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1117, "edges": 47514, "seconds": 0.42086600000038743}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1117, "edges": 47514}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1117, "edges": 47514, "seconds": 0.01892950000183191}
+{"pass_name": "id_simp", "event": "start", "vertices": 1117, "edges": 47514}
+{"pass_name": "id_simp", "event": "end", "vertices": 1117, "edges": 47514, "seconds": 0.01690470000175992}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1117, "edges": 47514}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1117, "edges": 47514, "seconds": 0.1511540999999852}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1117, "edges": 47514}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1117, "edges": 47514, "seconds": 0.22436819999711588}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1117, "edges": 47514}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1117, "edges": 47514, "seconds": 0.021178000002691988}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1117, "edges": 47514}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1117, "edges": 47514, "seconds": 0.04868200000055367}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1117, "edges": 47514}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1117, "edges": 47514, "seconds": 0.02028779999818653}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1117, "edges": 47514}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1117, "edges": 47514, "seconds": 0.14747970000462374}
+{"pass_name": "id_simp", "event": "start", "vertices": 1117, "edges": 47514}
+{"pass_name": "id_simp", "event": "end", "vertices": 1117, "edges": 47514, "seconds": 0.020075600004929584}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1117, "edges": 47514}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1117, "edges": 47514, "seconds": 0.14704469999560388}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1117, "edges": 47514}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1117, "edges": 47514, "seconds": 0.19685349999781465}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1117, "edges": 47514}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1117, "edges": 47514, "seconds": 0.026593599999614526}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1117, "edges": 47514}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1117, "edges": 47514, "seconds": 0.020201899998937733}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1117, "edges": 47514}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1117, "edges": 47514, "seconds": 0.9610331000003498}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1117, "edges": 47514}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1117, "edges": 46803, "seconds": 0.22273719999793684}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1117, "edges": 46803}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1117, "edges": 46803, "seconds": 0.14082479999342468}
+{"pass_name": "id_simp", "event": "start", "vertices": 1117, "edges": 46803}
+{"pass_name": "id_simp", "event": "end", "vertices": 1115, "edges": 46801, "seconds": 0.01760159999685129}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1115, "edges": 46801}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1113, "edges": 46273, "seconds": 0.2652684000058798}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1113, "edges": 46273}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1111, "edges": 45954, "seconds": 0.41797740000038175}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1111, "edges": 45954}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1111, "edges": 45954, "seconds": 0.018171700001403224}
+{"pass_name": "id_simp", "event": "start", "vertices": 1111, "edges": 45954}
+{"pass_name": "id_simp", "event": "end", "vertices": 1111, "edges": 45954, "seconds": 0.01592049999453593}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1111, "edges": 45954}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1111, "edges": 45954, "seconds": 0.14145229999849107}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1111, "edges": 45954}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1111, "edges": 45954, "seconds": 0.18904749999637716}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1111, "edges": 45954}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1111, "edges": 45954, "seconds": 0.01810200000181794}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1111, "edges": 45954}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1111, "edges": 45954, "seconds": 0.04572000000189291}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1111, "edges": 45954}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1111, "edges": 45954, "seconds": 0.01965550000022631}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1111, "edges": 45954}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1111, "edges": 45954, "seconds": 0.143436099999235}
+{"pass_name": "id_simp", "event": "start", "vertices": 1111, "edges": 45954}
+{"pass_name": "id_simp", "event": "end", "vertices": 1111, "edges": 45954, "seconds": 0.01675299999624258}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1111, "edges": 45954}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1111, "edges": 45954, "seconds": 0.14102370000182418}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1111, "edges": 45954}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1111, "edges": 45954, "seconds": 0.18994499999826076}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1111, "edges": 45954}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1111, "edges": 45954, "seconds": 0.01888650000182679}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1111, "edges": 45954}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1111, "edges": 45954, "seconds": 0.01750769999489421}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1111, "edges": 45954}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1111, "edges": 45954, "seconds": 0.8357943000009982}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1111, "edges": 45954}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1111, "edges": 43728, "seconds": 0.19653990000369959}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1111, "edges": 43728}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1111, "edges": 43728, "seconds": 0.13507969999773195}
+{"pass_name": "id_simp", "event": "start", "vertices": 1111, "edges": 43728}
+{"pass_name": "id_simp", "event": "end", "vertices": 1107, "edges": 43724, "seconds": 0.018742300002486445}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1107, "edges": 43724}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1103, "edges": 43720, "seconds": 0.2539061999996193}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1103, "edges": 43720}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1103, "edges": 43720, "seconds": 0.1850468999982695}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1103, "edges": 43720}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1103, "edges": 43720, "seconds": 0.01866860000154702}
+{"pass_name": "id_simp", "event": "start", "vertices": 1103, "edges": 43720}
+{"pass_name": "id_simp", "event": "end", "vertices": 1103, "edges": 43720, "seconds": 0.017496899999969173}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1103, "edges": 43720}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1103, "edges": 43720, "seconds": 0.14225999999325722}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1103, "edges": 43720}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1103, "edges": 43720, "seconds": 0.19202940000104718}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1103, "edges": 43720}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1103, "edges": 43720, "seconds": 0.01970640000217827}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1103, "edges": 43720}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1103, "edges": 43720, "seconds": 0.04958150000311434}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1103, "edges": 43720}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1103, "edges": 43720, "seconds": 0.01938979999977164}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1103, "edges": 43720}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1103, "edges": 43720, "seconds": 0.13396769999962999}
+{"pass_name": "id_simp", "event": "start", "vertices": 1103, "edges": 43720}
+{"pass_name": "id_simp", "event": "end", "vertices": 1103, "edges": 43720, "seconds": 0.01704829999653157}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1103, "edges": 43720}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1103, "edges": 43720, "seconds": 0.13730280000163475}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1103, "edges": 43720}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1103, "edges": 43720, "seconds": 0.18403650000254856}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1103, "edges": 43720}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1103, "edges": 43720, "seconds": 0.01969180000014603}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1103, "edges": 43720}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1103, "edges": 43720, "seconds": 0.017315199998847675}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1103, "edges": 43720}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1103, "edges": 43720, "seconds": 0.8072328999987803}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1103, "edges": 43720}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1103, "edges": 45540, "seconds": 0.2086018000045442}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1103, "edges": 45540}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1103, "edges": 45540, "seconds": 0.13516069999604952}
+{"pass_name": "id_simp", "event": "start", "vertices": 1103, "edges": 45540}
+{"pass_name": "id_simp", "event": "end", "vertices": 1103, "edges": 45540, "seconds": 0.01669910000055097}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1103, "edges": 45540}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1103, "edges": 45540, "seconds": 0.1358602999971481}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1103, "edges": 45540}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1103, "edges": 45540, "seconds": 0.20037949999823468}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1103, "edges": 45540}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1103, "edges": 45540, "seconds": 0.026002799997513648}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1103, "edges": 45540}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1103, "edges": 45540, "seconds": 0.046840199996950105}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1103, "edges": 45540}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1103, "edges": 45540, "seconds": 0.019189699996786658}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1103, "edges": 45540}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1103, "edges": 45540, "seconds": 0.13636700000643032}
+{"pass_name": "id_simp", "event": "start", "vertices": 1103, "edges": 45540}
+{"pass_name": "id_simp", "event": "end", "vertices": 1103, "edges": 45540, "seconds": 0.01728490000095917}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1103, "edges": 45540}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1103, "edges": 45540, "seconds": 0.15680919999431353}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1103, "edges": 45540}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1103, "edges": 45540, "seconds": 0.2194186999986414}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1103, "edges": 45540}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1103, "edges": 45540, "seconds": 0.021128400003362913}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1103, "edges": 45540}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1103, "edges": 45540, "seconds": 0.01775890000135405}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1103, "edges": 45540}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1103, "edges": 45540, "seconds": 0.8285147000060533}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1103, "edges": 45540}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1103, "edges": 41490, "seconds": 0.1956006999971578}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1103, "edges": 41490}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1103, "edges": 41490, "seconds": 0.12517289999959758}
+{"pass_name": "id_simp", "event": "start", "vertices": 1103, "edges": 41490}
+{"pass_name": "id_simp", "event": "end", "vertices": 1100, "edges": 41485, "seconds": 0.01835169999685604}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1100, "edges": 41485}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1097, "edges": 40312, "seconds": 0.28953439999895636}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1097, "edges": 40312}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1097, "edges": 40312, "seconds": 0.18414489999850048}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1097, "edges": 40312}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1095, "edges": 40286, "seconds": 0.03282049999688752}
+{"pass_name": "id_simp", "event": "start", "vertices": 1095, "edges": 40286}
+{"pass_name": "id_simp", "event": "end", "vertices": 1090, "edges": 40280, "seconds": 0.018262999998114537}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1090, "edges": 40280}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1085, "edges": 39725, "seconds": 0.23424399999930756}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1085, "edges": 39725}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1085, "edges": 39725, "seconds": 0.1764303000018117}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1085, "edges": 39725}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1085, "edges": 39725, "seconds": 0.025495300003967714}
+{"pass_name": "id_simp", "event": "start", "vertices": 1085, "edges": 39725}
+{"pass_name": "id_simp", "event": "end", "vertices": 1085, "edges": 39725, "seconds": 0.01741319999564439}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1085, "edges": 39725}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1085, "edges": 39725, "seconds": 0.11686509999708505}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1085, "edges": 39725}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1085, "edges": 39725, "seconds": 0.18776480000087759}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1085, "edges": 39725}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1085, "edges": 39725, "seconds": 0.017529600001580548}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1085, "edges": 39725}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1085, "edges": 39725, "seconds": 0.04133719999663299}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1085, "edges": 39725}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1085, "edges": 39725, "seconds": 0.02195009999559261}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1085, "edges": 39725}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1085, "edges": 39725, "seconds": 0.12315630000375677}
+{"pass_name": "id_simp", "event": "start", "vertices": 1085, "edges": 39725}
+{"pass_name": "id_simp", "event": "end", "vertices": 1085, "edges": 39725, "seconds": 0.015590000002703164}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1085, "edges": 39725}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1085, "edges": 39725, "seconds": 0.1184547000011662}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1085, "edges": 39725}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1085, "edges": 39725, "seconds": 0.1735474000015529}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1085, "edges": 39725}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1085, "edges": 39725, "seconds": 0.018120699998689815}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1085, "edges": 39725}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1085, "edges": 39725, "seconds": 0.015633700000762474}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1085, "edges": 39725}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1085, "edges": 39725, "seconds": 0.6275773999950616}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1085, "edges": 39725}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1085, "edges": 36942, "seconds": 0.17254160000447882}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1085, "edges": 36942}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1085, "edges": 36942, "seconds": 0.11863080000330228}
+{"pass_name": "id_simp", "event": "start", "vertices": 1085, "edges": 36942}
+{"pass_name": "id_simp", "event": "end", "vertices": 1085, "edges": 36942, "seconds": 0.014251200002036057}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1085, "edges": 36942}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1085, "edges": 36942, "seconds": 0.1406762999977218}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1085, "edges": 36942}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1085, "edges": 36942, "seconds": 0.17490949999773875}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1085, "edges": 36942}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1085, "edges": 36942, "seconds": 0.01589040000544628}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 1085, "edges": 36942}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 1085, "edges": 36942, "seconds": 0.0322812000013073}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 1085, "edges": 36942}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 1085, "edges": 36942, "seconds": 0.01618629999575205}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1085, "edges": 36942}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1085, "edges": 36942, "seconds": 0.11091039999882923}
+{"pass_name": "id_simp", "event": "start", "vertices": 1085, "edges": 36942}
+{"pass_name": "id_simp", "event": "end", "vertices": 1085, "edges": 36942, "seconds": 0.015057899996463675}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1085, "edges": 36942}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1085, "edges": 36942, "seconds": 0.11600509999698261}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1085, "edges": 36942}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1085, "edges": 36942, "seconds": 0.16392009999981383}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1085, "edges": 36942}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1085, "edges": 36942, "seconds": 0.02188209999440005}
+{"pass_name": "copy_simp", "event": "start", "vertices": 1085, "edges": 36942}
+{"pass_name": "copy_simp", "event": "end", "vertices": 1085, "edges": 36942, "seconds": 0.01647130000492325}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 1085, "edges": 36942}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 1085, "edges": 36942, "seconds": 0.565480999997817}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 1085, "edges": 36942}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 1085, "edges": 37355, "seconds": 0.14109579999785637}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1085, "edges": 37355}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1085, "edges": 37355, "seconds": 0.10962920000019949}
+{"pass_name": "id_simp", "event": "start", "vertices": 1085, "edges": 37355}
+{"pass_name": "id_simp", "event": "end", "vertices": 1082, "edges": 37352, "seconds": 0.015334900002926588}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1082, "edges": 37352}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1079, "edges": 36789, "seconds": 0.2021521999995457}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1079, "edges": 36789}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1077, "edges": 36594, "seconds": 0.3526502000022447}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1077, "edges": 36594}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1077, "edges": 36594, "seconds": 0.01679080000030808}
+{"pass_name": "id_simp", "event": "start", "vertices": 1077, "edges": 36594}
+{"pass_name": "id_simp", "event": "end", "vertices": 1069, "edges": 36585, "seconds": 0.018188900001405273}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1069, "edges": 36585}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1061, "edges": 36011, "seconds": 0.21346259999700123}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1061, "edges": 36011}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1060, "edges": 35816, "seconds": 0.32519699999829754}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1060, "edges": 35816}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1060, "edges": 35816, "seconds": 0.014803099998971447}
+{"pass_name": "id_simp", "event": "start", "vertices": 1060, "edges": 35816}
+{"pass_name": "id_simp", "event": "end", "vertices": 1051, "edges": 35807, "seconds": 0.015647499996703118}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1051, "edges": 35807}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1042, "edges": 34728, "seconds": 0.20331609999993816}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1042, "edges": 34728}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1042, "edges": 34728, "seconds": 0.15539060000446625}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1042, "edges": 34728}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1042, "edges": 34728, "seconds": 0.014359299995703623}
+{"pass_name": "id_simp", "event": "start", "vertices": 1042, "edges": 34728}
+{"pass_name": "id_simp", "event": "end", "vertices": 1041, "edges": 34726, "seconds": 0.013080999997328036}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1041, "edges": 34726}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1040, "edges": 34247, "seconds": 0.19437020000623306}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1040, "edges": 34247}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1039, "edges": 34389, "seconds": 0.322208599995065}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1039, "edges": 34389}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1039, "edges": 34389, "seconds": 0.015019399994343985}
+{"pass_name": "id_simp", "event": "start", "vertices": 1039, "edges": 34389}
+{"pass_name": "id_simp", "event": "end", "vertices": 1036, "edges": 34384, "seconds": 0.01433559999713907}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1036, "edges": 34384}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1033, "edges": 33395, "seconds": 0.19122799999604467}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1033, "edges": 33395}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1030, "edges": 33495, "seconds": 0.4067743999985396}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1030, "edges": 33495}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1030, "edges": 33495, "seconds": 0.014822800003457814}
+{"pass_name": "id_simp", "event": "start", "vertices": 1030, "edges": 33495}
+{"pass_name": "id_simp", "event": "end", "vertices": 1026, "edges": 33491, "seconds": 0.015483399998629466}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1026, "edges": 33491}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1022, "edges": 32953, "seconds": 0.18940070000098785}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1022, "edges": 32953}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1022, "edges": 32953, "seconds": 0.1551361000019824}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1022, "edges": 32953}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1022, "edges": 32953, "seconds": 0.014391500000783708}
+{"pass_name": "id_simp", "event": "start", "vertices": 1022, "edges": 32953}
+{"pass_name": "id_simp", "event": "end", "vertices": 1014, "edges": 32944, "seconds": 0.015289499999198597}
+{"pass_name": "spider_simp", "event": "start", "vertices": 1014, "edges": 32944}
+{"pass_name": "spider_simp", "event": "end", "vertices": 1006, "edges": 31992, "seconds": 0.21183270000619814}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 1006, "edges": 31992}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 1006, "edges": 31992, "seconds": 0.15229910000198288}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 1006, "edges": 31992}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 1006, "edges": 31992, "seconds": 0.01428450000094017}
+{"pass_name": "id_simp", "event": "start", "vertices": 1006, "edges": 31992}
+{"pass_name": "id_simp", "event": "end", "vertices": 998, "edges": 31983, "seconds": 0.014877300003718119}
+{"pass_name": "spider_simp", "event": "start", "vertices": 998, "edges": 31983}
+{"pass_name": "spider_simp", "event": "end", "vertices": 990, "edges": 31391, "seconds": 0.20082499999989523}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 990, "edges": 31391}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 988, "edges": 31443, "seconds": 0.29202770000119926}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 988, "edges": 31443}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 987, "edges": 32622, "seconds": 0.0605543999990914}
+{"pass_name": "id_simp", "event": "start", "vertices": 987, "edges": 32622}
+{"pass_name": "id_simp", "event": "end", "vertices": 985, "edges": 32619, "seconds": 0.015290000003005844}
+{"pass_name": "spider_simp", "event": "start", "vertices": 985, "edges": 32619}
+{"pass_name": "spider_simp", "event": "end", "vertices": 984, "edges": 32274, "seconds": 0.23654160000296542}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 984, "edges": 32274}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 984, "edges": 32274, "seconds": 0.17829490000440273}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 984, "edges": 32274}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 984, "edges": 32274, "seconds": 0.014936999999918044}
+{"pass_name": "id_simp", "event": "start", "vertices": 984, "edges": 32274}
+{"pass_name": "id_simp", "event": "end", "vertices": 983, "edges": 32273, "seconds": 0.012493400005041622}
+{"pass_name": "spider_simp", "event": "start", "vertices": 983, "edges": 32273}
+{"pass_name": "spider_simp", "event": "end", "vertices": 982, "edges": 32272, "seconds": 0.18539570000575623}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 982, "edges": 32272}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 982, "edges": 32272, "seconds": 0.16773680000187596}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 982, "edges": 32272}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 982, "edges": 32272, "seconds": 0.015636299998732284}
+{"pass_name": "id_simp", "event": "start", "vertices": 982, "edges": 32272}
+{"pass_name": "id_simp", "event": "end", "vertices": 982, "edges": 32272, "seconds": 0.012275599998247344}
+{"pass_name": "spider_simp", "event": "start", "vertices": 982, "edges": 32272}
+{"pass_name": "spider_simp", "event": "end", "vertices": 982, "edges": 32272, "seconds": 0.09423030000471044}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 982, "edges": 32272}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 982, "edges": 32272, "seconds": 0.15968579999753274}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 982, "edges": 32272}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 982, "edges": 32272, "seconds": 0.01450499999918975}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 982, "edges": 32272}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 983, "edges": 32278, "seconds": 0.04075649999867892}
+{"pass_name": "spider_simp", "event": "start", "vertices": 983, "edges": 32278}
+{"pass_name": "spider_simp", "event": "end", "vertices": 983, "edges": 32278, "seconds": 0.10436910000134958}
+{"pass_name": "id_simp", "event": "start", "vertices": 983, "edges": 32278}
+{"pass_name": "id_simp", "event": "end", "vertices": 983, "edges": 32278, "seconds": 0.012149599999247584}
+{"pass_name": "spider_simp", "event": "start", "vertices": 983, "edges": 32278}
+{"pass_name": "spider_simp", "event": "end", "vertices": 983, "edges": 32278, "seconds": 0.10407500000292202}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 983, "edges": 32278}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 983, "edges": 32278, "seconds": 0.15864349999901606}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 983, "edges": 32278}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 983, "edges": 32278, "seconds": 0.014648500000475906}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 983, "edges": 32278}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 984, "edges": 31552, "seconds": 0.04891700000007404}
+{"pass_name": "spider_simp", "event": "start", "vertices": 984, "edges": 31552}
+{"pass_name": "spider_simp", "event": "end", "vertices": 984, "edges": 31552, "seconds": 0.10639159999846015}
+{"pass_name": "id_simp", "event": "start", "vertices": 984, "edges": 31552}
+{"pass_name": "id_simp", "event": "end", "vertices": 984, "edges": 31552, "seconds": 0.012811300002795178}
+{"pass_name": "spider_simp", "event": "start", "vertices": 984, "edges": 31552}
+{"pass_name": "spider_simp", "event": "end", "vertices": 984, "edges": 31552, "seconds": 0.11356339999474585}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 984, "edges": 31552}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 984, "edges": 31552, "seconds": 0.16701959999772953}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 984, "edges": 31552}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 984, "edges": 31552, "seconds": 0.015048899993416853}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 984, "edges": 31552}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 984, "edges": 31552, "seconds": 0.04792540000198642}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 984, "edges": 31552}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 984, "edges": 31552, "seconds": 0.013399700001173187}
+{"pass_name": "spider_simp", "event": "start", "vertices": 984, "edges": 31552}
+{"pass_name": "spider_simp", "event": "end", "vertices": 984, "edges": 31552, "seconds": 0.09530009999434697}
+{"pass_name": "id_simp", "event": "start", "vertices": 984, "edges": 31552}
+{"pass_name": "id_simp", "event": "end", "vertices": 984, "edges": 31552, "seconds": 0.012855499997385778}
+{"pass_name": "spider_simp", "event": "start", "vertices": 984, "edges": 31552}
+{"pass_name": "spider_simp", "event": "end", "vertices": 984, "edges": 31552, "seconds": 0.09695020000071963}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 984, "edges": 31552}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 984, "edges": 31552, "seconds": 0.16400280000380008}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 984, "edges": 31552}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 984, "edges": 31552, "seconds": 0.014044499999727122}
+{"pass_name": "copy_simp", "event": "start", "vertices": 984, "edges": 31552}
+{"pass_name": "copy_simp", "event": "end", "vertices": 984, "edges": 31552, "seconds": 0.012783500002115034}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 984, "edges": 31552}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 984, "edges": 31552, "seconds": 0.40281010000035167}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 984, "edges": 31552}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 984, "edges": 29590, "seconds": 0.13076839999848744}
+{"pass_name": "spider_simp", "event": "start", "vertices": 984, "edges": 29590}
+{"pass_name": "spider_simp", "event": "end", "vertices": 984, "edges": 29590, "seconds": 0.11272850000386825}
+{"pass_name": "id_simp", "event": "start", "vertices": 984, "edges": 29590}
+{"pass_name": "id_simp", "event": "end", "vertices": 980, "edges": 29584, "seconds": 0.01326330000301823}
+{"pass_name": "spider_simp", "event": "start", "vertices": 980, "edges": 29584}
+{"pass_name": "spider_simp", "event": "end", "vertices": 976, "edges": 28866, "seconds": 0.16861300000164192}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 976, "edges": 28866}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 973, "edges": 28739, "seconds": 0.36236600000120234}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 973, "edges": 28739}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 973, "edges": 28739, "seconds": 0.01637510000000475}
+{"pass_name": "id_simp", "event": "start", "vertices": 973, "edges": 28739}
+{"pass_name": "id_simp", "event": "end", "vertices": 972, "edges": 28738, "seconds": 0.013152999999874737}
+{"pass_name": "spider_simp", "event": "start", "vertices": 972, "edges": 28738}
+{"pass_name": "spider_simp", "event": "end", "vertices": 971, "edges": 28737, "seconds": 0.18119360000127926}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 971, "edges": 28737}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 971, "edges": 28737, "seconds": 0.17604159999609692}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 971, "edges": 28737}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 971, "edges": 28737, "seconds": 0.015595099997881334}
+{"pass_name": "id_simp", "event": "start", "vertices": 971, "edges": 28737}
+{"pass_name": "id_simp", "event": "end", "vertices": 971, "edges": 28737, "seconds": 0.01444189999892842}
+{"pass_name": "spider_simp", "event": "start", "vertices": 971, "edges": 28737}
+{"pass_name": "spider_simp", "event": "end", "vertices": 971, "edges": 28737, "seconds": 0.09443129999999655}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 971, "edges": 28737}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 971, "edges": 28737, "seconds": 0.1469234999967739}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 971, "edges": 28737}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 971, "edges": 28737, "seconds": 0.016296199995849747}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 971, "edges": 28737}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 972, "edges": 28768, "seconds": 0.039082800001779106}
+{"pass_name": "spider_simp", "event": "start", "vertices": 972, "edges": 28768}
+{"pass_name": "spider_simp", "event": "end", "vertices": 972, "edges": 28768, "seconds": 0.09085830000549322}
+{"pass_name": "id_simp", "event": "start", "vertices": 972, "edges": 28768}
+{"pass_name": "id_simp", "event": "end", "vertices": 972, "edges": 28768, "seconds": 0.014534699999785516}
+{"pass_name": "spider_simp", "event": "start", "vertices": 972, "edges": 28768}
+{"pass_name": "spider_simp", "event": "end", "vertices": 972, "edges": 28768, "seconds": 0.09189250000054017}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 972, "edges": 28768}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 972, "edges": 28768, "seconds": 0.1605277999988175}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 972, "edges": 28768}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 972, "edges": 28768, "seconds": 0.014121600004727952}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 972, "edges": 28768}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 972, "edges": 28768, "seconds": 0.05085320000216598}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 972, "edges": 28768}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 972, "edges": 28768, "seconds": 0.013645800005178899}
+{"pass_name": "spider_simp", "event": "start", "vertices": 972, "edges": 28768}
+{"pass_name": "spider_simp", "event": "end", "vertices": 972, "edges": 28768, "seconds": 0.10673039999528555}
+{"pass_name": "id_simp", "event": "start", "vertices": 972, "edges": 28768}
+{"pass_name": "id_simp", "event": "end", "vertices": 972, "edges": 28768, "seconds": 0.012452399998437613}
+{"pass_name": "spider_simp", "event": "start", "vertices": 972, "edges": 28768}
+{"pass_name": "spider_simp", "event": "end", "vertices": 972, "edges": 28768, "seconds": 0.09063930000411347}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 972, "edges": 28768}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 972, "edges": 28768, "seconds": 0.1577580000011949}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 972, "edges": 28768}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 972, "edges": 28768, "seconds": 0.01556449999770848}
+{"pass_name": "copy_simp", "event": "start", "vertices": 972, "edges": 28768}
+{"pass_name": "copy_simp", "event": "end", "vertices": 972, "edges": 28768, "seconds": 0.013513600002625026}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 972, "edges": 28768}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 972, "edges": 28768, "seconds": 0.3406618000008166}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 972, "edges": 28768}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 972, "edges": 29672, "seconds": 0.1655246999944211}
+{"pass_name": "spider_simp", "event": "start", "vertices": 972, "edges": 29672}
+{"pass_name": "spider_simp", "event": "end", "vertices": 972, "edges": 29672, "seconds": 0.10511250000126893}
+{"pass_name": "id_simp", "event": "start", "vertices": 972, "edges": 29672}
+{"pass_name": "id_simp", "event": "end", "vertices": 972, "edges": 29672, "seconds": 0.01242179999826476}
+{"pass_name": "spider_simp", "event": "start", "vertices": 972, "edges": 29672}
+{"pass_name": "spider_simp", "event": "end", "vertices": 972, "edges": 29672, "seconds": 0.09010029999626568}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 972, "edges": 29672}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 972, "edges": 29672, "seconds": 0.14491120000457158}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 972, "edges": 29672}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 972, "edges": 29672, "seconds": 0.014265099998738151}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 972, "edges": 29672}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 972, "edges": 29672, "seconds": 0.055675600000540726}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 972, "edges": 29672}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 972, "edges": 29672, "seconds": 0.014794399998208974}
+{"pass_name": "spider_simp", "event": "start", "vertices": 972, "edges": 29672}
+{"pass_name": "spider_simp", "event": "end", "vertices": 972, "edges": 29672, "seconds": 0.09546620000037365}
+{"pass_name": "id_simp", "event": "start", "vertices": 972, "edges": 29672}
+{"pass_name": "id_simp", "event": "end", "vertices": 972, "edges": 29672, "seconds": 0.012837099995522294}
+{"pass_name": "spider_simp", "event": "start", "vertices": 972, "edges": 29672}
+{"pass_name": "spider_simp", "event": "end", "vertices": 972, "edges": 29672, "seconds": 0.09262460000172723}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 972, "edges": 29672}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 972, "edges": 29672, "seconds": 0.14178059999539983}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 972, "edges": 29672}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 972, "edges": 29672, "seconds": 0.013702899996133056}
+{"pass_name": "copy_simp", "event": "start", "vertices": 972, "edges": 29672}
+{"pass_name": "copy_simp", "event": "end", "vertices": 972, "edges": 29672, "seconds": 0.011151099999551661}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 972, "edges": 29672}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 972, "edges": 29672, "seconds": 0.36746190000121715}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 972, "edges": 29672}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 972, "edges": 25420, "seconds": 0.14409219999652123}
+{"pass_name": "spider_simp", "event": "start", "vertices": 972, "edges": 25420}
+{"pass_name": "spider_simp", "event": "end", "vertices": 972, "edges": 25420, "seconds": 0.0764982999971835}
+{"pass_name": "id_simp", "event": "start", "vertices": 972, "edges": 25420}
+{"pass_name": "id_simp", "event": "end", "vertices": 972, "edges": 25420, "seconds": 0.010931799995887559}
+{"pass_name": "spider_simp", "event": "start", "vertices": 972, "edges": 25420}
+{"pass_name": "spider_simp", "event": "end", "vertices": 972, "edges": 25420, "seconds": 0.0788341000006767}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 972, "edges": 25420}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 972, "edges": 25420, "seconds": 0.12958010000147624}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 972, "edges": 25420}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 972, "edges": 25420, "seconds": 0.012306500000704546}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 972, "edges": 25420}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 972, "edges": 25420, "seconds": 0.0318081000004895}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 972, "edges": 25420}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 972, "edges": 25420, "seconds": 0.012022999995679129}
+{"pass_name": "spider_simp", "event": "start", "vertices": 972, "edges": 25420}
+{"pass_name": "spider_simp", "event": "end", "vertices": 972, "edges": 25420, "seconds": 0.07762559999537189}
+{"pass_name": "id_simp", "event": "start", "vertices": 972, "edges": 25420}
+{"pass_name": "id_simp", "event": "end", "vertices": 972, "edges": 25420, "seconds": 0.010065099995699711}
+{"pass_name": "spider_simp", "event": "start", "vertices": 972, "edges": 25420}
+{"pass_name": "spider_simp", "event": "end", "vertices": 972, "edges": 25420, "seconds": 0.0760599999994156}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 972, "edges": 25420}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 972, "edges": 25420, "seconds": 0.12247109999589156}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 972, "edges": 25420}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 972, "edges": 25420, "seconds": 0.012175100004242267}
+{"pass_name": "copy_simp", "event": "start", "vertices": 972, "edges": 25420}
+{"pass_name": "copy_simp", "event": "end", "vertices": 972, "edges": 25420, "seconds": 0.012188900000182912}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 972, "edges": 25420}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 972, "edges": 25420, "seconds": 0.2780248999988544}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 972, "edges": 25420}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 972, "edges": 23373, "seconds": 0.08730430000287015}
+{"pass_name": "spider_simp", "event": "start", "vertices": 972, "edges": 23373}
+{"pass_name": "spider_simp", "event": "end", "vertices": 972, "edges": 23373, "seconds": 0.0699363000021549}
+{"pass_name": "id_simp", "event": "start", "vertices": 972, "edges": 23373}
+{"pass_name": "id_simp", "event": "end", "vertices": 968, "edges": 23369, "seconds": 0.0106383000020287}
+{"pass_name": "spider_simp", "event": "start", "vertices": 968, "edges": 23369}
+{"pass_name": "spider_simp", "event": "end", "vertices": 964, "edges": 22797, "seconds": 0.13234669999656035}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 964, "edges": 22797}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 963, "edges": 22778, "seconds": 0.252248699995107}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 963, "edges": 22778}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 963, "edges": 22778, "seconds": 0.010905099996307399}
+{"pass_name": "id_simp", "event": "start", "vertices": 963, "edges": 22778}
+{"pass_name": "id_simp", "event": "end", "vertices": 960, "edges": 22775, "seconds": 0.00948919999791542}
+{"pass_name": "spider_simp", "event": "start", "vertices": 960, "edges": 22775}
+{"pass_name": "spider_simp", "event": "end", "vertices": 957, "edges": 22360, "seconds": 0.12649160000000848}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 957, "edges": 22360}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 956, "edges": 22789, "seconds": 0.2923880000016652}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 956, "edges": 22789}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 956, "edges": 22789, "seconds": 0.01081529999646591}
+{"pass_name": "id_simp", "event": "start", "vertices": 956, "edges": 22789}
+{"pass_name": "id_simp", "event": "end", "vertices": 953, "edges": 22786, "seconds": 0.01131530000566272}
+{"pass_name": "spider_simp", "event": "start", "vertices": 953, "edges": 22786}
+{"pass_name": "spider_simp", "event": "end", "vertices": 950, "edges": 22783, "seconds": 0.16433669999969425}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 950, "edges": 22783}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 948, "edges": 22814, "seconds": 0.25628380000125617}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 948, "edges": 22814}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 948, "edges": 22814, "seconds": 0.01144620000559371}
+{"pass_name": "id_simp", "event": "start", "vertices": 948, "edges": 22814}
+{"pass_name": "id_simp", "event": "end", "vertices": 948, "edges": 22814, "seconds": 0.00896669999929145}
+{"pass_name": "spider_simp", "event": "start", "vertices": 948, "edges": 22814}
+{"pass_name": "spider_simp", "event": "end", "vertices": 948, "edges": 22814, "seconds": 0.07421930000418797}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 948, "edges": 22814}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 948, "edges": 22814, "seconds": 0.13717959999485174}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 948, "edges": 22814}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 948, "edges": 22814, "seconds": 0.011610400004428811}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 948, "edges": 22814}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 949, "edges": 22423, "seconds": 0.027030800003558397}
+{"pass_name": "spider_simp", "event": "start", "vertices": 949, "edges": 22423}
+{"pass_name": "spider_simp", "event": "end", "vertices": 949, "edges": 22423, "seconds": 0.0697543999995105}
+{"pass_name": "id_simp", "event": "start", "vertices": 949, "edges": 22423}
+{"pass_name": "id_simp", "event": "end", "vertices": 949, "edges": 22423, "seconds": 0.008186400002159644}
+{"pass_name": "spider_simp", "event": "start", "vertices": 949, "edges": 22423}
+{"pass_name": "spider_simp", "event": "end", "vertices": 949, "edges": 22423, "seconds": 0.07183950000035111}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 949, "edges": 22423}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 949, "edges": 22423, "seconds": 0.12302679999993416}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 949, "edges": 22423}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 949, "edges": 22423, "seconds": 0.011222699999052566}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 949, "edges": 22423}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 950, "edges": 22439, "seconds": 0.030017499993846286}
+{"pass_name": "spider_simp", "event": "start", "vertices": 950, "edges": 22439}
+{"pass_name": "spider_simp", "event": "end", "vertices": 950, "edges": 22439, "seconds": 0.08048189999681199}
+{"pass_name": "id_simp", "event": "start", "vertices": 950, "edges": 22439}
+{"pass_name": "id_simp", "event": "end", "vertices": 950, "edges": 22439, "seconds": 0.011597099997743499}
+{"pass_name": "spider_simp", "event": "start", "vertices": 950, "edges": 22439}
+{"pass_name": "spider_simp", "event": "end", "vertices": 950, "edges": 22439, "seconds": 0.07628029999614228}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 950, "edges": 22439}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 950, "edges": 22439, "seconds": 0.15744509999785805}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 950, "edges": 22439}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 948, "edges": 22410, "seconds": 0.018537200005084742}
+{"pass_name": "id_simp", "event": "start", "vertices": 948, "edges": 22410}
+{"pass_name": "id_simp", "event": "end", "vertices": 948, "edges": 22410, "seconds": 0.008808099999441765}
+{"pass_name": "spider_simp", "event": "start", "vertices": 948, "edges": 22410}
+{"pass_name": "spider_simp", "event": "end", "vertices": 948, "edges": 22410, "seconds": 0.06827879999764264}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 948, "edges": 22410}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 948, "edges": 22410, "seconds": 0.13573180000093998}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 948, "edges": 22410}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 948, "edges": 22410, "seconds": 0.01576059999933932}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 948, "edges": 22410}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 949, "edges": 22776, "seconds": 0.032898500001465436}
+{"pass_name": "spider_simp", "event": "start", "vertices": 949, "edges": 22776}
+{"pass_name": "spider_simp", "event": "end", "vertices": 949, "edges": 22776, "seconds": 0.07629959999758285}
+{"pass_name": "id_simp", "event": "start", "vertices": 949, "edges": 22776}
+{"pass_name": "id_simp", "event": "end", "vertices": 949, "edges": 22776, "seconds": 0.008521999996446539}
+{"pass_name": "spider_simp", "event": "start", "vertices": 949, "edges": 22776}
+{"pass_name": "spider_simp", "event": "end", "vertices": 949, "edges": 22776, "seconds": 0.06855589999759104}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 949, "edges": 22776}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 949, "edges": 22776, "seconds": 0.12524719999782974}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 949, "edges": 22776}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 947, "edges": 22707, "seconds": 0.018727900001977105}
+{"pass_name": "id_simp", "event": "start", "vertices": 947, "edges": 22707}
+{"pass_name": "id_simp", "event": "end", "vertices": 947, "edges": 22707, "seconds": 0.00864249999722233}
+{"pass_name": "spider_simp", "event": "start", "vertices": 947, "edges": 22707}
+{"pass_name": "spider_simp", "event": "end", "vertices": 947, "edges": 22707, "seconds": 0.08091720000084024}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 947, "edges": 22707}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 947, "edges": 22707, "seconds": 0.1258557000037399}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 947, "edges": 22707}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 947, "edges": 22707, "seconds": 0.01211440000042785}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 947, "edges": 22707}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 947, "edges": 22707, "seconds": 0.03617040000244742}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 947, "edges": 22707}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 943, "edges": 22685, "seconds": 0.013448499994410668}
+{"pass_name": "spider_simp", "event": "start", "vertices": 943, "edges": 22685}
+{"pass_name": "spider_simp", "event": "end", "vertices": 943, "edges": 22685, "seconds": 0.06912390000070445}
+{"pass_name": "id_simp", "event": "start", "vertices": 943, "edges": 22685}
+{"pass_name": "id_simp", "event": "end", "vertices": 943, "edges": 22685, "seconds": 0.00973830000293674}
+{"pass_name": "spider_simp", "event": "start", "vertices": 943, "edges": 22685}
+{"pass_name": "spider_simp", "event": "end", "vertices": 943, "edges": 22685, "seconds": 0.0694911000027787}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 943, "edges": 22685}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 941, "edges": 22674, "seconds": 0.28344999999535503}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 941, "edges": 22674}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 939, "edges": 22660, "seconds": 0.017534799997520167}
+{"pass_name": "id_simp", "event": "start", "vertices": 939, "edges": 22660}
+{"pass_name": "id_simp", "event": "end", "vertices": 939, "edges": 22660, "seconds": 0.010754399998404551}
+{"pass_name": "spider_simp", "event": "start", "vertices": 939, "edges": 22660}
+{"pass_name": "spider_simp", "event": "end", "vertices": 939, "edges": 22660, "seconds": 0.07206910000240896}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 939, "edges": 22660}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 939, "edges": 22660, "seconds": 0.1411244999981136}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 939, "edges": 22660}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 939, "edges": 22660, "seconds": 0.012788500003807712}
+{"pass_name": "copy_simp", "event": "start", "vertices": 939, "edges": 22660}
+{"pass_name": "copy_simp", "event": "end", "vertices": 939, "edges": 22660, "seconds": 0.010912300000200048}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 939, "edges": 22660}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 939, "edges": 22660, "seconds": 0.21344260000478243}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 939, "edges": 22660}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 939, "edges": 22705, "seconds": 0.10279680000530789}
+{"pass_name": "spider_simp", "event": "start", "vertices": 939, "edges": 22705}
+{"pass_name": "spider_simp", "event": "end", "vertices": 939, "edges": 22705, "seconds": 0.06996100000105798}
+{"pass_name": "id_simp", "event": "start", "vertices": 939, "edges": 22705}
+{"pass_name": "id_simp", "event": "end", "vertices": 937, "edges": 22703, "seconds": 0.009610600005544256}
+{"pass_name": "spider_simp", "event": "start", "vertices": 937, "edges": 22703}
+{"pass_name": "spider_simp", "event": "end", "vertices": 935, "edges": 22195, "seconds": 0.12509729999874253}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 935, "edges": 22195}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 933, "edges": 22789, "seconds": 0.31130539999867324}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 933, "edges": 22789}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 933, "edges": 22789, "seconds": 0.01197610000235727}
+{"pass_name": "id_simp", "event": "start", "vertices": 933, "edges": 22789}
+{"pass_name": "id_simp", "event": "end", "vertices": 916, "edges": 22771, "seconds": 0.013076200004434213}
+{"pass_name": "spider_simp", "event": "start", "vertices": 916, "edges": 22771}
+{"pass_name": "spider_simp", "event": "end", "vertices": 900, "edges": 21805, "seconds": 0.14907260000472888}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 900, "edges": 21805}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 895, "edges": 22217, "seconds": 0.3163025000030757}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 895, "edges": 22217}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 895, "edges": 22217, "seconds": 0.012426799999957439}
+{"pass_name": "id_simp", "event": "start", "vertices": 895, "edges": 22217}
+{"pass_name": "id_simp", "event": "end", "vertices": 890, "edges": 22208, "seconds": 0.009157200001936872}
+{"pass_name": "spider_simp", "event": "start", "vertices": 890, "edges": 22208}
+{"pass_name": "spider_simp", "event": "end", "vertices": 885, "edges": 20561, "seconds": 0.12354519999644253}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 885, "edges": 20561}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 882, "edges": 20776, "seconds": 0.2575518999947235}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 882, "edges": 20776}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 882, "edges": 20776, "seconds": 0.010526600002776831}
+{"pass_name": "id_simp", "event": "start", "vertices": 882, "edges": 20776}
+{"pass_name": "id_simp", "event": "end", "vertices": 878, "edges": 20772, "seconds": 0.008845599993946962}
+{"pass_name": "spider_simp", "event": "start", "vertices": 878, "edges": 20772}
+{"pass_name": "spider_simp", "event": "end", "vertices": 874, "edges": 20502, "seconds": 0.11628090000158409}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 874, "edges": 20502}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 872, "edges": 20513, "seconds": 0.2576603999987128}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 872, "edges": 20513}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 872, "edges": 20513, "seconds": 0.010042699999758042}
+{"pass_name": "id_simp", "event": "start", "vertices": 872, "edges": 20513}
+{"pass_name": "id_simp", "event": "end", "vertices": 870, "edges": 20510, "seconds": 0.009466399998927955}
+{"pass_name": "spider_simp", "event": "start", "vertices": 870, "edges": 20510}
+{"pass_name": "spider_simp", "event": "end", "vertices": 868, "edges": 20026, "seconds": 0.11278480000328273}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 868, "edges": 20026}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 867, "edges": 20080, "seconds": 0.2283568999991985}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 867, "edges": 20080}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 867, "edges": 20080, "seconds": 0.01111710000259336}
+{"pass_name": "id_simp", "event": "start", "vertices": 867, "edges": 20080}
+{"pass_name": "id_simp", "event": "end", "vertices": 864, "edges": 20076, "seconds": 0.009861099999397993}
+{"pass_name": "spider_simp", "event": "start", "vertices": 864, "edges": 20076}
+{"pass_name": "spider_simp", "event": "end", "vertices": 861, "edges": 19483, "seconds": 0.11744920000637649}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 861, "edges": 19483}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 859, "edges": 19357, "seconds": 0.21935870000015711}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 859, "edges": 19357}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 859, "edges": 19357, "seconds": 0.01174959999480052}
+{"pass_name": "id_simp", "event": "start", "vertices": 859, "edges": 19357}
+{"pass_name": "id_simp", "event": "end", "vertices": 853, "edges": 19350, "seconds": 0.009673200001998339}
+{"pass_name": "spider_simp", "event": "start", "vertices": 853, "edges": 19350}
+{"pass_name": "spider_simp", "event": "end", "vertices": 847, "edges": 19054, "seconds": 0.12046660000487464}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 847, "edges": 19054}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 846, "edges": 18971, "seconds": 0.21480000000155997}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 846, "edges": 18971}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 846, "edges": 18971, "seconds": 0.008964699998614378}
+{"pass_name": "id_simp", "event": "start", "vertices": 846, "edges": 18971}
+{"pass_name": "id_simp", "event": "end", "vertices": 845, "edges": 18970, "seconds": 0.010676199999579694}
+{"pass_name": "spider_simp", "event": "start", "vertices": 845, "edges": 18970}
+{"pass_name": "spider_simp", "event": "end", "vertices": 845, "edges": 18970, "seconds": 0.062383099997532554}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 845, "edges": 18970}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 845, "edges": 18970, "seconds": 0.09931969999888679}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 845, "edges": 18970}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 845, "edges": 18970, "seconds": 0.009868400004052091}
+{"pass_name": "id_simp", "event": "start", "vertices": 845, "edges": 18970}
+{"pass_name": "id_simp", "event": "end", "vertices": 845, "edges": 18970, "seconds": 0.0075890000007348135}
+{"pass_name": "spider_simp", "event": "start", "vertices": 845, "edges": 18970}
+{"pass_name": "spider_simp", "event": "end", "vertices": 845, "edges": 18970, "seconds": 0.05778429999918444}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 845, "edges": 18970}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 845, "edges": 18970, "seconds": 0.10071030000108294}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 845, "edges": 18970}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 845, "edges": 18970, "seconds": 0.010261499999614898}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 845, "edges": 18970}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 846, "edges": 18749, "seconds": 0.02137310000398429}
+{"pass_name": "spider_simp", "event": "start", "vertices": 846, "edges": 18749}
+{"pass_name": "spider_simp", "event": "end", "vertices": 846, "edges": 18749, "seconds": 0.056097199994837865}
+{"pass_name": "id_simp", "event": "start", "vertices": 846, "edges": 18749}
+{"pass_name": "id_simp", "event": "end", "vertices": 846, "edges": 18749, "seconds": 0.007089300001098309}
+{"pass_name": "spider_simp", "event": "start", "vertices": 846, "edges": 18749}
+{"pass_name": "spider_simp", "event": "end", "vertices": 846, "edges": 18749, "seconds": 0.05816480000066804}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 846, "edges": 18749}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 846, "edges": 18749, "seconds": 0.09605800000281306}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 846, "edges": 18749}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 846, "edges": 18749, "seconds": 0.011634399998001754}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 846, "edges": 18749}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 847, "edges": 16663, "seconds": 0.06435900000360562}
+{"pass_name": "spider_simp", "event": "start", "vertices": 847, "edges": 16663}
+{"pass_name": "spider_simp", "event": "end", "vertices": 847, "edges": 16663, "seconds": 0.0501901999959955}
+{"pass_name": "id_simp", "event": "start", "vertices": 847, "edges": 16663}
+{"pass_name": "id_simp", "event": "end", "vertices": 847, "edges": 16663, "seconds": 0.00604419999581296}
+{"pass_name": "spider_simp", "event": "start", "vertices": 847, "edges": 16663}
+{"pass_name": "spider_simp", "event": "end", "vertices": 847, "edges": 16663, "seconds": 0.05044629999611061}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 847, "edges": 16663}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 847, "edges": 16663, "seconds": 0.09077289999549976}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 847, "edges": 16663}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 845, "edges": 16079, "seconds": 0.018529000000853557}
+{"pass_name": "id_simp", "event": "start", "vertices": 845, "edges": 16079}
+{"pass_name": "id_simp", "event": "end", "vertices": 845, "edges": 16079, "seconds": 0.007204300003650133}
+{"pass_name": "spider_simp", "event": "start", "vertices": 845, "edges": 16079}
+{"pass_name": "spider_simp", "event": "end", "vertices": 845, "edges": 16079, "seconds": 0.04764259999501519}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 845, "edges": 16079}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 843, "edges": 15780, "seconds": 0.28797800000029383}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 843, "edges": 15780}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 843, "edges": 15780, "seconds": 0.006828700003097765}
+{"pass_name": "id_simp", "event": "start", "vertices": 843, "edges": 15780}
+{"pass_name": "id_simp", "event": "end", "vertices": 843, "edges": 15780, "seconds": 0.00565929999720538}
+{"pass_name": "spider_simp", "event": "start", "vertices": 843, "edges": 15780}
+{"pass_name": "spider_simp", "event": "end", "vertices": 843, "edges": 15780, "seconds": 0.04751370000303723}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 843, "edges": 15780}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 843, "edges": 15780, "seconds": 0.11527909999858821}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 843, "edges": 15780}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 843, "edges": 15780, "seconds": 0.006785699995816685}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 843, "edges": 15780}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 844, "edges": 15250, "seconds": 0.02756539999973029}
+{"pass_name": "spider_simp", "event": "start", "vertices": 844, "edges": 15250}
+{"pass_name": "spider_simp", "event": "end", "vertices": 844, "edges": 15250, "seconds": 0.04830480000237003}
+{"pass_name": "id_simp", "event": "start", "vertices": 844, "edges": 15250}
+{"pass_name": "id_simp", "event": "end", "vertices": 844, "edges": 15250, "seconds": 0.007314200003747828}
+{"pass_name": "spider_simp", "event": "start", "vertices": 844, "edges": 15250}
+{"pass_name": "spider_simp", "event": "end", "vertices": 844, "edges": 15250, "seconds": 0.04990019999968354}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 844, "edges": 15250}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 844, "edges": 15250, "seconds": 0.11467660000198521}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 844, "edges": 15250}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 842, "edges": 15208, "seconds": 0.012552000000141561}
+{"pass_name": "id_simp", "event": "start", "vertices": 842, "edges": 15208}
+{"pass_name": "id_simp", "event": "end", "vertices": 842, "edges": 15208, "seconds": 0.008481799995934125}
+{"pass_name": "spider_simp", "event": "start", "vertices": 842, "edges": 15208}
+{"pass_name": "spider_simp", "event": "end", "vertices": 842, "edges": 15208, "seconds": 0.049046100000850856}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 842, "edges": 15208}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 842, "edges": 15208, "seconds": 0.10895780000282684}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 842, "edges": 15208}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 842, "edges": 15208, "seconds": 0.006917400001839269}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 842, "edges": 15208}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 843, "edges": 15080, "seconds": 0.033863800003018696}
+{"pass_name": "spider_simp", "event": "start", "vertices": 843, "edges": 15080}
+{"pass_name": "spider_simp", "event": "end", "vertices": 843, "edges": 15080, "seconds": 0.046273699997982476}
+{"pass_name": "id_simp", "event": "start", "vertices": 843, "edges": 15080}
+{"pass_name": "id_simp", "event": "end", "vertices": 843, "edges": 15080, "seconds": 0.005343700002413243}
+{"pass_name": "spider_simp", "event": "start", "vertices": 843, "edges": 15080}
+{"pass_name": "spider_simp", "event": "end", "vertices": 843, "edges": 15080, "seconds": 0.04528559999744175}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 843, "edges": 15080}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 843, "edges": 15080, "seconds": 0.10856489999423502}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 843, "edges": 15080}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 843, "edges": 15080, "seconds": 0.009427899996808264}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 843, "edges": 15080}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 843, "edges": 15080, "seconds": 0.030554899996786844}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 843, "edges": 15080}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 841, "edges": 15052, "seconds": 0.008290000005217735}
+{"pass_name": "spider_simp", "event": "start", "vertices": 841, "edges": 15052}
+{"pass_name": "spider_simp", "event": "end", "vertices": 841, "edges": 15052, "seconds": 0.047998699999880046}
+{"pass_name": "id_simp", "event": "start", "vertices": 841, "edges": 15052}
+{"pass_name": "id_simp", "event": "end", "vertices": 841, "edges": 15052, "seconds": 0.005615499998384621}
+{"pass_name": "spider_simp", "event": "start", "vertices": 841, "edges": 15052}
+{"pass_name": "spider_simp", "event": "end", "vertices": 841, "edges": 15052, "seconds": 0.04677040000387933}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 841, "edges": 15052}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 841, "edges": 15052, "seconds": 0.10686279999936232}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 841, "edges": 15052}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 839, "edges": 15047, "seconds": 0.01127029999770457}
+{"pass_name": "id_simp", "event": "start", "vertices": 839, "edges": 15047}
+{"pass_name": "id_simp", "event": "end", "vertices": 839, "edges": 15047, "seconds": 0.005285200000798795}
+{"pass_name": "spider_simp", "event": "start", "vertices": 839, "edges": 15047}
+{"pass_name": "spider_simp", "event": "end", "vertices": 839, "edges": 15047, "seconds": 0.04455420000158483}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 839, "edges": 15047}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 839, "edges": 15047, "seconds": 0.10919280000234721}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 839, "edges": 15047}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 839, "edges": 15047, "seconds": 0.006545900003402494}
+{"pass_name": "copy_simp", "event": "start", "vertices": 839, "edges": 15047}
+{"pass_name": "copy_simp", "event": "end", "vertices": 839, "edges": 15047, "seconds": 0.0054219000012381}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 839, "edges": 15047}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 839, "edges": 15047, "seconds": 0.11079690000042319}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 839, "edges": 15047}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 839, "edges": 14263, "seconds": 0.04743820000294363}
+{"pass_name": "spider_simp", "event": "start", "vertices": 839, "edges": 14263}
+{"pass_name": "spider_simp", "event": "end", "vertices": 839, "edges": 14263, "seconds": 0.043028600004618056}
+{"pass_name": "id_simp", "event": "start", "vertices": 839, "edges": 14263}
+{"pass_name": "id_simp", "event": "end", "vertices": 839, "edges": 14263, "seconds": 0.005164499998500105}
+{"pass_name": "spider_simp", "event": "start", "vertices": 839, "edges": 14263}
+{"pass_name": "spider_simp", "event": "end", "vertices": 839, "edges": 14263, "seconds": 0.04245439999795053}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 839, "edges": 14263}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 839, "edges": 14263, "seconds": 0.10095770000043558}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 839, "edges": 14263}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 839, "edges": 14263, "seconds": 0.007515299999795388}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 839, "edges": 14263}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 839, "edges": 14263, "seconds": 0.020859300006122794}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 839, "edges": 14263}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 839, "edges": 14263, "seconds": 0.00611899999785237}
+{"pass_name": "spider_simp", "event": "start", "vertices": 839, "edges": 14263}
+{"pass_name": "spider_simp", "event": "end", "vertices": 839, "edges": 14263, "seconds": 0.042622599998139776}
+{"pass_name": "id_simp", "event": "start", "vertices": 839, "edges": 14263}
+{"pass_name": "id_simp", "event": "end", "vertices": 839, "edges": 14263, "seconds": 0.005422100002760999}
+{"pass_name": "spider_simp", "event": "start", "vertices": 839, "edges": 14263}
+{"pass_name": "spider_simp", "event": "end", "vertices": 839, "edges": 14263, "seconds": 0.04227730000275187}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 839, "edges": 14263}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 839, "edges": 14263, "seconds": 0.10032950000459095}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 839, "edges": 14263}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 839, "edges": 14263, "seconds": 0.006813399995735381}
+{"pass_name": "copy_simp", "event": "start", "vertices": 839, "edges": 14263}
+{"pass_name": "copy_simp", "event": "end", "vertices": 839, "edges": 14263, "seconds": 0.005605400001513772}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 839, "edges": 14263}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 839, "edges": 14263, "seconds": 0.10163499999907799}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 839, "edges": 14263}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 839, "edges": 13067, "seconds": 0.07133479999902193}
+{"pass_name": "spider_simp", "event": "start", "vertices": 839, "edges": 13067}
+{"pass_name": "spider_simp", "event": "end", "vertices": 839, "edges": 13067, "seconds": 0.03966979999677278}
+{"pass_name": "id_simp", "event": "start", "vertices": 839, "edges": 13067}
+{"pass_name": "id_simp", "event": "end", "vertices": 838, "edges": 13066, "seconds": 0.005249500005447771}
+{"pass_name": "spider_simp", "event": "start", "vertices": 838, "edges": 13066}
+{"pass_name": "spider_simp", "event": "end", "vertices": 837, "edges": 12605, "seconds": 0.07281450000300538}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 837, "edges": 12605}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 836, "edges": 12605, "seconds": 0.18873480000183918}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 836, "edges": 12605}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 836, "edges": 12605, "seconds": 0.006645800000114832}
+{"pass_name": "id_simp", "event": "start", "vertices": 836, "edges": 12605}
+{"pass_name": "id_simp", "event": "end", "vertices": 835, "edges": 12603, "seconds": 0.006459399999585003}
+{"pass_name": "spider_simp", "event": "start", "vertices": 835, "edges": 12603}
+{"pass_name": "spider_simp", "event": "end", "vertices": 834, "edges": 12166, "seconds": 0.07404649999807589}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 834, "edges": 12166}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 833, "edges": 12259, "seconds": 0.21041890000196872}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 833, "edges": 12259}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 833, "edges": 12259, "seconds": 0.006267700002354104}
+{"pass_name": "id_simp", "event": "start", "vertices": 833, "edges": 12259}
+{"pass_name": "id_simp", "event": "end", "vertices": 821, "edges": 12247, "seconds": 0.007286100000783335}
+{"pass_name": "spider_simp", "event": "start", "vertices": 821, "edges": 12247}
+{"pass_name": "spider_simp", "event": "end", "vertices": 809, "edges": 12235, "seconds": 0.07555889999639476}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 809, "edges": 12235}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 805, "edges": 11914, "seconds": 0.26230860000214307}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 805, "edges": 11914}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 805, "edges": 11914, "seconds": 0.007056999995256774}
+{"pass_name": "id_simp", "event": "start", "vertices": 805, "edges": 11914}
+{"pass_name": "id_simp", "event": "end", "vertices": 804, "edges": 11912, "seconds": 0.006451400004152674}
+{"pass_name": "spider_simp", "event": "start", "vertices": 804, "edges": 11912}
+{"pass_name": "spider_simp", "event": "end", "vertices": 803, "edges": 11539, "seconds": 0.06880290000117384}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 803, "edges": 11539}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 801, "edges": 11538, "seconds": 0.1765354999952251}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 801, "edges": 11538}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 801, "edges": 11538, "seconds": 0.005756699996709358}
+{"pass_name": "id_simp", "event": "start", "vertices": 801, "edges": 11538}
+{"pass_name": "id_simp", "event": "end", "vertices": 801, "edges": 11538, "seconds": 0.004104799998458475}
+{"pass_name": "spider_simp", "event": "start", "vertices": 801, "edges": 11538}
+{"pass_name": "spider_simp", "event": "end", "vertices": 801, "edges": 11538, "seconds": 0.03386619999946561}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 801, "edges": 11538}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 801, "edges": 11538, "seconds": 0.0885338000007323}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 801, "edges": 11538}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 801, "edges": 11538, "seconds": 0.005994300001475494}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 801, "edges": 11538}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 802, "edges": 11216, "seconds": 0.01845570000295993}
+{"pass_name": "spider_simp", "event": "start", "vertices": 802, "edges": 11216}
+{"pass_name": "spider_simp", "event": "end", "vertices": 802, "edges": 11216, "seconds": 0.033038900000974536}
+{"pass_name": "id_simp", "event": "start", "vertices": 802, "edges": 11216}
+{"pass_name": "id_simp", "event": "end", "vertices": 802, "edges": 11216, "seconds": 0.004254400002537295}
+{"pass_name": "spider_simp", "event": "start", "vertices": 802, "edges": 11216}
+{"pass_name": "spider_simp", "event": "end", "vertices": 802, "edges": 11216, "seconds": 0.03179189999355003}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 802, "edges": 11216}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 802, "edges": 11216, "seconds": 0.08543809999537189}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 802, "edges": 11216}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 802, "edges": 11216, "seconds": 0.005404800001997501}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 802, "edges": 11216}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 802, "edges": 11216, "seconds": 0.017467499994381797}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 802, "edges": 11216}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 800, "edges": 11213, "seconds": 0.005833199997141492}
+{"pass_name": "spider_simp", "event": "start", "vertices": 800, "edges": 11213}
+{"pass_name": "spider_simp", "event": "end", "vertices": 800, "edges": 11213, "seconds": 0.03461529999913182}
+{"pass_name": "id_simp", "event": "start", "vertices": 800, "edges": 11213}
+{"pass_name": "id_simp", "event": "end", "vertices": 800, "edges": 11213, "seconds": 0.005673100000421982}
+{"pass_name": "spider_simp", "event": "start", "vertices": 800, "edges": 11213}
+{"pass_name": "spider_simp", "event": "end", "vertices": 800, "edges": 11213, "seconds": 0.03887609999947017}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 800, "edges": 11213}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 800, "edges": 11213, "seconds": 0.09763460000249324}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 800, "edges": 11213}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 798, "edges": 11209, "seconds": 0.008415600001171697}
+{"pass_name": "id_simp", "event": "start", "vertices": 798, "edges": 11209}
+{"pass_name": "id_simp", "event": "end", "vertices": 798, "edges": 11209, "seconds": 0.00417810000362806}
+{"pass_name": "spider_simp", "event": "start", "vertices": 798, "edges": 11209}
+{"pass_name": "spider_simp", "event": "end", "vertices": 798, "edges": 11209, "seconds": 0.04226309999648947}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 798, "edges": 11209}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 798, "edges": 11209, "seconds": 0.1034605000022566}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 798, "edges": 11209}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 798, "edges": 11209, "seconds": 0.005382499999541324}
+{"pass_name": "copy_simp", "event": "start", "vertices": 798, "edges": 11209}
+{"pass_name": "copy_simp", "event": "end", "vertices": 798, "edges": 11209, "seconds": 0.004354999997303821}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 798, "edges": 11209}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 798, "edges": 11209, "seconds": 0.068997299997136}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 798, "edges": 11209}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 798, "edges": 11823, "seconds": 0.033742800005711615}
+{"pass_name": "spider_simp", "event": "start", "vertices": 798, "edges": 11823}
+{"pass_name": "spider_simp", "event": "end", "vertices": 798, "edges": 11823, "seconds": 0.035599399998318404}
+{"pass_name": "id_simp", "event": "start", "vertices": 798, "edges": 11823}
+{"pass_name": "id_simp", "event": "end", "vertices": 794, "edges": 11818, "seconds": 0.005623100005323067}
+{"pass_name": "spider_simp", "event": "start", "vertices": 794, "edges": 11818}
+{"pass_name": "spider_simp", "event": "end", "vertices": 790, "edges": 11406, "seconds": 0.06830759999866132}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 790, "edges": 11406}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 789, "edges": 11122, "seconds": 0.169062799999665}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 789, "edges": 11122}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 789, "edges": 11122, "seconds": 0.0051807999989250675}
+{"pass_name": "id_simp", "event": "start", "vertices": 789, "edges": 11122}
+{"pass_name": "id_simp", "event": "end", "vertices": 784, "edges": 11117, "seconds": 0.005093800005852245}
+{"pass_name": "spider_simp", "event": "start", "vertices": 784, "edges": 11117}
+{"pass_name": "spider_simp", "event": "end", "vertices": 780, "edges": 10393, "seconds": 0.06226269999751821}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 780, "edges": 10393}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 779, "edges": 10417, "seconds": 0.17077699999936158}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 779, "edges": 10417}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 779, "edges": 10417, "seconds": 0.005146900002728216}
+{"pass_name": "id_simp", "event": "start", "vertices": 779, "edges": 10417}
+{"pass_name": "id_simp", "event": "end", "vertices": 776, "edges": 10414, "seconds": 0.004826600001251791}
+{"pass_name": "spider_simp", "event": "start", "vertices": 776, "edges": 10414}
+{"pass_name": "spider_simp", "event": "end", "vertices": 773, "edges": 10411, "seconds": 0.05839620000188006}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 773, "edges": 10411}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 770, "edges": 10115, "seconds": 0.23968519999471027}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 770, "edges": 10115}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 770, "edges": 10115, "seconds": 0.00517079999553971}
+{"pass_name": "id_simp", "event": "start", "vertices": 770, "edges": 10115}
+{"pass_name": "id_simp", "event": "end", "vertices": 770, "edges": 10115, "seconds": 0.003820600002654828}
+{"pass_name": "spider_simp", "event": "start", "vertices": 770, "edges": 10115}
+{"pass_name": "spider_simp", "event": "end", "vertices": 770, "edges": 10115, "seconds": 0.03049089999694843}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 770, "edges": 10115}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 770, "edges": 10115, "seconds": 0.06656490000023041}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 770, "edges": 10115}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 770, "edges": 10115, "seconds": 0.005488900002092123}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 770, "edges": 10115}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 770, "edges": 10115, "seconds": 0.017466899997089058}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 770, "edges": 10115}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 770, "edges": 10115, "seconds": 0.004932899995765183}
+{"pass_name": "spider_simp", "event": "start", "vertices": 770, "edges": 10115}
+{"pass_name": "spider_simp", "event": "end", "vertices": 770, "edges": 10115, "seconds": 0.030979999995906837}
+{"pass_name": "id_simp", "event": "start", "vertices": 770, "edges": 10115}
+{"pass_name": "id_simp", "event": "end", "vertices": 770, "edges": 10115, "seconds": 0.004252400001860224}
+{"pass_name": "spider_simp", "event": "start", "vertices": 770, "edges": 10115}
+{"pass_name": "spider_simp", "event": "end", "vertices": 770, "edges": 10115, "seconds": 0.03148269999655895}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 770, "edges": 10115}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 770, "edges": 10115, "seconds": 0.06582340000022668}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 770, "edges": 10115}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 770, "edges": 10115, "seconds": 0.004823600000236183}
+{"pass_name": "copy_simp", "event": "start", "vertices": 770, "edges": 10115}
+{"pass_name": "copy_simp", "event": "end", "vertices": 770, "edges": 10115, "seconds": 0.004731599998194724}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 770, "edges": 10115}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 770, "edges": 10115, "seconds": 0.052381099994818214}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 770, "edges": 10115}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 770, "edges": 7954, "seconds": 0.06470419999823207}
+{"pass_name": "spider_simp", "event": "start", "vertices": 770, "edges": 7954}
+{"pass_name": "spider_simp", "event": "end", "vertices": 770, "edges": 7954, "seconds": 0.024457699997583404}
+{"pass_name": "id_simp", "event": "start", "vertices": 770, "edges": 7954}
+{"pass_name": "id_simp", "event": "end", "vertices": 767, "edges": 7950, "seconds": 0.004353500000433996}
+{"pass_name": "spider_simp", "event": "start", "vertices": 767, "edges": 7950}
+{"pass_name": "spider_simp", "event": "end", "vertices": 764, "edges": 7573, "seconds": 0.046341899993421976}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 764, "edges": 7573}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 762, "edges": 7195, "seconds": 0.107494099996984}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 762, "edges": 7195}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 762, "edges": 7195, "seconds": 0.005144300004758406}
+{"pass_name": "id_simp", "event": "start", "vertices": 762, "edges": 7195}
+{"pass_name": "id_simp", "event": "end", "vertices": 752, "edges": 7183, "seconds": 0.005544699997699354}
+{"pass_name": "spider_simp", "event": "start", "vertices": 752, "edges": 7183}
+{"pass_name": "spider_simp", "event": "end", "vertices": 743, "edges": 6720, "seconds": 0.044388400005118456}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 743, "edges": 6720}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 740, "edges": 7084, "seconds": 0.10553829999844311}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 740, "edges": 7084}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 738, "edges": 7112, "seconds": 0.011503200003062375}
+{"pass_name": "id_simp", "event": "start", "vertices": 738, "edges": 7112}
+{"pass_name": "id_simp", "event": "end", "vertices": 730, "edges": 7104, "seconds": 0.005144400005519856}
+{"pass_name": "spider_simp", "event": "start", "vertices": 730, "edges": 7104}
+{"pass_name": "spider_simp", "event": "end", "vertices": 725, "edges": 6759, "seconds": 0.04176309999456862}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 725, "edges": 6759}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 723, "edges": 6883, "seconds": 0.08889880000060657}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 723, "edges": 6883}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 723, "edges": 6883, "seconds": 0.004084600004716776}
+{"pass_name": "id_simp", "event": "start", "vertices": 723, "edges": 6883}
+{"pass_name": "id_simp", "event": "end", "vertices": 720, "edges": 6880, "seconds": 0.0037335000015445985}
+{"pass_name": "spider_simp", "event": "start", "vertices": 720, "edges": 6880}
+{"pass_name": "spider_simp", "event": "end", "vertices": 718, "edges": 6664, "seconds": 0.041148800002702046}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 718, "edges": 6664}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 717, "edges": 6677, "seconds": 0.08701529999962077}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 717, "edges": 6677}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 717, "edges": 6677, "seconds": 0.004166999999142718}
+{"pass_name": "id_simp", "event": "start", "vertices": 717, "edges": 6677}
+{"pass_name": "id_simp", "event": "end", "vertices": 716, "edges": 6676, "seconds": 0.0034874999983003363}
+{"pass_name": "spider_simp", "event": "start", "vertices": 716, "edges": 6676}
+{"pass_name": "spider_simp", "event": "end", "vertices": 716, "edges": 6676, "seconds": 0.021336300000257324}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 716, "edges": 6676}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 716, "edges": 6676, "seconds": 0.044820199997047894}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 716, "edges": 6676}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 716, "edges": 6676, "seconds": 0.004174699999566656}
+{"pass_name": "id_simp", "event": "start", "vertices": 716, "edges": 6676}
+{"pass_name": "id_simp", "event": "end", "vertices": 716, "edges": 6676, "seconds": 0.0049673000030452386}
+{"pass_name": "spider_simp", "event": "start", "vertices": 716, "edges": 6676}
+{"pass_name": "spider_simp", "event": "end", "vertices": 716, "edges": 6676, "seconds": 0.020815400006540585}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 716, "edges": 6676}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 716, "edges": 6676, "seconds": 0.04414669999823673}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 716, "edges": 6676}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 716, "edges": 6676, "seconds": 0.004135900002438575}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 716, "edges": 6676}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 717, "edges": 7023, "seconds": 0.00901289999455912}
+{"pass_name": "spider_simp", "event": "start", "vertices": 717, "edges": 7023}
+{"pass_name": "spider_simp", "event": "end", "vertices": 717, "edges": 7023, "seconds": 0.021335899997211527}
+{"pass_name": "id_simp", "event": "start", "vertices": 717, "edges": 7023}
+{"pass_name": "id_simp", "event": "end", "vertices": 717, "edges": 7023, "seconds": 0.0033814999987953342}
+{"pass_name": "spider_simp", "event": "start", "vertices": 717, "edges": 7023}
+{"pass_name": "spider_simp", "event": "end", "vertices": 717, "edges": 7023, "seconds": 0.020863500001723878}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 717, "edges": 7023}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 717, "edges": 7023, "seconds": 0.04389979999541538}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 717, "edges": 7023}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 717, "edges": 7023, "seconds": 0.004009800002677366}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 717, "edges": 7023}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 718, "edges": 6881, "seconds": 0.009223099994414952}
+{"pass_name": "spider_simp", "event": "start", "vertices": 718, "edges": 6881}
+{"pass_name": "spider_simp", "event": "end", "vertices": 718, "edges": 6881, "seconds": 0.020838000004005153}
+{"pass_name": "id_simp", "event": "start", "vertices": 718, "edges": 6881}
+{"pass_name": "id_simp", "event": "end", "vertices": 718, "edges": 6881, "seconds": 0.002934200005256571}
+{"pass_name": "spider_simp", "event": "start", "vertices": 718, "edges": 6881}
+{"pass_name": "spider_simp", "event": "end", "vertices": 718, "edges": 6881, "seconds": 0.02175849999912316}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 718, "edges": 6881}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 718, "edges": 6881, "seconds": 0.04343380000500474}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 718, "edges": 6881}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 718, "edges": 6881, "seconds": 0.00424370000109775}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 718, "edges": 6881}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 719, "edges": 6713, "seconds": 0.011452400001871865}
+{"pass_name": "spider_simp", "event": "start", "vertices": 719, "edges": 6713}
+{"pass_name": "spider_simp", "event": "end", "vertices": 719, "edges": 6713, "seconds": 0.021079899997857865}
+{"pass_name": "id_simp", "event": "start", "vertices": 719, "edges": 6713}
+{"pass_name": "id_simp", "event": "end", "vertices": 719, "edges": 6713, "seconds": 0.0032333999988622963}
+{"pass_name": "spider_simp", "event": "start", "vertices": 719, "edges": 6713}
+{"pass_name": "spider_simp", "event": "end", "vertices": 719, "edges": 6713, "seconds": 0.022557399999641348}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 719, "edges": 6713}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 719, "edges": 6713, "seconds": 0.05386430000362452}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 719, "edges": 6713}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 719, "edges": 6713, "seconds": 0.00716140000440646}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 719, "edges": 6713}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 719, "edges": 6713, "seconds": 0.01315969999996014}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 719, "edges": 6713}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 717, "edges": 6710, "seconds": 0.003930800005036872}
+{"pass_name": "spider_simp", "event": "start", "vertices": 717, "edges": 6710}
+{"pass_name": "spider_simp", "event": "end", "vertices": 717, "edges": 6710, "seconds": 0.030010899994522333}
+{"pass_name": "id_simp", "event": "start", "vertices": 717, "edges": 6710}
+{"pass_name": "id_simp", "event": "end", "vertices": 717, "edges": 6710, "seconds": 0.0031109999981708825}
+{"pass_name": "spider_simp", "event": "start", "vertices": 717, "edges": 6710}
+{"pass_name": "spider_simp", "event": "end", "vertices": 717, "edges": 6710, "seconds": 0.020107299998926464}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 717, "edges": 6710}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 715, "edges": 6707, "seconds": 0.08548699999664677}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 715, "edges": 6707}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 715, "edges": 6707, "seconds": 0.004451000000699423}
+{"pass_name": "id_simp", "event": "start", "vertices": 715, "edges": 6707}
+{"pass_name": "id_simp", "event": "end", "vertices": 715, "edges": 6707, "seconds": 0.0035935999985667877}
+{"pass_name": "spider_simp", "event": "start", "vertices": 715, "edges": 6707}
+{"pass_name": "spider_simp", "event": "end", "vertices": 715, "edges": 6707, "seconds": 0.026702600000135135}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 715, "edges": 6707}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 715, "edges": 6707, "seconds": 0.04453469999862136}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 715, "edges": 6707}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 715, "edges": 6707, "seconds": 0.005880000004253816}
+{"pass_name": "copy_simp", "event": "start", "vertices": 715, "edges": 6707}
+{"pass_name": "copy_simp", "event": "end", "vertices": 715, "edges": 6707, "seconds": 0.0041334000052302144}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 715, "edges": 6707}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 715, "edges": 6707, "seconds": 0.03128489999653539}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 715, "edges": 6707}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 715, "edges": 5786, "seconds": 0.02620520000346005}
+{"pass_name": "spider_simp", "event": "start", "vertices": 715, "edges": 5786}
+{"pass_name": "spider_simp", "event": "end", "vertices": 715, "edges": 5786, "seconds": 0.018650600002729334}
+{"pass_name": "id_simp", "event": "start", "vertices": 715, "edges": 5786}
+{"pass_name": "id_simp", "event": "end", "vertices": 712, "edges": 5782, "seconds": 0.003935499997169245}
+{"pass_name": "spider_simp", "event": "start", "vertices": 712, "edges": 5782}
+{"pass_name": "spider_simp", "event": "end", "vertices": 710, "edges": 5508, "seconds": 0.03241520000301534}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 710, "edges": 5508}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 709, "edges": 5184, "seconds": 0.07106339999882039}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 709, "edges": 5184}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 709, "edges": 5184, "seconds": 0.0038582999986829236}
+{"pass_name": "id_simp", "event": "start", "vertices": 709, "edges": 5184}
+{"pass_name": "id_simp", "event": "end", "vertices": 698, "edges": 5173, "seconds": 0.004597999999532476}
+{"pass_name": "spider_simp", "event": "start", "vertices": 698, "edges": 5173}
+{"pass_name": "spider_simp", "event": "end", "vertices": 690, "edges": 4789, "seconds": 0.033176999997522216}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 690, "edges": 4789}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 689, "edges": 4782, "seconds": 0.05688129999907687}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 689, "edges": 4782}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 689, "edges": 4782, "seconds": 0.0036051999995834194}
+{"pass_name": "id_simp", "event": "start", "vertices": 689, "edges": 4782}
+{"pass_name": "id_simp", "event": "end", "vertices": 674, "edges": 4764, "seconds": 0.00510519999807002}
+{"pass_name": "spider_simp", "event": "start", "vertices": 674, "edges": 4764}
+{"pass_name": "spider_simp", "event": "end", "vertices": 662, "edges": 3834, "seconds": 0.02708130000246456}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 662, "edges": 3834}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 657, "edges": 3506, "seconds": 0.05123490000551101}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 657, "edges": 3506}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 655, "edges": 3503, "seconds": 0.005530300004465971}
+{"pass_name": "id_simp", "event": "start", "vertices": 655, "edges": 3503}
+{"pass_name": "id_simp", "event": "end", "vertices": 630, "edges": 3477, "seconds": 0.00568829999974696}
+{"pass_name": "spider_simp", "event": "start", "vertices": 630, "edges": 3477}
+{"pass_name": "spider_simp", "event": "end", "vertices": 619, "edges": 3354, "seconds": 0.021598200000880752}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 619, "edges": 3354}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 616, "edges": 3189, "seconds": 0.034392199995636474}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 616, "edges": 3189}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 616, "edges": 3189, "seconds": 0.00283540000236826}
+{"pass_name": "id_simp", "event": "start", "vertices": 616, "edges": 3189}
+{"pass_name": "id_simp", "event": "end", "vertices": 610, "edges": 3181, "seconds": 0.0030991000021458603}
+{"pass_name": "spider_simp", "event": "start", "vertices": 610, "edges": 3181}
+{"pass_name": "spider_simp", "event": "end", "vertices": 607, "edges": 2700, "seconds": 0.018255900002259295}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 607, "edges": 2700}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 605, "edges": 2696, "seconds": 0.03633580000314396}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 605, "edges": 2696}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 605, "edges": 2696, "seconds": 0.0033795000053942204}
+{"pass_name": "id_simp", "event": "start", "vertices": 605, "edges": 2696}
+{"pass_name": "id_simp", "event": "end", "vertices": 602, "edges": 2692, "seconds": 0.0029594000006909482}
+{"pass_name": "spider_simp", "event": "start", "vertices": 602, "edges": 2692}
+{"pass_name": "spider_simp", "event": "end", "vertices": 600, "edges": 2400, "seconds": 0.016477400000439957}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 600, "edges": 2400}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 598, "edges": 2350, "seconds": 0.022183000000950415}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 598, "edges": 2350}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 598, "edges": 2350, "seconds": 0.0025668000016594306}
+{"pass_name": "id_simp", "event": "start", "vertices": 598, "edges": 2350}
+{"pass_name": "id_simp", "event": "end", "vertices": 580, "edges": 2330, "seconds": 0.004606000002240762}
+{"pass_name": "spider_simp", "event": "start", "vertices": 580, "edges": 2330}
+{"pass_name": "spider_simp", "event": "end", "vertices": 574, "edges": 1764, "seconds": 0.014079100001254119}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 574, "edges": 1764}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 570, "edges": 1762, "seconds": 0.01621299999533221}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 570, "edges": 1762}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 570, "edges": 1762, "seconds": 0.002147599996533245}
+{"pass_name": "id_simp", "event": "start", "vertices": 570, "edges": 1762}
+{"pass_name": "id_simp", "event": "end", "vertices": 529, "edges": 1721, "seconds": 0.006230500002857298}
+{"pass_name": "spider_simp", "event": "start", "vertices": 529, "edges": 1721}
+{"pass_name": "spider_simp", "event": "end", "vertices": 514, "edges": 1556, "seconds": 0.011541799998667557}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 514, "edges": 1556}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 508, "edges": 1448, "seconds": 0.02132329999585636}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 508, "edges": 1448}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 506, "edges": 1439, "seconds": 0.004363799998827744}
+{"pass_name": "id_simp", "event": "start", "vertices": 506, "edges": 1439}
+{"pass_name": "id_simp", "event": "end", "vertices": 485, "edges": 1416, "seconds": 0.003533800001605414}
+{"pass_name": "spider_simp", "event": "start", "vertices": 485, "edges": 1416}
+{"pass_name": "spider_simp", "event": "end", "vertices": 478, "edges": 1119, "seconds": 0.008662899999762885}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 478, "edges": 1119}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 475, "edges": 1088, "seconds": 0.01164979999884963}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 475, "edges": 1088}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 475, "edges": 1088, "seconds": 0.0017428999999538064}
+{"pass_name": "id_simp", "event": "start", "vertices": 475, "edges": 1088}
+{"pass_name": "id_simp", "event": "end", "vertices": 450, "edges": 1063, "seconds": 0.003460599997197278}
+{"pass_name": "spider_simp", "event": "start", "vertices": 450, "edges": 1063}
+{"pass_name": "spider_simp", "event": "end", "vertices": 447, "edges": 800, "seconds": 0.006979999998293351}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 447, "edges": 800}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 447, "edges": 800, "seconds": 0.003449600000749342}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 447, "edges": 800}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 447, "edges": 800, "seconds": 0.0016080999994301237}
+{"pass_name": "id_simp", "event": "start", "vertices": 447, "edges": 800}
+{"pass_name": "id_simp", "event": "end", "vertices": 435, "edges": 786, "seconds": 0.00240499999927124}
+{"pass_name": "spider_simp", "event": "start", "vertices": 435, "edges": 786}
+{"pass_name": "spider_simp", "event": "end", "vertices": 431, "edges": 586, "seconds": 0.005011699999158736}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 431, "edges": 586}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 429, "edges": 578, "seconds": 0.004477299997233786}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 429, "edges": 578}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 429, "edges": 578, "seconds": 0.0015106000064406544}
+{"pass_name": "id_simp", "event": "start", "vertices": 429, "edges": 578}
+{"pass_name": "id_simp", "event": "end", "vertices": 399, "edges": 547, "seconds": 0.003811300004599616}
+{"pass_name": "spider_simp", "event": "start", "vertices": 399, "edges": 547}
+{"pass_name": "spider_simp", "event": "end", "vertices": 395, "edges": 411, "seconds": 0.0038985999999567866}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 395, "edges": 411}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 393, "edges": 407, "seconds": 0.0036290999996708706}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 393, "edges": 407}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 393, "edges": 407, "seconds": 0.001251499998033978}
+{"pass_name": "id_simp", "event": "start", "vertices": 393, "edges": 407}
+{"pass_name": "id_simp", "event": "end", "vertices": 347, "edges": 361, "seconds": 0.005666099998052232}
+{"pass_name": "spider_simp", "event": "start", "vertices": 347, "edges": 361}
+{"pass_name": "spider_simp", "event": "end", "vertices": 339, "edges": 255, "seconds": 0.0034930000038002618}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 339, "edges": 255}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 337, "edges": 243, "seconds": 0.0023499999952036887}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 337, "edges": 243}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 337, "edges": 243, "seconds": 0.0012246000042068772}
+{"pass_name": "id_simp", "event": "start", "vertices": 337, "edges": 243}
+{"pass_name": "id_simp", "event": "end", "vertices": 288, "edges": 194, "seconds": 0.004864800001087133}
+{"pass_name": "spider_simp", "event": "start", "vertices": 288, "edges": 194}
+{"pass_name": "spider_simp", "event": "end", "vertices": 284, "edges": 172, "seconds": 0.002260100001876708}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 284, "edges": 172}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 283, "edges": 167, "seconds": 0.001658300003327895}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 283, "edges": 167}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 283, "edges": 167, "seconds": 0.0009568000023136847}
+{"pass_name": "id_simp", "event": "start", "vertices": 283, "edges": 167}
+{"pass_name": "id_simp", "event": "end", "vertices": 268, "edges": 152, "seconds": 0.0033041999995475635}
+{"pass_name": "spider_simp", "event": "start", "vertices": 268, "edges": 152}
+{"pass_name": "spider_simp", "event": "end", "vertices": 266, "edges": 140, "seconds": 0.0025334000019938685}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 266, "edges": 140}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 265, "edges": 137, "seconds": 0.001975200000742916}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 265, "edges": 137}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 265, "edges": 137, "seconds": 0.0012498999931267463}
+{"pass_name": "id_simp", "event": "start", "vertices": 265, "edges": 137}
+{"pass_name": "id_simp", "event": "end", "vertices": 256, "edges": 128, "seconds": 0.0022705000010319054}
+{"pass_name": "spider_simp", "event": "start", "vertices": 256, "edges": 128}
+{"pass_name": "spider_simp", "event": "end", "vertices": 256, "edges": 128, "seconds": 0.0010018999964813702}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 256, "edges": 128}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 256, "edges": 128, "seconds": 0.0007619999960297719}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 256, "edges": 128}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 256, "edges": 128, "seconds": 0.0007322000019485131}
+{"pass_name": "id_simp", "event": "start", "vertices": 256, "edges": 128}
+{"pass_name": "id_simp", "event": "end", "vertices": 256, "edges": 128, "seconds": 0.0007019000040600076}
+{"pass_name": "spider_simp", "event": "start", "vertices": 256, "edges": 128}
+{"pass_name": "spider_simp", "event": "end", "vertices": 256, "edges": 128, "seconds": 0.0009898999996948987}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 256, "edges": 128}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 256, "edges": 128, "seconds": 0.0006776000009267591}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 256, "edges": 128}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 256, "edges": 128, "seconds": 0.0006787000020267442}
+{"pass_name": "pivot_boundary_simp", "event": "start", "vertices": 256, "edges": 128}
+{"pass_name": "pivot_boundary_simp", "event": "end", "vertices": 256, "edges": 128, "seconds": 0.0007045000020298176}
+{"pass_name": "gadget_simp", "event": "start", "vertices": 256, "edges": 128}
+{"pass_name": "gadget_simp", "event": "end", "vertices": 256, "edges": 128, "seconds": 0.0006708000000799075}
+{"pass_name": "spider_simp", "event": "start", "vertices": 256, "edges": 128}
+{"pass_name": "spider_simp", "event": "end", "vertices": 256, "edges": 128, "seconds": 0.0009381000054418109}
+{"pass_name": "id_simp", "event": "start", "vertices": 256, "edges": 128}
+{"pass_name": "id_simp", "event": "end", "vertices": 256, "edges": 128, "seconds": 0.0007024999940767884}
+{"pass_name": "spider_simp", "event": "start", "vertices": 256, "edges": 128}
+{"pass_name": "spider_simp", "event": "end", "vertices": 256, "edges": 128, "seconds": 0.0009050000007846393}
+{"pass_name": "pivot_simp", "event": "start", "vertices": 256, "edges": 128}
+{"pass_name": "pivot_simp", "event": "end", "vertices": 256, "edges": 128, "seconds": 0.0006763999990653247}
+{"pass_name": "lcomp_simp", "event": "start", "vertices": 256, "edges": 128}
+{"pass_name": "lcomp_simp", "event": "end", "vertices": 256, "edges": 128, "seconds": 0.000730199993995484}
+{"pass_name": "copy_simp", "event": "start", "vertices": 256, "edges": 128}
+{"pass_name": "copy_simp", "event": "end", "vertices": 256, "edges": 128, "seconds": 0.0006992999988142401}
+{"pass_name": "supplementarity_simp", "event": "start", "vertices": 256, "edges": 128}
+{"pass_name": "supplementarity_simp", "event": "end", "vertices": 256, "edges": 128, "seconds": 0.0007027000028756447}
+{"pass_name": "pivot_gadget_simp", "event": "start", "vertices": 256, "edges": 128}
+{"pass_name": "pivot_gadget_simp", "event": "end", "vertices": 256, "edges": 128, "seconds": 0.0011389999999664724}

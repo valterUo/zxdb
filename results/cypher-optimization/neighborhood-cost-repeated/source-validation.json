@@ -1,0 +1,130 @@
+{
+  "all_match": true,
+  "files": [
+    {
+      "file": "evaluate.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "evaluation\\__init__.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "evaluation\\cases.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "evaluation\\circuits.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "evaluation\\core.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "evaluation\\evidence.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "evaluation\\oracle.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "evaluation\\patterns.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "evaluation\\workloads.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "zxdb\\generate.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "zxdb\\pyzx_utils.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "zxdb\\zxdb.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "tests\\__init__.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "tests\\live_support.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "tests\\test_boundary_pivot_batch.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "tests\\test_evaluation.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "tests\\test_evidence.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "tests\\test_gadget_pivot_batch.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "tests\\test_graph_isolation.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "tests\\test_hopf_normalization.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "tests\\test_native_reduction.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "tests\\test_pivot_materialization.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "tests\\test_reduction_optimizations.py",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "zxdb\\main_queries.json",
+      "current_matches": true,
+      "archive_matches": true
+    },
+    {
+      "file": "zxdb_qm\\zxqmcpp.cpp",
+      "current_matches": true,
+      "archive_matches": true
+    }
+  ]
+}

@@ -1,7 +1,0 @@
-{
-  "module_sha256": "2004beb274c19b03f48e59a7217b097756ea5029f265cdde76fdcdce511e0983",
-  "source_sha256": "6eb88464799b5ef0dcb1c2e4a7106081ce3e86ee3ff1dc77193c6966f39344f8",
-  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
-  "flags": "-O3 -std=c++20 -fPIC -shared -I/usr/include/memgraph",
-  "container_image": "sha256:f48fd751312ed5d81c6a50c469b0e4b2b3ca0cf11fce7774393340554229a586"
-}

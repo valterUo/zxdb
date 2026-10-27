@@ -9,7 +9,7 @@ import pyzx as zx
 
 from evaluation.cases import RULES, sf_chain3, lc_toggle_off
 from evaluation.circuits import build_suite
-from evaluation.core import load, read, verify
+from evaluation.core import CountingDriver, load, read, verify
 from evaluation.workloads import payload, build
 from zxdb.zxdb import ZXdb
 
@@ -19,6 +19,7 @@ class NativeReductionTests(unittest.TestCase):
     def setUp(self):
         self.db = ZXdb(uri=os.environ.get('ZXDB_URI', 'bolt://localhost:7687'),
                        user=os.environ.get('ZXDB_USER', ''), password=os.environ.get('ZXDB_PASSWORD', ''))
+        self.db._driver = CountingDriver(self.db.driver, timeout=30)
         self.gid = 'native_test_' + uuid.uuid4().hex
         self.foreign = self.gid + '_foreign'
         load(self.db, sf_chain3(), self.foreign)
@@ -41,10 +42,14 @@ class NativeReductionTests(unittest.TestCase):
             for name, builder, *_ in RULES[rule]['cases']:
                 with self.subTest(rule=rule, case=name):
                     g = builder()
-                    load(self.db, g, self.gid)
-                    count = self.native(procedure)
-                    self.assertEqual(verify(g, read(self.db, self.gid))['status'], 'verified')
-                    self.assertEqual(self.native(procedure), 0)
+                    try:
+                        load(self.db, g, self.gid)
+                        count = self.native(procedure)
+                        self.assertEqual(verify(g, read(self.db, self.gid))['status'], 'verified')
+                        self.assertEqual(self.native(procedure), 0)
+                    except Exception:
+                        print(f"Last database query for {rule}/{name}: {self.db.driver.last_query}", flush=True)
+                        raise
                     if name in ('basic', 'basic_00', 'basic_type1', 'type2_sum_zero'):
                         self.assertGreater(count, 0)
 

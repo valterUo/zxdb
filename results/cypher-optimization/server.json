@@ -1,0 +1,11 @@
+{
+  "container": "zxdb-cypher",
+  "uri": "bolt://localhost:7690",
+  "image": "sha256:a732421217951066e42f5749111bc3d0c7b51b12c756be04850d4dafa84cc05e",
+  "version": [
+    {
+      "version": "3.14.0"
+    }
+  ],
+  "custom_rewrite_procedures": []
+}

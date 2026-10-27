@@ -57,18 +57,10 @@ class ZXdb:
         # empty database, which is the case on a fresh connection.
         with self.driver.session() as analyze_session:
             analyze_session.run(f"STORAGE MODE {self.storage_mode};")
-            # Indexes for the scans every rewrite rule starts with. The
-            # label-property :Node(t) index serves the (n:Node {t: ...}) node
-            # scans; the edge-type :Wire(t) index serves the global
-            # edge-by-type scans (e.g. the spider-fusion fusable guard). These
-            # accelerate finding candidate nodes/edges by value; they do NOT
-            # (and cannot) speed up per-node adjacency checks such as the
-            # pivot/pivot_gadget interiorness predicates, which must walk a
-            # specific spider's neighbours. Idempotent; ignore "already exists".
-            for stmt in ("CREATE INDEX ON :Node(t)",
-                         "CREATE INDEX ON :Node(id)",
-                         "CREATE INDEX ON :Node(graph_id)",
-                         "CREATE EDGE INDEX ON :Wire(t)"):
+            # Stable lookup keys only. Type properties change during rewrites;
+            # indexing them triggered Memgraph 3.6.2 crashes in color-change stress.
+            for stmt in ("CREATE INDEX ON :Node(id)",
+                         "CREATE INDEX ON :Node(graph_id)"):
                 try:
                     analyze_session.run(stmt).consume()
                 except Exception:
@@ -430,9 +422,7 @@ class ZXdb:
             
         with self.driver.session() as session:
             session.run("CREATE INDEX ON :Node(id);")
-            session.run("CREATE INDEX ON :Node(t);")
             session.run("CREATE EDGE INDEX ON :Wire(id);")
-            session.run("CREATE EDGE INDEX ON :Wire(t);")
         
         # Clear existing graph data if requested
         if initialize_empty:
@@ -958,16 +948,18 @@ class ZXdb:
         Returns:
             Total number of supplementarity applications performed
         """
-        type1_query = self._query("Supplementarity type 1")
-        type2_query = self._query("Supplementarity type 2")
+        options = self._reduction_options.get()
+        grouped = options is not None and options['graph_id'] == graph_id
+        suffix = " - grouped" if grouped else ""
+        type1_query = self._query("Supplementarity type 1" + suffix)
+        type2_query = self._query("Supplementarity type 2" + suffix)
         # The pair-matching queries are quadratic in the number of
         # non-Clifford spiders; skip them when fewer than two exist.
         guard_query = (
             "MATCH (v:Node {t: 1, graph_id: $graph_id}) "
             "WHERE v.phase IS NOT NULL AND v.phase * 2 <> round(v.phase * 2) "
             "RETURN count(v) AS k")
-        options = self._reduction_options.get()
-        if options is not None and options['graph_id'] == graph_id:
+        if grouped:
             guard_query = guard_query.replace('RETURN count(v)', 'WITH v LIMIT 2 RETURN count(v)')
 
         def loop(tx):
