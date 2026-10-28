@@ -53,6 +53,35 @@ class NativeReductionTests(unittest.TestCase):
                     if name in ('basic', 'basic_00', 'basic_type1', 'type2_sum_zero'):
                         self.assertGreater(count, 0)
 
+    def test_reordered_conjugated_rule_contexts_with_independent_tensors(self):
+        from tests.test_rule_audit import adversarial_context, assert_projective
+        for rule, procedure in [('pivot', 'pivot'), ('lcomp', 'lcomp'),
+                                ('pivot_gadget', 'gadget'), ('supplementarity', 'supplementarity'),
+                                ('pivot_boundary', 'boundary')]:
+            for name, builder, *_ in RULES[rule]['cases']:
+                with self.subTest(rule=rule, case=name):
+                    g = adversarial_context(builder())
+                    load(self.db, g, self.gid)
+                    self.native(procedure)
+                    result = read(self.db, self.gid)
+                    assert_projective(self, g, result)
+                    self.assertEqual(self.native(procedure), 0)
+                    self.assertEqual(payload(read(self.db, self.gid)), payload(result))
+
+    def test_legacy_cpp_gadget_wrapper_on_single_graph(self):
+        from tests.test_rule_audit import adversarial_context, assert_projective
+        self.db.empty_graphdb(self.foreign)
+        try:
+            for name, builder, *_ in RULES['pivot_gadget']['cases']:
+                with self.subTest(case=name):
+                    g = adversarial_context(builder())
+                    load(self.db, g, self.gid)
+                    self.db.pivot_gadget_rule_qm(self.gid)
+                    assert_projective(self, g, read(self.db, self.gid))
+                    self.assertEqual(self.db.pivot_gadget_rule_qm(self.gid), 0)
+        finally:
+            load(self.db, sf_chain3(), self.foreign)
+
     def test_pauli_boundary_neighbor_groups_phases_and_wire_types(self):
         from tests.test_boundary_pivot_batch import boundary_neighborhood
         for groups, existing, pa, pb, bt in product(product((False, True), repeat=3),

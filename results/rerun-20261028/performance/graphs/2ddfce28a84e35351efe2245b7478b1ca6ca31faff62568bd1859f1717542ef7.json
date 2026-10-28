@@ -1,0 +1,1 @@
+{"edges": [[2, 8, 2], [3, 9, 2], [6, 10, 2], [7, 11, 2]], "inputs": [], "outputs": [], "scalar": {"floatfactor": "1.0", "is_unknown": false, "is_zero": false, "phase": "1/2", "phasenodes": [], "power2": -2, "sum_of_phases": {}}, "vertices": [[2, 1, "1/4"], [3, 1, "1/4"], [6, 1, "1/4"], [7, 1, "1/4"], [8, 2, "1"], [9, 2, "1"], [10, 2, "1"], [11, 2, "1"]]}

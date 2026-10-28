@@ -1,0 +1,252 @@
+======================================================================
+ERROR: test_all_eleven_rules_in_reordered_conjugated_contexts (tests.test_rule_audit.RuleAuditTests.test_all_eleven_rules_in_reordered_conjugated_contexts) (rule='hadamard_cancel', case='single_pair', variant='optimized')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 146, in test_all_eleven_rules_in_reordered_conjugated_contexts
+    self.check(adversarial_context(builder()), rule, variant)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 130, in check
+    count = self.apply(rule, variant)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 124, in apply
+    return self.db.apply_rule_optimized(method, self.gid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 1096, in apply_rule_optimized
+    raise ValueError(f'Unsupported optimized rule: {method}')
+ValueError: Unsupported optimized rule: hadamard_cancel
+
+======================================================================
+ERROR: test_all_eleven_rules_in_reordered_conjugated_contexts (tests.test_rule_audit.RuleAuditTests.test_all_eleven_rules_in_reordered_conjugated_contexts) (rule='hadamard_cancel', case='chain4', variant='optimized')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 146, in test_all_eleven_rules_in_reordered_conjugated_contexts
+    self.check(adversarial_context(builder()), rule, variant)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 130, in check
+    count = self.apply(rule, variant)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 124, in apply
+    return self.db.apply_rule_optimized(method, self.gid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 1096, in apply_rule_optimized
+    raise ValueError(f'Unsupported optimized rule: {method}')
+ValueError: Unsupported optimized rule: hadamard_cancel
+
+======================================================================
+ERROR: test_all_eleven_rules_in_reordered_conjugated_contexts (tests.test_rule_audit.RuleAuditTests.test_all_eleven_rules_in_reordered_conjugated_contexts) (rule='hadamard_cancel', case='chain3', variant='optimized')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 146, in test_all_eleven_rules_in_reordered_conjugated_contexts
+    self.check(adversarial_context(builder()), rule, variant)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 130, in check
+    count = self.apply(rule, variant)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 124, in apply
+    return self.db.apply_rule_optimized(method, self.gid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 1096, in apply_rule_optimized
+    raise ValueError(f'Unsupported optimized rule: {method}')
+ValueError: Unsupported optimized rule: hadamard_cancel
+
+======================================================================
+ERROR: test_all_eleven_rules_in_reordered_conjugated_contexts (tests.test_rule_audit.RuleAuditTests.test_all_eleven_rules_in_reordered_conjugated_contexts) (rule='hadamard_cancel', case='no_fire_phase', variant='optimized')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 146, in test_all_eleven_rules_in_reordered_conjugated_contexts
+    self.check(adversarial_context(builder()), rule, variant)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 130, in check
+    count = self.apply(rule, variant)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 124, in apply
+    return self.db.apply_rule_optimized(method, self.gid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 1096, in apply_rule_optimized
+    raise ValueError(f'Unsupported optimized rule: {method}')
+ValueError: Unsupported optimized rule: hadamard_cancel
+
+======================================================================
+ERROR: test_all_eleven_rules_in_reordered_conjugated_contexts (tests.test_rule_audit.RuleAuditTests.test_all_eleven_rules_in_reordered_conjugated_contexts) (rule='hadamard_cancel', case='boundary_ends', variant='optimized')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 146, in test_all_eleven_rules_in_reordered_conjugated_contexts
+    self.check(adversarial_context(builder()), rule, variant)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 130, in check
+    count = self.apply(rule, variant)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 124, in apply
+    return self.db.apply_rule_optimized(method, self.gid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 1096, in apply_rule_optimized
+    raise ValueError(f'Unsupported optimized rule: {method}')
+ValueError: Unsupported optimized rule: hadamard_cancel
+
+======================================================================
+ERROR: test_all_eleven_rules_in_reordered_conjugated_contexts (tests.test_rule_audit.RuleAuditTests.test_all_eleven_rules_in_reordered_conjugated_contexts) (rule='hadamard_cancel', case='random_seed31', variant='optimized')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 146, in test_all_eleven_rules_in_reordered_conjugated_contexts
+    self.check(adversarial_context(builder()), rule, variant)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 130, in check
+    count = self.apply(rule, variant)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 124, in apply
+    return self.db.apply_rule_optimized(method, self.gid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 1096, in apply_rule_optimized
+    raise ValueError(f'Unsupported optimized rule: {method}')
+ValueError: Unsupported optimized rule: hadamard_cancel
+
+======================================================================
+ERROR: test_all_eleven_rules_in_reordered_conjugated_contexts (tests.test_rule_audit.RuleAuditTests.test_all_eleven_rules_in_reordered_conjugated_contexts) (rule='hadamard_cancel', case='random_seed32', variant='optimized')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 146, in test_all_eleven_rules_in_reordered_conjugated_contexts
+    self.check(adversarial_context(builder()), rule, variant)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 130, in check
+    count = self.apply(rule, variant)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 124, in apply
+    return self.db.apply_rule_optimized(method, self.gid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\zxdb\zxdb.py", line 1096, in apply_rule_optimized
+    raise ValueError(f'Unsupported optimized rule: {method}')
+ValueError: Unsupported optimized rule: hadamard_cancel
+
+======================================================================
+FAIL: test_supplementarity_rejects_non_graphlike_neighborhoods (tests.test_rule_audit.RuleAuditTests.test_supplementarity_rejects_non_graphlike_neighborhoods) (adjacent=False, invalid='simple', variant='control')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 194, in test_supplementarity_rejects_non_graphlike_neighborhoods
+    self.assertEqual(self.apply('supplementarity', variant), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_supplementarity_rejects_non_graphlike_neighborhoods (tests.test_rule_audit.RuleAuditTests.test_supplementarity_rejects_non_graphlike_neighborhoods) (adjacent=False, invalid='simple', variant='optimized')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 194, in test_supplementarity_rejects_non_graphlike_neighborhoods
+    self.assertEqual(self.apply('supplementarity', variant), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_supplementarity_rejects_non_graphlike_neighborhoods (tests.test_rule_audit.RuleAuditTests.test_supplementarity_rejects_non_graphlike_neighborhoods) (adjacent=False, invalid='mixed', variant='control')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 194, in test_supplementarity_rejects_non_graphlike_neighborhoods
+    self.assertEqual(self.apply('supplementarity', variant), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_supplementarity_rejects_non_graphlike_neighborhoods (tests.test_rule_audit.RuleAuditTests.test_supplementarity_rejects_non_graphlike_neighborhoods) (adjacent=False, invalid='mixed', variant='optimized')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 194, in test_supplementarity_rejects_non_graphlike_neighborhoods
+    self.assertEqual(self.apply('supplementarity', variant), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_supplementarity_rejects_non_graphlike_neighborhoods (tests.test_rule_audit.RuleAuditTests.test_supplementarity_rejects_non_graphlike_neighborhoods) (adjacent=False, invalid='x_neighbor', variant='control')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 194, in test_supplementarity_rejects_non_graphlike_neighborhoods
+    self.assertEqual(self.apply('supplementarity', variant), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_supplementarity_rejects_non_graphlike_neighborhoods (tests.test_rule_audit.RuleAuditTests.test_supplementarity_rejects_non_graphlike_neighborhoods) (adjacent=False, invalid='x_neighbor', variant='optimized')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 194, in test_supplementarity_rejects_non_graphlike_neighborhoods
+    self.assertEqual(self.apply('supplementarity', variant), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_supplementarity_rejects_non_graphlike_neighborhoods (tests.test_rule_audit.RuleAuditTests.test_supplementarity_rejects_non_graphlike_neighborhoods) (adjacent=False, invalid='parallel', variant='control')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 194, in test_supplementarity_rejects_non_graphlike_neighborhoods
+    self.assertEqual(self.apply('supplementarity', variant), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_supplementarity_rejects_non_graphlike_neighborhoods (tests.test_rule_audit.RuleAuditTests.test_supplementarity_rejects_non_graphlike_neighborhoods) (adjacent=False, invalid='parallel', variant='optimized')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 194, in test_supplementarity_rejects_non_graphlike_neighborhoods
+    self.assertEqual(self.apply('supplementarity', variant), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_supplementarity_rejects_non_graphlike_neighborhoods (tests.test_rule_audit.RuleAuditTests.test_supplementarity_rejects_non_graphlike_neighborhoods) (adjacent=True, invalid='simple', variant='control')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 194, in test_supplementarity_rejects_non_graphlike_neighborhoods
+    self.assertEqual(self.apply('supplementarity', variant), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_supplementarity_rejects_non_graphlike_neighborhoods (tests.test_rule_audit.RuleAuditTests.test_supplementarity_rejects_non_graphlike_neighborhoods) (adjacent=True, invalid='simple', variant='optimized')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 194, in test_supplementarity_rejects_non_graphlike_neighborhoods
+    self.assertEqual(self.apply('supplementarity', variant), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_supplementarity_rejects_non_graphlike_neighborhoods (tests.test_rule_audit.RuleAuditTests.test_supplementarity_rejects_non_graphlike_neighborhoods) (adjacent=True, invalid='mixed', variant='control')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 194, in test_supplementarity_rejects_non_graphlike_neighborhoods
+    self.assertEqual(self.apply('supplementarity', variant), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_supplementarity_rejects_non_graphlike_neighborhoods (tests.test_rule_audit.RuleAuditTests.test_supplementarity_rejects_non_graphlike_neighborhoods) (adjacent=True, invalid='mixed', variant='optimized')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 194, in test_supplementarity_rejects_non_graphlike_neighborhoods
+    self.assertEqual(self.apply('supplementarity', variant), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_supplementarity_rejects_non_graphlike_neighborhoods (tests.test_rule_audit.RuleAuditTests.test_supplementarity_rejects_non_graphlike_neighborhoods) (adjacent=True, invalid='x_neighbor', variant='control')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 194, in test_supplementarity_rejects_non_graphlike_neighborhoods
+    self.assertEqual(self.apply('supplementarity', variant), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_supplementarity_rejects_non_graphlike_neighborhoods (tests.test_rule_audit.RuleAuditTests.test_supplementarity_rejects_non_graphlike_neighborhoods) (adjacent=True, invalid='x_neighbor', variant='optimized')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 194, in test_supplementarity_rejects_non_graphlike_neighborhoods
+    self.assertEqual(self.apply('supplementarity', variant), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_supplementarity_rejects_non_graphlike_neighborhoods (tests.test_rule_audit.RuleAuditTests.test_supplementarity_rejects_non_graphlike_neighborhoods) (adjacent=True, invalid='self_loop', variant='optimized')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 194, in test_supplementarity_rejects_non_graphlike_neighborhoods
+    self.assertEqual(self.apply('supplementarity', variant), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_supplementarity_rejects_non_graphlike_neighborhoods (tests.test_rule_audit.RuleAuditTests.test_supplementarity_rejects_non_graphlike_neighborhoods) (adjacent=True, invalid='parallel', variant='control')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 194, in test_supplementarity_rejects_non_graphlike_neighborhoods
+    self.assertEqual(self.apply('supplementarity', variant), 0)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_supplementarity_rejects_non_graphlike_neighborhoods (tests.test_rule_audit.RuleAuditTests.test_supplementarity_rejects_non_graphlike_neighborhoods) (adjacent=True, invalid='parallel', variant='optimized')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 194, in test_supplementarity_rejects_non_graphlike_neighborhoods
+    self.assertEqual(self.apply('supplementarity', variant), 0)
+AssertionError: 1 != 0
+
+----------------------------------------------------------------------
+Ran 6 tests in 10.205s
+
+FAILED (failures=17, errors=7)

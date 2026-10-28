@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-27",
+  "python": "3.12.10",
+  "packages": {
+    "pyzx": "0.10.3",
+    "neo4j": "5.28.1",
+    "numpy": "2.2.5",
+    "quimb": "1.11.2",
+    "networkx": "3.4.2"
+  },
+  "memgraph_image": "memgraph/memgraph:3.14.0",
+  "git_base": "3a048266103edda812a7e5fdc01edc2f4cb8b0d5",
+  "tests": {
+    "run": 91,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 85.946
+  },
+  "sha256": {
+    "evaluate.py": "8c6e98450d4663cb000f7dcbf78da168cffc88a36b464d461ff3b5470834ec59",
+    "zxdb/zxdb.py": "5d55f5d9f1937992fec48476b5f22f9995c2fab2e4bb02aa74877ebbb8031eb7",
+    "zxdb/main_queries.json": "ae544ede74f0ee12805b1f91b825393e30e9949ba8b18df29768b0269663549c",
+    "zxdb_qm/zxqm.py": "f067aaf16548e3af3081172c03be8f247ce12f6f77b4517d2410dd66c38d8d33",
+    "zxdb_qm/zxqmcpp.cpp": "6eb88464799b5ef0dcb1c2e4a7106081ce3e86ee3ff1dc77193c6966f39344f8",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/live_support.py": "648727a61472f6bb212e50371cddafd72f3fa1bd73fcde79e5e53abb39a9fa6e",
+    "tests/test_boundary_pivot_batch.py": "0b68f2fa026231c42c8fc33806eebb1eb172710ec53a940fae1d851fa9a1038c",
+    "tests/test_evaluation.py": "cdf92c9c3201178a70e79d6cc1a304c2c9c4355e6655eefafb3d6bbac37e9f82",
+    "tests/test_evidence.py": "dc26c4e9ab4f8d2d23a797b76f583d97567560a0f31b52058fc4dbfb139d843f",
+    "tests/test_gadget_pivot_batch.py": "a5cc814701b428e5063d4aea2e3d0806009e0f5b72fb1214a65a1fa429216b89",
+    "tests/test_graph_isolation.py": "d44574f33514ed2dd7696dc5944a01369b027547d755b49d559e5e277822725a",
+    "tests/test_hopf_normalization.py": "e9796f8631973994f69cc8b5ce9faf33de64ade3d1bfe2f41adafaa6e2376e77",
+    "tests/test_native_reduction.py": "bf6f71f05d0b34bf31ff8ab056e3947d1a753568e3575fb5852bdd86cd45a7eb",
+    "tests/test_pivot_materialization.py": "1656aadc2e7d5fb2aa0adad4add0b86db02290ff1f7ef84fd82882834bd085a1",
+    "tests/test_python_gadget.py": "d5c933a95fe7a54af4cab82a7006b573c873da79cc4066e5876f28b3cd53cc3d",
+    "tests/test_reduction_optimizations.py": "c22ebaea2945e8b8f3111f9dd3e55ec0018cdb0659f2c045fc4cc08759292c97",
+    "tests/test_rule_audit.py": "58ba8fc7f183e5e198d5338e37af69da6202a787767f2fbe098a8f1e83d4e216"
+  }
+}

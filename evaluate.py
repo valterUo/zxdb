@@ -276,8 +276,8 @@ def save_report(output, rows, environment, finished=False):
              'Large cases may be unverified even when their small motifs pass. No capacity or correctness claim '
              'follows from a timeout or an inconclusive check. Raw observations, input hashes, versions and source hashes '
              'are saved beside this report. Historical summaries are separate and are not evidence for this revision.', '',
-             'Known limitations: database scalar tracking, legacy JSON import/export, and standalone '
-             'supplementarity preconditions remain audit concerns. See '
+             'Known limitations: database scalar tracking and legacy JSON import/export '
+             'remain audit concerns. See '
              f'[audit history]({Path(os.path.relpath(ROOT / "evaluation" / "audit-history.md", output)).as_posix()}).']
     (output/'REPORT.md').write_text('\n'.join(text)+'\n', encoding='utf-8')
 
@@ -446,9 +446,11 @@ def main():
             with (output/'regressions.log').open('w', encoding='utf-8') as log:
                 modules = ['test_evaluation', 'test_evidence', 'test_graph_isolation', 'test_hopf_normalization',
                            'test_pivot_materialization', 'test_gadget_pivot_batch',
-                           'test_boundary_pivot_batch', 'test_reduction_optimizations']
+                           'test_boundary_pivot_batch', 'test_reduction_optimizations', 'test_rule_audit']
                 if 'native' in env['variants']:
                     modules.append('test_native_reduction')
+                if os.environ.get('ZXDB_PYTHON_MODULE') == '1':
+                    modules.append('test_python_gadget')
                 try:
                     result = subprocess.run([sys.executable, '-m', 'unittest', '-v',
                                              *['tests.' + name for name in modules]],

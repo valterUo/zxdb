@@ -76,8 +76,12 @@ def _toggle(g, A, B, gid):
             anb[e.from_vertex.id] = e
         for b in B:
             ex = anb.get(b.id)
-            if ex is not None:
+            if ex is not None and ex.properties.get("t") == 2:
                 g.delete_edge(ex)
+            elif ex is not None:
+                # Adding H beside a simple Z-Z wire retains the simple wire
+                # and adds pi; deleting it changes the represented tensor.
+                a.properties.set("phase", (_ph(a) + 1) % 2)
             else:
                 _add_h(g, a, b, gid)
 
@@ -122,11 +126,13 @@ def _apply(g, zj, za, zjn, zan):
     g.detach_delete_vertex(za)
 
 
-def _one_pass(g):
+def _one_pass(g, graph_id):
     consumed = set()
     applied = 0
     for zj in sorted(g.vertices, key=lambda x: x.id):
         if not zj.is_valid() or zj.id in consumed:
+            continue
+        if zj.properties.get("graph_id") != graph_id:
             continue
         if _t(zj) != 1:
             continue
@@ -166,9 +172,31 @@ def _one_pass(g):
 def pivot_gadget_fixpoint(ctx: mgp.ProcCtx,
                           graph_id: str = "") -> mgp.Record(applied=int):
     g = ctx.graph
+    if not graph_id:
+        owners = {v.properties.get("graph_id") for v in g.vertices}
+        if not owners:
+            return mgp.Record(applied=0)
+        if len(owners) != 1 or not isinstance(next(iter(owners)), str):
+            raise ValueError("Specify graph_id for a database with multiple graphs")
+        graph_id = next(iter(owners))
+    # Validate the whole selected graph before mutating any candidate. The
+    # neighbor maps cannot represent self-loops or parallel relationships.
+    for v in g.vertices:
+        if v.properties.get("graph_id") != graph_id:
+            continue
+        seen = set()
+        for e, n in ([(e, e.to_vertex) for e in v.out_edges]
+                     + [(e, e.from_vertex) for e in v.in_edges]):
+            if n.properties.get("graph_id") != graph_id:
+                raise ValueError("Cross-graph relationship")
+            if n.id == v.id or n.id in seen:
+                raise ValueError("Native rewrites require normalized simple graphs")
+            if e.properties.get("t") not in (1, 2):
+                raise ValueError("Unsupported edge type")
+            seen.add(n.id)
     total = 0
     while True:
-        n = _one_pass(g)
+        n = _one_pass(g, graph_id)
         total += n
         if n == 0:
             break

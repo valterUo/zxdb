@@ -1,0 +1,33 @@
+{
+  "recorded_trials": 1920,
+  "measured_trials": 1440,
+  "configurations": 160,
+  "sources_match": {
+    "evaluate.py": true,
+    "evaluation\\__init__.py": true,
+    "evaluation\\cases.py": true,
+    "evaluation\\circuits.py": true,
+    "evaluation\\compare_audit_performance.py": true,
+    "evaluation\\core.py": true,
+    "evaluation\\evidence.py": true,
+    "evaluation\\oracle.py": true,
+    "evaluation\\patterns.py": true,
+    "evaluation\\proof_matching.py": true,
+    "evaluation\\report_audit_performance.py": true,
+    "evaluation\\report_three_engines.py": true,
+    "evaluation\\rerun_three_engines.py": true,
+    "evaluation\\workloads.py": true,
+    "zxdb\\generate.py": true,
+    "zxdb\\pyzx_utils.py": true,
+    "zxdb\\zxdb.py": true,
+    "zxdb\\main_queries.json": true,
+    "zxdb_qm\\zxqmcpp.cpp": true
+  },
+  "statuses": {
+    "verified": 528,
+    "inconclusive": 1392
+  },
+  "median_recalculation": "passed",
+  "shared_inputs_check": "passed",
+  "graph_files_hash_verified": 939
+}

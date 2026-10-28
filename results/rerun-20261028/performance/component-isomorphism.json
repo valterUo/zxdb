@@ -1,0 +1,1278 @@
+{
+  "method": "Untimed exact component-wise comparison against each recorded PyZX output.\n\nPreserves colors, phases, wire multiplicities, and ordered boundary labels.\nScalar remains excluded, as in the original structural comparison.\n",
+  "counterexample_self_checks": "passed",
+  "audit_source": "\"\"\"Untimed exact component-wise comparison against each recorded PyZX output.\n\nPreserves colors, phases, wire multiplicities, and ordered boundary labels.\nScalar remains excluded, as in the original structural comparison.\n\"\"\"\nfrom collections import Counter, defaultdict\nfrom fractions import Fraction\nimport json\nfrom pathlib import Path\nimport sys\nimport time\nsys.path.insert(0, str(Path.cwd()))\nimport networkx as nx\nfrom evaluation.evidence import read_graph\n\n\ndef graph(g):\n    h = nx.MultiGraph()\n    roles = {v: ('input', i) for i, v in enumerate(g.inputs())}\n    roles.update({v: ('output', i) for i, v in enumerate(g.outputs())})\n    for v in g.vertices():\n        h.add_node(v, label=(int(g.type(v)), str(Fraction(g.phase(v)) % 2),\n                             roles.get(v, ('internal', 0))))\n    for e in g.edges():\n        h.add_edge(*g.edge_st(e), t=int(g.edge_type(e)))\n    return h\n\n\ndef signature(g):\n    return (g.number_of_nodes(), g.number_of_edges(),\n            tuple(sorted((d['label'], g.degree(v)) for v, d in g.nodes(data=True))),\n            tuple(sorted(Counter(d['t'] for _, _, d in g.edges(data=True)).items())))\n\n\ndef compare(a, b, timeout=10):\n    start = time.monotonic()\n    deadline = start+timeout\n    groups = []\n    for h in (graph(a), graph(b)):\n        grouped = defaultdict(list)\n        for vertices in nx.connected_components(h):\n            component = h.subgraph(vertices).copy()\n            grouped[signature(component)].append(component)\n        groups.append(grouped)\n    left, right = groups\n    if {k:len(v) for k,v in left.items()} != {k:len(v) for k,v in right.items()}:\n        return dict(status='different', reason='Different labeled connected-component invariants')\n    class Matcher(nx.algorithms.isomorphism.MultiGraphMatcher):\n        def candidate_pairs_iter(self):\n            for pair in super().candidate_pairs_iter():\n                if time.monotonic() > deadline:\n                    raise TimeoutError('Component isomorphism exceeded time bound')\n                yield pair\n    try:\n        for key, components in left.items():\n            candidates = list(right[key])\n            for component in components:\n                for index, candidate in enumerate(candidates):\n                    matcher = Matcher(component, candidate,\n                                      node_match=lambda x,y:x['label']==y['label'],\n                                      edge_match=lambda x,y:Counter(d['t'] for d in x.values()) == Counter(d['t'] for d in y.values()))\n                    try:\n                        equal = matcher.is_isomorphic()\n                    finally:\n                        matcher.reset_recursion_limit()\n                    if equal:\n                        candidates.pop(index)\n                        break\n                else:\n                    return dict(status='different', reason='No exact component match')\n        return dict(status='equal', reason='Exact labeled component-wise multigraph isomorphism',\n                    components=sum(map(len,left.values())), elapsed_s=time.monotonic()-start)\n    except (TimeoutError, RecursionError) as exc:\n        return dict(status='inconclusive', reason=str(exc), elapsed_s=time.monotonic()-start)\n\n\ndef main():\n    # Counterexamples ensure that equal degree sequences cannot pass this audit\n    # after phase, boundary-order or wire-type/multiplicity changes.\n    import pyzx as zx\n    g = zx.Graph()\n    a = g.add_vertex(zx.VertexType.BOUNDARY)\n    b = g.add_vertex(zx.VertexType.Z, phase=Fraction(1,4))\n    c = g.add_vertex(zx.VertexType.BOUNDARY)\n    g.add_edges([(a,b),(b,c)])\n    g.set_inputs((a,)); g.set_outputs((c,))\n    assert compare(g,g.copy())['status']=='equal'\n    changed=g.copy(); changed.set_phase(b,Fraction(3,4))\n    assert compare(g,changed)['status']=='different'\n    wires=zx.Graph()\n    vertices=[wires.add_vertex(zx.VertexType.BOUNDARY) for _ in range(4)]\n    wires.add_edges([(vertices[0],vertices[2]),(vertices[1],vertices[3])])\n    wires.set_inputs(tuple(vertices[:2])); wires.set_outputs(tuple(vertices[2:]))\n    changed=wires.copy(); changed.set_outputs(tuple(reversed(changed.outputs())))\n    assert compare(wires,changed)['status']=='different'\n    multi=zx.Graph(backend='multigraph'); multi.set_auto_simplify(False)\n    a=multi.add_vertex(zx.VertexType.Z); b=multi.add_vertex(zx.VertexType.Z)\n    multi.add_edge((a,b),zx.EdgeType.SIMPLE); multi.add_edge((a,b),zx.EdgeType.HADAMARD)\n    changed=zx.Graph(backend='multigraph'); changed.set_auto_simplify(False)\n    c=changed.add_vertex(zx.VertexType.Z); d=changed.add_vertex(zx.VertexType.Z)\n    changed.add_edge((c,d),zx.EdgeType.SIMPLE); changed.add_edge((c,d),zx.EdgeType.SIMPLE)\n    assert compare(multi,changed)['status']=='different'\n    root = Path(__file__).resolve().parent/'performance'\n    rows = [json.loads(x) for x in (root/'observations.jsonl').read_text().splitlines()]\n    refs = {(r['case'],r['repetition']):r for r in rows if r['engine']=='pyzx' and 'graphs' in r}\n    selected = {}\n    for row in rows:\n        if row['engine'] not in ('cypher','hybrid') or row['warmup'] or 'graphs' not in row:\n            continue\n        if row.get('against_pyzx',{}).get('graph',{}).get('status') != 'inconclusive':\n            continue\n        ref = refs[(row['case'],row['repetition'])]\n        selected.setdefault((row['graphs']['result'],ref['graphs']['result']), []).append(row)\n    report = dict(method=__doc__, counterexample_self_checks='passed', audit_source=Path(__file__).read_text(), checks=[])\n    for (dbkey, refkey), trials in selected.items():\n        result = compare(read_graph(root/'graphs',dbkey), read_graph(root/'graphs',refkey))\n        report['checks'].append(dict(db_hash=dbkey, pyzx_hash=refkey, result=result,\n                                    trials=[dict(case=r['case'],engine=r['engine'],repetition=r['repetition'],spec=r['spec']) for r in trials]))\n        (root/'component-isomorphism.json').write_text(json.dumps(report,indent=2))\n        print(len(report['checks']), '/', len(selected), trials[0]['spec'], result, flush=True)\n\n\nif __name__=='__main__':\n    main()\n",
+  "checks": [
+    {
+      "db_hash": "681d7b7feb4dbc54d809a99d8f303e2fed625fc8fec46a47c7386de7c3bec0c4",
+      "pyzx_hash": "b0a0516feab97cc279442764963f90a984aa7798bf6fc3925160a16690fe42c2",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 1024,
+        "elapsed_s": 0.3129999999946449
+      },
+      "trials": [
+        {
+          "case": "33eb28fca9c794c1",
+          "engine": "cypher",
+          "repetition": 1,
+          "spec": {
+            "family": "copies_spider_fusion",
+            "size": 512,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "a37e744109e9f4c82597abbdf9460c201e33fe31cc43e9fab4700187ef486ad9",
+      "pyzx_hash": "b0a0516feab97cc279442764963f90a984aa7798bf6fc3925160a16690fe42c2",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 1024,
+        "elapsed_s": 0.3120000000053551
+      },
+      "trials": [
+        {
+          "case": "33eb28fca9c794c1",
+          "engine": "hybrid",
+          "repetition": 1,
+          "spec": {
+            "family": "copies_spider_fusion",
+            "size": 512,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "b999cd6e4e498e23ba40e016f7822e905b49a2dea3b7c0343bb97a38ae0ed52c",
+      "pyzx_hash": "b0a0516feab97cc279442764963f90a984aa7798bf6fc3925160a16690fe42c2",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 1024,
+        "elapsed_s": 0.3120000000053551
+      },
+      "trials": [
+        {
+          "case": "33eb28fca9c794c1",
+          "engine": "hybrid",
+          "repetition": 2,
+          "spec": {
+            "family": "copies_spider_fusion",
+            "size": 512,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "fee9b245e837e12712e7fa37320b5fff615279b4b2a7f9ed400f13127b68157d",
+      "pyzx_hash": "b0a0516feab97cc279442764963f90a984aa7798bf6fc3925160a16690fe42c2",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 1024,
+        "elapsed_s": 0.3279999999940628
+      },
+      "trials": [
+        {
+          "case": "33eb28fca9c794c1",
+          "engine": "cypher",
+          "repetition": 2,
+          "spec": {
+            "family": "copies_spider_fusion",
+            "size": 512,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "670863d4e1d3e0a27ccd6503a1e3e21a6348472edc1afddf2efa79a6b62a6db0",
+      "pyzx_hash": "b0a0516feab97cc279442764963f90a984aa7798bf6fc3925160a16690fe42c2",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 1024,
+        "elapsed_s": 0.3120000000053551
+      },
+      "trials": [
+        {
+          "case": "33eb28fca9c794c1",
+          "engine": "cypher",
+          "repetition": 3,
+          "spec": {
+            "family": "copies_spider_fusion",
+            "size": 512,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "dbd559d1a8dd4a32551e159705ed6d2629898cc35f41968e51b4ebe8266daefa",
+      "pyzx_hash": "b0a0516feab97cc279442764963f90a984aa7798bf6fc3925160a16690fe42c2",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 1024,
+        "elapsed_s": 0.2960000000020955
+      },
+      "trials": [
+        {
+          "case": "33eb28fca9c794c1",
+          "engine": "hybrid",
+          "repetition": 3,
+          "spec": {
+            "family": "copies_spider_fusion",
+            "size": 512,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "9c611819648b9ef5d53e0a2727f3dd169d501593a2461139100372c288aad611",
+      "pyzx_hash": "1ad7af3ae9fbddc28510aad789d96a675a13c101ae93f943d5b7d08395e353a0",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 1024,
+        "elapsed_s": 0.25
+      },
+      "trials": [
+        {
+          "case": "bc13ba3be7f5e249",
+          "engine": "cypher",
+          "repetition": 1,
+          "spec": {
+            "family": "copies_identity",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "bc13ba3be7f5e249",
+          "engine": "hybrid",
+          "repetition": 1,
+          "spec": {
+            "family": "copies_identity",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "bc13ba3be7f5e249",
+          "engine": "hybrid",
+          "repetition": 2,
+          "spec": {
+            "family": "copies_identity",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "bc13ba3be7f5e249",
+          "engine": "cypher",
+          "repetition": 2,
+          "spec": {
+            "family": "copies_identity",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "bc13ba3be7f5e249",
+          "engine": "hybrid",
+          "repetition": 3,
+          "spec": {
+            "family": "copies_identity",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "bc13ba3be7f5e249",
+          "engine": "cypher",
+          "repetition": 3,
+          "spec": {
+            "family": "copies_identity",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "01a2bd62427f935a",
+          "engine": "cypher",
+          "repetition": 1,
+          "spec": {
+            "family": "copies_hadamard_cancel",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "01a2bd62427f935a",
+          "engine": "hybrid",
+          "repetition": 1,
+          "spec": {
+            "family": "copies_hadamard_cancel",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "01a2bd62427f935a",
+          "engine": "cypher",
+          "repetition": 2,
+          "spec": {
+            "family": "copies_hadamard_cancel",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "01a2bd62427f935a",
+          "engine": "hybrid",
+          "repetition": 2,
+          "spec": {
+            "family": "copies_hadamard_cancel",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "01a2bd62427f935a",
+          "engine": "hybrid",
+          "repetition": 3,
+          "spec": {
+            "family": "copies_hadamard_cancel",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "01a2bd62427f935a",
+          "engine": "cypher",
+          "repetition": 3,
+          "spec": {
+            "family": "copies_hadamard_cancel",
+            "size": 512,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "47438a9f2b39170656d81aa9bd27521b5985ce7b85dca826028b08df85fed3d8",
+      "pyzx_hash": "9fb57cb6e789384322b94874d162433024968c22b22b99f5979325e26dac58e4",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 512,
+        "elapsed_s": 0.17200000000593718
+      },
+      "trials": [
+        {
+          "case": "10cc780790f8a694",
+          "engine": "cypher",
+          "repetition": 1,
+          "spec": {
+            "family": "copies_lcomp",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "10cc780790f8a694",
+          "engine": "hybrid",
+          "repetition": 1,
+          "spec": {
+            "family": "copies_lcomp",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "10cc780790f8a694",
+          "engine": "cypher",
+          "repetition": 2,
+          "spec": {
+            "family": "copies_lcomp",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "10cc780790f8a694",
+          "engine": "hybrid",
+          "repetition": 2,
+          "spec": {
+            "family": "copies_lcomp",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "10cc780790f8a694",
+          "engine": "cypher",
+          "repetition": 3,
+          "spec": {
+            "family": "copies_lcomp",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "10cc780790f8a694",
+          "engine": "hybrid",
+          "repetition": 3,
+          "spec": {
+            "family": "copies_lcomp",
+            "size": 512,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "55a5c0a9a3c56e3b6bc3cc5526d24b374b03f610b189cc0ff2b464ce348ad689",
+      "pyzx_hash": "eae19f8fda043604930d04b13b548c11da7a0c3e35755a7121fbbef107a7a51a",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 1,
+        "elapsed_s": 0.46899999999732245
+      },
+      "trials": [
+        {
+          "case": "f239bcfa9926f5e8",
+          "engine": "cypher",
+          "repetition": 1,
+          "spec": {
+            "family": "lcomp",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "f239bcfa9926f5e8",
+          "engine": "hybrid",
+          "repetition": 1,
+          "spec": {
+            "family": "lcomp",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "f239bcfa9926f5e8",
+          "engine": "cypher",
+          "repetition": 2,
+          "spec": {
+            "family": "lcomp",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "f239bcfa9926f5e8",
+          "engine": "hybrid",
+          "repetition": 2,
+          "spec": {
+            "family": "lcomp",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "f239bcfa9926f5e8",
+          "engine": "hybrid",
+          "repetition": 3,
+          "spec": {
+            "family": "lcomp",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "f239bcfa9926f5e8",
+          "engine": "cypher",
+          "repetition": 3,
+          "spec": {
+            "family": "lcomp",
+            "size": 128,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "0762722e453e1aa892fb8325ec1e54cbf52ea0dbf94279ca749d4c3fa4e6a6c1",
+      "pyzx_hash": "4e7311ca1bb7457600c5ce7f01096f17b471f9b4d24158dcdcd102f4901196ac",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 512,
+        "elapsed_s": 0.375
+      },
+      "trials": [
+        {
+          "case": "d3274a782d48a83a",
+          "engine": "cypher",
+          "repetition": 1,
+          "spec": {
+            "family": "copies_pivot",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "d3274a782d48a83a",
+          "engine": "hybrid",
+          "repetition": 1,
+          "spec": {
+            "family": "copies_pivot",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "d3274a782d48a83a",
+          "engine": "cypher",
+          "repetition": 2,
+          "spec": {
+            "family": "copies_pivot",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "d3274a782d48a83a",
+          "engine": "hybrid",
+          "repetition": 2,
+          "spec": {
+            "family": "copies_pivot",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "d3274a782d48a83a",
+          "engine": "hybrid",
+          "repetition": 3,
+          "spec": {
+            "family": "copies_pivot",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "d3274a782d48a83a",
+          "engine": "cypher",
+          "repetition": 3,
+          "spec": {
+            "family": "copies_pivot",
+            "size": 512,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "65a37c3fdc62299eb9d66b2cdc0160278fdb0ef6d33abeb06258460a944824ca",
+      "pyzx_hash": "58826a64d053ffe7fb1ad7fa0447e48b7403b7c2f5d5f1a0e523d01169f92d5f",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 1,
+        "elapsed_s": 1.6089999999967404
+      },
+      "trials": [
+        {
+          "case": "b4051071fad87309",
+          "engine": "cypher",
+          "repetition": 1,
+          "spec": {
+            "family": "pivot",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "b4051071fad87309",
+          "engine": "hybrid",
+          "repetition": 1,
+          "spec": {
+            "family": "pivot",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "b4051071fad87309",
+          "engine": "hybrid",
+          "repetition": 2,
+          "spec": {
+            "family": "pivot",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "b4051071fad87309",
+          "engine": "cypher",
+          "repetition": 2,
+          "spec": {
+            "family": "pivot",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "b4051071fad87309",
+          "engine": "cypher",
+          "repetition": 3,
+          "spec": {
+            "family": "pivot",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "b4051071fad87309",
+          "engine": "hybrid",
+          "repetition": 3,
+          "spec": {
+            "family": "pivot",
+            "size": 128,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "111ba8230a6a2b855f37a83ccb2724ee82efea3b60c4cf672eb6ec753ac9bb86",
+      "pyzx_hash": "45c4de2d45f1a08978ee4ec4b7a21e188eb2ff00b5b78a50c0e4268638188ca0",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 512,
+        "elapsed_s": 0.5159999999887077
+      },
+      "trials": [
+        {
+          "case": "3bf9c84ebd22d67c",
+          "engine": "cypher",
+          "repetition": 1,
+          "spec": {
+            "family": "copies_pivot_gadget",
+            "size": 512,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "4ce42ec555eda2f370ae9c3d7a34ec0073e2cb00b3aabeacac070618feeb935e",
+      "pyzx_hash": "45c4de2d45f1a08978ee4ec4b7a21e188eb2ff00b5b78a50c0e4268638188ca0",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 512,
+        "elapsed_s": 0.5
+      },
+      "trials": [
+        {
+          "case": "3bf9c84ebd22d67c",
+          "engine": "hybrid",
+          "repetition": 1,
+          "spec": {
+            "family": "copies_pivot_gadget",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "3bf9c84ebd22d67c",
+          "engine": "hybrid",
+          "repetition": 2,
+          "spec": {
+            "family": "copies_pivot_gadget",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "3bf9c84ebd22d67c",
+          "engine": "hybrid",
+          "repetition": 3,
+          "spec": {
+            "family": "copies_pivot_gadget",
+            "size": 512,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "8ebaee19f98d4ea40eb0887ed36738f37d77f236e2a8183771b27163c520d681",
+      "pyzx_hash": "45c4de2d45f1a08978ee4ec4b7a21e188eb2ff00b5b78a50c0e4268638188ca0",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 512,
+        "elapsed_s": 0.5629999999946449
+      },
+      "trials": [
+        {
+          "case": "3bf9c84ebd22d67c",
+          "engine": "cypher",
+          "repetition": 2,
+          "spec": {
+            "family": "copies_pivot_gadget",
+            "size": 512,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "7018549d52154bf827ebdb0430ec367ce39d880b1945fb75bf8b5c64f1a093b3",
+      "pyzx_hash": "45c4de2d45f1a08978ee4ec4b7a21e188eb2ff00b5b78a50c0e4268638188ca0",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 512,
+        "elapsed_s": 0.6089999999967404
+      },
+      "trials": [
+        {
+          "case": "3bf9c84ebd22d67c",
+          "engine": "cypher",
+          "repetition": 3,
+          "spec": {
+            "family": "copies_pivot_gadget",
+            "size": 512,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "13a1a1a22466b51d14530150063158e2f0569248418e683ffbc46b39b8f6b6fd",
+      "pyzx_hash": "874655cc3988ab624379713738482c03bc6cd7b1e95d58e057b7fb8858acd546",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 1,
+        "elapsed_s": 1.6560000000026776
+      },
+      "trials": [
+        {
+          "case": "0cb75e4916637956",
+          "engine": "cypher",
+          "repetition": 1,
+          "spec": {
+            "family": "pivot_gadget",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "0cb75e4916637956",
+          "engine": "hybrid",
+          "repetition": 1,
+          "spec": {
+            "family": "pivot_gadget",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "0cb75e4916637956",
+          "engine": "cypher",
+          "repetition": 2,
+          "spec": {
+            "family": "pivot_gadget",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "0cb75e4916637956",
+          "engine": "hybrid",
+          "repetition": 2,
+          "spec": {
+            "family": "pivot_gadget",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "0cb75e4916637956",
+          "engine": "cypher",
+          "repetition": 3,
+          "spec": {
+            "family": "pivot_gadget",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "0cb75e4916637956",
+          "engine": "hybrid",
+          "repetition": 3,
+          "spec": {
+            "family": "pivot_gadget",
+            "size": 128,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "5a390d9c265c90c43400a17461735a7ad6a54e1074f16e3001c113bf3c265923",
+      "pyzx_hash": "f531857694638ac2d6fed38c2269854687289d4903feae72565eb27373560762",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 512,
+        "elapsed_s": 0.6560000000026776
+      },
+      "trials": [
+        {
+          "case": "f67e1b127d8dea02",
+          "engine": "cypher",
+          "repetition": 1,
+          "spec": {
+            "family": "copies_pivot_boundary",
+            "size": 512,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "98a83e723371b93ce185776fc140466b6ddf8fba9ce825a7a1ac793bd7fc40cc",
+      "pyzx_hash": "f531857694638ac2d6fed38c2269854687289d4903feae72565eb27373560762",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 512,
+        "elapsed_s": 0.6560000000026776
+      },
+      "trials": [
+        {
+          "case": "f67e1b127d8dea02",
+          "engine": "hybrid",
+          "repetition": 1,
+          "spec": {
+            "family": "copies_pivot_boundary",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "f67e1b127d8dea02",
+          "engine": "hybrid",
+          "repetition": 2,
+          "spec": {
+            "family": "copies_pivot_boundary",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "f67e1b127d8dea02",
+          "engine": "hybrid",
+          "repetition": 3,
+          "spec": {
+            "family": "copies_pivot_boundary",
+            "size": 512,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "89c78b95094388d5e6f0a8ba17604efcfb968b597e5e4ee91f22e5c7eac04554",
+      "pyzx_hash": "f531857694638ac2d6fed38c2269854687289d4903feae72565eb27373560762",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 512,
+        "elapsed_s": 0.6570000000065193
+      },
+      "trials": [
+        {
+          "case": "f67e1b127d8dea02",
+          "engine": "cypher",
+          "repetition": 2,
+          "spec": {
+            "family": "copies_pivot_boundary",
+            "size": 512,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "67e095e7e837977af5db8da9c0c6a98b10a1046ab69127d25f39195a18092372",
+      "pyzx_hash": "f531857694638ac2d6fed38c2269854687289d4903feae72565eb27373560762",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 512,
+        "elapsed_s": 0.6559999999881256
+      },
+      "trials": [
+        {
+          "case": "f67e1b127d8dea02",
+          "engine": "cypher",
+          "repetition": 3,
+          "spec": {
+            "family": "copies_pivot_boundary",
+            "size": 512,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "caffe2e746c5bdf3597115ac2a32f924f61016542df26389d9c712dcf3485ec3",
+      "pyzx_hash": "4cd554b25f4c32b01475ca68e43a356944ed23570a5a507633959dbddbab45fa",
+      "result": {
+        "status": "inconclusive",
+        "reason": "Component isomorphism exceeded time bound",
+        "elapsed_s": 10.014999999999418
+      },
+      "trials": [
+        {
+          "case": "54bc4aa38ea16c24",
+          "engine": "hybrid",
+          "repetition": 1,
+          "spec": {
+            "family": "pivot_boundary",
+            "size": 16,
+            "seed": 0
+          }
+        },
+        {
+          "case": "54bc4aa38ea16c24",
+          "engine": "cypher",
+          "repetition": 1,
+          "spec": {
+            "family": "pivot_boundary",
+            "size": 16,
+            "seed": 0
+          }
+        },
+        {
+          "case": "54bc4aa38ea16c24",
+          "engine": "cypher",
+          "repetition": 2,
+          "spec": {
+            "family": "pivot_boundary",
+            "size": 16,
+            "seed": 0
+          }
+        },
+        {
+          "case": "54bc4aa38ea16c24",
+          "engine": "hybrid",
+          "repetition": 2,
+          "spec": {
+            "family": "pivot_boundary",
+            "size": 16,
+            "seed": 0
+          }
+        },
+        {
+          "case": "54bc4aa38ea16c24",
+          "engine": "cypher",
+          "repetition": 3,
+          "spec": {
+            "family": "pivot_boundary",
+            "size": 16,
+            "seed": 0
+          }
+        },
+        {
+          "case": "54bc4aa38ea16c24",
+          "engine": "hybrid",
+          "repetition": 3,
+          "spec": {
+            "family": "pivot_boundary",
+            "size": 16,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "fadf42026775e8f379fc3dbb5ee8b82cb9bd91623be6699bf65a6e396323f48c",
+      "pyzx_hash": "adcdb0a22b9eeeb057b2dd4fe89e7a45cc39c9b645779e3a8ce5c23269d14a79",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 1,
+        "elapsed_s": 1.5310000000026776
+      },
+      "trials": [
+        {
+          "case": "20b61bc6467631ac",
+          "engine": "hybrid",
+          "repetition": 1,
+          "spec": {
+            "family": "pivot_boundary",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "20b61bc6467631ac",
+          "engine": "cypher",
+          "repetition": 1,
+          "spec": {
+            "family": "pivot_boundary",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "20b61bc6467631ac",
+          "engine": "cypher",
+          "repetition": 2,
+          "spec": {
+            "family": "pivot_boundary",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "20b61bc6467631ac",
+          "engine": "hybrid",
+          "repetition": 2,
+          "spec": {
+            "family": "pivot_boundary",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "20b61bc6467631ac",
+          "engine": "hybrid",
+          "repetition": 3,
+          "spec": {
+            "family": "pivot_boundary",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "20b61bc6467631ac",
+          "engine": "cypher",
+          "repetition": 3,
+          "spec": {
+            "family": "pivot_boundary",
+            "size": 128,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "a7c3533e1e505d86ab95354eae20d6ce043b08d3e45a78a524f1969064b8dc48",
+      "pyzx_hash": "6aacd024997d71b4a91aec7bfe0f79c689ccd49aa66010aa6be5e675b3a7a416",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 512,
+        "elapsed_s": 0.23399999999674037
+      },
+      "trials": [
+        {
+          "case": "27aa16c1004b3d20",
+          "engine": "cypher",
+          "repetition": 1,
+          "spec": {
+            "family": "copies_gadget_fusion",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "27aa16c1004b3d20",
+          "engine": "hybrid",
+          "repetition": 1,
+          "spec": {
+            "family": "copies_gadget_fusion",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "27aa16c1004b3d20",
+          "engine": "cypher",
+          "repetition": 2,
+          "spec": {
+            "family": "copies_gadget_fusion",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "27aa16c1004b3d20",
+          "engine": "hybrid",
+          "repetition": 2,
+          "spec": {
+            "family": "copies_gadget_fusion",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "27aa16c1004b3d20",
+          "engine": "hybrid",
+          "repetition": 3,
+          "spec": {
+            "family": "copies_gadget_fusion",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "27aa16c1004b3d20",
+          "engine": "cypher",
+          "repetition": 3,
+          "spec": {
+            "family": "copies_gadget_fusion",
+            "size": 512,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "c3668f1e9bfb77c9da29d3be957e31e3fb967f04e1a08ef2188ece8f6e71d1b3",
+      "pyzx_hash": "8e9cab53f88f4e97b9df457b4b9cd64c770719b5b6e8a8a4427c0ae10aaebf38",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 512,
+        "elapsed_s": 0.5469999999913853
+      },
+      "trials": [
+        {
+          "case": "6005997c57742351",
+          "engine": "hybrid",
+          "repetition": 1,
+          "spec": {
+            "family": "copies_bialgebra",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "6005997c57742351",
+          "engine": "cypher",
+          "repetition": 1,
+          "spec": {
+            "family": "copies_bialgebra",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "6005997c57742351",
+          "engine": "hybrid",
+          "repetition": 2,
+          "spec": {
+            "family": "copies_bialgebra",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "6005997c57742351",
+          "engine": "cypher",
+          "repetition": 2,
+          "spec": {
+            "family": "copies_bialgebra",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "6005997c57742351",
+          "engine": "cypher",
+          "repetition": 3,
+          "spec": {
+            "family": "copies_bialgebra",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "6005997c57742351",
+          "engine": "hybrid",
+          "repetition": 3,
+          "spec": {
+            "family": "copies_bialgebra",
+            "size": 512,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "086c899021911190111f75eba6d7ae2914d13a78ba53dcd26169467c3a868a34",
+      "pyzx_hash": "33b7dc305213bb4ca9cb1f83c4f7131039c3be1613fc1c6d74d1e0048ff56bbd",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 1,
+        "elapsed_s": 2.4219999999913853
+      },
+      "trials": [
+        {
+          "case": "0fef027d1ee00970",
+          "engine": "cypher",
+          "repetition": 1,
+          "spec": {
+            "family": "bialgebra",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "0fef027d1ee00970",
+          "engine": "hybrid",
+          "repetition": 1,
+          "spec": {
+            "family": "bialgebra",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "0fef027d1ee00970",
+          "engine": "cypher",
+          "repetition": 2,
+          "spec": {
+            "family": "bialgebra",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "0fef027d1ee00970",
+          "engine": "hybrid",
+          "repetition": 2,
+          "spec": {
+            "family": "bialgebra",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "0fef027d1ee00970",
+          "engine": "cypher",
+          "repetition": 3,
+          "spec": {
+            "family": "bialgebra",
+            "size": 128,
+            "seed": 0
+          }
+        },
+        {
+          "case": "0fef027d1ee00970",
+          "engine": "hybrid",
+          "repetition": 3,
+          "spec": {
+            "family": "bialgebra",
+            "size": 128,
+            "seed": 0
+          }
+        }
+      ]
+    },
+    {
+      "db_hash": "a45032a7835569c160ba6a2ca4f2fae22cf75175140ca7316f2ceb47200f5c8a",
+      "pyzx_hash": "3af58acc71219a58595e9f1d83ccceb75eaac4741f7aa0e2adf695a7c5e7a551",
+      "result": {
+        "status": "equal",
+        "reason": "Exact labeled component-wise multigraph isomorphism",
+        "components": 1024,
+        "elapsed_s": 0.23399999999674037
+      },
+      "trials": [
+        {
+          "case": "2d62f66671acacf2",
+          "engine": "cypher",
+          "repetition": 1,
+          "spec": {
+            "family": "copies_copy",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "2d62f66671acacf2",
+          "engine": "hybrid",
+          "repetition": 1,
+          "spec": {
+            "family": "copies_copy",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "2d62f66671acacf2",
+          "engine": "cypher",
+          "repetition": 2,
+          "spec": {
+            "family": "copies_copy",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "2d62f66671acacf2",
+          "engine": "hybrid",
+          "repetition": 2,
+          "spec": {
+            "family": "copies_copy",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "2d62f66671acacf2",
+          "engine": "cypher",
+          "repetition": 3,
+          "spec": {
+            "family": "copies_copy",
+            "size": 512,
+            "seed": 0
+          }
+        },
+        {
+          "case": "2d62f66671acacf2",
+          "engine": "hybrid",
+          "repetition": 3,
+          "spec": {
+            "family": "copies_copy",
+            "size": 512,
+            "seed": 0
+          }
+        }
+      ]
+    }
+  ]
+}

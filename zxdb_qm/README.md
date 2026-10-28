@@ -51,3 +51,11 @@ of correctness. Database scalar tracking remains an explicit limitation.
 `zxqm.py` and the zero-argument C++ gadget procedure are older comparison paths;
 their Python wrapper requires that no other graph is present. Historical timing
 claims are in the backup, not evidence for the current implementation.
+
+The Python procedure `zxqm.pivot_gadget_fixpoint(graph_id)` now scopes matches
+to the supplied graph and rejects crossing, duplicate and self-loop edges before
+mutation. Calling it without a graph ID requires a single owned graph. To audit
+this optional module too, deploy `zxqm.py` beside the compiled module, restart
+the test database, and set `ZXDB_LIVE=1` and `ZXDB_PYTHON_MODULE=1` before running
+`python -m unittest discover -s tests -v`. The evaluation runner also includes
+these optional tests when `ZXDB_PYTHON_MODULE=1` is set.

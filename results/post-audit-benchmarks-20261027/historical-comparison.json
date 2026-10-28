@@ -1,0 +1,3990 @@
+[
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb\\results\\cypher-optimization\\neighborhood-cost-repeated",
+    "case": "9f0326852fc2e119",
+    "spec": {
+      "family": "random_clifford",
+      "size": 128,
+      "seed": 0,
+      "depth": 2560
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.14.0"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1b2a62d9c9fe70d8263a999e11275674865d30d593533a7836d5673ea4e16734",
+      "zxdb\\main_queries.json": "fa96ed2329063c09033289bf4bf5a8de510e383257e7a627c67ba0101fa1578d",
+      "zxdb_qm\\zxqmcpp.cpp": "6eb88464799b5ef0dcb1c2e4a7106081ce3e86ee3ff1dc77193c6966f39344f8"
+    },
+    "rewrite_old_s": 16.514453399999184,
+    "rewrite_new_s": 17.17214789999707,
+    "rewrite_change_pct": 3.982538713621131,
+    "total_old_s": 17.37121119999938,
+    "total_new_s": 18.086000199997216,
+    "total_change_pct": 4.1147907982251875
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\native",
+    "case": "85f509b637912009",
+    "spec": {
+      "family": "random_clifford",
+      "size": 32,
+      "seed": 0,
+      "depth": 640
+    },
+    "engine": "hybrid",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "667c69160d571eb0bdc091aefdc1aafb7eb426231ab20f9009e3d4e2ed722020",
+      "zxdb\\main_queries.json": "0ec39a56d638fb267c77c2f43daebcc329713cd5fb1fede7da07e15e874138b4",
+      "zxdb_qm\\zxqmcpp.cpp": "ada725937ebf0f742717f360c231f24881bae2eed1b571e92db9751591952b35"
+    },
+    "rewrite_old_s": 0.6829304000002594,
+    "rewrite_new_s": 0.5873721999960253,
+    "rewrite_change_pct": -13.992377554754887,
+    "total_old_s": 0.8225909000002503,
+    "total_new_s": 0.7059016999992309,
+    "total_change_pct": -14.185569035711898
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\native",
+    "case": "ef90c7b382903b2b",
+    "spec": {
+      "family": "random_clifford",
+      "size": 32,
+      "seed": 1,
+      "depth": 640
+    },
+    "engine": "hybrid",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "667c69160d571eb0bdc091aefdc1aafb7eb426231ab20f9009e3d4e2ed722020",
+      "zxdb\\main_queries.json": "0ec39a56d638fb267c77c2f43daebcc329713cd5fb1fede7da07e15e874138b4",
+      "zxdb_qm\\zxqmcpp.cpp": "ada725937ebf0f742717f360c231f24881bae2eed1b571e92db9751591952b35"
+    },
+    "rewrite_old_s": 0.8452494000002844,
+    "rewrite_new_s": 0.7140991999985999,
+    "rewrite_change_pct": -15.516154167236351,
+    "total_old_s": 0.9766531000004761,
+    "total_new_s": 0.8411513000028208,
+    "total_change_pct": -13.874097158713706
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\native",
+    "case": "86a0d14331134fa4",
+    "spec": {
+      "family": "random_clifford",
+      "size": 32,
+      "seed": 2,
+      "depth": 640
+    },
+    "engine": "hybrid",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "667c69160d571eb0bdc091aefdc1aafb7eb426231ab20f9009e3d4e2ed722020",
+      "zxdb\\main_queries.json": "0ec39a56d638fb267c77c2f43daebcc329713cd5fb1fede7da07e15e874138b4",
+      "zxdb_qm\\zxqmcpp.cpp": "ada725937ebf0f742717f360c231f24881bae2eed1b571e92db9751591952b35"
+    },
+    "rewrite_old_s": 0.6636496000000989,
+    "rewrite_new_s": 0.6262715999982902,
+    "rewrite_change_pct": -5.632189034967117,
+    "total_old_s": 0.7996685999996771,
+    "total_new_s": 0.7638719999958994,
+    "total_change_pct": -4.476429361336953
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\native",
+    "case": "454d351cdafefff8",
+    "spec": {
+      "family": "random_clifford",
+      "size": 64,
+      "seed": 0,
+      "depth": 1280
+    },
+    "engine": "hybrid",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "667c69160d571eb0bdc091aefdc1aafb7eb426231ab20f9009e3d4e2ed722020",
+      "zxdb\\main_queries.json": "0ec39a56d638fb267c77c2f43daebcc329713cd5fb1fede7da07e15e874138b4",
+      "zxdb_qm\\zxqmcpp.cpp": "ada725937ebf0f742717f360c231f24881bae2eed1b571e92db9751591952b35"
+    },
+    "rewrite_old_s": 2.669608999999582,
+    "rewrite_new_s": 2.1758675999953994,
+    "rewrite_change_pct": -18.49489569462269,
+    "total_old_s": 2.9612902000008035,
+    "total_new_s": 2.497792499998468,
+    "total_change_pct": -15.651883763442353
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\native",
+    "case": "3172bf9db795b5ff",
+    "spec": {
+      "family": "random_clifford",
+      "size": 64,
+      "seed": 1,
+      "depth": 1280
+    },
+    "engine": "hybrid",
+    "historical_complete": false,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "667c69160d571eb0bdc091aefdc1aafb7eb426231ab20f9009e3d4e2ed722020",
+      "zxdb\\main_queries.json": "0ec39a56d638fb267c77c2f43daebcc329713cd5fb1fede7da07e15e874138b4",
+      "zxdb_qm\\zxqmcpp.cpp": "ada725937ebf0f742717f360c231f24881bae2eed1b571e92db9751591952b35"
+    },
+    "rewrite_old_s": null,
+    "rewrite_new_s": 2.323311799998919,
+    "rewrite_change_pct": null,
+    "total_old_s": null,
+    "total_new_s": 2.652413900003012,
+    "total_change_pct": null
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\native",
+    "case": "994ed5215fb379a8",
+    "spec": {
+      "family": "random_clifford",
+      "size": 64,
+      "seed": 2,
+      "depth": 1280
+    },
+    "engine": "hybrid",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "667c69160d571eb0bdc091aefdc1aafb7eb426231ab20f9009e3d4e2ed722020",
+      "zxdb\\main_queries.json": "0ec39a56d638fb267c77c2f43daebcc329713cd5fb1fede7da07e15e874138b4",
+      "zxdb_qm\\zxqmcpp.cpp": "ada725937ebf0f742717f360c231f24881bae2eed1b571e92db9751591952b35"
+    },
+    "rewrite_old_s": 3.023397699999805,
+    "rewrite_new_s": 2.448276499999338,
+    "rewrite_change_pct": -19.022346944317125,
+    "total_old_s": 3.3807004999998753,
+    "total_new_s": 2.741551099999924,
+    "total_change_pct": -18.905827357376815
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\native-128-stable",
+    "case": "9f0326852fc2e119",
+    "spec": {
+      "family": "random_clifford",
+      "size": 128,
+      "seed": 0,
+      "depth": 2560
+    },
+    "engine": "hybrid",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "67bb919f9fe1d5629ab2129a53394bf3c0564fcd95eb1274778eecd2b3ed86c2",
+      "zxdb\\main_queries.json": "b725b069508c4b51ad5b5410991fb3c9fe746bee4bac4477bb5b3b171f041af8",
+      "zxdb_qm\\zxqmcpp.cpp": "6eb88464799b5ef0dcb1c2e4a7106081ce3e86ee3ff1dc77193c6966f39344f8"
+    },
+    "rewrite_old_s": 16.830166100000042,
+    "rewrite_new_s": 16.94766019999952,
+    "rewrite_change_pct": 0.6981161047452611,
+    "total_old_s": 17.813909500000136,
+    "total_new_s": 17.83144689999608,
+    "total_change_pct": 0.09844778876835214
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "84a4b81d786a4fef",
+    "spec": {
+      "family": "copies_spider_fusion",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.010465800000019954,
+    "rewrite_new_s": 0.012884100004157517,
+    "rewrite_change_pct": 23.106690402386377,
+    "total_old_s": 0.020432199999959266,
+    "total_new_s": 0.023687400003836956,
+    "total_change_pct": 15.931715644346568
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "e4ad28de44ce1122",
+    "spec": {
+      "family": "copies_spider_fusion",
+      "size": 32,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.022500600000057602,
+    "rewrite_new_s": 0.01834690000396222,
+    "rewrite_change_pct": -18.460396594245264,
+    "total_old_s": 0.06891120000000228,
+    "total_new_s": 0.06064730000070995,
+    "total_change_pct": -11.992099976915306
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "33eb28fca9c794c1",
+    "spec": {
+      "family": "copies_spider_fusion",
+      "size": 512,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.06802739999966434,
+    "rewrite_new_s": 0.05951880000066012,
+    "rewrite_change_pct": -12.507607227449824,
+    "total_old_s": 0.7455439999998816,
+    "total_new_s": 0.5009398000038345,
+    "total_change_pct": -32.80882147748301
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "3db6bcfdf6de5d6f",
+    "spec": {
+      "family": "spider_fusion",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.021906599999965692,
+    "rewrite_new_s": 0.04405450000194833,
+    "rewrite_change_pct": 101.10149453597236,
+    "total_old_s": 0.04937560000007579,
+    "total_new_s": 0.06950059999508085,
+    "total_change_pct": 40.758998361486576
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "c0860f2b1452bc79",
+    "spec": {
+      "family": "spider_fusion",
+      "size": 16,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.023069200000009005,
+    "rewrite_new_s": 0.011344399994413834,
+    "rewrite_change_pct": -50.82447594884345,
+    "total_old_s": 0.059207400000104826,
+    "total_new_s": 0.027889900004083756,
+    "total_change_pct": -52.89457060429207
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "f18a23ffde6e4067",
+    "spec": {
+      "family": "spider_fusion",
+      "size": 128,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": false,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": null,
+    "rewrite_new_s": 0.01576030000433093,
+    "rewrite_change_pct": null,
+    "total_old_s": null,
+    "total_new_s": 0.07099860000016633,
+    "total_change_pct": null
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "20a93908408bf88f",
+    "spec": {
+      "family": "copies_identity",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.0051732000001720735,
+    "rewrite_new_s": 0.011032399997930042,
+    "rewrite_change_pct": 113.26065100060072,
+    "total_old_s": 0.013737499999933789,
+    "total_new_s": 0.021649599999364,
+    "total_change_pct": 57.594904454728635
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "3d3b3646669b08d9",
+    "spec": {
+      "family": "copies_identity",
+      "size": 32,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.006702399999994668,
+    "rewrite_new_s": 0.00994870000431547,
+    "rewrite_change_pct": 48.43488905949187,
+    "total_old_s": 0.03792040000007546,
+    "total_new_s": 0.0358295000041835,
+    "total_change_pct": -5.513918618706026
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "bc13ba3be7f5e249",
+    "spec": {
+      "family": "copies_identity",
+      "size": 512,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.03130809999993289,
+    "rewrite_new_s": 0.03066489999764599,
+    "rewrite_change_pct": -2.054420428861159,
+    "total_old_s": 0.5641999999998006,
+    "total_new_s": 0.3095906000016839,
+    "total_change_pct": -45.12750797557722
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "9ea6eed498bf32d4",
+    "spec": {
+      "family": "identity",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.013335600000118575,
+    "rewrite_new_s": 0.021336100006010383,
+    "rewrite_change_pct": 59.993551139961234,
+    "total_old_s": 0.03142880000041259,
+    "total_new_s": 0.038422799996624235,
+    "total_change_pct": 22.25347450783939
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "633d3fc4903089b1",
+    "spec": {
+      "family": "identity",
+      "size": 16,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.013568800000030024,
+    "rewrite_new_s": 0.023213899999973364,
+    "rewrite_change_pct": 71.08292553447615,
+    "total_old_s": 0.03814839999995456,
+    "total_new_s": 0.04495429999951739,
+    "total_change_pct": 17.840590954197122
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "0136c46743565e4a",
+    "spec": {
+      "family": "identity",
+      "size": 128,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.016076500000053784,
+    "rewrite_new_s": 0.022462900000391528,
+    "rewrite_change_pct": 39.72506453715907,
+    "total_old_s": 0.12246159999995143,
+    "total_new_s": 0.07355430000461638,
+    "total_change_pct": -39.93684550532939
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "afc0ba59853c944f",
+    "spec": {
+      "family": "copies_lcomp",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.015756300000248302,
+    "rewrite_new_s": 0.012730400005239062,
+    "rewrite_change_pct": -19.204381707390404,
+    "total_old_s": 0.041150200000174664,
+    "total_new_s": 0.02883010000368813,
+    "total_change_pct": -29.939344150050886
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "8a246a3fc9117649",
+    "spec": {
+      "family": "copies_lcomp",
+      "size": 32,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.01835449999998673,
+    "rewrite_new_s": 0.014824400001089089,
+    "rewrite_change_pct": -19.232885662372677,
+    "total_old_s": 0.06454320000011649,
+    "total_new_s": 0.049540200001501944,
+    "total_change_pct": -23.24489643926465
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "10cc780790f8a694",
+    "spec": {
+      "family": "copies_lcomp",
+      "size": 512,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.039505600000211416,
+    "rewrite_new_s": 0.15350020000187214,
+    "rewrite_change_pct": 288.55301527138096,
+    "total_old_s": 0.5322485000001507,
+    "total_new_s": 0.44885770000109915,
+    "total_change_pct": -15.6676439668741
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "d3a4666554caf7dc",
+    "spec": {
+      "family": "lcomp",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.009315000000242435,
+    "rewrite_new_s": 0.018880299998272676,
+    "rewrite_change_pct": 102.687063851651,
+    "total_old_s": 0.023502300000018295,
+    "total_new_s": 0.04177929999423213,
+    "total_change_pct": 77.76685683613778
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "32b5377756e996de",
+    "spec": {
+      "family": "lcomp",
+      "size": 16,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.013060599999789702,
+    "rewrite_new_s": 0.019395499999518506,
+    "rewrite_change_pct": 48.50389721629027,
+    "total_old_s": 0.04366540000000896,
+    "total_new_s": 0.04823240000405349,
+    "total_change_pct": 10.459082028433485
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "f239bcfa9926f5e8",
+    "spec": {
+      "family": "lcomp",
+      "size": 128,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.13291079999999056,
+    "rewrite_new_s": 0.030323600003612228,
+    "rewrite_change_pct": -77.18499925994398,
+    "total_old_s": 0.5221096000000216,
+    "total_new_s": 0.3399107000004733,
+    "total_change_pct": -34.89667686622517
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "c811f8a9152bb6eb",
+    "spec": {
+      "family": "copies_pivot",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.011214899999686168,
+    "rewrite_new_s": 0.0379670000038459,
+    "rewrite_change_pct": 238.5406914453838,
+    "total_old_s": 0.030600000000049477,
+    "total_new_s": 0.06265620000340277,
+    "total_change_pct": 104.75882354020088
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "a3e42bfb81d928ff",
+    "spec": {
+      "family": "copies_pivot",
+      "size": 32,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.01688430000012886,
+    "rewrite_new_s": 0.04414299999916693,
+    "rewrite_change_pct": 161.4440634129341,
+    "total_old_s": 0.11665769999990516,
+    "total_new_s": 0.1048545000012382,
+    "total_change_pct": -10.117806195970402
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "d3274a782d48a83a",
+    "spec": {
+      "family": "copies_pivot",
+      "size": 512,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.09609139999975014,
+    "rewrite_new_s": 0.2309196999995038,
+    "rewrite_change_pct": 140.3125565868582,
+    "total_old_s": 1.1392310999999609,
+    "total_new_s": 0.8463657999964198,
+    "total_change_pct": -25.707277478954982
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "7d0ba9c16381b9e8",
+    "spec": {
+      "family": "pivot",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.015403399999740941,
+    "rewrite_new_s": 0.028262799998628907,
+    "rewrite_change_pct": 83.48416582770193,
+    "total_old_s": 0.03259590000016033,
+    "total_new_s": 0.048589400001219474,
+    "total_change_pct": 49.06598682957206
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "0cf7e4a6ffd35280",
+    "spec": {
+      "family": "pivot",
+      "size": 16,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.020574300000134826,
+    "rewrite_new_s": 0.023233299994899426,
+    "rewrite_change_pct": 12.92389045919995,
+    "total_old_s": 0.06494739999970989,
+    "total_new_s": 0.05469219999940833,
+    "total_change_pct": -15.790008530514488
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "b4051071fad87309",
+    "spec": {
+      "family": "pivot",
+      "size": 128,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.10341010000001916,
+    "rewrite_new_s": 0.05517149999650428,
+    "rewrite_change_pct": -46.64786128579891,
+    "total_old_s": 0.843388700000105,
+    "total_new_s": 0.8250935000032769,
+    "total_change_pct": -2.1692488880661887
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "058a220053fa9f66",
+    "spec": {
+      "family": "copies_pivot_gadget",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.015659799999866664,
+    "rewrite_new_s": 0.01668249999784166,
+    "rewrite_change_pct": 6.530734734694588,
+    "total_old_s": 0.038450099999863596,
+    "total_new_s": 0.037514900002861395,
+    "total_change_pct": -2.432243341384077
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "a9e3f588b1e9833f",
+    "spec": {
+      "family": "copies_pivot_gadget",
+      "size": 32,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.01926259999981994,
+    "rewrite_new_s": 0.020767899994098116,
+    "rewrite_change_pct": 7.814625202684189,
+    "total_old_s": 0.12571900000011738,
+    "total_new_s": 0.09552009999606526,
+    "total_change_pct": -24.020951490247235
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "3bf9c84ebd22d67c",
+    "spec": {
+      "family": "copies_pivot_gadget",
+      "size": 512,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": false,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": null,
+    "rewrite_new_s": 0.22811840000213124,
+    "rewrite_change_pct": null,
+    "total_old_s": null,
+    "total_new_s": 1.1400026999981492,
+    "total_change_pct": null
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "6d647e3dca520440",
+    "spec": {
+      "family": "pivot_gadget",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.0068264999999883,
+    "rewrite_new_s": 0.013355299997783732,
+    "rewrite_change_pct": 95.63905365570382,
+    "total_old_s": 0.01893370000016148,
+    "total_new_s": 0.03086800000164658,
+    "total_change_pct": 63.03205396400764
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "4c0c1b6e81ad0321",
+    "spec": {
+      "family": "pivot_gadget",
+      "size": 16,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.0109957999998187,
+    "rewrite_new_s": 0.013685800004168414,
+    "rewrite_change_pct": 24.463886251060085,
+    "total_old_s": 0.0502160000000913,
+    "total_new_s": 0.04928680000011809,
+    "total_change_pct": -1.8504062449647862
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "0cb75e4916637956",
+    "spec": {
+      "family": "pivot_gadget",
+      "size": 128,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.09890169999971476,
+    "rewrite_new_s": 0.04070009999850299,
+    "rewrite_change_pct": -58.847926781217744,
+    "total_old_s": 1.258995700000014,
+    "total_new_s": 0.8654289999976754,
+    "total_change_pct": -31.260368879920264
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "32ed51be4cbdf7c2",
+    "spec": {
+      "family": "copies_pivot_boundary",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.010335000000395667,
+    "rewrite_new_s": 0.015240300002915319,
+    "rewrite_change_pct": 47.462989862911044,
+    "total_old_s": 0.032806000000164204,
+    "total_new_s": 0.03881839999667136,
+    "total_change_pct": 18.32713526939298
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "2f61a0d9e29d2fc1",
+    "spec": {
+      "family": "copies_pivot_boundary",
+      "size": 32,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.014374899999893387,
+    "rewrite_new_s": 0.022173999997903593,
+    "rewrite_change_pct": 54.25498610820283,
+    "total_old_s": 0.15937840000015058,
+    "total_new_s": 0.11027509999985341,
+    "total_change_pct": -30.809256461509705
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "f67e1b127d8dea02",
+    "spec": {
+      "family": "copies_pivot_boundary",
+      "size": 512,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.09744329999966794,
+    "rewrite_new_s": 0.08123199999681674,
+    "rewrite_change_pct": -16.63664921334401,
+    "total_old_s": 1.3041605000003074,
+    "total_new_s": 1.1619934999980615,
+    "total_change_pct": -10.90103557056148
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "51316220a801a772",
+    "spec": {
+      "family": "pivot_boundary",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.01423209999984465,
+    "rewrite_new_s": 0.013702199998078868,
+    "rewrite_change_pct": -3.723273457687659,
+    "total_old_s": 0.03376030000026731,
+    "total_new_s": 0.030965500001912005,
+    "total_change_pct": -8.2783624503727
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "54bc4aa38ea16c24",
+    "spec": {
+      "family": "pivot_boundary",
+      "size": 16,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.017615499999919848,
+    "rewrite_new_s": 0.014525899998261593,
+    "rewrite_change_pct": -17.53909909836401,
+    "total_old_s": 0.055675800000244635,
+    "total_new_s": 0.05218460000469349,
+    "total_change_pct": -6.270587931445625
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "20b61bc6467631ac",
+    "spec": {
+      "family": "pivot_boundary",
+      "size": 128,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.07191660000034972,
+    "rewrite_new_s": 0.04302720000123372,
+    "rewrite_change_pct": -40.170697723440085,
+    "total_old_s": 0.6864128000001983,
+    "total_new_s": 0.8617754000006244,
+    "total_change_pct": 25.54768792195823
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "2b294d5a54fced42",
+    "spec": {
+      "family": "copies_gadget_fusion",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.01024150000012014,
+    "rewrite_new_s": 0.023840999994718004,
+    "rewrite_change_pct": 132.78816574172075,
+    "total_old_s": 0.02039390000027197,
+    "total_new_s": 0.04351019999739947,
+    "total_change_pct": 113.34908966317978
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "898a3e1f0b0a3ecb",
+    "spec": {
+      "family": "copies_gadget_fusion",
+      "size": 32,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.011222600000110106,
+    "rewrite_new_s": 0.023151000001234934,
+    "rewrite_change_pct": 106.2890952275569,
+    "total_old_s": 0.04534120000016628,
+    "total_new_s": 0.07255289999739034,
+    "total_change_pct": 60.015394381102105
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "27aa16c1004b3d20",
+    "spec": {
+      "family": "copies_gadget_fusion",
+      "size": 512,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.05291459999989456,
+    "rewrite_new_s": 0.05940980000013951,
+    "rewrite_change_pct": 12.27487309789339,
+    "total_old_s": 0.6846832999999606,
+    "total_new_s": 0.669160199999169,
+    "total_change_pct": -2.267194190480837
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "e05cf4d53e2169ab",
+    "spec": {
+      "family": "gadget_fusion",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.03325679999989006,
+    "rewrite_new_s": 0.041265499996370636,
+    "rewrite_change_pct": 24.081390862942452,
+    "total_old_s": 0.056952499999624706,
+    "total_new_s": 0.0719119999994291,
+    "total_change_pct": 26.266625696682276
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "3a4929eb2776262a",
+    "spec": {
+      "family": "gadget_fusion",
+      "size": 16,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.034192199999779405,
+    "rewrite_new_s": 0.04008579999936046,
+    "rewrite_change_pct": 17.23667970946321,
+    "total_old_s": 0.062315599999692495,
+    "total_new_s": 0.06944160000421107,
+    "total_change_pct": 11.435338830972874
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "d40a15898e4ed429",
+    "spec": {
+      "family": "gadget_fusion",
+      "size": 128,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.036819699999796285,
+    "rewrite_new_s": 0.04070060000231024,
+    "rewrite_change_pct": 10.540281432318643,
+    "total_old_s": 0.08507120000012947,
+    "total_new_s": 0.09182020000298508,
+    "total_change_pct": 7.933354652156477
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "19e22095bdd407f2",
+    "spec": {
+      "family": "copies_bialgebra",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.04674960000011197,
+    "rewrite_new_s": 0.011221500004467089,
+    "rewrite_change_pct": -75.9965860575487,
+    "total_old_s": 0.07693719999997484,
+    "total_new_s": 0.023697599994193297,
+    "total_change_pct": -69.198775112428
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "eb2f18eeb78940e8",
+    "spec": {
+      "family": "copies_bialgebra",
+      "size": 32,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.7525172999999086,
+    "rewrite_new_s": 0.19928429999708897,
+    "rewrite_change_pct": -73.51764537544676,
+    "total_old_s": 0.8819118000001254,
+    "total_new_s": 0.2715896000008797,
+    "total_change_pct": -69.20444878945477
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "6005997c57742351",
+    "spec": {
+      "family": "copies_bialgebra",
+      "size": 512,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 20.73409670000001,
+    "rewrite_new_s": 13.389871799998218,
+    "rewrite_change_pct": -35.42100244956313,
+    "total_old_s": 22.151450099999693,
+    "total_new_s": 14.254925399996864,
+    "total_change_pct": -35.647890609215416
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "fb545c8d0c44e5f6",
+    "spec": {
+      "family": "bialgebra",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.013412599999810482,
+    "rewrite_new_s": 0.007660399998712819,
+    "rewrite_change_pct": -42.8865395313283,
+    "total_old_s": 0.02838870000005045,
+    "total_new_s": 0.017679800002952106,
+    "total_change_pct": -37.722403622143005
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "7401ffd8f0d4babf",
+    "spec": {
+      "family": "bialgebra",
+      "size": 16,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.019875100000263046,
+    "rewrite_new_s": 0.014217500000086147,
+    "rewrite_change_pct": -28.465768726205255,
+    "total_old_s": 0.05881970000018555,
+    "total_new_s": 0.04633620000095107,
+    "total_change_pct": -21.22333163752128
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "0fef027d1ee00970",
+    "spec": {
+      "family": "bialgebra",
+      "size": 128,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 2.8294527000002745,
+    "rewrite_new_s": 1.4869921999998041,
+    "rewrite_change_pct": -47.445942460898536,
+    "total_old_s": 3.7212161000002197,
+    "total_new_s": 2.083716100001766,
+    "total_change_pct": -44.00443177697627
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "06d107d45521c407",
+    "spec": {
+      "family": "copies_hadamard_cancel",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.037405999999919004,
+    "rewrite_new_s": 0.019996799994260073,
+    "rewrite_change_pct": -46.54119661470521,
+    "total_old_s": 0.057403100000101404,
+    "total_new_s": 0.029707000001508277,
+    "total_change_pct": -48.24843954166971
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "7cb8a71f793ffed8",
+    "spec": {
+      "family": "copies_hadamard_cancel",
+      "size": 32,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.4077506000003268,
+    "rewrite_new_s": 0.2771857000043383,
+    "rewrite_change_pct": -32.02077446259647,
+    "total_old_s": 0.4441987000000154,
+    "total_new_s": 0.30186699999467237,
+    "total_change_pct": -32.04234951730792
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "01a2bd62427f935a",
+    "spec": {
+      "family": "copies_hadamard_cancel",
+      "size": 512,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 22.232768300000316,
+    "rewrite_new_s": 15.96989190000022,
+    "rewrite_change_pct": -28.1695752660725,
+    "total_old_s": 22.893143300000247,
+    "total_new_s": 16.34566579999955,
+    "total_change_pct": -28.60016824339113
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "8898354600ad13b2",
+    "spec": {
+      "family": "hadamard_cancel",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.01879819999976462,
+    "rewrite_new_s": 0.012884999996458646,
+    "rewrite_change_pct": -31.456203271483517,
+    "total_old_s": 0.03158580000035727,
+    "total_new_s": 0.02106189999904018,
+    "total_change_pct": -33.31845323277566
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "935f1f6613dff36b",
+    "spec": {
+      "family": "hadamard_cancel",
+      "size": 16,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.08143020000034085,
+    "rewrite_new_s": 0.0684592999969027,
+    "rewrite_change_pct": -15.928856865614794,
+    "total_old_s": 0.10079999999970823,
+    "total_new_s": 0.08104070000263164,
+    "total_change_pct": -19.602480155886692
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "d312ec7baa55d167",
+    "spec": {
+      "family": "hadamard_cancel",
+      "size": 128,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.881700500000079,
+    "rewrite_new_s": 0.6172652999957791,
+    "rewrite_change_pct": -29.991499381510643,
+    "total_old_s": 0.9951569999998355,
+    "total_new_s": 0.658823099998699,
+    "total_change_pct": -33.797069206285244
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "594fd768a4c7e3e1",
+    "spec": {
+      "family": "copies_supplementarity",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.0345604999997704,
+    "rewrite_new_s": 0.018634000000020023,
+    "rewrite_change_pct": -46.08295597533654,
+    "total_old_s": 0.04732629999989513,
+    "total_new_s": 0.02975719999813009,
+    "total_change_pct": -37.123333118802805
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "af2b24730b3e85b3",
+    "spec": {
+      "family": "copies_supplementarity",
+      "size": 32,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 1.2007638000000043,
+    "rewrite_new_s": 0.24484729999676347,
+    "rewrite_change_pct": -79.60903718143713,
+    "total_old_s": 1.2305483000000095,
+    "total_new_s": 0.26463610000064364,
+    "total_change_pct": -78.49445649547916
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "f2b3998d0a92a661",
+    "spec": {
+      "family": "copies_supplementarity",
+      "size": 512,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": false,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": null,
+    "rewrite_new_s": 90.3279623999988,
+    "rewrite_change_pct": null,
+    "total_old_s": null,
+    "total_new_s": 90.48491300000023,
+    "total_change_pct": null
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "04d407dd0a86fda5",
+    "spec": {
+      "family": "supplementarity",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.01299929999959204,
+    "rewrite_new_s": 0.011308200002531521,
+    "rewrite_change_pct": -13.009162009597375,
+    "total_old_s": 0.02166490000035992,
+    "total_new_s": 0.020027099999424536,
+    "total_change_pct": -7.55969333303258
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "6424981254d5140c",
+    "spec": {
+      "family": "supplementarity",
+      "size": 16,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.014294099999915488,
+    "rewrite_new_s": 0.012301499999011867,
+    "rewrite_change_pct": -13.940017216301847,
+    "total_old_s": 0.026724299999841605,
+    "total_new_s": 0.022717799998645205,
+    "total_change_pct": -14.991973601629027
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "84351b65f7ecedc1",
+    "spec": {
+      "family": "supplementarity",
+      "size": 128,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.07900400000016816,
+    "rewrite_new_s": 0.032611399998131674,
+    "rewrite_change_pct": -58.721836871472,
+    "total_old_s": 0.11744889999999941,
+    "total_new_s": 0.05966649999754736,
+    "total_change_pct": -49.19790649589084
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "ac344ad22f4c13e9",
+    "spec": {
+      "family": "copies_copy",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.007006899999851157,
+    "rewrite_new_s": 0.008730299996386748,
+    "rewrite_change_pct": 24.59575556340463,
+    "total_old_s": 0.017964800000299874,
+    "total_new_s": 0.019359500001883134,
+    "total_change_pct": 7.76351532752928
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "29b39b9de9f450bd",
+    "spec": {
+      "family": "copies_copy",
+      "size": 32,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.09762430000000677,
+    "rewrite_new_s": 0.06191709999984596,
+    "rewrite_change_pct": -36.576139342518545,
+    "total_old_s": 0.13643469999988156,
+    "total_new_s": 0.08591729999898234,
+    "total_change_pct": -37.026797435654615
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "2d62f66671acacf2",
+    "spec": {
+      "family": "copies_copy",
+      "size": 512,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": false,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": null,
+    "rewrite_new_s": 2.186371900002996,
+    "rewrite_change_pct": null,
+    "total_old_s": null,
+    "total_new_s": 2.4205826000033994,
+    "total_change_pct": null
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "99c73b657a0fdb0b",
+    "spec": {
+      "family": "copy",
+      "size": 2,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.004446599999937462,
+    "rewrite_new_s": 0.006053800003428478,
+    "rewrite_change_pct": 36.144470011101085,
+    "total_old_s": 0.01389019999987795,
+    "total_new_s": 0.01586900000256719,
+    "total_change_pct": 14.24601519565325
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "0ea8cf1696260646",
+    "spec": {
+      "family": "copy",
+      "size": 16,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.004800100000011298,
+    "rewrite_new_s": 0.0056607000005897135,
+    "rewrite_change_pct": 17.92879316215057,
+    "total_old_s": 0.018986999999924592,
+    "total_new_s": 0.017655300005571917,
+    "total_change_pct": -7.013746217717198
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "ccdd30f56c84c901",
+    "spec": {
+      "family": "copy",
+      "size": 128,
+      "seed": 0
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.008448699999917153,
+    "rewrite_new_s": 0.008775800000876188,
+    "rewrite_change_pct": 3.8716015595564146,
+    "total_old_s": 0.060751799999707146,
+    "total_new_s": 0.040713599999435246,
+    "total_change_pct": -32.98371406339976
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "29650199c6223614",
+    "spec": {
+      "family": "random_clifford",
+      "size": 3,
+      "seed": 0,
+      "depth": 30
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.15524299999970026,
+    "rewrite_new_s": 0.19267860000400105,
+    "rewrite_change_pct": 24.11419516781632,
+    "total_old_s": 0.17051569999966887,
+    "total_new_s": 0.20831270000053337,
+    "total_change_pct": 22.166287327758027
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "85c7b9125850f2ef",
+    "spec": {
+      "family": "random_clifford",
+      "size": 3,
+      "seed": 1,
+      "depth": 30
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.16558689999965281,
+    "rewrite_new_s": 0.23195619999751216,
+    "rewrite_change_pct": 40.08125038755994,
+    "total_old_s": 0.1839321000002201,
+    "total_new_s": 0.24828499999421183,
+    "total_change_pct": 34.98731324978876
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "68a442a6f079b8d7",
+    "spec": {
+      "family": "random_clifford",
+      "size": 3,
+      "seed": 2,
+      "depth": 30
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.18026319999989937,
+    "rewrite_new_s": 0.19833010000002105,
+    "rewrite_change_pct": 10.02251152766165,
+    "total_old_s": 0.19815960000005362,
+    "total_new_s": 0.212801199995738,
+    "total_change_pct": 7.388791658683402
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "48632f08d28a1a65",
+    "spec": {
+      "family": "random_clifford",
+      "size": 8,
+      "seed": 0,
+      "depth": 80
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.40245560000039404,
+    "rewrite_new_s": 0.2896459999974468,
+    "rewrite_change_pct": -28.03032185484232,
+    "total_old_s": 0.4394155999998475,
+    "total_new_s": 0.31333730000187643,
+    "total_change_pct": -28.692267638657988
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "d49665188a4dbe47",
+    "spec": {
+      "family": "random_clifford",
+      "size": 8,
+      "seed": 1,
+      "depth": 80
+    },
+    "engine": "cypher",
+    "historical_complete": false,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": null,
+    "rewrite_new_s": 0.3011259999984759,
+    "rewrite_change_pct": null,
+    "total_old_s": null,
+    "total_new_s": 0.32450950000202283,
+    "total_change_pct": null
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "6d59318e1c2cd5da",
+    "spec": {
+      "family": "random_clifford",
+      "size": 8,
+      "seed": 2,
+      "depth": 80
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.2807002999998076,
+    "rewrite_new_s": 0.33530769999924814,
+    "rewrite_change_pct": 19.453987045784405,
+    "total_old_s": 0.3149708000000828,
+    "total_new_s": 0.36182600000029197,
+    "total_change_pct": 14.876045652548363
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "a6dbe81fd1606b58",
+    "spec": {
+      "family": "random_clifford",
+      "size": 16,
+      "seed": 0,
+      "depth": 160
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 1.059835000000021,
+    "rewrite_new_s": 0.2308580999961123,
+    "rewrite_change_pct": -78.2175432972012,
+    "total_old_s": 1.157210400000622,
+    "total_new_s": 0.26770050000050105,
+    "total_change_pct": -76.86673918585963
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "db4b7395406e9028",
+    "spec": {
+      "family": "random_clifford",
+      "size": 16,
+      "seed": 1,
+      "depth": 160
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 1.2791461000006166,
+    "rewrite_new_s": 0.3028811999975005,
+    "rewrite_change_pct": -76.3216101743691,
+    "total_old_s": 1.3859062999999878,
+    "total_new_s": 0.34119510000164155,
+    "total_change_pct": -75.38108456526645
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "cf71e9c5cb9d5703",
+    "spec": {
+      "family": "random_clifford",
+      "size": 16,
+      "seed": 2,
+      "depth": 160
+    },
+    "engine": "cypher",
+    "historical_complete": false,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": null,
+    "rewrite_new_s": 0.28566679999494227,
+    "rewrite_change_pct": null,
+    "total_old_s": null,
+    "total_new_s": 0.32417809999606106,
+    "total_change_pct": null
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "cafdd28c4c039897",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 3,
+      "seed": 0,
+      "depth": 30
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.18172770000001037,
+    "rewrite_new_s": 0.24057960000209277,
+    "rewrite_change_pct": 32.38466122780348,
+    "total_old_s": 0.1975380000003497,
+    "total_new_s": 0.25508260000060545,
+    "total_change_pct": 29.130901396264953
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "c6b1f86e8d6d2e2d",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 3,
+      "seed": 1,
+      "depth": 30
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.17626490000020567,
+    "rewrite_new_s": 0.18109679999906803,
+    "rewrite_change_pct": 2.74127180105439,
+    "total_old_s": 0.19331169999986741,
+    "total_new_s": 0.19677389999560546,
+    "total_change_pct": 1.7909935072426553
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "9329cbaddadc69f4",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 3,
+      "seed": 2,
+      "depth": 30
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.16173499999968044,
+    "rewrite_new_s": 0.1835339999961434,
+    "rewrite_change_pct": 13.478220543794484,
+    "total_old_s": 0.17666209999970306,
+    "total_new_s": 0.19970879999891622,
+    "total_change_pct": 13.04563910383263
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "30bf1cad6a40d61d",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 8,
+      "seed": 0,
+      "depth": 80
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.25078450000000885,
+    "rewrite_new_s": 0.3529050999932224,
+    "rewrite_change_pct": 40.7204591963259,
+    "total_old_s": 0.2819109000001845,
+    "total_new_s": 0.37717179999890504,
+    "total_change_pct": 33.79113755397831
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "23788e015e9a1a0f",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 8,
+      "seed": 1,
+      "depth": 80
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.2779206000004706,
+    "rewrite_new_s": 0.30116499999712687,
+    "rewrite_change_pct": 8.363683727156946,
+    "total_old_s": 0.31068559999948775,
+    "total_new_s": 0.3260454999981448,
+    "total_change_pct": 4.94387251893309
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "9db02e767c167639",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 8,
+      "seed": 2,
+      "depth": 80
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.3251001999997243,
+    "rewrite_new_s": 0.3765205000017886,
+    "rewrite_change_pct": 15.816754342848128,
+    "total_old_s": 0.36153079999985493,
+    "total_new_s": 0.40438210000138497,
+    "total_change_pct": 11.852738411650465
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "e3e23624018a1966",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 16,
+      "seed": 0,
+      "depth": 160
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.3132931999998618,
+    "rewrite_new_s": 0.38619939999625785,
+    "rewrite_change_pct": 23.270916826930232,
+    "total_old_s": 0.3682461999997031,
+    "total_new_s": 0.43498329999420093,
+    "total_change_pct": 18.122956868136498
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "58e880f6057d63de",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 16,
+      "seed": 1,
+      "depth": 160
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.5038276000004771,
+    "rewrite_new_s": 0.28572839999833377,
+    "rewrite_change_pct": -43.288458195211376,
+    "total_old_s": 0.5600648999998157,
+    "total_new_s": 0.3202582000012626,
+    "total_change_pct": -42.81766273848477
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "290989ff80590e52",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 16,
+      "seed": 2,
+      "depth": 160
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.5231045000000449,
+    "rewrite_new_s": 0.26821669999480946,
+    "rewrite_change_pct": -48.725981138608745,
+    "total_old_s": 0.5728791000001365,
+    "total_new_s": 0.308884299993224,
+    "total_change_pct": -46.082114010940465
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "74b9f586f0806ef7",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 3,
+      "seed": 0,
+      "depth": 30
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.24226650000036898,
+    "rewrite_new_s": 0.160701999993762,
+    "rewrite_change_pct": -33.66726311994549,
+    "total_old_s": 0.2625256999999692,
+    "total_new_s": 0.17467300000134856,
+    "total_change_pct": -33.46441891160787
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "6581008098a5d542",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 3,
+      "seed": 1,
+      "depth": 30
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.27024009999968257,
+    "rewrite_new_s": 0.14374839999800315,
+    "rewrite_change_pct": -46.807154083286676,
+    "total_old_s": 0.2883910000000469,
+    "total_new_s": 0.15704710000136402,
+    "total_change_pct": -45.543688949607144
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "4f9f6b9f5b76c8e9",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 3,
+      "seed": 2,
+      "depth": 30
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.2799566000003324,
+    "rewrite_new_s": 0.17206000000442145,
+    "rewrite_change_pct": -38.54047377192852,
+    "total_old_s": 0.30166619999999966,
+    "total_new_s": 0.18653189999895403,
+    "total_change_pct": -38.166125340209064
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "b1c0d3d7c95ffc6e",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 8,
+      "seed": 0,
+      "depth": 80
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.47536760000002687,
+    "rewrite_new_s": 0.22064880000107223,
+    "rewrite_change_pct": -53.58354250456705,
+    "total_old_s": 0.5103318000001309,
+    "total_new_s": 0.2416938000023947,
+    "total_change_pct": -52.63987076597368
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "cdd18adf691ffe41",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 8,
+      "seed": 1,
+      "depth": 80
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.1610900000005131,
+    "rewrite_new_s": 0.22215810000489,
+    "rewrite_change_pct": 37.90930535985002,
+    "total_old_s": 0.18133250000028056,
+    "total_new_s": 0.23978460000216728,
+    "total_change_pct": 32.23476210927234
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "f21ac15030afc798",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 8,
+      "seed": 2,
+      "depth": 80
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.20901520000006713,
+    "rewrite_new_s": 0.23230830000102287,
+    "rewrite_change_pct": 11.144213435648819,
+    "total_old_s": 0.2361258999999336,
+    "total_new_s": 0.25467390000267187,
+    "total_change_pct": 7.855131522100489
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "450d2a3f6cfcd7ee",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 16,
+      "seed": 0,
+      "depth": 160
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.33405019999918295,
+    "rewrite_new_s": 0.3246569999973872,
+    "rewrite_change_pct": -2.8119127010906575,
+    "total_old_s": 0.37751620000017283,
+    "total_new_s": 0.35810900000069523,
+    "total_change_pct": -5.140759522232086
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "33c0210b44a22bf6",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 16,
+      "seed": 1,
+      "depth": 160
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.4414030999996612,
+    "rewrite_new_s": 0.34715200000209734,
+    "rewrite_change_pct": -21.352613970684896,
+    "total_old_s": 0.4941999000002397,
+    "total_new_s": 0.3896496000015759,
+    "total_change_pct": -21.15546765562136
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "60df41bd28f6b5a3",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 16,
+      "seed": 2,
+      "depth": 160
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.5885523000006287,
+    "rewrite_new_s": 0.43431409999902826,
+    "rewrite_change_pct": -26.206371124781214,
+    "total_old_s": 0.6408567999997103,
+    "total_new_s": 0.4725204999995185,
+    "total_change_pct": -26.26738141816829
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "74a602923d5bb6d2",
+    "spec": {
+      "family": "layered_local",
+      "size": 3,
+      "seed": 0,
+      "depth": 2
+    },
+    "engine": "cypher",
+    "historical_complete": false,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": null,
+    "rewrite_new_s": 0.17590349999954924,
+    "rewrite_change_pct": null,
+    "total_old_s": null,
+    "total_new_s": 0.1916826000015135,
+    "total_change_pct": null
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "5bfdfe697b7249bd",
+    "spec": {
+      "family": "layered_local",
+      "size": 3,
+      "seed": 1,
+      "depth": 2
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.11558679999961896,
+    "rewrite_new_s": 0.18493290000333218,
+    "rewrite_change_pct": 59.99482640227243,
+    "total_old_s": 0.13184480000018084,
+    "total_new_s": 0.20249060000060126,
+    "total_change_pct": 53.58254553863597
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "0a4eb38ecf64ad83",
+    "spec": {
+      "family": "layered_local",
+      "size": 3,
+      "seed": 2,
+      "depth": 2
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.10800780000045052,
+    "rewrite_new_s": 0.09761550000257557,
+    "rewrite_change_pct": -9.621805089846836,
+    "total_old_s": 0.12234309999985271,
+    "total_new_s": 0.11007030000473605,
+    "total_change_pct": -10.031460699566574
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "f724307f3a4394f4",
+    "spec": {
+      "family": "layered_local",
+      "size": 8,
+      "seed": 0,
+      "depth": 2
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.19161350000013044,
+    "rewrite_new_s": 0.12732239999604644,
+    "rewrite_change_pct": -33.552489779707706,
+    "total_old_s": 0.224679400000241,
+    "total_new_s": 0.14860010000120383,
+    "total_change_pct": -33.8612707702422
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "0602f11f36e1aedc",
+    "spec": {
+      "family": "layered_local",
+      "size": 8,
+      "seed": 1,
+      "depth": 2
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.24085629999990488,
+    "rewrite_new_s": 0.1282876000041142,
+    "rewrite_change_pct": -46.73687173465469,
+    "total_old_s": 0.2744943999996394,
+    "total_new_s": 0.14810259999649134,
+    "total_change_pct": -46.04531094379853
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "fbb997e2ae81aea1",
+    "spec": {
+      "family": "layered_local",
+      "size": 8,
+      "seed": 2,
+      "depth": 2
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.24857299999985116,
+    "rewrite_new_s": 0.13095379999867873,
+    "rewrite_change_pct": -47.31776983069073,
+    "total_old_s": 0.28801669999938895,
+    "total_new_s": 0.1517262000052142,
+    "total_change_pct": -47.32034635299408
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "a64996c0bb9c6ad1",
+    "spec": {
+      "family": "layered_local",
+      "size": 16,
+      "seed": 0,
+      "depth": 2
+    },
+    "engine": "cypher",
+    "historical_complete": false,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": null,
+    "rewrite_new_s": 0.2125441999960458,
+    "rewrite_change_pct": null,
+    "total_old_s": null,
+    "total_new_s": 0.25590570000349544,
+    "total_change_pct": null
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "d41eee041a7cb841",
+    "spec": {
+      "family": "layered_local",
+      "size": 16,
+      "seed": 1,
+      "depth": 2
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.5067707000007431,
+    "rewrite_new_s": 0.20676069999899482,
+    "rewrite_change_pct": -59.20034445584725,
+    "total_old_s": 0.5763545999998314,
+    "total_new_s": 0.25253950000478653,
+    "total_change_pct": -56.183311453598115
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "85492453bd23005e",
+    "spec": {
+      "family": "layered_local",
+      "size": 16,
+      "seed": 2,
+      "depth": 2
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.5883690999999089,
+    "rewrite_new_s": 0.19111100000009174,
+    "rewrite_change_pct": -67.51851856256195,
+    "total_old_s": 0.6521169000006921,
+    "total_new_s": 0.23290490000363206,
+    "total_change_pct": -64.28479310942794
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "1bbc764acb19ea3d",
+    "spec": {
+      "family": "layered_global",
+      "size": 3,
+      "seed": 0,
+      "depth": 2
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.22073009999985516,
+    "rewrite_new_s": 0.13227460000052815,
+    "rewrite_change_pct": -40.074054240624655,
+    "total_old_s": 0.24141880000024685,
+    "total_new_s": 0.1460672999965027,
+    "total_change_pct": -39.496302692104614
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "222c94d52b5c07e6",
+    "spec": {
+      "family": "layered_global",
+      "size": 3,
+      "seed": 1,
+      "depth": 2
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.21237010000004375,
+    "rewrite_new_s": 0.12374760000238894,
+    "rewrite_change_pct": -41.730215316391785,
+    "total_old_s": 0.23133140000027197,
+    "total_new_s": 0.13727539999672445,
+    "total_change_pct": -40.65855305567552
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "8541740772bd75b3",
+    "spec": {
+      "family": "layered_global",
+      "size": 3,
+      "seed": 2,
+      "depth": 2
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.136942099999942,
+    "rewrite_new_s": 0.13288180000381544,
+    "rewrite_change_pct": -2.964975705884665,
+    "total_old_s": 0.1518568999999843,
+    "total_new_s": 0.14845709999644896,
+    "total_change_pct": -2.23881825819946
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "907c988fb062fa11",
+    "spec": {
+      "family": "layered_global",
+      "size": 8,
+      "seed": 0,
+      "depth": 2
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.2619974999997794,
+    "rewrite_new_s": 0.26447140000527725,
+    "rewrite_change_pct": 0.9442456532982035,
+    "total_old_s": 0.291348000000653,
+    "total_new_s": 0.28955690000293544,
+    "total_change_pct": -0.6147631003863174
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "e9ca8c57e8e63d6c",
+    "spec": {
+      "family": "layered_global",
+      "size": 8,
+      "seed": 1,
+      "depth": 2
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.26606059999994613,
+    "rewrite_new_s": 0.24995940000371775,
+    "rewrite_change_pct": -6.051704008873038,
+    "total_old_s": 0.3016373000000385,
+    "total_new_s": 0.28129160000389675,
+    "total_change_pct": -6.745087559177588
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "7da7ac5d0ace0a1d",
+    "spec": {
+      "family": "layered_global",
+      "size": 8,
+      "seed": 2,
+      "depth": 2
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.2421476999998049,
+    "rewrite_new_s": 0.26575030000094557,
+    "rewrite_change_pct": 9.747191487327655,
+    "total_old_s": 0.27293680000002496,
+    "total_new_s": 0.2931142000015825,
+    "total_change_pct": 7.3927004352493775
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "f944f37b9372985f",
+    "spec": {
+      "family": "layered_global",
+      "size": 16,
+      "seed": 0,
+      "depth": 2
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.4811445999994248,
+    "rewrite_new_s": 0.2277916000020923,
+    "rewrite_change_pct": -52.656311636384444,
+    "total_old_s": 0.5398460999995223,
+    "total_new_s": 0.27754799999820534,
+    "total_change_pct": -48.58756967986785
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "c41ee089db046872",
+    "spec": {
+      "family": "layered_global",
+      "size": 16,
+      "seed": 1,
+      "depth": 2
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.5890036999999211,
+    "rewrite_new_s": 0.21894439999596216,
+    "rewrite_change_pct": -62.82800940028195,
+    "total_old_s": 0.6566356000002997,
+    "total_new_s": 0.2647579999975278,
+    "total_change_pct": -59.679615299961355
+  },
+  {
+    "source": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\full",
+    "case": "482ac419dd80634e",
+    "spec": {
+      "family": "layered_global",
+      "size": 16,
+      "seed": 2,
+      "depth": 2
+    },
+    "engine": "cypher",
+    "historical_complete": true,
+    "current_complete": true,
+    "historical_database_version": [
+      {
+        "version": "3.6.2"
+      }
+    ],
+    "historical_versions": {
+      "pyzx": "0.10.3",
+      "neo4j": "5.28.1",
+      "numpy": "2.2.5",
+      "quimb": "1.11.2"
+    },
+    "historical_rewrite_hashes": {
+      "zxdb\\zxdb.py": "1284fdbfcfd01ec5e0bf3f7f087b6bd7a8aff8e697344d11d52ebe1ec06ea2cf",
+      "zxdb\\main_queries.json": "5f9c50465ce2b3eeacfd53c5cb0359f39d174febc3c21ffb79a53740f2ff1825"
+    },
+    "rewrite_old_s": 0.41989709999961633,
+    "rewrite_new_s": 0.23565779999626102,
+    "rewrite_change_pct": -43.87724992707109,
+    "total_old_s": 0.49101730000074895,
+    "total_new_s": 0.2890735000037239,
+    "total_change_pct": -41.12763440243694
+  }
+]

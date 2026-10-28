@@ -1,6 +1,32 @@
 # ZXdb evaluation results
 
-## Current Cypher-only repeated comparison
+## Latest three-engine rerun — 2026-10-28
+
+The [completed rerun](rerun-20261028/REPORT.md) compares PyZX, optimized Cypher,
+and hybrid Cypher+C++ across all 28 implemented performance workload shapes:
+160 configurations, 1,440 measured engine trials and 480 warmups.
+At 128 qubits, Cypher wins 14/15 circuit configurations on rewrite time and
+hybrid wins 15/15. Each wins 12/15 on total time: Cypher loses the three T-heavy
+configurations; hybrid loses T-heavy seed 0 and local-layered seeds 0 and 1.
+At the largest standalone-rule scales, Cypher wins 6/22 workload shapes and
+hybrid wins 7/22 on rewrite time; each wins 3/22 on total time.
+
+All 91 live regressions passed, and all 223 correctness fixtures are verified
+in both database modes after six supplemental checks. Large timed outputs have
+separate tensor, labeled-isomorphism and degree-sequence results; structural
+differences and unresolved checks are not semantic successes. The rerun does
+not establish universal asymptotic superiority.
+
+See the [all-workload tables](rerun-20261028/performance/REPORT.md),
+[per-configuration CSV](rerun-20261028/performance/timings.csv), and
+[integrity checks](rerun-20261028/integrity.json). These timings are separate
+from the earlier campaigns below.
+
+The [2026-10-27 rule audit](rule-audit-20261027/REPORT.md) passed 91 live
+regressions with no skips and records fixes to current and retained rewrite
+paths. It is separate from the historical performance measurements below.
+
+## Earlier Cypher-only repeated comparison
 
 The [completed timing campaign](cypher-optimization/neighborhood-cost-repeated/REPORT.md)
 has 15/15 median rewrite wins and 15/15 median total-time wins across five

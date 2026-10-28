@@ -1,0 +1,114 @@
+======================================================================
+FAIL: test_gadget_fusion_distinguishes_target_wire_types (tests.test_rule_audit.RuleAuditTests.test_gadget_fusion_distinguishes_target_wire_types) (variant='control', same=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 186, in test_gadget_fusion_distinguishes_target_wire_types
+    assert_projective(self, g, result)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 62, in assert_projective
+    np.testing.assert_allclose(b, scale * a, atol=1e-8, rtol=1e-8)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\numpy\testing\_private\utils.py", line 1715, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\numpy\testing\_private\utils.py", line 921, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-08, atol=1e-08
+
+Mismatched elements: 4 / 4 (100%)
+Max absolute difference among violations: 1.13151672
+Max relative difference among violations: 4.18154055
+ ACTUAL: array([ 1.      +0.j      , -0.5     -0.866025j, -0.309017-0.951057j,
+       -0.669131+0.743145j])
+ DESIRED: array([ 0.603553+0.25j    , -0.16473 +0.21468j , -0.424272-0.496759j,
+       -0.116495-0.244238j])
+
+======================================================================
+FAIL: test_gadget_fusion_distinguishes_target_wire_types (tests.test_rule_audit.RuleAuditTests.test_gadget_fusion_distinguishes_target_wire_types) (variant='control', same=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 186, in test_gadget_fusion_distinguishes_target_wire_types
+    assert_projective(self, g, result)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 61, in assert_projective
+    test.assertGreater(abs(scale), 1e-10)
+AssertionError: np.float64(4.163336342344339e-17) not greater than 1e-10
+
+======================================================================
+FAIL: test_gadget_fusion_distinguishes_target_wire_types (tests.test_rule_audit.RuleAuditTests.test_gadget_fusion_distinguishes_target_wire_types) (variant='optimized', same=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 186, in test_gadget_fusion_distinguishes_target_wire_types
+    assert_projective(self, g, result)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 62, in assert_projective
+    np.testing.assert_allclose(b, scale * a, atol=1e-8, rtol=1e-8)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\numpy\testing\_private\utils.py", line 1715, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\myenv\Lib\site-packages\numpy\testing\_private\utils.py", line 921, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-08, atol=1e-08
+
+Mismatched elements: 4 / 4 (100%)
+Max absolute difference among violations: 0.97992222
+Max relative difference among violations: 17.48528137
+ ACTUAL: array([ 0.      +0.j      ,  0.5     +0.866025j, -0.      +0.j      ,
+        0.669131-0.743145j])
+ DESIRED: array([ 0.125   +0.051777j, -0.034117+0.044462j, -0.08787 -0.102882j,
+       -0.024127-0.050583j])
+
+======================================================================
+FAIL: test_gadget_fusion_distinguishes_target_wire_types (tests.test_rule_audit.RuleAuditTests.test_gadget_fusion_distinguishes_target_wire_types) (variant='optimized', same=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 186, in test_gadget_fusion_distinguishes_target_wire_types
+    assert_projective(self, g, result)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 61, in assert_projective
+    test.assertGreater(abs(scale), 1e-10)
+AssertionError: np.float64(4.163336342344339e-17) not greater than 1e-10
+
+======================================================================
+FAIL: test_spider_fusion_preserves_hadamard_self_loop_phase (tests.test_rule_audit.RuleAuditTests.test_spider_fusion_preserves_hadamard_self_loop_phase) (color=<VertexType.Z: 1>, edge=<EdgeType.SIMPLE: 1>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 207, in test_spider_fusion_preserves_hadamard_self_loop_phase
+    self.check(g, 'spider_fusion', 'control', True)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 133, in check
+    self.assertGreater(count, 0)
+AssertionError: 0 not greater than 0
+
+======================================================================
+FAIL: test_spider_fusion_preserves_hadamard_self_loop_phase (tests.test_rule_audit.RuleAuditTests.test_spider_fusion_preserves_hadamard_self_loop_phase) (color=<VertexType.Z: 1>, edge=<EdgeType.HADAMARD: 2>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 207, in test_spider_fusion_preserves_hadamard_self_loop_phase
+    self.check(g, 'spider_fusion', 'control', True)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 135, in check
+    assert_projective(self, g, result)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 61, in assert_projective
+    test.assertGreater(abs(scale), 1e-10)
+AssertionError: np.float64(2.0014830212433612e-16) not greater than 1e-10
+
+======================================================================
+FAIL: test_spider_fusion_preserves_hadamard_self_loop_phase (tests.test_rule_audit.RuleAuditTests.test_spider_fusion_preserves_hadamard_self_loop_phase) (color=<VertexType.X: 2>, edge=<EdgeType.SIMPLE: 1>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 207, in test_spider_fusion_preserves_hadamard_self_loop_phase
+    self.check(g, 'spider_fusion', 'control', True)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 133, in check
+    self.assertGreater(count, 0)
+AssertionError: 0 not greater than 0
+
+======================================================================
+FAIL: test_spider_fusion_preserves_hadamard_self_loop_phase (tests.test_rule_audit.RuleAuditTests.test_spider_fusion_preserves_hadamard_self_loop_phase) (color=<VertexType.X: 2>, edge=<EdgeType.HADAMARD: 2>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 207, in test_spider_fusion_preserves_hadamard_self_loop_phase
+    self.check(g, 'spider_fusion', 'control', True)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 135, in check
+    assert_projective(self, g, result)
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 61, in assert_projective
+    test.assertGreater(abs(scale), 1e-10)
+AssertionError: np.float64(2.125271436608066e-16) not greater than 1e-10
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.368s
+
+FAILED (failures=8)

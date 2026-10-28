@@ -1,0 +1,23 @@
+======================================================================
+FAIL: test_explicit_graph_id_preserves_foreign_graph (tests.test_python_gadget.PythonGadgetTests.test_explicit_graph_id_preserves_foreign_graph)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_python_gadget.py", line 53, in test_explicit_graph_id_preserves_foreign_graph
+    self.assertEqual(payload(read(self.db, foreign)), before)
+AssertionError: {'ver[51 chars] 1, '1'], [4, 0, '0'], [5, 0, '0'], [6, 1, '1'[168 chars]0"}'} != {'ver[51 chars] 1, '0'], [4, 0, '0'], [5, 0, '0'], [6, 1, '1'[190 chars]0"}'}
+Diff is 678 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_rule_contexts_and_simple_neighbor_edges (tests.test_python_gadget.PythonGadgetTests.test_rule_contexts_and_simple_neighbor_edges) (case='simple_neighbor')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_python_gadget.py", line 42, in test_rule_contexts_and_simple_neighbor_edges
+    assert_projective(self, g, read(self.db, self.gid))
+  File "C:\Users\valte\OneDrive - University of Helsinki\Desktop\zxdb\tests\test_rule_audit.py", line 61, in assert_projective
+    test.assertGreater(abs(scale), 1e-10)
+AssertionError: np.float64(1.2412670766236366e-16) not greater than 1e-10
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.636s
+
+FAILED (failures=2)

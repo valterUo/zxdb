@@ -1,0 +1,2180 @@
+{
+  "manifest": [
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 32,
+        "seed": 0,
+        "depth": 640
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 32,
+        "seed": 1,
+        "depth": 640
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 32,
+        "seed": 2,
+        "depth": 640
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 64,
+        "seed": 0,
+        "depth": 1280
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 64,
+        "seed": 1,
+        "depth": 1280
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 64,
+        "seed": 2,
+        "depth": 1280
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 128,
+        "seed": 0,
+        "depth": 2560
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 128,
+        "seed": 1,
+        "depth": 2560
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 128,
+        "seed": 2,
+        "depth": 2560
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 32,
+        "seed": 0,
+        "depth": 640
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 32,
+        "seed": 1,
+        "depth": 640
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 32,
+        "seed": 2,
+        "depth": 640
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 64,
+        "seed": 0,
+        "depth": 1280
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 64,
+        "seed": 1,
+        "depth": 1280
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 64,
+        "seed": 2,
+        "depth": 1280
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 128,
+        "seed": 0,
+        "depth": 2560
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 128,
+        "seed": 1,
+        "depth": 2560
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 128,
+        "seed": 2,
+        "depth": 2560
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 32,
+        "seed": 0,
+        "depth": 640
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 32,
+        "seed": 1,
+        "depth": 640
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 32,
+        "seed": 2,
+        "depth": 640
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 64,
+        "seed": 0,
+        "depth": 1280
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 64,
+        "seed": 1,
+        "depth": 1280
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 64,
+        "seed": 2,
+        "depth": 1280
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 128,
+        "seed": 0,
+        "depth": 2560
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 128,
+        "seed": 1,
+        "depth": 2560
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 128,
+        "seed": 2,
+        "depth": 2560
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 32,
+        "seed": 0,
+        "depth": 2
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 32,
+        "seed": 1,
+        "depth": 2
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 32,
+        "seed": 2,
+        "depth": 2
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 64,
+        "seed": 0,
+        "depth": 2
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 64,
+        "seed": 1,
+        "depth": 2
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 64,
+        "seed": 2,
+        "depth": 2
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 128,
+        "seed": 0,
+        "depth": 2
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 128,
+        "seed": 1,
+        "depth": 2
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 128,
+        "seed": 2,
+        "depth": 2
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 32,
+        "seed": 0,
+        "depth": 2
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 32,
+        "seed": 1,
+        "depth": 2
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 32,
+        "seed": 2,
+        "depth": 2
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 64,
+        "seed": 0,
+        "depth": 2
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 64,
+        "seed": 1,
+        "depth": 2
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 64,
+        "seed": 2,
+        "depth": 2
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 128,
+        "seed": 0,
+        "depth": 2
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 128,
+        "seed": 1,
+        "depth": 2
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 128,
+        "seed": 2,
+        "depth": 2
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "identity",
+      "spec": {
+        "family": "identity_chain",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "identity",
+      "spec": {
+        "family": "identity_chain",
+        "size": 16,
+        "seed": 0
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "identity",
+      "spec": {
+        "family": "identity_chain",
+        "size": 128,
+        "seed": 0
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "identity",
+      "spec": {
+        "family": "identity_chain",
+        "size": 512,
+        "seed": 0
+      },
+      "engines": [
+        "pyzx",
+        "cypher",
+        "hybrid",
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "spider_fusion",
+      "spec": {
+        "family": "copies_spider_fusion",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "spider_fusion",
+      "spec": {
+        "family": "copies_spider_fusion",
+        "size": 32,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "spider_fusion",
+      "spec": {
+        "family": "copies_spider_fusion",
+        "size": 512,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "spider_fusion",
+      "spec": {
+        "family": "spider_fusion",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "spider_fusion",
+      "spec": {
+        "family": "spider_fusion",
+        "size": 16,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "spider_fusion",
+      "spec": {
+        "family": "spider_fusion",
+        "size": 128,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "identity",
+      "spec": {
+        "family": "copies_identity",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "identity",
+      "spec": {
+        "family": "copies_identity",
+        "size": 32,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "identity",
+      "spec": {
+        "family": "copies_identity",
+        "size": 512,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "identity",
+      "spec": {
+        "family": "identity",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "identity",
+      "spec": {
+        "family": "identity",
+        "size": 16,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "identity",
+      "spec": {
+        "family": "identity",
+        "size": 128,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "lcomp",
+      "spec": {
+        "family": "copies_lcomp",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "lcomp",
+      "spec": {
+        "family": "copies_lcomp",
+        "size": 32,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "lcomp",
+      "spec": {
+        "family": "copies_lcomp",
+        "size": 512,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "lcomp",
+      "spec": {
+        "family": "lcomp",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "lcomp",
+      "spec": {
+        "family": "lcomp",
+        "size": 16,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "lcomp",
+      "spec": {
+        "family": "lcomp",
+        "size": 128,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "pivot",
+      "spec": {
+        "family": "copies_pivot",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "pivot",
+      "spec": {
+        "family": "copies_pivot",
+        "size": 32,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "pivot",
+      "spec": {
+        "family": "copies_pivot",
+        "size": 512,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "pivot",
+      "spec": {
+        "family": "pivot",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "pivot",
+      "spec": {
+        "family": "pivot",
+        "size": 16,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "pivot",
+      "spec": {
+        "family": "pivot",
+        "size": 128,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "pivot_gadget",
+      "spec": {
+        "family": "copies_pivot_gadget",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "pivot_gadget",
+      "spec": {
+        "family": "copies_pivot_gadget",
+        "size": 32,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "pivot_gadget",
+      "spec": {
+        "family": "copies_pivot_gadget",
+        "size": 512,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "pivot_gadget",
+      "spec": {
+        "family": "pivot_gadget",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "pivot_gadget",
+      "spec": {
+        "family": "pivot_gadget",
+        "size": 16,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "pivot_gadget",
+      "spec": {
+        "family": "pivot_gadget",
+        "size": 128,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "pivot_boundary",
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "pivot_boundary",
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 32,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "pivot_boundary",
+      "spec": {
+        "family": "copies_pivot_boundary",
+        "size": 512,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "pivot_boundary",
+      "spec": {
+        "family": "pivot_boundary",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "pivot_boundary",
+      "spec": {
+        "family": "pivot_boundary",
+        "size": 16,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "pivot_boundary",
+      "spec": {
+        "family": "pivot_boundary",
+        "size": 128,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "gadget_fusion",
+      "spec": {
+        "family": "copies_gadget_fusion",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "gadget_fusion",
+      "spec": {
+        "family": "copies_gadget_fusion",
+        "size": 32,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "gadget_fusion",
+      "spec": {
+        "family": "copies_gadget_fusion",
+        "size": 512,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "gadget_fusion",
+      "spec": {
+        "family": "gadget_fusion",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "gadget_fusion",
+      "spec": {
+        "family": "gadget_fusion",
+        "size": 16,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "gadget_fusion",
+      "spec": {
+        "family": "gadget_fusion",
+        "size": 128,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "bialgebra",
+      "spec": {
+        "family": "copies_bialgebra",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "bialgebra",
+      "spec": {
+        "family": "copies_bialgebra",
+        "size": 32,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "bialgebra",
+      "spec": {
+        "family": "copies_bialgebra",
+        "size": 512,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "bialgebra",
+      "spec": {
+        "family": "bialgebra",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "bialgebra",
+      "spec": {
+        "family": "bialgebra",
+        "size": 16,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "bialgebra",
+      "spec": {
+        "family": "bialgebra",
+        "size": 128,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "hadamard_cancel",
+      "spec": {
+        "family": "copies_hadamard_cancel",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "hadamard_cancel",
+      "spec": {
+        "family": "copies_hadamard_cancel",
+        "size": 32,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "hadamard_cancel",
+      "spec": {
+        "family": "copies_hadamard_cancel",
+        "size": 512,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "hadamard_cancel",
+      "spec": {
+        "family": "hadamard_cancel",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "hadamard_cancel",
+      "spec": {
+        "family": "hadamard_cancel",
+        "size": 16,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "hadamard_cancel",
+      "spec": {
+        "family": "hadamard_cancel",
+        "size": 128,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "supplementarity",
+      "spec": {
+        "family": "copies_supplementarity",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "supplementarity",
+      "spec": {
+        "family": "copies_supplementarity",
+        "size": 32,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "supplementarity",
+      "spec": {
+        "family": "copies_supplementarity",
+        "size": 512,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "supplementarity",
+      "spec": {
+        "family": "supplementarity",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "supplementarity",
+      "spec": {
+        "family": "supplementarity",
+        "size": 16,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "supplementarity",
+      "spec": {
+        "family": "supplementarity",
+        "size": 128,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "copy",
+      "spec": {
+        "family": "copies_copy",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "copy",
+      "spec": {
+        "family": "copies_copy",
+        "size": 32,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "copy",
+      "spec": {
+        "family": "copies_copy",
+        "size": 512,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "copy",
+      "spec": {
+        "family": "copy",
+        "size": 2,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "copy",
+      "spec": {
+        "family": "copy",
+        "size": 16,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "copy",
+      "spec": {
+        "family": "copy",
+        "size": 128,
+        "seed": 0
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 3,
+        "seed": 0,
+        "depth": 30
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 3,
+        "seed": 1,
+        "depth": 30
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 3,
+        "seed": 2,
+        "depth": 30
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 8,
+        "seed": 0,
+        "depth": 80
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 8,
+        "seed": 1,
+        "depth": 80
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 8,
+        "seed": 2,
+        "depth": 80
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 16,
+        "seed": 0,
+        "depth": 160
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 16,
+        "seed": 1,
+        "depth": 160
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 16,
+        "seed": 2,
+        "depth": 160
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 3,
+        "seed": 0,
+        "depth": 30
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 3,
+        "seed": 1,
+        "depth": 30
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 3,
+        "seed": 2,
+        "depth": 30
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 8,
+        "seed": 0,
+        "depth": 80
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 8,
+        "seed": 1,
+        "depth": 80
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 8,
+        "seed": 2,
+        "depth": 80
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 16,
+        "seed": 0,
+        "depth": 160
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 16,
+        "seed": 1,
+        "depth": 160
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 16,
+        "seed": 2,
+        "depth": 160
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 3,
+        "seed": 0,
+        "depth": 30
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 3,
+        "seed": 1,
+        "depth": 30
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 3,
+        "seed": 2,
+        "depth": 30
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 8,
+        "seed": 0,
+        "depth": 80
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 8,
+        "seed": 1,
+        "depth": 80
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 8,
+        "seed": 2,
+        "depth": 80
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 16,
+        "seed": 0,
+        "depth": 160
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 16,
+        "seed": 1,
+        "depth": 160
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 16,
+        "seed": 2,
+        "depth": 160
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 3,
+        "seed": 0,
+        "depth": 2
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 3,
+        "seed": 1,
+        "depth": 2
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 3,
+        "seed": 2,
+        "depth": 2
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 8,
+        "seed": 0,
+        "depth": 2
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 8,
+        "seed": 1,
+        "depth": 2
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 8,
+        "seed": 2,
+        "depth": 2
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 16,
+        "seed": 0,
+        "depth": 2
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 16,
+        "seed": 1,
+        "depth": 2
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 16,
+        "seed": 2,
+        "depth": 2
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 3,
+        "seed": 0,
+        "depth": 2
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 3,
+        "seed": 1,
+        "depth": 2
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 3,
+        "seed": 2,
+        "depth": 2
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 8,
+        "seed": 0,
+        "depth": 2
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 8,
+        "seed": 1,
+        "depth": 2
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 8,
+        "seed": 2,
+        "depth": 2
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 16,
+        "seed": 0,
+        "depth": 2
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 16,
+        "seed": 1,
+        "depth": 2
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    },
+    {
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 16,
+        "seed": 2,
+        "depth": 2
+      },
+      "engines": [
+        "before_cypher",
+        "before_hybrid"
+      ]
+    }
+  ],
+  "repetitions": 3,
+  "warmups": 1,
+  "sources": {
+    "zxdb\\zxdb.py": "5d55f5d9f1937992fec48476b5f22f9995c2fab2e4bb02aa74877ebbb8031eb7",
+    "zxdb\\main_queries.json": "ae544ede74f0ee12805b1f91b825393e30e9949ba8b18df29768b0269663549c",
+    "zxdb_qm\\zxqmcpp.cpp": "6eb88464799b5ef0dcb1c2e4a7106081ce3e86ee3ff1dc77193c6966f39344f8",
+    "evaluate.py": "8c6e98450d4663cb000f7dcbf78da168cffc88a36b464d461ff3b5470834ec59",
+    "evaluation\\core.py": "476ce96e000d58f4f5e11ed891052d066e62720a6a5f9df48e35e137848c58ac",
+    "evaluation\\workloads.py": "f08d398aa3bed2e75417a6c0444c99ead2a9af71f18a4873cac3bf4314088878",
+    "evaluation\\patterns.py": "04b35a5c844f5c1e096f856dabff6c3ecf008102acd7b78115705a5d1ca93730",
+    "evaluation\\oracle.py": "0aab698e8255e804ba99f7ea16b5cfcec3f332252b844437b7eef42f3516ca5a",
+    "results\\post-audit-benchmarks-20261027\\pre-fix-source\\zxdb\\zxdb.py": "ca3587fa336ba610b949b18399a74ddff8487e4b3f202f36b94a01eb024958f4",
+    "results\\post-audit-benchmarks-20261027\\pre-fix-source\\zxdb\\main_queries.json": "e414f7237e6a4b61611974499a12343df878d01e70872e7c75714a712bce1632",
+    "evaluation\\compare_audit_performance.py": "916686e4349f13b11fdcd14e17f883f3ad0ed0183092db94d159a26ba410780e"
+  },
+  "uri": "bolt://127.0.0.1:7691",
+  "shared_pyzx": true,
+  "order": "deterministic shuffle for each repetition",
+  "note": "PyZX timed once per spec/repetition, shared by all four DB paths"
+}

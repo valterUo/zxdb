@@ -1,0 +1,2 @@
+465ca8969b457c592a92e90a1f3d705024e11c1a8fbdddfecfb2d3b8f778cd78  /usr/lib/memgraph/query_modules/zxqmcpp.so
+6eb88464799b5ef0dcb1c2e4a7106081ce3e86ee3ff1dc77193c6966f39344f8  /tmp/zxqmcpp.cpp

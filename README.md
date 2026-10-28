@@ -4,8 +4,19 @@ A research prototype comparing ZX-calculus rewrites in Memgraph with PyZX.
 The aim is a readable demonstration of when database batching helps, including
 cases where database overhead makes it slower. This is not a production service.
 
+The [2026-10-28 three-engine rerun](results/rerun-20261028/REPORT.md) covers all
+28 performance workload shapes and 160 configurations, with three measured
+repetitions. At 128 qubits, Cypher wins 14/15 circuit configurations on rewrite
+time and hybrid Cypher+C++ wins 15/15; each wins 12/15 including import/export.
+Standalone-rule results are mixed. All 223 correctness fixtures pass in both
+database modes after supplemental checks, but some large measured outputs remain
+semantically unresolved. The report includes full timings, scaling plots and
+separate tensor, isomorphism and degree-sequence evidence.
+
 All evaluation evidence is indexed in [results/README.md](results/README.md).
-The completed Cypher-only timing campaign passed 65 regressions and won all 15
+The [2026-10-27 rule audit](results/rule-audit-20261027/REPORT.md) adds
+adversarial semantic tests and fixes discovered in current and retained rules.
+The earlier Cypher-only timing campaign passed 65 regressions and won all 15
 128-qubit configurations on median rewrite and total time (three measured
 repetitions each). All 223 correctness fixtures are verified, including three
 resolved by supplemental exact checks. All 37 distinct measured input/output
@@ -162,8 +173,9 @@ also accepts `control optimized native` for a direct three-way comparison.
 Native procedures require compilation and a database restart before evaluation.
 The default evaluation needs no compiled module.
 
-Known limitations include incomplete scalar tracking, standalone Cypher
-supplementarity preconditions, and the legacy JSON import/export APIs. The
+Known limitations include incomplete scalar tracking and the legacy JSON
+import/export APIs. Standalone Cypher supplementarity now checks its local
+graph-like preconditions. The
 evaluation adapter preserves explicit zero scalar factors as isolated pi spiders,
 and cleanup retains those zero factors. General scalar tracking is still absent. See `evaluation/audit-history.md` for the prior audit, and the
 new report for evidence on this revision. Historical campaign summaries are kept

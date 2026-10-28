@@ -633,6 +633,9 @@ class ZXdb:
         remove_query = self._query("Remove identities with refactor")
 
         def loop(tx):
+            # Input loops/parallel wires can hide degree-two identities. Expose
+            # them before deciding that an empty removal pass is a fixed point.
+            self._normalize_parallel_edges_tx(tx, graph_id)
             total = 0
             while True:
                 removed = self._run_count(tx, remove_query,
@@ -669,7 +672,10 @@ class ZXdb:
         hadamard_query = self._query("Normalize parallel Hadamard pairs")
         mixed_query = self._query("Normalize parallel mixed pair")
         simple_query = self._query("Normalize parallel simple pairs")
-        total = 0
+        # Normalize loops before matching pairs: an H loop contributes pi,
+        # and a simple loop otherwise blocks fusion's minimum-neighbor match.
+        total = self._run_count(tx, self._query("Normalize spider self-loops"),
+                                "removed", graph_id)
         # Each query is one-shot per node pair, but they interact (a mixed-pair
         # rewrite can leave a Hadamard pair, etc.), so loop until stable.
         while True:
@@ -835,7 +841,7 @@ class ZXdb:
         def loop(tx):
             total = 0
             while True:
-                self._run_count(tx, norm_query, "normalized", graph_id)
+                total += self._run_count(tx, norm_query, "normalized", graph_id)
                 changed = self._run_count(tx, fusion_query,
                                           "fusions_performed", graph_id)
                 total += changed

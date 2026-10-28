@@ -1,0 +1,26 @@
+1 / 26 {'family': 'copies_spider_fusion', 'size': 512, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 1024, 'elapsed_s': 0.3129999999946449}
+2 / 26 {'family': 'copies_spider_fusion', 'size': 512, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 1024, 'elapsed_s': 0.3120000000053551}
+3 / 26 {'family': 'copies_spider_fusion', 'size': 512, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 1024, 'elapsed_s': 0.3120000000053551}
+4 / 26 {'family': 'copies_spider_fusion', 'size': 512, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 1024, 'elapsed_s': 0.3279999999940628}
+5 / 26 {'family': 'copies_spider_fusion', 'size': 512, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 1024, 'elapsed_s': 0.3120000000053551}
+6 / 26 {'family': 'copies_spider_fusion', 'size': 512, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 1024, 'elapsed_s': 0.2960000000020955}
+7 / 26 {'family': 'copies_identity', 'size': 512, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 1024, 'elapsed_s': 0.25}
+8 / 26 {'family': 'copies_lcomp', 'size': 512, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 512, 'elapsed_s': 0.17200000000593718}
+9 / 26 {'family': 'lcomp', 'size': 128, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 1, 'elapsed_s': 0.46899999999732245}
+10 / 26 {'family': 'copies_pivot', 'size': 512, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 512, 'elapsed_s': 0.375}
+11 / 26 {'family': 'pivot', 'size': 128, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 1, 'elapsed_s': 1.6089999999967404}
+12 / 26 {'family': 'copies_pivot_gadget', 'size': 512, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 512, 'elapsed_s': 0.5159999999887077}
+13 / 26 {'family': 'copies_pivot_gadget', 'size': 512, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 512, 'elapsed_s': 0.5}
+14 / 26 {'family': 'copies_pivot_gadget', 'size': 512, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 512, 'elapsed_s': 0.5629999999946449}
+15 / 26 {'family': 'copies_pivot_gadget', 'size': 512, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 512, 'elapsed_s': 0.6089999999967404}
+16 / 26 {'family': 'pivot_gadget', 'size': 128, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 1, 'elapsed_s': 1.6560000000026776}
+17 / 26 {'family': 'copies_pivot_boundary', 'size': 512, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 512, 'elapsed_s': 0.6560000000026776}
+18 / 26 {'family': 'copies_pivot_boundary', 'size': 512, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 512, 'elapsed_s': 0.6560000000026776}
+19 / 26 {'family': 'copies_pivot_boundary', 'size': 512, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 512, 'elapsed_s': 0.6570000000065193}
+20 / 26 {'family': 'copies_pivot_boundary', 'size': 512, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 512, 'elapsed_s': 0.6559999999881256}
+21 / 26 {'family': 'pivot_boundary', 'size': 16, 'seed': 0} {'status': 'inconclusive', 'reason': 'Component isomorphism exceeded time bound', 'elapsed_s': 10.014999999999418}
+22 / 26 {'family': 'pivot_boundary', 'size': 128, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 1, 'elapsed_s': 1.5310000000026776}
+23 / 26 {'family': 'copies_gadget_fusion', 'size': 512, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 512, 'elapsed_s': 0.23399999999674037}
+24 / 26 {'family': 'copies_bialgebra', 'size': 512, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 512, 'elapsed_s': 0.5469999999913853}
+25 / 26 {'family': 'bialgebra', 'size': 128, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 1, 'elapsed_s': 2.4219999999913853}
+26 / 26 {'family': 'copies_copy', 'size': 512, 'seed': 0} {'status': 'equal', 'reason': 'Exact labeled component-wise multigraph isomorphism', 'components': 1024, 'elapsed_s': 0.23399999999674037}
