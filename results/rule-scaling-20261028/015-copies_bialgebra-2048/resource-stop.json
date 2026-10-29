@@ -1,5 +1,0 @@
-{
-  "reason": "Warmup engine rewrite times alone total 423.1 seconds; projected four repetitions exceed 1200-second case budget. Stop early to preserve remaining campaign budget.",
-  "policy": "Resource-based early stop; no performance-ratio threshold.",
-  "warmup_only_is_not_a_complete_comparison": true
-}

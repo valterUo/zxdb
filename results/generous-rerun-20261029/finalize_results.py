@@ -1,5 +1,6 @@
 """Freeze and summarize the stopped campaign without pooling historical runs."""
 from collections import Counter, defaultdict
+import argparse
 from datetime import datetime, timezone
 import csv
 import hashlib
@@ -7,6 +8,7 @@ import json
 from pathlib import Path
 import shutil
 import statistics as stats
+import zipfile
 
 import matplotlib
 matplotlib.use('Agg')
@@ -106,7 +108,16 @@ def main():
     for name in ['plan.json','progress.json','finalization.json','skip-decisions.json',
                  'warmup-policy.json','engine-run-policy-1800s.json','engine-run-policy.json']:
         shutil.copy2(ROOT/name, OUT/name)
-    source_integrity = {p:hashlib.sha256((REPO/p).read_bytes()).hexdigest()==h for p,h in plan['source_hashes'].items()}
+    # Verify the measured snapshot independently of later plotting/cleanup edits.
+    with zipfile.ZipFile(ROOT/'correctness/sources-attempt-0.zip') as archive:
+        source_integrity = {
+            p: hashlib.sha256(archive.read(p.replace('\\', '/'))).hexdigest() == h
+            for p, h in plan['source_hashes'].items()
+        }
+    working_integrity = {
+        p: hashlib.sha256((REPO/p).read_bytes()).hexdigest() == h if (REPO/p).exists() else None
+        for p, h in plan['source_hashes'].items()
+    }
     case_integrity = {}
     for p in sorted((ROOT/'cases').glob('*/environment.json')):
         env=read(p)
@@ -134,9 +145,10 @@ def main():
     summary=dict(finalized_at=state['finalized_at'],configurations=dict(counts),complete_circuits=len(circuits),
         complete_rules=len(rules),complete_measured_engine_trials=len(measured),correctness=dict(fixture_counts),
         measured_semantics=checks,circuit_128_wins=wins128,largest_rule_wins=rulewins,largest_rules=latest,
-        circuit_128_geomean_speedups=families128,source_hashes_unchanged=True)
+        circuit_128_geomean_speedups=families128,
+        source_hashes_unchanged=all(v is True for v in working_integrity.values()))
     save('summary.json',summary)
-    save('integrity.json',dict(working_sources=source_integrity,case_sources=case_integrity,
+    save('integrity.json',dict(working_sources=working_integrity,archived_sources=source_integrity,case_sources=case_integrity,
          all_complete_cases_have_exactly_three_successful_measurements_per_engine=True))
     text=['# Final benchmark results — 29 October 2026','',
       f"Campaign stopped at the user's request at {state['finalized_at']}. No benchmark or cutoff monitor remains active. The dedicated database was cleaned of the interrupted graph and stopped.",'',
@@ -216,4 +228,9 @@ def main():
 
 
 if __name__=='__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output', type=Path, default=OUT,
+                        help='Fresh destination; existing frozen results are never overwritten')
+    OUT = parser.parse_args().output.resolve()
+    OUT.parent.mkdir(parents=True, exist_ok=True)
     main()

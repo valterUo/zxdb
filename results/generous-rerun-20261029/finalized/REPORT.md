@@ -1,7 +1,7 @@
 # Final benchmark results — 29 October 2026
 
 Paper figures are available in [the compiled preview](paper-figures/main.pdf)
-and [the complete figure bundle](paper-figures.zip), including rewrite-only and
+and [the figure directory](paper-figures/), including rewrite-only and
 total-time TikZ snippets, cropped vector PDFs, and exact plotted data. All five
 circuit families reach 128 qubits; each curve ends at its last contiguous
 completed comparison. See [figure coverage and captions](paper-figures/README.md).

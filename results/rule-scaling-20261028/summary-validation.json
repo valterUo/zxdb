@@ -1,9 +1,0 @@
-{
-  "complete_configurations": 23,
-  "verified_timing_medians": 138,
-  "verified_speedup_ratios": 92,
-  "complete_measured_engine_trials": 207,
-  "protected_sources_unchanged": true,
-  "native_module_sha256": "465ca8969b457c592a92e90a1f3d705024e11c1a8fbdddfecfb2d3b8f778cd78",
-  "database_remaining_nodes": 0
-}

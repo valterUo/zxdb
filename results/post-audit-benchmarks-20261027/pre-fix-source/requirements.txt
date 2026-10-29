@@ -1,5 +1,0 @@
-pyzx==0.10.3
-neo4j==5.28.1
-numpy==2.2.5
-networkx==3.4.2
-quimb==1.11.2

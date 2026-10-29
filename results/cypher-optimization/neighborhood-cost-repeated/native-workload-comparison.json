@@ -1,6 +1,0 @@
-{
-  "native_archive": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb-backup-20261026\\validation-history-20261027\\native-128-stable",
-  "configurations": 15,
-  "input_hashes_match": true,
-  "method": "Compare complete benchmark specs and recorded input hashes in both campaigns; both use 128 qubits, depth factor 20, three seeds and three measured repetitions."
-}

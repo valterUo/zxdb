@@ -1,1 +1,0 @@
-{"edges": [[0, 5, 2], [1, 8, 1], [5, 6, 2], [5, 8, 2], [6, 8, 2], [6, 15, 2], [8, 14, 1]], "inputs": [0, 1], "outputs": [14, 15], "scalar": {"floatfactor": "1.0", "is_unknown": false, "is_zero": false, "phase": "0", "phasenodes": [], "power2": 2, "sum_of_phases": {}}, "vertices": [[0, 0, "0"], [1, 0, "0"], [5, 1, "0"], [6, 1, "1"], [8, 1, "1"], [14, 0, "0"], [15, 0, "0"]]}

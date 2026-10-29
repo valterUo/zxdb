@@ -1,5 +1,0 @@
-WORKLOAD 1/1 {'family': 'copies_bialgebra', 'size': 2048, 'seed': 0}
-{"case": "9e30fb40080c8d31", "engine": "pyzx", "repetition": 0, "status": "inconclusive", "rewrite_s": 1.5678578999941237}
-{"case": "9e30fb40080c8d31", "engine": "hybrid", "repetition": 0, "status": "inconclusive", "rewrite_s": 218.78139479999663}
-{"case": "9e30fb40080c8d31", "engine": "cypher", "repetition": 0, "status": "inconclusive", "rewrite_s": 202.75386960001197}
-{"case": "9e30fb40080c8d31", "engine": "comparison_complete", "repetition": 0, "status": "recorded"}
