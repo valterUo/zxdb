@@ -1,0 +1,8 @@
+WORKLOAD 1/1 {'family': 'copies_supplementarity', 'size': 2048, 'seed': 0}
+[#FB53]  _: <CONNECTION> error: Failed to read from defunct connection IPv4Address(('127.0.0.1', 7691)) (ResolvedIPv4Address(('127.0.0.1', 7691))): OSError('No data')
+Transaction failed and will be retried in 0.9170310158120437s (Couldn't connect to 127.0.0.1:7691 (resolved to ('127.0.0.1:7691',)):
+Connection to 127.0.0.1:7691 closed with incomplete handshake response)
+{"case": "75c16a5b74e60357", "engine": "pyzx", "repetition": 0, "status": "inconclusive", "rewrite_s": 0.13585890000103973}
+{"case": "75c16a5b74e60357", "engine": "hybrid", "repetition": 0, "status": "inconclusive", "rewrite_s": 6.891252200002782}
+{"case": "75c16a5b74e60357", "engine": "cypher", "repetition": 0, "status": "error"}
+{"case": "75c16a5b74e60357", "engine": "comparison_complete", "repetition": 0, "status": "recorded"}

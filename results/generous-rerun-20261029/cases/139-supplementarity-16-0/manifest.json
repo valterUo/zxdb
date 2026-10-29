@@ -1,0 +1,10 @@
+[
+  {
+    "rule": "supplementarity",
+    "spec": {
+      "family": "supplementarity",
+      "size": 16,
+      "seed": 0
+    }
+  }
+]

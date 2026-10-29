@@ -1,0 +1,5 @@
+{
+  "reason": "Warmup still incomplete after more than 480 seconds; projected warmup plus three measured repetitions exceeds 1200-second case budget. Stop to preserve remaining campaign budget.",
+  "policy": "Resource-based early stop; no performance-ratio threshold.",
+  "warmup_only_is_not_a_complete_comparison": true
+}

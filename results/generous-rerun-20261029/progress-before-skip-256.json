@@ -1,0 +1,1294 @@
+{
+  "status": "running",
+  "stage": "performance",
+  "completed": [
+    {
+      "index": 0,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 3,
+        "seed": 0,
+        "depth": 2
+      },
+      "directory": "cases\\000-layered_global-3-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 4.6720000000000255
+    },
+    {
+      "index": 1,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 3,
+        "seed": 1,
+        "depth": 2
+      },
+      "directory": "cases\\001-layered_global-3-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 4.391000000000076
+    },
+    {
+      "index": 2,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 3,
+        "seed": 2,
+        "depth": 2
+      },
+      "directory": "cases\\002-layered_global-3-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 4.358999999999924
+    },
+    {
+      "index": 3,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 3,
+        "seed": 0,
+        "depth": 2
+      },
+      "directory": "cases\\003-layered_local-3-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 4.5
+    },
+    {
+      "index": 4,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 3,
+        "seed": 1,
+        "depth": 2
+      },
+      "directory": "cases\\004-layered_local-3-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 4.344000000000051
+    },
+    {
+      "index": 5,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 3,
+        "seed": 2,
+        "depth": 2
+      },
+      "directory": "cases\\005-layered_local-3-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 4.2970000000000255
+    },
+    {
+      "index": 6,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 3,
+        "seed": 0,
+        "depth": 60
+      },
+      "directory": "cases\\006-random_clifford-3-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.9220000000000255
+    },
+    {
+      "index": 7,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 3,
+        "seed": 1,
+        "depth": 60
+      },
+      "directory": "cases\\007-random_clifford-3-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 4.7970000000000255
+    },
+    {
+      "index": 8,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 3,
+        "seed": 2,
+        "depth": 60
+      },
+      "directory": "cases\\008-random_clifford-3-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 4.936999999999898
+    },
+    {
+      "index": 9,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 3,
+        "seed": 0,
+        "depth": 60
+      },
+      "directory": "cases\\009-random_clifford_t-3-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 4.9529999999999745
+    },
+    {
+      "index": 10,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 3,
+        "seed": 1,
+        "depth": 60
+      },
+      "directory": "cases\\010-random_clifford_t-3-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.342999999999847
+    },
+    {
+      "index": 11,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 3,
+        "seed": 2,
+        "depth": 60
+      },
+      "directory": "cases\\011-random_clifford_t-3-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.905999999999949
+    },
+    {
+      "index": 12,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 3,
+        "seed": 0,
+        "depth": 60
+      },
+      "directory": "cases\\012-random_t_heavy-3-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 4.875
+    },
+    {
+      "index": 13,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 3,
+        "seed": 1,
+        "depth": 60
+      },
+      "directory": "cases\\013-random_t_heavy-3-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 4.5470000000000255
+    },
+    {
+      "index": 14,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 3,
+        "seed": 2,
+        "depth": 60
+      },
+      "directory": "cases\\014-random_t_heavy-3-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 4.983999999999924
+    },
+    {
+      "index": 15,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 8,
+        "seed": 0,
+        "depth": 2
+      },
+      "directory": "cases\\015-layered_global-8-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.969000000000051
+    },
+    {
+      "index": 16,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 8,
+        "seed": 1,
+        "depth": 2
+      },
+      "directory": "cases\\016-layered_global-8-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.110000000000127
+    },
+    {
+      "index": 17,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 8,
+        "seed": 2,
+        "depth": 2
+      },
+      "directory": "cases\\017-layered_global-8-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.766000000000076
+    },
+    {
+      "index": 18,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 8,
+        "seed": 0,
+        "depth": 2
+      },
+      "directory": "cases\\018-layered_local-8-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 4.8279999999999745
+    },
+    {
+      "index": 19,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 8,
+        "seed": 1,
+        "depth": 2
+      },
+      "directory": "cases\\019-layered_local-8-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 4.782000000000153
+    },
+    {
+      "index": 20,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 8,
+        "seed": 2,
+        "depth": 2
+      },
+      "directory": "cases\\020-layered_local-8-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 4.858999999999924
+    },
+    {
+      "index": 21,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 8,
+        "seed": 0,
+        "depth": 160
+      },
+      "directory": "cases\\021-random_clifford-8-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.342999999999847
+    },
+    {
+      "index": 22,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 8,
+        "seed": 1,
+        "depth": 160
+      },
+      "directory": "cases\\022-random_clifford-8-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.407000000000153
+    },
+    {
+      "index": 23,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 8,
+        "seed": 2,
+        "depth": 160
+      },
+      "directory": "cases\\023-random_clifford-8-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.516000000000076
+    },
+    {
+      "index": 24,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 8,
+        "seed": 0,
+        "depth": 160
+      },
+      "directory": "cases\\024-random_clifford_t-8-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.842999999999847
+    },
+    {
+      "index": 25,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 8,
+        "seed": 1,
+        "depth": 160
+      },
+      "directory": "cases\\025-random_clifford_t-8-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.391000000000076
+    },
+    {
+      "index": 26,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 8,
+        "seed": 2,
+        "depth": 160
+      },
+      "directory": "cases\\026-random_clifford_t-8-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 6.030999999999949
+    },
+    {
+      "index": 27,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 8,
+        "seed": 0,
+        "depth": 160
+      },
+      "directory": "cases\\027-random_t_heavy-8-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.110000000000127
+    },
+    {
+      "index": 28,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 8,
+        "seed": 1,
+        "depth": 160
+      },
+      "directory": "cases\\028-random_t_heavy-8-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.844000000000051
+    },
+    {
+      "index": 29,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 8,
+        "seed": 2,
+        "depth": 160
+      },
+      "directory": "cases\\029-random_t_heavy-8-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.4220000000000255
+    },
+    {
+      "index": 30,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 16,
+        "seed": 0,
+        "depth": 2
+      },
+      "directory": "cases\\030-layered_global-16-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 3.8910000000000764
+    },
+    {
+      "index": 31,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 16,
+        "seed": 1,
+        "depth": 2
+      },
+      "directory": "cases\\031-layered_global-16-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 3.7029999999999745
+    },
+    {
+      "index": 32,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 16,
+        "seed": 2,
+        "depth": 2
+      },
+      "directory": "cases\\032-layered_global-16-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 3.561999999999898
+    },
+    {
+      "index": 33,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 16,
+        "seed": 0,
+        "depth": 2
+      },
+      "directory": "cases\\033-layered_local-16-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 3.3589999999999236
+    },
+    {
+      "index": 34,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 16,
+        "seed": 1,
+        "depth": 2
+      },
+      "directory": "cases\\034-layered_local-16-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 3.280999999999949
+    },
+    {
+      "index": 35,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 16,
+        "seed": 2,
+        "depth": 2
+      },
+      "directory": "cases\\035-layered_local-16-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 3.4529999999999745
+    },
+    {
+      "index": 36,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 16,
+        "seed": 0,
+        "depth": 320
+      },
+      "directory": "cases\\036-random_clifford-16-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.141000000000076
+    },
+    {
+      "index": 37,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 16,
+        "seed": 1,
+        "depth": 320
+      },
+      "directory": "cases\\037-random_clifford-16-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.344000000000051
+    },
+    {
+      "index": 38,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 16,
+        "seed": 2,
+        "depth": 320
+      },
+      "directory": "cases\\038-random_clifford-16-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.219000000000051
+    },
+    {
+      "index": 39,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 16,
+        "seed": 0,
+        "depth": 320
+      },
+      "directory": "cases\\039-random_clifford_t-16-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 4.875
+    },
+    {
+      "index": 40,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 16,
+        "seed": 1,
+        "depth": 320
+      },
+      "directory": "cases\\040-random_clifford_t-16-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.2029999999999745
+    },
+    {
+      "index": 41,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 16,
+        "seed": 2,
+        "depth": 320
+      },
+      "directory": "cases\\041-random_clifford_t-16-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.0470000000000255
+    },
+    {
+      "index": 42,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 16,
+        "seed": 0,
+        "depth": 320
+      },
+      "directory": "cases\\042-random_t_heavy-16-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 4.8279999999999745
+    },
+    {
+      "index": 43,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 16,
+        "seed": 1,
+        "depth": 320
+      },
+      "directory": "cases\\043-random_t_heavy-16-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 4.092999999999847
+    },
+    {
+      "index": 44,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 16,
+        "seed": 2,
+        "depth": 320
+      },
+      "directory": "cases\\044-random_t_heavy-16-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 4.030999999999949
+    },
+    {
+      "index": 45,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 32,
+        "seed": 0,
+        "depth": 2
+      },
+      "directory": "cases\\045-layered_global-32-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 8.780999999999949
+    },
+    {
+      "index": 46,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 32,
+        "seed": 1,
+        "depth": 2
+      },
+      "directory": "cases\\046-layered_global-32-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.891000000000076
+    },
+    {
+      "index": 47,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 32,
+        "seed": 2,
+        "depth": 2
+      },
+      "directory": "cases\\047-layered_global-32-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 8.25
+    },
+    {
+      "index": 48,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 32,
+        "seed": 0,
+        "depth": 2
+      },
+      "directory": "cases\\048-layered_local-32-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.6720000000000255
+    },
+    {
+      "index": 49,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 32,
+        "seed": 1,
+        "depth": 2
+      },
+      "directory": "cases\\049-layered_local-32-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.655999999999949
+    },
+    {
+      "index": 50,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 32,
+        "seed": 2,
+        "depth": 2
+      },
+      "directory": "cases\\050-layered_local-32-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 5.719000000000051
+    },
+    {
+      "index": 51,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 32,
+        "seed": 0,
+        "depth": 640
+      },
+      "directory": "cases\\051-random_clifford-32-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 13.891000000000076
+    },
+    {
+      "index": 52,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 32,
+        "seed": 1,
+        "depth": 640
+      },
+      "directory": "cases\\052-random_clifford-32-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 15.344000000000051
+    },
+    {
+      "index": 53,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 32,
+        "seed": 2,
+        "depth": 640
+      },
+      "directory": "cases\\053-random_clifford-32-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 13.672000000000025
+    },
+    {
+      "index": 54,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 32,
+        "seed": 0,
+        "depth": 640
+      },
+      "directory": "cases\\054-random_clifford_t-32-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 9.077999999999975
+    },
+    {
+      "index": 55,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 32,
+        "seed": 1,
+        "depth": 640
+      },
+      "directory": "cases\\055-random_clifford_t-32-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 9.530999999999949
+    },
+    {
+      "index": 56,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 32,
+        "seed": 2,
+        "depth": 640
+      },
+      "directory": "cases\\056-random_clifford_t-32-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 9.686999999999898
+    },
+    {
+      "index": 57,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 32,
+        "seed": 0,
+        "depth": 640
+      },
+      "directory": "cases\\057-random_t_heavy-32-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 6.655999999999949
+    },
+    {
+      "index": 58,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 32,
+        "seed": 1,
+        "depth": 640
+      },
+      "directory": "cases\\058-random_t_heavy-32-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 7.157000000000153
+    },
+    {
+      "index": 59,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 32,
+        "seed": 2,
+        "depth": 640
+      },
+      "directory": "cases\\059-random_t_heavy-32-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 6.858999999999924
+    },
+    {
+      "index": 60,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 64,
+        "seed": 0,
+        "depth": 2
+      },
+      "directory": "cases\\060-layered_global-64-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 11.25
+    },
+    {
+      "index": 61,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 64,
+        "seed": 1,
+        "depth": 2
+      },
+      "directory": "cases\\061-layered_global-64-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 62.9380000000001
+    },
+    {
+      "index": 62,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 64,
+        "seed": 2,
+        "depth": 2
+      },
+      "directory": "cases\\062-layered_global-64-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 47.422000000000025
+    },
+    {
+      "index": 63,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 64,
+        "seed": 0,
+        "depth": 2
+      },
+      "directory": "cases\\063-layered_local-64-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 15.063000000000102
+    },
+    {
+      "index": 64,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 64,
+        "seed": 1,
+        "depth": 2
+      },
+      "directory": "cases\\064-layered_local-64-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 15.280999999999949
+    },
+    {
+      "index": 65,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 64,
+        "seed": 2,
+        "depth": 2
+      },
+      "directory": "cases\\065-layered_local-64-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 15.344000000000051
+    },
+    {
+      "index": 66,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 64,
+        "seed": 0,
+        "depth": 1280
+      },
+      "directory": "cases\\066-random_clifford-64-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 82.86000000000013
+    },
+    {
+      "index": 67,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 64,
+        "seed": 1,
+        "depth": 1280
+      },
+      "directory": "cases\\067-random_clifford-64-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 85.57799999999997
+    },
+    {
+      "index": 68,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 64,
+        "seed": 2,
+        "depth": 1280
+      },
+      "directory": "cases\\068-random_clifford-64-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 75.65599999999995
+    },
+    {
+      "index": 69,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 64,
+        "seed": 0,
+        "depth": 1280
+      },
+      "directory": "cases\\069-random_clifford_t-64-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 49.98500000000013
+    },
+    {
+      "index": 70,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 64,
+        "seed": 1,
+        "depth": 1280
+      },
+      "directory": "cases\\070-random_clifford_t-64-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 43.625
+    },
+    {
+      "index": 71,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 64,
+        "seed": 2,
+        "depth": 1280
+      },
+      "directory": "cases\\071-random_clifford_t-64-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 42.96799999999985
+    },
+    {
+      "index": 72,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 64,
+        "seed": 0,
+        "depth": 1280
+      },
+      "directory": "cases\\072-random_t_heavy-64-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 10.5
+    },
+    {
+      "index": 73,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 64,
+        "seed": 1,
+        "depth": 1280
+      },
+      "directory": "cases\\073-random_t_heavy-64-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 10.889999999999873
+    },
+    {
+      "index": 74,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 64,
+        "seed": 2,
+        "depth": 1280
+      },
+      "directory": "cases\\074-random_t_heavy-64-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 11.233999999999924
+    },
+    {
+      "index": 75,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 128,
+        "seed": 0,
+        "depth": 2
+      },
+      "directory": "cases\\075-layered_global-128-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 419.375
+    },
+    {
+      "index": 76,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 128,
+        "seed": 1,
+        "depth": 2
+      },
+      "directory": "cases\\076-layered_global-128-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 1147.0929999999998
+    },
+    {
+      "index": 77,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 128,
+        "seed": 2,
+        "depth": 2
+      },
+      "directory": "cases\\077-layered_global-128-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 381.75
+    },
+    {
+      "index": 78,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 128,
+        "seed": 0,
+        "depth": 2
+      },
+      "directory": "cases\\078-layered_local-128-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 75.17200000000048
+    },
+    {
+      "index": 79,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 128,
+        "seed": 1,
+        "depth": 2
+      },
+      "directory": "cases\\079-layered_local-128-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 77.28099999999995
+    },
+    {
+      "index": 80,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 128,
+        "seed": 2,
+        "depth": 2
+      },
+      "directory": "cases\\080-layered_local-128-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 72.34400000000005
+    },
+    {
+      "index": 81,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 128,
+        "seed": 0,
+        "depth": 2560
+      },
+      "directory": "cases\\081-random_clifford-128-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 609.6720000000005
+    },
+    {
+      "index": 82,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 128,
+        "seed": 1,
+        "depth": 2560
+      },
+      "directory": "cases\\082-random_clifford-128-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 588.9529999999995
+    },
+    {
+      "index": 83,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 128,
+        "seed": 2,
+        "depth": 2560
+      },
+      "directory": "cases\\083-random_clifford-128-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 669.7030000000004
+    },
+    {
+      "index": 84,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 128,
+        "seed": 0,
+        "depth": 2560
+      },
+      "directory": "cases\\084-random_clifford_t-128-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 553.4219999999996
+    },
+    {
+      "index": 85,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 128,
+        "seed": 1,
+        "depth": 2560
+      },
+      "directory": "cases\\085-random_clifford_t-128-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 380.8279999999995
+    },
+    {
+      "index": 86,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 128,
+        "seed": 2,
+        "depth": 2560
+      },
+      "directory": "cases\\086-random_clifford_t-128-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 369.79699999999866
+    },
+    {
+      "index": 87,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 128,
+        "seed": 0,
+        "depth": 2560
+      },
+      "directory": "cases\\087-random_t_heavy-128-0",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 21.28100000000086
+    },
+    {
+      "index": 88,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 128,
+        "seed": 1,
+        "depth": 2560
+      },
+      "directory": "cases\\088-random_t_heavy-128-1",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 21.656999999999243
+    },
+    {
+      "index": 89,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 128,
+        "seed": 2,
+        "depth": 2560
+      },
+      "directory": "cases\\089-random_t_heavy-128-2",
+      "status": "complete",
+      "returncode": 0,
+      "wall_seconds": 24.311999999999898
+    },
+    {
+      "index": 90,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 256,
+        "seed": 0,
+        "depth": 2
+      },
+      "directory": "cases\\090-layered_global-256-0",
+      "status": "error",
+      "returncode": 4294967295,
+      "wall_seconds": 7689.172000000002
+    }
+  ],
+  "current": {
+    "index": 91,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 256,
+      "seed": 1,
+      "depth": 2
+    },
+    "directory": "cases\\091-layered_global-256-1"
+  },
+  "pid": 18112,
+  "updated": "2026-10-29T12:07:53.161427+00:00",
+  "correctness_returncode": 0
+}

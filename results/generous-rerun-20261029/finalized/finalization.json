@@ -1,0 +1,20 @@
+{
+  "timestamp_utc": "2026-10-29T21:23:20.204949+00:00",
+  "reason": "User requested stop and finalization",
+  "supervisor_pid": 11560,
+  "worker_pids": [
+    3880,
+    37828
+  ],
+  "monitor_pid": 17136,
+  "interrupted_case": {
+    "index": 233,
+    "rule": "pivot",
+    "spec": {
+      "family": "copies_pivot",
+      "size": 8192,
+      "seed": 0
+    },
+    "directory": "cases\\233-copies_pivot-8192-0"
+  }
+}

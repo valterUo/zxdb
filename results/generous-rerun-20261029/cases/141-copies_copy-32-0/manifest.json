@@ -1,0 +1,10 @@
+[
+  {
+    "rule": "copy",
+    "spec": {
+      "family": "copies_copy",
+      "size": 32,
+      "seed": 0
+    }
+  }
+]

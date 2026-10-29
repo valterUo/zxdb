@@ -1,0 +1,10 @@
+{
+  "timestamp_utc": "2026-10-29T12:07:49.1163955Z",
+  "reason": "User requested interruption of the long-running current case",
+  "case_index": 90,
+  "worker_pid": 32928,
+  "parent_pid": 9184,
+  "last_event": "ENGINE pyzx repetition=3 starting",
+  "observation": "Prior measured PyZX repetitions completed in 2363.974 and 2289.199 seconds; not established to be stalled",
+  "command_line": "\"C:\\Python312\\python.exe\" -m evaluation.rerun_three_engines --output \"C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb\\results\\generous-rerun-20261029\\cases\\090-layered_global-256-0\" --container zxdb-generous-20261029 --manifest \"C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb\\results\\generous-rerun-20261029\\cases\\090-layered_global-256-0\\manifest.json\" --engine-timeout 7200 --stop-on-error"
+}

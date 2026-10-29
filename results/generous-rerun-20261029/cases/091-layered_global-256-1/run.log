@@ -1,0 +1,2 @@
+WORKLOAD 1/1 {'family': 'layered_global', 'size': 256, 'seed': 1, 'depth': 2}
+ENGINE pyzx repetition=0 starting

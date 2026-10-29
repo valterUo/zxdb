@@ -1,5 +1,42 @@
 # ZXdb evaluation results
 
+## Fresh generous-budget rerun — 2026-10-29
+
+**Finalized at the user's request.** The [final report](generous-rerun-20261029/finalized/REPORT.md)
+contains 210 completed configurations (90 full-reduce and 120 standalone-rule),
+1,890 measured engine trials, frozen CSV/JSON evidence, and scaling figures.
+Cypher wins all 15 total-time comparisons at 128 qubits; hybrid wins 13/15.
+Large standalone rules are mixed, with 7/23 Cypher and 10/23 hybrid total-time
+wins at each workload's largest completed size. Two dense bialgebra cases failed
+for memory; skipped, interrupted and unrun cases are listed explicitly.
+The campaign and its monitors have stopped. Large-output semantic checks remain
+mostly inconclusive; timing completion is not a correctness certificate.
+
+The [new campaign](generous-rerun-20261029/README.md) reruns correctness and all
+performance shapes, including the complete large-rule extension and full reduce
+through 256 qubits. It plans 257 configurations with three measured repetitions
+for each of three engines, two-hour engine budgets and no campaign-wide cutoff.
+See [final execution status](generous-rerun-20261029/progress.json); the full
+257-configuration plan was not completed.
+
+## Larger standalone-rule extension — 2026-10-28
+
+The [larger-budget retry campaign](rule-scaling-retry-20261028/REPORT.md)
+reevaluates the six failed or interrupted cases separately, with 30-minute
+per-engine limits, three-hour per-case limits, and no shared one-hour cutoff.
+Original attempts are retained. See its progress and report for completed
+retries and persistent failures.
+
+The [larger-size campaign](rule-scaling-20261028/REPORT.md) retains the existing
+queries, rewrite code, graph generators and native module while increasing
+standalone workload sizes. Its [plan](rule-scaling-20261028/plan.json) records
+the size grid and resource limits; [progress](rule-scaling-20261028/progress.json)
+records completions, failures and unrun cases. The
+[timing CSV](rule-scaling-20261028/timings.csv) reports only complete sets of
+three measured repetitions as medians. Historical observations are not pooled.
+The runner is `python -m evaluation.extend_rule_scaling --output results/new-run`.
+Large-case verification limits remain separate from timing completion.
+
 ## Latest three-engine rerun — 2026-10-28
 
 The [completed rerun](rerun-20261028/REPORT.md) compares PyZX, optimized Cypher,

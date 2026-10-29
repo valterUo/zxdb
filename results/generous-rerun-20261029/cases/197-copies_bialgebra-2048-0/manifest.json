@@ -1,0 +1,10 @@
+[
+  {
+    "rule": "bialgebra",
+    "spec": {
+      "family": "copies_bialgebra",
+      "size": 2048,
+      "seed": 0
+    }
+  }
+]

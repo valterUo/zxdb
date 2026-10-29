@@ -1,0 +1,29 @@
+{
+  "created": "2026-10-29T07:38:27.069417+00:00",
+  "jobs": [
+    {
+      "rule": "supplementarity",
+      "spec": {
+        "family": "copies_supplementarity",
+        "size": 2048,
+        "seed": 0
+      }
+    }
+  ],
+  "source_hashes": {
+    "zxdb/main_queries.json": "ae544ede74f0ee12805b1f91b825393e30e9949ba8b18df29768b0269663549c",
+    "zxdb/zxdb.py": "5d55f5d9f1937992fec48476b5f22f9995c2fab2e4bb02aa74877ebbb8031eb7",
+    "zxdb_qm/zxqmcpp.cpp": "6eb88464799b5ef0dcb1c2e4a7106081ce3e86ee3ff1dc77193c6966f39344f8",
+    "evaluation/core.py": "476ce96e000d58f4f5e11ed891052d066e62720a6a5f9df48e35e137848c58ac",
+    "evaluation/patterns.py": "04b35a5c844f5c1e096f856dabff6c3ecf008102acd7b78115705a5d1ca93730",
+    "evaluation/workloads.py": "f08d398aa3bed2e75417a6c0444c99ead2a9af71f18a4873cac3bf4314088878"
+  },
+  "budget_seconds": null,
+  "case_timeout_seconds": 10800,
+  "repetitions": 3,
+  "warmups": 1,
+  "engine_timeout_seconds": 1800,
+  "retry_from": "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb\\results\\rule-scaling-retry-20261028",
+  "stop_policy": "Stop a workload family after an error or case timeout; never stop based on wins.",
+  "scope": "Larger standalone rules only; no query or graph-generator changes."
+}

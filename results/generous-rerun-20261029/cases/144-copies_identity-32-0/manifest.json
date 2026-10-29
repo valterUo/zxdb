@@ -1,0 +1,10 @@
+[
+  {
+    "rule": "identity",
+    "spec": {
+      "family": "copies_identity",
+      "size": 32,
+      "seed": 0
+    }
+  }
+]

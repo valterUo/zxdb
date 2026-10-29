@@ -1,0 +1,14 @@
+WORKLOAD 1/1 {'family': 'copies_hadamard_cancel', 'size': 4096, 'seed': 0}
+ENGINE pyzx repetition=0 starting
+ENGINE pyzx repetition=0 inconclusive
+ENGINE hybrid repetition=0 starting
+ENGINE hybrid repetition=0 inconclusive
+ENGINE cypher repetition=0 starting
+ENGINE cypher repetition=0 inconclusive
+{"case": "c6777de7bc0f2039", "engine": "pyzx", "repetition": 0, "status": "inconclusive", "rewrite_s": 28.0375245000032}
+{"case": "c6777de7bc0f2039", "engine": "hybrid", "repetition": 0, "status": "inconclusive", "rewrite_s": 807.7955577999965}
+{"case": "c6777de7bc0f2039", "engine": "cypher", "repetition": 0, "status": "inconclusive", "rewrite_s": 812.1117584999956}
+{"case": "c6777de7bc0f2039", "engine": "comparison_complete", "repetition": 0, "status": "recorded"}
+ENGINE cypher repetition=1 starting
+ENGINE cypher repetition=1 inconclusive
+ENGINE hybrid repetition=1 starting

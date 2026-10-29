@@ -1,0 +1,9 @@
+{
+  "created": "2026-10-29T18:18:15.085682+00:00",
+  "seconds": 1800,
+  "pid": 21132,
+  "scope": "Every engine run, warmup and measured repetitions, in current and remaining cases",
+  "action": "Interrupt the entire case; preserve partial observations; continue subsequent cases",
+  "timing": "Observed engine-run wall time, including any verification before the completion log event",
+  "measured_repetition_limit_seconds": 1800
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "rule": "lcomp",
+    "spec": {
+      "family": "copies_lcomp",
+      "size": 2048,
+      "seed": 0
+    }
+  }
+]

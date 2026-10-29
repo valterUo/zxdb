@@ -1,0 +1,33 @@
+{
+  "timestamp_utc": "2026-10-29T19:41:41.519138+00:00",
+  "case": {
+    "index": 219,
+    "rule": "supplementarity",
+    "spec": {
+      "family": "copies_supplementarity",
+      "size": 4096,
+      "seed": 0
+    },
+    "directory": "cases\\219-copies_supplementarity-4096-0"
+  },
+  "reason": "User-requested engine-run wall-time limit exceeded",
+  "engine": "cypher",
+  "repetition": 0,
+  "elapsed_seconds": 302.795245885849,
+  "limit_seconds": 300,
+  "worker_pid": 3628,
+  "command": [
+    "C:\\Python312\\python.exe",
+    "-m",
+    "evaluation.rerun_three_engines",
+    "--output",
+    "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb\\results\\generous-rerun-20261029\\cases\\219-copies_supplementarity-4096-0",
+    "--container",
+    "zxdb-generous-20261029",
+    "--manifest",
+    "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb\\results\\generous-rerun-20261029\\cases\\219-copies_supplementarity-4096-0\\manifest.json",
+    "--engine-timeout",
+    "7200",
+    "--stop-on-error"
+  ]
+}

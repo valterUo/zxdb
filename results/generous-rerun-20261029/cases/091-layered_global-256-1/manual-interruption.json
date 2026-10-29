@@ -1,0 +1,16 @@
+{
+  "timestamp_utc": "2026-10-29T12:12:26.205117+00:00",
+  "index": 91,
+  "rule": "full_reduce",
+  "spec": {
+    "family": "layered_global",
+    "size": 256,
+    "seed": 1,
+    "depth": 2
+  },
+  "status": "skipped",
+  "reason": "User requested skipping remaining 256-qubit full-reduce cases",
+  "wall_seconds": 273.04369,
+  "directory": "cases\\091-layered_global-256-1",
+  "partial_attempt_preserved": true
+}

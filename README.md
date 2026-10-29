@@ -4,6 +4,13 @@ A research prototype comparing ZX-calculus rewrites in Memgraph with PyZX.
 The aim is a readable demonstration of when database batching helps, including
 cases where database overhead makes it slower. This is not a production service.
 
+The [finalized 2026-10-29 larger-budget rerun](results/generous-rerun-20261029/finalized/REPORT.md)
+completed 210 configurations before the user stopped the campaign. At 128
+qubits, Cypher wins all 15 configurations including import/export; hybrid wins
+13/15. Larger standalone workloads show substantial gains for selected rules
+and substantial losses for others. The report includes frozen measurements,
+scaling figures, explicit incomplete-case outcomes, and correctness limitations.
+
 The [2026-10-28 three-engine rerun](results/rerun-20261028/REPORT.md) covers all
 28 performance workload shapes and 160 configurations, with three measured
 repetitions. At 128 qubits, Cypher wins 14/15 circuit configurations on rewrite
@@ -117,6 +124,69 @@ resource bounds; those measurements remain explicitly unverified. Near-zero or
 nonfinite numerical tensors are inconclusive unless an exact zero factor gives
 a decisive comparison. The saved report documents the conservative review of
 evidence collected before this numerical-checker correction.
+
+## Paper figures (TikZ/PGFPlots)
+
+`python evaluation/plot_timings.py` reads the finalized 2026-10-29 campaign's
+`timings.csv`, checks its complete-case medians against the raw observations,
+and writes eight TikZ snippets, standalone wrappers, and a `main.tex` preview
+under `results/generous-rerun-20261029/finalized/paper-figures/`. The compiled
+preview and eight vector PDFs are included there. Python needs only the standard
+library for generation. To select another campaign:
+
+```sh
+python evaluation/plot_timings.py path/to/timings.csv --output path/to/figures
+```
+
+Compile `main.tex` with `pdflatex` from its output directory. To include a snippet
+in a paper, load `pgfplots`, `\usepgfplotslibrary{groupplots}`, and
+`\pgfplotsset{compat=1.18}`, then use `\input{path/to/rules-rewrite.tex}` inside
+a full-width `figure*`. Add the caption from the preview document. The snippets
+scale with `\textwidth`; use a full-width float in two-column papers.
+
+The small-multiple layout follows Figure 16 of arXiv:2511.13033v1, extended to
+three engines and all 28 measured workload shapes. Separate grids cover growing
+rule workloads (including identity chains), disjoint copies, and five circuit
+families, each for rewrite and total time. Two further grids show circuit
+speedups with a break-even line. Rule axes use input vertices, copies use motif
+count, and circuits use qubits. These are new measurements, not reproductions
+of the old paper's numerical curves or scale range.
+
+Points are geometric means of the CSV's per-configuration timing medians.
+Error bars are the minimum and maximum of those medians, **not confidence
+intervals** or within-run timing uncertainty. A single configuration has no
+visible range. Speedups aggregate per-configuration PyZX/database ratios.
+Each curve ends at the first incomplete size group, requiring all three engines
+and all planned seed configurations. All five full-reduce families reach 128
+qubits; incomplete 256-qubit results are omitted. `coverage.csv` records every
+inclusion and exclusion; `plot-manifest.json` records input hashes and endpoints.
+No-op configurations are excluded from ratios
+but remain in runtime plots. Timed completion does not establish semantic
+correctness. The default campaign has three measured repetitions per
+configuration, three seed labels per circuit size, and only one distinct
+local-layered input per size. Historical campaigns are never pooled.
+
+For a stronger scientific presentation:
+
+- Put full-circuit total time and paired speedup in the main paper; retain
+  rewrite-only and the complete rule grids as supporting mechanism evidence.
+  Report crossover intervals between measured sizes rather than interpolated
+  exact crossover claims.
+- Show raw repetition points from `observations.jsonl` in a supplement. Keep
+  timing variability separate from input variability. More independent graph
+  instances are needed for persuasive population-level confidence intervals;
+  repeated local-layered seed labels are not independent instances.
+- Add import/rewrite/export breakdowns from raw trials, aggregating components
+  consistently. Do not subtract separately computed medians to estimate median
+  overhead. This can explain why rewrite wins disappear in total time.
+- Relate runtime to input edges, degree and output graph size as well as qubits.
+  Report simplification quality alongside runtime, because engines can follow
+  different rewrite trajectories. Vertex reduction alone is not gate or T-count
+  reduction; use extracted circuits if claiming compilation-quality gains.
+- Pair performance with a separate semantic-verification coverage table using
+  the finalized audits. Preserve inconclusive cases; degree agreement is not a
+  correctness certificate. Do not infer asymptotic complexity from three rule
+  sizes or from circuit families with different depth schedules.
 
 ## Reading the code
 

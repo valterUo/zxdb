@@ -1,0 +1,11 @@
+WORKLOAD 1/1 {'family': 'bialgebra', 'size': 1024, 'seed': 0}
+ENGINE pyzx repetition=0 starting
+ENGINE pyzx repetition=0 inconclusive
+ENGINE hybrid repetition=0 starting
+ENGINE hybrid repetition=0 error
+ENGINE cypher repetition=0 starting
+ENGINE cypher repetition=0 error
+{"case": "a2ca8e1851e99269", "engine": "pyzx", "repetition": 0, "status": "inconclusive", "rewrite_s": 1288.430988600001}
+{"case": "a2ca8e1851e99269", "engine": "hybrid", "repetition": 0, "status": "error"}
+{"case": "a2ca8e1851e99269", "engine": "cypher", "repetition": 0, "status": "error"}
+{"case": "a2ca8e1851e99269", "engine": "comparison_complete", "repetition": 0, "status": "recorded"}

@@ -32,6 +32,12 @@ def main():
     parser.add_argument('--qubits', nargs='+', type=int, default=[3, 8, 16, 32, 64, 128])
     parser.add_argument('--seeds', type=int, default=3)
     parser.add_argument('--repetitions', type=int, default=3)
+    parser.add_argument('--manifest', type=Path,
+                        help='JSON list of {rule, spec} jobs instead of the default grid')
+    parser.add_argument('--stop-on-error', action='store_true',
+                        help='Stop this campaign after recording a failed repetition')
+    parser.add_argument('--engine-timeout', type=float, default=300,
+                        help='Database I/O/rewrite deadline and cooperative PyZX deadline in seconds')
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     output = args.output.resolve()
@@ -43,9 +49,18 @@ def main():
             if session.run('MATCH(n) RETURN count(n) AS n').single()['n']:
                 raise RuntimeError('Requires an empty dedicated database')
             server = session.run('SHOW VERSION').data()
-    jobs = [(rule, config) for rule, config, _ in benchmark_cases(
-        False, qubits=args.qubits, seeds=args.seeds, depth_factor=20)]
-    jobs += [('identity', dict(family='identity_chain', size=n, seed=0)) for n in (2, 16, 128, 512)]
+            server_query_timeout_before = session.run("SHOW DATABASE SETTING 'query.timeout'").data()
+            if 0 < float(server_query_timeout_before[0]['setting_value']) < args.engine_timeout:
+                session.run(f"SET DATABASE SETTING 'query.timeout' TO '{args.engine_timeout:g}'").consume()
+            server_query_timeout = session.run("SHOW DATABASE SETTING 'query.timeout'").data()
+    if args.manifest:
+        jobs = [(job['rule'], job['spec']) for job in json.loads(args.manifest.read_text())]
+        if not jobs:
+            raise ValueError('Manifest must contain at least one job')
+    else:
+        jobs = [(rule, config) for rule, config, _ in benchmark_cases(
+            False, qubits=args.qubits, seeds=args.seeds, depth_factor=20)]
+        jobs += [('identity', dict(family='identity_chain', size=n, seed=0)) for n in (2, 16, 128, 512)]
     sources = [root/'evaluate.py', *sorted((root/'evaluation').glob('*.py')),
                *sorted((root/'zxdb').glob('*.py')), root/'zxdb/main_queries.json', root/'zxdb_qm/zxqmcpp.cpp']
     metadata = dict(manifest=[dict(rule=r, spec=s) for r, s in jobs],
@@ -53,7 +68,10 @@ def main():
                     python=sys.version, platform=platform.platform(), pyzx=pyzx.__version__,
                     sources={str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},
                     order='deterministic shuffle per configuration and repetition',
-                    shared_pyzx=True, depth_factor=20, layered_depth=2)
+                    shared_pyzx=True, depth_factor=20, layered_depth=2,
+                    engine_timeout_seconds=args.engine_timeout,
+                    server_query_timeout_before=server_query_timeout_before,
+                    server_query_timeout=server_query_timeout)
     envfile = output/'environment.json'
     if envfile.exists() and json.loads(envfile.read_text()) != metadata:
         raise RuntimeError('Sources or configuration changed; choose a new output directory')
@@ -68,8 +86,9 @@ def main():
     if rows and any((r['case'], r['repetition']) not in done for r in rows):
         raise RuntimeError('Interrupted repetition: preserve it and use a fresh output directory')
     db = ZXdb(uri=uri, user=auth[0], password=auth[1])
-    db._driver = CountingDriver(db.driver, timeout=300)
+    db._driver = CountingDriver(db.driver, timeout=args.engine_timeout)
     gid = 'three_engine_' + uuid.uuid4().hex
+    (output/'graph-id.json').write_text(json.dumps(gid))
     cache = {}
     def record(row):
         with logfile.open('a', encoding='utf-8') as stream:
@@ -91,6 +110,7 @@ def main():
                 random.Random(index*17+repetition).shuffle(order)
                 results, batch = {}, []
                 for engine in order:
+                    print(f'ENGINE {engine} repetition={repetition} starting', flush=True)
                     row = dict(case=case, rule=rule, spec=spec, engine=engine,
                                repetition=repetition, warmup=repetition == 0,
                                input_hash=original_hash, input=metrics(g))
@@ -100,11 +120,11 @@ def main():
                             result = g.copy()
                             copied = time.perf_counter()
                             with redirect_stdout(io.StringIO()):
-                                reference(result, rule, time.monotonic()+300)
+                                reference(result, rule, time.monotonic()+args.engine_timeout)
                             end = time.perf_counter()
                             row.update(rewrite_s=end-copied, total_s=end-start)
                         else:
-                            with database_watchdog(300, interrupt):
+                            with database_watchdog(args.engine_timeout, interrupt):
                                 start = time.perf_counter()
                                 load(db, g, gid)
                                 loaded = time.perf_counter()
@@ -129,7 +149,15 @@ def main():
                     except Exception as exc:
                         row.update(status='error', error=f'{type(exc).__name__}: {exc}')
                         if engine != 'pyzx':
-                            db.empty_graphdb(gid)
+                            try:
+                                db.empty_graphdb(gid)
+                            except Exception as cleanup:
+                                row['cleanup_error'] = f'{type(cleanup).__name__}: {cleanup}'
+                    # Preserve each engine's evidence even if a later engine
+                    # crashes. Canonical paired observations are still below.
+                    with (output/'engine-observations.jsonl').open('a', encoding='utf-8') as stream:
+                        stream.write(json.dumps(row)+'\n')
+                    print(f'ENGINE {engine} repetition={repetition} {row["status"]}', flush=True)
                     batch.append(row)
                 for row in batch:
                     engine = row['engine']
@@ -144,6 +172,8 @@ def main():
                             row['status'] = 'failed'
                     record(row)
                 record(dict(case=case, engine='comparison_complete', repetition=repetition, status='recorded'))
+                if args.stop_on_error and any(r['status'] in ('error', 'failed') for r in batch):
+                    return
         (output/'completion.json').write_text(json.dumps(dict(finished=True, configurations=len(jobs),
                                                              trials=len(jobs)*3*(args.repetitions+1)), indent=2))
     finally:

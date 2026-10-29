@@ -1,0 +1,10 @@
+[
+  {
+    "rule": "gadget_fusion",
+    "spec": {
+      "family": "copies_gadget_fusion",
+      "size": 8192,
+      "seed": 0
+    }
+  }
+]

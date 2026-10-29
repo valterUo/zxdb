@@ -1,0 +1,11 @@
+[
+  {
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 8,
+      "seed": 0,
+      "depth": 160
+    }
+  }
+]

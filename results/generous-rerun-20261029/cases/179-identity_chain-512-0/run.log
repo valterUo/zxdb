@@ -1,0 +1,41 @@
+WORKLOAD 1/1 {'family': 'identity_chain', 'size': 512, 'seed': 0}
+ENGINE pyzx repetition=0 starting
+ENGINE pyzx repetition=0 verified
+ENGINE hybrid repetition=0 starting
+ENGINE hybrid repetition=0 verified
+ENGINE cypher repetition=0 starting
+ENGINE cypher repetition=0 verified
+{"case": "c4685b50eb83eea6", "engine": "pyzx", "repetition": 0, "status": "verified", "rewrite_s": 0.0166748000010557}
+{"case": "c4685b50eb83eea6", "engine": "hybrid", "repetition": 0, "status": "verified", "rewrite_s": 0.03973430000041844}
+{"case": "c4685b50eb83eea6", "engine": "cypher", "repetition": 0, "status": "verified", "rewrite_s": 0.034713299999566516}
+{"case": "c4685b50eb83eea6", "engine": "comparison_complete", "repetition": 0, "status": "recorded"}
+ENGINE cypher repetition=1 starting
+ENGINE cypher repetition=1 verified
+ENGINE hybrid repetition=1 starting
+ENGINE hybrid repetition=1 verified
+ENGINE pyzx repetition=1 starting
+ENGINE pyzx repetition=1 verified
+{"case": "c4685b50eb83eea6", "engine": "cypher", "repetition": 1, "status": "verified", "rewrite_s": 0.03656789999877219}
+{"case": "c4685b50eb83eea6", "engine": "hybrid", "repetition": 1, "status": "verified", "rewrite_s": 0.035671999998157844}
+{"case": "c4685b50eb83eea6", "engine": "pyzx", "repetition": 1, "status": "verified", "rewrite_s": 0.016825799997604918}
+{"case": "c4685b50eb83eea6", "engine": "comparison_complete", "repetition": 1, "status": "recorded"}
+ENGINE cypher repetition=2 starting
+ENGINE cypher repetition=2 verified
+ENGINE hybrid repetition=2 starting
+ENGINE hybrid repetition=2 verified
+ENGINE pyzx repetition=2 starting
+ENGINE pyzx repetition=2 verified
+{"case": "c4685b50eb83eea6", "engine": "cypher", "repetition": 2, "status": "verified", "rewrite_s": 0.035904199998185504}
+{"case": "c4685b50eb83eea6", "engine": "hybrid", "repetition": 2, "status": "verified", "rewrite_s": 0.03671079999912763}
+{"case": "c4685b50eb83eea6", "engine": "pyzx", "repetition": 2, "status": "verified", "rewrite_s": 0.020298499999626074}
+{"case": "c4685b50eb83eea6", "engine": "comparison_complete", "repetition": 2, "status": "recorded"}
+ENGINE cypher repetition=3 starting
+ENGINE cypher repetition=3 verified
+ENGINE hybrid repetition=3 starting
+ENGINE hybrid repetition=3 verified
+ENGINE pyzx repetition=3 starting
+ENGINE pyzx repetition=3 verified
+{"case": "c4685b50eb83eea6", "engine": "cypher", "repetition": 3, "status": "verified", "rewrite_s": 0.038079000001744134}
+{"case": "c4685b50eb83eea6", "engine": "hybrid", "repetition": 3, "status": "verified", "rewrite_s": 0.03829760000007809}
+{"case": "c4685b50eb83eea6", "engine": "pyzx", "repetition": 3, "status": "verified", "rewrite_s": 0.017164100001537008}
+{"case": "c4685b50eb83eea6", "engine": "comparison_complete", "repetition": 3, "status": "recorded"}

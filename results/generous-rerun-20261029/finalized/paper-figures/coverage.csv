@@ -1,0 +1,188 @@
+configurations,family,included,outcomes,reason,size
+1,bialgebra,True,complete,complete paired timings,2
+1,bialgebra,True,complete,complete paired timings,16
+1,bialgebra,True,complete,complete paired timings,128
+1,bialgebra,False,memory_failure,incomplete/invalid group,512
+1,bialgebra,False,memory_failure,incomplete/invalid group,1024
+1,copies_bialgebra,True,complete,complete paired timings,2
+1,copies_bialgebra,True,complete,complete paired timings,32
+1,copies_bialgebra,True,complete,complete paired timings,512
+1,copies_bialgebra,True,complete,complete paired timings,2048
+1,copies_bialgebra,True,complete,complete paired timings,4096
+1,copies_bialgebra,False,budget_skipped,incomplete/invalid group,8192
+1,copies_bialgebra,False,not_run,incomplete/invalid group,16384
+1,copies_copy,True,complete,complete paired timings,2
+1,copies_copy,True,complete,complete paired timings,32
+1,copies_copy,True,complete,complete paired timings,512
+1,copies_copy,True,complete,complete paired timings,2048
+1,copies_copy,True,complete,complete paired timings,4096
+1,copies_copy,False,budget_skipped,incomplete/invalid group,8192
+1,copies_copy,False,not_run,incomplete/invalid group,16384
+1,copies_gadget_fusion,True,complete,complete paired timings,2
+1,copies_gadget_fusion,True,complete,complete paired timings,32
+1,copies_gadget_fusion,True,complete,complete paired timings,512
+1,copies_gadget_fusion,True,complete,complete paired timings,2048
+1,copies_gadget_fusion,True,complete,complete paired timings,4096
+1,copies_gadget_fusion,True,complete,complete paired timings,8192
+1,copies_gadget_fusion,False,not_run,incomplete/invalid group,16384
+1,copies_hadamard_cancel,True,complete,complete paired timings,2
+1,copies_hadamard_cancel,True,complete,complete paired timings,32
+1,copies_hadamard_cancel,True,complete,complete paired timings,512
+1,copies_hadamard_cancel,True,complete,complete paired timings,2048
+1,copies_hadamard_cancel,False,budget_skipped,incomplete/invalid group,4096
+1,copies_hadamard_cancel,False,budget_skipped,incomplete/invalid group,8192
+1,copies_hadamard_cancel,False,not_run,incomplete/invalid group,16384
+1,copies_identity,True,complete,complete paired timings,2
+1,copies_identity,True,complete,complete paired timings,32
+1,copies_identity,True,complete,complete paired timings,512
+1,copies_identity,True,complete,complete paired timings,2048
+1,copies_identity,True,complete,complete paired timings,4096
+1,copies_identity,True,complete,complete paired timings,8192
+1,copies_identity,False,not_run,incomplete/invalid group,16384
+1,copies_lcomp,True,complete,complete paired timings,2
+1,copies_lcomp,True,complete,complete paired timings,32
+1,copies_lcomp,True,complete,complete paired timings,512
+1,copies_lcomp,True,complete,complete paired timings,2048
+1,copies_lcomp,True,complete,complete paired timings,4096
+1,copies_lcomp,True,complete,complete paired timings,8192
+1,copies_lcomp,False,not_run,incomplete/invalid group,16384
+1,copies_pivot,True,complete,complete paired timings,2
+1,copies_pivot,True,complete,complete paired timings,32
+1,copies_pivot,True,complete,complete paired timings,512
+1,copies_pivot,True,complete,complete paired timings,2048
+1,copies_pivot,True,complete,complete paired timings,4096
+1,copies_pivot,False,finalization_interrupted,incomplete/invalid group,8192
+1,copies_pivot,False,not_run,incomplete/invalid group,16384
+1,copies_pivot_boundary,True,complete,complete paired timings,2
+1,copies_pivot_boundary,True,complete,complete paired timings,32
+1,copies_pivot_boundary,True,complete,complete paired timings,512
+1,copies_pivot_boundary,True,complete,complete paired timings,2048
+1,copies_pivot_boundary,True,complete,complete paired timings,4096
+1,copies_pivot_boundary,False,not_run,incomplete/invalid group,8192
+1,copies_pivot_boundary,False,not_run,incomplete/invalid group,16384
+1,copies_pivot_gadget,True,complete,complete paired timings,2
+1,copies_pivot_gadget,True,complete,complete paired timings,32
+1,copies_pivot_gadget,True,complete,complete paired timings,512
+1,copies_pivot_gadget,True,complete,complete paired timings,2048
+1,copies_pivot_gadget,True,complete,complete paired timings,4096
+1,copies_pivot_gadget,False,not_run,incomplete/invalid group,8192
+1,copies_pivot_gadget,False,not_run,incomplete/invalid group,16384
+1,copies_spider_fusion,True,complete,complete paired timings,2
+1,copies_spider_fusion,True,complete,complete paired timings,32
+1,copies_spider_fusion,True,complete,complete paired timings,512
+1,copies_spider_fusion,True,complete,complete paired timings,2048
+1,copies_spider_fusion,True,complete,complete paired timings,4096
+1,copies_spider_fusion,False,not_run,incomplete/invalid group,8192
+1,copies_spider_fusion,False,not_run,incomplete/invalid group,16384
+1,copies_supplementarity,True,complete,complete paired timings,2
+1,copies_supplementarity,True,complete,complete paired timings,32
+1,copies_supplementarity,True,complete,complete paired timings,512
+1,copies_supplementarity,False,budget_skipped,incomplete/invalid group,2048
+1,copies_supplementarity,False,budget_skipped,incomplete/invalid group,4096
+1,copies_supplementarity,False,not_run,incomplete/invalid group,8192
+1,copies_supplementarity,False,not_run,incomplete/invalid group,16384
+1,copy,True,complete,complete paired timings,2
+1,copy,True,complete,complete paired timings,16
+1,copy,True,complete,complete paired timings,128
+1,copy,True,complete,complete paired timings,512
+1,copy,True,complete,complete paired timings,1024
+1,copy,True,complete,complete paired timings,4096
+1,copy,False,not_run,incomplete/invalid group,16384
+1,gadget_fusion,True,complete,complete paired timings,2
+1,gadget_fusion,True,complete,complete paired timings,16
+1,gadget_fusion,True,complete,complete paired timings,128
+1,gadget_fusion,True,complete,complete paired timings,512
+1,gadget_fusion,True,complete,complete paired timings,1024
+1,gadget_fusion,True,complete,complete paired timings,4096
+1,gadget_fusion,False,not_run,incomplete/invalid group,16384
+1,hadamard_cancel,True,complete,complete paired timings,2
+1,hadamard_cancel,True,complete,complete paired timings,16
+1,hadamard_cancel,True,complete,complete paired timings,128
+1,hadamard_cancel,True,complete,complete paired timings,512
+1,hadamard_cancel,True,complete,complete paired timings,1024
+1,hadamard_cancel,True,complete,complete paired timings,4096
+1,hadamard_cancel,False,not_run,incomplete/invalid group,16384
+1,identity,True,complete,complete paired timings,2
+1,identity,True,complete,complete paired timings,16
+1,identity,True,complete,complete paired timings,128
+1,identity,True,complete,complete paired timings,512
+1,identity,True,complete,complete paired timings,1024
+1,identity,True,complete,complete paired timings,4096
+1,identity,False,not_run,incomplete/invalid group,16384
+1,identity_chain,True,complete,complete paired timings,2
+1,identity_chain,True,complete,complete paired timings,16
+1,identity_chain,True,complete,complete paired timings,128
+1,identity_chain,True,complete,complete paired timings,512
+1,identity_chain,True,complete,complete paired timings,2048
+1,identity_chain,True,complete,complete paired timings,4096
+1,identity_chain,False,not_run,incomplete/invalid group,8192
+1,identity_chain,False,not_run,incomplete/invalid group,16384
+3,layered_global,True,complete,complete paired timings,3
+3,layered_global,True,complete,complete paired timings,8
+3,layered_global,True,complete,complete paired timings,16
+3,layered_global,True,complete,complete paired timings,32
+3,layered_global,True,complete,complete paired timings,64
+3,layered_global,True,complete,complete paired timings,128
+3,layered_global,False,"skipped,user_interrupted",incomplete/invalid group,256
+3,layered_local,True,complete,complete paired timings,3
+3,layered_local,True,complete,complete paired timings,8
+3,layered_local,True,complete,complete paired timings,16
+3,layered_local,True,complete,complete paired timings,32
+3,layered_local,True,complete,complete paired timings,64
+3,layered_local,True,complete,complete paired timings,128
+3,layered_local,False,skipped,incomplete/invalid group,256
+1,lcomp,True,complete,complete paired timings,2
+1,lcomp,True,complete,complete paired timings,16
+1,lcomp,True,complete,complete paired timings,128
+1,lcomp,True,complete,complete paired timings,512
+1,lcomp,True,complete,complete paired timings,1024
+1,pivot,True,complete,complete paired timings,2
+1,pivot,True,complete,complete paired timings,16
+1,pivot,True,complete,complete paired timings,128
+1,pivot,True,complete,complete paired timings,512
+1,pivot,True,complete,complete paired timings,1024
+1,pivot_boundary,True,complete,complete paired timings,2
+1,pivot_boundary,True,complete,complete paired timings,16
+1,pivot_boundary,True,complete,complete paired timings,128
+1,pivot_boundary,True,complete,complete paired timings,512
+1,pivot_boundary,True,complete,complete paired timings,1024
+1,pivot_gadget,True,complete,complete paired timings,2
+1,pivot_gadget,True,complete,complete paired timings,16
+1,pivot_gadget,True,complete,complete paired timings,128
+1,pivot_gadget,True,complete,complete paired timings,512
+1,pivot_gadget,True,complete,complete paired timings,1024
+3,random_clifford,True,complete,complete paired timings,3
+3,random_clifford,True,complete,complete paired timings,8
+3,random_clifford,True,complete,complete paired timings,16
+3,random_clifford,True,complete,complete paired timings,32
+3,random_clifford,True,complete,complete paired timings,64
+3,random_clifford,True,complete,complete paired timings,128
+3,random_clifford,False,skipped,incomplete/invalid group,256
+3,random_clifford_t,True,complete,complete paired timings,3
+3,random_clifford_t,True,complete,complete paired timings,8
+3,random_clifford_t,True,complete,complete paired timings,16
+3,random_clifford_t,True,complete,complete paired timings,32
+3,random_clifford_t,True,complete,complete paired timings,64
+3,random_clifford_t,True,complete,complete paired timings,128
+3,random_clifford_t,False,skipped,incomplete/invalid group,256
+3,random_t_heavy,True,complete,complete paired timings,3
+3,random_t_heavy,True,complete,complete paired timings,8
+3,random_t_heavy,True,complete,complete paired timings,16
+3,random_t_heavy,True,complete,complete paired timings,32
+3,random_t_heavy,True,complete,complete paired timings,64
+3,random_t_heavy,True,complete,complete paired timings,128
+3,random_t_heavy,False,skipped,incomplete/invalid group,256
+1,spider_fusion,True,complete,complete paired timings,2
+1,spider_fusion,True,complete,complete paired timings,16
+1,spider_fusion,True,complete,complete paired timings,128
+1,spider_fusion,True,complete,complete paired timings,512
+1,spider_fusion,True,complete,complete paired timings,1024
+1,spider_fusion,True,complete,complete paired timings,4096
+1,spider_fusion,False,not_run,incomplete/invalid group,16384
+1,supplementarity,True,complete,complete paired timings,2
+1,supplementarity,True,complete,complete paired timings,16
+1,supplementarity,True,complete,complete paired timings,128
+1,supplementarity,True,complete,complete paired timings,512
+1,supplementarity,True,complete,complete paired timings,1024
+1,supplementarity,True,complete,complete paired timings,4096
+1,supplementarity,False,not_run,incomplete/invalid group,16384

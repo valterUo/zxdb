@@ -1,0 +1,10 @@
+[
+  {
+    "rule": "identity",
+    "spec": {
+      "family": "identity_chain",
+      "size": 16,
+      "seed": 0
+    }
+  }
+]

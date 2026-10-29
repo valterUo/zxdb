@@ -1,0 +1,33 @@
+{
+  "timestamp_utc": "2026-10-29T20:33:29.216600+00:00",
+  "case": {
+    "index": 228,
+    "rule": "copy",
+    "spec": {
+      "family": "copies_copy",
+      "size": 8192,
+      "seed": 0
+    },
+    "directory": "cases\\228-copies_copy-8192-0"
+  },
+  "reason": "User-requested engine-run wall-time limit exceeded",
+  "engine": "hybrid",
+  "repetition": 0,
+  "elapsed_seconds": 302.69922161102295,
+  "limit_seconds": 300,
+  "worker_pid": 21932,
+  "command": [
+    "C:\\Python312\\python.exe",
+    "-m",
+    "evaluation.rerun_three_engines",
+    "--output",
+    "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb\\results\\generous-rerun-20261029\\cases\\228-copies_copy-8192-0",
+    "--container",
+    "zxdb-generous-20261029",
+    "--manifest",
+    "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb\\results\\generous-rerun-20261029\\cases\\228-copies_copy-8192-0\\manifest.json",
+    "--engine-timeout",
+    "7200",
+    "--stop-on-error"
+  ]
+}

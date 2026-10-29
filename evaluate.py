@@ -285,6 +285,8 @@ def save_report(output, rows, environment, finished=False):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--quick', action='store_true', help='All correctness cases; smaller performance grid, one repeat')
+    parser.add_argument('--correctness-only', action='store_true', help='Run regressions and all correctness fixtures without performance trials')
+    parser.add_argument('--regression-timeout', type=float, default=300, help='Regression subprocess budget in seconds')
     parser.add_argument('--output', type=Path, default=ROOT/'results'/'latest')
     parser.add_argument('--repetitions', type=int, default=None)
     parser.add_argument('--variants', nargs='+', choices=['control', 'optimized', 'native'],
@@ -336,6 +338,7 @@ def main():
                restart_container=args.restart_container,
                trial_timeout_s=args.trial_timeout, certificate_timeout_s=args.certificate_timeout,
                fixed_point_timeout_s=args.fixed_point_timeout,
+               correctness_only=args.correctness_only, regression_timeout_s=args.regression_timeout,
                source_hashes={str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
                               for p in [ROOT/'evaluate.py', *sorted((ROOT/'evaluation').glob('*.py')),
                                         *sorted((ROOT/'zxdb').glob('*.py')), *sorted((ROOT/'tests').glob('*.py')),
@@ -345,6 +348,8 @@ def main():
     attempt = 0
     if args.resume:
         previous = json.loads((output/'environment.json').read_text(encoding='utf-8'))
+        if previous.get('correctness_only', False) != args.correctness_only:
+            parser.error('Resume configuration differs: correctness_only')
         for key in ('profile', 'repetitions', 'warmups', 'variants', 'versions', 'trial_timeout_s'):
             if previous[key] != env[key]:
                 parser.error(f'Resume configuration differs: {key}')
@@ -454,11 +459,11 @@ def main():
                 try:
                     result = subprocess.run([sys.executable, '-m', 'unittest', '-v',
                                              *['tests.' + name for name in modules]],
-                                            stdout=log, stderr=subprocess.STDOUT, timeout=300,
+                                            stdout=log, stderr=subprocess.STDOUT, timeout=args.regression_timeout,
                                             env=dict(os.environ, ZXDB_LIVE='1'))
                     code = result.returncode
                 except subprocess.TimeoutExpired:
-                    log.write('\nRegression subprocess exceeded 300 seconds and was stopped.\n')
+                    log.write(f'\nRegression subprocess exceeded {args.regression_timeout:g} seconds and was stopped.\n')
                     code = -1
             record(dict(stage='regressions', case='unittest', status='verified' if code == 0 else 'failed',
                         returncode=code))
@@ -484,7 +489,7 @@ def main():
                         continue
                 record(row)
             save_report(output, rows, env)
-        for rule, spec, g in benchmark_cases(args.quick, **env['benchmark_grid']):
+        for rule, spec, g in (() if args.correctness_only else benchmark_cases(args.quick, **env['benchmark_grid'])):
             for variant in env['variants']:
                 prior = [r for r in rows if r['stage'] == 'benchmark' and r['case'] == digest(spec)[:16] and r['variant'] == variant]
                 if any(r['status'] == 'error' for r in prior):

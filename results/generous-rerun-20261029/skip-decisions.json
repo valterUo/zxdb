@@ -1,0 +1,203 @@
+{
+  "timestamp_utc": "2026-10-29T12:12:26.205117+00:00",
+  "skipped": [
+    {
+      "index": 91,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 256,
+        "seed": 1,
+        "depth": 2
+      },
+      "status": "skipped",
+      "reason": "User requested skipping remaining 256-qubit full-reduce cases",
+      "wall_seconds": 273.04369,
+      "directory": "cases\\091-layered_global-256-1",
+      "partial_attempt_preserved": true
+    },
+    {
+      "index": 92,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_global",
+        "size": 256,
+        "seed": 2,
+        "depth": 2
+      },
+      "status": "skipped",
+      "reason": "User requested skipping remaining 256-qubit full-reduce cases",
+      "wall_seconds": 0,
+      "directory": ""
+    },
+    {
+      "index": 93,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 256,
+        "seed": 0,
+        "depth": 2
+      },
+      "status": "skipped",
+      "reason": "User requested skipping remaining 256-qubit full-reduce cases",
+      "wall_seconds": 0,
+      "directory": ""
+    },
+    {
+      "index": 94,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 256,
+        "seed": 1,
+        "depth": 2
+      },
+      "status": "skipped",
+      "reason": "User requested skipping remaining 256-qubit full-reduce cases",
+      "wall_seconds": 0,
+      "directory": ""
+    },
+    {
+      "index": 95,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "layered_local",
+        "size": 256,
+        "seed": 2,
+        "depth": 2
+      },
+      "status": "skipped",
+      "reason": "User requested skipping remaining 256-qubit full-reduce cases",
+      "wall_seconds": 0,
+      "directory": ""
+    },
+    {
+      "index": 96,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 256,
+        "seed": 0,
+        "depth": 5120
+      },
+      "status": "skipped",
+      "reason": "User requested skipping remaining 256-qubit full-reduce cases",
+      "wall_seconds": 0,
+      "directory": ""
+    },
+    {
+      "index": 97,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 256,
+        "seed": 1,
+        "depth": 5120
+      },
+      "status": "skipped",
+      "reason": "User requested skipping remaining 256-qubit full-reduce cases",
+      "wall_seconds": 0,
+      "directory": ""
+    },
+    {
+      "index": 98,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford",
+        "size": 256,
+        "seed": 2,
+        "depth": 5120
+      },
+      "status": "skipped",
+      "reason": "User requested skipping remaining 256-qubit full-reduce cases",
+      "wall_seconds": 0,
+      "directory": ""
+    },
+    {
+      "index": 99,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 256,
+        "seed": 0,
+        "depth": 5120
+      },
+      "status": "skipped",
+      "reason": "User requested skipping remaining 256-qubit full-reduce cases",
+      "wall_seconds": 0,
+      "directory": ""
+    },
+    {
+      "index": 100,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 256,
+        "seed": 1,
+        "depth": 5120
+      },
+      "status": "skipped",
+      "reason": "User requested skipping remaining 256-qubit full-reduce cases",
+      "wall_seconds": 0,
+      "directory": ""
+    },
+    {
+      "index": 101,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_clifford_t",
+        "size": 256,
+        "seed": 2,
+        "depth": 5120
+      },
+      "status": "skipped",
+      "reason": "User requested skipping remaining 256-qubit full-reduce cases",
+      "wall_seconds": 0,
+      "directory": ""
+    },
+    {
+      "index": 102,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 256,
+        "seed": 0,
+        "depth": 5120
+      },
+      "status": "skipped",
+      "reason": "User requested skipping remaining 256-qubit full-reduce cases",
+      "wall_seconds": 0,
+      "directory": ""
+    },
+    {
+      "index": 103,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 256,
+        "seed": 1,
+        "depth": 5120
+      },
+      "status": "skipped",
+      "reason": "User requested skipping remaining 256-qubit full-reduce cases",
+      "wall_seconds": 0,
+      "directory": ""
+    },
+    {
+      "index": 104,
+      "rule": "full_reduce",
+      "spec": {
+        "family": "random_t_heavy",
+        "size": 256,
+        "seed": 2,
+        "depth": 5120
+      },
+      "status": "skipped",
+      "reason": "User requested skipping remaining 256-qubit full-reduce cases",
+      "wall_seconds": 0,
+      "directory": ""
+    }
+  ],
+  "policy": "Keep all earlier observations; exclude skipped cases from complete performance summaries"
+}

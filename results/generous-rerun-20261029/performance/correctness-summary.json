@@ -1,0 +1,46 @@
+{
+  "pyzx": {
+    "input_tensor": {
+      "verified": 138,
+      "inconclusive": 494
+    }
+  },
+  "cypher": {
+    "input_tensor": {
+      "verified": 138,
+      "inconclusive": 494
+    },
+    "tensor": {
+      "verified": 156,
+      "inconclusive": 476
+    },
+    "graph": {
+      "different": 272,
+      "equal": 198,
+      "inconclusive": 162
+    },
+    "degree_sequence": {
+      "different": 269,
+      "equal": 363
+    }
+  },
+  "hybrid": {
+    "input_tensor": {
+      "verified": 138,
+      "inconclusive": 494
+    },
+    "tensor": {
+      "verified": 156,
+      "inconclusive": 476
+    },
+    "graph": {
+      "equal": 204,
+      "different": 266,
+      "inconclusive": 162
+    },
+    "degree_sequence": {
+      "equal": 366,
+      "different": 266
+    }
+  }
+}

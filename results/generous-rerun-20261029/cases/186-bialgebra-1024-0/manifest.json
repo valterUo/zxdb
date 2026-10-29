@@ -1,0 +1,10 @@
+[
+  {
+    "rule": "bialgebra",
+    "spec": {
+      "family": "bialgebra",
+      "size": 1024,
+      "seed": 0
+    }
+  }
+]

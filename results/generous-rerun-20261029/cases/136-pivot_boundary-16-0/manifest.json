@@ -1,0 +1,10 @@
+[
+  {
+    "rule": "pivot_boundary",
+    "spec": {
+      "family": "pivot_boundary",
+      "size": 16,
+      "seed": 0
+    }
+  }
+]

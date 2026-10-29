@@ -1,0 +1,33 @@
+{
+  "timestamp_utc": "2026-10-29T19:13:39.930125+00:00",
+  "case": {
+    "index": 212,
+    "rule": "hadamard_cancel",
+    "spec": {
+      "family": "copies_hadamard_cancel",
+      "size": 4096,
+      "seed": 0
+    },
+    "directory": "cases\\212-copies_hadamard_cancel-4096-0"
+  },
+  "reason": "User-requested engine-run wall-time limit exceeded",
+  "engine": "hybrid",
+  "repetition": 1,
+  "elapsed_seconds": 633.2545478343964,
+  "limit_seconds": 300,
+  "worker_pid": 24984,
+  "command": [
+    "C:\\Python312\\python.exe",
+    "-m",
+    "evaluation.rerun_three_engines",
+    "--output",
+    "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb\\results\\generous-rerun-20261029\\cases\\212-copies_hadamard_cancel-4096-0",
+    "--container",
+    "zxdb-generous-20261029",
+    "--manifest",
+    "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb\\results\\generous-rerun-20261029\\cases\\212-copies_hadamard_cancel-4096-0\\manifest.json",
+    "--engine-timeout",
+    "7200",
+    "--stop-on-error"
+  ]
+}

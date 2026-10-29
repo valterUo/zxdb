@@ -61,7 +61,7 @@ def main():
     (directory/'family-summary.json').write_text(json.dumps(summaries, indent=2))
     fmt = lambda value: '—' if value is None else f'{value:.5g}'
     completion = (directory/'completion.json').exists()
-    text = ['# Three-engine benchmark rerun — 2026-10-28', '',
+    text = ['# Three-engine benchmark rerun', '',
             f"Status: {'COMPLETE' if completion else 'PARTIAL'}. {len(env['manifest'])} planned workload configurations.", '',
             'PyZX 0.10.3 and Memgraph 3.14.0. One warmup and three measured repetitions per engine/configuration. '
             'Each repetition uses the same input and deterministically shuffled engine order. Stock PyZX is timed once and shared by the two database comparisons. '

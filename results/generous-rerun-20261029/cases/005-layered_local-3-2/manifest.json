@@ -1,0 +1,11 @@
+[
+  {
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 3,
+      "seed": 2,
+      "depth": 2
+    }
+  }
+]

@@ -1,0 +1,261 @@
+[
+    {
+        "Id": "3a21e82d8814a8cab4fd3bc2f7025d2b56c5e0db648e2af3de900d276819c931",
+        "Created": "2026-10-29T08:07:19.644946278Z",
+        "Path": "/usr/lib/memgraph/memgraph",
+        "Args": [
+            "--query-execution-timeout-sec=7200"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 3344,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-10-29T19:41:42.72763426Z",
+            "FinishedAt": "2026-10-29T19:41:42.462087563Z"
+        },
+        "Image": "sha256:a732421217951066e42f5749111bc3d0c7b51b12c756be04850d4dafa84cc05e",
+        "ResolvConfPath": "/var/lib/docker/containers/3a21e82d8814a8cab4fd3bc2f7025d2b56c5e0db648e2af3de900d276819c931/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/3a21e82d8814a8cab4fd3bc2f7025d2b56c5e0db648e2af3de900d276819c931/hostname",
+        "HostsPath": "/var/lib/docker/containers/3a21e82d8814a8cab4fd3bc2f7025d2b56c5e0db648e2af3de900d276819c931/hosts",
+        "LogPath": "/var/lib/docker/containers/3a21e82d8814a8cab4fd3bc2f7025d2b56c5e0db648e2af3de900d276819c931/3a21e82d8814a8cab4fd3bc2f7025d2b56c5e0db648e2af3de900d276819c931-json.log",
+        "Name": "/zxdb-generous-20261029",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "bridge",
+            "PortBindings": {
+                "7687/tcp": [
+                    {
+                        "HostIp": "127.0.0.1",
+                        "HostPort": "7692"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": null,
+            "Name": "overlayfs"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "acdfa03bc60544ad3bceee6eb94a4ef6306974fbe89808627dced6bb4edd9181",
+                "Source": "/var/lib/docker/volumes/acdfa03bc60544ad3bceee6eb94a4ef6306974fbe89808627dced6bb4edd9181/_data",
+                "Destination": "/etc/memgraph",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            },
+            {
+                "Type": "volume",
+                "Name": "a8eaf107eacebb2acda69df5687287b9c577fe4415199669be6a35801fbe7884",
+                "Source": "/var/lib/docker/volumes/a8eaf107eacebb2acda69df5687287b9c577fe4415199669be6a35801fbe7884/_data",
+                "Destination": "/var/lib/memgraph",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            },
+            {
+                "Type": "volume",
+                "Name": "5c27d0872c9d3be2abb9665548cc2129655f1f9a16aa4f14702589cc5c405fa0",
+                "Source": "/var/lib/docker/volumes/5c27d0872c9d3be2abb9665548cc2129655f1f9a16aa4f14702589cc5c405fa0/_data",
+                "Destination": "/var/log/memgraph",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "3a21e82d8814",
+            "Domainname": "",
+            "User": "memgraph",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "7687/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "MEMGRAPH_TELEMETRY_ID=DOCKER"
+            ],
+            "Cmd": [
+                "--query-execution-timeout-sec=7200"
+            ],
+            "Image": "memgraph/memgraph:3.14.0",
+            "Volumes": {
+                "/etc/memgraph": {},
+                "/var/lib/memgraph": {},
+                "/var/log/memgraph": {}
+            },
+            "WorkingDir": "/usr/lib/memgraph",
+            "Entrypoint": [
+                "/usr/lib/memgraph/memgraph"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "669c018f00dc173095fab4f916af4a4926d56ec13399d0a188fb6000e71c4426",
+            "SandboxKey": "/var/run/docker/netns/669c018f00dc",
+            "Ports": {
+                "7687/tcp": [
+                    {
+                        "HostIp": "127.0.0.1",
+                        "HostPort": "7692"
+                    }
+                ]
+            },
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "b24196e1350ad196e5e13c8b68d87f53e500989330723da22e2aa102301102cb",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "5e:3b:51:b3:43:9d",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "MacAddress": "5e:3b:51:b3:43:9d",
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "b504c962dcbf98d9ae55be677f92025926145f18a7cb4ba63e5e0cedb1be50d7",
+                    "EndpointID": "b24196e1350ad196e5e13c8b68d87f53e500989330723da22e2aa102301102cb",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+            "digest": "sha256:c7478d1737edb77fa2b1fcd4e37e34a68f10272d0ec7d7f9aa92d0afc8e0be9f",
+            "size": 1370,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]

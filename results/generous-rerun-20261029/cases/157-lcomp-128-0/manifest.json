@@ -1,0 +1,10 @@
+[
+  {
+    "rule": "lcomp",
+    "spec": {
+      "family": "lcomp",
+      "size": 128,
+      "seed": 0
+    }
+  }
+]

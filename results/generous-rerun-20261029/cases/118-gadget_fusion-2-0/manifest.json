@@ -1,0 +1,10 @@
+[
+  {
+    "rule": "gadget_fusion",
+    "spec": {
+      "family": "gadget_fusion",
+      "size": 2,
+      "seed": 0
+    }
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "manifest": [
+    {
+      "rule": "gadget_fusion",
+      "spec": {
+        "family": "gadget_fusion",
+        "size": 16,
+        "seed": 0
+      }
+    }
+  ],
+  "repetitions": 3,
+  "warmups": 1,
+  "uri": "bolt://127.0.0.1:7692",
+  "server": [
+    {
+      "version": "3.14.0"
+    }
+  ],
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "pyzx": "0.10.3",
+  "sources": {
+    "evaluate.py": "bd47fffa0915cd50065f7ef474dec8688c27bdbbee58234b5128fbcef68fc32d",
+    "evaluation\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation\\cases.py": "6d4c14bf3aef5466f28029ef1bb082472f334c484867312db006c4329e4da71e",
+    "evaluation\\circuits.py": "f93cfa2b7247a9d56cbb8705e7df20f10a78a09191b18ad4a561778a0d7a71fe",
+    "evaluation\\compare_audit_performance.py": "916686e4349f13b11fdcd14e17f883f3ad0ed0183092db94d159a26ba410780e",
+    "evaluation\\core.py": "476ce96e000d58f4f5e11ed891052d066e62720a6a5f9df48e35e137848c58ac",
+    "evaluation\\evidence.py": "5e4c504bddfd882ebceeb0126d9464d33bba913c39df8e53b0cf7c5242db6ba0",
+    "evaluation\\extend_rule_scaling.py": "56843ea99160466f2ab75b8c85f7221c5cb4f8fc1ecb43b0b57a3f893d797f74",
+    "evaluation\\oracle.py": "0aab698e8255e804ba99f7ea16b5cfcec3f332252b844437b7eef42f3516ca5a",
+    "evaluation\\patterns.py": "04b35a5c844f5c1e096f856dabff6c3ecf008102acd7b78115705a5d1ca93730",
+    "evaluation\\plot_timings.py": "aa52773ea587e8a73b194fb460a243a2390ee256cd360d86bb87b46a270a387e",
+    "evaluation\\proof_matching.py": "ee41b7d6b86c27aaceb86f9684f72722bd1088123e98ee042667facfe9d7e86c",
+    "evaluation\\report_audit_performance.py": "a05a462bae95d0fddf5eaa3ca4a1d545455b5eae8d32fc99755c4435ae24885f",
+    "evaluation\\report_three_engines.py": "c3f93a2c11cc83fb6b7d71b80084550f93806ec411c50544caf62a1235a8de84",
+    "evaluation\\rerun_three_engines.py": "f873f1cdea1f6f9588fa60bcc93822400b5bde4568fd85787bbe03b1d414df14",
+    "evaluation\\run_generous_campaign.py": "d88095f5b019fbb736d1b258e269c61b8b5b62e62c5c7bf545ed365ee1d66c68",
+    "evaluation\\workloads.py": "f08d398aa3bed2e75417a6c0444c99ead2a9af71f18a4873cac3bf4314088878",
+    "zxdb\\generate.py": "b763ad6a3d2824d8b3c2530ff282b207764b5b0c2f8dee27b51479207fa067a0",
+    "zxdb\\pyzx_utils.py": "f7a8bded516ced36ad37dc3388099717066ee68b19ac13ec06b37d14c9c00cac",
+    "zxdb\\zxdb.py": "5d55f5d9f1937992fec48476b5f22f9995c2fab2e4bb02aa74877ebbb8031eb7",
+    "zxdb\\main_queries.json": "ae544ede74f0ee12805b1f91b825393e30e9949ba8b18df29768b0269663549c",
+    "zxdb_qm\\zxqmcpp.cpp": "6eb88464799b5ef0dcb1c2e4a7106081ce3e86ee3ff1dc77193c6966f39344f8"
+  },
+  "order": "deterministic shuffle per configuration and repetition",
+  "shared_pyzx": true,
+  "depth_factor": 20,
+  "layered_depth": 2,
+  "engine_timeout_seconds": 7200.0,
+  "server_query_timeout_before": [
+    {
+      "setting_value": "7200"
+    }
+  ],
+  "server_query_timeout": [
+    {
+      "setting_value": "7200"
+    }
+  ]
+}

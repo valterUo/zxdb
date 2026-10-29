@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-28T22:24:17.130083+00:00",
+  "before": [
+    {
+      "setting_value": "600"
+    }
+  ],
+  "after": [
+    {
+      "setting_value": "1800"
+    }
+  ],
+  "reason": "Server reset value after restart; raise ceiling to requested retry budget",
+  "observed_phase_at_change": "Hybrid warmup in progress; measured repetitions had not started"
+}

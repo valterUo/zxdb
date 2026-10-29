@@ -1,0 +1,14 @@
+{
+  "index": 233,
+  "rule": "pivot",
+  "spec": {
+    "family": "copies_pivot",
+    "size": 8192,
+    "seed": 0
+  },
+  "directory": "cases\\233-copies_pivot-8192-0",
+  "status": "interrupted",
+  "reason": "User requested stopping and finalizing the campaign",
+  "timestamp_utc": "2026-10-29T21:23:20.204949+00:00",
+  "wall_seconds": 1185.3980720043182
+}

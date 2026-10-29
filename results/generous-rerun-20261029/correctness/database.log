@@ -1,0 +1,24 @@
+2026-10-29 09:11:29,604 INFO Marked pattern 4508d217-5009-477c-ab22-551c46ee7891 for Hadamard cancellation in graph ID 'evaluation_40f3f02e41b346ab9c62515f0880f28a'
+2026-10-29 09:11:29,610 INFO Hadamard cancellation completed in 0.009583473205566406 seconds for graph ID 'evaluation_40f3f02e41b346ab9c62515f0880f28a'
+2026-10-29 09:11:29,610 INFO Hadamard cancellation: 1 patterns found, 1 processed
+2026-10-29 09:11:29,629 INFO Marked pattern 4c81fd5b-a690-425e-915c-ae73bf054885 for Hadamard cancellation in graph ID 'evaluation_40f3f02e41b346ab9c62515f0880f28a'
+2026-10-29 09:11:29,634 INFO Hadamard cancellation completed in 0.009018659591674805 seconds for graph ID 'evaluation_40f3f02e41b346ab9c62515f0880f28a'
+2026-10-29 09:11:29,634 INFO Hadamard cancellation: 1 patterns found, 1 processed
+2026-10-29 09:11:29,657 INFO Marked pattern 7a290ce0-61eb-4d82-aaf4-c9f4b59f57d9 for Hadamard cancellation in graph ID 'evaluation_40f3f02e41b346ab9c62515f0880f28a'
+2026-10-29 09:11:29,665 INFO Hadamard cancellation completed in 0.012300968170166016 seconds for graph ID 'evaluation_40f3f02e41b346ab9c62515f0880f28a'
+2026-10-29 09:11:29,665 INFO Hadamard cancellation: 1 patterns found, 1 processed
+2026-10-29 09:11:29,687 INFO Marked pattern 2582f067-8c2b-4688-9974-74f8b9728418 for Hadamard cancellation in graph ID 'evaluation_40f3f02e41b346ab9c62515f0880f28a'
+2026-10-29 09:11:29,693 INFO Hadamard cancellation completed in 0.00887608528137207 seconds for graph ID 'evaluation_40f3f02e41b346ab9c62515f0880f28a'
+2026-10-29 09:11:29,693 INFO Hadamard cancellation: 1 patterns found, 1 processed
+2026-10-29 09:11:29,727 INFO Marked pattern 57fc7790-0d09-429c-a050-37a910887bb0 for Hadamard cancellation in graph ID 'evaluation_40f3f02e41b346ab9c62515f0880f28a'
+2026-10-29 09:11:29,733 INFO Hadamard cancellation completed in 0.00887155532836914 seconds for graph ID 'evaluation_40f3f02e41b346ab9c62515f0880f28a'
+2026-10-29 09:11:29,733 INFO Hadamard cancellation: 1 patterns found, 1 processed
+2026-10-29 09:11:29,755 INFO Marked pattern 73323c7b-5d41-49b4-b86b-e43e7731556e for Hadamard cancellation in graph ID 'evaluation_40f3f02e41b346ab9c62515f0880f28a'
+2026-10-29 09:11:29,760 INFO Hadamard cancellation completed in 0.008354663848876953 seconds for graph ID 'evaluation_40f3f02e41b346ab9c62515f0880f28a'
+2026-10-29 09:11:29,761 INFO Hadamard cancellation: 1 patterns found, 1 processed
+2026-10-29 09:11:29,846 INFO Marked pattern fb8c8a5a-f0a0-42f6-b820-8b568b35b8de for Hadamard cancellation in graph ID 'evaluation_40f3f02e41b346ab9c62515f0880f28a'
+2026-10-29 09:11:29,852 INFO Hadamard cancellation completed in 0.008458614349365234 seconds for graph ID 'evaluation_40f3f02e41b346ab9c62515f0880f28a'
+2026-10-29 09:11:29,852 INFO Hadamard cancellation: 1 patterns found, 1 processed
+2026-10-29 09:11:29,872 INFO Marked pattern b94af846-c6dc-4407-8826-1b1bce254828 for Hadamard cancellation in graph ID 'evaluation_40f3f02e41b346ab9c62515f0880f28a'
+2026-10-29 09:11:29,878 INFO Hadamard cancellation completed in 0.009737014770507812 seconds for graph ID 'evaluation_40f3f02e41b346ab9c62515f0880f28a'
+2026-10-29 09:11:29,878 INFO Hadamard cancellation: 1 patterns found, 1 processed

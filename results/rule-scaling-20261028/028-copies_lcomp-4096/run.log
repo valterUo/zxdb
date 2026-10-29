@@ -1,0 +1,5 @@
+WORKLOAD 1/1 {'family': 'copies_lcomp', 'size': 4096, 'seed': 0}
+{"case": "949bd6995fb581b2", "engine": "pyzx", "repetition": 0, "status": "inconclusive", "rewrite_s": 11.705708800000139}
+{"case": "949bd6995fb581b2", "engine": "hybrid", "repetition": 0, "status": "inconclusive", "rewrite_s": 0.13608260001637973}
+{"case": "949bd6995fb581b2", "engine": "cypher", "repetition": 0, "status": "inconclusive", "rewrite_s": 22.376893900014693}
+{"case": "949bd6995fb581b2", "engine": "comparison_complete", "repetition": 0, "status": "recorded"}

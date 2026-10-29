@@ -1,0 +1,2934 @@
+[
+  {
+    "index": 0,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 3,
+      "seed": 0,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 1,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 3,
+      "seed": 1,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 2,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 3,
+      "seed": 2,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 3,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 3,
+      "seed": 0,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 4,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 3,
+      "seed": 1,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 5,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 3,
+      "seed": 2,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 6,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 3,
+      "seed": 0,
+      "depth": 60
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 7,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 3,
+      "seed": 1,
+      "depth": 60
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 8,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 3,
+      "seed": 2,
+      "depth": 60
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 9,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 3,
+      "seed": 0,
+      "depth": 60
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 10,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 3,
+      "seed": 1,
+      "depth": 60
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 11,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 3,
+      "seed": 2,
+      "depth": 60
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 12,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 3,
+      "seed": 0,
+      "depth": 60
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 13,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 3,
+      "seed": 1,
+      "depth": 60
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 14,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 3,
+      "seed": 2,
+      "depth": 60
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 15,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 8,
+      "seed": 0,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 16,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 8,
+      "seed": 1,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 17,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 8,
+      "seed": 2,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 18,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 8,
+      "seed": 0,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 19,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 8,
+      "seed": 1,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 20,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 8,
+      "seed": 2,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 21,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 8,
+      "seed": 0,
+      "depth": 160
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 22,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 8,
+      "seed": 1,
+      "depth": 160
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 23,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 8,
+      "seed": 2,
+      "depth": 160
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 24,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 8,
+      "seed": 0,
+      "depth": 160
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 25,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 8,
+      "seed": 1,
+      "depth": 160
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 26,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 8,
+      "seed": 2,
+      "depth": 160
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 27,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 8,
+      "seed": 0,
+      "depth": 160
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 28,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 8,
+      "seed": 1,
+      "depth": 160
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 29,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 8,
+      "seed": 2,
+      "depth": 160
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 30,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 16,
+      "seed": 0,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 31,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 16,
+      "seed": 1,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 32,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 16,
+      "seed": 2,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 33,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 16,
+      "seed": 0,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 34,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 16,
+      "seed": 1,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 35,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 16,
+      "seed": 2,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 36,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 16,
+      "seed": 0,
+      "depth": 320
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 37,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 16,
+      "seed": 1,
+      "depth": 320
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 38,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 16,
+      "seed": 2,
+      "depth": 320
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 39,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 16,
+      "seed": 0,
+      "depth": 320
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 40,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 16,
+      "seed": 1,
+      "depth": 320
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 41,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 16,
+      "seed": 2,
+      "depth": 320
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 42,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 16,
+      "seed": 0,
+      "depth": 320
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 43,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 16,
+      "seed": 1,
+      "depth": 320
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 44,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 16,
+      "seed": 2,
+      "depth": 320
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 45,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 32,
+      "seed": 0,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 46,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 32,
+      "seed": 1,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 47,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 32,
+      "seed": 2,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 48,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 32,
+      "seed": 0,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 49,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 32,
+      "seed": 1,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 50,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 32,
+      "seed": 2,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 51,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 32,
+      "seed": 0,
+      "depth": 640
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 52,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 32,
+      "seed": 1,
+      "depth": 640
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 53,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 32,
+      "seed": 2,
+      "depth": 640
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 54,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 32,
+      "seed": 0,
+      "depth": 640
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 55,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 32,
+      "seed": 1,
+      "depth": 640
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 56,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 32,
+      "seed": 2,
+      "depth": 640
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 57,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 32,
+      "seed": 0,
+      "depth": 640
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 58,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 32,
+      "seed": 1,
+      "depth": 640
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 59,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 32,
+      "seed": 2,
+      "depth": 640
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 60,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 64,
+      "seed": 0,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 61,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 64,
+      "seed": 1,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 62,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 64,
+      "seed": 2,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 63,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 64,
+      "seed": 0,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 64,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 64,
+      "seed": 1,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 65,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 64,
+      "seed": 2,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 66,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 64,
+      "seed": 0,
+      "depth": 1280
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 67,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 64,
+      "seed": 1,
+      "depth": 1280
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 68,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 64,
+      "seed": 2,
+      "depth": 1280
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 69,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 64,
+      "seed": 0,
+      "depth": 1280
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 70,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 64,
+      "seed": 1,
+      "depth": 1280
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 71,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 64,
+      "seed": 2,
+      "depth": 1280
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 72,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 64,
+      "seed": 0,
+      "depth": 1280
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 73,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 64,
+      "seed": 1,
+      "depth": 1280
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 74,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 64,
+      "seed": 2,
+      "depth": 1280
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 75,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 128,
+      "seed": 0,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 76,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 128,
+      "seed": 1,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 77,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 128,
+      "seed": 2,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 78,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 128,
+      "seed": 0,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 79,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 128,
+      "seed": 1,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 80,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 128,
+      "seed": 2,
+      "depth": 2
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 81,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 128,
+      "seed": 0,
+      "depth": 2560
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 82,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 128,
+      "seed": 1,
+      "depth": 2560
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 83,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 128,
+      "seed": 2,
+      "depth": 2560
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 84,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 128,
+      "seed": 0,
+      "depth": 2560
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 85,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 128,
+      "seed": 1,
+      "depth": 2560
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 86,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 128,
+      "seed": 2,
+      "depth": 2560
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 87,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 128,
+      "seed": 0,
+      "depth": 2560
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 88,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 128,
+      "seed": 1,
+      "depth": 2560
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 89,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 128,
+      "seed": 2,
+      "depth": 2560
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 90,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 256,
+      "seed": 0,
+      "depth": 2
+    },
+    "outcome": "user_interrupted",
+    "reason": "User requested interruption of the long-running current case"
+  },
+  {
+    "index": 91,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 256,
+      "seed": 1,
+      "depth": 2
+    },
+    "outcome": "user_interrupted",
+    "reason": "User requested skipping remaining 256-qubit full-reduce cases"
+  },
+  {
+    "index": 92,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_global",
+      "size": 256,
+      "seed": 2,
+      "depth": 2
+    },
+    "outcome": "skipped",
+    "reason": "User requested skipping remaining 256-qubit full-reduce cases"
+  },
+  {
+    "index": 93,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 256,
+      "seed": 0,
+      "depth": 2
+    },
+    "outcome": "skipped",
+    "reason": "User requested skipping remaining 256-qubit full-reduce cases"
+  },
+  {
+    "index": 94,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 256,
+      "seed": 1,
+      "depth": 2
+    },
+    "outcome": "skipped",
+    "reason": "User requested skipping remaining 256-qubit full-reduce cases"
+  },
+  {
+    "index": 95,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "layered_local",
+      "size": 256,
+      "seed": 2,
+      "depth": 2
+    },
+    "outcome": "skipped",
+    "reason": "User requested skipping remaining 256-qubit full-reduce cases"
+  },
+  {
+    "index": 96,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 256,
+      "seed": 0,
+      "depth": 5120
+    },
+    "outcome": "skipped",
+    "reason": "User requested skipping remaining 256-qubit full-reduce cases"
+  },
+  {
+    "index": 97,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 256,
+      "seed": 1,
+      "depth": 5120
+    },
+    "outcome": "skipped",
+    "reason": "User requested skipping remaining 256-qubit full-reduce cases"
+  },
+  {
+    "index": 98,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford",
+      "size": 256,
+      "seed": 2,
+      "depth": 5120
+    },
+    "outcome": "skipped",
+    "reason": "User requested skipping remaining 256-qubit full-reduce cases"
+  },
+  {
+    "index": 99,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 256,
+      "seed": 0,
+      "depth": 5120
+    },
+    "outcome": "skipped",
+    "reason": "User requested skipping remaining 256-qubit full-reduce cases"
+  },
+  {
+    "index": 100,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 256,
+      "seed": 1,
+      "depth": 5120
+    },
+    "outcome": "skipped",
+    "reason": "User requested skipping remaining 256-qubit full-reduce cases"
+  },
+  {
+    "index": 101,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_clifford_t",
+      "size": 256,
+      "seed": 2,
+      "depth": 5120
+    },
+    "outcome": "skipped",
+    "reason": "User requested skipping remaining 256-qubit full-reduce cases"
+  },
+  {
+    "index": 102,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 256,
+      "seed": 0,
+      "depth": 5120
+    },
+    "outcome": "skipped",
+    "reason": "User requested skipping remaining 256-qubit full-reduce cases"
+  },
+  {
+    "index": 103,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 256,
+      "seed": 1,
+      "depth": 5120
+    },
+    "outcome": "skipped",
+    "reason": "User requested skipping remaining 256-qubit full-reduce cases"
+  },
+  {
+    "index": 104,
+    "rule": "full_reduce",
+    "spec": {
+      "family": "random_t_heavy",
+      "size": 256,
+      "seed": 2,
+      "depth": 5120
+    },
+    "outcome": "skipped",
+    "reason": "User requested skipping remaining 256-qubit full-reduce cases"
+  },
+  {
+    "index": 105,
+    "rule": "bialgebra",
+    "spec": {
+      "family": "bialgebra",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 106,
+    "rule": "bialgebra",
+    "spec": {
+      "family": "copies_bialgebra",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 107,
+    "rule": "copy",
+    "spec": {
+      "family": "copies_copy",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 108,
+    "rule": "gadget_fusion",
+    "spec": {
+      "family": "copies_gadget_fusion",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 109,
+    "rule": "hadamard_cancel",
+    "spec": {
+      "family": "copies_hadamard_cancel",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 110,
+    "rule": "identity",
+    "spec": {
+      "family": "copies_identity",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 111,
+    "rule": "lcomp",
+    "spec": {
+      "family": "copies_lcomp",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 112,
+    "rule": "pivot",
+    "spec": {
+      "family": "copies_pivot",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 113,
+    "rule": "pivot_boundary",
+    "spec": {
+      "family": "copies_pivot_boundary",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 114,
+    "rule": "pivot_gadget",
+    "spec": {
+      "family": "copies_pivot_gadget",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 115,
+    "rule": "spider_fusion",
+    "spec": {
+      "family": "copies_spider_fusion",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 116,
+    "rule": "supplementarity",
+    "spec": {
+      "family": "copies_supplementarity",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 117,
+    "rule": "copy",
+    "spec": {
+      "family": "copy",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 118,
+    "rule": "gadget_fusion",
+    "spec": {
+      "family": "gadget_fusion",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 119,
+    "rule": "hadamard_cancel",
+    "spec": {
+      "family": "hadamard_cancel",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 120,
+    "rule": "identity",
+    "spec": {
+      "family": "identity",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 121,
+    "rule": "identity",
+    "spec": {
+      "family": "identity_chain",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 122,
+    "rule": "lcomp",
+    "spec": {
+      "family": "lcomp",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 123,
+    "rule": "pivot",
+    "spec": {
+      "family": "pivot",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 124,
+    "rule": "pivot_boundary",
+    "spec": {
+      "family": "pivot_boundary",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 125,
+    "rule": "pivot_gadget",
+    "spec": {
+      "family": "pivot_gadget",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 126,
+    "rule": "spider_fusion",
+    "spec": {
+      "family": "spider_fusion",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 127,
+    "rule": "supplementarity",
+    "spec": {
+      "family": "supplementarity",
+      "size": 2,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 128,
+    "rule": "bialgebra",
+    "spec": {
+      "family": "bialgebra",
+      "size": 16,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 129,
+    "rule": "copy",
+    "spec": {
+      "family": "copy",
+      "size": 16,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 130,
+    "rule": "gadget_fusion",
+    "spec": {
+      "family": "gadget_fusion",
+      "size": 16,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 131,
+    "rule": "hadamard_cancel",
+    "spec": {
+      "family": "hadamard_cancel",
+      "size": 16,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 132,
+    "rule": "identity",
+    "spec": {
+      "family": "identity",
+      "size": 16,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 133,
+    "rule": "identity",
+    "spec": {
+      "family": "identity_chain",
+      "size": 16,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 134,
+    "rule": "lcomp",
+    "spec": {
+      "family": "lcomp",
+      "size": 16,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 135,
+    "rule": "pivot",
+    "spec": {
+      "family": "pivot",
+      "size": 16,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 136,
+    "rule": "pivot_boundary",
+    "spec": {
+      "family": "pivot_boundary",
+      "size": 16,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 137,
+    "rule": "pivot_gadget",
+    "spec": {
+      "family": "pivot_gadget",
+      "size": 16,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 138,
+    "rule": "spider_fusion",
+    "spec": {
+      "family": "spider_fusion",
+      "size": 16,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 139,
+    "rule": "supplementarity",
+    "spec": {
+      "family": "supplementarity",
+      "size": 16,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 140,
+    "rule": "bialgebra",
+    "spec": {
+      "family": "copies_bialgebra",
+      "size": 32,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 141,
+    "rule": "copy",
+    "spec": {
+      "family": "copies_copy",
+      "size": 32,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 142,
+    "rule": "gadget_fusion",
+    "spec": {
+      "family": "copies_gadget_fusion",
+      "size": 32,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 143,
+    "rule": "hadamard_cancel",
+    "spec": {
+      "family": "copies_hadamard_cancel",
+      "size": 32,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 144,
+    "rule": "identity",
+    "spec": {
+      "family": "copies_identity",
+      "size": 32,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 145,
+    "rule": "lcomp",
+    "spec": {
+      "family": "copies_lcomp",
+      "size": 32,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 146,
+    "rule": "pivot",
+    "spec": {
+      "family": "copies_pivot",
+      "size": 32,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 147,
+    "rule": "pivot_boundary",
+    "spec": {
+      "family": "copies_pivot_boundary",
+      "size": 32,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 148,
+    "rule": "pivot_gadget",
+    "spec": {
+      "family": "copies_pivot_gadget",
+      "size": 32,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 149,
+    "rule": "spider_fusion",
+    "spec": {
+      "family": "copies_spider_fusion",
+      "size": 32,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 150,
+    "rule": "supplementarity",
+    "spec": {
+      "family": "copies_supplementarity",
+      "size": 32,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 151,
+    "rule": "bialgebra",
+    "spec": {
+      "family": "bialgebra",
+      "size": 128,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 152,
+    "rule": "copy",
+    "spec": {
+      "family": "copy",
+      "size": 128,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 153,
+    "rule": "gadget_fusion",
+    "spec": {
+      "family": "gadget_fusion",
+      "size": 128,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 154,
+    "rule": "hadamard_cancel",
+    "spec": {
+      "family": "hadamard_cancel",
+      "size": 128,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 155,
+    "rule": "identity",
+    "spec": {
+      "family": "identity",
+      "size": 128,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 156,
+    "rule": "identity",
+    "spec": {
+      "family": "identity_chain",
+      "size": 128,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 157,
+    "rule": "lcomp",
+    "spec": {
+      "family": "lcomp",
+      "size": 128,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 158,
+    "rule": "pivot",
+    "spec": {
+      "family": "pivot",
+      "size": 128,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 159,
+    "rule": "pivot_boundary",
+    "spec": {
+      "family": "pivot_boundary",
+      "size": 128,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 160,
+    "rule": "pivot_gadget",
+    "spec": {
+      "family": "pivot_gadget",
+      "size": 128,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 161,
+    "rule": "spider_fusion",
+    "spec": {
+      "family": "spider_fusion",
+      "size": 128,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 162,
+    "rule": "supplementarity",
+    "spec": {
+      "family": "supplementarity",
+      "size": 128,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 163,
+    "rule": "bialgebra",
+    "spec": {
+      "family": "bialgebra",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "memory_failure",
+    "reason": "TransientError: {code: Memgraph.TransientError.MemgraphError.MemgraphError} {message: Memory limit exceeded! Attempting to allocate a chunk of 4.00GiB which would put the current use to 26.27GiB, while the maximum allowed size for allocation is set to 23.47GiB.}; TransientError: {code: Memgraph.TransientError.MemgraphError.MemgraphError} {message: Memory limit exceeded! Attempting to allocate a chunk of 4.00GiB which would put the current use to 26.33GiB, while the maximum allowed size for allocation is set to 23.47GiB.}"
+  },
+  {
+    "index": 164,
+    "rule": "bialgebra",
+    "spec": {
+      "family": "copies_bialgebra",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 165,
+    "rule": "copy",
+    "spec": {
+      "family": "copies_copy",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 166,
+    "rule": "gadget_fusion",
+    "spec": {
+      "family": "copies_gadget_fusion",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 167,
+    "rule": "hadamard_cancel",
+    "spec": {
+      "family": "copies_hadamard_cancel",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 168,
+    "rule": "identity",
+    "spec": {
+      "family": "copies_identity",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 169,
+    "rule": "lcomp",
+    "spec": {
+      "family": "copies_lcomp",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 170,
+    "rule": "pivot",
+    "spec": {
+      "family": "copies_pivot",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 171,
+    "rule": "pivot_boundary",
+    "spec": {
+      "family": "copies_pivot_boundary",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 172,
+    "rule": "pivot_gadget",
+    "spec": {
+      "family": "copies_pivot_gadget",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 173,
+    "rule": "spider_fusion",
+    "spec": {
+      "family": "copies_spider_fusion",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 174,
+    "rule": "supplementarity",
+    "spec": {
+      "family": "copies_supplementarity",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 175,
+    "rule": "copy",
+    "spec": {
+      "family": "copy",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 176,
+    "rule": "gadget_fusion",
+    "spec": {
+      "family": "gadget_fusion",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 177,
+    "rule": "hadamard_cancel",
+    "spec": {
+      "family": "hadamard_cancel",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 178,
+    "rule": "identity",
+    "spec": {
+      "family": "identity",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 179,
+    "rule": "identity",
+    "spec": {
+      "family": "identity_chain",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 180,
+    "rule": "lcomp",
+    "spec": {
+      "family": "lcomp",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 181,
+    "rule": "pivot",
+    "spec": {
+      "family": "pivot",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 182,
+    "rule": "pivot_boundary",
+    "spec": {
+      "family": "pivot_boundary",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 183,
+    "rule": "pivot_gadget",
+    "spec": {
+      "family": "pivot_gadget",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 184,
+    "rule": "spider_fusion",
+    "spec": {
+      "family": "spider_fusion",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 185,
+    "rule": "supplementarity",
+    "spec": {
+      "family": "supplementarity",
+      "size": 512,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 186,
+    "rule": "bialgebra",
+    "spec": {
+      "family": "bialgebra",
+      "size": 1024,
+      "seed": 0
+    },
+    "outcome": "memory_failure",
+    "reason": "TransientError: {code: Memgraph.TransientError.MemgraphError.MemgraphError} {message: Memory limit exceeded! Attempting to allocate a chunk of 4.00GiB which would put the current use to 25.60GiB, while the maximum allowed size for allocation is set to 23.47GiB.}; TransientError: {code: Memgraph.TransientError.MemgraphError.MemgraphError} {message: Memory limit exceeded! Attempting to allocate a chunk of 4.00GiB which would put the current use to 25.71GiB, while the maximum allowed size for allocation is set to 23.47GiB.}"
+  },
+  {
+    "index": 187,
+    "rule": "copy",
+    "spec": {
+      "family": "copy",
+      "size": 1024,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 188,
+    "rule": "gadget_fusion",
+    "spec": {
+      "family": "gadget_fusion",
+      "size": 1024,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 189,
+    "rule": "hadamard_cancel",
+    "spec": {
+      "family": "hadamard_cancel",
+      "size": 1024,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 190,
+    "rule": "identity",
+    "spec": {
+      "family": "identity",
+      "size": 1024,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 191,
+    "rule": "lcomp",
+    "spec": {
+      "family": "lcomp",
+      "size": 1024,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 192,
+    "rule": "pivot",
+    "spec": {
+      "family": "pivot",
+      "size": 1024,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 193,
+    "rule": "pivot_boundary",
+    "spec": {
+      "family": "pivot_boundary",
+      "size": 1024,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 194,
+    "rule": "pivot_gadget",
+    "spec": {
+      "family": "pivot_gadget",
+      "size": 1024,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 195,
+    "rule": "spider_fusion",
+    "spec": {
+      "family": "spider_fusion",
+      "size": 1024,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 196,
+    "rule": "supplementarity",
+    "spec": {
+      "family": "supplementarity",
+      "size": 1024,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 197,
+    "rule": "bialgebra",
+    "spec": {
+      "family": "copies_bialgebra",
+      "size": 2048,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 198,
+    "rule": "copy",
+    "spec": {
+      "family": "copies_copy",
+      "size": 2048,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 199,
+    "rule": "gadget_fusion",
+    "spec": {
+      "family": "copies_gadget_fusion",
+      "size": 2048,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 200,
+    "rule": "hadamard_cancel",
+    "spec": {
+      "family": "copies_hadamard_cancel",
+      "size": 2048,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 201,
+    "rule": "identity",
+    "spec": {
+      "family": "copies_identity",
+      "size": 2048,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 202,
+    "rule": "lcomp",
+    "spec": {
+      "family": "copies_lcomp",
+      "size": 2048,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 203,
+    "rule": "pivot",
+    "spec": {
+      "family": "copies_pivot",
+      "size": 2048,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 204,
+    "rule": "pivot_boundary",
+    "spec": {
+      "family": "copies_pivot_boundary",
+      "size": 2048,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 205,
+    "rule": "pivot_gadget",
+    "spec": {
+      "family": "copies_pivot_gadget",
+      "size": 2048,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 206,
+    "rule": "spider_fusion",
+    "spec": {
+      "family": "copies_spider_fusion",
+      "size": 2048,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 207,
+    "rule": "supplementarity",
+    "spec": {
+      "family": "copies_supplementarity",
+      "size": 2048,
+      "seed": 0
+    },
+    "outcome": "budget_skipped",
+    "reason": "User-requested warmup wall-time limit exceeded"
+  },
+  {
+    "index": 208,
+    "rule": "identity",
+    "spec": {
+      "family": "identity_chain",
+      "size": 2048,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 209,
+    "rule": "bialgebra",
+    "spec": {
+      "family": "copies_bialgebra",
+      "size": 4096,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 210,
+    "rule": "copy",
+    "spec": {
+      "family": "copies_copy",
+      "size": 4096,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 211,
+    "rule": "gadget_fusion",
+    "spec": {
+      "family": "copies_gadget_fusion",
+      "size": 4096,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 212,
+    "rule": "hadamard_cancel",
+    "spec": {
+      "family": "copies_hadamard_cancel",
+      "size": 4096,
+      "seed": 0
+    },
+    "outcome": "budget_skipped",
+    "reason": "User-requested engine-run wall-time limit exceeded"
+  },
+  {
+    "index": 213,
+    "rule": "identity",
+    "spec": {
+      "family": "copies_identity",
+      "size": 4096,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 214,
+    "rule": "lcomp",
+    "spec": {
+      "family": "copies_lcomp",
+      "size": 4096,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 215,
+    "rule": "pivot",
+    "spec": {
+      "family": "copies_pivot",
+      "size": 4096,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 216,
+    "rule": "pivot_boundary",
+    "spec": {
+      "family": "copies_pivot_boundary",
+      "size": 4096,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 217,
+    "rule": "pivot_gadget",
+    "spec": {
+      "family": "copies_pivot_gadget",
+      "size": 4096,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 218,
+    "rule": "spider_fusion",
+    "spec": {
+      "family": "copies_spider_fusion",
+      "size": 4096,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 219,
+    "rule": "supplementarity",
+    "spec": {
+      "family": "copies_supplementarity",
+      "size": 4096,
+      "seed": 0
+    },
+    "outcome": "budget_skipped",
+    "reason": "User-requested engine-run wall-time limit exceeded"
+  },
+  {
+    "index": 220,
+    "rule": "copy",
+    "spec": {
+      "family": "copy",
+      "size": 4096,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 221,
+    "rule": "gadget_fusion",
+    "spec": {
+      "family": "gadget_fusion",
+      "size": 4096,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 222,
+    "rule": "hadamard_cancel",
+    "spec": {
+      "family": "hadamard_cancel",
+      "size": 4096,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 223,
+    "rule": "identity",
+    "spec": {
+      "family": "identity",
+      "size": 4096,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 224,
+    "rule": "identity",
+    "spec": {
+      "family": "identity_chain",
+      "size": 4096,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 225,
+    "rule": "spider_fusion",
+    "spec": {
+      "family": "spider_fusion",
+      "size": 4096,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 226,
+    "rule": "supplementarity",
+    "spec": {
+      "family": "supplementarity",
+      "size": 4096,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 227,
+    "rule": "bialgebra",
+    "spec": {
+      "family": "copies_bialgebra",
+      "size": 8192,
+      "seed": 0
+    },
+    "outcome": "budget_skipped",
+    "reason": "User-requested engine-run wall-time limit exceeded"
+  },
+  {
+    "index": 228,
+    "rule": "copy",
+    "spec": {
+      "family": "copies_copy",
+      "size": 8192,
+      "seed": 0
+    },
+    "outcome": "budget_skipped",
+    "reason": "User-requested engine-run wall-time limit exceeded"
+  },
+  {
+    "index": 229,
+    "rule": "gadget_fusion",
+    "spec": {
+      "family": "copies_gadget_fusion",
+      "size": 8192,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 230,
+    "rule": "hadamard_cancel",
+    "spec": {
+      "family": "copies_hadamard_cancel",
+      "size": 8192,
+      "seed": 0
+    },
+    "outcome": "budget_skipped",
+    "reason": "User-requested engine-run wall-time limit exceeded"
+  },
+  {
+    "index": 231,
+    "rule": "identity",
+    "spec": {
+      "family": "copies_identity",
+      "size": 8192,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 232,
+    "rule": "lcomp",
+    "spec": {
+      "family": "copies_lcomp",
+      "size": 8192,
+      "seed": 0
+    },
+    "outcome": "complete",
+    "reason": ""
+  },
+  {
+    "index": 233,
+    "rule": "pivot",
+    "spec": {
+      "family": "copies_pivot",
+      "size": 8192,
+      "seed": 0
+    },
+    "outcome": "finalization_interrupted",
+    "reason": "User requested stopping and finalizing the campaign"
+  },
+  {
+    "index": 234,
+    "rule": "pivot_boundary",
+    "spec": {
+      "family": "copies_pivot_boundary",
+      "size": 8192,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 235,
+    "rule": "pivot_gadget",
+    "spec": {
+      "family": "copies_pivot_gadget",
+      "size": 8192,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 236,
+    "rule": "spider_fusion",
+    "spec": {
+      "family": "copies_spider_fusion",
+      "size": 8192,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 237,
+    "rule": "supplementarity",
+    "spec": {
+      "family": "copies_supplementarity",
+      "size": 8192,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 238,
+    "rule": "identity",
+    "spec": {
+      "family": "identity_chain",
+      "size": 8192,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 239,
+    "rule": "bialgebra",
+    "spec": {
+      "family": "copies_bialgebra",
+      "size": 16384,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 240,
+    "rule": "copy",
+    "spec": {
+      "family": "copies_copy",
+      "size": 16384,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 241,
+    "rule": "gadget_fusion",
+    "spec": {
+      "family": "copies_gadget_fusion",
+      "size": 16384,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 242,
+    "rule": "hadamard_cancel",
+    "spec": {
+      "family": "copies_hadamard_cancel",
+      "size": 16384,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 243,
+    "rule": "identity",
+    "spec": {
+      "family": "copies_identity",
+      "size": 16384,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 244,
+    "rule": "lcomp",
+    "spec": {
+      "family": "copies_lcomp",
+      "size": 16384,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 245,
+    "rule": "pivot",
+    "spec": {
+      "family": "copies_pivot",
+      "size": 16384,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 246,
+    "rule": "pivot_boundary",
+    "spec": {
+      "family": "copies_pivot_boundary",
+      "size": 16384,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 247,
+    "rule": "pivot_gadget",
+    "spec": {
+      "family": "copies_pivot_gadget",
+      "size": 16384,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 248,
+    "rule": "spider_fusion",
+    "spec": {
+      "family": "copies_spider_fusion",
+      "size": 16384,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 249,
+    "rule": "supplementarity",
+    "spec": {
+      "family": "copies_supplementarity",
+      "size": 16384,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 250,
+    "rule": "copy",
+    "spec": {
+      "family": "copy",
+      "size": 16384,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 251,
+    "rule": "gadget_fusion",
+    "spec": {
+      "family": "gadget_fusion",
+      "size": 16384,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 252,
+    "rule": "hadamard_cancel",
+    "spec": {
+      "family": "hadamard_cancel",
+      "size": 16384,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 253,
+    "rule": "identity",
+    "spec": {
+      "family": "identity",
+      "size": 16384,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 254,
+    "rule": "identity",
+    "spec": {
+      "family": "identity_chain",
+      "size": 16384,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 255,
+    "rule": "spider_fusion",
+    "spec": {
+      "family": "spider_fusion",
+      "size": 16384,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  },
+  {
+    "index": 256,
+    "rule": "supplementarity",
+    "spec": {
+      "family": "supplementarity",
+      "size": 16384,
+      "seed": 0
+    },
+    "outcome": "not_run",
+    "reason": "Campaign finalized before this case"
+  }
+]

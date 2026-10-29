@@ -1,0 +1,33 @@
+{
+  "timestamp_utc": "2026-10-29T20:24:53.764976+00:00",
+  "case": {
+    "index": 227,
+    "rule": "bialgebra",
+    "spec": {
+      "family": "copies_bialgebra",
+      "size": 8192,
+      "seed": 0
+    },
+    "directory": "cases\\227-copies_bialgebra-8192-0"
+  },
+  "reason": "User-requested engine-run wall-time limit exceeded",
+  "engine": "hybrid",
+  "repetition": 0,
+  "elapsed_seconds": 302.9950556755066,
+  "limit_seconds": 300,
+  "worker_pid": 20276,
+  "command": [
+    "C:\\Python312\\python.exe",
+    "-m",
+    "evaluation.rerun_three_engines",
+    "--output",
+    "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb\\results\\generous-rerun-20261029\\cases\\227-copies_bialgebra-8192-0",
+    "--container",
+    "zxdb-generous-20261029",
+    "--manifest",
+    "C:\\Users\\valte\\OneDrive - University of Helsinki\\Desktop\\zxdb\\results\\generous-rerun-20261029\\cases\\227-copies_bialgebra-8192-0\\manifest.json",
+    "--engine-timeout",
+    "7200",
+    "--stop-on-error"
+  ]
+}

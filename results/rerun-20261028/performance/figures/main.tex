@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1cm]{geometry}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.18}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\textbf{rules-rewrite}\par\medskip
+\input{rules-rewrite.tex}
+\end{center}
+Geometric mean of configuration medians; bars span their min--max, not confidence intervals. Missing cells break curves. Panels have independent axis limits. Rewrite excludes import/export.
+\clearpage
+\begin{center}
+\textbf{rules-total}\par\medskip
+\input{rules-total.tex}
+\end{center}
+Geometric mean of configuration medians; bars span their min--max, not confidence intervals. Missing cells break curves. Panels have independent axis limits. Total includes in-memory import/export (PyZX: copying), not startup or disk I/O.
+\clearpage
+\begin{center}
+\textbf{copies-rewrite}\par\medskip
+\input{copies-rewrite.tex}
+\end{center}
+Geometric mean of configuration medians; bars span their min--max, not confidence intervals. Missing cells break curves. Panels have independent axis limits. Rewrite excludes import/export.
+\clearpage
+\begin{center}
+\textbf{copies-total}\par\medskip
+\input{copies-total.tex}
+\end{center}
+Geometric mean of configuration medians; bars span their min--max, not confidence intervals. Missing cells break curves. Panels have independent axis limits. Total includes in-memory import/export (PyZX: copying), not startup or disk I/O.
+\clearpage
+\begin{center}
+\textbf{circuits-rewrite}\par\medskip
+\input{circuits-rewrite.tex}
+\end{center}
+Geometric mean of configuration medians; bars span their min--max, not confidence intervals. Missing cells break curves. Panels have independent axis limits. Local-layered seed labels repeat the same input. Random depth = 20 times qubits; layered depth = 2. Rewrite excludes import/export.
+\clearpage
+\begin{center}
+\textbf{circuits-rewrite-speedup}\par\medskip
+\input{circuits-rewrite-speedup.tex}
+\end{center}
+Geometric mean of configuration medians; bars span their min--max, not confidence intervals. Missing cells break curves. Panels have independent axis limits. Local-layered seed labels repeat the same input. Random depth = 20 times qubits; layered depth = 2. Ratios above 1 favor the database. Rewrite excludes import/export.
+\clearpage
+\begin{center}
+\textbf{circuits-total}\par\medskip
+\input{circuits-total.tex}
+\end{center}
+Geometric mean of configuration medians; bars span their min--max, not confidence intervals. Missing cells break curves. Panels have independent axis limits. Local-layered seed labels repeat the same input. Random depth = 20 times qubits; layered depth = 2. Total includes in-memory import/export (PyZX: copying), not startup or disk I/O.
+\clearpage
+\begin{center}
+\textbf{circuits-total-speedup}\par\medskip
+\input{circuits-total-speedup.tex}
+\end{center}
+Geometric mean of configuration medians; bars span their min--max, not confidence intervals. Missing cells break curves. Panels have independent axis limits. Local-layered seed labels repeat the same input. Random depth = 20 times qubits; layered depth = 2. Ratios above 1 favor the database. Total includes in-memory import/export (PyZX: copying), not startup or disk I/O.
+\clearpage
+\end{document}

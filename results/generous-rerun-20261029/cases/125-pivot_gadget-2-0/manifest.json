@@ -1,0 +1,10 @@
+[
+  {
+    "rule": "pivot_gadget",
+    "spec": {
+      "family": "pivot_gadget",
+      "size": 2,
+      "seed": 0
+    }
+  }
+]

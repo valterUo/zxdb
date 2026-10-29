@@ -1,0 +1,293 @@
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=4 by 3,horizontal sep=1.5cm,vertical sep=2cm},
+width=.195\textwidth,height=.17\textwidth,
+xmode=log,ymode=log,log basis x=2,
+tick label style={font=\scriptsize},label style={font=\scriptsize},
+title style={font=\small},grid=major,grid style={black!10},
+axis lines=left,legend columns=-1,
+legend style={font=\scriptsize,draw=none,at={(0,1.5)},anchor=south west},
+unbounded coords=jump]
+\nextgroupplot[title={Pivot},xlabel={Input vertices},ylabel={Time (s)}]
+\addplot+[color=black,mark=*,solid,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(10,0.000119799999) += (0,-4.06575815e-20) -= (0,4.06575815e-20)
+(66,0.0010102) += (0,0) -= (0,0)
+(514,0.0406286) += (0,-6.9388939e-18) -= (0,6.9388939e-18)
+(2050,0.7954597) += (0,0) -= (0,0)
+(4098,3.4470902) += (0,4.4408921e-16) -= (0,-4.4408921e-16)
+};
+\addlegendentry{PyZX}
+\addplot+[color=blue!70!black,mark=square*,dashed,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(10,0.0086058) += (0,-3.46944695e-18) -= (0,3.46944695e-18)
+(66,0.0083821) += (0,1.73472348e-18) -= (0,-1.73472348e-18)
+(514,0.0368346) += (0,0) -= (0,0)
+(2050,0.3820869) += (0,0) -= (0,0)
+(4098,1.4591479) += (0,0) -= (0,0)
+};
+\addlegendentry{Cypher}
+\addplot+[color=orange!85!black,mark=triangle*,dashdotted,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(10,0.0039454) += (0,-1.73472348e-18) -= (0,1.73472348e-18)
+(66,0.006584) += (0,-8.67361738e-19) -= (0,8.67361738e-19)
+(514,0.0636494) += (0,-1.38777878e-17) -= (0,1.38777878e-17)
+(2050,0.823053) += (0,0) -= (0,0)
+(4098,3.3108042) += (0,4.4408921e-16) -= (0,-4.4408921e-16)
+};
+\addlegendentry{Cypher+C++}
+\nextgroupplot[title={Gadget pivot},xlabel={Input vertices},ylabel={Time (s)}]
+\addplot+[color=black,mark=*,solid,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(10,0.000136400002) += (0,0) -= (0,0)
+(66,0.0010519) += (0,-4.33680869e-19) -= (0,4.33680869e-19)
+(514,0.2099232) += (0,-2.77555756e-17) -= (0,2.77555756e-17)
+(2050,12.5644292) += (0,0) -= (0,0)
+(4098,116.198152) += (0,4.26325641e-14) -= (0,-4.26325641e-14)
+};
+\addplot+[color=blue!70!black,mark=square*,dashed,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(10,0.0059564) += (0,8.67361738e-19) -= (0,-8.67361738e-19)
+(66,0.0059407) += (0,-8.67361738e-19) -= (0,8.67361738e-19)
+(514,0.0329565) += (0,-6.9388939e-18) -= (0,6.9388939e-18)
+(2050,0.3779376) += (0,0) -= (0,0)
+(4098,1.5253559) += (0,0) -= (0,0)
+};
+\addplot+[color=orange!85!black,mark=triangle*,dashdotted,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(10,0.002983) += (0,0) -= (0,0)
+(66,0.0031251) += (0,-4.33680869e-19) -= (0,4.33680869e-19)
+(514,0.0336174) += (0,0) -= (0,0)
+(2050,0.4201165) += (0,0) -= (0,0)
+(4098,1.6201247) += (0,0) -= (0,0)
+};
+\nextgroupplot[title={Local complementation},xlabel={Input vertices},ylabel={Time (s)}]
+\addplot+[color=black,mark=*,solid,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(5,0.000112900001) += (0,1.35525272e-20) -= (0,-1.35525272e-20)
+(33,0.000288299998) += (0,0) -= (0,0)
+(257,0.0068899) += (0,-1.73472348e-18) -= (0,1.73472348e-18)
+(1025,0.1613805) += (0,2.77555756e-17) -= (0,-2.77555756e-17)
+(2049,0.6395899) += (0,0) -= (0,0)
+};
+\addplot+[color=blue!70!black,mark=square*,dashed,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(5,0.0050321) += (0,8.67361738e-19) -= (0,-8.67361738e-19)
+(33,0.005166) += (0,-8.67361738e-19) -= (0,8.67361738e-19)
+(257,0.0185669) += (0,-3.46944695e-18) -= (0,3.46944695e-18)
+(1025,0.1738235) += (0,0) -= (0,0)
+(2049,0.6566162) += (0,0) -= (0,0)
+};
+\addplot+[color=orange!85!black,mark=triangle*,dashdotted,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(5,0.0024918) += (0,-8.67361738e-19) -= (0,8.67361738e-19)
+(33,0.0028664) += (0,-8.67361738e-19) -= (0,8.67361738e-19)
+(257,0.0163743) += (0,-3.46944695e-18) -= (0,3.46944695e-18)
+(1025,0.1892904) += (0,-2.77555756e-17) -= (0,2.77555756e-17)
+(2049,0.7109047) += (0,0) -= (0,0)
+};
+\nextgroupplot[title={Phase-gadget fusion},xlabel={Input vertices},ylabel={Time (s)}]
+\addplot+[color=black,mark=*,solid,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(8,5.16e-05) += (0,-6.77626358e-21) -= (0,6.77626358e-21)
+(36,0.0001281) += (0,-2.71050543e-20) -= (0,2.71050543e-20)
+(260,0.000592799999) += (0,-2.16840434e-19) -= (0,2.16840434e-19)
+(1028,0.0023189) += (0,-8.67361738e-19) -= (0,8.67361738e-19)
+(2052,0.0046913) += (0,-1.73472348e-18) -= (0,1.73472348e-18)
+(8196,0.0178783) += (0,6.9388939e-18) -= (0,-6.9388939e-18)
+};
+\addplot+[color=blue!70!black,mark=square*,dashed,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(8,0.0079266) += (0,-1.73472348e-18) -= (0,1.73472348e-18)
+(36,0.0074326) += (0,2.60208521e-18) -= (0,-2.60208521e-18)
+(260,0.0096784) += (0,3.46944695e-18) -= (0,-3.46944695e-18)
+(1028,0.0171823) += (0,0) -= (0,0)
+(2052,0.0299877) += (0,-3.46944695e-18) -= (0,3.46944695e-18)
+(8196,0.1394335) += (0,0) -= (0,0)
+};
+\addplot+[color=orange!85!black,mark=triangle*,dashdotted,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(8,0.0074759) += (0,-2.60208521e-18) -= (0,2.60208521e-18)
+(36,0.0070024) += (0,-8.67361738e-19) -= (0,8.67361738e-19)
+(260,0.0092036) += (0,-1.73472348e-18) -= (0,1.73472348e-18)
+(1028,0.0174716) += (0,3.46944695e-18) -= (0,-3.46944695e-18)
+(2052,0.0281702) += (0,0) -= (0,0)
+(8196,0.1271089) += (0,0) -= (0,0)
+};
+\nextgroupplot[title={Spider fusion},xlabel={Input vertices},ylabel={Time (s)}]
+\addplot+[color=black,mark=*,solid,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(8,8.96999991e-05) += (0,-8.13151629e-20) -= (0,8.13151629e-20)
+(64,0.000554600003) += (0,-1.08420217e-19) -= (0,1.08420217e-19)
+(512,0.0119318) += (0,1.73472348e-18) -= (0,-1.73472348e-18)
+(2048,0.1553126) += (0,0) -= (0,0)
+(4096,0.6073677) += (0,0) -= (0,0)
+(16384,10.6021898) += (0,0) -= (0,0)
+};
+\addplot+[color=blue!70!black,mark=square*,dashed,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(8,0.0083459) += (0,1.73472348e-18) -= (0,-1.73472348e-18)
+(64,0.0091375) += (0,1.73472348e-18) -= (0,-1.73472348e-18)
+(512,0.0142161) += (0,-3.46944695e-18) -= (0,3.46944695e-18)
+(2048,0.0306634) += (0,6.9388939e-18) -= (0,-6.9388939e-18)
+(4096,0.0490375) += (0,-6.9388939e-18) -= (0,6.9388939e-18)
+(16384,0.1701829) += (0,0) -= (0,0)
+};
+\addplot+[color=orange!85!black,mark=triangle*,dashdotted,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(8,0.0081146) += (0,1.73472348e-18) -= (0,-1.73472348e-18)
+(64,0.0089903) += (0,0) -= (0,0)
+(512,0.0132541) += (0,0) -= (0,0)
+(2048,0.0303759) += (0,3.46944695e-18) -= (0,-3.46944695e-18)
+(4096,0.0596856) += (0,-1.38777878e-17) -= (0,1.38777878e-17)
+(16384,0.1723934) += (0,0) -= (0,0)
+};
+\nextgroupplot[title={Identity removal},xlabel={Input vertices},ylabel={Time (s)}]
+\addplot+[color=black,mark=*,solid,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(6,4.67999998e-05) += (0,-3.38813179e-20) -= (0,3.38813179e-20)
+(48,0.0002623) += (0,5.42101086e-20) -= (0,-5.42101086e-20)
+(384,0.0080104) += (0,-1.73472348e-18) -= (0,1.73472348e-18)
+(1536,0.1350786) += (0,2.77555756e-17) -= (0,-2.77555756e-17)
+(3072,0.4866701) += (0,0) -= (0,0)
+(12288,9.3225722) += (0,-1.77635684e-15) -= (0,1.77635684e-15)
+};
+\addplot+[color=blue!70!black,mark=square*,dashed,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(6,0.007265) += (0,8.67361738e-19) -= (0,-8.67361738e-19)
+(48,0.0064441) += (0,1.73472348e-18) -= (0,-1.73472348e-18)
+(384,0.008165) += (0,1.73472348e-18) -= (0,-1.73472348e-18)
+(1536,0.0173584) += (0,-6.9388939e-18) -= (0,6.9388939e-18)
+(3072,0.0233266) += (0,-3.46944695e-18) -= (0,3.46944695e-18)
+(12288,0.0835952) += (0,-1.38777878e-17) -= (0,1.38777878e-17)
+};
+\addplot+[color=orange!85!black,mark=triangle*,dashdotted,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(6,0.0067317) += (0,8.67361738e-19) -= (0,-8.67361738e-19)
+(48,0.0065784) += (0,8.67361738e-19) -= (0,-8.67361738e-19)
+(384,0.0086505) += (0,-1.73472348e-18) -= (0,1.73472348e-18)
+(1536,0.0186285) += (0,-3.46944695e-18) -= (0,3.46944695e-18)
+(3072,0.0279504) += (0,-3.46944695e-18) -= (0,3.46944695e-18)
+(12288,0.0978983) += (0,1.38777878e-17) -= (0,-1.38777878e-17)
+};
+\nextgroupplot[title={Bialgebra},xlabel={Input vertices},ylabel={Time (s)}]
+\addplot+[color=black,mark=*,solid,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(10,0.000189299997) += (0,-1.35525272e-19) -= (0,1.35525272e-19)
+(66,0.007055) += (0,-1.73472348e-18) -= (0,1.73472348e-18)
+(514,2.6997977) += (0,0) -= (0,0)
+};
+\addplot+[color=blue!70!black,mark=square*,dashed,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(10,0.0069492) += (0,0) -= (0,0)
+(66,0.0092712) += (0,1.73472348e-18) -= (0,-1.73472348e-18)
+(514,1.3429791) += (0,0) -= (0,0)
+};
+\addplot+[color=orange!85!black,mark=triangle*,dashdotted,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(10,0.0063317) += (0,1.73472348e-18) -= (0,-1.73472348e-18)
+(66,0.0101388) += (0,1.73472348e-18) -= (0,-1.73472348e-18)
+(514,1.3112629) += (0,0) -= (0,0)
+};
+\nextgroupplot[title={Boundary pivot},xlabel={Input vertices},ylabel={Time (s)}]
+\addplot+[color=black,mark=*,solid,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(11,0.0001199) += (0,0) -= (0,0)
+(67,0.000768400001) += (0,-2.16840434e-19) -= (0,2.16840434e-19)
+(515,0.0142444) += (0,-3.46944695e-18) -= (0,3.46944695e-18)
+(2051,0.4610774) += (0,0) -= (0,0)
+(4099,1.9900828) += (0,0) -= (0,0)
+};
+\addplot+[color=blue!70!black,mark=square*,dashed,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(11,0.005969) += (0,-2.60208521e-18) -= (0,2.60208521e-18)
+(67,0.0065297) += (0,-1.73472348e-18) -= (0,1.73472348e-18)
+(515,0.0331991) += (0,-6.9388939e-18) -= (0,6.9388939e-18)
+(2051,0.4044819) += (0,0) -= (0,0)
+(4099,1.530546) += (0,0) -= (0,0)
+};
+\addplot+[color=orange!85!black,mark=triangle*,dashdotted,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(11,0.0026866) += (0,0) -= (0,0)
+(67,0.003931) += (0,8.67361738e-19) -= (0,-8.67361738e-19)
+(515,0.0326352) += (0,6.9388939e-18) -= (0,-6.9388939e-18)
+(2051,0.4426575) += (0,0) -= (0,0)
+(4099,1.5879247) += (0,0) -= (0,0)
+};
+\nextgroupplot[title={Hadamard cancellation},xlabel={Input vertices},ylabel={Time (s)}]
+\addplot+[color=black,mark=*,solid,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(6,7.79000002e-05) += (0,0) -= (0,0)
+(48,0.000261999998) += (0,-2.16840434e-19) -= (0,2.16840434e-19)
+(384,0.0085149) += (0,3.46944695e-18) -= (0,-3.46944695e-18)
+(1536,0.1252216) += (0,-2.77555756e-17) -= (0,2.77555756e-17)
+(3072,0.4580563) += (0,0) -= (0,0)
+(12288,7.8473078) += (0,-1.77635684e-15) -= (0,1.77635684e-15)
+};
+\addplot+[color=blue!70!black,mark=square*,dashed,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(6,0.0134115) += (0,1.73472348e-18) -= (0,-1.73472348e-18)
+(48,0.0530501) += (0,0) -= (0,0)
+(384,0.599007) += (0,0) -= (0,0)
+(1536,4.6019953) += (0,0) -= (0,0)
+(3072,15.4204163) += (0,1.77635684e-15) -= (0,-1.77635684e-15)
+(12288,208.651336) += (0,0) -= (0,0)
+};
+\addplot+[color=orange!85!black,mark=triangle*,dashdotted,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(6,0.0129044) += (0,0) -= (0,0)
+(48,0.0528197) += (0,0) -= (0,0)
+(384,0.5784182) += (0,0) -= (0,0)
+(1536,4.5331628) += (0,0) -= (0,0)
+(3072,15.2592695) += (0,-1.77635684e-15) -= (0,1.77635684e-15)
+(12288,209.736774) += (0,2.84217094e-14) -= (0,-2.84217094e-14)
+};
+\nextgroupplot[title={Copy},xlabel={Input vertices},ylabel={Time (s)}]
+\addplot+[color=black,mark=*,solid,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(4,6.63999999e-05) += (0,4.06575815e-20) -= (0,-4.06575815e-20)
+(18,0.000169600004) += (0,-1.35525272e-19) -= (0,1.35525272e-19)
+(130,0.000929000002) += (0,-4.33680869e-19) -= (0,4.33680869e-19)
+(514,0.003696) += (0,4.33680869e-19) -= (0,-4.33680869e-19)
+(1026,0.0126088) += (0,5.20417043e-18) -= (0,-5.20417043e-18)
+(4098,0.0298717) += (0,-3.46944695e-18) -= (0,3.46944695e-18)
+};
+\addplot+[color=blue!70!black,mark=square*,dashed,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(4,0.0047557) += (0,1.73472348e-18) -= (0,-1.73472348e-18)
+(18,0.0046216) += (0,8.67361738e-19) -= (0,-8.67361738e-19)
+(130,0.0055995) += (0,-8.67361738e-19) -= (0,8.67361738e-19)
+(514,0.0092208) += (0,-1.73472348e-18) -= (0,1.73472348e-18)
+(1026,0.0155001) += (0,6.9388939e-18) -= (0,-6.9388939e-18)
+(4098,0.0395137) += (0,-6.9388939e-18) -= (0,6.9388939e-18)
+};
+\addplot+[color=orange!85!black,mark=triangle*,dashdotted,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(4,0.0045337) += (0,1.73472348e-18) -= (0,-1.73472348e-18)
+(18,0.0041262) += (0,0) -= (0,0)
+(130,0.0050636) += (0,8.67361738e-19) -= (0,-8.67361738e-19)
+(514,0.011066) += (0,1.73472348e-18) -= (0,-1.73472348e-18)
+(1026,0.0127845) += (0,5.20417043e-18) -= (0,-5.20417043e-18)
+(4098,0.0428821) += (0,6.9388939e-18) -= (0,-6.9388939e-18)
+};
+\nextgroupplot[title={Supplementarity},xlabel={Input vertices},ylabel={Time (s)}]
+\addplot+[color=black,mark=*,solid,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(4,8.15999992e-05) += (0,0) -= (0,0)
+(18,0.000142000001) += (0,1.08420217e-19) -= (0,-1.08420217e-19)
+(130,0.000957599997) += (0,-2.16840434e-19) -= (0,2.16840434e-19)
+(514,0.0064929) += (0,8.67361738e-19) -= (0,-8.67361738e-19)
+(1026,0.0183813) += (0,-3.46944695e-18) -= (0,3.46944695e-18)
+(4098,0.3201257) += (0,-5.55111512e-17) -= (0,5.55111512e-17)
+};
+\addplot+[color=blue!70!black,mark=square*,dashed,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(4,0.0104223) += (0,3.46944695e-18) -= (0,-3.46944695e-18)
+(18,0.0099009) += (0,-3.46944695e-18) -= (0,3.46944695e-18)
+(130,0.0272263) += (0,-3.46944695e-18) -= (0,3.46944695e-18)
+(514,0.2641492) += (0,0) -= (0,0)
+(1026,0.9938985) += (0,0) -= (0,0)
+(4098,15.7125656) += (0,0) -= (0,0)
+};
+\addplot+[color=orange!85!black,mark=triangle*,dashdotted,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(4,0.0028037) += (0,-8.67361738e-19) -= (0,8.67361738e-19)
+(18,0.0029056) += (0,8.67361738e-19) -= (0,-8.67361738e-19)
+(130,0.0196713) += (0,0) -= (0,0)
+(514,0.2117789) += (0,2.77555756e-17) -= (0,-2.77555756e-17)
+(1026,0.8218241) += (0,0) -= (0,0)
+(4098,14.529659) += (0,0) -= (0,0)
+};
+\nextgroupplot[title={Identity chain},xlabel={Input vertices},ylabel={Time (s)}]
+\addplot+[color=black,mark=*,solid,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(4,4.50000007e-05) += (0,2.71050543e-20) -= (0,-2.71050543e-20)
+(18,0.0001648) += (0,1.08420217e-19) -= (0,-1.08420217e-19)
+(130,0.001957) += (0,0) -= (0,0)
+(514,0.0171641) += (0,3.46944695e-18) -= (0,-3.46944695e-18)
+(2050,0.2551518) += (0,0) -= (0,0)
+(4098,1.3667002) += (0,0) -= (0,0)
+};
+\addplot+[color=blue!70!black,mark=square*,dashed,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(4,0.0108528) += (0,-3.46944695e-18) -= (0,3.46944695e-18)
+(18,0.0197675) += (0,-3.46944695e-18) -= (0,3.46944695e-18)
+(130,0.0288026) += (0,0) -= (0,0)
+(514,0.0365679) += (0,6.9388939e-18) -= (0,-6.9388939e-18)
+(2050,0.0731155) += (0,-1.38777878e-17) -= (0,1.38777878e-17)
+(4098,0.1764584) += (0,0) -= (0,0)
+};
+\addplot+[color=orange!85!black,mark=triangle*,dashdotted,line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {
+(4,0.0090245) += (0,-3.46944695e-18) -= (0,3.46944695e-18)
+(18,0.019773) += (0,-3.46944695e-18) -= (0,3.46944695e-18)
+(130,0.027504) += (0,-3.46944695e-18) -= (0,3.46944695e-18)
+(514,0.0367108) += (0,6.9388939e-18) -= (0,-6.9388939e-18)
+(2050,0.0798238) += (0,0) -= (0,0)
+(4098,0.1759652) += (0,0) -= (0,0)
+};
+\end{groupplot}
+\end{tikzpicture}

@@ -1,0 +1,101 @@
+{
+  "settings": [
+    {
+      "setting_name": "aws.access_key",
+      "setting_value": ""
+    },
+    {
+      "setting_name": "aws.endpoint_url",
+      "setting_value": ""
+    },
+    {
+      "setting_name": "aws.region",
+      "setting_value": ""
+    },
+    {
+      "setting_name": "aws.secret_key",
+      "setting_value": ""
+    },
+    {
+      "setting_name": "cartesian-product-enabled",
+      "setting_value": "true"
+    },
+    {
+      "setting_name": "debug-query-plans",
+      "setting_value": "false"
+    },
+    {
+      "setting_name": "enterprise.license",
+      "setting_value": ""
+    },
+    {
+      "setting_name": "file.download_conn_timeout_sec",
+      "setting_value": "10"
+    },
+    {
+      "setting_name": "hops_limit_partial_results",
+      "setting_value": "true"
+    },
+    {
+      "setting_name": "log.failed_queries",
+      "setting_value": "false"
+    },
+    {
+      "setting_name": "log.level",
+      "setting_value": "WARNING"
+    },
+    {
+      "setting_name": "log.min_duration_ms",
+      "setting_value": "-1"
+    },
+    {
+      "setting_name": "log.query_plan",
+      "setting_value": "true"
+    },
+    {
+      "setting_name": "log.to_stderr",
+      "setting_value": "false"
+    },
+    {
+      "setting_name": "organization.name",
+      "setting_value": ""
+    },
+    {
+      "setting_name": "query.timeout",
+      "setting_value": "7200"
+    },
+    {
+      "setting_name": "server.name",
+      "setting_value": "Neo4j/v5.11.0 compatible graph database server - Memgraph"
+    },
+    {
+      "setting_name": "storage-gc-aggressive",
+      "setting_value": "false"
+    },
+    {
+      "setting_name": "storage.access_timeout_sec",
+      "setting_value": "1"
+    },
+    {
+      "setting_name": "storage.omit_vector_index_properties_on_return",
+      "setting_value": "false"
+    },
+    {
+      "setting_name": "storage.snapshot.interval",
+      "setting_value": "300"
+    },
+    {
+      "setting_name": "timezone",
+      "setting_value": "UTC"
+    }
+  ],
+  "procedures": [
+    "zxqmcpp.boundary",
+    "zxqmcpp.gadget",
+    "zxqmcpp.lcomp",
+    "zxqmcpp.pauli_boundary",
+    "zxqmcpp.pivot",
+    "zxqmcpp.pivot_gadget_fixpoint",
+    "zxqmcpp.supplementarity"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "created": "2026-10-29T15:38:15.631423+00:00",
+  "seconds": 1800,
+  "pid": 33952,
+  "scope": "Any engine warmup in remaining cases",
+  "action": "Interrupt the entire case; preserve partial observations; continue subsequent cases",
+  "timing": "Observed warmup wall time, including any verification before the completion log event",
+  "measured_repetition_limits_unchanged": true
+}

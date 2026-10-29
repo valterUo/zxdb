@@ -1,0 +1,10 @@
+[
+  {
+    "rule": "hadamard_cancel",
+    "spec": {
+      "family": "copies_hadamard_cancel",
+      "size": 4096,
+      "seed": 0
+    }
+  }
+]

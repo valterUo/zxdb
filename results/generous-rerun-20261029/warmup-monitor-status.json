@@ -1,0 +1,9 @@
+{
+  "pid": 33952,
+  "updated": "2026-10-29T18:18:12.669358+00:00",
+  "current_index": 210,
+  "monitoring_warmup": false,
+  "status": "stopped",
+  "stopped_at": "2026-10-29T21:23:20.204949+00:00",
+  "monitoring_engine_run": false
+}

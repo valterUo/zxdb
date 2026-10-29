@@ -1,0 +1,14 @@
+{
+  "pyzx": {
+    "inconclusive": 66,
+    "verified": 3
+  },
+  "cypher": {
+    "inconclusive": 66,
+    "verified": 3
+  },
+  "hybrid": {
+    "inconclusive": 66,
+    "verified": 3
+  }
+}

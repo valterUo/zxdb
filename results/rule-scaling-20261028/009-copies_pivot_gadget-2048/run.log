@@ -1,0 +1,17 @@
+WORKLOAD 1/1 {'family': 'copies_pivot_gadget', 'size': 2048, 'seed': 0}
+{"case": "20e9ea49525b0e2d", "engine": "pyzx", "repetition": 0, "status": "inconclusive", "rewrite_s": 5.766785999992862}
+{"case": "20e9ea49525b0e2d", "engine": "hybrid", "repetition": 0, "status": "inconclusive", "rewrite_s": 0.18537320001632906}
+{"case": "20e9ea49525b0e2d", "engine": "cypher", "repetition": 0, "status": "inconclusive", "rewrite_s": 6.353847199992742}
+{"case": "20e9ea49525b0e2d", "engine": "comparison_complete", "repetition": 0, "status": "recorded"}
+{"case": "20e9ea49525b0e2d", "engine": "cypher", "repetition": 1, "status": "inconclusive", "rewrite_s": 6.814443500014022}
+{"case": "20e9ea49525b0e2d", "engine": "hybrid", "repetition": 1, "status": "inconclusive", "rewrite_s": 0.2152487999992445}
+{"case": "20e9ea49525b0e2d", "engine": "pyzx", "repetition": 1, "status": "inconclusive", "rewrite_s": 4.070407699997304}
+{"case": "20e9ea49525b0e2d", "engine": "comparison_complete", "repetition": 1, "status": "recorded"}
+{"case": "20e9ea49525b0e2d", "engine": "cypher", "repetition": 2, "status": "inconclusive", "rewrite_s": 4.989492299995618}
+{"case": "20e9ea49525b0e2d", "engine": "hybrid", "repetition": 2, "status": "inconclusive", "rewrite_s": 0.23090659998706542}
+{"case": "20e9ea49525b0e2d", "engine": "pyzx", "repetition": 2, "status": "inconclusive", "rewrite_s": 4.003291600005468}
+{"case": "20e9ea49525b0e2d", "engine": "comparison_complete", "repetition": 2, "status": "recorded"}
+{"case": "20e9ea49525b0e2d", "engine": "cypher", "repetition": 3, "status": "inconclusive", "rewrite_s": 6.660227399988798}
+{"case": "20e9ea49525b0e2d", "engine": "hybrid", "repetition": 3, "status": "inconclusive", "rewrite_s": 0.2290657999983523}
+{"case": "20e9ea49525b0e2d", "engine": "pyzx", "repetition": 3, "status": "inconclusive", "rewrite_s": 4.197780599992257}
+{"case": "20e9ea49525b0e2d", "engine": "comparison_complete", "repetition": 3, "status": "recorded"}

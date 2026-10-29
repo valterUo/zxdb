@@ -1,0 +1,5 @@
+WORKLOAD 1/1 {'family': 'copies_hadamard_cancel', 'size': 2048, 'seed': 0}
+{"case": "2d30a97c6bbacff1", "engine": "pyzx", "repetition": 0, "status": "inconclusive", "rewrite_s": 8.840457099984633}
+{"case": "2d30a97c6bbacff1", "engine": "hybrid", "repetition": 0, "status": "inconclusive", "rewrite_s": 222.60883310000645}
+{"case": "2d30a97c6bbacff1", "engine": "cypher", "repetition": 0, "status": "inconclusive", "rewrite_s": 220.14676219999092}
+{"case": "2d30a97c6bbacff1", "engine": "comparison_complete", "repetition": 0, "status": "recorded"}

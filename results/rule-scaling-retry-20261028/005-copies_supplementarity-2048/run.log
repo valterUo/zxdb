@@ -1,0 +1,7 @@
+WORKLOAD 1/1 {'family': 'copies_supplementarity', 'size': 2048, 'seed': 0}
+ENGINE pyzx repetition=0 starting
+ENGINE pyzx repetition=0 inconclusive
+ENGINE hybrid repetition=0 starting
+ENGINE hybrid repetition=0 inconclusive
+ENGINE cypher repetition=0 starting
+[#F696]  _: <CONNECTION> error: Failed to read from defunct connection IPv4Address(('127.0.0.1', 7691)) (ResolvedIPv4Address(('127.0.0.1', 7691))): ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)
