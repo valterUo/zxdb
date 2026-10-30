@@ -1,0 +1,42 @@
+\resizebox{\columnwidth}{!}{
+\begin{tikzpicture}
+  \begin{axis}[
+    width=10cm, height=6cm,
+    xlabel={Qubits}, ylabel={PyZX / database},
+    xmode=log, ymode=log, log basis x=2,
+    grid=major,
+    grid style={line width=.1pt, draw=gray!30},
+    major grid style={line width=.2pt, draw=gray!60},
+    label style={font=\large}, tick label style={font=\large},
+    legend style={at={(0.02,0.98)}, anchor=north west,
+      font=\normalsize, inner sep=4pt, row sep=2pt, cells={anchor=west}},
+    legend image post style={mark size=3pt},
+    every axis plot/.append style={line width=1.2pt, mark size=3pt,
+      mark options={line width=0.8pt}},
+    unbounded coords=jump,
+    xtick={3,8,16,32,64,128}, xticklabels={3,8,16,32,64,128},
+  ]
+    \addplot+[mark=square*, color=red, solid,error bars/.cd,y dir=both,y explicit] coordinates {
+      (3,0.0253761738) += (0,0.00788277953) -= (0,0.00773152876)
+      (8,0.0887150999) += (0,0.0103293764) -= (0,0.0101498552)
+      (16,0.179026967) += (0,0.0114494915) -= (0,0.0125752413)
+      (32,0.275640913) += (0,0.0261398511) -= (0,0.0369260134)
+      (64,0.663423949) += (0,0.0244194891) -= (0,0.039925359)
+      (128,1.5203545) += (0,0.155724705) -= (0,0.146623847)
+    };
+    \addlegendentry{Cypher}
+
+    \addplot+[mark=triangle*, color=green!60!black, solid,error bars/.cd,y dir=both,y explicit] coordinates {
+      (3,0.0322348987) += (0,0.0099281779) -= (0,0.00608075871)
+      (8,0.11184257) += (0,0.0083965322) -= (0,0.0121285153)
+      (16,0.231922137) += (0,0.032591541) -= (0,0.0205038143)
+      (32,0.321429482) += (0,0.0457671787) -= (0,0.0466343165)
+      (64,0.753822412) += (0,0.0196566047) -= (0,0.0200654436)
+      (128,1.58834411) += (0,0.209304237) -= (0,0.159805356)
+    };
+    \addlegendentry{Cypher+C++}
+
+    \addplot[gray,densely dotted,no marks,forget plot] coordinates {(3,1) (128,1)};
+  \end{axis}
+\end{tikzpicture}
+}

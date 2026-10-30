@@ -12,9 +12,9 @@ from statistics import geometric_mean
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT = ROOT / 'results/generous-rerun-20261029/finalized/timings.csv'
 ENGINES = {
-    'pyzx': ('PyZX', 'black', '*', 'solid'),
-    'cypher': ('Cypher', 'blue!70!black', 'square*', 'dashed'),
-    'hybrid': ('Cypher+C++', 'orange!85!black', 'triangle*', 'dashdotted'),
+    'pyzx': ('PyZX', 'blue', '*', 'solid'),
+    'cypher': ('Cypher', 'red', 'square*', 'solid'),
+    'hybrid': ('Cypher+C++', 'green!60!black', 'triangle*', 'solid'),
 }
 NAMES = {
     'pivot': 'Pivot', 'pivot_gadget': 'Gadget pivot',
@@ -118,61 +118,64 @@ def enrich_and_check(rows, observations_path):
                     raise ValueError('Published median differs from raw measurements')
 
 
-def figure(rows, families, scope, kind, speedup=False):
-    columns = 3 if kind == 'circuits' else 4
-    width, height = ('.27', '.22') if columns == 3 else ('.195', '.17')
-    ylabel = 'PyZX / database' if speedup else 'Time (s)'
-    lines = [r'\begin{tikzpicture}',
-             r'\begin{groupplot}[group style={group size=' +
-             f'{columns} by {math.ceil(len(families)/columns)},' +
-             r'horizontal sep=1.5cm,vertical sep=2cm},',
-             f'width={width}\\textwidth,height={height}\\textwidth,',
-             r'xmode=log,ymode=log,log basis x=2,',
-             r'tick label style={font=\scriptsize},label style={font=\scriptsize},',
-             r'title style={font=\small},grid=major,grid style={black!10},',
-             r'axis lines=left,legend columns=-1,',
-             r'legend style={font=\scriptsize,draw=none,at={(0,1.5)},anchor=south west},',
-             r'unbounded coords=jump]']
-    engines = list(ENGINES)[1:] if speedup else list(ENGINES)
-    for index, family in enumerate(families):
-        selected = [r for r in rows if r['family'] == family]
-        grouped = defaultdict(list)
-        for row in selected:
+def figure(rows, family, scope, kind, speedup=False):
+    """Return one column-width TikZ snippet for one workload and timing scope."""
+    grouped = defaultdict(list)
+    for row in rows:
+        if row['family'] == family:
             grouped[int(row['size'])].append(row)
-        xlabel = {'circuits': 'Qubits', 'copies': 'Disjoint copies',
-                  'rules': 'Input vertices'}[kind]
-        title = NAMES[family.removeprefix('copies_')]
-        ticks = ''
-        if kind == 'circuits':
-            tick_values = ','.join(str(size) for size in sorted(grouped))
-            ticks = f',xtick={{{tick_values}}},xticklabels={{{tick_values}}}'
-        lines.append(f'\\nextgroupplot[title={{{title}}},xlabel={{{xlabel}}},ylabel={{{ylabel}}}{ticks}]')
-        xs = []
-        for engine in engines:
-            label, color, marker, style = ENGINES[engine]
-            coordinates = []
-            for size, group in sorted(grouped.items()):
-                # Rule panels use actual graph size, not a synthetic "qubit" label.
-                x = int(group[0]['vertices']) if kind == 'rules' else size
-                if kind == 'rules' and len({r['vertices'] for r in group}) != 1:
-                    raise ValueError(f'Inconsistent vertex counts: {family}, {size}')
-                xs.append(x)
-                summary = summarize(group, engine, scope, speedup)
-                if summary is None:
-                    coordinates.append(f'({x},nan)')
-                    print(f'Omitted incomplete/invalid cell: {family}, {size}, {engine}, {scope}')
-                else:
-                    center, low, high = summary
-                    coordinates.append(f'({x},{center:.9g}) += (0,{high-center:.9g}) -= (0,{center-low:.9g})')
-            lines.append(r'\addplot+[' + f'color={color},mark={marker},{style},' +
-                         r'line width=.7pt,mark size=1.5pt,error bars/.cd,y dir=both,y explicit] coordinates {' +
-                         '\n' + '\n'.join(coordinates) + '\n};')
-            if index == 0:
-                lines.append(f'\\addlegendentry{{{label}}}')
-        if speedup:
-            lines.append(r'\addplot[gray,densely dotted,no marks,forget plot] coordinates {' +
-                         f'({min(xs)},1) ({max(xs)},1)' + '};')
-    return '\n'.join(lines + [r'\end{groupplot}', r'\end{tikzpicture}', ''])
+    if not grouped:
+        raise ValueError(f'No data for {family}')
+    xlabel = {'circuits': 'Qubits', 'copies': 'Disjoint copies',
+              'rules': 'Input vertices'}[kind]
+    ylabel = 'PyZX / database' if speedup else 'Time (s)'
+    lines = [r'\resizebox{\columnwidth}{!}{', r'\begin{tikzpicture}',
+             r'  \begin{axis}[',
+             r'    width=10cm, height=6cm,',
+             f'    xlabel={{{xlabel}}}, ylabel={{{ylabel}}},',
+             r'    xmode=log, ymode=log, log basis x=2,',
+             r'    grid=major,',
+             r'    grid style={line width=.1pt, draw=gray!30},',
+             r'    major grid style={line width=.2pt, draw=gray!60},',
+             r'    label style={font=\large}, tick label style={font=\large},',
+             r'    legend style={at={(0.02,0.98)}, anchor=north west,',
+             r'      font=\normalsize, inner sep=4pt, row sep=2pt, cells={anchor=west}},',
+             r'    legend image post style={mark size=3pt},',
+             r'    every axis plot/.append style={line width=1.2pt, mark size=3pt,',
+             r'      mark options={line width=0.8pt}},',
+             r'    unbounded coords=jump,']
+    if kind == 'circuits':
+        ticks = ','.join(str(size) for size in sorted(grouped))
+        lines.append(f'    xtick={{{ticks}}}, xticklabels={{{ticks}}},')
+    lines.append('  ]')
+    engines = list(ENGINES)[1:] if speedup else list(ENGINES)
+    xs = []
+    for engine in engines:
+        label, color, marker, style = ENGINES[engine]
+        coordinates = []
+        for size, group in sorted(grouped.items()):
+            x = int(group[0]['vertices']) if kind == 'rules' else size
+            if kind == 'rules' and len({r['vertices'] for r in group}) != 1:
+                raise ValueError(f'Inconsistent vertex counts: {family}, {size}')
+            xs.append(x)
+            summary = summarize(group, engine, scope, speedup)
+            if summary is None:
+                coordinates.append(f'      ({x},nan)')
+                print(f'Omitted incomplete/invalid cell: {family}, {size}, {engine}, {scope}')
+            else:
+                center, low, high = summary
+                coordinate = f'      ({x},{center:.9g})'
+                if low != high:
+                    coordinate += f' += (0,{high-center:.9g}) -= (0,{center-low:.9g})'
+                coordinates.append(coordinate)
+        lines.append(r'    \addplot+[' + f'mark={marker}, color={color}, {style},' +
+                     r'error bars/.cd,y dir=both,y explicit] coordinates {')
+        lines.extend(coordinates)
+        lines.extend(['    };', f'    \\addlegendentry{{{label}}}', ''])
+    if speedup:
+        lines.append(r'    \addplot[gray,densely dotted,no marks,forget plot] coordinates {' +
+                     f'({min(xs)},1) ({max(xs)},1)' + '};')
+    return '\n'.join(lines + [r'  \end{axis}', r'\end{tikzpicture}', '}', ''])
 
 
 def main():
@@ -220,45 +223,31 @@ def main():
                     selection='Contiguous complete size groups, paired across all three engines and all planned seeds; no extrapolation',
                     semantics='Timing completeness is not a semantic certificate; large-output checks remain inconclusive',
                     endpoints={f:max(int(r['size']) for r in rows if r['family']==f) for f in sorted(present)})
-    (output/'plot-manifest.json').write_text(json.dumps(manifest, indent=2)+'\n')
-    document = [r'\documentclass{article}', r'\usepackage[a4paper,margin=1cm]{geometry}',
-                r'\usepackage{pgfplots}', r'\usepgfplotslibrary{groupplots}',
-                r'\pgfplotsset{compat=1.18}', r'\pagestyle{empty}', r'\begin{document}']
+    figures_dir = output / 'figures'
+    figures_dir.mkdir(exist_ok=True)
+    document = [r'\documentclass{article}',
+                r'\usepackage[a4paper,margin=2cm]{geometry}',
+                r'\usepackage{graphicx}', r'\usepackage{pgfplots}',
+                r'\pgfplotsset{compat=1.18}', r'\pagestyle{empty}',
+                r'\begin{document}']
+    figure_names = []
     for kind, families in groups.items():
-        if not families:
-            continue
-        for scope in ('rewrite', 'total'):
-            for speedup in ((False, True) if kind == 'circuits' else (False,)):
-                name = f'{kind}-{scope}' + ('-speedup' if speedup else '')
-                path = output / (name + '.tex')
-                path.write_text(figure(rows, families, scope, kind, speedup), encoding='utf-8')
-                standalone = [r'\documentclass{article}',
-                              r'\usepackage[a4paper,margin=1cm]{geometry}',
-                              r'\usepackage{pgfplots}', r'\usepgfplotslibrary{groupplots}',
-                              r'\pgfplotsset{compat=1.18}',
-                              r'\usepackage[active,tightpage]{preview}',
-                              r'\PreviewEnvironment{tikzpicture}', r'\setlength\PreviewBorder{5pt}',
-                              r'\begin{document}', f'\\input{{{name}.tex}}', r'\end{document}', '']
-                (output/(name+'-standalone.tex')).write_text('\n'.join(standalone), encoding='utf-8')
-                print(path)
-                caption = ('Geometric mean of configuration medians; bars span their min--max, '
-                           'not confidence intervals or repetition ranges. '
-                           'Curves end at the last contiguous complete three-engine size group; '
-                           'all planned seeds must complete. No extrapolation. '
-                           'Panels have independent axis limits. ')
-                if kind == 'circuits':
-                    caption += ('Local-layered seed labels repeat the same input. '
-                                'Random depth = 20 times qubits; layered depth = 2. ')
-                caption += ('Ratios above 1 favor the database. ' if speedup else '')
-                caption += ('Rewrite excludes import/export.' if scope == 'rewrite' else
-                            'Total includes in-memory import/export (PyZX: copying), not startup or disk I/O.')
-                caption += (' Three measured repetitions per configuration. '
-                            'Large-output semantic checks remain inconclusive; these are completed timing comparisons, '
-                            'not correctness certificates. Runtime cutoffs changed during the campaign.')
-                document += [r'\begin{center}', f'\\textbf{{{name}}}\\par\\medskip',
-                             f'\\input{{{name}.tex}}', r'\end{center}', caption, r'\clearpage']
+        for family in families:
+            for scope in ('rewrite', 'total'):
+                for speedup in ((False, True) if kind == 'circuits' else (False,)):
+                    name = f'{kind}-{family.removeprefix("copies_").replace("_", "-")}-{scope}'
+                    if speedup:
+                        name += '-speedup'
+                    path = figures_dir / (name + '.tex')
+                    path.write_text(figure(rows, family, scope, kind, speedup), encoding='utf-8')
+                    figure_names.append(f'figures/{name}.tex')
+                    title = NAMES[family.removeprefix('copies_')]
+                    document += [r'\begin{center}', f'\\textbf{{{title}}}\\par\\medskip',
+                                 f'\\input{{figures/{name}.tex}}', r'\end{center}', r'\clearpage']
     document += [r'\end{document}', '']
     (output / 'main.tex').write_text('\n'.join(document), encoding='utf-8')
+    manifest['figures'] = figure_names
+    (output / 'plot-manifest.json').write_text(json.dumps(manifest, indent=2)+'\n', encoding='utf-8')
     print(f'{len(rows)} configurations; compile {output / "main.tex"}')
 
 

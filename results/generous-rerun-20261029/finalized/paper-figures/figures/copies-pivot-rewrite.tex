@@ -1,0 +1,47 @@
+\resizebox{\columnwidth}{!}{
+\begin{tikzpicture}
+  \begin{axis}[
+    width=10cm, height=6cm,
+    xlabel={Disjoint copies}, ylabel={Time (s)},
+    xmode=log, ymode=log, log basis x=2,
+    grid=major,
+    grid style={line width=.1pt, draw=gray!30},
+    major grid style={line width=.2pt, draw=gray!60},
+    label style={font=\large}, tick label style={font=\large},
+    legend style={at={(0.02,0.98)}, anchor=north west,
+      font=\normalsize, inner sep=4pt, row sep=2pt, cells={anchor=west}},
+    legend image post style={mark size=3pt},
+    every axis plot/.append style={line width=1.2pt, mark size=3pt,
+      mark options={line width=0.8pt}},
+    unbounded coords=jump,
+  ]
+    \addplot+[mark=*, color=blue, solid,error bars/.cd,y dir=both,y explicit] coordinates {
+      (2,0.0001687)
+      (32,0.0032878)
+      (512,0.392554)
+      (2048,5.7489687)
+      (4096,23.3311481)
+    };
+    \addlegendentry{PyZX}
+
+    \addplot+[mark=square*, color=red, solid,error bars/.cd,y dir=both,y explicit] coordinates {
+      (2,0.0095412)
+      (32,0.0118416)
+      (512,0.1939685)
+      (2048,4.3075105)
+      (4096,30.0879362)
+    };
+    \addlegendentry{Cypher}
+
+    \addplot+[mark=triangle*, color=green!60!black, solid,error bars/.cd,y dir=both,y explicit] coordinates {
+      (2,0.003967)
+      (32,0.0067457)
+      (512,0.0550374)
+      (2048,0.2057573)
+      (4096,0.4075494)
+    };
+    \addlegendentry{Cypher+C++}
+
+  \end{axis}
+\end{tikzpicture}
+}

@@ -1,56 +1,338 @@
 \documentclass{article}
-\usepackage[a4paper,margin=1cm]{geometry}
+\usepackage[a4paper,margin=2cm]{geometry}
+\usepackage{graphicx}
 \usepackage{pgfplots}
-\usepgfplotslibrary{groupplots}
 \pgfplotsset{compat=1.18}
 \pagestyle{empty}
 \begin{document}
 \begin{center}
-\textbf{rules-rewrite}\par\medskip
-\input{rules-rewrite.tex}
+\textbf{Pivot}\par\medskip
+\input{figures/rules-pivot-rewrite.tex}
 \end{center}
-Geometric mean of configuration medians; bars span their min--max, not confidence intervals or repetition ranges. Curves end at the last contiguous complete three-engine size group; all planned seeds must complete. No extrapolation. Panels have independent axis limits. Rewrite excludes import/export. Three measured repetitions per configuration. Large-output semantic checks remain inconclusive; these are completed timing comparisons, not correctness certificates. Runtime cutoffs changed during the campaign.
 \clearpage
 \begin{center}
-\textbf{rules-total}\par\medskip
-\input{rules-total.tex}
+\textbf{Pivot}\par\medskip
+\input{figures/rules-pivot-total.tex}
 \end{center}
-Geometric mean of configuration medians; bars span their min--max, not confidence intervals or repetition ranges. Curves end at the last contiguous complete three-engine size group; all planned seeds must complete. No extrapolation. Panels have independent axis limits. Total includes in-memory import/export (PyZX: copying), not startup or disk I/O. Three measured repetitions per configuration. Large-output semantic checks remain inconclusive; these are completed timing comparisons, not correctness certificates. Runtime cutoffs changed during the campaign.
 \clearpage
 \begin{center}
-\textbf{copies-rewrite}\par\medskip
-\input{copies-rewrite.tex}
+\textbf{Gadget pivot}\par\medskip
+\input{figures/rules-pivot-gadget-rewrite.tex}
 \end{center}
-Geometric mean of configuration medians; bars span their min--max, not confidence intervals or repetition ranges. Curves end at the last contiguous complete three-engine size group; all planned seeds must complete. No extrapolation. Panels have independent axis limits. Rewrite excludes import/export. Three measured repetitions per configuration. Large-output semantic checks remain inconclusive; these are completed timing comparisons, not correctness certificates. Runtime cutoffs changed during the campaign.
 \clearpage
 \begin{center}
-\textbf{copies-total}\par\medskip
-\input{copies-total.tex}
+\textbf{Gadget pivot}\par\medskip
+\input{figures/rules-pivot-gadget-total.tex}
 \end{center}
-Geometric mean of configuration medians; bars span their min--max, not confidence intervals or repetition ranges. Curves end at the last contiguous complete three-engine size group; all planned seeds must complete. No extrapolation. Panels have independent axis limits. Total includes in-memory import/export (PyZX: copying), not startup or disk I/O. Three measured repetitions per configuration. Large-output semantic checks remain inconclusive; these are completed timing comparisons, not correctness certificates. Runtime cutoffs changed during the campaign.
 \clearpage
 \begin{center}
-\textbf{circuits-rewrite}\par\medskip
-\input{circuits-rewrite.tex}
+\textbf{Local complementation}\par\medskip
+\input{figures/rules-lcomp-rewrite.tex}
 \end{center}
-Geometric mean of configuration medians; bars span their min--max, not confidence intervals or repetition ranges. Curves end at the last contiguous complete three-engine size group; all planned seeds must complete. No extrapolation. Panels have independent axis limits. Local-layered seed labels repeat the same input. Random depth = 20 times qubits; layered depth = 2. Rewrite excludes import/export. Three measured repetitions per configuration. Large-output semantic checks remain inconclusive; these are completed timing comparisons, not correctness certificates. Runtime cutoffs changed during the campaign.
 \clearpage
 \begin{center}
-\textbf{circuits-rewrite-speedup}\par\medskip
-\input{circuits-rewrite-speedup.tex}
+\textbf{Local complementation}\par\medskip
+\input{figures/rules-lcomp-total.tex}
 \end{center}
-Geometric mean of configuration medians; bars span their min--max, not confidence intervals or repetition ranges. Curves end at the last contiguous complete three-engine size group; all planned seeds must complete. No extrapolation. Panels have independent axis limits. Local-layered seed labels repeat the same input. Random depth = 20 times qubits; layered depth = 2. Ratios above 1 favor the database. Rewrite excludes import/export. Three measured repetitions per configuration. Large-output semantic checks remain inconclusive; these are completed timing comparisons, not correctness certificates. Runtime cutoffs changed during the campaign.
 \clearpage
 \begin{center}
-\textbf{circuits-total}\par\medskip
-\input{circuits-total.tex}
+\textbf{Phase-gadget fusion}\par\medskip
+\input{figures/rules-gadget-fusion-rewrite.tex}
 \end{center}
-Geometric mean of configuration medians; bars span their min--max, not confidence intervals or repetition ranges. Curves end at the last contiguous complete three-engine size group; all planned seeds must complete. No extrapolation. Panels have independent axis limits. Local-layered seed labels repeat the same input. Random depth = 20 times qubits; layered depth = 2. Total includes in-memory import/export (PyZX: copying), not startup or disk I/O. Three measured repetitions per configuration. Large-output semantic checks remain inconclusive; these are completed timing comparisons, not correctness certificates. Runtime cutoffs changed during the campaign.
 \clearpage
 \begin{center}
-\textbf{circuits-total-speedup}\par\medskip
-\input{circuits-total-speedup.tex}
+\textbf{Phase-gadget fusion}\par\medskip
+\input{figures/rules-gadget-fusion-total.tex}
 \end{center}
-Geometric mean of configuration medians; bars span their min--max, not confidence intervals or repetition ranges. Curves end at the last contiguous complete three-engine size group; all planned seeds must complete. No extrapolation. Panels have independent axis limits. Local-layered seed labels repeat the same input. Random depth = 20 times qubits; layered depth = 2. Ratios above 1 favor the database. Total includes in-memory import/export (PyZX: copying), not startup or disk I/O. Three measured repetitions per configuration. Large-output semantic checks remain inconclusive; these are completed timing comparisons, not correctness certificates. Runtime cutoffs changed during the campaign.
+\clearpage
+\begin{center}
+\textbf{Spider fusion}\par\medskip
+\input{figures/rules-spider-fusion-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Spider fusion}\par\medskip
+\input{figures/rules-spider-fusion-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Identity removal}\par\medskip
+\input{figures/rules-identity-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Identity removal}\par\medskip
+\input{figures/rules-identity-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Bialgebra}\par\medskip
+\input{figures/rules-bialgebra-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Bialgebra}\par\medskip
+\input{figures/rules-bialgebra-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Boundary pivot}\par\medskip
+\input{figures/rules-pivot-boundary-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Boundary pivot}\par\medskip
+\input{figures/rules-pivot-boundary-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Hadamard cancellation}\par\medskip
+\input{figures/rules-hadamard-cancel-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Hadamard cancellation}\par\medskip
+\input{figures/rules-hadamard-cancel-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Copy}\par\medskip
+\input{figures/rules-copy-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Copy}\par\medskip
+\input{figures/rules-copy-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Supplementarity}\par\medskip
+\input{figures/rules-supplementarity-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Supplementarity}\par\medskip
+\input{figures/rules-supplementarity-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Identity chain}\par\medskip
+\input{figures/rules-identity-chain-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Identity chain}\par\medskip
+\input{figures/rules-identity-chain-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Pivot}\par\medskip
+\input{figures/copies-pivot-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Pivot}\par\medskip
+\input{figures/copies-pivot-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Gadget pivot}\par\medskip
+\input{figures/copies-pivot-gadget-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Gadget pivot}\par\medskip
+\input{figures/copies-pivot-gadget-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Local complementation}\par\medskip
+\input{figures/copies-lcomp-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Local complementation}\par\medskip
+\input{figures/copies-lcomp-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Phase-gadget fusion}\par\medskip
+\input{figures/copies-gadget-fusion-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Phase-gadget fusion}\par\medskip
+\input{figures/copies-gadget-fusion-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Spider fusion}\par\medskip
+\input{figures/copies-spider-fusion-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Spider fusion}\par\medskip
+\input{figures/copies-spider-fusion-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Identity removal}\par\medskip
+\input{figures/copies-identity-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Identity removal}\par\medskip
+\input{figures/copies-identity-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Bialgebra}\par\medskip
+\input{figures/copies-bialgebra-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Bialgebra}\par\medskip
+\input{figures/copies-bialgebra-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Boundary pivot}\par\medskip
+\input{figures/copies-pivot-boundary-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Boundary pivot}\par\medskip
+\input{figures/copies-pivot-boundary-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Hadamard cancellation}\par\medskip
+\input{figures/copies-hadamard-cancel-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Hadamard cancellation}\par\medskip
+\input{figures/copies-hadamard-cancel-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Copy}\par\medskip
+\input{figures/copies-copy-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Copy}\par\medskip
+\input{figures/copies-copy-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Supplementarity}\par\medskip
+\input{figures/copies-supplementarity-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Supplementarity}\par\medskip
+\input{figures/copies-supplementarity-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Clifford}\par\medskip
+\input{figures/circuits-random-clifford-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Clifford}\par\medskip
+\input{figures/circuits-random-clifford-rewrite-speedup.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Clifford}\par\medskip
+\input{figures/circuits-random-clifford-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Clifford}\par\medskip
+\input{figures/circuits-random-clifford-total-speedup.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Clifford+T}\par\medskip
+\input{figures/circuits-random-clifford-t-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Clifford+T}\par\medskip
+\input{figures/circuits-random-clifford-t-rewrite-speedup.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Clifford+T}\par\medskip
+\input{figures/circuits-random-clifford-t-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Clifford+T}\par\medskip
+\input{figures/circuits-random-clifford-t-total-speedup.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{T-heavy}\par\medskip
+\input{figures/circuits-random-t-heavy-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{T-heavy}\par\medskip
+\input{figures/circuits-random-t-heavy-rewrite-speedup.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{T-heavy}\par\medskip
+\input{figures/circuits-random-t-heavy-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{T-heavy}\par\medskip
+\input{figures/circuits-random-t-heavy-total-speedup.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Local layered}\par\medskip
+\input{figures/circuits-layered-local-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Local layered}\par\medskip
+\input{figures/circuits-layered-local-rewrite-speedup.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Local layered}\par\medskip
+\input{figures/circuits-layered-local-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Local layered}\par\medskip
+\input{figures/circuits-layered-local-total-speedup.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Global layered}\par\medskip
+\input{figures/circuits-layered-global-rewrite.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Global layered}\par\medskip
+\input{figures/circuits-layered-global-rewrite-speedup.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Global layered}\par\medskip
+\input{figures/circuits-layered-global-total.tex}
+\end{center}
+\clearpage
+\begin{center}
+\textbf{Global layered}\par\medskip
+\input{figures/circuits-layered-global-total-speedup.tex}
+\end{center}
 \clearpage
 \end{document}

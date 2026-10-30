@@ -1,0 +1,51 @@
+\resizebox{\columnwidth}{!}{
+\begin{tikzpicture}
+  \begin{axis}[
+    width=10cm, height=6cm,
+    xlabel={Qubits}, ylabel={Time (s)},
+    xmode=log, ymode=log, log basis x=2,
+    grid=major,
+    grid style={line width=.1pt, draw=gray!30},
+    major grid style={line width=.2pt, draw=gray!60},
+    label style={font=\large}, tick label style={font=\large},
+    legend style={at={(0.02,0.98)}, anchor=north west,
+      font=\normalsize, inner sep=4pt, row sep=2pt, cells={anchor=west}},
+    legend image post style={mark size=3pt},
+    every axis plot/.append style={line width=1.2pt, mark size=3pt,
+      mark options={line width=0.8pt}},
+    unbounded coords=jump,
+    xtick={3,8,16,32,64,128}, xticklabels={3,8,16,32,64,128},
+  ]
+    \addplot+[mark=*, color=blue, solid,error bars/.cd,y dir=both,y explicit] coordinates {
+      (3,0.00498499695) += (0,0.00134240305) -= (0,0.00139769695)
+      (8,0.0182255336) += (0,0.0059407664) -= (0,0.0026591336)
+      (16,0.0468394013) += (0,0.00281789871) -= (0,0.00156190129)
+      (32,0.142776934) += (0,0.0121632661) -= (0,0.0212319339)
+      (64,0.490777911) += (0,0.0129336895) -= (0,0.0147725105)
+      (128,1.87192443) += (0,0.238928874) -= (0,0.160565726)
+    };
+    \addlegendentry{PyZX}
+
+    \addplot+[mark=square*, color=red, solid,error bars/.cd,y dir=both,y explicit] coordinates {
+      (3,0.186481747) += (0,0.00651385252) -= (0,0.00534954748)
+      (8,0.219629425) += (0,0.0398729748) -= (0,0.0253458252)
+      (16,0.294867219) += (0,0.0124691809) -= (0,0.0211508191)
+      (32,0.596311538) += (0,0.0286193616) -= (0,0.0166893384)
+      (64,0.895185182) += (0,0.0671692177) -= (0,0.0454685823)
+      (128,1.57866959) += (0,0.0665746122) -= (0,0.0734436878)
+    };
+    \addlegendentry{Cypher}
+
+    \addplot+[mark=triangle*, color=green!60!black, solid,error bars/.cd,y dir=both,y explicit] coordinates {
+      (3,0.149686549) += (0,0.0181723507) -= (0,0.0160805493)
+      (8,0.178663571) += (0,0.0456021289) -= (0,0.0300781711)
+      (16,0.23514306) += (0,0.00998523962) -= (0,0.0126098604)
+      (32,0.520884067) += (0,0.0192681325) -= (0,0.0105034675)
+      (64,0.799489934) += (0,0.0469924658) -= (0,0.0333607342)
+      (128,1.52353595) += (0,0.0135402481) -= (0,0.0188595519)
+    };
+    \addlegendentry{Cypher+C++}
+
+  \end{axis}
+\end{tikzpicture}
+}

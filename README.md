@@ -62,11 +62,14 @@ and needs only Python's standard library:
 python evaluation/plot_timings.py --output results/reproduced/paper-figures
 ```
 
-Compile `main.tex` in that output directory with `pdflatex` (PGFPlots required).
-For individual cropped PDFs, compile each `*-standalone.tex` using the figure
-name as `-jobname`. The [saved preview](results/generous-rerun-20261029/finalized/paper-figures/main.pdf)
+Each plot is written to `figures/<kind>-<rule>-<scope>.tex`, with an additional
+`-speedup` suffix for circuit ratios. Snippets use `\resizebox{\columnwidth}{!}`;
+load `graphicx` and `pgfplots` (compatibility 1.18) in the consuming document.
+Compile `main.tex` in the output directory with `pdflatex` to preview all plots,
+one per page, with only the rule name and no captions. The
+[saved preview](results/generous-rerun-20261029/finalized/paper-figures/main.pdf)
 and [figure notes](results/generous-rerun-20261029/finalized/paper-figures/README.md)
-include captions and interpretation. Pass another `timings.csv` as the first
+are available for the frozen data. Pass another `timings.csv` as the first
 argument to plot a fresh run.
 
 To rebuild the frozen summary, CSVs and three PNG/SVG report figures from the

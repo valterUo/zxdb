@@ -1,44 +1,13 @@
 {
-  "preview_pages": 8,
+  "preview_pages": 66,
+  "individual_figures": 66,
   "plotted_configurations": 210,
   "families": 28,
   "circuit_endpoints_all_128": true,
   "pdfs": {
-    "circuits-rewrite-speedup.pdf": {
-      "pages": 1,
-      "bytes": 53341
-    },
-    "circuits-rewrite.pdf": {
-      "pages": 1,
-      "bytes": 57017
-    },
-    "circuits-total-speedup.pdf": {
-      "pages": 1,
-      "bytes": 53356
-    },
-    "circuits-total.pdf": {
-      "pages": 1,
-      "bytes": 57026
-    },
-    "copies-rewrite.pdf": {
-      "pages": 1,
-      "bytes": 66023
-    },
-    "copies-total.pdf": {
-      "pages": 1,
-      "bytes": 65290
-    },
     "main.pdf": {
-      "pages": 8,
-      "bytes": 215777
-    },
-    "rules-rewrite.pdf": {
-      "pages": 1,
-      "bytes": 70168
-    },
-    "rules-total.pdf": {
-      "pages": 1,
-      "bytes": 69874
+      "pages": 66,
+      "bytes": 292334
     }
   }
 }

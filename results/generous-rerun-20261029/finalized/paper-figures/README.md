@@ -1,6 +1,9 @@
 # Paper figures from the finalized campaign
 
-Eight figures cover growing rules, disjoint copies and full-reduce circuits in both rewrite-only and total time, plus circuit speedups for each timing scope. `main.pdf` is the compiled eight-page preview with captions. Each named figure also has a tightly cropped vector PDF and a TikZ snippet.
+Each rule or circuit family has its own TikZ file for rewrite-only and total
+time; circuits also have separate speedup plots for each scope. Files live in
+`figures/` and are named `<kind>-<rule>-<scope>[-speedup].tex`. `main.tex` inputs
+all of them, one per page, displaying only the rule name without captions.
 
 ## Selection and interpretation
 
@@ -45,8 +48,13 @@ Rule axes use actual input vertices, recovered from raw observations; the table 
 
 ## Use in the paper
 
-For TikZ, load `pgfplots`, the `groupplots` library, and compatibility 1.18, then include the named snippet inside a full-width figure. The PDFs may instead be included with `\includegraphics[width=\textwidth]{circuits-total.pdf}`. Use the matching caption in `main.tex`.
+Load `graphicx` and `pgfplots`, set compatibility 1.18, and input the desired
+snippet, for example `\input{figures/rules-pivot-total.tex}`. Each snippet scales
+to `\columnwidth`. Blue circles denote PyZX, red squares denote Cypher, and
+green triangles denote Cypher+C++.
 
-Generate from the repository root with `myenv/Scripts/python.exe evaluation/plot_timings.py`. Compile `main.tex` with `pdflatex` from this directory. To rebuild a cropped PDF, run `pdflatex -jobname=circuits-total circuits-total-standalone.tex` (substitute the figure name).
+Generate from the repository root with `python evaluation/plot_timings.py`.
+Compile `main.tex` with `pdflatex -interaction=nonstopmode -halt-on-error main.tex`
+from this directory to rebuild the preview.
 
 `plotted-data.csv` is the exact selected data, including input vertex counts. `coverage.csv` includes all planned size groups and exclusion reasons. `plot-manifest.json` records the original finalized CSV and observation hashes. Earlier campaigns are not pooled.
